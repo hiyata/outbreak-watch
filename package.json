@@ -1,0 +1,10 @@
+{
+  "name": "outbreak-watch",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Unified feed of public disease outbreak reports, starting with WHO Disease Outbreak News.",
+  "scripts": {
+    "fetch:who": "node scripts/fetch-who.mjs"
+  }
+}
