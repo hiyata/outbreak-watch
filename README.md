@@ -141,6 +141,36 @@ No dependencies for the fetch script — it uses Node's built-in `fetch`.
 - **CDC HAN**'s RSS endpoint is blocked at the edge (bot detection) for
   plain HTTP clients. Left as a `v2` item — may need a different endpoint
   or a browser-like fetch.
+- **ECDC** (Europe's CDC equivalent) has a real, current, weekly REST API
+  behind its Surveillance Atlas (`atlas.ecdc.europa.eu/public/AtlasService/rest/`
+  — found datasets like `CURRENT.WNF.WEEKLY`), discovered the same way
+  WHO's API was: by watching the page's own network requests. But the
+  atlas is sitting behind Imperva Incapsula, a bot-detection WAF — driving
+  its cascading dataset/geography/time dropdowns with a headless browser
+  triggered Incapsula's challenge resources instead of real responses.
+  Same failure category as ProMED and CDC HAN: even a working scrape today
+  would be liable to silently break (or start returning stale/challenge
+  content instead of erroring) on a future scheduled run against a WAF
+  that's actively trying to detect exactly this kind of automation.
+  Dropped for the same reason those were.
+- **China, Japan, Korea, Australia** were checked for a CDC/InfoGripe-tier
+  source (structured, current, sub-national) and none qualified yet:
+  - **China** — no public structured API; the CDC site is a content
+    redirect into article/PDF-style publications, similar transparency
+    tier to Venezuela.
+  - **Japan** — NIID publishes a manually-updated weekly spreadsheet/PDF
+    (IDWR), no API found; the relevant site has also recently moved
+    domains, which didn't help.
+  - **Korea** — KDCA's data is exposed through a real government API
+    framework (`data.go.kr`), but every endpoint requires a **registered
+    service key** — a manual account-signup step that can't be completed
+    autonomously. Revisit if someone provides a key.
+  - **Australia** — the old `data.gov.au` NNDSS dataset is a dead stub
+    from 2015; the real current data has moved to Australia's new CDC
+    site (`cdc.gov.au`), but that domain was completely unreachable from
+    the development environment on every attempt (connection failures,
+    not a confirmed block) — inconclusive, worth retrying rather than
+    ruled out.
 - **A full Latin America layer (all countries, state/province-level) was
   scoped and largely ruled out.** Unlike the US, there's no single regional
   API as clean as CDC's. What was checked, and why each was or wasn't
@@ -188,11 +218,10 @@ No dependencies for the fetch script — it uses Node's built-in `fetch`.
   a whole region at once the way the WHO and CDC integrations did for
   their scopes. Check this list first so you don't repeat a dead end.
 
-Contributions adding another source (ECDC, additional national health
-ministries) are welcome — keep the per-outbreak `{id, disease, first_seen,
-latest_update, update_count, countries, is_global, latest_counts,
-updates}` shape in `data/feed.json` so the frontend doesn't need to change
-per source.
+Contributions adding another source are welcome — keep the per-outbreak
+`{id, disease, first_seen, latest_update, update_count, countries,
+is_global, latest_counts, updates}` shape in `data/feed.json` so the
+frontend doesn't need to change per source.
 
 ## Disclaimer
 
