@@ -83,7 +83,21 @@
     display: flex;
     flex-direction: column;
   }
-  .map-panel h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 0 0 0.6rem; font-weight: 600; }
+  .map-panel h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 0 0 0.6rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between; }
+  .mode-tabs { display: flex; gap: 0.3rem; }
+  .mode-tab {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .mode-tab.active { background: var(--accent); border-color: var(--accent); color: #1a1310; }
   #map-container { flex: 1; min-height: 320px; }
   #map-container svg { width: 100%; height: auto; display: block; }
   .country-path { stroke: var(--bg); stroke-width: 0.4; cursor: default; transition: opacity 0.1s; }
@@ -109,6 +123,16 @@
     flex-direction: column;
     gap: 0.5rem;
   }
+  .checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .checkbox-row input { margin: 0; }
+
   input[type="search"], select {
     padding: 0.5rem 0.65rem;
     border: 1px solid var(--border);
@@ -165,6 +189,11 @@
   .update h3 a:hover { text-decoration: underline; color: var(--accent); }
   .update p { margin: 0; font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
 
+  table.state-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.5rem; }
+  table.state-table th, table.state-table td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border); }
+  table.state-table th { color: var(--muted); font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  table.state-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
   footer {
     padding: 1rem 1.5rem 2rem;
     color: var(--muted);
@@ -185,18 +214,30 @@
 
   <div class="layout">
     <div class="map-panel">
-      <h2>Active outbreaks by country</h2>
-      <div id="map-container"></div>
-      <div class="legend">
+      <h2>
+        <span id="map-title">Active outbreaks by country</span>
+        <span class="mode-tabs">
+          <button class="mode-tab active" id="tab-who" type="button">World (WHO)</button>
+          <button class="mode-tab" id="tab-cdc" type="button">United States (CDC)</button>
+        </span>
+      </h2>
+      <div id="map-container">
+        <div id="who-map-wrap"></div>
+        <div id="cdc-map-wrap" style="display:none"></div>
+      </div>
+      <div class="legend" id="legend-who">
         <span class="legend-swatch" style="background:var(--map-land)"></span> no report
         <span class="legend-swatch" style="background:var(--map-hit-1)"></span> 1 outbreak
         <span class="legend-swatch" style="background:var(--map-hit-2)"></span> 2
         <span class="legend-swatch" style="background:var(--map-hit-3)"></span> 3+
       </div>
+      <div class="legend" id="legend-cdc" style="display:none">
+        Color intensity = share of that disease's national case total reported by each state. Select a disease to color the map.
+      </div>
     </div>
 
     <div class="sidebar">
-      <div class="sidebar-controls">
+      <div class="sidebar-controls" id="controls-who">
         <input type="search" id="search" placeholder="Search disease, country…" />
         <select id="sort">
           <option value="new">Recently updated first</option>
@@ -204,9 +245,24 @@
           <option value="count">Most updates first</option>
           <option value="cases">Most cases first</option>
         </select>
+        <label class="checkbox-row">
+          <input type="checkbox" id="show-historical" />
+          Show historical (no update in 12+ months)
+        </label>
+      </div>
+      <div class="sidebar-controls" id="controls-cdc" style="display:none">
+        <input type="search" id="cdc-search" placeholder="Search notifiable disease…" />
+        <select id="cdc-sort">
+          <option value="week">Most cases this week first</option>
+          <option value="ytd">Most cases this year first</option>
+          <option value="states">Most states reporting first</option>
+        </select>
       </div>
       <div class="outbreak-list" id="outbreak-list">
         <p id="status">Loading…</p>
+      </div>
+      <div class="outbreak-list" id="cdc-list" style="display:none">
+        <p id="cdc-status">Loading…</p>
       </div>
     </div>
   </div>
@@ -215,11 +271,18 @@
     <p style="color: var(--muted); font-size: 0.9rem;">Select an outbreak on the left, or a highlighted country on the map, to see its full update timeline.</p>
   </main>
 
-  <footer>
+  <footer id="footer-who">
     Groups WHO Disease Outbreak News reports into outbreaks and maps them by country.
     Case/death counts and country tags are extracted automatically from WHO's report text
     and may be incomplete or delayed — always verify against the linked source before
     using clinically. Open-source; PRs adding more sources welcome.
+  </footer>
+  <footer id="footer-cdc" style="display:none">
+    US state-level counts are the latest provisional week from CDC's National Notifiable
+    Diseases Surveillance System (NNDSS), which is updated weekly and revised as reports
+    come in — figures for the most recent week are usually incomplete and will rise.
+    A blank state for a given disease means it isn't nationally notifiable there or data
+    was unavailable that week, not that it had zero cases.
   </footer>
 </div>
 

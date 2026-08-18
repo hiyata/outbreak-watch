@@ -5,14 +5,40 @@ const headerStatsEl = document.getElementById("header-stats");
 const detailEl = document.getElementById("detail");
 const searchEl = document.getElementById("search");
 const sortEl = document.getElementById("sort");
-const mapContainer = document.getElementById("map-container");
+const showHistoricalEl = document.getElementById("show-historical");
+const whoMapWrap = document.getElementById("who-map-wrap");
+
+const cdcListEl = document.getElementById("cdc-list");
+const cdcSearchEl = document.getElementById("cdc-search");
+const cdcSortEl = document.getElementById("cdc-sort");
+const cdcMapWrap = document.getElementById("cdc-map-wrap");
+
+const tabWhoEl = document.getElementById("tab-who");
+const tabCdcEl = document.getElementById("tab-cdc");
+const mapTitleEl = document.getElementById("map-title");
+const legendWhoEl = document.getElementById("legend-who");
+const legendCdcEl = document.getElementById("legend-cdc");
+const controlsWhoEl = document.getElementById("controls-who");
+const controlsCdcEl = document.getElementById("controls-cdc");
+const footerWhoEl = document.getElementById("footer-who");
+const footerCdcEl = document.getElementById("footer-cdc");
+
+const ACTIVE_WINDOW_DAYS = 365;
+const ACTIVE_CUTOFF = new Date(Date.now() - ACTIVE_WINDOW_DAYS * 24 * 60 * 60 * 1000).toISOString();
+
+let mode = "who"; // "who" | "cdc"
 
 let allOutbreaks = [];
 let lastSeen = localStorage.getItem(LAST_SEEN_KEY);
 let selectedId = null;
 let countryHitCounts = new Map(); // map country id -> count of matching outbreaks (post-filter)
 let svgSelection = null;
-let pathGenerator = null;
+
+let cdcFeed = null;
+let allDiseases = [];
+let selectedDisease = null;
+let cdcSvgSelection = null;
+let whoGeneratedAt = null;
 
 function fmtDate(iso) {
   if (!iso) return "";
@@ -36,7 +62,10 @@ function isNewOutbreak(ob) {
 
 function filteredOutbreaks() {
   const query = searchEl.value.trim().toLowerCase();
+  const includeHistorical = showHistoricalEl.checked;
+
   let outbreaks = allOutbreaks.filter((ob) => {
+    if (!includeHistorical && ob.latest_update < ACTIVE_CUTOFF) return false;
     if (!query) return true;
     const haystack = `${ob.disease} ${ob.countries.map((c) => c.name).join(" ")} ${ob.updates
       .map((u) => u.title + " " + u.summary)
@@ -207,13 +236,13 @@ async function initMap() {
   const topo = await d3.json("data/countries-110m.json");
   const geo = topojson.feature(topo, topo.objects.countries);
 
-  const width = mapContainer.clientWidth || 640;
+  const width = whoMapWrap.clientWidth || 640;
   const height = width * 0.55;
   const projection = d3.geoNaturalEarth1().fitSize([width - 4, height - 4], geo);
-  pathGenerator = d3.geoPath(projection);
+  const pathGenerator = d3.geoPath(projection);
 
   const svg = d3
-    .select(mapContainer)
+    .select(whoMapWrap)
     .append("svg")
     .attr("viewBox", `0 0 ${width} ${height}`)
     .attr("preserveAspectRatio", "xMidYMid meet");
@@ -242,17 +271,221 @@ async function initMap() {
   paintMap();
 }
 
+// ---------- CDC (US states) mode ----------
+
+function filteredDiseases() {
+  const query = cdcSearchEl.value.trim().toLowerCase();
+  let diseases = allDiseases.filter((d) => !query || d.disease.toLowerCase().includes(query));
+
+  const sort = cdcSortEl.value;
+  if (sort === "ytd") {
+    diseases = [...diseases].sort((a, b) => b.total_ytd - a.total_ytd);
+  } else if (sort === "states") {
+    diseases = [...diseases].sort((a, b) => b.states_reporting - a.states_reporting);
+  } else {
+    diseases = [...diseases].sort((a, b) => b.total_current_week - a.total_current_week);
+  }
+  return diseases;
+}
+
+function renderCdcSidebar() {
+  const diseases = filteredDiseases();
+
+  if (diseases.length === 0) {
+    cdcListEl.innerHTML = '<p id="cdc-status">No matching diseases.</p>';
+    return;
+  }
+
+  cdcListEl.innerHTML = diseases
+    .map((d) => {
+      const isActive = d.disease === selectedDisease;
+      return `
+        <button class="list-item${isActive ? " active" : ""}" data-disease="${escapeHtml(d.disease)}">
+          <div class="li-title">${escapeHtml(d.disease)}</div>
+          <div class="li-meta">
+            <span>${d.states_reporting} state${d.states_reporting === 1 ? "" : "s"} reporting</span>
+          </div>
+          <div class="li-meta">
+            <span class="li-counts">${fmtNumber(d.total_current_week)} this week</span>
+            <span>·</span>
+            <span>${fmtNumber(d.total_ytd)} YTD</span>
+          </div>
+        </button>
+      `;
+    })
+    .join("");
+
+  cdcListEl.querySelectorAll(".list-item").forEach((btn) => {
+    btn.addEventListener("click", () => selectDisease(btn.dataset.disease));
+  });
+}
+
+function renderCdcDetail() {
+  const d = allDiseases.find((x) => x.disease === selectedDisease);
+  if (!d) {
+    detailEl.innerHTML =
+      '<p style="color: var(--muted); font-size: 0.9rem;">Select a notifiable disease on the left, or a highlighted state on the map, to see its state-by-state breakdown.</p>';
+    return;
+  }
+
+  const rowsHtml = d.states
+    .slice(0, 25)
+    .map(
+      (s) => `
+        <tr>
+          <td>${escapeHtml(s.name)}</td>
+          <td class="num">${fmtNumber(s.current_week)}</td>
+          <td class="num">${fmtNumber(s.ytd)}</td>
+        </tr>
+      `
+    )
+    .join("");
+
+  detailEl.innerHTML = `
+    <div class="detail-head">
+      <h2>${escapeHtml(d.disease)}</h2>
+      <div class="detail-tags">
+        <span class="tag">MMWR week ${cdcFeed.week}, ${cdcFeed.year}</span>
+        <span class="tag">${d.states_reporting} states reporting</span>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="n">${fmtNumber(d.total_current_week)}</div><div class="l">cases this week (provisional)</div></div>
+      <div class="stat"><div class="n">${fmtNumber(d.total_ytd)}</div><div class="l">cumulative cases this year</div></div>
+    </div>
+    <div class="stat-note">Source: CDC NNDSS weekly tables. Most recent week is provisional and will revise upward as more reports come in.</div>
+    <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.6rem;">By state${d.states.length > 25 ? ` (top 25 of ${d.states.length})` : ""}</h3>
+    <table class="state-table">
+      <thead><tr><th>State</th><th class="num">This week</th><th class="num">YTD</th></tr></thead>
+      <tbody>${rowsHtml}</tbody>
+    </table>
+  `;
+}
+
+function selectDisease(disease) {
+  selectedDisease = disease;
+  renderCdcSidebar();
+  renderCdcDetail();
+  paintCdcMap();
+  detailEl.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function paintCdcMap() {
+  if (!cdcSvgSelection) return;
+  const d = allDiseases.find((x) => x.disease === selectedDisease);
+  const byState = new Map((d?.states ?? []).map((s) => [s.id, s.current_week]));
+  const max = Math.max(1, ...[...byState.values()]);
+  const scale = d3.scaleSequential(d3.interpolateOranges).domain([0, max]);
+
+  cdcSvgSelection
+    .attr("fill", function () {
+      const id = this.getAttribute("data-id");
+      if (!d) return "var(--map-land)";
+      return byState.has(id) ? scale(byState.get(id)) : "var(--map-land)";
+    })
+    .classed("has-outbreak", function () {
+      return d ? byState.has(this.getAttribute("data-id")) : false;
+    });
+}
+
+async function initCdcMap() {
+  const topo = await d3.json("data/us-states-10m.json");
+  const geo = topojson.feature(topo, topo.objects.states);
+
+  const width = cdcMapWrap.clientWidth || 640;
+  const height = width * 0.62;
+  const projection = d3.geoAlbersUsa().fitSize([width - 4, height - 4], geo);
+  const pathGenerator = d3.geoPath(projection);
+
+  const svg = d3
+    .select(cdcMapWrap)
+    .append("svg")
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .attr("preserveAspectRatio", "xMidYMid meet");
+
+  const paths = svg
+    .append("g")
+    .selectAll("path")
+    .data(geo.features)
+    .join("path")
+    .attr("class", "country-path")
+    .attr("data-id", (d) => String(d.id).padStart(2, "0"))
+    .attr("d", pathGenerator)
+    .attr("fill", "var(--map-land)");
+
+  paths.append("title").text((d) => d.properties.name);
+  cdcSvgSelection = paths;
+
+  cdcSvgSelection.on("click", function (event, feature) {
+    const id = String(feature.id).padStart(2, "0");
+    const d = allDiseases.find((x) => x.disease === selectedDisease);
+    if (!d || !d.states.some((s) => s.id === id)) return;
+    // clicking a state while a disease is selected just keeps that disease selected;
+    // clicking with none selected picks the state's top disease this week
+    if (!selectedDisease) {
+      const top = [...allDiseases]
+        .map((x) => ({ x, s: x.states.find((s) => s.id === id) }))
+        .filter((r) => r.s)
+        .sort((a, b) => b.s.current_week - a.s.current_week)[0];
+      if (top) selectDisease(top.x.disease);
+    }
+  });
+
+  paintCdcMap();
+}
+
+function switchMode(next) {
+  if (mode === next) return;
+  mode = next;
+
+  const isCdc = mode === "cdc";
+  tabWhoEl.classList.toggle("active", !isCdc);
+  tabCdcEl.classList.toggle("active", isCdc);
+  mapTitleEl.textContent = isCdc ? "US notifiable diseases by state" : "Active outbreaks by country";
+  whoMapWrap.style.display = isCdc ? "none" : "";
+  cdcMapWrap.style.display = isCdc ? "" : "none";
+  legendWhoEl.style.display = isCdc ? "none" : "";
+  legendCdcEl.style.display = isCdc ? "" : "none";
+  controlsWhoEl.style.display = isCdc ? "none" : "";
+  controlsCdcEl.style.display = isCdc ? "" : "none";
+  listEl.style.display = isCdc ? "none" : "";
+  cdcListEl.style.display = isCdc ? "" : "none";
+  footerWhoEl.style.display = isCdc ? "none" : "";
+  footerCdcEl.style.display = isCdc ? "" : "none";
+
+  if (isCdc) {
+    renderCdcDetail();
+    renderHeaderStats();
+  } else {
+    renderDetail();
+    renderHeaderStats();
+  }
+}
+
+function renderHeaderStats() {
+  if (mode === "cdc" && cdcFeed) {
+    headerStatsEl.innerHTML = `
+      <span><b>${cdcFeed.disease_count}</b> notifiable diseases active</span>
+      <span>MMWR week ${cdcFeed.week}, ${cdcFeed.year}</span>
+      <span>Updated ${fmtDate(cdcFeed.generated_at)}</span>
+    `;
+  } else if (mode === "who" && allOutbreaks.length) {
+    const activeCount = allOutbreaks.filter((o) => o.latest_update >= ACTIVE_CUTOFF).length;
+    headerStatsEl.innerHTML = `
+      <span><b>${activeCount}</b> active</span>
+      <span><b>${allOutbreaks.length}</b> total tracked</span>
+      <span>Updated ${fmtDate(whoGeneratedAt)}</span>
+    `;
+  }
+}
+
 async function init() {
   try {
     const res = await fetch("data/feed.json", { cache: "no-store" });
     const feed = await res.json();
     allOutbreaks = feed.outbreaks;
-
-    headerStatsEl.innerHTML = `
-      <span><b>${feed.outbreak_count}</b> outbreaks tracked</span>
-      <span><b>${feed.update_count}</b> reports</span>
-      <span>Updated ${fmtDate(feed.generated_at)}</span>
-    `;
+    whoGeneratedAt = feed.generated_at;
+    renderHeaderStats();
 
     renderSidebar();
     renderDetail();
@@ -264,6 +497,17 @@ async function init() {
     listEl.innerHTML = '<p id="status">Could not load feed. Try again shortly.</p>';
     console.error(err);
   }
+
+  try {
+    const res = await fetch("data/cdc-feed.json", { cache: "no-store" });
+    cdcFeed = await res.json();
+    allDiseases = cdcFeed.diseases;
+    renderCdcSidebar();
+    await initCdcMap();
+  } catch (err) {
+    cdcListEl.innerHTML = '<p id="cdc-status">Could not load CDC feed. Try again shortly.</p>';
+    console.error(err);
+  }
 }
 
 searchEl.addEventListener("input", () => {
@@ -272,5 +516,18 @@ searchEl.addEventListener("input", () => {
 sortEl.addEventListener("change", () => {
   renderSidebar();
 });
+showHistoricalEl.addEventListener("change", () => {
+  renderSidebar();
+});
+
+cdcSearchEl.addEventListener("input", () => {
+  renderCdcSidebar();
+});
+cdcSortEl.addEventListener("change", () => {
+  renderCdcSidebar();
+});
+
+tabWhoEl.addEventListener("click", () => switchMode("who"));
+tabCdcEl.addEventListener("click", () => switchMode("cdc"));
 
 init();

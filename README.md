@@ -1,14 +1,19 @@
 # Outbreak Watch
 
-A global dashboard of ongoing disease outbreaks: a world map highlighting
-affected countries, a sidebar ranking outbreaks by recency/updates/cases,
-and a detail view with the full chronological update timeline per
-outbreak — case counts climbing update to update, not just a flat list of
-reports. v1 pulls from **WHO Disease Outbreak News (DON)**.
+A global dashboard of ongoing disease outbreaks, with two modes:
 
-Live data lives in [`data/feed.json`](data/feed.json), regenerated every 6
-hours by a GitHub Actions workflow and served straight off GitHub Pages —
-no server, no database.
+- **World (WHO)** — a world map highlighting affected countries, a sidebar
+  ranking outbreaks by recency/updates/cases, and a detail view with the
+  full chronological update timeline per outbreak — case counts climbing
+  update to update, not just a flat list of reports.
+- **United States (CDC)** — a US state choropleth built from CDC's NNDSS
+  weekly surveillance data: real structured case counts by state and
+  disease, not text-mined, updated weekly.
+
+Live data lives in [`data/feed.json`](data/feed.json) (WHO) and
+[`data/cdc-feed.json`](data/cdc-feed.json) (CDC), regenerated every 6 hours
+by a GitHub Actions workflow and served straight off GitHub Pages — no
+server, no database.
 
 ## How it's different from WHO's own DON page
 
@@ -21,6 +26,19 @@ no server, no database.
 - **Case/death counts surfaced up front**, extracted from WHO's report
   text so you don't have to open every PDF to find the numbers.
 - **Unread tracking**, so you can tell what's new since your last visit.
+- **Active by default.** WHO's DON archive goes back years, and most of it
+  is long-resolved — showing all of it by default made the dashboard read
+  as "current" when ~90% of entries hadn't been updated in over a year.
+  The default view now only shows outbreaks updated in the last 12
+  months, with a "show historical" toggle for the rest. (We tried
+  detecting explicit outbreak-closure language instead, but WHO's own text
+  can say an outbreak "ended" for one country while it's still active and
+  worsening in another — e.g. Uganda's portion of the 2026 Bundibugyo Ebola
+  outbreak was declared over while DRC's was still climbing. A recency
+  cutoff can't misclassify an active outbreak as resolved the way text
+  matching can, so it's the safer default here.)
+- **Real structured data for the US**, not text-mined — CDC's NNDSS gives
+  actual per-state weekly case counts, not something extracted from prose.
 
 ## How it works
 
@@ -42,18 +60,30 @@ no server, no database.
   together (so they can't get mismatched from two different fields/dates).
   Returns nothing rather than a low-confidence guess — the frontend never
   fabricates a number.
+- [`scripts/fetch-cdc.mjs`](scripts/fetch-cdc.mjs) pulls the latest
+  complete MMWR week from CDC's NNDSS weekly tables
+  ([data.cdc.gov](https://data.cdc.gov/d/x9gk-5huc), Socrata open-data
+  API), matches jurisdiction names against
+  [`data/us-states-10m.json`](data/us-states-10m.json) via
+  [`scripts/us-states.mjs`](scripts/us-states.mjs) (same
+  guaranteed-real-map-region approach as `countries.mjs`), sums New York
+  City into New York state, and skips any state/disease row flagged "not
+  notifiable" or "data unavailable" rather than treating it as zero, and
+  writes `data/cdc-feed.json`.
 - [`.github/workflows/update-and-deploy.yml`](.github/workflows/update-and-deploy.yml)
-  runs the fetch script on a cron schedule, commits the refreshed feed, and
-  deploys the static site to GitHub Pages.
+  runs both fetch scripts on a cron schedule, commits the refreshed feeds,
+  and deploys the static site to GitHub Pages.
 - [`index.html`](index.html) / [`app.js`](app.js) render the dashboard:
-  a D3 choropleth map (topology vendored locally, D3/topojson-client
-  loaded from CDN), a filterable/sortable outbreak list, and a detail
-  panel with the full update timeline per outbreak.
+  a D3 choropleth map per mode (topologies vendored locally,
+  D3/topojson-client loaded from CDN), a filterable/sortable list, and a
+  detail panel — full update timeline in WHO mode, per-state case table in
+  CDC mode.
 
 ## Running locally
 
 ```sh
 node scripts/fetch-who.mjs   # regenerates data/feed.json
+node scripts/fetch-cdc.mjs   # regenerates data/cdc-feed.json
 python3 -m http.server       # or any static file server, then open index.html
 ```
 
@@ -86,8 +116,12 @@ update_count, countries, is_global, latest_counts, updates}` shape in
 
 ## Disclaimer
 
-Country tags and case/death counts are extracted automatically from WHO's
-report text and may be incomplete, delayed, or occasionally wrong — this
-aggregates and links to official sources, it does not replace them. For
-anything clinically or epidemiologically load-bearing, follow the outbound
-link and read the original WHO report.
+WHO-side country tags and case/death counts are extracted automatically
+from report text and may be incomplete, delayed, or occasionally wrong.
+CDC-side numbers are structured data straight from NNDSS, but the most
+recent week is always provisional and revises upward as more reports come
+in — a blank state for a disease means "not notifiable there or data
+unavailable," not "zero cases." Either way, this aggregates and links to
+official sources; it does not replace them. For anything clinically or
+epidemiologically load-bearing, follow the outbound link and read the
+original report.
