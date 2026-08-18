@@ -1,6 +1,6 @@
 # Outbreak Watch
 
-A global dashboard of ongoing disease outbreaks, with two modes:
+A global dashboard of ongoing disease outbreaks, with three modes:
 
 - **World (WHO)** — a world map highlighting affected countries, a sidebar
   ranking outbreaks by recency/updates/cases, and a detail view with the
@@ -9,11 +9,15 @@ A global dashboard of ongoing disease outbreaks, with two modes:
 - **United States (CDC)** — a US state choropleth built from CDC's NNDSS
   weekly surveillance data: real structured case counts by state and
   disease, not text-mined, updated weekly.
+- **Brazil (InfoGripe)** — a Brazilian-state choropleth of SRAG (severe
+  acute respiratory illness) risk level and case counts, from Fiocruz/FGV's
+  InfoGripe project — real structured per-state data, updated weekly.
 
-Live data lives in [`data/feed.json`](data/feed.json) (WHO) and
-[`data/cdc-feed.json`](data/cdc-feed.json) (CDC), regenerated every 6 hours
-by a GitHub Actions workflow and served straight off GitHub Pages — no
-server, no database.
+Live data lives in [`data/feed.json`](data/feed.json) (WHO),
+[`data/cdc-feed.json`](data/cdc-feed.json) (CDC), and
+[`data/br-feed.json`](data/br-feed.json) (Brazil), regenerated every 6
+hours by a GitHub Actions workflow and served straight off GitHub Pages —
+no server, no database.
 
 ## How it's different from WHO's own DON page
 
@@ -70,21 +74,31 @@ server, no database.
   City into New York state, and skips any state/disease row flagged "not
   notifiable" or "data unavailable" rather than treating it as zero, and
   writes `data/cdc-feed.json`.
+- [`scripts/fetch-infogripe.mjs`](scripts/fetch-infogripe.mjs) pulls
+  Brazil's SRAG surveillance data from
+  [InfoGripe](https://github.com/infogripe/Boletim_InfoGripe) — a
+  Fiocruz/FGV research project published as plain CSVs on GitHub, no
+  binary parsing or login required, unlike DATASUS's raw `.dbc` files (see
+  below) — parses the Brazilian-locale numbers, and matches state codes
+  against [`data/br-states-geo.json`](data/br-states-geo.json) (Brazil's
+  official IBGE geographic API) via
+  [`scripts/br-states.mjs`](scripts/br-states.mjs).
 - [`.github/workflows/update-and-deploy.yml`](.github/workflows/update-and-deploy.yml)
-  runs both fetch scripts on a cron schedule, commits the refreshed feeds,
-  and deploys the static site to GitHub Pages.
+  runs all three fetch scripts on a cron schedule, commits the refreshed
+  feeds, and deploys the static site to GitHub Pages.
 - [`index.html`](index.html) / [`app.js`](app.js) render the dashboard:
   a D3 choropleth map per mode (topologies vendored locally,
   D3/topojson-client loaded from CDN), a filterable/sortable list, and a
   detail panel — full update timeline in WHO mode, per-state case table in
-  CDC mode.
+  CDC mode, per-state SRAG detail in Brazil mode.
 
 ## Running locally
 
 ```sh
-node scripts/fetch-who.mjs   # regenerates data/feed.json
-node scripts/fetch-cdc.mjs   # regenerates data/cdc-feed.json
-python3 -m http.server       # or any static file server, then open index.html
+node scripts/fetch-who.mjs       # regenerates data/feed.json
+node scripts/fetch-cdc.mjs       # regenerates data/cdc-feed.json
+node scripts/fetch-infogripe.mjs # regenerates data/br-feed.json
+python3 -m http.server           # or any static file server, then open index.html
 ```
 
 No dependencies for the fetch script — it uses Node's built-in `fetch`.
@@ -98,8 +112,6 @@ No dependencies for the fetch script — it uses Node's built-in `fetch`.
 
 ## Scope and honesty about what's *not* here yet
 
-ProMED-mail and CDC's Health Alert Network were original targets too, but:
-
 - **ProMED** requires login for everything now — even its search page
   redirects to an auth wall, with no anonymous access left at all. There's
   no ethical, unattended way to scrape it for a public open-source project
@@ -108,20 +120,47 @@ ProMED-mail and CDC's Health Alert Network were original targets too, but:
 - **CDC HAN**'s RSS endpoint is blocked at the edge (bot detection) for
   plain HTTP clients. Left as a `v2` item — may need a different endpoint
   or a browser-like fetch.
+- **A full Latin America layer (all countries, state/province-level) was
+  scoped and ruled out for now.** Unlike the US, there's no single regional
+  API as clean as CDC's:
+  - PAHO (WHO's regional office for the Americas) does publish
+    country-level dengue data for 46 countries/territories, with
+    subnational breakdown for a subset (Mexico, Bolivia, Costa Rica,
+    Ecuador, Honduras, Nicaragua, Panama, Venezuela) — but the backend
+    behind that subnational data (`www3.paho.org/data/...`) was returning
+    502s on every attempt during development, too unreliable to build an
+    automated pipeline on.
+  - Most countries' own systems aren't API-accessible at all: Brazil's
+    DATASUS/SINAN distributes state-level data as compressed binary
+    `.dbc` files (no REST API — parsing them needs Python tooling like
+    [PySUS](https://github.com/AlertaDengue/PySUS), a mismatch for this
+    repo's plain-Node pipeline); Mexico's is fragmented across multiple
+    dataset dumps with no unified API. Brazil's InfoGripe (above) was the
+    one exception found — a research group publishing clean CSVs directly,
+    which is why it's the only Latin American country covered so far.
 
-Contributions adding another source (ECDC, national health ministries) are
-welcome — keep the per-outbreak `{id, disease, first_seen, latest_update,
-update_count, countries, is_global, latest_counts, updates}` shape in
-`data/feed.json` so the frontend doesn't need to change per source.
+  Contributions covering more countries are welcome, but expect each one
+  to need its own investigation — there's no shortcut that covers the
+  whole region at once the way the WHO and CDC integrations did for their
+  scopes.
+
+Contributions adding another source (ECDC, additional national health
+ministries) are welcome — keep the per-outbreak `{id, disease, first_seen,
+latest_update, update_count, countries, is_global, latest_counts,
+updates}` shape in `data/feed.json` so the frontend doesn't need to change
+per source.
 
 ## Disclaimer
 
 WHO-side country tags and case/death counts are extracted automatically
 from report text and may be incomplete, delayed, or occasionally wrong.
-CDC-side numbers are structured data straight from NNDSS, but the most
-recent week is always provisional and revises upward as more reports come
-in — a blank state for a disease means "not notifiable there or data
-unavailable," not "zero cases." Either way, this aggregates and links to
-official sources; it does not replace them. For anything clinically or
-epidemiologically load-bearing, follow the outbound link and read the
-original report.
+CDC- and Brazil-side numbers are structured data straight from NNDSS and
+InfoGripe respectively, but the most recent week in both is always
+provisional and revises upward as more reports come in — a blank state
+for a disease in CDC mode means "not notifiable there or data
+unavailable," not "zero cases." Brazil's risk levels ("intensidade") are
+Fiocruz's own population-adjusted classification, not raw case counts,
+and cover SRAG only, not a general outbreak feed. Either way, this
+aggregates and links to official sources; it does not replace them. For
+anything clinically or epidemiologically load-bearing, follow the
+outbound link and read the original report.

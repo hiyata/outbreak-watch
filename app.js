@@ -13,20 +13,29 @@ const cdcSearchEl = document.getElementById("cdc-search");
 const cdcSortEl = document.getElementById("cdc-sort");
 const cdcMapWrap = document.getElementById("cdc-map-wrap");
 
+const brListEl = document.getElementById("br-list");
+const brSearchEl = document.getElementById("br-search");
+const brSortEl = document.getElementById("br-sort");
+const brMapWrap = document.getElementById("br-map-wrap");
+
 const tabWhoEl = document.getElementById("tab-who");
 const tabCdcEl = document.getElementById("tab-cdc");
+const tabBrEl = document.getElementById("tab-br");
 const mapTitleEl = document.getElementById("map-title");
 const legendWhoEl = document.getElementById("legend-who");
 const legendCdcEl = document.getElementById("legend-cdc");
+const legendBrEl = document.getElementById("legend-br");
 const controlsWhoEl = document.getElementById("controls-who");
 const controlsCdcEl = document.getElementById("controls-cdc");
+const controlsBrEl = document.getElementById("controls-br");
 const footerWhoEl = document.getElementById("footer-who");
 const footerCdcEl = document.getElementById("footer-cdc");
+const footerBrEl = document.getElementById("footer-br");
 
 const ACTIVE_WINDOW_DAYS = 365;
 const ACTIVE_CUTOFF = new Date(Date.now() - ACTIVE_WINDOW_DAYS * 24 * 60 * 60 * 1000).toISOString();
 
-let mode = "who"; // "who" | "cdc"
+let mode = "who"; // "who" | "cdc" | "br"
 
 let allOutbreaks = [];
 let lastSeen = localStorage.getItem(LAST_SEEN_KEY);
@@ -39,6 +48,19 @@ let allDiseases = [];
 let selectedDisease = null;
 let cdcSvgSelection = null;
 let whoGeneratedAt = null;
+
+let brFeed = null;
+let allBrStates = [];
+let selectedBrState = null;
+let brSvgSelection = null;
+
+const BR_INTENSITY_COLOR = {
+  Segurança: "#3f7a5c",
+  "Baixo risco": "#8bb08a",
+  Alerta: "#e0c34f",
+  Risco: "#e0883f",
+  "Alto risco": "#b8461f",
+};
 
 function fmtDate(iso) {
   if (!iso) return "";
@@ -434,32 +456,196 @@ async function initCdcMap() {
   paintCdcMap();
 }
 
+// ---------- Brazil (InfoGripe) mode ----------
+
+function fmtIncidence(cases, population) {
+  if (cases == null || !population) return null;
+  return (cases / population) * 100000;
+}
+
+function filteredBrStates() {
+  const query = brSearchEl.value.trim().toLowerCase();
+  let states = allBrStates.filter((s) => !query || s.name.toLowerCase().includes(query) || s.abbr.toLowerCase().includes(query));
+
+  const intensityRank = { "Alto risco": 4, Risco: 3, Alerta: 2, "Baixo risco": 1, Segurança: 0 };
+  const sort = brSortEl.value;
+  if (sort === "intensity") {
+    states = [...states].sort((a, b) => (intensityRank[b.intensity] ?? -1) - (intensityRank[a.intensity] ?? -1));
+  } else if (sort === "name") {
+    states = [...states].sort((a, b) => a.name.localeCompare(b.name));
+  } else {
+    states = [...states].sort((a, b) => (b.cases_reported ?? 0) - (a.cases_reported ?? 0));
+  }
+  return states;
+}
+
+function renderBrSidebar() {
+  const states = filteredBrStates();
+
+  if (states.length === 0) {
+    brListEl.innerHTML = '<p id="br-status">No matching states.</p>';
+    return;
+  }
+
+  brListEl.innerHTML = states
+    .map((s) => {
+      const isActive = s.id === selectedBrState;
+      return `
+        <button class="list-item${isActive ? " active" : ""}" data-id="${escapeHtml(s.id)}">
+          <div class="li-title">${escapeHtml(s.name)} (${escapeHtml(s.abbr)})</div>
+          <div class="li-meta">
+            <span>${escapeHtml(s.intensity ?? "No data")}</span>
+          </div>
+          <div class="li-meta">
+            <span class="li-counts">${s.cases_reported != null ? fmtNumber(s.cases_reported) + " cases" : "No data"}</span>
+            ${s.trend_short ? `<span>· ${escapeHtml(s.trend_short)}</span>` : ""}
+          </div>
+        </button>
+      `;
+    })
+    .join("");
+
+  brListEl.querySelectorAll(".list-item").forEach((btn) => {
+    btn.addEventListener("click", () => selectBrState(btn.dataset.id));
+  });
+}
+
+function renderBrDetail() {
+  const s = allBrStates.find((x) => x.id === selectedBrState);
+  if (!s) {
+    detailEl.innerHTML =
+      '<p style="color: var(--muted); font-size: 0.9rem;">Select a state on the left, or on the map, for its SRAG surveillance detail.</p>';
+    return;
+  }
+
+  const incidence = fmtIncidence(s.cases_reported, s.population);
+
+  detailEl.innerHTML = `
+    <div class="detail-head">
+      <h2>${escapeHtml(s.name)}</h2>
+      <div class="detail-tags">
+        <span class="tag">Epi. week ${brFeed.epidemiological_week}, ${brFeed.epidemiological_year}</span>
+        <span class="tag" style="border-color: ${BR_INTENSITY_COLOR[s.intensity] ?? "var(--border)"}">${escapeHtml(s.intensity ?? "No data")}</span>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="n">${s.cases_reported != null ? fmtNumber(s.cases_reported) : "—"}</div><div class="l">SRAG cases reported this week</div></div>
+      ${
+        s.cases_estimated != null
+          ? `<div class="stat"><div class="n">${fmtNumber(Math.round(s.cases_estimated))}</div><div class="l">nowcast estimate</div></div>`
+          : ""
+      }
+      ${incidence != null ? `<div class="stat"><div class="n">${incidence.toFixed(2)}</div><div class="l">per 100,000 population</div></div>` : ""}
+    </div>
+    <div class="stat-note">
+      Trend: ${escapeHtml(s.trend_short ?? "unknown")} (short-term), ${escapeHtml(s.trend_long ?? "unknown")} (long-term).
+      Source: InfoGripe (Fiocruz/FGV). Most recent week is provisional.
+    </div>
+  `;
+}
+
+function selectBrState(id) {
+  selectedBrState = id;
+  renderBrSidebar();
+  renderBrDetail();
+  paintBrMap();
+  detailEl.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function paintBrMap() {
+  if (!brSvgSelection) return;
+  const byState = new Map(allBrStates.map((s) => [s.id, s]));
+
+  brSvgSelection
+    .attr("fill", function () {
+      const id = this.getAttribute("data-id");
+      const s = byState.get(id);
+      return s?.intensity ? BR_INTENSITY_COLOR[s.intensity] ?? "var(--map-land)" : "var(--map-land)";
+    })
+    .classed("has-outbreak", function () {
+      return byState.has(this.getAttribute("data-id"));
+    })
+    .classed("selected", function () {
+      return this.getAttribute("data-id") === selectedBrState;
+    });
+}
+
+async function initBrMap() {
+  const geo = await d3.json("data/br-states-geo.json");
+
+  const width = brMapWrap.clientWidth || 640;
+  const height = width * 0.9;
+  const projection = d3.geoMercator().fitSize([width - 4, height - 4], geo);
+  const pathGenerator = d3.geoPath(projection);
+
+  const svg = d3
+    .select(brMapWrap)
+    .append("svg")
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .attr("preserveAspectRatio", "xMidYMid meet");
+
+  const byState = new Map(allBrStates.map((s) => [s.id, s]));
+
+  const paths = svg
+    .append("g")
+    .selectAll("path")
+    .data(geo.features)
+    .join("path")
+    .attr("class", "country-path")
+    .attr("data-id", (d) => String(d.properties.codarea).padStart(2, "0"))
+    .attr("d", pathGenerator)
+    .attr("fill", "var(--map-land)");
+
+  paths.append("title").text((d) => {
+    const s = byState.get(String(d.properties.codarea).padStart(2, "0"));
+    return s ? s.name : d.properties.codarea;
+  });
+  brSvgSelection = paths;
+
+  brSvgSelection.on("click", function (event, feature) {
+    const id = String(feature.properties.codarea).padStart(2, "0");
+    if (!byState.has(id)) return;
+    selectBrState(id);
+  });
+
+  paintBrMap();
+}
+
+const MAP_TITLES = {
+  who: "Active outbreaks by country",
+  cdc: "US notifiable diseases by state",
+  br: "Brazil SRAG risk level by state",
+};
+
 function switchMode(next) {
   if (mode === next) return;
   mode = next;
 
-  const isCdc = mode === "cdc";
-  tabWhoEl.classList.toggle("active", !isCdc);
-  tabCdcEl.classList.toggle("active", isCdc);
-  mapTitleEl.textContent = isCdc ? "US notifiable diseases by state" : "Active outbreaks by country";
-  whoMapWrap.style.display = isCdc ? "none" : "";
-  cdcMapWrap.style.display = isCdc ? "" : "none";
-  legendWhoEl.style.display = isCdc ? "none" : "";
-  legendCdcEl.style.display = isCdc ? "" : "none";
-  controlsWhoEl.style.display = isCdc ? "none" : "";
-  controlsCdcEl.style.display = isCdc ? "" : "none";
-  listEl.style.display = isCdc ? "none" : "";
-  cdcListEl.style.display = isCdc ? "" : "none";
-  footerWhoEl.style.display = isCdc ? "none" : "";
-  footerCdcEl.style.display = isCdc ? "" : "none";
+  tabWhoEl.classList.toggle("active", mode === "who");
+  tabCdcEl.classList.toggle("active", mode === "cdc");
+  tabBrEl.classList.toggle("active", mode === "br");
+  mapTitleEl.textContent = MAP_TITLES[mode];
 
-  if (isCdc) {
-    renderCdcDetail();
-    renderHeaderStats();
-  } else {
-    renderDetail();
-    renderHeaderStats();
-  }
+  whoMapWrap.style.display = mode === "who" ? "" : "none";
+  cdcMapWrap.style.display = mode === "cdc" ? "" : "none";
+  brMapWrap.style.display = mode === "br" ? "" : "none";
+  legendWhoEl.style.display = mode === "who" ? "" : "none";
+  legendCdcEl.style.display = mode === "cdc" ? "" : "none";
+  legendBrEl.style.display = mode === "br" ? "" : "none";
+  controlsWhoEl.style.display = mode === "who" ? "" : "none";
+  controlsCdcEl.style.display = mode === "cdc" ? "" : "none";
+  controlsBrEl.style.display = mode === "br" ? "" : "none";
+  listEl.style.display = mode === "who" ? "" : "none";
+  cdcListEl.style.display = mode === "cdc" ? "" : "none";
+  brListEl.style.display = mode === "br" ? "" : "none";
+  footerWhoEl.style.display = mode === "who" ? "" : "none";
+  footerCdcEl.style.display = mode === "cdc" ? "" : "none";
+  footerBrEl.style.display = mode === "br" ? "" : "none";
+
+  if (mode === "cdc") renderCdcDetail();
+  else if (mode === "br") renderBrDetail();
+  else renderDetail();
+  renderHeaderStats();
 }
 
 function renderHeaderStats() {
@@ -468,6 +654,12 @@ function renderHeaderStats() {
       <span><b>${cdcFeed.disease_count}</b> notifiable diseases active</span>
       <span>MMWR week ${cdcFeed.week}, ${cdcFeed.year}</span>
       <span>Updated ${fmtDate(cdcFeed.generated_at)}</span>
+    `;
+  } else if (mode === "br" && brFeed) {
+    headerStatsEl.innerHTML = `
+      <span><b>${allBrStates.length}</b> states tracked</span>
+      <span>Epi. week ${brFeed.epidemiological_week}, ${brFeed.epidemiological_year}</span>
+      <span>Updated ${fmtDate(brFeed.generated_at)}</span>
     `;
   } else if (mode === "who" && allOutbreaks.length) {
     const activeCount = allOutbreaks.filter((o) => o.latest_update >= ACTIVE_CUTOFF).length;
@@ -508,6 +700,17 @@ async function init() {
     cdcListEl.innerHTML = '<p id="cdc-status">Could not load CDC feed. Try again shortly.</p>';
     console.error(err);
   }
+
+  try {
+    const res = await fetch("data/br-feed.json", { cache: "no-store" });
+    brFeed = await res.json();
+    allBrStates = brFeed.states;
+    renderBrSidebar();
+    await initBrMap();
+  } catch (err) {
+    brListEl.innerHTML = '<p id="br-status">Could not load Brazil feed. Try again shortly.</p>';
+    console.error(err);
+  }
 }
 
 searchEl.addEventListener("input", () => {
@@ -527,7 +730,15 @@ cdcSortEl.addEventListener("change", () => {
   renderCdcSidebar();
 });
 
+brSearchEl.addEventListener("input", () => {
+  renderBrSidebar();
+});
+brSortEl.addEventListener("change", () => {
+  renderBrSidebar();
+});
+
 tabWhoEl.addEventListener("click", () => switchMode("who"));
 tabCdcEl.addEventListener("click", () => switchMode("cdc"));
+tabBrEl.addEventListener("click", () => switchMode("br"));
 
 init();

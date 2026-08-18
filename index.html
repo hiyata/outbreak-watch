@@ -219,11 +219,13 @@
         <span class="mode-tabs">
           <button class="mode-tab active" id="tab-who" type="button">World (WHO)</button>
           <button class="mode-tab" id="tab-cdc" type="button">United States (CDC)</button>
+          <button class="mode-tab" id="tab-br" type="button">Brazil (InfoGripe)</button>
         </span>
       </h2>
       <div id="map-container">
         <div id="who-map-wrap"></div>
         <div id="cdc-map-wrap" style="display:none"></div>
+        <div id="br-map-wrap" style="display:none"></div>
       </div>
       <div class="legend" id="legend-who">
         <span class="legend-swatch" style="background:var(--map-land)"></span> no report
@@ -233,6 +235,13 @@
       </div>
       <div class="legend" id="legend-cdc" style="display:none">
         Color intensity = share of that disease's national case total reported by each state. Select a disease to color the map.
+      </div>
+      <div class="legend" id="legend-br" style="display:none">
+        <span class="legend-swatch" style="background:#3f7a5c"></span> Segurança
+        <span class="legend-swatch" style="background:#8bb08a"></span> Baixo risco
+        <span class="legend-swatch" style="background:#e0c34f"></span> Alerta
+        <span class="legend-swatch" style="background:#e0883f"></span> Risco
+        <span class="legend-swatch" style="background:#b8461f"></span> Alto risco
       </div>
     </div>
 
@@ -258,11 +267,22 @@
           <option value="states">Most states reporting first</option>
         </select>
       </div>
+      <div class="sidebar-controls" id="controls-br" style="display:none">
+        <input type="search" id="br-search" placeholder="Search state…" />
+        <select id="br-sort">
+          <option value="cases">Most cases first</option>
+          <option value="intensity">Highest risk level first</option>
+          <option value="name">State name (A–Z)</option>
+        </select>
+      </div>
       <div class="outbreak-list" id="outbreak-list">
         <p id="status">Loading…</p>
       </div>
       <div class="outbreak-list" id="cdc-list" style="display:none">
         <p id="cdc-status">Loading…</p>
+      </div>
+      <div class="outbreak-list" id="br-list" style="display:none">
+        <p id="br-status">Loading…</p>
       </div>
     </div>
   </div>
@@ -283,6 +303,14 @@
     come in — figures for the most recent week are usually incomplete and will rise.
     A blank state for a given disease means it isn't nationally notifiable there or data
     was unavailable that week, not that it had zero cases.
+  </footer>
+  <footer id="footer-br" style="display:none">
+    Brazil state-level data covers Severe Acute Respiratory Syndrome (SRAG) only — the
+    condition InfoGripe tracks — not a general outbreak feed. Source: InfoGripe, a
+    partnership between Fiocruz (PROCC), FGV (EMAp), and Brazil's Ministry of Health,
+    published weekly. The most recent epidemiological week is provisional and will
+    revise as more reports arrive. Risk levels ("intensidade") are Fiocruz's own
+    population-adjusted classification, not raw case counts.
   </footer>
 </div>
 
