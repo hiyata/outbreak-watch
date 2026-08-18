@@ -6,6 +6,9 @@
 // API discovered from https://www.who.int/emergencies/disease-outbreak-news
 // (network request the page itself makes — no key required).
 
+import { matchCountries } from "./countries.mjs";
+import { extractCaseCounts } from "./extract-numbers.mjs";
+
 const PAGE_SIZE = 100; // WHO's API 400s above ~100
 const MAX_PAGES = 5; // 500 most recent DONs is plenty for this feed
 
@@ -47,12 +50,14 @@ async function fetchPage(skip) {
 function normalizeUpdate(row) {
   const title = row.UseOverrideTitle && row.OverrideTitle ? row.OverrideTitle : row.Title;
   const summarySource = row.Summary || row.Overview || row.Epidemiology || "";
+  const numberSource = stripHtml(`${row.Overview || ""} ${row.Summary || ""}`);
   return {
     id: row.Id,
     title: title ?? "(untitled)",
     url: `https://www.who.int${row.ItemDefaultUrl}`,
     date: row.PublicationDate,
     summary: truncate(stripHtml(summarySource)),
+    counts: extractCaseCounts(numberSource),
   };
 }
 
@@ -66,7 +71,8 @@ function groupIntoOutbreaks(rows) {
   for (const row of rows) {
     const event = row.EmergencyEvent;
     const key = event?.EventId ?? `standalone:${row.Id}`;
-    const disease = event?.Title ?? (row.UseOverrideTitle && row.OverrideTitle ? row.OverrideTitle : row.Title);
+    const title = row.UseOverrideTitle && row.OverrideTitle ? row.OverrideTitle : row.Title;
+    const disease = event?.Title ?? title;
 
     if (!groups.has(key)) {
       groups.set(key, {
@@ -74,19 +80,30 @@ function groupIntoOutbreaks(rows) {
         disease,
         first_seen: event?.EmergencyEventStartDate ?? row.PublicationDate,
         updates: [],
+        countries: new Map(),
+        isGlobal: false,
       });
     }
-    groups.get(key).updates.push(normalizeUpdate(row));
+    const group = groups.get(key);
+    group.updates.push(normalizeUpdate(row));
+
+    const { countries, isGlobal } = matchCountries(title);
+    for (const c of countries) group.countries.set(c.id, c);
+    if (isGlobal) group.isGlobal = true;
   }
 
   const outbreaks = [...groups.values()].map((g) => {
     const updates = g.updates.sort((a, b) => b.date.localeCompare(a.date));
+    const latestCounts = updates.find((u) => u.counts)?.counts ?? null;
     return {
       id: g.id,
       disease: g.disease,
       first_seen: g.first_seen,
       latest_update: updates[0].date,
       update_count: updates.length,
+      countries: [...g.countries.values()],
+      is_global: g.isGlobal,
+      latest_counts: latestCounts,
       updates,
     };
   });
