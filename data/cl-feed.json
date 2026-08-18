@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-08-18T05:48:41.655Z",
+  "source": "Chile DEIS/MINSAL — all-cause mortality (not disease-specific)",
+  "metric": "Weekly all-cause deaths by region",
+  "epidemiological_week": 31,
+  "epidemiological_year": 2026,
+  "baseline_week_count": 8,
+  "regions": [
+    {
+      "id": "de_antofagasta",
+      "name": "De Antofagasta",
+      "population": 725843,
+      "latest_deaths": 67,
+      "baseline_avg_deaths": 67.125,
+      "pct_vs_baseline": -0.186219739292365
+    },
+    {
+      "id": "de_los_lagos",
+      "name": "De Los Lagos",
+      "population": 921079,
+      "latest_deaths": 118,
+      "baseline_avg_deaths": 126.125,
+      "pct_vs_baseline": -6.442021803766106
+    },
+    {
+      "id": "del_biobio",
+      "name": "Del Bíobío",
+      "population": 1694602,
+      "latest_deaths": 224,
+      "baseline_avg_deaths": 244,
+      "pct_vs_baseline": -8.19672131147541
+    },
+    {
+      "id": "de_aisen_del_gral_c_ibanez_del_campo",
+      "name": "De Aisén del Gral. C. Ibáñez del Campo",
+      "population": 108920,
+      "latest_deaths": 12,
+      "baseline_avg_deaths": 13.125,
+      "pct_vs_baseline": -8.571428571428571
+    },
+    {
+      "id": "de_magallanes_y_de_la_antartica_chilena",
+      "name": "De Magallanes y de La Antártica Chilena",
+      "population": 185163,
+      "latest_deaths": 21,
+      "baseline_avg_deaths": 24.375,
+      "pct_vs_baseline": -13.846153846153847
+    },
+    {
+      "id": "de_atacama",
+      "name": "De Atacama",
+      "population": 321644,
+      "latest_deaths": 33,
+      "baseline_avg_deaths": 38.5,
+      "pct_vs_baseline": -14.285714285714285
+    },
+    {
+      "id": "de_arica_y_parinacota",
+      "name": "De Arica y Parinacota",
+      "population": 265533,
+      "latest_deaths": 30,
+      "baseline_avg_deaths": 35.375,
+      "pct_vs_baseline": -15.19434628975265
+    },
+    {
+      "id": "metropolitana_de_santiago",
+      "name": "Metropolitana de Santiago",
+      "population": 8519527,
+      "latest_deaths": 882,
+      "baseline_avg_deaths": 1048,
+      "pct_vs_baseline": -15.839694656488549
+    },
+    {
+      "id": "de_valparaiso",
+      "name": "De Valparaíso",
+      "population": 2054246,
+      "latest_deaths": 272,
+      "baseline_avg_deaths": 333,
+      "pct_vs_baseline": -18.31831831831832
+    },
+    {
+      "id": "del_maule",
+      "name": "Del Maule",
+      "population": 1189907,
+      "latest_deaths": 136,
+      "baseline_avg_deaths": 168.625,
+      "pct_vs_baseline": -19.347664936990363
+    },
+    {
+      "id": "de_los_rios",
+      "name": "De Los Ríos",
+      "population": 415720,
+      "latest_deaths": 54,
+      "baseline_avg_deaths": 67.875,
+      "pct_vs_baseline": -20.441988950276244
+    },
+    {
+      "id": "de_nuble",
+      "name": "De Ñuble",
+      "population": 525925,
+      "latest_deaths": 68,
+      "baseline_avg_deaths": 86.875,
+      "pct_vs_baseline": -21.72661870503597
+    },
+    {
+      "id": "de_coquimbo",
+      "name": "De Coquimbo",
+      "population": 899128,
+      "latest_deaths": 96,
+      "baseline_avg_deaths": 125,
+      "pct_vs_baseline": -23.200000000000003
+    },
+    {
+      "id": "de_la_araucania",
+      "name": "De La Araucanía",
+      "population": 1039468,
+      "latest_deaths": 126,
+      "baseline_avg_deaths": 165.875,
+      "pct_vs_baseline": -24.039186134137154
+    },
+    {
+      "id": "del_libertador_b_o_higgins",
+      "name": "Del Libertador B. O'Higgins",
+      "population": 1040655,
+      "latest_deaths": 103,
+      "baseline_avg_deaths": 144.625,
+      "pct_vs_baseline": -28.78133102852204
+    },
+    {
+      "id": "de_tarapaca",
+      "name": "De Tarapacá",
+      "population": 415447,
+      "latest_deaths": 20,
+      "baseline_avg_deaths": 31.625,
+      "pct_vs_baseline": -36.75889328063241
+    }
+  ]
+}

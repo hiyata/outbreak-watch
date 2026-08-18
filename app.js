@@ -18,24 +18,33 @@ const brSearchEl = document.getElementById("br-search");
 const brSortEl = document.getElementById("br-sort");
 const brMapWrap = document.getElementById("br-map-wrap");
 
+const clListEl = document.getElementById("cl-list");
+const clSearchEl = document.getElementById("cl-search");
+const clSortEl = document.getElementById("cl-sort");
+const clMapWrap = document.getElementById("cl-map-wrap");
+
 const tabWhoEl = document.getElementById("tab-who");
 const tabCdcEl = document.getElementById("tab-cdc");
 const tabBrEl = document.getElementById("tab-br");
+const tabClEl = document.getElementById("tab-cl");
 const mapTitleEl = document.getElementById("map-title");
 const legendWhoEl = document.getElementById("legend-who");
 const legendCdcEl = document.getElementById("legend-cdc");
 const legendBrEl = document.getElementById("legend-br");
+const legendClEl = document.getElementById("legend-cl");
 const controlsWhoEl = document.getElementById("controls-who");
 const controlsCdcEl = document.getElementById("controls-cdc");
 const controlsBrEl = document.getElementById("controls-br");
+const controlsClEl = document.getElementById("controls-cl");
 const footerWhoEl = document.getElementById("footer-who");
 const footerCdcEl = document.getElementById("footer-cdc");
 const footerBrEl = document.getElementById("footer-br");
+const footerClEl = document.getElementById("footer-cl");
 
 const ACTIVE_WINDOW_DAYS = 365;
 const ACTIVE_CUTOFF = new Date(Date.now() - ACTIVE_WINDOW_DAYS * 24 * 60 * 60 * 1000).toISOString();
 
-let mode = "who"; // "who" | "cdc" | "br"
+let mode = "who"; // "who" | "cdc" | "br" | "cl"
 
 let allOutbreaks = [];
 let lastSeen = localStorage.getItem(LAST_SEEN_KEY);
@@ -61,6 +70,11 @@ const BR_INTENSITY_COLOR = {
   Risco: "#e0883f",
   "Alto risco": "#b8461f",
 };
+
+let clFeed = null;
+let allClRegions = [];
+let selectedClRegion = null;
+let clSvgSelection = null;
 
 function fmtDate(iso) {
   if (!iso) return "";
@@ -615,7 +629,165 @@ const MAP_TITLES = {
   who: "Active outbreaks by country",
   cdc: "US notifiable diseases by state",
   br: "Brazil SRAG risk level by state",
+  cl: "Chile all-cause mortality by region",
 };
+
+// ---------- Chile (DEIS) mode ----------
+
+function filteredClRegions() {
+  const query = clSearchEl.value.trim().toLowerCase();
+  let regions = allClRegions.filter((r) => !query || r.name.toLowerCase().includes(query));
+
+  const sort = clSortEl.value;
+  if (sort === "deaths") {
+    regions = [...regions].sort((a, b) => b.latest_deaths - a.latest_deaths);
+  } else if (sort === "name") {
+    regions = [...regions].sort((a, b) => a.name.localeCompare(b.name));
+  } else {
+    regions = [...regions].sort((a, b) => (b.pct_vs_baseline ?? -Infinity) - (a.pct_vs_baseline ?? -Infinity));
+  }
+  return regions;
+}
+
+function clColor(pct) {
+  if (pct == null) return "var(--map-land)";
+  const scale = d3.scaleDiverging(d3.interpolateRdBu).domain([40, 0, -40]);
+  return scale(pct);
+}
+
+function renderClSidebar() {
+  const regions = filteredClRegions();
+
+  if (regions.length === 0) {
+    clListEl.innerHTML = '<p id="cl-status">No matching regions.</p>';
+    return;
+  }
+
+  clListEl.innerHTML = regions
+    .map((r) => {
+      const isActive = r.id === selectedClRegion;
+      const pctLabel = r.pct_vs_baseline != null ? `${r.pct_vs_baseline > 0 ? "+" : ""}${r.pct_vs_baseline.toFixed(1)}% vs baseline` : "";
+      return `
+        <button class="list-item${isActive ? " active" : ""}" data-id="${escapeHtml(r.id)}">
+          <div class="li-title">${escapeHtml(r.name)}</div>
+          <div class="li-meta">
+            <span class="li-counts">${fmtNumber(r.latest_deaths)} deaths this week</span>
+            ${pctLabel ? `<span>· ${pctLabel}</span>` : ""}
+          </div>
+        </button>
+      `;
+    })
+    .join("");
+
+  clListEl.querySelectorAll(".list-item").forEach((btn) => {
+    btn.addEventListener("click", () => selectClRegion(btn.dataset.id));
+  });
+}
+
+function renderClDetail() {
+  const r = allClRegions.find((x) => x.id === selectedClRegion);
+  if (!r) {
+    detailEl.innerHTML =
+      '<p style="color: var(--muted); font-size: 0.9rem;">Select a region on the left, or on the map, for its mortality detail.</p>';
+    return;
+  }
+
+  const incidence = fmtIncidence(r.latest_deaths, r.population);
+
+  detailEl.innerHTML = `
+    <div class="detail-head">
+      <h2>${escapeHtml(r.name)}</h2>
+      <div class="detail-tags">
+        <span class="tag">Epi. week ${clFeed.epidemiological_week}, ${clFeed.epidemiological_year}</span>
+        <span class="tag">All-cause mortality</span>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="n">${fmtNumber(r.latest_deaths)}</div><div class="l">deaths this week</div></div>
+      ${
+        r.baseline_avg_deaths != null
+          ? `<div class="stat"><div class="n">${r.baseline_avg_deaths.toFixed(0)}</div><div class="l">${clFeed.baseline_week_count}-week baseline avg</div></div>`
+          : ""
+      }
+      ${incidence != null ? `<div class="stat"><div class="n">${incidence.toFixed(1)}</div><div class="l">per 100,000 population</div></div>` : ""}
+    </div>
+    <div class="stat-note">
+      <strong>All-cause mortality, not disease-specific.</strong> The most recent week's
+      count is almost always an undercount (deaths take time to register), so this
+      region's ${r.pct_vs_baseline != null ? `${r.pct_vs_baseline.toFixed(1)}% vs. baseline` : "comparison"}
+      figure should be read as provisional, not a confirmed trend. Source: DEIS/MINSAL.
+    </div>
+  `;
+}
+
+function selectClRegion(id) {
+  selectedClRegion = id;
+  renderClSidebar();
+  renderClDetail();
+  paintClMap();
+  detailEl.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function paintClMap() {
+  if (!clSvgSelection) return;
+  const byRegion = new Map(allClRegions.map((r) => [r.id, r]));
+
+  clSvgSelection
+    .attr("fill", function () {
+      const id = this.getAttribute("data-id");
+      const r = byRegion.get(id);
+      return r ? clColor(r.pct_vs_baseline) : "var(--map-land)";
+    })
+    .classed("has-outbreak", function () {
+      return byRegion.has(this.getAttribute("data-id"));
+    })
+    .classed("selected", function () {
+      return this.getAttribute("data-id") === selectedClRegion;
+    });
+}
+
+async function initClMap() {
+  const topo = await d3.json("data/cl-regions-topo.json");
+  const objectName = Object.keys(topo.objects)[0];
+  const geo = topojson.feature(topo, topo.objects[objectName]);
+
+  const width = clMapWrap.clientWidth || 640;
+  const height = width * 1.35;
+  const projection = d3.geoMercator().fitSize([width - 4, height - 4], geo);
+  const pathGenerator = d3.geoPath(projection);
+
+  const svg = d3
+    .select(clMapWrap)
+    .append("svg")
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .attr("preserveAspectRatio", "xMidYMid meet");
+
+  const byRegion = new Map(allClRegions.map((r) => [r.id, r]));
+
+  const paths = svg
+    .append("g")
+    .selectAll("path")
+    .data(geo.features)
+    .join("path")
+    .attr("class", "country-path")
+    .attr("data-id", (d) => d.properties.region_key)
+    .attr("d", pathGenerator)
+    .attr("fill", "var(--map-land)");
+
+  paths.append("title").text((d) => {
+    const r = byRegion.get(d.properties.region_key);
+    return r ? r.name : d.properties.display_name;
+  });
+  clSvgSelection = paths;
+
+  clSvgSelection.on("click", function (event, feature) {
+    const id = feature.properties.region_key;
+    if (!byRegion.has(id)) return;
+    selectClRegion(id);
+  });
+
+  paintClMap();
+}
 
 function switchMode(next) {
   if (mode === next) return;
@@ -624,26 +796,33 @@ function switchMode(next) {
   tabWhoEl.classList.toggle("active", mode === "who");
   tabCdcEl.classList.toggle("active", mode === "cdc");
   tabBrEl.classList.toggle("active", mode === "br");
+  tabClEl.classList.toggle("active", mode === "cl");
   mapTitleEl.textContent = MAP_TITLES[mode];
 
   whoMapWrap.style.display = mode === "who" ? "" : "none";
   cdcMapWrap.style.display = mode === "cdc" ? "" : "none";
   brMapWrap.style.display = mode === "br" ? "" : "none";
+  clMapWrap.style.display = mode === "cl" ? "" : "none";
   legendWhoEl.style.display = mode === "who" ? "" : "none";
   legendCdcEl.style.display = mode === "cdc" ? "" : "none";
   legendBrEl.style.display = mode === "br" ? "" : "none";
+  legendClEl.style.display = mode === "cl" ? "" : "none";
   controlsWhoEl.style.display = mode === "who" ? "" : "none";
   controlsCdcEl.style.display = mode === "cdc" ? "" : "none";
   controlsBrEl.style.display = mode === "br" ? "" : "none";
+  controlsClEl.style.display = mode === "cl" ? "" : "none";
   listEl.style.display = mode === "who" ? "" : "none";
   cdcListEl.style.display = mode === "cdc" ? "" : "none";
   brListEl.style.display = mode === "br" ? "" : "none";
+  clListEl.style.display = mode === "cl" ? "" : "none";
   footerWhoEl.style.display = mode === "who" ? "" : "none";
   footerCdcEl.style.display = mode === "cdc" ? "" : "none";
   footerBrEl.style.display = mode === "br" ? "" : "none";
+  footerClEl.style.display = mode === "cl" ? "" : "none";
 
   if (mode === "cdc") renderCdcDetail();
   else if (mode === "br") renderBrDetail();
+  else if (mode === "cl") renderClDetail();
   else renderDetail();
   renderHeaderStats();
 }
@@ -660,6 +839,12 @@ function renderHeaderStats() {
       <span><b>${allBrStates.length}</b> states tracked</span>
       <span>Epi. week ${brFeed.epidemiological_week}, ${brFeed.epidemiological_year}</span>
       <span>Updated ${fmtDate(brFeed.generated_at)}</span>
+    `;
+  } else if (mode === "cl" && clFeed) {
+    headerStatsEl.innerHTML = `
+      <span><b>${allClRegions.length}</b> regions tracked</span>
+      <span>Epi. week ${clFeed.epidemiological_week}, ${clFeed.epidemiological_year}</span>
+      <span>Updated ${fmtDate(clFeed.generated_at)}</span>
     `;
   } else if (mode === "who" && allOutbreaks.length) {
     const activeCount = allOutbreaks.filter((o) => o.latest_update >= ACTIVE_CUTOFF).length;
@@ -711,6 +896,17 @@ async function init() {
     brListEl.innerHTML = '<p id="br-status">Could not load Brazil feed. Try again shortly.</p>';
     console.error(err);
   }
+
+  try {
+    const res = await fetch("data/cl-feed.json", { cache: "no-store" });
+    clFeed = await res.json();
+    allClRegions = clFeed.regions;
+    renderClSidebar();
+    await initClMap();
+  } catch (err) {
+    clListEl.innerHTML = '<p id="cl-status">Could not load Chile feed. Try again shortly.</p>';
+    console.error(err);
+  }
 }
 
 searchEl.addEventListener("input", () => {
@@ -737,8 +933,16 @@ brSortEl.addEventListener("change", () => {
   renderBrSidebar();
 });
 
+clSearchEl.addEventListener("input", () => {
+  renderClSidebar();
+});
+clSortEl.addEventListener("change", () => {
+  renderClSidebar();
+});
+
 tabWhoEl.addEventListener("click", () => switchMode("who"));
 tabCdcEl.addEventListener("click", () => switchMode("cdc"));
 tabBrEl.addEventListener("click", () => switchMode("br"));
+tabClEl.addEventListener("click", () => switchMode("cl"));
 
 init();

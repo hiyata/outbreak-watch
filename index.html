@@ -220,12 +220,14 @@
           <button class="mode-tab active" id="tab-who" type="button">World (WHO)</button>
           <button class="mode-tab" id="tab-cdc" type="button">United States (CDC)</button>
           <button class="mode-tab" id="tab-br" type="button">Brazil (InfoGripe)</button>
+          <button class="mode-tab" id="tab-cl" type="button">Chile (DEIS)</button>
         </span>
       </h2>
       <div id="map-container">
         <div id="who-map-wrap"></div>
         <div id="cdc-map-wrap" style="display:none"></div>
         <div id="br-map-wrap" style="display:none"></div>
+        <div id="cl-map-wrap" style="display:none"></div>
       </div>
       <div class="legend" id="legend-who">
         <span class="legend-swatch" style="background:var(--map-land)"></span> no report
@@ -242,6 +244,9 @@
         <span class="legend-swatch" style="background:#e0c34f"></span> Alerta
         <span class="legend-swatch" style="background:#e0883f"></span> Risco
         <span class="legend-swatch" style="background:#b8461f"></span> Alto risco
+      </div>
+      <div class="legend" id="legend-cl" style="display:none">
+        Color = weekly all-cause deaths vs. that region's own recent 8-week average. Blue = below baseline, red = above. Not disease-specific — see note below.
       </div>
     </div>
 
@@ -281,8 +286,19 @@
       <div class="outbreak-list" id="cdc-list" style="display:none">
         <p id="cdc-status">Loading…</p>
       </div>
+      <div class="sidebar-controls" id="controls-cl" style="display:none">
+        <input type="search" id="cl-search" placeholder="Search region…" />
+        <select id="cl-sort">
+          <option value="pct">Most above baseline first</option>
+          <option value="deaths">Most deaths first</option>
+          <option value="name">Region name (A–Z)</option>
+        </select>
+      </div>
       <div class="outbreak-list" id="br-list" style="display:none">
         <p id="br-status">Loading…</p>
+      </div>
+      <div class="outbreak-list" id="cl-list" style="display:none">
+        <p id="cl-status">Loading…</p>
       </div>
     </div>
   </div>
@@ -311,6 +327,15 @@
     published weekly. The most recent epidemiological week is provisional and will
     revise as more reports arrive. Risk levels ("intensidade") are Fiocruz's own
     population-adjusted classification, not raw case counts.
+  </footer>
+  <footer id="footer-cl" style="display:none">
+    <strong>This mode shows all-cause mortality, not a specific disease</strong> — it was
+    the only Latin American national dataset found (beyond Brazil) that was both
+    structured and genuinely current; Chile's actual notifiable-disease surveillance
+    (ENO) is roughly a year stale due to anonymization review. Source: DEIS/MINSAL
+    (Chile's Ministry of Health), weekly. The most recent week's death count is almost
+    always an undercount — deaths take time to register — so the "vs. baseline" percentage
+    for the latest week is not a reliable trend signal; treat it as provisional.
   </footer>
 </div>
 
