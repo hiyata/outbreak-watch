@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-08-19T19:50:49Z",
+  "checked_at": "2026-08-19T20:01:33Z",
   "sources": [
     {"id": "who", "label": "World (WHO)", "outcome": "success"},
     {"id": "cdc", "label": "United States (CDC)", "outcome": "success"},
     {"id": "br", "label": "Brazil (InfoGripe)", "outcome": "success"},
     {"id": "cl", "label": "Chile (DEIS)", "outcome": "success"},
     {"id": "uk", "label": "England (UKHSA)", "outcome": "success"},
-    {"id": "jp", "label": "Japan (JIHS)", "outcome": "failure"}
+    {"id": "jp", "label": "Japan (JIHS)", "outcome": "success"}
   ]
 }
