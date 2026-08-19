@@ -295,6 +295,7 @@
           <button class="mode-tab" id="tab-br" type="button">Brazil (InfoGripe)</button>
           <button class="mode-tab" id="tab-cl" type="button">Chile (DEIS)</button>
           <button class="mode-tab" id="tab-uk" type="button">England (UKHSA)</button>
+          <button class="mode-tab" id="tab-jp" type="button">Japan (JIHS)</button>
         </span>
       </h2>
       <div id="map-container">
@@ -303,6 +304,7 @@
         <div id="br-map-wrap" style="display:none"></div>
         <div id="cl-map-wrap" style="display:none"></div>
         <div id="uk-map-wrap" style="display:none"></div>
+        <div id="jp-map-wrap" style="display:none"></div>
       </div>
       <div class="legend" id="legend-who">
         <span class="legend-swatch" style="background:var(--map-land)"></span> no report
@@ -325,6 +327,9 @@
       </div>
       <div class="legend" id="legend-uk" style="display:none">
         Color intensity = value relative to that indicator's highest region this week. Select a disease to color the map.
+      </div>
+      <div class="legend" id="legend-jp" style="display:none">
+        Color intensity = case count relative to that disease's highest-reporting prefecture this week. Select a disease to color the map.
       </div>
     </div>
 
@@ -380,6 +385,14 @@
           <option value="name">Disease name (A–Z)</option>
         </select>
       </div>
+      <div class="sidebar-controls" id="controls-jp" style="display:none">
+        <input type="search" id="jp-search" placeholder="Search disease…" />
+        <select id="jp-sort">
+          <option value="value">Highest case count first</option>
+          <option value="trend">Rising fastest first</option>
+          <option value="name">Disease name (A–Z)</option>
+        </select>
+      </div>
       <div class="outbreak-list" id="br-list" style="display:none">
         <p id="br-status">Loading…</p>
       </div>
@@ -388,6 +401,9 @@
       </div>
       <div class="outbreak-list" id="uk-list" style="display:none">
         <p id="uk-status">Loading…</p>
+      </div>
+      <div class="outbreak-list" id="jp-list" style="display:none">
+        <p id="jp-status">Loading…</p>
       </div>
     </div>
   </div>
@@ -433,6 +449,15 @@
     most recent data (test positivity, case counts, syndromic rates — the unit varies by
     disease, shown alongside each figure); a disease with no indicator updated in the last
     90 days is left out entirely rather than shown with stale numbers.
+  </footer>
+  <footer id="footer-jp" style="display:none">
+    Source: JIHS (Japan Institute for Health Security, formerly NIID), weekly IDWR
+    provisional data across all 47 prefectures. Two kinds of diseases are mixed together
+    here: "sentinel" diseases (common illnesses like flu, RSV, hand-foot-mouth disease)
+    are counts from a fixed network of reporting clinics, not a national total — real
+    case counts are higher. "All-case" diseases (measles, TB, syphilis, dengue, and other
+    nationally notifiable conditions) are comprehensive counts. Figures are provisional
+    and may be revised in JIHS's later confirmed annual reports.
   </footer>
 </div>
 

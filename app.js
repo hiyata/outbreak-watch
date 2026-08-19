@@ -28,32 +28,41 @@ const ukSearchEl = document.getElementById("uk-search");
 const ukSortEl = document.getElementById("uk-sort");
 const ukMapWrap = document.getElementById("uk-map-wrap");
 
+const jpListEl = document.getElementById("jp-list");
+const jpSearchEl = document.getElementById("jp-search");
+const jpSortEl = document.getElementById("jp-sort");
+const jpMapWrap = document.getElementById("jp-map-wrap");
+
 const tabWhoEl = document.getElementById("tab-who");
 const tabCdcEl = document.getElementById("tab-cdc");
 const tabBrEl = document.getElementById("tab-br");
 const tabClEl = document.getElementById("tab-cl");
 const tabUkEl = document.getElementById("tab-uk");
+const tabJpEl = document.getElementById("tab-jp");
 const mapTitleEl = document.getElementById("map-title");
 const legendWhoEl = document.getElementById("legend-who");
 const legendCdcEl = document.getElementById("legend-cdc");
 const legendBrEl = document.getElementById("legend-br");
 const legendClEl = document.getElementById("legend-cl");
 const legendUkEl = document.getElementById("legend-uk");
+const legendJpEl = document.getElementById("legend-jp");
 const controlsWhoEl = document.getElementById("controls-who");
 const controlsCdcEl = document.getElementById("controls-cdc");
 const controlsBrEl = document.getElementById("controls-br");
 const controlsClEl = document.getElementById("controls-cl");
 const controlsUkEl = document.getElementById("controls-uk");
+const controlsJpEl = document.getElementById("controls-jp");
 const footerWhoEl = document.getElementById("footer-who");
 const footerCdcEl = document.getElementById("footer-cdc");
 const footerBrEl = document.getElementById("footer-br");
 const footerClEl = document.getElementById("footer-cl");
 const footerUkEl = document.getElementById("footer-uk");
+const footerJpEl = document.getElementById("footer-jp");
 
 const ACTIVE_WINDOW_DAYS = 365;
 const ACTIVE_CUTOFF = new Date(Date.now() - ACTIVE_WINDOW_DAYS * 24 * 60 * 60 * 1000).toISOString();
 
-let mode = "who"; // "who" | "cdc" | "br" | "cl" | "uk"
+let mode = "who"; // "who" | "cdc" | "br" | "cl" | "uk" | "jp"
 
 let allOutbreaks = [];
 let lastSeen = localStorage.getItem(LAST_SEEN_KEY);
@@ -89,6 +98,11 @@ let ukFeed = null;
 let allUkDiseases = [];
 let selectedUkDisease = null;
 let ukSvgSelection = null;
+
+let jpFeed = null;
+let allJpDiseases = [];
+let selectedJpDisease = null;
+let jpSvgSelection = null;
 
 function fmtDate(iso) {
   if (!iso) return "";
@@ -350,6 +364,7 @@ const CROSS_LINK_SOURCES = [
   { mode: "br", label: "Brazil (InfoGripe)", country: "Brazil" },
   { mode: "uk", label: "England (UKHSA)", country: "United Kingdom" },
   { mode: "cl", label: "Chile (DEIS)", country: "Chile" },
+  { mode: "jp", label: "Japan (JIHS)", country: "Japan" },
 ];
 
 // Returns [{mode, label, matchLabel}] — local-source cross-links relevant
@@ -377,6 +392,10 @@ function findCrossLinks(ob) {
     if (src.mode === "uk" && allUkDiseases.length) {
       const match = allUkDiseases.find((d) => diseaseKeywordMatch(ob.disease, d.topic));
       if (match) links.push({ ...src, matchLabel: match.topic, target: match.topic });
+    }
+    if (src.mode === "jp" && allJpDiseases.length) {
+      const match = allJpDiseases.find((d) => diseaseKeywordMatch(ob.disease, d.disease));
+      if (match) links.push({ ...src, matchLabel: match.disease, target: match.disease });
     }
   }
   return links;
@@ -452,6 +471,7 @@ function bindCrossLinkClicks() {
       switchMode(targetMode);
       if (targetMode === "cdc" && target) selectDisease(target);
       else if (targetMode === "uk" && target) selectUkDisease(target);
+      else if (targetMode === "jp" && target) selectJpDisease(target);
       else if (targetMode === "who" && target) selectOutbreak(target);
     });
   });
@@ -881,6 +901,7 @@ const MAP_TITLES = {
   br: "Brazil SRAG risk level by state",
   cl: "Chile all-cause mortality by region",
   uk: "England notifiable diseases by region",
+  jp: "Japan notifiable diseases by prefecture",
 };
 
 // ---------- Chile (DEIS) mode ----------
@@ -1252,6 +1273,197 @@ async function initUkMap() {
   paintUkMap();
 }
 
+// ---------- Japan (JIHS) mode ----------
+
+let jpPrefNames = new Map(); // pref_id ("01".."47") -> display name, populated when the map loads
+
+function jpPrefName(id) {
+  return jpPrefNames.get(id) ?? `Prefecture ${id}`;
+}
+
+function jpTrendPct(d) {
+  const series = d.national_series;
+  if (!series || series.length < 2) return 0;
+  const now = series[series.length - 1].value ?? 0;
+  const before = series[0].value;
+  if (!before) return now > 0 ? Infinity : 0;
+  return ((now - before) / before) * 100;
+}
+
+function filteredJpDiseases() {
+  const query = jpSearchEl.value.trim().toLowerCase();
+  let diseases = allJpDiseases.filter((d) => !query || d.disease.toLowerCase().includes(query));
+
+  const sort = jpSortEl.value;
+  if (sort === "trend") {
+    diseases = [...diseases].sort((a, b) => jpTrendPct(b) - jpTrendPct(a));
+  } else if (sort === "name") {
+    diseases = [...diseases].sort((a, b) => a.disease.localeCompare(b.disease));
+  } else {
+    diseases = [...diseases].sort((a, b) => (b.latest_total ?? 0) - (a.latest_total ?? 0));
+  }
+  return diseases;
+}
+
+function renderJpSidebar() {
+  const diseases = filteredJpDiseases();
+
+  if (diseases.length === 0) {
+    jpListEl.innerHTML = '<p id="jp-status">No matching diseases.</p>';
+    return;
+  }
+
+  jpListEl.innerHTML = diseases
+    .map((d) => {
+      const isActive = d.disease === selectedJpDisease;
+      const trend = jpTrendPct(d);
+      const trendLabel = Number.isFinite(trend) ? `${trend > 0 ? "+" : ""}${trend.toFixed(0)}% vs 12wk ago` : "new activity";
+      return `
+        <button class="list-item${isActive ? " active" : ""}" data-disease="${escapeHtml(d.disease)}">
+          <div class="li-title">${escapeHtml(d.disease)}</div>
+          <div class="li-meta"><span>${d.category === "sentinel" ? "sentinel-site count" : "all-case reporting"}</span></div>
+          <div class="li-meta">
+            <span class="li-counts">${fmtNumber(d.latest_total)}</span>
+            <span>· ${trendLabel}</span>
+          </div>
+        </button>
+      `;
+    })
+    .join("");
+
+  jpListEl.querySelectorAll(".list-item").forEach((btn) => {
+    btn.addEventListener("click", () => selectJpDisease(btn.dataset.disease));
+  });
+}
+
+function renderJpDetail() {
+  const d = allJpDiseases.find((x) => x.disease === selectedJpDisease);
+  if (!d) {
+    detailEl.innerHTML =
+      '<p style="color: var(--muted); font-size: 0.9rem;">Select a disease on the left, or a prefecture on the map, for its prefecture-by-prefecture breakdown.</p>';
+    return;
+  }
+
+  const rowsHtml = [...d.prefectures]
+    .sort((a, b) => (b.current_week ?? 0) - (a.current_week ?? 0))
+    .slice(0, 25)
+    .map(
+      (p) => `
+        <tr>
+          <td>${escapeHtml(jpPrefName(p.id))}</td>
+          <td class="num">${p.current_week != null ? fmtNumber(p.current_week) : "—"}</td>
+        </tr>
+      `
+    )
+    .join("");
+
+  const chartHtml = d.national_series && d.national_series.filter((p) => p.value !== null).length >= 2
+    ? `
+      <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">National weekly trend</h3>
+      <div class="chart-box">${sparklineSvg(
+        d.national_series.map((p) => p.value),
+        { labels: [`wk ${d.national_series[0].week}`, `wk ${d.national_series[d.national_series.length - 1].week}`] }
+      )}</div>
+    `
+    : "";
+
+  detailEl.innerHTML = `
+    <div class="detail-head">
+      <h2>${escapeHtml(d.disease)}</h2>
+      <div class="detail-tags">
+        <span class="tag">${d.category === "sentinel" ? "Sentinel-site surveillance" : "All-case reporting"}</span>
+        <span class="tag">week ${d.latest_week}, ${jpFeed.year}</span>
+        <span class="tag">${d.prefectures_reporting} of 47 prefectures with cases</span>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="n">${fmtNumber(d.latest_total)}</div><div class="l">${d.category === "sentinel" ? "cases (sentinel sites)" : "cases (all-case reporting)"}</div></div>
+    </div>
+    <div class="stat-note">
+      ${
+        d.category === "sentinel"
+          ? "Sentinel-site count: reported from a fixed network of clinics, not a national total — actual case counts nationwide are higher. Useful for tracking trend direction, not absolute burden."
+          : "All-case (mandatory) reporting: this is a comprehensive national count, not sampled."
+      }
+      Source: JIHS IDWR, provisional and subject to revision.
+    </div>
+    ${chartHtml}
+    ${findWhoLinkBack(d.disease, "Japan")}
+    <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.6rem;">By prefecture${d.prefectures.length > 25 ? ` (top 25 of ${d.prefectures.length})` : ""}</h3>
+    <table class="state-table">
+      <thead><tr><th>Prefecture</th><th class="num">This week</th></tr></thead>
+      <tbody>${rowsHtml}</tbody>
+    </table>
+  `;
+  bindCrossLinkClicks();
+}
+
+function selectJpDisease(disease) {
+  selectedJpDisease = disease;
+  renderJpSidebar();
+  renderJpDetail();
+  paintJpMap();
+  detailEl.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function paintJpMap() {
+  if (!jpSvgSelection) return;
+  const d = allJpDiseases.find((x) => x.disease === selectedJpDisease);
+  const byPref = new Map((d?.prefectures ?? []).map((p) => [p.id, p.current_week ?? 0]));
+  const max = Math.max(1, ...[...byPref.values()]);
+  const scale = d3.scaleSequential(d3.interpolateOranges).domain([0, max]);
+
+  jpSvgSelection
+    .attr("fill", function () {
+      const id = this.getAttribute("data-id");
+      if (!d) return "var(--map-land)";
+      return byPref.has(id) ? scale(byPref.get(id)) : "var(--map-land)";
+    })
+    .classed("has-outbreak", function () {
+      return d ? byPref.has(this.getAttribute("data-id")) : false;
+    });
+}
+
+async function initJpMap() {
+  const topo = await d3.json("data/jp-prefectures-topo.json");
+  const objectName = Object.keys(topo.objects)[0];
+  const geo = topojson.feature(topo, topo.objects[objectName]);
+
+  geo.features.forEach((f) => jpPrefNames.set(f.properties.pref_id, f.properties.display_name));
+
+  const width = jpMapWrap.clientWidth || 640;
+  const height = width * 1.1;
+  const projection = d3.geoMercator().fitSize([width - 4, height - 4], geo);
+  const pathGenerator = d3.geoPath(projection);
+
+  const svg = d3
+    .select(jpMapWrap)
+    .append("svg")
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .attr("preserveAspectRatio", "xMidYMid meet");
+
+  const paths = svg
+    .append("g")
+    .selectAll("path")
+    .data(geo.features)
+    .join("path")
+    .attr("class", "country-path")
+    .attr("data-id", (d) => d.properties.pref_id)
+    .attr("d", pathGenerator)
+    .attr("fill", "var(--map-land)");
+
+  paths.append("title").text((d) => d.properties.display_name);
+  jpSvgSelection = paths;
+
+  jpSvgSelection.on("click", function (event, feature) {
+    const id = feature.properties.pref_id;
+    const match = filteredJpDiseases().find((d) => d.prefectures.some((p) => p.id === id));
+    if (match) selectJpDisease(match.disease);
+  });
+
+  paintJpMap();
+}
+
 function switchMode(next) {
   if (mode === next) return;
   mode = next;
@@ -1261,6 +1473,7 @@ function switchMode(next) {
   tabBrEl.classList.toggle("active", mode === "br");
   tabClEl.classList.toggle("active", mode === "cl");
   tabUkEl.classList.toggle("active", mode === "uk");
+  tabJpEl.classList.toggle("active", mode === "jp");
   mapTitleEl.textContent = MAP_TITLES[mode];
 
   whoMapWrap.style.display = mode === "who" ? "" : "none";
@@ -1268,31 +1481,37 @@ function switchMode(next) {
   brMapWrap.style.display = mode === "br" ? "" : "none";
   clMapWrap.style.display = mode === "cl" ? "" : "none";
   ukMapWrap.style.display = mode === "uk" ? "" : "none";
+  jpMapWrap.style.display = mode === "jp" ? "" : "none";
   legendWhoEl.style.display = mode === "who" ? "" : "none";
   legendCdcEl.style.display = mode === "cdc" ? "" : "none";
   legendBrEl.style.display = mode === "br" ? "" : "none";
   legendClEl.style.display = mode === "cl" ? "" : "none";
   legendUkEl.style.display = mode === "uk" ? "" : "none";
+  legendJpEl.style.display = mode === "jp" ? "" : "none";
   controlsWhoEl.style.display = mode === "who" ? "" : "none";
   controlsCdcEl.style.display = mode === "cdc" ? "" : "none";
   controlsBrEl.style.display = mode === "br" ? "" : "none";
   controlsClEl.style.display = mode === "cl" ? "" : "none";
   controlsUkEl.style.display = mode === "uk" ? "" : "none";
+  controlsJpEl.style.display = mode === "jp" ? "" : "none";
   listEl.style.display = mode === "who" ? "" : "none";
   cdcListEl.style.display = mode === "cdc" ? "" : "none";
   brListEl.style.display = mode === "br" ? "" : "none";
   clListEl.style.display = mode === "cl" ? "" : "none";
   ukListEl.style.display = mode === "uk" ? "" : "none";
+  jpListEl.style.display = mode === "jp" ? "" : "none";
   footerWhoEl.style.display = mode === "who" ? "" : "none";
   footerCdcEl.style.display = mode === "cdc" ? "" : "none";
   footerBrEl.style.display = mode === "br" ? "" : "none";
   footerClEl.style.display = mode === "cl" ? "" : "none";
   footerUkEl.style.display = mode === "uk" ? "" : "none";
+  footerJpEl.style.display = mode === "jp" ? "" : "none";
 
   if (mode === "cdc") renderCdcDetail();
   else if (mode === "br") renderBrDetail();
   else if (mode === "cl") renderClDetail();
   else if (mode === "uk") renderUkDetail();
+  else if (mode === "jp") renderJpDetail();
   else renderDetail();
   renderHeaderStats();
 }
@@ -1321,6 +1540,12 @@ function renderHeaderStats() {
       <span><b>${allUkDiseases.length}</b> diseases tracked</span>
       <span>England, 9 regions</span>
       <span>Updated ${fmtDate(ukFeed.generated_at)}</span>
+    `;
+  } else if (mode === "jp" && jpFeed) {
+    headerStatsEl.innerHTML = `
+      <span><b>${allJpDiseases.length}</b> diseases tracked</span>
+      <span>Japan, 47 prefectures, week ${jpFeed.week}</span>
+      <span>Updated ${fmtDate(jpFeed.generated_at)}</span>
     `;
   } else if (mode === "who" && allOutbreaks.length) {
     const activeCount = allOutbreaks.filter((o) => o.latest_update >= ACTIVE_CUTOFF).length;
@@ -1394,6 +1619,17 @@ async function init() {
     ukListEl.innerHTML = '<p id="uk-status">Could not load England feed. Try again shortly.</p>';
     console.error(err);
   }
+
+  try {
+    const res = await fetch("data/jp-feed.json", { cache: "no-store" });
+    jpFeed = await res.json();
+    allJpDiseases = jpFeed.diseases;
+    renderJpSidebar();
+    await initJpMap();
+  } catch (err) {
+    jpListEl.innerHTML = '<p id="jp-status">Could not load Japan feed. Try again shortly.</p>';
+    console.error(err);
+  }
 }
 
 searchEl.addEventListener("input", () => {
@@ -1434,11 +1670,19 @@ ukSortEl.addEventListener("change", () => {
   renderUkSidebar();
 });
 
+jpSearchEl.addEventListener("input", () => {
+  renderJpSidebar();
+});
+jpSortEl.addEventListener("change", () => {
+  renderJpSidebar();
+});
+
 tabWhoEl.addEventListener("click", () => switchMode("who"));
 tabCdcEl.addEventListener("click", () => switchMode("cdc"));
 tabBrEl.addEventListener("click", () => switchMode("br"));
 tabClEl.addEventListener("click", () => switchMode("cl"));
 tabUkEl.addEventListener("click", () => switchMode("uk"));
+tabJpEl.addEventListener("click", () => switchMode("jp"));
 
 // ---------- Unified search ----------
 
@@ -1500,6 +1744,16 @@ function globalSearch(query) {
       action: () => { switchMode("uk"); selectUkDisease(d.topic); },
     }));
   if (ukMatches.length) groups.push({ label: "England (UKHSA)", items: ukMatches });
+
+  const jpMatches = allJpDiseases
+    .filter((d) => d.disease.toLowerCase().includes(q))
+    .slice(0, GSR_LIMIT_PER_SOURCE)
+    .map((d) => ({
+      label: d.disease,
+      sub: d.category === "sentinel" ? "sentinel-site count" : "all-case reporting",
+      action: () => { switchMode("jp"); selectJpDisease(d.disease); },
+    }));
+  if (jpMatches.length) groups.push({ label: "Japan (JIHS)", items: jpMatches });
 
   return groups;
 }

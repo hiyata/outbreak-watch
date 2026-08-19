@@ -1,6 +1,6 @@
 # Outbreak Watch
 
-A global dashboard of ongoing disease outbreaks, with five modes:
+A global dashboard of ongoing disease outbreaks, with six modes:
 
 - **World (WHO)** — a world map highlighting affected countries, a sidebar
   ranking outbreaks by recency/updates/cases, and a detail view with the
@@ -23,32 +23,43 @@ A global dashboard of ongoing disease outbreaks, with five modes:
   from the UK Health Security Agency's public data API. England only —
   Scotland, Wales, and Northern Ireland have separate health agencies not
   covered here.
+- **Japan (JIHS)** — a 47-prefecture choropleth across ~50 currently-active
+  notifiable diseases (influenza, RSV, hand-foot-mouth disease, measles,
+  rubella, syphilis, TB, dengue, mpox, and more), from the Japan Institute
+  for Health Security's weekly IDWR report. Mixes two reporting styles —
+  common illnesses are sentinel-site counts (a sample, not a national
+  total), rarer/severe diseases are comprehensive mandatory-reporting
+  counts — each disease is tagged with which kind it is.
 
-All five modes are cross-linked and searchable together:
+All six modes are cross-linked and searchable together:
 
 - **Trend charts.** Every disease/region/outbreak detail view now shows a
   short sparkline of its recent history (12 weeks for CDC/Brazil/Chile/
-  England, the full update history for WHO outbreaks) instead of just a
-  single latest number — CDC, Brazil, and Chile's fetch scripts pull data
-  they were already discarding, and UK's already-fetched pages just keep
-  more of what they return.
+  England/Japan, the full update history for WHO outbreaks) instead of
+  just a single latest number — CDC, Brazil, and Chile's fetch scripts
+  pull data they were already discarding, UK's already-fetched pages just
+  keep more of what they return, and Japan's per-week files are fetched
+  12 times over.
 - **Cross-source linking.** A WHO outbreak's detail view shows links to
-  matching local data in CDC/Brazil/Chile/England when the outbreak's
-  country and disease overlap with what that source tracks (e.g. a US
-  avian influenza DON links to CDC's influenza surveillance); local-mode
-  detail views link back to WHO the same way. Matching is a best-effort
-  keyword overlap on free-text disease names — there's no shared disease
-  taxonomy across five independent sources — so it's deliberately
-  conservative: a missed link is preferred over a wrong one.
-- **Unified search.** The search box in the header queries all five feeds
+  matching local data in CDC/Brazil/Chile/England/Japan when the
+  outbreak's country and disease overlap with what that source tracks
+  (e.g. a US avian influenza DON links to CDC's influenza surveillance);
+  local-mode detail views link back to WHO the same way. Matching is a
+  best-effort keyword overlap on free-text disease names — there's no
+  shared disease taxonomy across six independent sources in five
+  languages — so it's deliberately conservative: a missed link is
+  preferred over a wrong one.
+- **Unified search.** The search box in the header queries all six feeds
   at once — disease names, countries, US states, Brazilian/Chilean/English
-  regions — grouped by source, click a result to jump straight to it.
+  regions, Japanese prefectures — grouped by source, click a result to
+  jump straight to it.
 
 Live data lives in [`data/feed.json`](data/feed.json) (WHO),
 [`data/cdc-feed.json`](data/cdc-feed.json) (CDC),
 [`data/br-feed.json`](data/br-feed.json) (Brazil),
-[`data/cl-feed.json`](data/cl-feed.json) (Chile), and
-[`data/uk-feed.json`](data/uk-feed.json) (England), regenerated every 6
+[`data/cl-feed.json`](data/cl-feed.json) (Chile),
+[`data/uk-feed.json`](data/uk-feed.json) (England), and
+[`data/jp-feed.json`](data/jp-feed.json) (Japan), regenerated every 6
 hours by a GitHub Actions workflow and served straight off GitHub Pages —
 no server, no database.
 
@@ -143,15 +154,33 @@ no server, no database.
   This is why the disease list changes run to run: 10 of the 17 curated
   diseases had current data as of this build, the rest (Hepatitis B/C,
   HIV, mpox, iGAS, Lyme) didn't and were left out.
+- [`scripts/fetch-japan.mjs`](scripts/fetch-japan.mjs) pulls Japan's
+  weekly IDWR report from
+  [JIHS](https://id-info.jihs.go.jp/surveillance/idwr/) (Japan Institute
+  for Health Security, formerly NIID) — direct Shift-JIS-encoded CSV
+  downloads per week, no API, found by browsing the live site after an
+  initial dead-end on an archived page. Decoded with Node's built-in
+  `TextDecoder("shift_jis")` and a small hand-written CSV parser (the
+  files are fully quoted, and Node has no built-in CSV support). Combines
+  two source files per week — "teiten" (sentinel-site counts for common
+  illnesses like flu and hand-foot-mouth disease — a sample, not a
+  national total) and "zensu" (comprehensive mandatory reporting for the
+  full notifiable disease list, measles/rubella/syphilis/TB/dengue/mpox
+  among them) — and translates disease names via a hand-built
+  [Japanese→English table](scripts/jp-diseases.mjs). Prefecture rows in
+  the source are in Japan's fixed administrative order, matched by
+  position against the vendored map's ISO 3166-2:JP codes rather than by
+  name.
 - [`.github/workflows/update-and-deploy.yml`](.github/workflows/update-and-deploy.yml)
-  runs all five fetch scripts on a cron schedule, commits the refreshed
+  runs all six fetch scripts on a cron schedule, commits the refreshed
   feeds, and deploys the static site to GitHub Pages.
 - [`index.html`](index.html) / [`app.js`](app.js) render the dashboard:
   a D3 choropleth map per mode (topologies vendored locally,
   D3/topojson-client loaded from CDN), a filterable/sortable list, and a
   detail panel — full update timeline in WHO mode, per-state case table in
   CDC mode, per-state SRAG detail in Brazil mode, per-region mortality
-  detail in Chile mode, per-region indicator table in England mode.
+  detail in Chile mode, per-region indicator table in England mode,
+  per-prefecture case table in Japan mode.
 
 ## Running locally
 
@@ -161,6 +190,7 @@ node scripts/fetch-cdc.mjs       # regenerates data/cdc-feed.json
 node scripts/fetch-infogripe.mjs # regenerates data/br-feed.json
 node scripts/fetch-chile.mjs     # regenerates data/cl-feed.json
 node scripts/fetch-uk.mjs        # regenerates data/uk-feed.json
+node scripts/fetch-japan.mjs     # regenerates data/jp-feed.json
 python3 -m http.server           # or any static file server, then open index.html
 ```
 
@@ -196,23 +226,46 @@ No dependencies for the fetch script — it uses Node's built-in `fetch`.
   that's actively trying to detect exactly this kind of automation.
   Dropped for the same reason those were.
 - **China, Japan, Korea, Australia** were checked for a CDC/InfoGripe-tier
-  source (structured, current, sub-national) and none qualified yet:
+  source (structured, current, sub-national):
+  - **Japan (JIHS)** — added (see above). The institute renamed and moved
+    domains since its old NIID pages, which is why an earlier pass found
+    only a dead archived page; the live site
+    (`id-info.jihs.go.jp/surveillance/idwr/`) publishes direct per-week
+    CSV downloads, no API needed.
   - **China** — no public structured API; the CDC site is a content
     redirect into article/PDF-style publications, similar transparency
     tier to Venezuela.
-  - **Japan** — NIID publishes a manually-updated weekly spreadsheet/PDF
-    (IDWR), no API found; the relevant site has also recently moved
-    domains, which didn't help.
   - **Korea** — KDCA's data is exposed through a real government API
     framework (`data.go.kr`), but every endpoint requires a **registered
     service key** — a manual account-signup step that can't be completed
     autonomously. Revisit if someone provides a key.
   - **Australia** — the old `data.gov.au` NNDSS dataset is a dead stub
     from 2015; the real current data has moved to Australia's new CDC
-    site (`cdc.gov.au`), but that domain was completely unreachable from
-    the development environment on every attempt (connection failures,
-    not a confirmed block) — inconclusive, worth retrying rather than
-    ruled out.
+    site (`cdc.gov.au`). Retried: even a full headless Chromium browser
+    gets an `ERR_HTTP2_PROTOCOL_ERROR` from every page on that domain —
+    an active protocol-level rejection (almost certainly Akamai bot
+    management flagging datacenter/cloud IP ranges), not a network
+    hiccup. Since GitHub Actions runners are exactly that kind of IP
+    range, this would very likely also fail in production even if a
+    workaround were found locally. Moved from "inconclusive" to
+    effectively ruled out.
+  - **Taiwan** — has a real, well-documented Open Data Portal
+    (`data.cdc.gov.tw`) with an API; retried and still a hard TCP-level
+    timeout from the development environment on every attempt, unchanged
+    from the first pass. Genuinely inconclusive — this looks like a
+    network path issue rather than an active block, but there's no way
+    to test further from here. Worth a retry from a different network.
+  - **Germany (RKI)** — upgraded from "not attempted, SOAP looked like
+    too much friction" to **confirmed working**: SurvStat is a SOAP/OLAP
+    web service, not REST/JSON, but its exact request format was
+    recovered from an open-source R package
+    ([rsurvstat](https://github.com/bristol-vaccine-centre/rsurvstat))
+    that had already reverse-engineered it — turned out to be plain XML
+    over HTTP POST once the format was known, no SOAP library needed. A
+    test query returned real, current (this week) COVID-19 case counts
+    for all 16 German states. Not yet built into the dashboard as a
+    seventh mode — the query format is proven but the full fetch
+    script/frontend integration hasn't been written.
 - **UK (UKHSA)** — added (see above). A second, broader pass also checked
   Canada, Germany, Singapore, Taiwan, the Netherlands, South Africa, and
   India:
@@ -310,6 +363,13 @@ syndromic rates), so a "134" for one disease and a "2" for another are not
 directly comparable; each list item and detail view states its unit.
 England mode also only ever shows diseases with data from the last 90
 days, so the list of diseases present changes over time as some go stale
-and drop out. Either way, this aggregates and links to official sources;
-it does not replace them. For anything clinically or epidemiologically
+and drop out. **Japan mode mixes two different reporting styles** —
+sentinel-site counts (a sample from a fixed clinic network, tagged
+"sentinel-site count") for common illnesses, versus comprehensive
+mandatory-reporting counts (tagged "all-case reporting") for the
+notifiable disease list — the former undercounts true national burden by
+design, the latter doesn't; don't compare the two directly. All Japan
+figures are provisional and may be revised in JIHS's later confirmed
+reports. Either way, this aggregates and links to official sources; it
+does not replace them. For anything clinically or epidemiologically
 load-bearing, follow the outbound link and read the original report.
