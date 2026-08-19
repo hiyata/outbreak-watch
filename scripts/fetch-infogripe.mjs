@@ -8,6 +8,7 @@
 // https://github.com/infogripe/Boletim_InfoGripe
 
 import { lookupBrState } from "./br-states.mjs";
+import { computeTrend } from "./lib/trend.mjs";
 
 const RAW_BASE = "https://raw.githubusercontent.com/infogripe/Boletim_InfoGripe/master/Dados/InfoGripe";
 const HISTORY_WEEKS = 12;
@@ -111,12 +112,14 @@ async function main() {
     .map((id) => {
       const state = lookupBrState(id);
       const latest = latestByState.get(id) ?? {};
+      const series = seriesByState.get(id) ?? [];
       return {
         id,
         abbr: state.abbr,
         name: state.name,
         intensity: intensityByState.get(id) ?? null,
-        series: seriesByState.get(id) ?? [],
+        series,
+        trend: computeTrend(series),
         ...latest,
       };
     })

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T18:56:20.187Z",
+  "generated_at": "2026-08-19T19:12:58.286Z",
   "source": "InfoGripe (Fiocruz/FGV) — SRAG surveillance",
   "disease": "Severe Acute Respiratory Syndrome (SRAG)",
   "epidemiological_week": 32,
@@ -73,6 +73,14 @@
           "value": 157
         }
       ],
+      "trend": {
+        "latest_value": 157,
+        "previous_value": 543,
+        "absolute_change": -386,
+        "percent_change": -71.1,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 157,
       "cases_estimated": 678,
       "population": 46179008,
@@ -146,6 +154,14 @@
           "value": 117
         }
       ],
+      "trend": {
+        "latest_value": 117,
+        "previous_value": 274,
+        "absolute_change": -157,
+        "percent_change": -57.3,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 117,
       "cases_estimated": 352,
       "population": 11952524,
@@ -219,6 +235,14 @@
           "value": 79
         }
       ],
+      "trend": {
+        "latest_value": 79,
+        "previous_value": 265,
+        "absolute_change": -186,
+        "percent_change": -70.2,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 79,
       "cases_estimated": 359,
       "population": 11233317,
@@ -292,6 +316,14 @@
           "value": 50
         }
       ],
+      "trend": {
+        "latest_value": 50,
+        "previous_value": 233,
+        "absolute_change": -183,
+        "percent_change": -78.5,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 50,
       "cases_estimated": 494,
       "population": 21460311,
@@ -365,6 +397,14 @@
           "value": 46
         }
       ],
+      "trend": {
+        "latest_value": 46,
+        "previous_value": 102,
+        "absolute_change": -56,
+        "percent_change": -54.9,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 46,
       "cases_estimated": 242,
       "population": 17225410,
@@ -438,6 +478,14 @@
           "value": 40
         }
       ],
+      "trend": {
+        "latest_value": 40,
+        "previous_value": 159,
+        "absolute_change": -119,
+        "percent_change": -74.8,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 40,
       "cases_estimated": 191,
       "population": 8312691,
@@ -511,6 +559,14 @@
           "value": 35
         }
       ],
+      "trend": {
+        "latest_value": 35,
+        "previous_value": 49,
+        "absolute_change": -14,
+        "percent_change": -28.6,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 35,
       "cases_estimated": 77,
       "population": 4182828,
@@ -584,6 +640,14 @@
           "value": 34
         }
       ],
+      "trend": {
+        "latest_value": 34,
+        "previous_value": 59,
+        "absolute_change": -25,
+        "percent_change": -42.4,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 34,
       "cases_estimated": 99,
       "population": 3009996,
@@ -657,6 +721,14 @@
           "value": 26
         }
       ],
+      "trend": {
+        "latest_value": 26,
+        "previous_value": 119,
+        "absolute_change": -93,
+        "percent_change": -78.2,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 26,
       "cases_estimated": 157,
       "population": 14889472,
@@ -730,6 +802,14 @@
           "value": 23
         }
       ],
+      "trend": {
+        "latest_value": 23,
+        "previous_value": 50,
+        "absolute_change": -27,
+        "percent_change": -54,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 23,
       "cases_estimated": 76,
       "population": 9302211,
@@ -803,6 +883,14 @@
           "value": 21
         }
       ],
+      "trend": {
+        "latest_value": 21,
+        "previous_value": 72,
+        "absolute_change": -51,
+        "percent_change": -70.8,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 21,
       "cases_estimated": 79,
       "population": 7495033,
@@ -876,6 +964,14 @@
           "value": 18
         }
       ],
+      "trend": {
+        "latest_value": 18,
+        "previous_value": 40,
+        "absolute_change": -22,
+        "percent_change": -55,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 18,
       "cases_estimated": 63,
       "population": 2307255,
@@ -949,6 +1045,14 @@
           "value": 14
         }
       ],
+      "trend": {
+        "latest_value": 14,
+        "previous_value": 32,
+        "absolute_change": -18,
+        "percent_change": -56.2,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 14,
       "cases_estimated": 61,
       "population": 8756324,
@@ -1022,6 +1126,14 @@
           "value": 12
         }
       ],
+      "trend": {
+        "latest_value": 12,
+        "previous_value": 41,
+        "absolute_change": -29,
+        "percent_change": -70.7,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 12,
       "cases_estimated": 52,
       "population": 4360926,
@@ -1095,6 +1207,14 @@
           "value": 12
         }
       ],
+      "trend": {
+        "latest_value": 12,
+        "previous_value": 42,
+        "absolute_change": -30,
+        "percent_change": -71.4,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 12,
       "cases_estimated": 47,
       "population": 9583176,
@@ -1168,6 +1288,14 @@
           "value": 11
         }
       ],
+      "trend": {
+        "latest_value": 11,
+        "previous_value": 20,
+        "absolute_change": -9,
+        "percent_change": -45,
+        "trend": "stable",
+        "window_size": 4
+      },
       "cases_reported": 11,
       "cases_estimated": 26,
       "population": 3221128,
@@ -1241,6 +1369,14 @@
           "value": 8
         }
       ],
+      "trend": {
+        "latest_value": 8,
+        "previous_value": 18,
+        "absolute_change": -10,
+        "percent_change": -55.6,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 8,
       "cases_estimated": 26,
       "population": 3463737,
@@ -1314,6 +1450,14 @@
           "value": 7
         }
       ],
+      "trend": {
+        "latest_value": 7,
+        "previous_value": 32,
+        "absolute_change": -25,
+        "percent_change": -78.1,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 7,
       "cases_estimated": 28,
       "population": 887794,
@@ -1387,6 +1531,14 @@
           "value": 7
         }
       ],
+      "trend": {
+        "latest_value": 7,
+        "previous_value": 35,
+        "absolute_change": -28,
+        "percent_change": -80,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 7,
       "cases_estimated": 25,
       "population": 761012,
@@ -1460,6 +1612,14 @@
           "value": 7
         }
       ],
+      "trend": {
+        "latest_value": 7,
+        "previous_value": 35,
+        "absolute_change": -28,
+        "percent_change": -80,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 7,
       "cases_estimated": 62,
       "population": 2946317,
@@ -1533,6 +1693,14 @@
           "value": 5
         }
       ],
+      "trend": {
+        "latest_value": 5,
+        "previous_value": 26,
+        "absolute_change": -21,
+        "percent_change": -80.8,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 5,
       "cases_estimated": 27,
       "population": 809953,
@@ -1606,6 +1774,14 @@
           "value": 5
         }
       ],
+      "trend": {
+        "latest_value": 5,
+        "previous_value": 27,
+        "absolute_change": -22,
+        "percent_change": -81.5,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 5,
       "cases_estimated": 36,
       "population": 4150692,
@@ -1679,6 +1855,14 @@
           "value": 4
         }
       ],
+      "trend": {
+        "latest_value": 4,
+        "previous_value": 6,
+        "absolute_change": -2,
+        "percent_change": -33.3,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 4,
       "cases_estimated": 16,
       "population": 1757338,
@@ -1752,6 +1936,14 @@
           "value": 2
         }
       ],
+      "trend": {
+        "latest_value": 2,
+        "previous_value": 11,
+        "absolute_change": -9,
+        "percent_change": -81.8,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 2,
       "cases_estimated": 18,
       "population": 3392617,
@@ -1825,6 +2017,14 @@
           "value": 1
         }
       ],
+      "trend": {
+        "latest_value": 1,
+        "previous_value": 18,
+        "absolute_change": -17,
+        "percent_change": -94.4,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 1,
       "cases_estimated": 32,
       "population": 3950330,
@@ -1898,6 +2098,14 @@
           "value": 0
         }
       ],
+      "trend": {
+        "latest_value": 0,
+        "previous_value": 1,
+        "absolute_change": -1,
+        "percent_change": -100,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 0,
       "cases_estimated": 2,
       "population": 1595994,
@@ -1971,6 +2179,14 @@
           "value": 0
         }
       ],
+      "trend": {
+        "latest_value": 0,
+        "previous_value": 17,
+        "absolute_change": -17,
+        "percent_change": -100,
+        "trend": "falling",
+        "window_size": 4
+      },
       "cases_reported": 0,
       "cases_estimated": 27,
       "population": 7024557,

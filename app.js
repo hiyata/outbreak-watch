@@ -331,6 +331,51 @@ window.addEventListener("resize", () => {
   }, 150);
 });
 
+// trend.trend classifies the recent window (a handful of reports) by
+// regression slope, which can read "rising" even after a single down-tick —
+// real behavior when a big prior spike still dominates the window, not a
+// bug. percent_change is the separate, literal latest-vs-previous-report
+// number, so the two are always labeled with different timeframes rather
+// than presented as if they were describing the same thing.
+const TREND_META = {
+  rising: { icon: "▲", label: "Rising", cls: "trend-rising" },
+  falling: { icon: "▼", label: "Falling", cls: "trend-falling" },
+  stable: { icon: "●", label: "Stable", cls: "trend-stable" },
+};
+
+// Full pill for a detail-panel header: icon + word + the window size the
+// classification was computed over, plus the single-report % change as a
+// distinctly-labeled secondary fact so the two never look contradictory.
+function trendTag(trend, { windowText } = {}) {
+  if (!trend || !TREND_META[trend.trend]) return "";
+  const meta = TREND_META[trend.trend];
+  const pct = trend.percent_change;
+  const pctText = pct === null || pct === undefined ? "" : ` <span class="trend-pct">(${pct > 0 ? "+" : ""}${pct}% ${windowText ? `over the last ${windowText}` : "vs previous report"})</span>`;
+  const title = windowText ? `Recent trajectory over the last ${windowText}` : `Recent trajectory over the last ${trend.window_size} reports`;
+  return `<span class="tag trend-tag ${meta.cls}" title="${title}">${meta.icon} ${meta.label}</span>${pctText}`;
+}
+
+// Compact icon-only badge for list rows. Shape (▲/▼/●) carries identity
+// on its own, color is secondary — never color-alone.
+function trendIcon(trend, { windowText } = {}) {
+  if (!trend || !TREND_META[trend.trend]) return "";
+  const meta = TREND_META[trend.trend];
+  const title = windowText ? `${meta.label} — last ${windowText}` : `${meta.label} — last ${trend.window_size} reports`;
+  return `<span class="trend-icon ${meta.cls}" title="${title}" aria-label="${title}">${meta.icon}</span>`;
+}
+
+// UK's per-topic national figure is a client-side aggregate across regions
+// (summed or averaged depending on whether the metric is a rate — see
+// ukNationalTrend), so it has no fetch-time trend of its own the way a
+// single series does. This classifies it from the same 4-weeks-ago percent
+// comparison the UK sidebar already computes, using the same +-10% band as
+// computeTrend so the icon means the same thing everywhere in the app.
+function trendFromPct(pct) {
+  if (!Number.isFinite(pct)) return null;
+  const trend = pct > 10 ? "rising" : pct < -10 ? "falling" : "stable";
+  return { trend, percent_change: Math.round(pct * 10) / 10 };
+}
+
 function isNewOutbreak(ob) {
   return Boolean(lastSeen && ob.latest_update > lastSeen);
 }
@@ -406,7 +451,7 @@ function renderSidebar() {
             <span>${ob.update_count} update${ob.update_count === 1 ? "" : "s"}</span>
             <span>·</span>
             <span>${fmtDate(ob.latest_update)}</span>
-            ${countsLabel ? `<span class="li-counts">${countsLabel}</span>` : ""}
+            ${countsLabel ? `<span class="li-counts">${countsLabel}${trendIcon(ob.trend)}</span>` : ""}
           </div>
         </button>
       `;
@@ -478,6 +523,7 @@ function renderDetail() {
         <span class="tag">${escapeHtml(countryLabel)}</span>
         <span class="tag">first seen ${fmtDate(ob.first_seen)}</span>
         <span class="tag">${ob.update_count} update${ob.update_count === 1 ? "" : "s"}</span>
+        ${trendTag(ob.trend)}
       </div>
     </div>
     ${statsHtml}
@@ -739,7 +785,7 @@ function renderCdcSidebar() {
             <span>${d.states_reporting} state${d.states_reporting === 1 ? "" : "s"} reporting</span>
           </div>
           <div class="li-meta">
-            <span class="li-counts">${fmtNumber(d.total_current_week)} this week</span>
+            <span class="li-counts">${fmtNumber(d.total_current_week)} this week${trendIcon(d.national_trend)}</span>
             <span>·</span>
             <span>${fmtNumber(d.total_ytd)} YTD</span>
           </div>
@@ -790,6 +836,7 @@ function renderCdcDetail() {
       <div class="detail-tags">
         <span class="tag">MMWR week ${cdcFeed.week}, ${cdcFeed.year}</span>
         <span class="tag">${d.states_reporting} states reporting</span>
+        ${trendTag(d.national_trend)}
       </div>
     </div>
     <div class="stat-row">
@@ -922,7 +969,7 @@ function renderBrSidebar() {
             <span>${escapeHtml(s.intensity ?? "No data")}</span>
           </div>
           <div class="li-meta">
-            <span class="li-counts">${s.cases_reported != null ? fmtNumber(s.cases_reported) + " cases" : "No data"}</span>
+            <span class="li-counts">${s.cases_reported != null ? fmtNumber(s.cases_reported) + " cases" : "No data"}${trendIcon(s.trend)}</span>
             ${s.trend_short ? `<span>· ${escapeHtml(s.trend_short)}</span>` : ""}
           </div>
         </button>
@@ -951,6 +998,8 @@ function renderBrDetail() {
       <div class="detail-tags">
         <span class="tag">Epi. week ${brFeed.epidemiological_week}, ${brFeed.epidemiological_year}</span>
         <span class="tag" style="border-color: ${BR_INTENSITY_COLOR[s.intensity] ?? "var(--border)"}">${escapeHtml(s.intensity ?? "No data")}</span>
+        ${s.trend_short ? `<span class="tag">InfoGripe: ${escapeHtml(s.trend_short)}</span>` : ""}
+        ${trendTag(s.trend)}
       </div>
     </div>
     <div class="stat-row">
@@ -1097,7 +1146,7 @@ function renderClSidebar() {
         <button class="list-item${isActive ? " active" : ""}" data-id="${escapeHtml(r.id)}">
           <div class="li-title">${escapeHtml(r.name)}</div>
           <div class="li-meta">
-            <span class="li-counts">${fmtNumber(r.latest_deaths)} deaths this week</span>
+            <span class="li-counts">${fmtNumber(r.latest_deaths)} deaths this week${trendIcon(r.trend)}</span>
             ${pctLabel ? `<span>· ${pctLabel}</span>` : ""}
           </div>
         </button>
@@ -1126,6 +1175,7 @@ function renderClDetail() {
       <div class="detail-tags">
         <span class="tag">Epi. week ${clFeed.epidemiological_week}, ${clFeed.epidemiological_year}</span>
         <span class="tag">All-cause mortality</span>
+        ${trendTag(r.trend)}
       </div>
     </div>
     <div class="stat-row">
@@ -1275,14 +1325,14 @@ function renderUkSidebar() {
     .map((d) => {
       const isActive = d.topic === selectedUkDisease;
       const total = ukNationalTotal(d, "latest_value");
-      const trend = ukTrendPct(d);
-      const trendLabel = Number.isFinite(trend) ? `${trend > 0 ? "+" : ""}${trend.toFixed(0)}% vs 4wk ago` : "new activity";
+      const trendPct = ukTrendPct(d);
+      const trendLabel = Number.isFinite(trendPct) ? `${trendPct > 0 ? "+" : ""}${trendPct.toFixed(0)}% vs 4wk ago` : "new activity";
       return `
         <button class="list-item${isActive ? " active" : ""}" data-topic="${escapeHtml(d.topic)}">
           <div class="li-title">${escapeHtml(d.topic)}</div>
           <div class="li-meta"><span>${escapeHtml(ukMetricUnit(d.metric))}</span></div>
           <div class="li-meta">
-            <span class="li-counts">${fmtNumber(Math.round(total * 100) / 100)}</span>
+            <span class="li-counts">${fmtNumber(Math.round(total * 100) / 100)}${trendIcon(trendFromPct(trendPct), { windowText: "4 weeks" })}</span>
             <span>· ${trendLabel}</span>
           </div>
         </button>
@@ -1327,6 +1377,7 @@ function renderUkDetail() {
         <span class="tag">${escapeHtml(ukMetricUnit(d.metric))}</span>
         <span class="tag">as of ${fmtDate(d.latest_date)}</span>
         <span class="tag">England only</span>
+        ${trendTag(trendFromPct(ukTrendPct(d)), { windowText: "4 weeks" })}
       </div>
     </div>
     <div class="stat-note">
@@ -1483,7 +1534,7 @@ function renderJpSidebar() {
           <div class="li-title">${escapeHtml(d.disease)}</div>
           <div class="li-meta"><span>${d.category === "sentinel" ? "sentinel-site count" : "all-case reporting"}</span></div>
           <div class="li-meta">
-            <span class="li-counts">${fmtNumber(d.latest_total)}</span>
+            <span class="li-counts">${fmtNumber(d.latest_total)}${trendIcon(d.national_trend)}</span>
             <span>· ${trendLabel}</span>
           </div>
         </button>
@@ -1533,6 +1584,7 @@ function renderJpDetail() {
         <span class="tag">${d.category === "sentinel" ? "Sentinel-site surveillance" : "All-case reporting"}</span>
         <span class="tag">week ${d.latest_week}, ${jpFeed.year}</span>
         <span class="tag">${d.prefectures_reporting} of 47 prefectures with cases</span>
+        ${trendTag(d.national_trend)}
       </div>
     </div>
     <div class="stat-row">

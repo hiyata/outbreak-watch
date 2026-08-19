@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T18:56:19.251Z",
+  "generated_at": "2026-08-19T19:12:57.471Z",
   "source": "CDC NNDSS",
   "year": 2026,
   "week": 31,
@@ -61,6 +61,14 @@
           "value": 13967
         }
       ],
+      "national_trend": {
+        "latest_value": 13967,
+        "previous_value": 14919,
+        "absolute_change": -952,
+        "percent_change": -6.4,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "06",
@@ -413,6 +421,14 @@
           "value": 4573
         }
       ],
+      "national_trend": {
+        "latest_value": 4573,
+        "previous_value": 4870,
+        "absolute_change": -297,
+        "percent_change": -6.1,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "06",
@@ -765,6 +781,14 @@
           "value": 1513
         }
       ],
+      "national_trend": {
+        "latest_value": 1513,
+        "previous_value": 2361,
+        "absolute_change": -848,
+        "percent_change": -35.9,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "39",
@@ -1075,6 +1099,14 @@
           "value": 1106
         }
       ],
+      "national_trend": {
+        "latest_value": 1106,
+        "previous_value": 1323,
+        "absolute_change": -217,
+        "percent_change": -16.4,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -1439,6 +1471,14 @@
           "value": 998
         }
       ],
+      "national_trend": {
+        "latest_value": 998,
+        "previous_value": 1097,
+        "absolute_change": -99,
+        "percent_change": -9,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -1803,6 +1843,14 @@
           "value": 815
         }
       ],
+      "national_trend": {
+        "latest_value": 815,
+        "previous_value": 877,
+        "absolute_change": -62,
+        "percent_change": -7.1,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "25",
@@ -2107,6 +2155,14 @@
           "value": 498
         }
       ],
+      "national_trend": {
+        "latest_value": 498,
+        "previous_value": 545,
+        "absolute_change": -47,
+        "percent_change": -8.6,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -2429,6 +2485,14 @@
           "value": 277
         }
       ],
+      "national_trend": {
+        "latest_value": 277,
+        "previous_value": 265,
+        "absolute_change": 12,
+        "percent_change": 4.5,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "36",
@@ -2775,6 +2839,14 @@
           "value": 203
         }
       ],
+      "national_trend": {
+        "latest_value": 203,
+        "previous_value": 231,
+        "absolute_change": -28,
+        "percent_change": -12.1,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -3061,6 +3133,14 @@
           "value": 199
         }
       ],
+      "national_trend": {
+        "latest_value": 199,
+        "previous_value": 178,
+        "absolute_change": 21,
+        "percent_change": 11.8,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -3407,6 +3487,14 @@
           "value": 187
         }
       ],
+      "national_trend": {
+        "latest_value": 187,
+        "previous_value": 229,
+        "absolute_change": -42,
+        "percent_change": -18.3,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -3741,6 +3829,14 @@
           "value": 140
         }
       ],
+      "national_trend": {
+        "latest_value": 140,
+        "previous_value": 158,
+        "absolute_change": -18,
+        "percent_change": -11.4,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "36",
@@ -4039,6 +4135,14 @@
           "value": 110
         }
       ],
+      "national_trend": {
+        "latest_value": 110,
+        "previous_value": 153,
+        "absolute_change": -43,
+        "percent_change": -28.1,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -4343,6 +4447,14 @@
           "value": 88
         }
       ],
+      "national_trend": {
+        "latest_value": 88,
+        "previous_value": 71,
+        "absolute_change": 17,
+        "percent_change": 23.9,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "36",
@@ -4689,6 +4801,14 @@
           "value": 88
         }
       ],
+      "national_trend": {
+        "latest_value": 88,
+        "previous_value": 38,
+        "absolute_change": 50,
+        "percent_change": 131.6,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "42",
@@ -4951,6 +5071,14 @@
           "value": 88
         }
       ],
+      "national_trend": {
+        "latest_value": 88,
+        "previous_value": 61,
+        "absolute_change": 27,
+        "percent_change": 44.3,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "42",
@@ -5315,6 +5443,14 @@
           "value": 80
         }
       ],
+      "national_trend": {
+        "latest_value": 80,
+        "previous_value": 72,
+        "absolute_change": 8,
+        "percent_change": 11.1,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "06",
@@ -5499,6 +5635,14 @@
           "value": 78
         }
       ],
+      "national_trend": {
+        "latest_value": 78,
+        "previous_value": 72,
+        "absolute_change": 6,
+        "percent_change": 8.3,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "06",
@@ -5671,6 +5815,14 @@
           "value": 67
         }
       ],
+      "national_trend": {
+        "latest_value": 67,
+        "previous_value": 74,
+        "absolute_change": -7,
+        "percent_change": -9.5,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -6029,6 +6181,14 @@
           "value": 60
         }
       ],
+      "national_trend": {
+        "latest_value": 60,
+        "previous_value": 61,
+        "absolute_change": -1,
+        "percent_change": -1.6,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -6381,6 +6541,14 @@
           "value": 57
         }
       ],
+      "national_trend": {
+        "latest_value": 57,
+        "previous_value": 59,
+        "absolute_change": -2,
+        "percent_change": -3.4,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "36",
@@ -6691,6 +6859,14 @@
           "value": 51
         }
       ],
+      "national_trend": {
+        "latest_value": 51,
+        "previous_value": 28,
+        "absolute_change": 23,
+        "percent_change": 82.1,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "47",
@@ -6911,6 +7087,14 @@
           "value": 50
         }
       ],
+      "national_trend": {
+        "latest_value": 50,
+        "previous_value": 61,
+        "absolute_change": -11,
+        "percent_change": -18,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "36",
@@ -7209,6 +7393,14 @@
           "value": 48
         }
       ],
+      "national_trend": {
+        "latest_value": 48,
+        "previous_value": 101,
+        "absolute_change": -53,
+        "percent_change": -52.5,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "06",
@@ -7459,6 +7651,14 @@
           "value": 41
         }
       ],
+      "national_trend": {
+        "latest_value": 41,
+        "previous_value": 37,
+        "absolute_change": 4,
+        "percent_change": 10.8,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -7745,6 +7945,14 @@
           "value": 38
         }
       ],
+      "national_trend": {
+        "latest_value": 38,
+        "previous_value": 43,
+        "absolute_change": -5,
+        "percent_change": -11.6,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -8061,6 +8269,14 @@
           "value": 34
         }
       ],
+      "national_trend": {
+        "latest_value": 34,
+        "previous_value": 33,
+        "absolute_change": 1,
+        "percent_change": 3,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "32",
@@ -8257,6 +8473,14 @@
           "value": 34
         }
       ],
+      "national_trend": {
+        "latest_value": 34,
+        "previous_value": 30,
+        "absolute_change": 4,
+        "percent_change": 13.3,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -8603,6 +8827,14 @@
           "value": 21
         }
       ],
+      "national_trend": {
+        "latest_value": 21,
+        "previous_value": 41,
+        "absolute_change": -20,
+        "percent_change": -48.8,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -8907,6 +9139,14 @@
           "value": 19
         }
       ],
+      "national_trend": {
+        "latest_value": 19,
+        "previous_value": 15,
+        "absolute_change": 4,
+        "percent_change": 26.7,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "24",
@@ -9181,6 +9421,14 @@
           "value": 13
         }
       ],
+      "national_trend": {
+        "latest_value": 13,
+        "previous_value": 16,
+        "absolute_change": -3,
+        "percent_change": -18.7,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -9497,6 +9745,14 @@
           "value": 11
         }
       ],
+      "national_trend": {
+        "latest_value": 11,
+        "previous_value": 6,
+        "absolute_change": 5,
+        "percent_change": 83.3,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "44",
@@ -9765,6 +10021,14 @@
           "value": 7
         }
       ],
+      "national_trend": {
+        "latest_value": 7,
+        "previous_value": 7,
+        "absolute_change": 0,
+        "percent_change": 0,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "08",
@@ -9979,6 +10243,14 @@
           "value": 6
         }
       ],
+      "national_trend": {
+        "latest_value": 6,
+        "previous_value": 3,
+        "absolute_change": 3,
+        "percent_change": 100,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "39",
@@ -10187,6 +10459,14 @@
           "value": 5
         }
       ],
+      "national_trend": {
+        "latest_value": 5,
+        "previous_value": 2,
+        "absolute_change": 3,
+        "percent_change": 150,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "48",
@@ -10437,6 +10717,14 @@
           "value": 5
         }
       ],
+      "national_trend": {
+        "latest_value": 5,
+        "previous_value": 2,
+        "absolute_change": 3,
+        "percent_change": 150,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -10741,6 +11029,14 @@
           "value": 3
         }
       ],
+      "national_trend": {
+        "latest_value": 3,
+        "previous_value": 1,
+        "absolute_change": 2,
+        "percent_change": 200,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "06",
@@ -10985,6 +11281,14 @@
           "value": 3
         }
       ],
+      "national_trend": {
+        "latest_value": 3,
+        "previous_value": 3,
+        "absolute_change": 0,
+        "percent_change": 0,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "42",
@@ -11163,6 +11467,14 @@
           "value": 3
         }
       ],
+      "national_trend": {
+        "latest_value": 3,
+        "previous_value": 2,
+        "absolute_change": 1,
+        "percent_change": 50,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -11443,6 +11755,14 @@
           "value": 2
         }
       ],
+      "national_trend": {
+        "latest_value": 2,
+        "previous_value": 0,
+        "absolute_change": 2,
+        "percent_change": null,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "41",
@@ -11621,6 +11941,14 @@
           "value": 2
         }
       ],
+      "national_trend": {
+        "latest_value": 2,
+        "previous_value": 0,
+        "absolute_change": 2,
+        "percent_change": null,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "39",
@@ -11787,6 +12115,14 @@
           "value": 2
         }
       ],
+      "national_trend": {
+        "latest_value": 2,
+        "previous_value": 3,
+        "absolute_change": -1,
+        "percent_change": -33.3,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "36",
@@ -12073,6 +12409,14 @@
           "value": 2
         }
       ],
+      "national_trend": {
+        "latest_value": 2,
+        "previous_value": 3,
+        "absolute_change": -1,
+        "percent_change": -33.3,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "42",
@@ -12305,6 +12649,14 @@
           "value": 2
         }
       ],
+      "national_trend": {
+        "latest_value": 2,
+        "previous_value": 12,
+        "absolute_change": -10,
+        "percent_change": -83.3,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "36",
@@ -12603,6 +12955,14 @@
           "value": 2
         }
       ],
+      "national_trend": {
+        "latest_value": 2,
+        "previous_value": 2,
+        "absolute_change": 0,
+        "percent_change": 0,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "31",
@@ -12793,6 +13153,14 @@
           "value": 1
         }
       ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 3,
+        "absolute_change": -2,
+        "percent_change": -66.7,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "55",
@@ -12989,6 +13357,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "36",
@@ -13059,6 +13435,14 @@
           "value": 1
         }
       ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 3,
+        "absolute_change": -2,
+        "percent_change": -66.7,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "72",
@@ -13231,6 +13615,14 @@
           "value": 1
         }
       ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 6,
+        "absolute_change": -5,
+        "percent_change": -83.3,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "45",
@@ -13481,6 +13873,14 @@
           "value": 1
         }
       ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 4,
+        "absolute_change": -3,
+        "percent_change": -75,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "45",
@@ -13701,6 +14101,14 @@
           "value": 1
         }
       ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 1,
+        "absolute_change": 0,
+        "percent_change": 0,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "08",
@@ -13921,6 +14329,14 @@
           "value": 1
         }
       ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 0,
+        "absolute_change": 1,
+        "percent_change": null,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "23",
@@ -14123,6 +14539,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "08",
@@ -14247,6 +14671,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "01",
@@ -14311,6 +14743,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "34",
@@ -14507,6 +14947,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "55",
@@ -14571,6 +15019,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "55",
@@ -14671,6 +15127,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "25",
@@ -14783,6 +15247,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "39",
@@ -14865,6 +15337,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 2,
+        "absolute_change": -2,
+        "percent_change": -100,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "09",
@@ -15049,6 +15529,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "45",
@@ -15125,6 +15613,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "25",
@@ -15309,6 +15805,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "34",
@@ -15385,6 +15889,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "34",
@@ -15455,6 +15967,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "12",
@@ -15531,6 +16051,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "09",
@@ -15739,6 +16267,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "36",
@@ -15929,6 +16465,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "36",
@@ -16059,6 +16603,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "38",
@@ -16153,6 +16705,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "36",
@@ -16259,6 +16819,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "25",
@@ -16539,6 +17107,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "36",
@@ -16657,6 +17233,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 3,
+        "absolute_change": -3,
+        "percent_change": -100,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "34",
@@ -16781,6 +17365,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "25",
@@ -16971,6 +17563,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "17",
@@ -17035,6 +17635,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 1,
+        "absolute_change": -1,
+        "percent_change": -100,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "25",
@@ -17171,6 +17779,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 1,
+        "absolute_change": -1,
+        "percent_change": -100,
+        "trend": "rising",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "36",
@@ -17313,6 +17929,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "25",
@@ -17479,6 +18103,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "35",
@@ -17543,6 +18175,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "06",
@@ -17607,6 +18247,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 1,
+        "absolute_change": -1,
+        "percent_change": -100,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "36",
@@ -17779,6 +18427,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "50",
@@ -17909,6 +18565,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 1,
+        "absolute_change": -1,
+        "percent_change": -100,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "50",
@@ -18111,6 +18775,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 1,
+        "absolute_change": -1,
+        "percent_change": -100,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "25",
@@ -18313,6 +18985,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 1,
+        "absolute_change": -1,
+        "percent_change": -100,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "25",
@@ -18515,6 +19195,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "falling",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "25",
@@ -18825,6 +19513,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "42",
@@ -18925,6 +19621,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "49",
@@ -19007,6 +19711,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "25",
@@ -19131,6 +19843,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "38",
@@ -19195,6 +19915,14 @@
           "value": 0
         }
       ],
+      "national_trend": {
+        "latest_value": 0,
+        "previous_value": 0,
+        "absolute_change": 0,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
       "states": [
         {
           "id": "31",

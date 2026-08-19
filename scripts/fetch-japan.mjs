@@ -19,6 +19,7 @@
 // (JP-01..JP-47) rather than by name — see data/jp-prefectures-topo.json.
 
 import { TEITEN_DISEASES, ZENSU_DISEASES } from "./jp-diseases.mjs";
+import { computeTrend } from "./lib/trend.mjs";
 
 const BASE = "https://id-info.jihs.go.jp/surveillance/idwr/provisional";
 const HISTORY_WEEKS = 12;
@@ -175,6 +176,7 @@ async function main() {
         latest_week: latestWeek,
         latest_total: latest?.value ?? null,
         national_series: d.nationalSeries,
+        national_trend: computeTrend(d.nationalSeries),
         prefectures_reporting: prefectures.length,
         prefectures,
       };

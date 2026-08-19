@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T18:56:14.282Z",
+  "generated_at": "2026-08-19T19:12:54.045Z",
   "sources": [
     "WHO"
   ],
@@ -27,6 +27,14 @@
         "cases": 4665,
         "deaths": 2184,
         "as_of": "12 August 2026"
+      },
+      "trend": {
+        "latest_value": 1060,
+        "previous_value": 1481,
+        "absolute_change": -421,
+        "percent_change": -28.4,
+        "trend": "rising",
+        "window_size": 4
       },
       "updates": [
         {
@@ -152,6 +160,7 @@
       "countries": [],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "b4022b8d-0ad5-4022-b1ac-1d6661578e74",
@@ -209,6 +218,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "ff0edd89-ede9-4566-8196-6fd2e302637c",
@@ -229,6 +239,7 @@
       "countries": [],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "10a3727f-44e6-48dd-9655-1ecd02e8e6fd",
@@ -254,6 +265,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "a0884e79-da88-4907-ae66-c73b4b4a7636",
@@ -279,6 +291,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "a4502f7e-b680-4414-ab38-bce40aa09246",
@@ -299,6 +312,7 @@
       "countries": [],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "f76a3c74-7987-43d9-9072-cc1d9230a4cf",
@@ -319,6 +333,7 @@
       "countries": [],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "52a263de-c5a6-4ba1-b710-dfb5fe46e025",
@@ -344,6 +359,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "d6231257-b960-4355-b365-e527415c41e3",
@@ -369,6 +385,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "d010ef65-ce68-4180-a614-c67d6f2fcbbb",
@@ -394,6 +411,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "555e13f3-7aa5-445b-83eb-36e2f050a55c",
@@ -427,6 +445,7 @@
       ],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "0fc174d2-cdc3-4d5d-afed-4df595977a02",
@@ -639,6 +658,7 @@
       "countries": [],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "ab2dc9ee-d61e-4f41-999d-5b1a48151352",
@@ -664,6 +684,7 @@
       ],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "f15969ab-d67f-4380-b32b-98b301dcb5ad",
@@ -705,6 +726,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "92731816-3909-4b16-bd67-3bb7f8220ae9",
@@ -730,6 +752,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "bac6e717-f63e-496f-ae44-65f072fa75e6",
@@ -762,6 +785,7 @@
         "deaths": null,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "1369e947-2f40-4dc9-a7da-f8f21f873ae1",
@@ -795,6 +819,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "c24a7ff0-9f3e-45bb-85a8-53c872ebb516",
@@ -819,6 +844,7 @@
         "deaths": 40,
         "as_of": "8 June 2025"
       },
+      "trend": null,
       "updates": [
         {
           "id": "78881320-515f-4e5c-b5fc-e3d75acf80b1",
@@ -848,6 +874,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "72c4cfb7-3981-46eb-96c3-bbbb498cae0d",
@@ -868,6 +895,7 @@
       "countries": [],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "bd3a42d6-1c7c-4fec-9a80-3d210e491608",
@@ -893,6 +921,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "c5801d5f-89ef-4a9e-ae02-10076f2ca6a6",
@@ -918,6 +947,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "62f952d7-6521-43c9-af05-e2467b1b1423",
@@ -943,6 +973,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "06b298d7-ddd4-4a98-a8ff-91a377c4bda1",
@@ -976,6 +1007,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "89f9e700-3014-4d99-8b27-209ac074a48e",
@@ -1001,6 +1033,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "5085bedf-99a3-4ac7-94b2-27af1d2995e7",
@@ -1021,6 +1054,7 @@
       "countries": [],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "5292d2f8-1c50-4a58-94d4-2aa270f87a05",
@@ -1046,6 +1080,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "346f0b12-f522-45fe-b839-fd5e6e08414c",
@@ -1070,6 +1105,7 @@
         "deaths": 44,
         "as_of": "2 May 2025"
       },
+      "trend": null,
       "updates": [
         {
           "id": "994a3a23-5156-4f66-9303-f83ed8fd48e9",
@@ -1099,6 +1135,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "8e2169d0-8a98-45fd-85d9-40cee91b178f",
@@ -1123,6 +1160,7 @@
         "deaths": null,
         "as_of": "4 May 2025"
       },
+      "trend": null,
       "updates": [
         {
           "id": "db07ae68-2fff-471e-a8b0-7b4a2edd1c82",
@@ -1151,6 +1189,7 @@
         "deaths": null,
         "as_of": "17 April 2025"
       },
+      "trend": null,
       "updates": [
         {
           "id": "8cb97564-ce9a-4059-92bc-2d1fbdfe9990",
@@ -1184,6 +1223,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "42cc5b42-7a88-4ab6-abab-a078fc0ac0cb",
@@ -1233,6 +1273,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "09929cee-ce3c-4859-b2e4-cee053e42c4c",
@@ -1258,6 +1299,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "308b2eb8-7bf5-49db-9de5-be3b2b6c5030",
@@ -1283,6 +1325,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "4179c55d-5ebe-4e98-a997-0d0324bdaa09",
@@ -1312,6 +1355,7 @@
         "deaths": null,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "a1151663-3f67-41b0-be1b-06af835aafac",
@@ -1341,6 +1385,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "d9b66549-68b8-4e00-8ec5-8b643e9e3984",
@@ -1366,6 +1411,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "2d5ad2b7-f3e5-41c2-9e35-54f83f9c30e3",
@@ -1391,6 +1437,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "8370029e-f279-408a-acc0-c4ae390a5c0a",
@@ -1416,6 +1463,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "f2e5afea-bf2a-47b1-9061-e53fa067ec08",
@@ -1441,6 +1489,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "7f3c9986-b355-4151-8bb0-0bf0123a217d",
@@ -1466,6 +1515,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "598e7e53-f844-461f-8112-435b2825cdf6",
@@ -1486,6 +1536,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "9ce8c544-fe69-411d-a71e-44fe097e90a6",
@@ -1511,6 +1562,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "d62e89fc-8227-42f8-b302-4a2f7f08c969",
@@ -1536,6 +1588,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "3761de6d-5bea-4a94-adfa-31fa39d8527a",
@@ -1609,6 +1662,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "7c6de73a-ca70-400f-b784-9f833c59a7f9",
@@ -1634,6 +1688,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "85651b42-5875-4586-bbeb-ecd39cc2881f",
@@ -1658,6 +1713,7 @@
         "deaths": null,
         "as_of": "25 November 2024"
       },
+      "trend": null,
       "updates": [
         {
           "id": "4f827f7b-fe18-4435-869e-a603de252228",
@@ -1687,6 +1743,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "fb1b6216-0f29-41db-9810-9bbb9231b60b",
@@ -1707,6 +1764,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "bebb0a47-19d9-4db0-8b11-4908abf64a13",
@@ -1727,6 +1785,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "ff226b70-b864-41db-b4b8-2726993f3913",
@@ -1752,6 +1811,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "a01c550b-9676-432c-9559-855a0a310212",
@@ -1777,6 +1837,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "d5f7d280-e895-492c-b646-48ce1854224d",
@@ -1802,6 +1863,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "1a214381-106c-4b00-9939-a661637ff198",
@@ -1822,6 +1884,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "2c107c5c-bebf-42eb-bff6-4a1200c7b33c",
@@ -1847,6 +1910,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "d350fc83-5bf4-4662-a4fc-4c7e6cab633c",
@@ -1871,6 +1935,7 @@
         "deaths": null,
         "as_of": "17 August 2024"
       },
+      "trend": null,
       "updates": [
         {
           "id": "a2e9b557-fa1d-4427-bc25-b80d6684b14e",
@@ -1895,6 +1960,7 @@
       "countries": [],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "cd5bb98e-2944-47bd-b765-c0d983febc35",
@@ -1920,6 +1986,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "830e3c5f-7b96-4ba9-84db-e2513c7c5cbc",
@@ -1945,6 +2012,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "41fa366e-d5a7-47c6-86fb-75abf11244e0",
@@ -1970,6 +2038,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "03d31660-7e73-403f-8b66-31f407b49a22",
@@ -2003,6 +2072,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "a6e9601d-d315-4a96-bb79-cd3bcee683a9",
@@ -2028,6 +2098,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "61de22dc-d46c-4473-a7fd-ab6d1dc36870",
@@ -2053,6 +2124,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "d056cc03-118d-400f-bc7c-2fd78024ea97",
@@ -2077,6 +2149,7 @@
         "deaths": 57,
         "as_of": "30 April 2024"
       },
+      "trend": null,
       "updates": [
         {
           "id": "8c8a4612-7d82-4e67-adb8-e1bc9aa69c4b",
@@ -2106,6 +2179,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "ea1e72c4-0fae-431d-a643-4cfe0088f48f",
@@ -2131,6 +2205,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "fa7a9914-48e5-429a-8e7b-701dc7ce2f63",
@@ -2156,6 +2231,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "3da90fd1-2686-4977-920e-910f57eb3532",
@@ -2176,6 +2252,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "cb36550c-3270-4ff2-962f-4917a3df74db",
@@ -2196,6 +2273,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "7a698a0c-4b7d-4ad0-b92c-e9d2432d119f",
@@ -2221,6 +2299,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "52da38dc-82a4-4562-ac36-593dd83932d6",
@@ -2241,6 +2320,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "08240482-e484-4102-8447-dcbc842a5402",
@@ -2266,6 +2346,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "322c49c3-581a-4ca5-9d1b-83de1a7d9c4e",
@@ -2291,6 +2372,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "45a8db70-f8dd-4d45-b55e-e2a39802e2b9",
@@ -2316,6 +2398,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "1fe8866a-bddd-48f1-a6b8-8618292481a6",
@@ -2352,6 +2435,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "6a1b7232-ef21-4077-8d99-14cde1d4b891",
@@ -2377,6 +2461,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "bba74916-c050-45c7-bd05-90855cc4b164",
@@ -2418,6 +2503,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "d2b76dce-1c71-4816-b0fa-38eca7aad4c3",
@@ -2438,6 +2524,7 @@
       "countries": [],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "0b4d2487-30dc-4c41-9d60-c4a4e7feffa8",
@@ -2463,6 +2550,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "8bb4df51-9cfa-4c2f-bd91-6634d9f97fe1",
@@ -2492,6 +2580,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "da15db65-a180-4088-8d53-82a8b2ff4cf7",
@@ -2517,6 +2606,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "3330bbb2-6364-47e8-be05-3335b1cebff0",
@@ -2546,6 +2636,7 @@
         "deaths": null,
         "as_of": "13 October 2023"
       },
+      "trend": null,
       "updates": [
         {
           "id": "0fd39cdb-0716-41ce-93ab-7f4d57a7ea2a",
@@ -2575,6 +2666,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "cc4f1449-47c5-4071-8eb0-6d8e3109e678",
@@ -2600,6 +2692,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "1cd935f6-93e6-421f-b64a-94c055c4676a",
@@ -2625,6 +2718,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "5b240707-9368-41d1-85de-c9f602600788",
@@ -2650,6 +2744,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "0d927df2-d8ad-4faf-afee-94fd5eb5778d",
@@ -2675,6 +2770,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "a67deaf6-b77f-45fc-bc31-d50835d54444",
@@ -2704,6 +2800,7 @@
         "deaths": null,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "ee80b4ed-8b8c-4fd0-8290-c62ae919fbdf",
@@ -2745,6 +2842,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "9800363f-9db5-402f-afde-0f522e499492",
@@ -2770,6 +2868,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "f2cbf552-bba4-4cbf-8240-457d3d82ee86",
@@ -2795,6 +2894,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "b71608f5-f6b3-4e52-86ac-97d0cd051b87",
@@ -2824,6 +2924,7 @@
         "deaths": 164,
         "as_of": "20 November 2022"
       },
+      "trend": null,
       "updates": [
         {
           "id": "0c850056-ca09-4010-9889-ae6cc730d50a",
@@ -2861,6 +2962,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "bbca435a-c71b-4a84-b893-22f4bc4b5ff3",
@@ -2886,6 +2988,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "7858aa95-e426-4b87-ba7c-4de6eb1f6dd7",
@@ -2911,6 +3014,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "2f93bdda-0764-4f82-b63a-8c9c756a2cdd",
@@ -2936,6 +3040,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "e1c1ca44-6e45-4f7c-ac3b-387831cf817e",
@@ -2956,6 +3061,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "8a278807-1bbf-4477-85c0-c34dcc3c7fb4",
@@ -2981,6 +3087,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "6d02b82f-e4fa-40e3-a24c-056dba5d8437",
@@ -3006,6 +3113,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "94aa3eb5-3d6f-4a49-97a9-235e037d9cab",
@@ -3039,6 +3147,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "826b6e1b-18e7-4c74-aa1a-e2a5c93c6c1d",
@@ -3068,6 +3177,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "cf621748-10d1-4342-a6c5-83b8f9328504",
@@ -3125,6 +3235,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "001f1a9d-94e8-4f2a-a03b-92be6267c224",
@@ -3170,6 +3281,7 @@
         "deaths": 124,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "c688d290-5b14-42a9-9404-abd42655020e",
@@ -3211,6 +3323,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "9628b8bb-b9b3-4619-ab6e-72b23a5ef596",
@@ -3236,6 +3349,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "709f8b69-faed-4831-9293-7b720d8cb76c",
@@ -3265,6 +3379,7 @@
         "deaths": 27,
         "as_of": "19 March 2023"
       },
+      "trend": null,
       "updates": [
         {
           "id": "d6290ed8-363a-4566-995e-4cefd48dbcfc",
@@ -3302,6 +3417,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "bb96a835-fe27-4e38-a418-c85b44e660ab",
@@ -3331,6 +3447,7 @@
         "deaths": null,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "18e49fe0-f37d-466f-a98a-c675b324863b",
@@ -3364,6 +3481,7 @@
         "deaths": null,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "1ca806f2-ffa8-4c34-8331-8ee158c3be0d",
@@ -3393,6 +3511,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "301f743c-ff47-45c6-85c4-f0c261ed3c52",
@@ -3426,6 +3545,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "f0e75e22-ad5d-45b2-995a-9721f8c0f128",
@@ -3451,6 +3571,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "673e3edb-ef57-49cb-96a3-072f623fada3",
@@ -3484,6 +3605,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "c5c66ed8-963c-441a-8fe5-60383325b1d7",
@@ -3504,6 +3626,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "14c7cd17-add8-409d-9d16-2d45df52697c",
@@ -3524,6 +3647,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "41de207b-8f53-4eda-b499-4bca70261d24",
@@ -3553,6 +3677,7 @@
         "deaths": null,
         "as_of": "4 March 2023"
       },
+      "trend": null,
       "updates": [
         {
           "id": "07eec3a5-d7af-4f8d-83e9-d5f2d57db22e",
@@ -3582,6 +3707,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "b284c824-459f-41aa-98ce-6c6740f7374e",
@@ -3607,6 +3733,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "a8916935-d9bd-422c-9185-c57eab76d194",
@@ -3632,6 +3759,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "ee925d2e-65f2-4742-8178-b96ff0cde2c2",
@@ -3652,6 +3780,7 @@
       "countries": [],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "c95bf1c3-ccf5-4967-899b-a035804d33b6",
@@ -3677,6 +3806,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "639d8fd9-fe7b-4590-ad97-75231ad8f32d",
@@ -3702,6 +3832,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "9ac40a9d-ed3c-4ea6-a8b6-c122a4eca11a",
@@ -3731,6 +3862,7 @@
         "deaths": 183,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "2a86f134-efff-4d9f-b59b-d819d5f99754",
@@ -3776,6 +3908,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "ae5dde95-285d-4209-8c6a-51108b4c21af",
@@ -3800,6 +3933,7 @@
         "deaths": 12,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "76bea68e-d767-4faf-a81f-b6920d6eca86",
@@ -3829,6 +3963,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "8998d839-297e-4445-9a7d-cce6e07170d4",
@@ -3854,6 +3989,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "962550a3-9f45-4fc7-b547-0fc44b6c14e6",
@@ -3879,6 +4015,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "709bfa9f-b26c-4156-a82c-2aca21b54de0",
@@ -3911,6 +4048,14 @@
         "cases": 142,
         "deaths": null,
         "as_of": "5 December 2022"
+      },
+      "trend": {
+        "latest_value": 1,
+        "previous_value": 5,
+        "absolute_change": -4,
+        "percent_change": -80,
+        "trend": "insufficient_data",
+        "window_size": 2
       },
       "updates": [
         {
@@ -3989,6 +4134,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "9bac4895-0c80-434d-b46b-13b30087b07b",
@@ -4017,6 +4163,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "89f59ec9-fc8d-4468-9963-a1bee05bed05",
@@ -4037,6 +4184,7 @@
       "countries": [],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "0ef8cb0e-81cf-434c-92a9-be136f3fe5b8",
@@ -4057,6 +4205,7 @@
       "countries": [],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "ea1af6cb-d5ef-423d-ac00-e2319774b310",
@@ -4086,6 +4235,7 @@
         "deaths": 283,
         "as_of": "4 November 2022"
       },
+      "trend": null,
       "updates": [
         {
           "id": "8200b5d6-b771-42cf-9dd9-597a5a42dec0",
@@ -4123,6 +4273,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "a11be6ff-a3e5-4de9-9652-f02187ec45dd",
@@ -4148,6 +4299,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "cb256c05-5d8b-4270-8759-9aefb7f160c6",
@@ -4173,6 +4325,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "411eaadc-9e6f-4961-bbf5-f8547c35fba4",
@@ -4202,6 +4355,7 @@
         "deaths": null,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "4884944e-23ac-464b-a730-357ccfd55be2",
@@ -4231,6 +4385,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "80ccc6b4-ecae-4b36-a803-c956ffd39b6c",
@@ -4256,6 +4411,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "617dc8f2-9b3e-45dc-b894-3ccbca5e2a53",
@@ -4281,6 +4437,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "e3299834-c872-4b5f-8144-c2fe784b4909",
@@ -4330,6 +4487,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "52288827-aeb1-4512-8a51-558e90c1d45e",
@@ -4371,6 +4529,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "c2e0ebe1-6027-465b-8557-7c9a39742b37",
@@ -4396,6 +4555,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "3988526b-1c62-4fe4-9037-03854ee2bda7",
@@ -4421,6 +4581,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "81727e6c-3e3e-426f-af8d-44cbd9552b9b",
@@ -4445,6 +4606,7 @@
         "deaths": 21,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "431b21d4-c111-4a41-818c-ac1dc42594b2",
@@ -4474,6 +4636,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "b7fb7c72-6ce9-40fd-8b5f-6815c74a3c09",
@@ -4507,6 +4670,7 @@
         "deaths": 3,
         "as_of": "24 July 2022"
       },
+      "trend": null,
       "updates": [
         {
           "id": "bf05f448-407c-4c25-9633-c36922acf2d2",
@@ -4540,6 +4704,7 @@
         "deaths": 23,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "60f49ea1-557f-4fc2-80ae-bf0c3f2a6818",
@@ -4592,6 +4757,14 @@
         "cases": 242,
         "deaths": null,
         "as_of": "23 July 2019"
+      },
+      "trend": {
+        "latest_value": -18,
+        "previous_value": 3,
+        "absolute_change": -21,
+        "percent_change": -700,
+        "trend": "falling",
+        "window_size": 4
       },
       "updates": [
         {
@@ -5350,6 +5523,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "d194b960-7b19-45a7-b607-9c3ba7315ed1",
@@ -5375,6 +5549,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "4e5bd03f-c581-4695-868b-8e6cb1d0a7c4",
@@ -5408,6 +5583,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "7444e74a-20ad-4065-ad19-aa6accd88be9",
@@ -5433,6 +5609,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "4bf320da-bf06-4894-a4b8-19a4ccbb4d06",
@@ -5462,6 +5639,7 @@
         "deaths": null,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "687795c8-3b3a-4773-a999-e02889407b2f",
@@ -5491,6 +5669,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "2f627829-ca08-4091-9e9d-31d7533ee393",
@@ -5516,6 +5695,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "5f029f21-1f61-42c5-82b5-70a55cece846",
@@ -5549,6 +5729,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "b172402f-6e36-4f60-ad58-b4ac7588be87",
@@ -5578,6 +5759,7 @@
         "deaths": null,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "fba92393-1482-448a-b3ab-94bac397cf8d",
@@ -5607,6 +5789,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "a049275c-53d3-4ebf-90ae-d765e0726a3c",
@@ -5632,6 +5815,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "ab8ca704-7c03-485c-b5d7-8eafb929e83d",
@@ -5657,6 +5841,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "c880a03c-13ee-4bf6-a6ed-3048e1cf2bbf",
@@ -5686,6 +5871,7 @@
         "deaths": 75,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "240f765c-32ea-490b-b647-6e5249d7c7ba",
@@ -5715,6 +5901,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "26012a38-05ae-461a-baa4-82c3ba860a5b",
@@ -5739,6 +5926,7 @@
         "deaths": null,
         "as_of": "5 November 2019"
       },
+      "trend": null,
       "updates": [
         {
           "id": "158df3be-64df-4a62-b35d-853b128d9bf1",
@@ -5768,6 +5956,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "47998e99-bb7b-4952-8b3a-6558fede23ee",
@@ -5793,6 +5982,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "8b7f118a-2893-4872-a203-73ef470fad6b",
@@ -5818,6 +6008,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "488288cc-30aa-4918-964c-738c6f6dc337",
@@ -5838,6 +6029,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "1013788d-8684-4d0d-945f-ef8280ff7829",
@@ -5867,6 +6059,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "c34dc954-ec72-423e-8587-7e4048f810b1",
@@ -5892,6 +6085,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "1661ac90-c2dd-45ae-b313-7bfe8e236b9b",
@@ -5912,6 +6106,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "c6916bc8-aad2-491e-b210-eefdcf14f530",
@@ -5937,6 +6132,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "0b6b9010-cf7c-42a2-b457-30e0686ccefc",
@@ -5962,6 +6158,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "dcb8e041-fa57-472c-b887-7fc44d82f2ad",
@@ -5987,6 +6184,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "e09a12f1-3ba4-4021-aa21-94e0ce0f1e8b",
@@ -6016,6 +6214,7 @@
       ],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "e0343c1a-af68-46d6-b14b-6a5c9ea32427",
@@ -6080,6 +6279,14 @@
         "cases": 2103,
         "deaths": null,
         "as_of": "15 June 2022"
+      },
+      "trend": {
+        "latest_value": 1323,
+        "previous_value": 523,
+        "absolute_change": 800,
+        "percent_change": 153,
+        "trend": "insufficient_data",
+        "window_size": 2
       },
       "updates": [
         {
@@ -6174,6 +6381,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "eea7c1da-d857-46bf-8f31-2b9a841914f7",
@@ -6203,6 +6411,7 @@
         "deaths": null,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "95cc89c2-a670-43a7-8f5b-c61441a5e1fe",
@@ -6236,6 +6445,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "c12d3626-05e0-48d7-9ec0-5430cc9248e1",
@@ -6256,6 +6466,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "08e9959e-5c49-40f0-bf7d-168bb94f2681",
@@ -6281,6 +6492,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "37000c13-83ae-4510-89a2-e6fe8ae982a8",
@@ -6306,6 +6518,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "85ecd0c4-bb3c-4a97-9e57-06f297bbf006",
@@ -6331,6 +6544,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "86ae1dc3-83cc-498e-bb89-8bafce1ca112",
@@ -6364,6 +6578,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "54f4ee2e-73b0-46aa-9835-576e86b6effa",
@@ -6393,6 +6608,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "44286fd0-49f3-45f7-8da4-eca72a838739",
@@ -6434,6 +6650,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "f837b27a-dc73-4f21-9727-18b7d1f2d256",
@@ -6459,6 +6676,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "5ba022c9-0d8d-46d2-9552-46ead7e74d1a",
@@ -6484,6 +6702,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "058e18e9-0969-420d-a7e3-0f6eb1c4bbed",
@@ -6509,6 +6728,7 @@
       ],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "f6c8fcbf-1ef6-46a7-91e1-6bc8a8cb9385",
@@ -6534,6 +6754,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "e18964b6-cd18-4f30-8b59-fc8834a8c08d",
@@ -6559,6 +6780,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "80ba7b99-b618-4b9a-9471-bb5a6c890c7e",
@@ -6584,6 +6806,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "e263b1c7-8cd3-4675-ac6b-185c5232e760",
@@ -6604,6 +6827,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "0da42c0a-5933-411f-ba19-e481b6aabef1",
@@ -6629,6 +6853,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "ac4732b7-3347-4679-a537-3cbcef56f44f",
@@ -6654,6 +6879,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "17a5670e-f0d3-4018-9dfb-cb567710d375",
@@ -6683,6 +6909,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "24f445eb-6df6-40a1-ab10-020ddbf1aeb5",
@@ -6712,6 +6939,7 @@
         "deaths": 70,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "bccd8bfe-e975-49cb-8760-b2ed54bbf6ee",
@@ -6761,6 +6989,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "c3c3c589-a091-4c6f-a0b5-e390a606237e",
@@ -6790,6 +7019,7 @@
         "deaths": null,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "cf0f36cd-608a-4985-87fd-a53f2a0832cd",
@@ -6819,6 +7049,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "498fb06e-dfe4-4352-bb7d-20eec50b0055",
@@ -6848,6 +7079,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "62b7868d-a72e-4856-83f5-e7850b0820c6",
@@ -6897,6 +7129,7 @@
         "deaths": null,
         "as_of": "1 December 2020"
       },
+      "trend": null,
       "updates": [
         {
           "id": "34bdf5c8-7298-4390-a9ad-d5d32d5e8f1d",
@@ -6990,6 +7223,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "7e44ad40-5416-48f6-b407-6783c5b4626a",
@@ -7043,6 +7277,7 @@
         "deaths": 15,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "0dd903c2-6a4d-4d93-a57c-ce7fe2a03ba1",
@@ -7096,6 +7331,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "00e00a3e-5b87-4118-9662-551357bcbabb",
@@ -7116,6 +7352,7 @@
       "countries": [],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "6f4ffeb1-1ce0-4037-baca-d4d1e8dc092d",
@@ -7141,6 +7378,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "b0355fa8-3069-43e1-aeb9-46779c64acd9",
@@ -7170,6 +7408,7 @@
         "deaths": 183,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "436b0a47-90ae-45e4-b631-52a3e0394132",
@@ -7199,6 +7438,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "3e2dc8ae-3c7c-42cc-b3a8-ba3a36fc94d9",
@@ -7224,6 +7464,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "916db51b-1af2-4618-9937-6c4330692506",
@@ -7249,6 +7490,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "23aec27b-1990-4228-b26d-607c48b5f304",
@@ -7290,6 +7532,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "bf201572-b698-4f71-a4c7-68dee0e27855",
@@ -7355,6 +7598,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "eb6767c3-3f10-4186-b523-a9f3942635ca",
@@ -7380,6 +7624,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "3820c0ca-85ad-4172-b03e-3dd8a0f6ca6f",
@@ -7405,6 +7650,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "510b6d67-32c3-484f-9048-0998e9e99f07",
@@ -7430,6 +7676,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "116b3151-d036-4ba2-9826-bdd3d7cbd102",
@@ -7455,6 +7702,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "d6427239-d982-4af0-9af2-6f433a554680",
@@ -7480,6 +7728,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "a031526b-85f8-4a1c-9ac5-251f404da2f0",
@@ -7505,6 +7754,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "d0b69538-2bda-4656-8e6a-f334dad336be",
@@ -7530,6 +7780,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "59ebb1cf-d8da-4c67-8005-aa6c4359c6d6",
@@ -7555,6 +7806,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "ca774519-231b-4f87-bf0c-e888cdb6bcc8",
@@ -7580,6 +7832,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "234d6e46-81a4-44b7-8eea-1339d493ebb2",
@@ -7605,6 +7858,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "79d0efcd-7539-4d76-87bd-abd8d3f6f0d5",
@@ -7630,6 +7884,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "8ca2f926-58d7-4eb2-a1c1-0a04d868f4b2",
@@ -7675,6 +7930,7 @@
         "deaths": null,
         "as_of": "26 December 2018"
       },
+      "trend": null,
       "updates": [
         {
           "id": "f58558d7-c891-4dcb-b821-987bea7b7bf9",
@@ -7832,6 +8088,7 @@
         "deaths": 104,
         "as_of": "11 April 2019"
       },
+      "trend": null,
       "updates": [
         {
           "id": "a0810714-11d5-4258-980b-f31c496b25a1",
@@ -7885,6 +8142,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "f72a1818-72c9-4db9-a5e5-f385c7e51e98",
@@ -7914,6 +8172,7 @@
         "deaths": null,
         "as_of": "30 April 2019"
       },
+      "trend": null,
       "updates": [
         {
           "id": "34b2fbd8-2e93-47a3-aa3d-63cdd8891639",
@@ -7938,6 +8197,7 @@
       "countries": [],
       "is_global": true,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "fe3766d2-c935-441e-bd52-b9d171fb5194",
@@ -7963,6 +8223,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "f1c40177-e1bc-48c3-8513-28382332f154",
@@ -7992,6 +8253,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "895ea482-0926-42df-b474-f7ee6621b3df",
@@ -8049,6 +8311,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "33ff7608-b031-4a23-9b39-ef3fe9869f33",
@@ -8138,6 +8401,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "06d3ee86-9a05-48b2-8d5d-a9eb2a7a355d",
@@ -8171,6 +8435,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "2061acf2-38ec-45f5-ac7a-cbee5f1f52aa",
@@ -8256,6 +8521,7 @@
         "deaths": null,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "0997af39-b333-42a6-a2cb-1ec71362036f",
@@ -8285,6 +8551,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "dc6c411b-47ec-49a6-97c4-8987b1820a73",
@@ -8310,6 +8577,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "fddf5cde-3025-47c3-84b8-fa449ee7b253",
@@ -8339,6 +8607,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "3379436a-1340-4f6e-81b0-252969b20c1d",
@@ -8372,6 +8641,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "576d666c-8e77-4da2-9db8-b01a606387cd",
@@ -8397,6 +8667,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "73e5b5c9-03f7-41df-8cc2-b2acf0f69cc4",
@@ -8430,6 +8701,7 @@
         "deaths": 6,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "768e8db7-b824-4c5f-8f56-a2430931294d",
@@ -8483,6 +8755,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "a269478a-249d-406e-806a-d6478b6ef4e7",
@@ -8508,6 +8781,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "dc44f26a-f263-45f0-941d-c5e6c95cc9e5",
@@ -8533,6 +8807,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "91eb6333-57c9-49fe-9109-8b6b36eeadb8",
@@ -8558,6 +8833,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "9b9c6e26-470e-438c-abbe-1bd343ba05ed",
@@ -8583,6 +8859,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "32f4f183-6417-43b3-bb2d-28198397e5ab",
@@ -8608,6 +8885,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "eaa5b6cd-b8e5-4c4a-b77e-68ece0d05baf",
@@ -8637,6 +8915,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "f7609a51-8884-42d3-8197-7610a32cf22a",
@@ -8678,6 +8957,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "f1df6a0e-8e95-4f5f-86a1-9ae027c75584",
@@ -8703,6 +8983,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "07fd78a7-a05b-4d2c-9f46-71723a9dbe51",
@@ -8728,6 +9009,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "60aa8813-aa15-4828-bfe3-c8dfb0217b5e",
@@ -8753,6 +9035,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "12940d23-e3cc-4d07-8de4-37ff7b5f4cda",
@@ -8778,6 +9061,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "c3b46a59-3bab-491c-a973-9a515792c9b5",
@@ -8803,6 +9087,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "5a659ebb-b8ee-46d4-a294-52f24d055ff7",
@@ -8832,6 +9117,7 @@
         "deaths": 11,
         "as_of": "17 January 2019"
       },
+      "trend": null,
       "updates": [
         {
           "id": "c17e3dd5-b9d5-4c13-8b97-e86e269b7bd9",
@@ -8861,6 +9147,7 @@
       ],
       "is_global": false,
       "latest_counts": null,
+      "trend": null,
       "updates": [
         {
           "id": "e142394c-d83b-4d55-a263-a2948615d454",
@@ -8890,6 +9177,7 @@
         "deaths": null,
         "as_of": null
       },
+      "trend": null,
       "updates": [
         {
           "id": "1f158ad1-7ee8-4bcc-ad31-a5d37df3fb5d",

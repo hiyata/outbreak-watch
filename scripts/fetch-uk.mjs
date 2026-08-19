@@ -20,6 +20,8 @@
 //      it were current.
 //   5. Only then fetches that one metric across all 9 regions.
 
+import { computeTrend } from "./lib/trend.mjs";
+
 const API_BASE = "https://api.ukhsa-dashboard.data.gov.uk";
 const RECENCY_WINDOW_DAYS = 90;
 const HISTORY_POINTS = 12;
@@ -120,13 +122,15 @@ async function fetchTopicData(subTheme, topic) {
     const recent = rows.slice(-HISTORY_POINTS);
     const latest = recent[recent.length - 1];
     const monthAgo = recent.find((r) => r.date <= addDays(latest.date, -28));
+    const series = recent.map((r) => ({ date: r.date, value: r.metric_value }));
     regions.push({
       id: slugify(g.name),
       name: g.name,
       latest_value: latest.metric_value,
       latest_date: latest.date,
       value_4_weeks_ago: monthAgo ? monthAgo.metric_value : null,
-      series: recent.map((r) => ({ date: r.date, value: r.metric_value })),
+      series,
+      trend: computeTrend(series),
     });
   }
   if (regions.length === 0) return null;

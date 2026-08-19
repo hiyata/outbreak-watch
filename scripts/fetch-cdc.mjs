@@ -15,6 +15,7 @@
 // than wrapping into the previous MMWR year — a known, minor limitation.
 
 import { lookupState } from "./us-states.mjs";
+import { computeTrend } from "./lib/trend.mjs";
 
 const BASE = "https://data.cdc.gov/resource/x9gk-5huc.json";
 const HISTORY_WEEKS = 12;
@@ -101,6 +102,7 @@ async function main() {
         total_ytd: totalYtd,
         states_reporting: states.length,
         national_series: nationalSeries,
+        national_trend: computeTrend(nationalSeries),
         states: states
           .map(({ id, name, current_week, ytd }) => ({ id, name, current_week, ytd }))
           .sort((a, b) => b.current_week - a.current_week),

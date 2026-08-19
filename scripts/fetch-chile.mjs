@@ -14,6 +14,8 @@
 // deaths sum to zero across every region/age/sex row is treated as an
 // unpopulated placeholder, not a real report, and excluded.
 
+import { computeTrend } from "./lib/trend.mjs";
+
 const CSV_URL =
   "https://datos.gob.cl/dataset/1c2811cd-13a4-4406-b20d-cda1544b65d0/resource/90d092cc-bf19-4bcc-bfb0-22b0c5db6707/download/def_semana_epidemiologica.csv";
 const HISTORY_WEEKS = 12;
@@ -99,6 +101,7 @@ async function main() {
         baseline_avg_deaths: baselineAvg,
         pct_vs_baseline: pctVsBaseline,
         series,
+        trend: computeTrend(series),
       };
     })
     .sort((a, b) => (b.pct_vs_baseline ?? -Infinity) - (a.pct_vs_baseline ?? -Infinity));

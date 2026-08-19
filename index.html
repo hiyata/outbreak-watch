@@ -290,6 +290,15 @@
   .detail-head h2 { font-size: 1.35rem; margin: 0 0 0.4rem; }
   .detail-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; font-size: 0.78rem; color: var(--muted); align-items: center; }
   .tag { background: var(--panel-2); border: 1px solid var(--border); border-radius: 999px; padding: 0.15rem 0.6rem; }
+  .trend-tag { font-weight: 600; }
+  .trend-tag.trend-rising { color: var(--warning); }
+  .trend-tag.trend-falling { color: var(--ok); }
+  .trend-tag.trend-stable { color: var(--muted); }
+  .trend-pct { font-weight: 400; color: var(--muted); }
+  .trend-icon { font-weight: 700; font-size: 0.85rem; margin-left: 0.3rem; }
+  .trend-icon.trend-rising { color: var(--warning); }
+  .trend-icon.trend-falling { color: var(--ok); }
+  .trend-icon.trend-stable { color: var(--muted); }
   .stat-row { display: flex; gap: 1.5rem; margin: 1rem 0; flex-wrap: wrap; }
   .stat { }
   .stat .n { font-size: 1.6rem; font-weight: 700; color: var(--accent); line-height: 1; }

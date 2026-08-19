@@ -8,6 +8,7 @@
 
 import { matchCountries } from "./countries.mjs";
 import { extractCaseCounts } from "./extract-numbers.mjs";
+import { computeTrend } from "./lib/trend.mjs";
 
 const PAGE_SIZE = 100; // WHO's API 400s above ~100
 const MAX_PAGES = 5; // 500 most recent DONs is plenty for this feed
@@ -95,6 +96,7 @@ function groupIntoOutbreaks(rows) {
   const outbreaks = [...groups.values()].map((g) => {
     const updates = g.updates.sort((a, b) => b.date.localeCompare(a.date));
     const latestCounts = updates.find((u) => u.counts)?.counts ?? null;
+    const casePoints = [...updates].reverse().map((u) => ({ value: u.counts?.cases ?? null }));
     return {
       id: g.id,
       disease: g.disease,
@@ -104,6 +106,7 @@ function groupIntoOutbreaks(rows) {
       countries: [...g.countries.values()],
       is_global: g.isGlobal,
       latest_counts: latestCounts,
+      trend: computeTrend(casePoints, { cumulative: true }),
       updates,
     };
   });

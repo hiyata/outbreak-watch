@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T18:56:21.143Z",
+  "generated_at": "2026-08-19T19:15:18.912Z",
   "source": "Chile DEIS/MINSAL — all-cause mortality (not disease-specific)",
   "metric": "Weekly all-cause deaths by region",
   "epidemiological_week": 32,
@@ -63,7 +63,15 @@
           "week": 32,
           "value": 15
         }
-      ]
+      ],
+      "trend": {
+        "latest_value": 15,
+        "previous_value": 12,
+        "absolute_change": 3,
+        "percent_change": 25,
+        "trend": "stable",
+        "window_size": 4
+      }
     },
     {
       "id": "de_atacama",
@@ -121,7 +129,15 @@
           "week": 32,
           "value": 40
         }
-      ]
+      ],
+      "trend": {
+        "latest_value": 40,
+        "previous_value": 35,
+        "absolute_change": 5,
+        "percent_change": 14.3,
+        "trend": "stable",
+        "window_size": 4
+      }
     },
     {
       "id": "del_maule",
@@ -179,7 +195,15 @@
           "week": 32,
           "value": 174
         }
-      ]
+      ],
+      "trend": {
+        "latest_value": 174,
+        "previous_value": 143,
+        "absolute_change": 31,
+        "percent_change": 21.7,
+        "trend": "stable",
+        "window_size": 4
+      }
     },
     {
       "id": "del_biobio",
@@ -237,7 +261,15 @@
           "week": 32,
           "value": 244
         }
-      ]
+      ],
+      "trend": {
+        "latest_value": 244,
+        "previous_value": 236,
+        "absolute_change": 8,
+        "percent_change": 3.4,
+        "trend": "stable",
+        "window_size": 4
+      }
     },
     {
       "id": "de_nuble",
@@ -295,7 +327,15 @@
           "week": 32,
           "value": 86
         }
-      ]
+      ],
+      "trend": {
+        "latest_value": 86,
+        "previous_value": 78,
+        "absolute_change": 8,
+        "percent_change": 10.3,
+        "trend": "stable",
+        "window_size": 4
+      }
     },
     {
       "id": "de_los_lagos",
@@ -353,7 +393,15 @@
           "week": 32,
           "value": 124
         }
-      ]
+      ],
+      "trend": {
+        "latest_value": 124,
+        "previous_value": 131,
+        "absolute_change": -7,
+        "percent_change": -5.3,
+        "trend": "stable",
+        "window_size": 4
+      }
     },
     {
       "id": "de_arica_y_parinacota",
@@ -411,7 +459,15 @@
           "week": 32,
           "value": 31
         }
-      ]
+      ],
+      "trend": {
+        "latest_value": 31,
+        "previous_value": 31,
+        "absolute_change": 0,
+        "percent_change": 0,
+        "trend": "stable",
+        "window_size": 4
+      }
     },
     {
       "id": "metropolitana_de_santiago",
@@ -469,7 +525,15 @@
           "week": 32,
           "value": 953
         }
-      ]
+      ],
+      "trend": {
+        "latest_value": 953,
+        "previous_value": 912,
+        "absolute_change": 41,
+        "percent_change": 4.5,
+        "trend": "stable",
+        "window_size": 4
+      }
     },
     {
       "id": "del_libertador_b_o_higgins",
@@ -527,7 +591,15 @@
           "week": 32,
           "value": 132
         }
-      ]
+      ],
+      "trend": {
+        "latest_value": 132,
+        "previous_value": 116,
+        "absolute_change": 16,
+        "percent_change": 13.8,
+        "trend": "stable",
+        "window_size": 4
+      }
     },
     {
       "id": "de_antofagasta",
@@ -585,7 +657,15 @@
           "week": 32,
           "value": 61
         }
-      ]
+      ],
+      "trend": {
+        "latest_value": 61,
+        "previous_value": 71,
+        "absolute_change": -10,
+        "percent_change": -14.1,
+        "trend": "stable",
+        "window_size": 4
+      }
     },
     {
       "id": "de_coquimbo",
@@ -643,7 +723,15 @@
           "week": 32,
           "value": 104
         }
-      ]
+      ],
+      "trend": {
+        "latest_value": 104,
+        "previous_value": 102,
+        "absolute_change": 2,
+        "percent_change": 2,
+        "trend": "stable",
+        "window_size": 4
+      }
     },
     {
       "id": "de_tarapaca",
@@ -701,7 +789,15 @@
           "week": 32,
           "value": 27
         }
-      ]
+      ],
+      "trend": {
+        "latest_value": 27,
+        "previous_value": 23,
+        "absolute_change": 4,
+        "percent_change": 17.4,
+        "trend": "stable",
+        "window_size": 4
+      }
     },
     {
       "id": "de_valparaiso",
@@ -759,7 +855,15 @@
           "week": 32,
           "value": 281
         }
-      ]
+      ],
+      "trend": {
+        "latest_value": 281,
+        "previous_value": 290,
+        "absolute_change": -9,
+        "percent_change": -3.1,
+        "trend": "stable",
+        "window_size": 4
+      }
     },
     {
       "id": "de_los_rios",
@@ -817,7 +921,15 @@
           "week": 32,
           "value": 53
         }
-      ]
+      ],
+      "trend": {
+        "latest_value": 53,
+        "previous_value": 56,
+        "absolute_change": -3,
+        "percent_change": -5.4,
+        "trend": "stable",
+        "window_size": 4
+      }
     },
     {
       "id": "de_la_araucania",
@@ -875,7 +987,15 @@
           "week": 32,
           "value": 129
         }
-      ]
+      ],
+      "trend": {
+        "latest_value": 129,
+        "previous_value": 139,
+        "absolute_change": -10,
+        "percent_change": -7.2,
+        "trend": "stable",
+        "window_size": 4
+      }
     },
     {
       "id": "de_magallanes_y_de_la_antartica_chilena",
@@ -933,7 +1053,15 @@
           "week": 32,
           "value": 16
         }
-      ]
+      ],
+      "trend": {
+        "latest_value": 16,
+        "previous_value": 22,
+        "absolute_change": -6,
+        "percent_change": -27.3,
+        "trend": "stable",
+        "window_size": 4
+      }
     }
   ]
 }

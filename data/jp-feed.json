@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T18:57:13.209Z",
+  "generated_at": "2026-08-19T19:15:08.699Z",
   "source": "JIHS (Japan Institute for Health Security) — IDWR weekly report",
   "year": 2026,
   "week": 32,
@@ -61,6 +61,14 @@
           "value": 10403
         }
       ],
+      "national_trend": {
+        "latest_value": 10403,
+        "previous_value": 13577,
+        "absolute_change": -3174,
+        "percent_change": -23.4,
+        "trend": "falling",
+        "window_size": 4
+      },
       "prefectures_reporting": 47,
       "prefectures": [
         {
@@ -2658,6 +2666,14 @@
           "value": 7674
         }
       ],
+      "national_trend": {
+        "latest_value": 7674,
+        "previous_value": 7724,
+        "absolute_change": -50,
+        "percent_change": -0.6,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 47,
       "prefectures": [
         {
@@ -5255,6 +5271,14 @@
           "value": 6578
         }
       ],
+      "national_trend": {
+        "latest_value": 6578,
+        "previous_value": 6332,
+        "absolute_change": 246,
+        "percent_change": 3.9,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 47,
       "prefectures": [
         {
@@ -7852,6 +7876,14 @@
           "value": 2915
         }
       ],
+      "national_trend": {
+        "latest_value": 2915,
+        "previous_value": 3579,
+        "absolute_change": -664,
+        "percent_change": -18.6,
+        "trend": "falling",
+        "window_size": 4
+      },
       "prefectures_reporting": 47,
       "prefectures": [
         {
@@ -10449,6 +10481,14 @@
           "value": 2880
         }
       ],
+      "national_trend": {
+        "latest_value": 2880,
+        "previous_value": 3094,
+        "absolute_change": -214,
+        "percent_change": -6.9,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 47,
       "prefectures": [
         {
@@ -13046,6 +13086,14 @@
           "value": 1926
         }
       ],
+      "national_trend": {
+        "latest_value": 1926,
+        "previous_value": 1384,
+        "absolute_change": 542,
+        "percent_change": 39.2,
+        "trend": "rising",
+        "window_size": 4
+      },
       "prefectures_reporting": 47,
       "prefectures": [
         {
@@ -15643,6 +15691,14 @@
           "value": 1417
         }
       ],
+      "national_trend": {
+        "latest_value": 1417,
+        "previous_value": 1155,
+        "absolute_change": 262,
+        "percent_change": 22.7,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 47,
       "prefectures": [
         {
@@ -18240,6 +18296,14 @@
           "value": 652
         }
       ],
+      "national_trend": {
+        "latest_value": 652,
+        "previous_value": 666,
+        "absolute_change": -14,
+        "percent_change": -2.1,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 47,
       "prefectures": [
         {
@@ -20837,6 +20901,14 @@
           "value": 604
         }
       ],
+      "national_trend": {
+        "latest_value": 604,
+        "previous_value": 685,
+        "absolute_change": -81,
+        "percent_change": -11.8,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 47,
       "prefectures": [
         {
@@ -23434,6 +23506,14 @@
           "value": 555
         }
       ],
+      "national_trend": {
+        "latest_value": 555,
+        "previous_value": 594,
+        "absolute_change": -39,
+        "percent_change": -6.6,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 47,
       "prefectures": [
         {
@@ -26031,6 +26111,14 @@
           "value": 337
         }
       ],
+      "national_trend": {
+        "latest_value": 337,
+        "previous_value": 341,
+        "absolute_change": -4,
+        "percent_change": -1.2,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 46,
       "prefectures": [
         {
@@ -28574,6 +28662,14 @@
           "value": 249
         }
       ],
+      "national_trend": {
+        "latest_value": 249,
+        "previous_value": 272,
+        "absolute_change": -23,
+        "percent_change": -8.5,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 47,
       "prefectures": [
         {
@@ -31171,6 +31267,14 @@
           "value": 192
         }
       ],
+      "national_trend": {
+        "latest_value": 192,
+        "previous_value": 167,
+        "absolute_change": 25,
+        "percent_change": 15,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 47,
       "prefectures": [
         {
@@ -33768,6 +33872,14 @@
           "value": 152
         }
       ],
+      "national_trend": {
+        "latest_value": 152,
+        "previous_value": 161,
+        "absolute_change": -9,
+        "percent_change": -5.6,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 47,
       "prefectures": [
         {
@@ -36365,6 +36477,14 @@
           "value": 143
         }
       ],
+      "national_trend": {
+        "latest_value": 143,
+        "previous_value": 148,
+        "absolute_change": -5,
+        "percent_change": -3.4,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 47,
       "prefectures": [
         {
@@ -38962,6 +39082,14 @@
           "value": 85
         }
       ],
+      "national_trend": {
+        "latest_value": 85,
+        "previous_value": 94,
+        "absolute_change": -9,
+        "percent_change": -9.6,
+        "trend": "falling",
+        "window_size": 4
+      },
       "prefectures_reporting": 47,
       "prefectures": [
         {
@@ -41559,6 +41687,14 @@
           "value": 76
         }
       ],
+      "national_trend": {
+        "latest_value": 76,
+        "previous_value": 70,
+        "absolute_change": 6,
+        "percent_change": 8.6,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 45,
       "prefectures": [
         {
@@ -44048,6 +44184,14 @@
           "value": 73
         }
       ],
+      "national_trend": {
+        "latest_value": 73,
+        "previous_value": 94,
+        "absolute_change": -21,
+        "percent_change": -22.3,
+        "trend": "falling",
+        "window_size": 4
+      },
       "prefectures_reporting": 47,
       "prefectures": [
         {
@@ -46645,6 +46789,14 @@
           "value": 60
         }
       ],
+      "national_trend": {
+        "latest_value": 60,
+        "previous_value": 53,
+        "absolute_change": 7,
+        "percent_change": 13.2,
+        "trend": "falling",
+        "window_size": 4
+      },
       "prefectures_reporting": 44,
       "prefectures": [
         {
@@ -49080,6 +49232,14 @@
           "value": 24
         }
       ],
+      "national_trend": {
+        "latest_value": 24,
+        "previous_value": 26,
+        "absolute_change": -2,
+        "percent_change": -7.7,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 42,
       "prefectures": [
         {
@@ -51407,6 +51567,14 @@
           "value": 19
         }
       ],
+      "national_trend": {
+        "latest_value": 19,
+        "previous_value": 15,
+        "absolute_change": 4,
+        "percent_change": 26.7,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 40,
       "prefectures": [
         {
@@ -53626,6 +53794,14 @@
           "value": 18
         }
       ],
+      "national_trend": {
+        "latest_value": 18,
+        "previous_value": 14,
+        "absolute_change": 4,
+        "percent_change": 28.6,
+        "trend": "rising",
+        "window_size": 4
+      },
       "prefectures_reporting": 29,
       "prefectures": [
         {
@@ -55251,6 +55427,14 @@
           "value": 18
         }
       ],
+      "national_trend": {
+        "latest_value": 18,
+        "previous_value": 30,
+        "absolute_change": -12,
+        "percent_change": -40,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 45,
       "prefectures": [
         {
@@ -57740,6 +57924,14 @@
           "value": 14
         }
       ],
+      "national_trend": {
+        "latest_value": 14,
+        "previous_value": 14,
+        "absolute_change": 0,
+        "percent_change": 0,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 43,
       "prefectures": [
         {
@@ -60121,6 +60313,14 @@
           "value": 11
         }
       ],
+      "national_trend": {
+        "latest_value": 11,
+        "previous_value": 14,
+        "absolute_change": -3,
+        "percent_change": -21.4,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 19,
       "prefectures": [
         {
@@ -61206,6 +61406,14 @@
           "value": 11
         }
       ],
+      "national_trend": {
+        "latest_value": 11,
+        "previous_value": 19,
+        "absolute_change": -8,
+        "percent_change": -42.1,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 38,
       "prefectures": [
         {
@@ -63317,6 +63525,14 @@
           "value": 9
         }
       ],
+      "national_trend": {
+        "latest_value": 9,
+        "previous_value": 13,
+        "absolute_change": -4,
+        "percent_change": -30.8,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 28,
       "prefectures": [
         {
@@ -64888,6 +65104,14 @@
           "value": 9
         }
       ],
+      "national_trend": {
+        "latest_value": 9,
+        "previous_value": 13,
+        "absolute_change": -4,
+        "percent_change": -30.8,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 34,
       "prefectures": [
         {
@@ -66783,6 +67007,14 @@
           "value": 8
         }
       ],
+      "national_trend": {
+        "latest_value": 8,
+        "previous_value": 3,
+        "absolute_change": 5,
+        "percent_change": 166.7,
+        "trend": "rising",
+        "window_size": 4
+      },
       "prefectures_reporting": 12,
       "prefectures": [
         {
@@ -67490,6 +67722,14 @@
           "value": 8
         }
       ],
+      "national_trend": {
+        "latest_value": 8,
+        "previous_value": 9,
+        "absolute_change": -1,
+        "percent_change": -11.1,
+        "trend": "rising",
+        "window_size": 4
+      },
       "prefectures_reporting": 29,
       "prefectures": [
         {
@@ -69115,6 +69355,14 @@
           "value": 7
         }
       ],
+      "national_trend": {
+        "latest_value": 7,
+        "previous_value": 8,
+        "absolute_change": -1,
+        "percent_change": -12.5,
+        "trend": "rising",
+        "window_size": 4
+      },
       "prefectures_reporting": 22,
       "prefectures": [
         {
@@ -70362,6 +70610,14 @@
           "value": 6
         }
       ],
+      "national_trend": {
+        "latest_value": 6,
+        "previous_value": 5,
+        "absolute_change": 1,
+        "percent_change": 20,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 19,
       "prefectures": [
         {
@@ -71447,6 +71703,14 @@
           "value": 6
         }
       ],
+      "national_trend": {
+        "latest_value": 6,
+        "previous_value": 7,
+        "absolute_change": -1,
+        "percent_change": -14.3,
+        "trend": "rising",
+        "window_size": 4
+      },
       "prefectures_reporting": 4,
       "prefectures": [
         {
@@ -71722,6 +71986,14 @@
           "value": 6
         }
       ],
+      "national_trend": {
+        "latest_value": 6,
+        "previous_value": 6,
+        "absolute_change": 0,
+        "percent_change": 0,
+        "trend": "falling",
+        "window_size": 4
+      },
       "prefectures_reporting": 29,
       "prefectures": [
         {
@@ -73347,6 +73619,14 @@
           "value": 5
         }
       ],
+      "national_trend": {
+        "latest_value": 5,
+        "previous_value": 5,
+        "absolute_change": 0,
+        "percent_change": 0,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 25,
       "prefectures": [
         {
@@ -74756,6 +75036,14 @@
           "value": 5
         }
       ],
+      "national_trend": {
+        "latest_value": 5,
+        "previous_value": 8,
+        "absolute_change": -3,
+        "percent_change": -37.5,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 27,
       "prefectures": [
         {
@@ -76273,6 +76561,14 @@
           "value": 3
         }
       ],
+      "national_trend": {
+        "latest_value": 3,
+        "previous_value": 11,
+        "absolute_change": -8,
+        "percent_change": -72.7,
+        "trend": "falling",
+        "window_size": 4
+      },
       "prefectures_reporting": 38,
       "prefectures": [
         {
@@ -78384,6 +78680,14 @@
           "value": 3
         }
       ],
+      "national_trend": {
+        "latest_value": 3,
+        "previous_value": 1,
+        "absolute_change": 2,
+        "percent_change": 200,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 14,
       "prefectures": [
         {
@@ -79199,6 +79503,14 @@
           "value": 2
         }
       ],
+      "national_trend": {
+        "latest_value": 2,
+        "previous_value": 0,
+        "absolute_change": 2,
+        "percent_change": null,
+        "trend": "rising",
+        "window_size": 4
+      },
       "prefectures_reporting": 6,
       "prefectures": [
         {
@@ -79582,6 +79894,14 @@
           "value": 2
         }
       ],
+      "national_trend": {
+        "latest_value": 2,
+        "previous_value": 1,
+        "absolute_change": 1,
+        "percent_change": 100,
+        "trend": "falling",
+        "window_size": 4
+      },
       "prefectures_reporting": 20,
       "prefectures": [
         {
@@ -80721,6 +81041,14 @@
           "value": 2
         }
       ],
+      "national_trend": {
+        "latest_value": 2,
+        "previous_value": 1,
+        "absolute_change": 1,
+        "percent_change": 100,
+        "trend": "rising",
+        "window_size": 4
+      },
       "prefectures_reporting": 13,
       "prefectures": [
         {
@@ -81482,6 +81810,14 @@
           "value": 1
         }
       ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 5,
+        "absolute_change": -4,
+        "percent_change": -80,
+        "trend": "falling",
+        "window_size": 4
+      },
       "prefectures_reporting": 23,
       "prefectures": [
         {
@@ -82783,6 +83119,14 @@
           "value": 1
         }
       ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 1,
+        "absolute_change": 0,
+        "percent_change": 0,
+        "trend": "falling",
+        "window_size": 4
+      },
       "prefectures_reporting": 38,
       "prefectures": [
         {
@@ -84894,6 +85238,14 @@
           "value": 1
         }
       ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 1,
+        "absolute_change": 0,
+        "percent_change": 0,
+        "trend": "rising",
+        "window_size": 4
+      },
       "prefectures_reporting": 6,
       "prefectures": [
         {
@@ -85277,6 +85629,14 @@
           "value": 1
         }
       ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 0,
+        "absolute_change": 1,
+        "percent_change": null,
+        "trend": "falling",
+        "window_size": 4
+      },
       "prefectures_reporting": 2,
       "prefectures": [
         {
@@ -85444,6 +85804,14 @@
           "value": 1
         }
       ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 0,
+        "absolute_change": 1,
+        "percent_change": null,
+        "trend": "rising",
+        "window_size": 4
+      },
       "prefectures_reporting": 1,
       "prefectures": [
         {
@@ -85557,6 +85925,14 @@
           "value": 1
         }
       ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 4,
+        "absolute_change": -3,
+        "percent_change": -75,
+        "trend": "falling",
+        "window_size": 4
+      },
       "prefectures_reporting": 14,
       "prefectures": [
         {
@@ -86372,6 +86748,14 @@
           "value": 1
         }
       ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 1,
+        "absolute_change": 0,
+        "percent_change": 0,
+        "trend": "rising",
+        "window_size": 4
+      },
       "prefectures_reporting": 8,
       "prefectures": [
         {
@@ -86863,6 +87247,14 @@
           "value": 1
         }
       ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 1,
+        "absolute_change": 0,
+        "percent_change": 0,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 7,
       "prefectures": [
         {
@@ -87300,6 +87692,14 @@
           "value": 1
         }
       ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 2,
+        "absolute_change": -1,
+        "percent_change": -50,
+        "trend": "stable",
+        "window_size": 4
+      },
       "prefectures_reporting": 16,
       "prefectures": [
         {

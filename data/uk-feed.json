@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T18:57:09.809Z",
+  "generated_at": "2026-08-19T19:15:01.432Z",
   "source": "UKHSA data dashboard (England regions)",
   "recency_window_days": 90,
   "history_points": 12,
@@ -65,7 +65,15 @@
               "date": "2026-08-12",
               "value": 1
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 1,
+            "previous_value": 2,
+            "absolute_change": -1,
+            "percent_change": -50,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "east_of_england",
@@ -122,7 +130,15 @@
               "date": "2026-08-12",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "london",
@@ -179,7 +195,15 @@
               "date": "2026-08-12",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 2,
+            "absolute_change": -2,
+            "percent_change": -100,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "north_east",
@@ -236,7 +260,15 @@
               "date": "2026-08-12",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "north_west",
@@ -293,7 +325,15 @@
               "date": "2026-08-12",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 3,
+            "absolute_change": -3,
+            "percent_change": -100,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "south_east",
@@ -350,7 +390,15 @@
               "date": "2026-08-12",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "south_west",
@@ -407,7 +455,15 @@
               "date": "2026-08-12",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 2,
+            "absolute_change": -2,
+            "percent_change": -100,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "west_midlands",
@@ -464,7 +520,15 @@
               "date": "2026-08-12",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 3,
+            "absolute_change": -3,
+            "percent_change": -100,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "yorkshire_and_humber",
@@ -521,7 +585,15 @@
               "date": "2026-08-12",
               "value": 1
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 1,
+            "previous_value": 5,
+            "absolute_change": -4,
+            "percent_change": -80,
+            "trend": "falling",
+            "window_size": 4
+          }
         }
       ]
     },
@@ -585,7 +657,15 @@
               "date": "2026-08-03",
               "value": 2.16
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 2.16,
+            "previous_value": 1.74,
+            "absolute_change": 0.42,
+            "percent_change": 24.1,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "east_of_england",
@@ -642,7 +722,15 @@
               "date": "2026-08-03",
               "value": 0.8
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.8,
+            "previous_value": 0.83,
+            "absolute_change": -0.03,
+            "percent_change": -3.6,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "london",
@@ -699,7 +787,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "north_east",
@@ -756,7 +852,15 @@
               "date": "2026-08-03",
               "value": 0.54
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.54,
+            "previous_value": 0.75,
+            "absolute_change": -0.21,
+            "percent_change": -28,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "north_west",
@@ -813,7 +917,15 @@
               "date": "2026-08-03",
               "value": 1.02
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 1.02,
+            "previous_value": 0.26,
+            "absolute_change": 0.76,
+            "percent_change": 292.3,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "south_east",
@@ -870,7 +982,15 @@
               "date": "2026-08-03",
               "value": 9.09
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 9.09,
+            "previous_value": 3.85,
+            "absolute_change": 5.24,
+            "percent_change": 136.1,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "south_west",
@@ -927,7 +1047,15 @@
               "date": "2026-08-03",
               "value": 1.14
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 1.14,
+            "previous_value": 0.69,
+            "absolute_change": 0.45,
+            "percent_change": 65.2,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "west_midlands",
@@ -984,7 +1112,15 @@
               "date": "2026-08-03",
               "value": 0.86
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.86,
+            "previous_value": 0.44,
+            "absolute_change": 0.42,
+            "percent_change": 95.5,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "yorkshire_and_humber",
@@ -1041,7 +1177,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "stable",
+            "window_size": 4
+          }
         }
       ]
     },
@@ -1105,7 +1249,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "east_of_england",
@@ -1162,7 +1314,15 @@
               "date": "2026-08-03",
               "value": 0.27
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.27,
+            "previous_value": 0,
+            "absolute_change": 0.27,
+            "percent_change": null,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "london",
@@ -1219,7 +1379,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "north_east",
@@ -1276,7 +1444,15 @@
               "date": "2026-08-03",
               "value": 0.54
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.54,
+            "previous_value": 0.25,
+            "absolute_change": 0.29,
+            "percent_change": 116,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "north_west",
@@ -1333,7 +1509,15 @@
               "date": "2026-08-03",
               "value": 0.15
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.15,
+            "previous_value": 0,
+            "absolute_change": 0.15,
+            "percent_change": null,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "south_east",
@@ -1390,7 +1574,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "south_west",
@@ -1447,7 +1639,15 @@
               "date": "2026-08-03",
               "value": 0.28
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.28,
+            "previous_value": 0.46,
+            "absolute_change": -0.18,
+            "percent_change": -39.1,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "west_midlands",
@@ -1504,7 +1704,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "yorkshire_and_humber",
@@ -1561,7 +1769,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "stable",
+            "window_size": 4
+          }
         }
       ]
     },
@@ -1625,7 +1841,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 3.57,
+            "absolute_change": -3.57,
+            "percent_change": -100,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "east_of_england",
@@ -1682,7 +1906,15 @@
               "date": "2026-08-03",
               "value": 0.27
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.27,
+            "previous_value": 0.41,
+            "absolute_change": -0.14,
+            "percent_change": -34.1,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "london",
@@ -1739,7 +1971,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "north_east",
@@ -1796,7 +2036,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 2.2,
+            "absolute_change": -2.2,
+            "percent_change": -100,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "north_west",
@@ -1853,7 +2101,15 @@
               "date": "2026-08-03",
               "value": 3.24
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 3.24,
+            "previous_value": 4.01,
+            "absolute_change": -0.77,
+            "percent_change": -19.2,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "south_east",
@@ -1910,7 +2166,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "south_west",
@@ -1967,7 +2231,15 @@
               "date": "2026-08-03",
               "value": 2.26
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 2.26,
+            "previous_value": 2.29,
+            "absolute_change": -0.03,
+            "percent_change": -1.3,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "west_midlands",
@@ -2024,7 +2296,15 @@
               "date": "2026-08-03",
               "value": 0.86
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.86,
+            "previous_value": 0.44,
+            "absolute_change": 0.42,
+            "percent_change": 95.5,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "yorkshire_and_humber",
@@ -2081,7 +2361,15 @@
               "date": "2026-08-03",
               "value": 4.76
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 4.76,
+            "previous_value": 6.9,
+            "absolute_change": -2.14,
+            "percent_change": -31,
+            "trend": "rising",
+            "window_size": 4
+          }
         }
       ]
     },
@@ -2145,7 +2433,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "east_of_england",
@@ -2202,7 +2498,15 @@
               "date": "2026-08-03",
               "value": 4.29
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 4.29,
+            "previous_value": 3.48,
+            "absolute_change": 0.81,
+            "percent_change": 23.3,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "london",
@@ -2259,7 +2563,15 @@
               "date": "2026-08-03",
               "value": 25
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 25,
+            "previous_value": 16.67,
+            "absolute_change": 8.33,
+            "percent_change": 50,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "north_east",
@@ -2316,7 +2628,15 @@
               "date": "2026-08-03",
               "value": 6.33
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 6.33,
+            "previous_value": 5.56,
+            "absolute_change": 0.77,
+            "percent_change": 13.8,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "north_west",
@@ -2373,7 +2693,15 @@
               "date": "2026-08-03",
               "value": 5.92
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 5.92,
+            "previous_value": 7.21,
+            "absolute_change": -1.29,
+            "percent_change": -17.9,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "south_east",
@@ -2430,7 +2758,15 @@
               "date": "2026-08-03",
               "value": 100
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 100,
+            "previous_value": 0,
+            "absolute_change": 100,
+            "percent_change": null,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "south_west",
@@ -2487,7 +2823,15 @@
               "date": "2026-08-03",
               "value": 9.77
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 9.77,
+            "previous_value": 7.43,
+            "absolute_change": 2.34,
+            "percent_change": 31.5,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "west_midlands",
@@ -2544,7 +2888,15 @@
               "date": "2026-08-03",
               "value": 3.98
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 3.98,
+            "previous_value": 4.5,
+            "absolute_change": -0.52,
+            "percent_change": -11.6,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "yorkshire_and_humber",
@@ -2601,7 +2953,15 @@
               "date": "2026-08-03",
               "value": 11.11
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 11.11,
+            "previous_value": 15,
+            "absolute_change": -3.89,
+            "percent_change": -25.9,
+            "trend": "rising",
+            "window_size": 4
+          }
         }
       ]
     },
@@ -2665,7 +3025,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "east_of_england",
@@ -2722,7 +3090,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 1.74,
+            "absolute_change": -1.74,
+            "percent_change": -100,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "london",
@@ -2779,7 +3155,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 16.67,
+            "absolute_change": -16.67,
+            "percent_change": -100,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "north_east",
@@ -2836,7 +3220,15 @@
               "date": "2026-08-03",
               "value": 2.41
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 2.41,
+            "previous_value": 1.09,
+            "absolute_change": 1.32,
+            "percent_change": 121.1,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "north_west",
@@ -2893,7 +3285,15 @@
               "date": "2026-08-03",
               "value": 0.66
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.66,
+            "previous_value": 0.96,
+            "absolute_change": -0.3,
+            "percent_change": -31.2,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "south_east",
@@ -2950,7 +3350,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "south_west",
@@ -3007,7 +3415,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "west_midlands",
@@ -3064,7 +3480,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "yorkshire_and_humber",
@@ -3121,7 +3545,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "falling",
+            "window_size": 4
+          }
         }
       ]
     },
@@ -3185,7 +3617,15 @@
               "date": "2026-08-03",
               "value": 2.94
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 2.94,
+            "previous_value": 5.16,
+            "absolute_change": -2.22,
+            "percent_change": -43,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "east_of_england",
@@ -3242,7 +3682,15 @@
               "date": "2026-08-03",
               "value": 1.33
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 1.33,
+            "previous_value": 1.66,
+            "absolute_change": -0.33,
+            "percent_change": -19.9,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "london",
@@ -3299,7 +3747,15 @@
               "date": "2026-08-03",
               "value": 16.67
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 16.67,
+            "previous_value": 0,
+            "absolute_change": 16.67,
+            "percent_change": null,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "north_east",
@@ -3356,7 +3812,15 @@
               "date": "2026-07-27",
               "value": 100
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 100,
+            "previous_value": 0,
+            "absolute_change": 100,
+            "percent_change": null,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "north_west",
@@ -3413,7 +3877,15 @@
               "date": "2026-08-03",
               "value": 1.33
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 1.33,
+            "previous_value": 1.95,
+            "absolute_change": -0.62,
+            "percent_change": -31.8,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "south_east",
@@ -3470,7 +3942,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "south_west",
@@ -3527,7 +4007,15 @@
               "date": "2026-08-03",
               "value": 3.36
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 3.36,
+            "previous_value": 1.99,
+            "absolute_change": 1.37,
+            "percent_change": 68.8,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "west_midlands",
@@ -3584,7 +4072,15 @@
               "date": "2026-08-03",
               "value": 8.37
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 8.37,
+            "previous_value": 2.2,
+            "absolute_change": 6.17,
+            "percent_change": 280.5,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "yorkshire_and_humber",
@@ -3641,7 +4137,15 @@
               "date": "2026-08-03",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "stable",
+            "window_size": 4
+          }
         }
       ]
     },
@@ -3705,7 +4209,15 @@
               "date": "2026-07-20",
               "value": 1
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 1,
+            "previous_value": 1,
+            "absolute_change": 0,
+            "percent_change": 0,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "east_of_england",
@@ -3762,7 +4274,15 @@
               "date": "2026-07-20",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "london",
@@ -3819,7 +4339,15 @@
               "date": "2026-07-20",
               "value": 2
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 2,
+            "previous_value": 8,
+            "absolute_change": -6,
+            "percent_change": -75,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "north_east",
@@ -3876,7 +4404,15 @@
               "date": "2026-07-20",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "north_west",
@@ -3933,7 +4469,15 @@
               "date": "2026-07-20",
               "value": 2
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 2,
+            "previous_value": 1,
+            "absolute_change": 1,
+            "percent_change": 100,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "south_east",
@@ -3990,7 +4534,15 @@
               "date": "2026-07-20",
               "value": 1
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 1,
+            "previous_value": 1,
+            "absolute_change": 0,
+            "percent_change": 0,
+            "trend": "falling",
+            "window_size": 4
+          }
         },
         {
           "id": "south_west",
@@ -4047,7 +4599,15 @@
               "date": "2026-07-20",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "west_midlands",
@@ -4104,7 +4664,15 @@
               "date": "2026-07-20",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "yorkshire_and_humber",
@@ -4161,7 +4729,15 @@
               "date": "2026-07-20",
               "value": 0
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 0,
+            "absolute_change": 0,
+            "percent_change": null,
+            "trend": "falling",
+            "window_size": 4
+          }
         }
       ]
     },
@@ -4225,7 +4801,15 @@
               "date": "2026-06-01",
               "value": 73
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 73,
+            "previous_value": 20,
+            "absolute_change": 53,
+            "percent_change": 265,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "east_of_england",
@@ -4282,7 +4866,15 @@
               "date": "2026-06-01",
               "value": 71
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 71,
+            "previous_value": 36,
+            "absolute_change": 35,
+            "percent_change": 97.2,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "london",
@@ -4339,7 +4931,15 @@
               "date": "2026-06-01",
               "value": 54
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 54,
+            "previous_value": 24,
+            "absolute_change": 30,
+            "percent_change": 125,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "north_east",
@@ -4396,7 +4996,15 @@
               "date": "2026-06-01",
               "value": 29
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 29,
+            "previous_value": 18,
+            "absolute_change": 11,
+            "percent_change": 61.1,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "north_west",
@@ -4453,7 +5061,15 @@
               "date": "2026-06-01",
               "value": 115
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 115,
+            "previous_value": 33,
+            "absolute_change": 82,
+            "percent_change": 248.5,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "south_east",
@@ -4510,7 +5126,15 @@
               "date": "2026-06-01",
               "value": 70
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 70,
+            "previous_value": 33,
+            "absolute_change": 37,
+            "percent_change": 112.1,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "south_west",
@@ -4567,7 +5191,15 @@
               "date": "2026-06-01",
               "value": 75
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 75,
+            "previous_value": 33,
+            "absolute_change": 42,
+            "percent_change": 127.3,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "west_midlands",
@@ -4624,7 +5256,15 @@
               "date": "2026-06-01",
               "value": 59
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 59,
+            "previous_value": 42,
+            "absolute_change": 17,
+            "percent_change": 40.5,
+            "trend": "rising",
+            "window_size": 4
+          }
         },
         {
           "id": "yorkshire_and_humber",
@@ -4681,7 +5321,15 @@
               "date": "2026-06-01",
               "value": 78
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 78,
+            "previous_value": 22,
+            "absolute_change": 56,
+            "percent_change": 254.5,
+            "trend": "rising",
+            "window_size": 4
+          }
         }
       ]
     },
@@ -4745,7 +5393,15 @@
               "date": "2026-08-10",
               "value": 0.06
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.06,
+            "previous_value": 0.06,
+            "absolute_change": 0,
+            "percent_change": 0,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "east_of_england",
@@ -4802,7 +5458,15 @@
               "date": "2026-08-10",
               "value": 0.06
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.06,
+            "previous_value": 0.06,
+            "absolute_change": 0,
+            "percent_change": 0,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "london",
@@ -4859,7 +5523,15 @@
               "date": "2026-08-10",
               "value": 0.07
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.07,
+            "previous_value": 0.07,
+            "absolute_change": 0,
+            "percent_change": 0,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "north_east",
@@ -4916,7 +5588,15 @@
               "date": "2026-08-10",
               "value": 0.08
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.08,
+            "previous_value": 0.08,
+            "absolute_change": 0,
+            "percent_change": 0,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "north_west",
@@ -4973,7 +5653,15 @@
               "date": "2026-08-10",
               "value": 0.11
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.11,
+            "previous_value": 0.12,
+            "absolute_change": -0.01,
+            "percent_change": -8.3,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "south_east",
@@ -5030,7 +5718,15 @@
               "date": "2026-08-10",
               "value": 0.1
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.1,
+            "previous_value": 0.1,
+            "absolute_change": 0,
+            "percent_change": 0,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "south_west",
@@ -5087,7 +5783,15 @@
               "date": "2026-08-10",
               "value": 0.08
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.08,
+            "previous_value": 0.09,
+            "absolute_change": -0.01,
+            "percent_change": -11.1,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "west_midlands",
@@ -5144,7 +5848,15 @@
               "date": "2026-08-10",
               "value": 0.08
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.08,
+            "previous_value": 0.09,
+            "absolute_change": -0.01,
+            "percent_change": -11.1,
+            "trend": "stable",
+            "window_size": 4
+          }
         },
         {
           "id": "yorkshire_and_humber",
@@ -5201,7 +5913,15 @@
               "date": "2026-08-10",
               "value": 0.06
             }
-          ]
+          ],
+          "trend": {
+            "latest_value": 0.06,
+            "previous_value": 0.06,
+            "absolute_change": 0,
+            "percent_change": 0,
+            "trend": "stable",
+            "window_size": 4
+          }
         }
       ]
     }
