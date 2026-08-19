@@ -1,0 +1,1439 @@
+{
+  "pathogen": "mpox",
+  "label": "Mpox",
+  "genomeLength": 197209,
+  "genes": [
+    {
+      "name": "OPG001",
+      "start": 835,
+      "end": 1575,
+      "strand": "-",
+      "product": "Chemokine binding protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp001; Chemokine binding protein (Cop-C23L); most abundant secreted protein; CC-chemokine binding; similar to VACV-WR J1L and VACV-Cop C23L"
+    },
+    {
+      "name": "OPG002",
+      "start": 1702,
+      "end": 2751,
+      "strand": "-",
+      "product": "Crm-B secreted TNF-alpha-receptor-like protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: NBT03_gp002; TNF receptor (CrmB); similar to VACV-WR J2L and VACV-Cop C22L"
+    },
+    {
+      "name": "OPG003",
+      "start": 2841,
+      "end": 4607,
+      "strand": "-",
+      "product": "Ankyrin repeat protein (25)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp003; Ankyrin; similar to VACV-WR J3L and VACV-Cop C19L"
+    },
+    {
+      "name": "OPG015",
+      "start": 4843,
+      "end": 6156,
+      "strand": "-",
+      "product": "Ankyrin repeat protein (39)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp004; Ankyrin; similar to VACV-WR D1L and CPXV-017"
+    },
+    {
+      "name": "OPG019",
+      "start": 7580,
+      "end": 8008,
+      "strand": "+",
+      "product": "EGF-like domain protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; secreted growth factor Secreted EGF-like protein; similar to VACV-WR D3R and VACV-Cop C11R"
+    },
+    {
+      "name": "OPG021",
+      "start": 9587,
+      "end": 10315,
+      "strand": "+",
+      "product": "Zinc finger-like protein (2)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp008; Zinc finger-like protein; zinc binding; virosome localization; virulence factor; inhibition of apoptosis induced by UV irradiation; similar to VACV-WR D5R"
+    },
+    {
+      "name": "OPG022",
+      "start": 10478,
+      "end": 10858,
+      "strand": "-",
+      "product": "Interleukin-18-binding protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp009; secreted IL-18 binding protein; Soluble IL-18 binding protein (Bsh-D7L); similar to VACV-WR D6L"
+    },
+    {
+      "name": "OPG023",
+      "start": 10918,
+      "end": 12900,
+      "strand": "-",
+      "product": "Ankyrin repeat protein (2)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp010; host range; ankyrin-like; Ankyrin/Host Range (Bang-D8L); similar to VACV-WR D7L"
+    },
+    {
+      "name": "OPG024",
+      "start": 13034,
+      "end": 13228,
+      "strand": "-",
+      "product": "retroviral pseudoprotease-like protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp011; ANK-containing protein; similar to VACV-WR D8L"
+    },
+    {
+      "name": "OPG025",
+      "start": 13375,
+      "end": 15267,
+      "strand": "-",
+      "product": "Ankyrin repeat protein (14)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp012; ankyrin-like; Type I IFN resistance; similar to VACV-WR D9L and VACV-Cop C9L"
+    },
+    {
+      "name": "OPG027",
+      "start": 15925,
+      "end": 16377,
+      "strand": "-",
+      "product": "Host range protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp013; host range; Type 1 IFN inhibitor; similar to VACV-WR D10L and VACV-Cop C7L"
+    },
+    {
+      "name": "OPG029",
+      "start": 16602,
+      "end": 17069,
+      "strand": "-",
+      "product": "Bcl-2-like protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp014; Putative tlr signaling inhibitor, IFN-beta inhibitor; similar to VACV-WR D11L and VACV-Cop C6L"
+    },
+    {
+      "name": "OPG030",
+      "start": 17213,
+      "end": 17833,
+      "strand": "-",
+      "product": "Kelch-like protein (1)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp015; BTB domain of kelch-like protein; Kelch-like protein; similar to VACV-WR D12L and VACV-Cop C5L"
+    },
+    {
+      "name": "OPG031",
+      "start": 17878,
+      "end": 18828,
+      "strand": "-",
+      "product": "C4L/C10L-like family protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp016; IL-1 receptor antagonist; similar to VACV-WR D13L and VACV-Cop C10L"
+    },
+    {
+      "name": "OPG034",
+      "start": 19361,
+      "end": 20005,
+      "strand": "-",
+      "product": "Bcl-2-like protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp022; Putative TLR signalling inhibitor; start of ORF is missing approx. 18 AA compared to CPXVs; similar to VACV-WR D19L and VACV-Cop C1L"
+    },
+    {
+      "name": "OPG035",
+      "start": 20051,
+      "end": 20404,
+      "strand": "-",
+      "product": "Bcl-2-like protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp023; secreted virulence factor; Putative tlr signaling inhibitor; Anti-apoptotic Bcl-2-like protein; similar to VACV-WR P1L and VACV-Cop N1L"
+    },
+    {
+      "name": "OPG036",
+      "start": 20531,
+      "end": 21064,
+      "strand": "-",
+      "product": "Bcl-2-like protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp024; Alpha amanatin target protein; Putative tlr signaling inhibitor; similar to VACV-WR P2L and VACV-Cop #N2L"
+    },
+    {
+      "name": "OPG037",
+      "start": 21105,
+      "end": 22433,
+      "strand": "-",
+      "product": "Ankyrin-like protein (1)",
+      "note": "Taxonomic breadth: orthopoxvirus; Old product: MPXVgp025; ankyrin-like; ANK-containing protein; apoptosis inhibitor; start of ORF is missing approx. 31 AA compared to CPXVs; similar to VACV-WR O1L and VACV-Cop M1L"
+    },
+    {
+      "name": "OPG038",
+      "start": 22497,
+      "end": 23159,
+      "strand": "-",
+      "product": "NFkB inhibitor",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp026; NFkB inhibitor; similar to VACV-WR O2L and VACV-Cop M2L"
+    },
+    {
+      "name": "OPG039",
+      "start": 23264,
+      "end": 24118,
+      "strand": "-",
+      "product": "Ankyrin-like protein (3)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp027; host range; ankyrin-like; Ankyrin/NFkB inhibitor; similar to VACV-WR C1L and VACV-Cop K1L"
+    },
+    {
+      "name": "OPG040",
+      "start": 24351,
+      "end": 25478,
+      "strand": "-",
+      "product": "Serpin",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp028; serine protease inhibitor-like, SPI-3; inhibition of the ability of infected cells to fuse; Serpin 1,2,3; similar to VACV-WR C2L and VACV-Cop K2L"
+    },
+    {
+      "name": "OPG042",
+      "start": 25823,
+      "end": 27097,
+      "strand": "-",
+      "product": "Phospholipase-D-like protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp030; phospholipase D-like; Phospholipase-D-like protein; similar to VACV-WR C4L and VACV-Cop K4L"
+    },
+    {
+      "name": "OPG043",
+      "start": 27125,
+      "end": 27955,
+      "strand": "-",
+      "product": "Putative monoglyceride lipase",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp031; lysophospholipase-like; Monoglyceride lipase; similar to VACV-WR C5L and VACV-Cop K5L"
+    },
+    {
+      "name": "OPG044",
+      "start": 28091,
+      "end": 28540,
+      "strand": "+",
+      "product": "Bcl-2-like protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp032; Putative tlr signaling inhibitor; Host immune response repressor; similar to VACV-WR C6R and VACV-Cop #K7R"
+    },
+    {
+      "name": "OPG045",
+      "start": 28603,
+      "end": 29262,
+      "strand": "-",
+      "product": "Caspase-9 inhibitor",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp033; Caspase-9 (apoptosis) inhibitor (mitochondrial- associated); similar to VACV-WR C7L and VACV-Cop F1L"
+    },
+    {
+      "name": "OPG046",
+      "start": 29274,
+      "end": 29729,
+      "strand": "-",
+      "product": "dUTPase",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp034; deoxyuridine triphosphatase; dUTPase; similar to VACV-WR C8L and VACV-Cop F2L"
+    },
+    {
+      "name": "OPG047",
+      "start": 29746,
+      "end": 31194,
+      "strand": "-",
+      "product": "Kelch-like protein (2)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp035; kelch-like; Kelch-like protein; similar to VACV-WR C9L and VACV-Cop F3L"
+    },
+    {
+      "name": "OPG048",
+      "start": 31205,
+      "end": 32164,
+      "strand": "-",
+      "product": "Ribonucleotide reductase small subunit",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp036; Ribonucleotide reductase small subunit, R2; similar to VACV-WR C10L and VACV-Cop F4L"
+    },
+    {
+      "name": "OPG049",
+      "start": 32195,
+      "end": 33151,
+      "strand": "-",
+      "product": "Telomere-binding protein I6 (1)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp037; 36kDa major membrane protein; similar to VACV-WR C11L and VACV-Cop F5L"
+    },
+    {
+      "name": "OPG050",
+      "start": 33181,
+      "end": 33408,
+      "strand": "-",
+      "product": "CPXV053 protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp038; Hypothetical protein; similar to VACV-WR C12L and VACV-Cop F6L"
+    },
+    {
+      "name": "OPG051",
+      "start": 33425,
+      "end": 33649,
+      "strand": "-",
+      "product": "CPXV054 protein",
+      "note": "Taxonomic breadth: orthopoxvirus; Old product: MPXVgp039; Hypothetical protein; similar to VACV-WR C13L and VACV-Cop F7L"
+    },
+    {
+      "name": "OPG052",
+      "start": 33801,
+      "end": 33995,
+      "strand": "-",
+      "product": "Cytoplasmic protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp040; Cytoplasmic protein; similar to VACV-WR C14L and VACV-Cop F8L"
+    },
+    {
+      "name": "OPG053",
+      "start": 34052,
+      "end": 34690,
+      "strand": "-",
+      "product": "IMV membrane protein L1R",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp041; S-S bond formation pathway protein substrate; similar to VACV-WR C15L and VACV-Cop F9L"
+    },
+    {
+      "name": "OPG054",
+      "start": 34677,
+      "end": 35996,
+      "strand": "-",
+      "product": "Serine/threonine-protein kinase",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp042; serine; Essential Ser/Thr kinase morph; similar to VACV-WR C16L and VACV-Cop F10L"
+    },
+    {
+      "name": "OPG055",
+      "start": 36019,
+      "end": 37083,
+      "strand": "-",
+      "product": "Protein F11",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp043; RhoA signalling inhibitor, virus release protein; MC018; similar to VACV-WR C17L and VACV-Cop F11L"
+    },
+    {
+      "name": "OPG056",
+      "start": 37127,
+      "end": 39034,
+      "strand": "-",
+      "product": "EEV maturation protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp044; actin tail formation; EEV maturation protein; similar to VACV-WR C18L and VACV-Cop F12L"
+    },
+    {
+      "name": "OPG057",
+      "start": 39077,
+      "end": 40195,
+      "strand": "-",
+      "product": "Palmytilated EEV membrane protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp045; major envelope antigen of EEV; wrapping of IMV to form IEV; phospholipase D-like; Palmitylated EEV membrane glycoprotein; similar to VACV-WR C19L and VACV-Cop F13L"
+    },
+    {
+      "name": "OPG058",
+      "start": 40213,
+      "end": 40434,
+      "strand": "-",
+      "product": "Protein F14 (1)",
+      "note": "Taxonomic breadth: orthopoxvirus; Old product: MPXVgp046; similar to VACV-WR C20L and VACV-Cop F14L"
+    },
+    {
+      "name": "OPG059",
+      "start": 40484,
+      "end": 40633,
+      "strand": "-",
+      "product": "Cytochrome C oxidase",
+      "note": "Taxonomic breadth: poxvirinae; IMV protein; C20.5L; similar to VACV-CopF14.5L"
+    },
+    {
+      "name": "OPG060",
+      "start": 40706,
+      "end": 41182,
+      "strand": "-",
+      "product": "Protein F15",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp047; Unknown conserved protein; similar to VACV-WR C21L and VACV-Cop F15L"
+    },
+    {
+      "name": "OPG061",
+      "start": 41189,
+      "end": 41884,
+      "strand": "-",
+      "product": "Protein F16 (1)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp048; Non-functional Serine Recombinase; similar to VACV-WR C22L and VACV-Cop F16L"
+    },
+    {
+      "name": "OPG062",
+      "start": 41947,
+      "end": 42252,
+      "strand": "+",
+      "product": "DNA-binding phosphoprotein (1)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp049; virion core DNA-binding phosphoprotein (VP11); mTOR antagonist; similar to VACV-WR C23R and VACV-Cop F17R"
+    },
+    {
+      "name": "OPG063",
+      "start": 42249,
+      "end": 43688,
+      "strand": "-",
+      "product": "Poly(A) polymerase catalytic subunit (3)",
+      "note": "Taxonomic breadth: poxvirinae; Old product: MPXVgp050; poly-A polymerase, Poly (A) polymerase catalytic subunit (VP55); similar to VACV-WR F1L and VACV-Cop E1L"
+    },
+    {
+      "name": "OPG064",
+      "start": 43685,
+      "end": 45898,
+      "strand": "-",
+      "product": "Iev morphogenesis protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp051; IEV morphogenesis; similar to VACV-WR F2L and VACV-Cop E2L"
+    },
+    {
+      "name": "OPG065",
+      "start": 46022,
+      "end": 46483,
+      "strand": "-",
+      "product": "Double-stranded RNA binding protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp052; interferon resistance factor; two forms (25 kDa and 19 kDa) of the dsRNA-binding protein; inhibition of dsRNA-dependent protein kinase and 2-5A-synthet; dsRNA-binding protein, IFN resistance/PKR inhibitor (Z-DNA binding); start of ORF is missing approx. 37 AA compared to CPXVs; similar to VACV-WR F3L and VACV-Cop E3L"
+    },
+    {
+      "name": "OPG066",
+      "start": 46649,
+      "end": 47428,
+      "strand": "-",
+      "product": "DNA-directed RNA polymerase 30 kDa polypeptide",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp053; RNA polymerase 30 kDa subunit (RPO30); simultaneously intermediate stage promoter-specific transcription factor, VITF-1; similar to VACV-WR F4L and VACV-Cop E4L"
+    },
+    {
+      "name": "OPG068",
+      "start": 48201,
+      "end": 49904,
+      "strand": "+",
+      "product": "IMV membrane protein E6",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp054; Virion protein; similar to VACV-WR F5R and VACV-Cop E6R"
+    },
+    {
+      "name": "OPG069",
+      "start": 49986,
+      "end": 50486,
+      "strand": "+",
+      "product": "Myristoylated protein E7",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp055; soluble myristylated protein; similar to VACV-WR F6R and VACV-Cop E7R"
+    },
+    {
+      "name": "OPG070",
+      "start": 50590,
+      "end": 51411,
+      "strand": "+",
+      "product": "Membrane protein E8",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp056; ER-localized membrane protein, virion core protein; similar to VACV-WR F7R and VACV-Cop E8R"
+    },
+    {
+      "name": "OPG071",
+      "start": 51418,
+      "end": 54438,
+      "strand": "-",
+      "product": "DNA polymerase (2)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp057; DNA polymerase, catalytic subunit; similar to VACV-WR F8L and VACV-Cop E9L"
+    },
+    {
+      "name": "OPG072",
+      "start": 54470,
+      "end": 54757,
+      "strand": "+",
+      "product": "Sulfhydryl oxidase",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp058; protein disulfide bond-forming enzyme; Sulfhydryl oxidase (FAD-linked); similar to VACV-WR F9R and VACV-Cop E10R"
+    },
+    {
+      "name": "OPG073",
+      "start": 54752,
+      "end": 55141,
+      "strand": "-",
+      "product": "Virion core protein E11",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp059; virion core protein; similar to VACV-WR F10L and VACV-Cop E11L"
+    },
+    {
+      "name": "OPG074",
+      "start": 55128,
+      "end": 57125,
+      "strand": "-",
+      "product": "Iev morphogenesis protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp060; Membrane protein; similar to VACV-WR Q1L and VACV-Cop O1L"
+    },
+    {
+      "name": "OPG075",
+      "start": 57172,
+      "end": 57498,
+      "strand": "-",
+      "product": "Glutaredoxin-1",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp061; virion-associated glutaredoxin; glutaredoxin 1; similar to VACV-WR Q2L and VACV-Cop O2L"
+    },
+    {
+      "name": "OPG076",
+      "start": 57523,
+      "end": 57630,
+      "strand": "-",
+      "product": "MV membrane EFC component",
+      "note": null
+    },
+    {
+      "name": "OPG077",
+      "start": 57645,
+      "end": 58583,
+      "strand": "-",
+      "product": "Telomere-binding protein I1",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp062; virosomal protein essential for virus multiplication; DNA-binding core protein; similar to VACV-WR I1L and VACV-Cop I1L"
+    },
+    {
+      "name": "OPG078",
+      "start": 58590,
+      "end": 58811,
+      "strand": "-",
+      "product": "IMV membrane protein I2",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp063; IMV membrane protein; similar to VACV-WR I2L and VACV-Cop I2L"
+    },
+    {
+      "name": "OPG079",
+      "start": 58812,
+      "end": 59621,
+      "strand": "-",
+      "product": "DNA-binding phosphoprotein (2)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp064; virosomal ssDNA-binding phosphoprotein; interacts with R2 subunit of ribonucleotide reductase; similar to VACV-WR I3L and VACV-Cop I3L"
+    },
+    {
+      "name": "OPG080",
+      "start": 59703,
+      "end": 62018,
+      "strand": "-",
+      "product": "Ribonucleoside-diphosphate reductase (2)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp065; ribonucleotide reductase, large subunit, R1; similar to VACV-WR I4L and VACV-Cop I4L"
+    },
+    {
+      "name": "OPG081",
+      "start": 62046,
+      "end": 62285,
+      "strand": "-",
+      "product": "IMV membrane protein I5",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp066; IMV surface membrane protein, VP13; similar to VACV-WR I5L and VACV-Cop I5L"
+    },
+    {
+      "name": "OPG082",
+      "start": 62304,
+      "end": 63452,
+      "strand": "-",
+      "product": "Telomere-binding protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp067; Telomere-binding protein; similar to VACV-WR I6L and VACV-Cop I6L"
+    },
+    {
+      "name": "OPG083",
+      "start": 63445,
+      "end": 64716,
+      "strand": "-",
+      "product": "Viral core cysteine proteinase",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp068; virion core protein; similar to DNA topoisomerase II; Virion core cysteine protease; similar to VACV-WR I7L and VACV-Cop I7L"
+    },
+    {
+      "name": "OPG084",
+      "start": 64722,
+      "end": 66752,
+      "strand": "+",
+      "product": "RNA helicase NPH-II (2)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp069; nucleoside triphosphate phosphohydrolase II, NPH-II; DNA and RNA helicase; DExH-NPH-II domain; similar to VACV-WR I8R and VACV-Cop I8R"
+    },
+    {
+      "name": "OPG085",
+      "start": 66756,
+      "end": 68531,
+      "strand": "-",
+      "product": "Metalloendopeptidase",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp070; proteinase; Metalloprotease; similar to VACV-WR G1L and VACV-Cop G1L"
+    },
+    {
+      "name": "OPG086",
+      "start": 68528,
+      "end": 68863,
+      "strand": "-",
+      "product": "Entry/fusion complex component",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp071; Entry/fusion complex component; similar to VACV-WR G2L and VACV-Cop G3L"
+    },
+    {
+      "name": "OPG087",
+      "start": 68857,
+      "end": 69519,
+      "strand": "+",
+      "product": "Late transcription elongation factor",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp072; VLTF (late transcription elongation factor); similar to VACV-WR G3R and VACV-Cop G2R"
+    },
+    {
+      "name": "OPG088",
+      "start": 69489,
+      "end": 69863,
+      "strand": "-",
+      "product": "Glutaredoxin-2",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp073; virion-associated glutaredoxin; Glutaredoxin-like protein; similar to VACV-WR G4L and VACV-Cop G4L"
+    },
+    {
+      "name": "OPG089",
+      "start": 69866,
+      "end": 71170,
+      "strand": "+",
+      "product": "FEN1-like nuclease",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp074; FEN1-like nuclease; similar to VACV-WR G5R and VACV-Cop G5R"
+    },
+    {
+      "name": "OPG090",
+      "start": 71179,
+      "end": 71370,
+      "strand": "+",
+      "product": "DNA-directed RNA polymerase 7 kDa subunit",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp075; RNA polymerase subunit, 7 kDa subunit (RPO7); similar to VACV-WR G6R and VACV-Cop G5.5R"
+    },
+    {
+      "name": "OPG091",
+      "start": 71370,
+      "end": 71867,
+      "strand": "+",
+      "product": "Nlpc/p60 superfamily protein",
+      "note": "Taxonomic breadth: poxvirinae; Old product: MPXVgp076; NLPc/P60 superfamily protein; similar to VACV-WR G7R and VACV-Cop G6R"
+    },
+    {
+      "name": "OPG092",
+      "start": 71832,
+      "end": 72947,
+      "strand": "-",
+      "product": "Assembly protein G7",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp077; virion protein; Virion phosphoprotein, early morphogenesis; similar to VACV-WR G8L and VACV-Cop G7L"
+    },
+    {
+      "name": "OPG093",
+      "start": 72978,
+      "end": 73760,
+      "strand": "+",
+      "product": "Late transcription factor VLTF-1",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp078; late gene transcription factor, VLTF-1; similar to VACV-WR G9R and VACV-Cop G8R"
+    },
+    {
+      "name": "OPG094",
+      "start": 73780,
+      "end": 74802,
+      "strand": "+",
+      "product": "Myristylated protein",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp079; myristylated protein; Entry/fusion complex component, myristylprotein; similar to VACV-WR G10R and VACV-Cop G9R"
+    },
+    {
+      "name": "OPG095",
+      "start": 74803,
+      "end": 75555,
+      "strand": "+",
+      "product": "IMV membrane protein L1R",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp080; myristylated IMV surface membrane protein; similar to VACV-WR M1R and VACV-Cop L1R"
+    },
+    {
+      "name": "OPG096",
+      "start": 75587,
+      "end": 75865,
+      "strand": "+",
+      "product": "Crescent membrane and immature virion formation protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp081; Viral membrane assembly proteins (VMAP); similar to VACV-WR M2R and VACV-Cop L2R"
+    },
+    {
+      "name": "OPG097",
+      "start": 75841,
+      "end": 76875,
+      "strand": "-",
+      "product": "Internal virion L3/FP4 protein",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp082; Internal virion protein; similar to VACV-WR M3L and VACV-Cop L3L"
+    },
+    {
+      "name": "OPG098",
+      "start": 76900,
+      "end": 77655,
+      "strand": "+",
+      "product": "Nucleic acid binding protein VP8/L4R",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp083; virion core protein vp8; stimulation of I8R helicase activity; ss/dsDNA binding protein (VP8); similar to VACV-WR M4R and VACV-Cop L4R"
+    },
+    {
+      "name": "OPG099",
+      "start": 77665,
+      "end": 78051,
+      "strand": "+",
+      "product": "Membrane protein CL5",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp084; Entry and Fusion IMV protein; similar to VACV-WR M5R and VACV-Cop L5R"
+    },
+    {
+      "name": "OPG100",
+      "start": 78008,
+      "end": 78466,
+      "strand": "+",
+      "product": "IMV membrane protein J1",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp085; Virion morph; similar to VACV-WR L1R and VACV-Cop J1R"
+    },
+    {
+      "name": "OPG101",
+      "start": 78486,
+      "end": 79019,
+      "strand": "+",
+      "product": "Thymidine kinase",
+      "note": "Taxonomic breadth: poxvirinae; Old product: MPXVgp086; thymidine kinase; similar to VACV-WR L2R and VACV-Cop J2R"
+    },
+    {
+      "name": "OPG102",
+      "start": 79085,
+      "end": 80086,
+      "strand": "+",
+      "product": "Cap-specific mRNA",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp087; poly-A polymerase, stimulatory subunit, simultaneously cap-specific mRNA (nucleoside-O2'-)-methyltransferase; Poly (A) polymerase small subunit (VP39); similar to VACV-WR L3R and VACV-Cop J3R"
+    },
+    {
+      "name": "OPG103",
+      "start": 80001,
+      "end": 80558,
+      "strand": "+",
+      "product": "DNA-directed RNA polymerase subunit",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp088; RNA polymerase, 22 kDa subunit (RPO22); similar to VACV-WR L4R and VACV-Cop J4R"
+    },
+    {
+      "name": "OPG104",
+      "start": 80618,
+      "end": 81019,
+      "strand": "-",
+      "product": "Myristylated protein",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp089; essential for virus multiplication; IMV membrane protein; similar to VACV-WR L5L and VACV-Cop J5L"
+    },
+    {
+      "name": "OPG105",
+      "start": 81126,
+      "end": 84986,
+      "strand": "+",
+      "product": "DNA-dependent RNA polymerase subunit rpo147",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp090; RNA polymerase, 147 kDa subunit (RPO147); similar to VACV-WR L6R and VACV-Cop J6R"
+    },
+    {
+      "name": "OPG106",
+      "start": 84983,
+      "end": 85498,
+      "strand": "-",
+      "product": "Tyr/ser protein phosphatase",
+      "note": "Taxonomic breadth: poxvirinae; Old product: MPXVgp091; tyrosine; Tyr/Ser phosphatase, IFN-gamma inhibitor; similar to VACV-WR H1L and VACV-Cop H1L"
+    },
+    {
+      "name": "OPG107",
+      "start": 85512,
+      "end": 86081,
+      "strand": "+",
+      "product": "Entry-fusion complex essential component",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp092; IMV membrane protein; similar to VACV-WR H2R and VACV-Cop H2R"
+    },
+    {
+      "name": "OPG108",
+      "start": 86085,
+      "end": 87059,
+      "strand": "-",
+      "product": "IMV heparin binding surface protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp093; IMV surface membrane protein; IMV heparin binding surface protein; similar to VACV-WR H3L and VACV-Cop H3L"
+    },
+    {
+      "name": "OPG109",
+      "start": 87060,
+      "end": 89447,
+      "strand": "-",
+      "product": "RNA polymerase-associated transcription-specificity factor RAP94",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp094; virion core RNA polymerase-associated protein, RAP94; similar to VACV-WR H4L and VACV-Cop H4L"
+    },
+    {
+      "name": "OPG110",
+      "start": 89632,
+      "end": 90264,
+      "strand": "+",
+      "product": "Late transcription factor VLTF-4 (1)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp095; virosome-associated late gene transcription factor, VLTF-4; Ca2+-binding motif; similar to VACV-WR H5R and VACV-Cop H5R"
+    },
+    {
+      "name": "OPG111",
+      "start": 90265,
+      "end": 91209,
+      "strand": "+",
+      "product": "DNA topoisomerase type I",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp096; DNA topoisomerase type I; similar to VACV-WR H6R and VACV-Cop H6R"
+    },
+    {
+      "name": "OPG112",
+      "start": 91247,
+      "end": 91687,
+      "strand": "+",
+      "product": "Late protein H7",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp097; Viral membrane assembly proteins (VMAP); similar to VACV-WR H7R and VACV-Cop H7R"
+    },
+    {
+      "name": "OPG113",
+      "start": 91731,
+      "end": 94268,
+      "strand": "+",
+      "product": "mRNA capping enzyme large subunit",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp098; mRNA capping enzyme, large subunit; RNA 5' triphosphatase and RNA guanylyl transferase activities; similar to VACV-WR E1R and VACV-Cop D1R"
+    },
+    {
+      "name": "OPG114",
+      "start": 94227,
+      "end": 94667,
+      "strand": "-",
+      "product": "Virion protein D2",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp099; virion core protein; similar to VACV-WR E2L and VACV-Cop D2L"
+    },
+    {
+      "name": "OPG115",
+      "start": 94660,
+      "end": 95361,
+      "strand": "+",
+      "product": "Virion core protein D3",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp100; virion core protein; similar to VACV-WR E3R and VACV-Cop D3R"
+    },
+    {
+      "name": "OPG116",
+      "start": 95361,
+      "end": 96017,
+      "strand": "+",
+      "product": "Uracil DNA glycosylase superfamily",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp101; uracil DNA glycosylase; DNA polymerase processivity factor; similar to VACV-WR E4R and VACV-Cop D4R"
+    },
+    {
+      "name": "OPG117",
+      "start": 96049,
+      "end": 98406,
+      "strand": "+",
+      "product": "NTPase (1)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp102; nucleic acid-independent nucleoside triphosphatase; NTPase, DNA primase; similar to VACV-WR E5R and VACV-Cop D5R"
+    },
+    {
+      "name": "OPG118",
+      "start": 98446,
+      "end": 100359,
+      "strand": "+",
+      "product": "Early transcription factor 70 kDa subunit",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp103; early transcription factor, small subunit, VETF-s; Morphogenesis; similar to VACV-WR E6R and VACV-Cop D6R"
+    },
+    {
+      "name": "OPG119",
+      "start": 100386,
+      "end": 100871,
+      "strand": "+",
+      "product": "RNA polymerase subunit RPO18",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp104; RNA polymerase, 18 kDa subunit (RPO18); similar to VACV-WR E7R and VACV-Cop D7R"
+    },
+    {
+      "name": "OPG120",
+      "start": 100834,
+      "end": 101748,
+      "strand": "-",
+      "product": "Carbonic anhydrase",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp105; IMV surface membrane 32 kDa protein; binding to cell surface chondroitin sulfate; IMV adsorption to cell surface; GAG-binding IMV membrane protein; similar to VACV-WR E8L and VACV-Cop D8L"
+    },
+    {
+      "name": "OPG121",
+      "start": 101790,
+      "end": 102431,
+      "strand": "+",
+      "product": "NUDIX domain protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp106; Mut-like; mRNA decapping enzyme; similar to VACV-WR E9R and VACV-Cop D9R"
+    },
+    {
+      "name": "OPG122",
+      "start": 102428,
+      "end": 103174,
+      "strand": "+",
+      "product": "MutT motif protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp107; down regulation of gene expression; Mut-like; mRNA decapping enzyme; similar to VACV-WR E10R and VACV-Cop D10R"
+    },
+    {
+      "name": "OPG123",
+      "start": 103175,
+      "end": 105070,
+      "strand": "-",
+      "product": "Nucleoside triphosphatase I",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp108; nucleoside triphosphate phosphohydrolase I, NPH I; DNA-dependent ATPase; early gene transcription termination factor; similar to VACV-WR E11L and VACV-Cop D11L"
+    },
+    {
+      "name": "OPG124",
+      "start": 105105,
+      "end": 105968,
+      "strand": "-",
+      "product": "mRNA capping enzyme small subunit",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp109; mRNA capping enzyme small subunit; mRNA (guanine-N7-)-methyl-transferase; transcription initiation factor; similar to VACV-WR E12L and VACV-Cop D12L"
+    },
+    {
+      "name": "OPG125",
+      "start": 105999,
+      "end": 107654,
+      "strand": "-",
+      "product": "Rifampicin resistance protein",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp110; protein needed for the formation of immature IMV surface membrane; Trimeric virion coat protein (rifampicin res); similar to VACV-WR E13L and VACV-Cop D13L"
+    },
+    {
+      "name": "OPG126",
+      "start": 107678,
+      "end": 108130,
+      "strand": "-",
+      "product": "Late transcription factor VLTF-2 (2)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp111; late gene transcription factor, VLTF-2; similar to VACV-WR A1L and VACV-Cop A1L"
+    },
+    {
+      "name": "OPG127",
+      "start": 108151,
+      "end": 108825,
+      "strand": "-",
+      "product": "Late transcription factor VLTF-3 (1)",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp112; late gene transcription factor, VLTF-3; zinc binding; similar to VACV-WR A2L and VACV-Cop A2L"
+    },
+    {
+      "name": "OPG128",
+      "start": 108822,
+      "end": 109055,
+      "strand": "-",
+      "product": "S-S bond formation pathway protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp113; S-S bond formation pathway protein; similar to VACV-WR A3L and VACV-Cop A2.5L"
+    },
+    {
+      "name": "OPG129",
+      "start": 109070,
+      "end": 111004,
+      "strand": "-",
+      "product": "Virion core protein P4b",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp114; major virion core protein p4b; P4b precursor; similar to VACV-WR A4L and VACV-Cop A3L"
+    },
+    {
+      "name": "OPG130",
+      "start": 111057,
+      "end": 111902,
+      "strand": "-",
+      "product": "A5L protein-like",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp115; 39 kDa immunodominant virion core protein needed for the progression of IV to infectious IMV; 39kDa virion core protein; similar to VACV-WR A5L and VACV-Cop A4L"
+    },
+    {
+      "name": "OPG131",
+      "start": 111940,
+      "end": 112425,
+      "strand": "+",
+      "product": "DNA-directed RNA polymerase 19 kDa subunit",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp116; precursor of RNA polymerase 22 kDa and 21 kDa; RNA polymerase subunit (RPO19); similar to VACV-WR A6R and VACV-Cop A5R"
+    },
+    {
+      "name": "OPG132",
+      "start": 112422,
+      "end": 113540,
+      "strand": "-",
+      "product": "Virion morphogenesis protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp117; Viral membrane assembly proteins (VMAP), core protein; similar to VACV-WR A7L and VACV-Cop A6L"
+    },
+    {
+      "name": "OPG133",
+      "start": 113564,
+      "end": 115696,
+      "strand": "-",
+      "product": "Early transcription factor 82 kDa subunit",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp118; early transcription factor, large subunit, VETF-L; needed for morphogenesis of the virion core; similar to VACV-WR A8L and VACV-Cop A7L"
+    },
+    {
+      "name": "OPG134",
+      "start": 115750,
+      "end": 116628,
+      "strand": "+",
+      "product": "Intermediate transcription factor VITF-3 (1)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp119; intermediate transcription factor, VITF-3 34kda subunit, 34 kDa; similar to VACV-WR A9R and VACV-Cop A8R"
+    },
+    {
+      "name": "OPG135",
+      "start": 116609,
+      "end": 116911,
+      "strand": "-",
+      "product": "IMV membrane protein A9",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp120; Viral membrane associated, early morphogenesis protein; similar to VACV-WR A10L and VACV-Cop A9L"
+    },
+    {
+      "name": "OPG136",
+      "start": 116912,
+      "end": 119587,
+      "strand": "-",
+      "product": "Virion core protein P4a",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp121; major virion core protein p4a; P4a precursor; similar to VACV-WR A11L and VACV-Cop A10L"
+    },
+    {
+      "name": "OPG137",
+      "start": 119602,
+      "end": 120558,
+      "strand": "+",
+      "product": "Viral membrane formation protein",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp122; Viral membrane assembly proteins (VMAP); similar to VACV-WR A12R and VACV-Cop A11R"
+    },
+    {
+      "name": "OPG138",
+      "start": 120560,
+      "end": 121132,
+      "strand": "-",
+      "product": "A12 protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp123; Virion core and cleavage processing protein; similar to VACV-WR A13L and VACV-Cop A12L"
+    },
+    {
+      "name": "OPG139",
+      "start": 121156,
+      "end": 121368,
+      "strand": "-",
+      "product": "IMV membrane protein A13L",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp124; IMV inner and outer membrane protein; virion maturation; similar to VACV-WR A14L and VACV-Cop A13L"
+    },
+    {
+      "name": "OPG140",
+      "start": 121474,
+      "end": 121746,
+      "strand": "-",
+      "product": "IMV membrane protein A14",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp125; IMV inner membrane protein; Essential IMV membrane protein; similar to VACV-WR A15L and VACV-Cop A14L"
+    },
+    {
+      "name": "OPG141",
+      "start": 121763,
+      "end": 121924,
+      "strand": "-",
+      "product": "DUF1029 domain protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Non-essential IMV membrane protein; similar to VACV-WR A15.5L and VACV-Cop A14.5L"
+    },
+    {
+      "name": "OPG142",
+      "start": 121914,
+      "end": 122198,
+      "strand": "-",
+      "product": "Core protein A15",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp126; Core protein; similar to VACV-WR A16L and VACV-Cop A15L"
+    },
+    {
+      "name": "OPG143",
+      "start": 122182,
+      "end": 123315,
+      "strand": "-",
+      "product": "Myristylated protein",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp127; soluble myristylated protein; essential for entry/fusion; similar to VACV-WR A17L and VACV-Cop A16L"
+    },
+    {
+      "name": "OPG144",
+      "start": 123318,
+      "end": 123932,
+      "strand": "-",
+      "product": "IMV membrane protein P21",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp128; IMV surface membrane protein; early function in virion morphgenesis; similar to VACV-WR A18L and VACV-Cop A17L"
+    },
+    {
+      "name": "OPG145",
+      "start": 123947,
+      "end": 125425,
+      "strand": "+",
+      "product": "DNA helicase",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp129; virion core associated DNA helicase; post-replicative negative transcription elongation factor; transcript release factor; similar to VACV-WR A19R and VACV-Cop A18R"
+    },
+    {
+      "name": "OPG146",
+      "start": 125406,
+      "end": 125639,
+      "strand": "-",
+      "product": "Zinc finger-like protein (1)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp130; Zinc finger-like protein; similar to VACV-WR A20L and VACV-Cop A19L"
+    },
+    {
+      "name": "OPG147",
+      "start": 125640,
+      "end": 125987,
+      "strand": "-",
+      "product": "IMV membrane protein A21",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp131; IMV membrane protein, entry/fusion complex component; similar to VACV-WR A21L and VACV-Cop A21L"
+    },
+    {
+      "name": "OPG148",
+      "start": 125986,
+      "end": 127266,
+      "strand": "+",
+      "product": "DNA polymerase processivity factor",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp132; processivity factor for the viral DNA polymerase, VPF; similar to VACV-WR A22R and VACV-Cop A20R"
+    },
+    {
+      "name": "OPG149",
+      "start": 127196,
+      "end": 127759,
+      "strand": "+",
+      "product": "Holliday junction resolvase",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp133; Holliday junction resolvase; similar to VACV-WR A23R and VACV-Cop A22R"
+    },
+    {
+      "name": "OPG150",
+      "start": 127779,
+      "end": 128927,
+      "strand": "+",
+      "product": "Intermediate transcription factor VITF-3 (2)",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp134; intermediate transcription factor, VITF-3, 45 kDa subunit; similar to VACV-WR A24R and VACV-Cop A23R"
+    },
+    {
+      "name": "OPG151",
+      "start": 128924,
+      "end": 132418,
+      "strand": "+",
+      "product": "DNA-dependent RNA polymerase subunit rpo132",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp135; RNA polymerase, 132 kDa subunit (RPO132); similar to VACV-WR A25R and VACV-Cop A24R"
+    },
+    {
+      "name": "OPG153",
+      "start": 136138,
+      "end": 137667,
+      "strand": "-",
+      "product": "Orthopoxvirus A26L/A30L protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp138; major component of IMV surface tubules; A-type inclusion protein; P4c precursor; similar to VACV-WR A28L and VACV-Cop A26L"
+    },
+    {
+      "name": "OPG154",
+      "start": 137718,
+      "end": 138050,
+      "strand": "-",
+      "product": "IMV surface fusion protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp139; IMV surface membrane 14 kDa fusion protein; binding to cell surface heparan; similar to VACV-WR A29L and VACV-Cop A27L"
+    },
+    {
+      "name": "OPG155",
+      "start": 138051,
+      "end": 138491,
+      "strand": "-",
+      "product": "Envelope protein A28 homolog",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp140; IMV MP/Virus entry; similar to VACV-WR A30L and VACV-Cop A28L"
+    },
+    {
+      "name": "OPG156",
+      "start": 138492,
+      "end": 139409,
+      "strand": "-",
+      "product": "DNA-directed RNA polymerase 35 kDa subunit",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp141; RNA polymerase, 35 kDa subunit (RPO35); similar to VACV-WR A31L and VACV-Cop A29L"
+    },
+    {
+      "name": "OPG157",
+      "start": 139372,
+      "end": 139608,
+      "strand": "-",
+      "product": "IMV membrane protein A30",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp142; IMV protein; similar to VACV-WR A32L and VACV-Cop A30L"
+    },
+    {
+      "name": "OPG158",
+      "start": 139641,
+      "end": 139769,
+      "strand": "-",
+      "product": "A32.5L",
+      "note": "Viral membrane assembly proteins (VMAP); similar to VACV-Cop A30.5L"
+    },
+    {
+      "name": "OPG159",
+      "start": 139768,
+      "end": 140205,
+      "strand": "+",
+      "product": "CPXV166 protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp143; Hypothetical protein; similar to VACV-WR A33R and VACV-Cop A31R"
+    },
+    {
+      "name": "OPG160",
+      "start": 140172,
+      "end": 141074,
+      "strand": "-",
+      "product": "ATPase A32",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp144; DNA packaging into virion; NTP-binding motif A; ATPase/DNA packaging protein; similar to VACV-WR A34L and VACV-Cop A32L"
+    },
+    {
+      "name": "OPG161",
+      "start": 141102,
+      "end": 141647,
+      "strand": "+",
+      "product": "EEV glycoprotein (1)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp145; EEV envelope glycoprotein, needed for formation of actin-containing microvilli and cell-to-cell spread of virion; interacts with VAC A36R; EEV membrane phosphoglycoprotein, C-type lectin-like domain; similar to VACV-WR A35R and VACV-Cop A33R"
+    },
+    {
+      "name": "OPG162",
+      "start": 141652,
+      "end": 142158,
+      "strand": "+",
+      "product": "EEV glycoprotein (2)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp146; EEV envelope glycoprotein, lectin-like; required for infectivity of EEV, formation of actin-containing microvilli, and cell-to-cell spread of virion; C-type lectin-like IEV/EEV glycoprotein; similar to VACV-WR A36R and VACV-Cop A34R"
+    },
+    {
+      "name": "OPG163",
+      "start": 142202,
+      "end": 142732,
+      "strand": "+",
+      "product": "MHC class II antigen presentation inhibitor",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp147; MHC class II antigen presentation inhibitor; similar to VACV-WR A37R and VACV-Cop A35R"
+    },
+    {
+      "name": "OPG164",
+      "start": 142778,
+      "end": 143464,
+      "strand": "+",
+      "product": "IEV transmembrane phosphoprotein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp148; IEV but not CEV envelope protein; plays critical role for actin tail formation; interacts with VAC A33R and A34R; IEV transmembrane phosphoprotein; similar to VACV-WR A38R and VACV-Cop A36R"
+    },
+    {
+      "name": "OPG165",
+      "start": 143516,
+      "end": 144322,
+      "strand": "+",
+      "product": "CPXV173 protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp149; Hypothetical protein; similar to VACV-WR A39R and VACV-Cop A37R"
+    },
+    {
+      "name": "OPG166",
+      "start": 144398,
+      "end": 144577,
+      "strand": "+",
+      "product": "hypothetical protein",
+      "note": "Hypothetical protein; according to YP_233043.1, this VACV-WR protein was purified by sucrose gradient centrifugation; similar to VACWR161 and VARGAR-A43R"
+    },
+    {
+      "name": "OPG167",
+      "start": 144574,
+      "end": 145407,
+      "strand": "-",
+      "product": "CD47-like protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp150; integral membrane glycoprotein; immunoglobulin-like; regulation of the influx of extracellular Ca2+; CD47-like; similar to VACV-WR A40L and VACV-Cop A38L"
+    },
+    {
+      "name": "OPG170",
+      "start": 146113,
+      "end": 146778,
+      "strand": "-",
+      "product": "Chemokine binding protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp151; secreted protein reducing infiltration of inflammatory cells into the infected area; Chemokine binding protein; similar to VACV-WR A41L and VACV-Cop A41L"
+    },
+    {
+      "name": "OPG171",
+      "start": 146988,
+      "end": 147389,
+      "strand": "+",
+      "product": "Profilin domain protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp152; Profilin-like protein, ATI-localized; similar to VACV-WR A42R and VACV-Cop A42R"
+    },
+    {
+      "name": "OPG172",
+      "start": 147427,
+      "end": 148017,
+      "strand": "+",
+      "product": "Type-I membrane glycoprotein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp153; Type I membrane glycoprotein; similar to VACV-WR A43R and VACV-Cop A43R"
+    },
+    {
+      "name": "OPG173",
+      "start": 148037,
+      "end": 148261,
+      "strand": "+",
+      "product": "MPXVgp154",
+      "note": "Old product: MPXVgp154; Hypothetical protein; similar to VACV-WR A44R and VACV-Cop A43.5R"
+    },
+    {
+      "name": "OPG174",
+      "start": 148355,
+      "end": 149395,
+      "strand": "-",
+      "product": "Hydroxysteroid dehydrogenase",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp155; 3-b-Hydroxy-delta5-steroid dehydrogenase; 3 beta-hydroxysteroid dehydrogenase/delta 5->4 isomerase; similar to VACV-WR A45L and VACV-Cop A44L"
+    },
+    {
+      "name": "OPG175",
+      "start": 149442,
+      "end": 149819,
+      "strand": "+",
+      "product": "Copper/zinc superoxide dismutase",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp156; virion core protein; Inactive Cu-Zn superoxide dismutase-like virion protein; similar to VACV-WR A46R and VACV-Cop A45R"
+    },
+    {
+      "name": "OPG176",
+      "start": 149809,
+      "end": 150531,
+      "strand": "+",
+      "product": "Bcl-2-like protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp157; IL-1/TLR signaling inhibitor; similar to VACV-WR A47R and VACV-Cop A46R"
+    },
+    {
+      "name": "OPG178",
+      "start": 151509,
+      "end": 152123,
+      "strand": "+",
+      "product": "Thymidylate kinase",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp159; thymidylate kinase; start of ORF is missing approx. 37 AA compared to CPXVs; similar to VACV-WR A49R and VACV-Cop A48R"
+    },
+    {
+      "name": "OPG180",
+      "start": 152692,
+      "end": 154371,
+      "strand": "+",
+      "product": "DNA ligase (2)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp160; ATP-dependent DNA ligase; similar to VACV-WR A50R and VACV-Cop A50R"
+    },
+    {
+      "name": "OPG181",
+      "start": 154412,
+      "end": 155416,
+      "strand": "+",
+      "product": "M137R",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp161; Hypothetical protein; similar to VACV-WR A51R and VACV-Cop A51R"
+    },
+    {
+      "name": "OPG185",
+      "start": 158917,
+      "end": 159858,
+      "strand": "+",
+      "product": "Hemagglutinin",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp163; EEV envelope and cell membrane glycoprotein hemagglutinin; inhibition of the ability of infected cells to fuse; interacts with VAC F13L; similar to VACV-WR B2R and VACV-Cop A56R"
+    },
+    {
+      "name": "OPG187",
+      "start": 160622,
+      "end": 161533,
+      "strand": "+",
+      "product": "Ser/thr kinase",
+      "note": "Taxonomic breadth: poxviridae; Old product: MPXVgp164; serine; Ser/Thr Kinase; similar to VACV-WR B3R and VACV-Cop B1R"
+    },
+    {
+      "name": "OPG188",
+      "start": 161596,
+      "end": 163107,
+      "strand": "+",
+      "product": "Schlafen (1)",
+      "note": "Taxonomic breadth: orthopoxvirus; Old product: MPXVgp165; schlafen-like; similar to VACV-WR B4R and VACV-Cop B2R"
+    },
+    {
+      "name": "OPG189",
+      "start": 163333,
+      "end": 165018,
+      "strand": "+",
+      "product": "Ankyrin repeat protein (25)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp166; ankyrin-like; similar to VACV-WR B5R and VACV-Cop B4R"
+    },
+    {
+      "name": "OPG190",
+      "start": 165122,
+      "end": 166075,
+      "strand": "+",
+      "product": "EEV type-I membrane glycoprotein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp167; palmitated 42 kDa glycoprotein located both on the membranes of infected cells and on EEV envelope; complement control protein-like; EEV type-1 membrane glycoprotein, protective antigen; similar to VACV-WR B6R and VACV-Cop B5R"
+    },
+    {
+      "name": "OPG191",
+      "start": 166161,
+      "end": 166667,
+      "strand": "+",
+      "product": "Ankyrin-like protein (46)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp168; Ankyrin-like protein; similar to VACV-WR B7R and VACV-Cop B6R"
+    },
+    {
+      "name": "OPG192",
+      "start": 166731,
+      "end": 167279,
+      "strand": "+",
+      "product": "Virulence protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp169; Virulence, ER resident; similar to VACV-WR B8R and VACV-Cop B7R"
+    },
+    {
+      "name": "OPG193",
+      "start": 167334,
+      "end": 168137,
+      "strand": "+",
+      "product": "Soluble interferon-gamma receptor-like protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp170; secreted IFN-g binding protein; Soluble IFN-g receptor-like protein; similar to VACV-WR B9R and VACV-Cop B8R"
+    },
+    {
+      "name": "OPG195",
+      "start": 168230,
+      "end": 168895,
+      "strand": "+",
+      "product": "Intracellular viral protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp171; shope fibroma virus T4 protein-like; ER-localized apoptosis regulator; similar to VACV-WR B10R and VACV-Cop B9R"
+    },
+    {
+      "name": "OPG197",
+      "start": 169670,
+      "end": 169972,
+      "strand": "+",
+      "product": "CPXV205 protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Hypothetical protein; similar to VACV-Cop-B11R"
+    },
+    {
+      "name": "OPG198",
+      "start": 170038,
+      "end": 170886,
+      "strand": "+",
+      "product": "Ser/thr kinase",
+      "note": "Taxonomic breadth: poxviridae; protein kinase-like; similar to VACV-WR B11R and VACV-Cop B12R"
+    },
+    {
+      "name": "OPG199",
+      "start": 170988,
+      "end": 172022,
+      "strand": "+",
+      "product": "Serpin",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp173; serine protease inhibitor-like, SPI-2; inhibition of the IL-1b converting enzyme; apoptosis inhibition; Serpin 1,2,3; similar to VACV-WR B12R and VACV-Cop K2L"
+    },
+    {
+      "name": "OPG200",
+      "start": 172150,
+      "end": 172599,
+      "strand": "+",
+      "product": "Bcl-2-like protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp174; Hypothetical protein; Putative tlr signaling inhibitor; similar to VACV-WR B13R and VACV-Cop C16L and B15R"
+    },
+    {
+      "name": "OPG204",
+      "start": 174532,
+      "end": 175587,
+      "strand": "+",
+      "product": "IFN-alpha/beta-receptor-like secreted glycoprotein",
+      "note": "Taxonomic breadth: orthopoxvirus; Old product: MPXVgp177; cell surface antigen and secreted IFN-a; IFN-alpha/beta receptor glycoprotein; similar to VACV-WR B16R and VACV-Cop B19R"
+    },
+    {
+      "name": "OPG205",
+      "start": 175656,
+      "end": 178019,
+      "strand": "+",
+      "product": "Ankyrin repeat protein (44)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp178; ankyrin-like; similar to VACV-WR B17R and VACV-Cop B20R"
+    },
+    {
+      "name": "OPG208",
+      "start": 179266,
+      "end": 180339,
+      "strand": "+",
+      "product": "Serpin",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp180; serine protease inhibitor-like, SPI-1; apoptosis inhibition; Serpin 1,2,3; Actual start may be at position 179,074; annotated start of ORF is missing approx. 17 AA compared to CPXVs; similar to VACV-WR B19R and VACV-Cop K2L"
+    },
+    {
+      "name": "OPG209",
+      "start": 180518,
+      "end": 181090,
+      "strand": "+",
+      "product": "Virulence protein",
+      "note": "Old product: MPXVgp181; Hypothetical protein; similar to VACV-WR B20R and VACV-Cop C14L"
+    },
+    {
+      "name": "OPG210",
+      "start": 181356,
+      "end": 186998,
+      "strand": "+",
+      "product": "B22R family protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp182; Surface glycoprotein; putative membrane-associated glycoprotein; cadherin-like domain; similar to VACV-WR B21R"
+    },
+    {
+      "name": "OPG005",
+      "start": 189199,
+      "end": 189660,
+      "strand": "+",
+      "product": "Bcl-2-like protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp185; VAC B15R-like; Hypothetical protein; Putative tlr signaling inhibitor; similar to VACV-WR N1R and VACV-Cop C16L and B22R"
+    },
+    {
+      "name": "OPG016",
+      "start": 190410,
+      "end": 190940,
+      "strand": "+",
+      "product": "Brix domain protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp187; similar to VACV-WR N3R"
+    },
+    {
+      "name": "OPG015_dup",
+      "start": 191054,
+      "end": 192367,
+      "strand": "+",
+      "product": "Ankyrin repeat protein (39)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp188; ankyrin-like; Ankyrin (CPXV-017); similar to VACV-WR N4R"
+    },
+    {
+      "name": "OPG003_dup",
+      "start": 192603,
+      "end": 194369,
+      "strand": "+",
+      "product": "Ankyrin repeat protein (25)",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp189; ankyrin-like; similar to VACV-WR J1R and VACV-Cop C19L"
+    },
+    {
+      "name": "OPG002_dup",
+      "start": 194459,
+      "end": 195508,
+      "strand": "+",
+      "product": "Crm-B secreted TNF-alpha-receptor-like protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp190; secreted TNF binding protein; TNF receptor (CrmB); similar to VACV-WR J2R and VACV-Cop C22L"
+    },
+    {
+      "name": "OPG001_dup",
+      "start": 195635,
+      "end": 196375,
+      "strand": "+",
+      "product": "Chemokine binding protein",
+      "note": "Taxonomic breadth: chordopoxvirinae; Old product: MPXVgp191; Chemokine binding protein (Cop-C23L); most abundant secreted protein; CC-chemokine binding protein; similar to VACV-WR J3R and VACV-Cop C23L and B29R"
+    }
+  ]
+}

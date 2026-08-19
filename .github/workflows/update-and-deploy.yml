@@ -48,6 +48,20 @@ jobs:
       - id: jp
         run: node scripts/fetch-japan.mjs
         continue-on-error: true
+      - name: Install Nextclade CLI
+        run: |
+          curl -fsSL -o /usr/local/bin/nextclade \
+            https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-unknown-linux-gnu
+          chmod +x /usr/local/bin/nextclade
+        continue-on-error: true
+      # Strain matching depends on data/feed.json already being fresh (it
+      # reads outbreak country/date to search NCBI), so this has to run
+      # after the "who" step above, not in parallel with it.
+      - id: strains
+        run: node scripts/fetch-strains.mjs
+        env:
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+        continue-on-error: true
       - name: Build RSS feed
         if: always()
         run: node scripts/build-rss.mjs
@@ -64,7 +78,8 @@ jobs:
               {"id": "br", "label": "Brazil (InfoGripe)", "outcome": "${{ steps.br.outcome }}"},
               {"id": "cl", "label": "Chile (DEIS)", "outcome": "${{ steps.cl.outcome }}"},
               {"id": "uk", "label": "England (UKHSA)", "outcome": "${{ steps.uk.outcome }}"},
-              {"id": "jp", "label": "Japan (JIHS)", "outcome": "${{ steps.jp.outcome }}"}
+              {"id": "jp", "label": "Japan (JIHS)", "outcome": "${{ steps.jp.outcome }}"},
+              {"id": "strains", "label": "Strain matching (NCBI + Nextclade)", "outcome": "${{ steps.strains.outcome }}"}
             ]
           }
           EOF
@@ -73,7 +88,7 @@ jobs:
         run: |
           git config user.name "outbreak-watch-bot"
           git config user.email "actions@github.com"
-          git add data/feed.json data/cdc-feed.json data/br-feed.json data/cl-feed.json data/uk-feed.json data/jp-feed.json data/status.json feed.xml
+          git add data/feed.json data/cdc-feed.json data/br-feed.json data/cl-feed.json data/uk-feed.json data/jp-feed.json data/status.json data/strains feed.xml
           git diff --cached --quiet && echo "No changes" || git commit -m "Update feed [skip ci]"
           git push
 

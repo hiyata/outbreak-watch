@@ -529,11 +529,235 @@ function renderDetail() {
     ${statsHtml}
     ${chartHtml}
     ${crossLinksHtml}
+    <div id="strain-panel-wrap"></div>
     <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.6rem;">Update timeline</h3>
     ${updatesHtml}
   `;
   renderTrendChartInto("who-trend-chart", casePoints, { valueFormat: fmtNumber });
   bindCrossLinkClicks();
+  loadAndRenderStrainPanel(ob.id);
+}
+
+// ---------- Strain / variant matching ----------
+// data/strains/<outbreak-id>.json only exists for the small allowlist of
+// pathogens scripts/fetch-strains.mjs knows how to align (see that file) —
+// most outbreaks won't have one, which is expected, not an error. A 404
+// here just means "no strain panel for this outbreak."
+
+const strainDataCache = new Map(); // outbreakId -> parsed JSON | null
+const genomeAnnotationCache = new Map(); // pathogenId -> parsed JSON | null
+
+async function loadStrainData(outbreakId) {
+  if (strainDataCache.has(outbreakId)) return strainDataCache.get(outbreakId);
+  let data = null;
+  try {
+    const res = await fetch(`data/strains/${outbreakId}.json`, { cache: "no-store" });
+    if (res.ok) data = await res.json();
+  } catch {
+    // network hiccup or no such file — treated the same as "no data"
+  }
+  strainDataCache.set(outbreakId, data);
+  return data;
+}
+
+async function loadGenomeAnnotation(pathogenId) {
+  if (genomeAnnotationCache.has(pathogenId)) return genomeAnnotationCache.get(pathogenId);
+  let data = null;
+  try {
+    const res = await fetch(`data/strains/_genomes/${pathogenId}.json`, { cache: "no-store" });
+    if (res.ok) data = await res.json();
+  } catch {
+    // ignore
+  }
+  genomeAnnotationCache.set(pathogenId, data);
+  return data;
+}
+
+async function loadAndRenderStrainPanel(outbreakId) {
+  const data = await loadStrainData(outbreakId);
+  if (selectedId !== outbreakId) return; // user selected something else while this was in flight
+  const wrap = document.getElementById("strain-panel-wrap");
+  if (!wrap) return;
+
+  if (!data || !data.matches?.length) {
+    wrap.innerHTML = "";
+    return;
+  }
+
+  const genome = await loadGenomeAnnotation(data.pathogen);
+  if (selectedId !== outbreakId) return;
+  const wrapNow = document.getElementById("strain-panel-wrap");
+  if (!wrapNow) return;
+
+  wrapNow.innerHTML = `
+    <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">
+      Sequenced strain match${data.matches.length === 1 ? "" : "es"}
+    </h3>
+    <p class="muted-note" style="margin: 0 0 0.8rem;">
+      Matched to this outbreak by country and collection date against public NCBI GenBank sequences —
+      a heuristic association, not an official confirmation. See
+      <a href="about.html#strains">methodology</a>.
+    </p>
+    <div id="strain-panel-body"></div>
+  `;
+  renderStrainPanel(document.getElementById("strain-panel-body"), data, genome);
+}
+
+function renderGenomeSvg(genome, mutations) {
+  const width = 760;
+  const height = 60;
+  const trackY = 26;
+  const trackH = 14;
+  const len = genome.genomeLength;
+  const mutatedGenes = new Set(mutations.map((m) => m.gene));
+
+  const geneRects = genome.genes
+    .map((g) => {
+      const x1 = (Math.min(g.start, g.end) / len) * width;
+      const x2 = (Math.max(g.start, g.end) / len) * width;
+      const w = Math.max(x2 - x1, 0.6);
+      const hit = mutatedGenes.has(g.name);
+      const fill = hit ? "var(--accent-dim)" : "var(--panel-2)";
+      const label = `${g.name}${g.product ? " — " + g.product : ""}`;
+      return `<rect class="genome-gene${hit ? " has-mut" : ""}" x="${x1.toFixed(2)}" y="${trackY}" width="${w.toFixed(2)}" height="${trackH}" fill="${fill}"><title>${escapeHtml(label)}</title></rect>`;
+    })
+    .join("");
+
+  const markers = mutations
+    .map((m) => {
+      const gene = genome.genes.find((g) => g.name === m.gene);
+      if (!gene) return "";
+      const aaLen = Math.max(1, Math.round((Math.abs(gene.end - gene.start) + 1) / 3));
+      let frac = (m.position - 1) / aaLen;
+      if (gene.strand === "-") frac = 1 - frac;
+      frac = Math.min(1, Math.max(0, frac));
+      const geneX1 = (Math.min(gene.start, gene.end) / len) * width;
+      const geneX2 = (Math.max(gene.start, gene.end) / len) * width;
+      const x = geneX1 + frac * (geneX2 - geneX1);
+      const label = `${m.gene} ${m.change}${gene.product ? " — " + gene.product : ""}`;
+      return `<line class="genome-mut" x1="${x.toFixed(2)}" y1="${trackY - 5}" x2="${x.toFixed(2)}" y2="${trackY + trackH + 5}"><title>${escapeHtml(label)}</title></line>`;
+    })
+    .join("");
+
+  return `
+    <svg class="genome-map" viewBox="0 0 ${width} ${height}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Genome map with mutation positions">
+      <rect x="0" y="${trackY}" width="${width}" height="${trackH}" rx="2" fill="var(--border)" opacity="0.35"></rect>
+      ${geneRects}
+      ${markers}
+      <text x="0" y="${trackY + trackH + 14}" class="genome-axis-label">0 bp</text>
+      <text x="${width}" y="${trackY + trackH + 14}" class="genome-axis-label" text-anchor="end">${fmtNumber(len)} bp</text>
+    </svg>
+  `;
+}
+
+const MUTATION_GROUPS_COLLAPSED = 12;
+
+function renderMutationGroup(genome, geneName, muts) {
+  const gene = genome.genes.find((g) => g.name === geneName);
+  const product = gene?.product;
+  const tags = muts.map((m) => `<span class="mut-tag">${escapeHtml(m.change)}</span>`).join("");
+  return `
+    <div class="gene-mut-group">
+      <div class="gene-mut-head">
+        <strong>${escapeHtml(geneName)}</strong>
+        ${
+          product
+            ? `<span class="gene-product">${escapeHtml(product)}</span>`
+            : `<span class="gene-product muted">function not annotated in this dataset</span>`
+        }
+      </div>
+      <div class="gene-mut-tags">${tags}</div>
+    </div>
+  `;
+}
+
+// Renders into `container` directly (rather than returning a string) so a
+// long list — a divergent clade can easily touch 100+ mutated genes — can
+// be collapsed behind a "show all" toggle instead of dumping a huge wall
+// of near-identical boxes on first paint.
+function renderMutationList(container, genome, mutations) {
+  const byGene = new Map();
+  for (const m of mutations) {
+    if (!byGene.has(m.gene)) byGene.set(m.gene, []);
+    byGene.get(m.gene).push(m);
+  }
+  const groups = [...byGene.entries()].sort((a, b) => {
+    const ga = genome.genes.find((g) => g.name === a[0]);
+    const gb = genome.genes.find((g) => g.name === b[0]);
+    return (ga?.start ?? 0) - (gb?.start ?? 0);
+  });
+
+  const visible = groups.slice(0, MUTATION_GROUPS_COLLAPSED);
+  const rest = groups.slice(MUTATION_GROUPS_COLLAPSED);
+
+  container.innerHTML = visible.map(([name, muts]) => renderMutationGroup(genome, name, muts)).join("");
+
+  if (rest.length) {
+    const moreBtn = document.createElement("button");
+    moreBtn.className = "show-more-genes-btn";
+    moreBtn.textContent = `Show ${rest.length} more gene${rest.length === 1 ? "" : "s"} with differences`;
+    moreBtn.addEventListener("click", () => {
+      container.insertAdjacentHTML(
+        "beforeend",
+        rest.map(([name, muts]) => renderMutationGroup(genome, name, muts)).join("")
+      );
+      moreBtn.remove();
+    });
+    container.appendChild(moreBtn);
+  }
+}
+
+function renderStrainPanel(container, strainData, genome) {
+  const matches = strainData.matches;
+  let activeIdx = 0;
+
+  function paint() {
+    const m = matches[activeIdx];
+    const mutations = m.alignment?.mutations ?? [];
+
+    const tabsHtml =
+      matches.length > 1
+        ? `<div class="strain-tabs">${matches
+            .map((mm, i) => `<button class="strain-tab${i === activeIdx ? " active" : ""}" data-idx="${i}">${escapeHtml(mm.accession)}</button>`)
+            .join("")}</div>`
+        : "";
+
+    const badge =
+      m.confidence === "confirmed"
+        ? `<span class="tag" style="border-color: var(--ok); color: var(--ok);">country + date match</span>`
+        : `<span class="tag" style="border-color: var(--warning); color: var(--warning);">country match, date uncertain</span>`;
+
+    const metaHtml = `
+      <div class="detail-tags" style="margin-bottom: 0.7rem;">
+        <a class="tag" href="https://www.ncbi.nlm.nih.gov/nuccore/${encodeURIComponent(m.accession)}" target="_blank" rel="noopener">${escapeHtml(m.accession)} ↗</a>
+        <span class="tag">${escapeHtml(m.country)}</span>
+        <span class="tag">collected ${escapeHtml(m.collectionDate ?? "unknown date")}</span>
+        ${m.alignment?.clade ? `<span class="tag">clade ${escapeHtml(m.alignment.clade)}</span>` : ""}
+        ${badge}
+      </div>
+    `;
+
+    const hasMutations = genome && mutations.length;
+    const emptyHtml = `<p class="muted-note">No amino-acid differences from the reference were called for this sequence${
+      m.alignment?.qcStatus ? ` (QC: ${escapeHtml(m.alignment.qcStatus)})` : ""
+    }.</p>`;
+
+    container.innerHTML = `
+      ${tabsHtml}
+      ${metaHtml}
+      ${hasMutations ? renderGenomeSvg(genome, mutations) : emptyHtml}
+      ${hasMutations ? '<div class="gene-mut-list" id="gene-mut-list"></div>' : ""}
+    `;
+    container.querySelectorAll(".strain-tab").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        activeIdx = Number(btn.dataset.idx);
+        paint();
+      });
+    });
+    if (hasMutations) renderMutationList(document.getElementById("gene-mut-list"), genome, mutations);
+  }
+
+  paint();
 }
 
 // ---------- Cross-source linking ----------

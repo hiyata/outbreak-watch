@@ -1,0 +1,15 @@
+{
+  "pathogen": "h5n1",
+  "label": "Avian influenza A(H5N1)",
+  "genomeLength": 1760,
+  "genes": [
+    {
+      "name": "HA",
+      "start": 22,
+      "end": 1728,
+      "strand": "+",
+      "product": null,
+      "note": null
+    }
+  ]
+}

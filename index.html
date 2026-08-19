@@ -365,6 +365,66 @@
   }
   .cross-link:hover { background: var(--accent); color: var(--accent-contrast); }
 
+  .muted-note { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+  .strain-tabs { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.7rem; }
+  .strain-tab {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .strain-tab.active { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
+
+  .genome-map { width: 100%; height: auto; display: block; margin: 0.4rem 0 0.7rem; overflow: visible; }
+  .genome-gene { transition: opacity 0.1s; }
+  .genome-gene.has-mut { opacity: 1; }
+  .genome-gene:not(.has-mut) { opacity: 0.55; }
+  .genome-gene:hover { opacity: 1; }
+  .genome-mut { stroke: var(--accent); stroke-width: 1.4; cursor: pointer; }
+  .genome-mut:hover { stroke-width: 2.4; }
+  .genome-axis-label { font-size: 6px; fill: var(--muted); }
+
+  .gene-mut-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .gene-mut-group {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.55rem 0.75rem;
+  }
+  .gene-mut-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4rem; font-size: 0.84rem; }
+  .gene-mut-head strong { font-family: ui-monospace, "SF Mono", Menlo, monospace; color: var(--accent); }
+  .gene-product { font-size: 0.78rem; color: var(--muted); }
+  .gene-product.muted { font-style: italic; }
+  .gene-mut-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.4rem; }
+  .mut-tag {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.72rem;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0.1rem 0.4rem;
+  }
+  .show-more-genes-btn {
+    display: block;
+    width: 100%;
+    margin-top: 0.3rem;
+    background: var(--panel-2);
+    border: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.55rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .show-more-genes-btn:hover { color: var(--text); border-color: var(--accent); }
+
   footer {
     padding: 1rem 1.5rem 2rem;
     color: var(--muted);

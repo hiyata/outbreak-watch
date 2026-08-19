@@ -1,0 +1,7968 @@
+{
+  "outbreakId": "2022-E000231",
+  "disease": "Mpox (monkeypox)- Democratic Republic of the Congo",
+  "pathogen": "mpox",
+  "nextcladeDataset": "nextstrain/mpox/all-clades",
+  "generatedAt": "2026-08-19T22:40:45.567Z",
+  "matches": [
+    {
+      "accession": "OZ462940",
+      "isolate": "2409EQT-WGT-I1027-000",
+      "country": "Dem. Rep. Congo",
+      "collectionDate": "2024-09",
+      "confidence": "confirmed",
+      "alignment": {
+        "clade": "Ia",
+        "totalSubstitutions": 775,
+        "mutations": [
+          {
+            "gene": "OPG005",
+            "position": 2,
+            "refAa": "S",
+            "altAa": "F",
+            "change": "S2F"
+          },
+          {
+            "gene": "OPG005",
+            "position": 73,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N73D"
+          },
+          {
+            "gene": "OPG005",
+            "position": 130,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M130I"
+          },
+          {
+            "gene": "OPG015_dup",
+            "position": 3,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V3A"
+          },
+          {
+            "gene": "OPG016",
+            "position": 62,
+            "refAa": "S",
+            "altAa": "A",
+            "change": "S62A"
+          },
+          {
+            "gene": "OPG016",
+            "position": 79,
+            "refAa": "E",
+            "altAa": "V",
+            "change": "E79V"
+          },
+          {
+            "gene": "OPG016",
+            "position": 120,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D120E"
+          },
+          {
+            "gene": "OPG019",
+            "position": 123,
+            "refAa": "M",
+            "altAa": "R",
+            "change": "M123R"
+          },
+          {
+            "gene": "OPG021",
+            "position": 37,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V37I"
+          },
+          {
+            "gene": "OPG021",
+            "position": 218,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S218L"
+          },
+          {
+            "gene": "OPG021",
+            "position": 229,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K229R"
+          },
+          {
+            "gene": "OPG022",
+            "position": 72,
+            "refAa": "G",
+            "altAa": "D",
+            "change": "G72D"
+          },
+          {
+            "gene": "OPG023",
+            "position": 89,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A89V"
+          },
+          {
+            "gene": "OPG023",
+            "position": 108,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M108I"
+          },
+          {
+            "gene": "OPG023",
+            "position": 173,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V173A"
+          },
+          {
+            "gene": "OPG023",
+            "position": 192,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A192S"
+          },
+          {
+            "gene": "OPG023",
+            "position": 257,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S257L"
+          },
+          {
+            "gene": "OPG023",
+            "position": 299,
+            "refAa": "Y",
+            "altAa": "H",
+            "change": "Y299H"
+          },
+          {
+            "gene": "OPG023",
+            "position": 303,
+            "refAa": "C",
+            "altAa": "R",
+            "change": "C303R"
+          },
+          {
+            "gene": "OPG023",
+            "position": 425,
+            "refAa": "V",
+            "altAa": "T",
+            "change": "V425T"
+          },
+          {
+            "gene": "OPG023",
+            "position": 487,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T487A"
+          },
+          {
+            "gene": "OPG023",
+            "position": 601,
+            "refAa": "L",
+            "altAa": "I",
+            "change": "L601I"
+          },
+          {
+            "gene": "OPG023",
+            "position": 636,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K636E"
+          },
+          {
+            "gene": "OPG024",
+            "position": 31,
+            "refAa": "S",
+            "altAa": "G",
+            "change": "S31G"
+          },
+          {
+            "gene": "OPG025",
+            "position": 392,
+            "refAa": "E",
+            "altAa": "K",
+            "change": "E392K"
+          },
+          {
+            "gene": "OPG025",
+            "position": 424,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I424V"
+          },
+          {
+            "gene": "OPG027",
+            "position": 46,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I46V"
+          },
+          {
+            "gene": "OPG027",
+            "position": 78,
+            "refAa": "F",
+            "altAa": "L",
+            "change": "F78L"
+          },
+          {
+            "gene": "OPG027",
+            "position": 125,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V125I"
+          },
+          {
+            "gene": "OPG029",
+            "position": 145,
+            "refAa": "C",
+            "altAa": "R",
+            "change": "C145R"
+          },
+          {
+            "gene": "OPG030",
+            "position": 11,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N11D"
+          },
+          {
+            "gene": "OPG030",
+            "position": 112,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S112N"
+          },
+          {
+            "gene": "OPG031",
+            "position": 79,
+            "refAa": "T",
+            "altAa": "M",
+            "change": "T79M"
+          },
+          {
+            "gene": "OPG031",
+            "position": 116,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D116E"
+          },
+          {
+            "gene": "OPG031",
+            "position": 240,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C240Y"
+          },
+          {
+            "gene": "OPG031",
+            "position": 270,
+            "refAa": "M",
+            "altAa": "K",
+            "change": "M270K"
+          },
+          {
+            "gene": "OPG034",
+            "position": 204,
+            "refAa": "L",
+            "altAa": "R",
+            "change": "L204R"
+          },
+          {
+            "gene": "OPG036",
+            "position": 10,
+            "refAa": "S",
+            "altAa": "P",
+            "change": "S10P"
+          },
+          {
+            "gene": "OPG036",
+            "position": 24,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D24E"
+          },
+          {
+            "gene": "OPG037",
+            "position": 143,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C143Y"
+          },
+          {
+            "gene": "OPG037",
+            "position": 414,
+            "refAa": "C",
+            "altAa": "R",
+            "change": "C414R"
+          },
+          {
+            "gene": "OPG038",
+            "position": 26,
+            "refAa": "H",
+            "altAa": "P",
+            "change": "H26P"
+          },
+          {
+            "gene": "OPG038",
+            "position": 77,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V77I"
+          },
+          {
+            "gene": "OPG039",
+            "position": 255,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D255N"
+          },
+          {
+            "gene": "OPG039",
+            "position": 278,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C278Y"
+          },
+          {
+            "gene": "OPG040",
+            "position": 253,
+            "refAa": "P",
+            "altAa": "A",
+            "change": "P253A"
+          },
+          {
+            "gene": "OPG040",
+            "position": 373,
+            "refAa": "Y",
+            "altAa": "S",
+            "change": "Y373S"
+          },
+          {
+            "gene": "OPG043",
+            "position": 2,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T2A"
+          },
+          {
+            "gene": "OPG044",
+            "position": 62,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V62A"
+          },
+          {
+            "gene": "OPG044",
+            "position": 108,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T108A"
+          },
+          {
+            "gene": "OPG044",
+            "position": 147,
+            "refAa": "M",
+            "altAa": "L",
+            "change": "M147L"
+          },
+          {
+            "gene": "OPG045",
+            "position": 184,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A184T"
+          },
+          {
+            "gene": "OPG046",
+            "position": 94,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S94N"
+          },
+          {
+            "gene": "OPG047",
+            "position": 231,
+            "refAa": "I",
+            "altAa": "K",
+            "change": "I231K"
+          },
+          {
+            "gene": "OPG049",
+            "position": 16,
+            "refAa": "E",
+            "altAa": "V",
+            "change": "E16V"
+          },
+          {
+            "gene": "OPG049",
+            "position": 36,
+            "refAa": "M",
+            "altAa": "V",
+            "change": "M36V"
+          },
+          {
+            "gene": "OPG049",
+            "position": 262,
+            "refAa": "T",
+            "altAa": "M",
+            "change": "T262M"
+          },
+          {
+            "gene": "OPG054",
+            "position": 437,
+            "refAa": "R",
+            "altAa": "G",
+            "change": "R437G"
+          },
+          {
+            "gene": "OPG056",
+            "position": 322,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V322A"
+          },
+          {
+            "gene": "OPG056",
+            "position": 601,
+            "refAa": "T",
+            "altAa": "N",
+            "change": "T601N"
+          },
+          {
+            "gene": "OPG056",
+            "position": 621,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C621Y"
+          },
+          {
+            "gene": "OPG059",
+            "position": 25,
+            "refAa": "I",
+            "altAa": "L",
+            "change": "I25L"
+          },
+          {
+            "gene": "OPG063",
+            "position": 306,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V306A"
+          },
+          {
+            "gene": "OPG064",
+            "position": 87,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A87S"
+          },
+          {
+            "gene": "OPG065",
+            "position": 16,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A16T"
+          },
+          {
+            "gene": "OPG065",
+            "position": 22,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N22D"
+          },
+          {
+            "gene": "OPG065",
+            "position": 60,
+            "refAa": "H",
+            "altAa": "N",
+            "change": "H60N"
+          },
+          {
+            "gene": "OPG066",
+            "position": 82,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K82R"
+          },
+          {
+            "gene": "OPG066",
+            "position": 96,
+            "refAa": "H",
+            "altAa": "N",
+            "change": "H96N"
+          },
+          {
+            "gene": "OPG068",
+            "position": 250,
+            "refAa": "P",
+            "altAa": "S",
+            "change": "P250S"
+          },
+          {
+            "gene": "OPG068",
+            "position": 340,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D340E"
+          },
+          {
+            "gene": "OPG070",
+            "position": 204,
+            "refAa": "H",
+            "altAa": "Y",
+            "change": "H204Y"
+          },
+          {
+            "gene": "OPG071",
+            "position": 410,
+            "refAa": "L",
+            "altAa": "W",
+            "change": "L410W"
+          },
+          {
+            "gene": "OPG071",
+            "position": 427,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I427T"
+          },
+          {
+            "gene": "OPG071",
+            "position": 483,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A483S"
+          },
+          {
+            "gene": "OPG071",
+            "position": 500,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I500V"
+          },
+          {
+            "gene": "OPG072",
+            "position": 9,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V9I"
+          },
+          {
+            "gene": "OPG074",
+            "position": 198,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N198D"
+          },
+          {
+            "gene": "OPG074",
+            "position": 440,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I440V"
+          },
+          {
+            "gene": "OPG076",
+            "position": 19,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S19N"
+          },
+          {
+            "gene": "OPG079",
+            "position": 44,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C44Y"
+          },
+          {
+            "gene": "OPG080",
+            "position": 320,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D320E"
+          },
+          {
+            "gene": "OPG080",
+            "position": 381,
+            "refAa": "C",
+            "altAa": "S",
+            "change": "C381S"
+          },
+          {
+            "gene": "OPG080",
+            "position": 520,
+            "refAa": "L",
+            "altAa": "P",
+            "change": "L520P"
+          },
+          {
+            "gene": "OPG080",
+            "position": 581,
+            "refAa": "P",
+            "altAa": "H",
+            "change": "P581H"
+          },
+          {
+            "gene": "OPG084",
+            "position": 210,
+            "refAa": "S",
+            "altAa": "T",
+            "change": "S210T"
+          },
+          {
+            "gene": "OPG084",
+            "position": 619,
+            "refAa": "Q",
+            "altAa": "R",
+            "change": "Q619R"
+          },
+          {
+            "gene": "OPG085",
+            "position": 78,
+            "refAa": "S",
+            "altAa": "T",
+            "change": "S78T"
+          },
+          {
+            "gene": "OPG085",
+            "position": 327,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T327A"
+          },
+          {
+            "gene": "OPG085",
+            "position": 590,
+            "refAa": "F",
+            "altAa": "V",
+            "change": "F590V"
+          },
+          {
+            "gene": "OPG089",
+            "position": 302,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D302E"
+          },
+          {
+            "gene": "OPG089",
+            "position": 336,
+            "refAa": "E",
+            "altAa": "K",
+            "change": "E336K"
+          },
+          {
+            "gene": "OPG091",
+            "position": 61,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V61I"
+          },
+          {
+            "gene": "OPG091",
+            "position": 72,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S72N"
+          },
+          {
+            "gene": "OPG092",
+            "position": 243,
+            "refAa": "I",
+            "altAa": "N",
+            "change": "I243N"
+          },
+          {
+            "gene": "OPG094",
+            "position": 174,
+            "refAa": "R",
+            "altAa": "T",
+            "change": "R174T"
+          },
+          {
+            "gene": "OPG096",
+            "position": 67,
+            "refAa": "I",
+            "altAa": "M",
+            "change": "I67M"
+          },
+          {
+            "gene": "OPG100",
+            "position": 151,
+            "refAa": "K",
+            "altAa": "Q",
+            "change": "K151Q"
+          },
+          {
+            "gene": "OPG101",
+            "position": 152,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T152A"
+          },
+          {
+            "gene": "OPG102",
+            "position": 248,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I248V"
+          },
+          {
+            "gene": "OPG104",
+            "position": 11,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T11A"
+          },
+          {
+            "gene": "OPG105",
+            "position": 112,
+            "refAa": "V",
+            "altAa": "G",
+            "change": "V112G"
+          },
+          {
+            "gene": "OPG105",
+            "position": 1069,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I1069V"
+          },
+          {
+            "gene": "OPG108",
+            "position": 3,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V3A"
+          },
+          {
+            "gene": "OPG108",
+            "position": 110,
+            "refAa": "T",
+            "altAa": "I",
+            "change": "T110I"
+          },
+          {
+            "gene": "OPG109",
+            "position": 363,
+            "refAa": "R",
+            "altAa": "S",
+            "change": "R363S"
+          },
+          {
+            "gene": "OPG109",
+            "position": 621,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A621T"
+          },
+          {
+            "gene": "OPG109",
+            "position": 629,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A629T"
+          },
+          {
+            "gene": "OPG111",
+            "position": 76,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I76V"
+          },
+          {
+            "gene": "OPG112",
+            "position": 33,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H33R"
+          },
+          {
+            "gene": "OPG113",
+            "position": 536,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V536I"
+          },
+          {
+            "gene": "OPG117",
+            "position": 453,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D453N"
+          },
+          {
+            "gene": "OPG118",
+            "position": 255,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K255R"
+          },
+          {
+            "gene": "OPG118",
+            "position": 412,
+            "refAa": "N",
+            "altAa": "S",
+            "change": "N412S"
+          },
+          {
+            "gene": "OPG118",
+            "position": 461,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V461A"
+          },
+          {
+            "gene": "OPG118",
+            "position": 605,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K605E"
+          },
+          {
+            "gene": "OPG119",
+            "position": 87,
+            "refAa": "T",
+            "altAa": "R",
+            "change": "T87R"
+          },
+          {
+            "gene": "OPG120",
+            "position": 18,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A18T"
+          },
+          {
+            "gene": "OPG120",
+            "position": 212,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H212R"
+          },
+          {
+            "gene": "OPG123",
+            "position": 171,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I171T"
+          },
+          {
+            "gene": "OPG123",
+            "position": 312,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A312T"
+          },
+          {
+            "gene": "OPG123",
+            "position": 435,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C435Y"
+          },
+          {
+            "gene": "OPG125",
+            "position": 110,
+            "refAa": "E",
+            "altAa": "D",
+            "change": "E110D"
+          },
+          {
+            "gene": "OPG125",
+            "position": 513,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I513V"
+          },
+          {
+            "gene": "OPG130",
+            "position": 62,
+            "refAa": "T",
+            "altAa": "V",
+            "change": "T62V"
+          },
+          {
+            "gene": "OPG130",
+            "position": 121,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T121A"
+          },
+          {
+            "gene": "OPG130",
+            "position": 269,
+            "refAa": "L",
+            "altAa": "I",
+            "change": "L269I"
+          },
+          {
+            "gene": "OPG133",
+            "position": 593,
+            "refAa": "F",
+            "altAa": "S",
+            "change": "F593S"
+          },
+          {
+            "gene": "OPG134",
+            "position": 225,
+            "refAa": "E",
+            "altAa": "D",
+            "change": "E225D"
+          },
+          {
+            "gene": "OPG135",
+            "position": 89,
+            "refAa": "V",
+            "altAa": "E",
+            "change": "V89E"
+          },
+          {
+            "gene": "OPG136",
+            "position": 228,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A228T"
+          },
+          {
+            "gene": "OPG136",
+            "position": 266,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D266N"
+          },
+          {
+            "gene": "OPG136",
+            "position": 282,
+            "refAa": "F",
+            "altAa": "Y",
+            "change": "F282Y"
+          },
+          {
+            "gene": "OPG144",
+            "position": 40,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M40I"
+          },
+          {
+            "gene": "OPG144",
+            "position": 183,
+            "refAa": "T",
+            "altAa": "I",
+            "change": "T183I"
+          },
+          {
+            "gene": "OPG145",
+            "position": 248,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I248V"
+          },
+          {
+            "gene": "OPG145",
+            "position": 263,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I263T"
+          },
+          {
+            "gene": "OPG145",
+            "position": 347,
+            "refAa": "A",
+            "altAa": "P",
+            "change": "A347P"
+          },
+          {
+            "gene": "OPG145",
+            "position": 462,
+            "refAa": "Q",
+            "altAa": "R",
+            "change": "Q462R"
+          },
+          {
+            "gene": "OPG148",
+            "position": 312,
+            "refAa": "I",
+            "altAa": "S",
+            "change": "I312S"
+          },
+          {
+            "gene": "OPG148",
+            "position": 328,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A328S"
+          },
+          {
+            "gene": "OPG150",
+            "position": 99,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N99D"
+          },
+          {
+            "gene": "OPG150",
+            "position": 255,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D255E"
+          },
+          {
+            "gene": "OPG151",
+            "position": 5,
+            "refAa": "D",
+            "altAa": "V",
+            "change": "D5V"
+          },
+          {
+            "gene": "OPG151",
+            "position": 281,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N281D"
+          },
+          {
+            "gene": "OPG153",
+            "position": 13,
+            "refAa": "M",
+            "altAa": "T",
+            "change": "M13T"
+          },
+          {
+            "gene": "OPG153",
+            "position": 204,
+            "refAa": "R",
+            "altAa": "H",
+            "change": "R204H"
+          },
+          {
+            "gene": "OPG153",
+            "position": 354,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I354T"
+          },
+          {
+            "gene": "OPG153",
+            "position": 357,
+            "refAa": "Y",
+            "altAa": "H",
+            "change": "Y357H"
+          },
+          {
+            "gene": "OPG153",
+            "position": 492,
+            "refAa": "Q",
+            "altAa": "P",
+            "change": "Q492P"
+          },
+          {
+            "gene": "OPG154",
+            "position": 73,
+            "refAa": "R",
+            "altAa": "H",
+            "change": "R73H"
+          },
+          {
+            "gene": "OPG154",
+            "position": 106,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H106R"
+          },
+          {
+            "gene": "OPG156",
+            "position": 41,
+            "refAa": "Y",
+            "altAa": "S",
+            "change": "Y41S"
+          },
+          {
+            "gene": "OPG156",
+            "position": 221,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T221A"
+          },
+          {
+            "gene": "OPG156",
+            "position": 260,
+            "refAa": "I",
+            "altAa": "M",
+            "change": "I260M"
+          },
+          {
+            "gene": "OPG157",
+            "position": 23,
+            "refAa": "M",
+            "altAa": "V",
+            "change": "M23V"
+          },
+          {
+            "gene": "OPG159",
+            "position": 1,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T1A"
+          },
+          {
+            "gene": "OPG159",
+            "position": 35,
+            "refAa": "L",
+            "altAa": "S",
+            "change": "L35S"
+          },
+          {
+            "gene": "OPG160",
+            "position": 1,
+            "refAa": "P",
+            "altAa": "S",
+            "change": "P1S"
+          },
+          {
+            "gene": "OPG161",
+            "position": 66,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K66E"
+          },
+          {
+            "gene": "OPG161",
+            "position": 87,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V87A"
+          },
+          {
+            "gene": "OPG163",
+            "position": 45,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V45A"
+          },
+          {
+            "gene": "OPG164",
+            "position": 110,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I110V"
+          },
+          {
+            "gene": "OPG164",
+            "position": 216,
+            "refAa": "Y",
+            "altAa": "H",
+            "change": "Y216H"
+          },
+          {
+            "gene": "OPG165",
+            "position": 38,
+            "refAa": "S",
+            "altAa": "T",
+            "change": "S38T"
+          },
+          {
+            "gene": "OPG165",
+            "position": 105,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D105N"
+          },
+          {
+            "gene": "OPG165",
+            "position": 141,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S141L"
+          },
+          {
+            "gene": "OPG165",
+            "position": 160,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S160L"
+          },
+          {
+            "gene": "OPG167",
+            "position": 106,
+            "refAa": "Y",
+            "altAa": "S",
+            "change": "Y106S"
+          },
+          {
+            "gene": "OPG167",
+            "position": 111,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I111V"
+          },
+          {
+            "gene": "OPG170",
+            "position": 30,
+            "refAa": "G",
+            "altAa": "D",
+            "change": "G30D"
+          },
+          {
+            "gene": "OPG170",
+            "position": 110,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M110I"
+          },
+          {
+            "gene": "OPG172",
+            "position": 91,
+            "refAa": "C",
+            "altAa": "W",
+            "change": "C91W"
+          },
+          {
+            "gene": "OPG172",
+            "position": 124,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A124V"
+          },
+          {
+            "gene": "OPG172",
+            "position": 144,
+            "refAa": "M",
+            "altAa": "T",
+            "change": "M144T"
+          },
+          {
+            "gene": "OPG172",
+            "position": 159,
+            "refAa": "Y",
+            "altAa": "D",
+            "change": "Y159D"
+          },
+          {
+            "gene": "OPG176",
+            "position": 23,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D23N"
+          },
+          {
+            "gene": "OPG176",
+            "position": 226,
+            "refAa": "L",
+            "altAa": "S",
+            "change": "L226S"
+          },
+          {
+            "gene": "OPG178",
+            "position": 138,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I138V"
+          },
+          {
+            "gene": "OPG181",
+            "position": 84,
+            "refAa": "L",
+            "altAa": "M",
+            "change": "L84M"
+          },
+          {
+            "gene": "OPG181",
+            "position": 126,
+            "refAa": "S",
+            "altAa": "Y",
+            "change": "S126Y"
+          },
+          {
+            "gene": "OPG185",
+            "position": 166,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T166A"
+          },
+          {
+            "gene": "OPG185",
+            "position": 176,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D176E"
+          },
+          {
+            "gene": "OPG185",
+            "position": 204,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I204T"
+          },
+          {
+            "gene": "OPG187",
+            "position": 299,
+            "refAa": "K",
+            "altAa": "*",
+            "change": "K299*"
+          },
+          {
+            "gene": "OPG188",
+            "position": 264,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V264I"
+          },
+          {
+            "gene": "OPG188",
+            "position": 418,
+            "refAa": "S",
+            "altAa": "R",
+            "change": "S418R"
+          },
+          {
+            "gene": "OPG189",
+            "position": 184,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K184R"
+          },
+          {
+            "gene": "OPG189",
+            "position": 505,
+            "refAa": "C",
+            "altAa": "H",
+            "change": "C505H"
+          },
+          {
+            "gene": "OPG191",
+            "position": 49,
+            "refAa": "P",
+            "altAa": "Q",
+            "change": "P49Q"
+          },
+          {
+            "gene": "OPG191",
+            "position": 79,
+            "refAa": "F",
+            "altAa": "C",
+            "change": "F79C"
+          },
+          {
+            "gene": "OPG192",
+            "position": 99,
+            "refAa": "G",
+            "altAa": "E",
+            "change": "G99E"
+          },
+          {
+            "gene": "OPG193",
+            "position": 107,
+            "refAa": "I",
+            "altAa": "R",
+            "change": "I107R"
+          },
+          {
+            "gene": "OPG195",
+            "position": 119,
+            "refAa": "C",
+            "altAa": "S",
+            "change": "C119S"
+          },
+          {
+            "gene": "OPG197",
+            "position": 0,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M0I"
+          },
+          {
+            "gene": "OPG198",
+            "position": 70,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N70D"
+          },
+          {
+            "gene": "OPG198",
+            "position": 99,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I99V"
+          },
+          {
+            "gene": "OPG198",
+            "position": 132,
+            "refAa": "Q",
+            "altAa": "R",
+            "change": "Q132R"
+          },
+          {
+            "gene": "OPG199",
+            "position": 229,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K229E"
+          },
+          {
+            "gene": "OPG200",
+            "position": 51,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D51G"
+          },
+          {
+            "gene": "OPG200",
+            "position": 133,
+            "refAa": "E",
+            "altAa": "G",
+            "change": "E133G"
+          },
+          {
+            "gene": "OPG204",
+            "position": 177,
+            "refAa": "N",
+            "altAa": "K",
+            "change": "N177K"
+          },
+          {
+            "gene": "OPG205",
+            "position": 168,
+            "refAa": "W",
+            "altAa": "R",
+            "change": "W168R"
+          },
+          {
+            "gene": "OPG205",
+            "position": 348,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C348Y"
+          },
+          {
+            "gene": "OPG205",
+            "position": 353,
+            "refAa": "G",
+            "altAa": "S",
+            "change": "G353S"
+          },
+          {
+            "gene": "OPG205",
+            "position": 620,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V620A"
+          },
+          {
+            "gene": "OPG205",
+            "position": 689,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V689A"
+          },
+          {
+            "gene": "OPG205",
+            "position": 732,
+            "refAa": "R",
+            "altAa": "Q",
+            "change": "R732Q"
+          },
+          {
+            "gene": "OPG208",
+            "position": 33,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A33V"
+          },
+          {
+            "gene": "OPG208",
+            "position": 141,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I141T"
+          },
+          {
+            "gene": "OPG208",
+            "position": 299,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T299A"
+          },
+          {
+            "gene": "OPG208",
+            "position": 310,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V310A"
+          },
+          {
+            "gene": "OPG209",
+            "position": 10,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I10V"
+          },
+          {
+            "gene": "OPG209",
+            "position": 20,
+            "refAa": "L",
+            "altAa": "F",
+            "change": "L20F"
+          },
+          {
+            "gene": "OPG210",
+            "position": 2,
+            "refAa": "F",
+            "altAa": "L",
+            "change": "F2L"
+          },
+          {
+            "gene": "OPG210",
+            "position": 97,
+            "refAa": "A",
+            "altAa": "D",
+            "change": "A97D"
+          },
+          {
+            "gene": "OPG210",
+            "position": 172,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V172I"
+          },
+          {
+            "gene": "OPG210",
+            "position": 330,
+            "refAa": "K",
+            "altAa": "N",
+            "change": "K330N"
+          },
+          {
+            "gene": "OPG210",
+            "position": 333,
+            "refAa": "N",
+            "altAa": "I",
+            "change": "N333I"
+          },
+          {
+            "gene": "OPG210",
+            "position": 344,
+            "refAa": "E",
+            "altAa": "V",
+            "change": "E344V"
+          },
+          {
+            "gene": "OPG210",
+            "position": 362,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H362R"
+          },
+          {
+            "gene": "OPG210",
+            "position": 378,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D378G"
+          },
+          {
+            "gene": "OPG210",
+            "position": 514,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V514A"
+          },
+          {
+            "gene": "OPG210",
+            "position": 780,
+            "refAa": "S",
+            "altAa": "P",
+            "change": "S780P"
+          },
+          {
+            "gene": "OPG210",
+            "position": 787,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V787A"
+          },
+          {
+            "gene": "OPG210",
+            "position": 927,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T927A"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1304,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A1304T"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1703,
+            "refAa": "L",
+            "altAa": "R",
+            "change": "L1703R"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1716,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D1716G"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1862,
+            "refAa": "E",
+            "altAa": "D",
+            "change": "E1862D"
+          }
+        ],
+        "qcStatus": "mediocre"
+      }
+    },
+    {
+      "accession": "OZ462939",
+      "isolate": "2409EQT-MBK-I1011-000",
+      "country": "Dem. Rep. Congo",
+      "collectionDate": "2024-09",
+      "confidence": "confirmed",
+      "alignment": {
+        "clade": "Ia",
+        "totalSubstitutions": 775,
+        "mutations": [
+          {
+            "gene": "OPG005",
+            "position": 2,
+            "refAa": "S",
+            "altAa": "F",
+            "change": "S2F"
+          },
+          {
+            "gene": "OPG005",
+            "position": 73,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N73D"
+          },
+          {
+            "gene": "OPG005",
+            "position": 130,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M130I"
+          },
+          {
+            "gene": "OPG015_dup",
+            "position": 3,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V3A"
+          },
+          {
+            "gene": "OPG016",
+            "position": 62,
+            "refAa": "S",
+            "altAa": "A",
+            "change": "S62A"
+          },
+          {
+            "gene": "OPG016",
+            "position": 79,
+            "refAa": "E",
+            "altAa": "V",
+            "change": "E79V"
+          },
+          {
+            "gene": "OPG016",
+            "position": 120,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D120E"
+          },
+          {
+            "gene": "OPG019",
+            "position": 123,
+            "refAa": "M",
+            "altAa": "R",
+            "change": "M123R"
+          },
+          {
+            "gene": "OPG021",
+            "position": 37,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V37I"
+          },
+          {
+            "gene": "OPG021",
+            "position": 218,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S218L"
+          },
+          {
+            "gene": "OPG021",
+            "position": 229,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K229R"
+          },
+          {
+            "gene": "OPG022",
+            "position": 72,
+            "refAa": "G",
+            "altAa": "D",
+            "change": "G72D"
+          },
+          {
+            "gene": "OPG023",
+            "position": 89,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A89V"
+          },
+          {
+            "gene": "OPG023",
+            "position": 108,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M108I"
+          },
+          {
+            "gene": "OPG023",
+            "position": 173,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V173A"
+          },
+          {
+            "gene": "OPG023",
+            "position": 192,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A192S"
+          },
+          {
+            "gene": "OPG023",
+            "position": 257,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S257L"
+          },
+          {
+            "gene": "OPG023",
+            "position": 299,
+            "refAa": "Y",
+            "altAa": "H",
+            "change": "Y299H"
+          },
+          {
+            "gene": "OPG023",
+            "position": 303,
+            "refAa": "C",
+            "altAa": "R",
+            "change": "C303R"
+          },
+          {
+            "gene": "OPG023",
+            "position": 425,
+            "refAa": "V",
+            "altAa": "T",
+            "change": "V425T"
+          },
+          {
+            "gene": "OPG023",
+            "position": 487,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T487A"
+          },
+          {
+            "gene": "OPG023",
+            "position": 601,
+            "refAa": "L",
+            "altAa": "I",
+            "change": "L601I"
+          },
+          {
+            "gene": "OPG023",
+            "position": 636,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K636E"
+          },
+          {
+            "gene": "OPG024",
+            "position": 31,
+            "refAa": "S",
+            "altAa": "G",
+            "change": "S31G"
+          },
+          {
+            "gene": "OPG025",
+            "position": 392,
+            "refAa": "E",
+            "altAa": "K",
+            "change": "E392K"
+          },
+          {
+            "gene": "OPG025",
+            "position": 424,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I424V"
+          },
+          {
+            "gene": "OPG027",
+            "position": 46,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I46V"
+          },
+          {
+            "gene": "OPG027",
+            "position": 78,
+            "refAa": "F",
+            "altAa": "L",
+            "change": "F78L"
+          },
+          {
+            "gene": "OPG027",
+            "position": 125,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V125I"
+          },
+          {
+            "gene": "OPG029",
+            "position": 145,
+            "refAa": "C",
+            "altAa": "R",
+            "change": "C145R"
+          },
+          {
+            "gene": "OPG030",
+            "position": 11,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N11D"
+          },
+          {
+            "gene": "OPG030",
+            "position": 112,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S112N"
+          },
+          {
+            "gene": "OPG031",
+            "position": 79,
+            "refAa": "T",
+            "altAa": "M",
+            "change": "T79M"
+          },
+          {
+            "gene": "OPG031",
+            "position": 116,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D116E"
+          },
+          {
+            "gene": "OPG031",
+            "position": 240,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C240Y"
+          },
+          {
+            "gene": "OPG031",
+            "position": 270,
+            "refAa": "M",
+            "altAa": "K",
+            "change": "M270K"
+          },
+          {
+            "gene": "OPG034",
+            "position": 204,
+            "refAa": "L",
+            "altAa": "R",
+            "change": "L204R"
+          },
+          {
+            "gene": "OPG036",
+            "position": 10,
+            "refAa": "S",
+            "altAa": "P",
+            "change": "S10P"
+          },
+          {
+            "gene": "OPG036",
+            "position": 24,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D24E"
+          },
+          {
+            "gene": "OPG037",
+            "position": 143,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C143Y"
+          },
+          {
+            "gene": "OPG037",
+            "position": 414,
+            "refAa": "C",
+            "altAa": "R",
+            "change": "C414R"
+          },
+          {
+            "gene": "OPG038",
+            "position": 26,
+            "refAa": "H",
+            "altAa": "P",
+            "change": "H26P"
+          },
+          {
+            "gene": "OPG038",
+            "position": 77,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V77I"
+          },
+          {
+            "gene": "OPG039",
+            "position": 278,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C278Y"
+          },
+          {
+            "gene": "OPG040",
+            "position": 253,
+            "refAa": "P",
+            "altAa": "A",
+            "change": "P253A"
+          },
+          {
+            "gene": "OPG040",
+            "position": 373,
+            "refAa": "Y",
+            "altAa": "S",
+            "change": "Y373S"
+          },
+          {
+            "gene": "OPG043",
+            "position": 2,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T2A"
+          },
+          {
+            "gene": "OPG044",
+            "position": 62,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V62A"
+          },
+          {
+            "gene": "OPG044",
+            "position": 108,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T108A"
+          },
+          {
+            "gene": "OPG044",
+            "position": 147,
+            "refAa": "M",
+            "altAa": "L",
+            "change": "M147L"
+          },
+          {
+            "gene": "OPG045",
+            "position": 184,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A184T"
+          },
+          {
+            "gene": "OPG046",
+            "position": 94,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S94N"
+          },
+          {
+            "gene": "OPG047",
+            "position": 228,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D228G"
+          },
+          {
+            "gene": "OPG047",
+            "position": 231,
+            "refAa": "I",
+            "altAa": "K",
+            "change": "I231K"
+          },
+          {
+            "gene": "OPG049",
+            "position": 16,
+            "refAa": "E",
+            "altAa": "V",
+            "change": "E16V"
+          },
+          {
+            "gene": "OPG049",
+            "position": 36,
+            "refAa": "M",
+            "altAa": "V",
+            "change": "M36V"
+          },
+          {
+            "gene": "OPG049",
+            "position": 262,
+            "refAa": "T",
+            "altAa": "M",
+            "change": "T262M"
+          },
+          {
+            "gene": "OPG054",
+            "position": 437,
+            "refAa": "R",
+            "altAa": "G",
+            "change": "R437G"
+          },
+          {
+            "gene": "OPG056",
+            "position": 322,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V322A"
+          },
+          {
+            "gene": "OPG056",
+            "position": 601,
+            "refAa": "T",
+            "altAa": "N",
+            "change": "T601N"
+          },
+          {
+            "gene": "OPG056",
+            "position": 621,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C621Y"
+          },
+          {
+            "gene": "OPG059",
+            "position": 25,
+            "refAa": "I",
+            "altAa": "L",
+            "change": "I25L"
+          },
+          {
+            "gene": "OPG063",
+            "position": 306,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V306A"
+          },
+          {
+            "gene": "OPG064",
+            "position": 87,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A87S"
+          },
+          {
+            "gene": "OPG065",
+            "position": 16,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A16T"
+          },
+          {
+            "gene": "OPG065",
+            "position": 22,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N22D"
+          },
+          {
+            "gene": "OPG065",
+            "position": 60,
+            "refAa": "H",
+            "altAa": "N",
+            "change": "H60N"
+          },
+          {
+            "gene": "OPG066",
+            "position": 82,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K82R"
+          },
+          {
+            "gene": "OPG066",
+            "position": 96,
+            "refAa": "H",
+            "altAa": "N",
+            "change": "H96N"
+          },
+          {
+            "gene": "OPG068",
+            "position": 250,
+            "refAa": "P",
+            "altAa": "S",
+            "change": "P250S"
+          },
+          {
+            "gene": "OPG068",
+            "position": 340,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D340E"
+          },
+          {
+            "gene": "OPG070",
+            "position": 204,
+            "refAa": "H",
+            "altAa": "Y",
+            "change": "H204Y"
+          },
+          {
+            "gene": "OPG071",
+            "position": 410,
+            "refAa": "L",
+            "altAa": "W",
+            "change": "L410W"
+          },
+          {
+            "gene": "OPG071",
+            "position": 427,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I427T"
+          },
+          {
+            "gene": "OPG071",
+            "position": 483,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A483S"
+          },
+          {
+            "gene": "OPG071",
+            "position": 500,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I500V"
+          },
+          {
+            "gene": "OPG072",
+            "position": 9,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V9I"
+          },
+          {
+            "gene": "OPG074",
+            "position": 198,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N198D"
+          },
+          {
+            "gene": "OPG074",
+            "position": 440,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I440V"
+          },
+          {
+            "gene": "OPG076",
+            "position": 19,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S19N"
+          },
+          {
+            "gene": "OPG079",
+            "position": 44,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C44Y"
+          },
+          {
+            "gene": "OPG080",
+            "position": 320,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D320E"
+          },
+          {
+            "gene": "OPG080",
+            "position": 381,
+            "refAa": "C",
+            "altAa": "S",
+            "change": "C381S"
+          },
+          {
+            "gene": "OPG080",
+            "position": 520,
+            "refAa": "L",
+            "altAa": "P",
+            "change": "L520P"
+          },
+          {
+            "gene": "OPG080",
+            "position": 581,
+            "refAa": "P",
+            "altAa": "H",
+            "change": "P581H"
+          },
+          {
+            "gene": "OPG084",
+            "position": 210,
+            "refAa": "S",
+            "altAa": "T",
+            "change": "S210T"
+          },
+          {
+            "gene": "OPG084",
+            "position": 619,
+            "refAa": "Q",
+            "altAa": "R",
+            "change": "Q619R"
+          },
+          {
+            "gene": "OPG085",
+            "position": 78,
+            "refAa": "S",
+            "altAa": "T",
+            "change": "S78T"
+          },
+          {
+            "gene": "OPG085",
+            "position": 327,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T327A"
+          },
+          {
+            "gene": "OPG085",
+            "position": 590,
+            "refAa": "F",
+            "altAa": "V",
+            "change": "F590V"
+          },
+          {
+            "gene": "OPG086",
+            "position": 71,
+            "refAa": "L",
+            "altAa": "I",
+            "change": "L71I"
+          },
+          {
+            "gene": "OPG089",
+            "position": 302,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D302E"
+          },
+          {
+            "gene": "OPG089",
+            "position": 336,
+            "refAa": "E",
+            "altAa": "K",
+            "change": "E336K"
+          },
+          {
+            "gene": "OPG091",
+            "position": 61,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V61I"
+          },
+          {
+            "gene": "OPG091",
+            "position": 72,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S72N"
+          },
+          {
+            "gene": "OPG092",
+            "position": 243,
+            "refAa": "I",
+            "altAa": "N",
+            "change": "I243N"
+          },
+          {
+            "gene": "OPG094",
+            "position": 174,
+            "refAa": "R",
+            "altAa": "T",
+            "change": "R174T"
+          },
+          {
+            "gene": "OPG096",
+            "position": 67,
+            "refAa": "I",
+            "altAa": "M",
+            "change": "I67M"
+          },
+          {
+            "gene": "OPG100",
+            "position": 151,
+            "refAa": "K",
+            "altAa": "Q",
+            "change": "K151Q"
+          },
+          {
+            "gene": "OPG101",
+            "position": 152,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T152A"
+          },
+          {
+            "gene": "OPG102",
+            "position": 248,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I248V"
+          },
+          {
+            "gene": "OPG104",
+            "position": 11,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T11A"
+          },
+          {
+            "gene": "OPG105",
+            "position": 112,
+            "refAa": "V",
+            "altAa": "G",
+            "change": "V112G"
+          },
+          {
+            "gene": "OPG105",
+            "position": 1069,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I1069V"
+          },
+          {
+            "gene": "OPG108",
+            "position": 3,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V3A"
+          },
+          {
+            "gene": "OPG108",
+            "position": 110,
+            "refAa": "T",
+            "altAa": "I",
+            "change": "T110I"
+          },
+          {
+            "gene": "OPG109",
+            "position": 363,
+            "refAa": "R",
+            "altAa": "S",
+            "change": "R363S"
+          },
+          {
+            "gene": "OPG109",
+            "position": 621,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A621T"
+          },
+          {
+            "gene": "OPG109",
+            "position": 629,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A629T"
+          },
+          {
+            "gene": "OPG111",
+            "position": 76,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I76V"
+          },
+          {
+            "gene": "OPG112",
+            "position": 33,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H33R"
+          },
+          {
+            "gene": "OPG113",
+            "position": 536,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V536I"
+          },
+          {
+            "gene": "OPG117",
+            "position": 453,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D453N"
+          },
+          {
+            "gene": "OPG118",
+            "position": 255,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K255R"
+          },
+          {
+            "gene": "OPG118",
+            "position": 412,
+            "refAa": "N",
+            "altAa": "S",
+            "change": "N412S"
+          },
+          {
+            "gene": "OPG118",
+            "position": 461,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V461A"
+          },
+          {
+            "gene": "OPG118",
+            "position": 605,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K605E"
+          },
+          {
+            "gene": "OPG119",
+            "position": 87,
+            "refAa": "T",
+            "altAa": "R",
+            "change": "T87R"
+          },
+          {
+            "gene": "OPG120",
+            "position": 18,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A18T"
+          },
+          {
+            "gene": "OPG120",
+            "position": 212,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H212R"
+          },
+          {
+            "gene": "OPG123",
+            "position": 171,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I171T"
+          },
+          {
+            "gene": "OPG123",
+            "position": 312,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A312T"
+          },
+          {
+            "gene": "OPG123",
+            "position": 435,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C435Y"
+          },
+          {
+            "gene": "OPG125",
+            "position": 110,
+            "refAa": "E",
+            "altAa": "D",
+            "change": "E110D"
+          },
+          {
+            "gene": "OPG125",
+            "position": 513,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I513V"
+          },
+          {
+            "gene": "OPG130",
+            "position": 62,
+            "refAa": "T",
+            "altAa": "V",
+            "change": "T62V"
+          },
+          {
+            "gene": "OPG130",
+            "position": 121,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T121A"
+          },
+          {
+            "gene": "OPG130",
+            "position": 269,
+            "refAa": "L",
+            "altAa": "I",
+            "change": "L269I"
+          },
+          {
+            "gene": "OPG133",
+            "position": 593,
+            "refAa": "F",
+            "altAa": "S",
+            "change": "F593S"
+          },
+          {
+            "gene": "OPG134",
+            "position": 225,
+            "refAa": "E",
+            "altAa": "D",
+            "change": "E225D"
+          },
+          {
+            "gene": "OPG135",
+            "position": 89,
+            "refAa": "V",
+            "altAa": "E",
+            "change": "V89E"
+          },
+          {
+            "gene": "OPG136",
+            "position": 228,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A228T"
+          },
+          {
+            "gene": "OPG136",
+            "position": 266,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D266N"
+          },
+          {
+            "gene": "OPG136",
+            "position": 282,
+            "refAa": "F",
+            "altAa": "Y",
+            "change": "F282Y"
+          },
+          {
+            "gene": "OPG144",
+            "position": 183,
+            "refAa": "T",
+            "altAa": "I",
+            "change": "T183I"
+          },
+          {
+            "gene": "OPG145",
+            "position": 248,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I248V"
+          },
+          {
+            "gene": "OPG145",
+            "position": 263,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I263T"
+          },
+          {
+            "gene": "OPG145",
+            "position": 347,
+            "refAa": "A",
+            "altAa": "P",
+            "change": "A347P"
+          },
+          {
+            "gene": "OPG145",
+            "position": 462,
+            "refAa": "Q",
+            "altAa": "R",
+            "change": "Q462R"
+          },
+          {
+            "gene": "OPG148",
+            "position": 312,
+            "refAa": "I",
+            "altAa": "S",
+            "change": "I312S"
+          },
+          {
+            "gene": "OPG150",
+            "position": 99,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N99D"
+          },
+          {
+            "gene": "OPG150",
+            "position": 255,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D255E"
+          },
+          {
+            "gene": "OPG151",
+            "position": 5,
+            "refAa": "D",
+            "altAa": "V",
+            "change": "D5V"
+          },
+          {
+            "gene": "OPG151",
+            "position": 281,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N281D"
+          },
+          {
+            "gene": "OPG153",
+            "position": 13,
+            "refAa": "M",
+            "altAa": "T",
+            "change": "M13T"
+          },
+          {
+            "gene": "OPG153",
+            "position": 204,
+            "refAa": "R",
+            "altAa": "H",
+            "change": "R204H"
+          },
+          {
+            "gene": "OPG153",
+            "position": 354,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I354T"
+          },
+          {
+            "gene": "OPG153",
+            "position": 357,
+            "refAa": "Y",
+            "altAa": "H",
+            "change": "Y357H"
+          },
+          {
+            "gene": "OPG153",
+            "position": 492,
+            "refAa": "Q",
+            "altAa": "P",
+            "change": "Q492P"
+          },
+          {
+            "gene": "OPG154",
+            "position": 73,
+            "refAa": "R",
+            "altAa": "H",
+            "change": "R73H"
+          },
+          {
+            "gene": "OPG154",
+            "position": 106,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H106R"
+          },
+          {
+            "gene": "OPG156",
+            "position": 41,
+            "refAa": "Y",
+            "altAa": "S",
+            "change": "Y41S"
+          },
+          {
+            "gene": "OPG156",
+            "position": 221,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T221A"
+          },
+          {
+            "gene": "OPG156",
+            "position": 260,
+            "refAa": "I",
+            "altAa": "M",
+            "change": "I260M"
+          },
+          {
+            "gene": "OPG157",
+            "position": 23,
+            "refAa": "M",
+            "altAa": "V",
+            "change": "M23V"
+          },
+          {
+            "gene": "OPG159",
+            "position": 1,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T1A"
+          },
+          {
+            "gene": "OPG159",
+            "position": 35,
+            "refAa": "L",
+            "altAa": "S",
+            "change": "L35S"
+          },
+          {
+            "gene": "OPG160",
+            "position": 1,
+            "refAa": "P",
+            "altAa": "S",
+            "change": "P1S"
+          },
+          {
+            "gene": "OPG161",
+            "position": 66,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K66E"
+          },
+          {
+            "gene": "OPG161",
+            "position": 87,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V87A"
+          },
+          {
+            "gene": "OPG163",
+            "position": 45,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V45A"
+          },
+          {
+            "gene": "OPG164",
+            "position": 110,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I110V"
+          },
+          {
+            "gene": "OPG164",
+            "position": 216,
+            "refAa": "Y",
+            "altAa": "H",
+            "change": "Y216H"
+          },
+          {
+            "gene": "OPG165",
+            "position": 105,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D105N"
+          },
+          {
+            "gene": "OPG165",
+            "position": 160,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S160L"
+          },
+          {
+            "gene": "OPG167",
+            "position": 106,
+            "refAa": "Y",
+            "altAa": "S",
+            "change": "Y106S"
+          },
+          {
+            "gene": "OPG167",
+            "position": 111,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I111V"
+          },
+          {
+            "gene": "OPG170",
+            "position": 30,
+            "refAa": "G",
+            "altAa": "D",
+            "change": "G30D"
+          },
+          {
+            "gene": "OPG170",
+            "position": 56,
+            "refAa": "S",
+            "altAa": "Y",
+            "change": "S56Y"
+          },
+          {
+            "gene": "OPG170",
+            "position": 110,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M110I"
+          },
+          {
+            "gene": "OPG172",
+            "position": 124,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A124V"
+          },
+          {
+            "gene": "OPG172",
+            "position": 144,
+            "refAa": "M",
+            "altAa": "T",
+            "change": "M144T"
+          },
+          {
+            "gene": "OPG172",
+            "position": 159,
+            "refAa": "Y",
+            "altAa": "D",
+            "change": "Y159D"
+          },
+          {
+            "gene": "OPG176",
+            "position": 23,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D23N"
+          },
+          {
+            "gene": "OPG176",
+            "position": 226,
+            "refAa": "L",
+            "altAa": "S",
+            "change": "L226S"
+          },
+          {
+            "gene": "OPG178",
+            "position": 138,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I138V"
+          },
+          {
+            "gene": "OPG181",
+            "position": 84,
+            "refAa": "L",
+            "altAa": "M",
+            "change": "L84M"
+          },
+          {
+            "gene": "OPG181",
+            "position": 126,
+            "refAa": "S",
+            "altAa": "Y",
+            "change": "S126Y"
+          },
+          {
+            "gene": "OPG185",
+            "position": 166,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T166A"
+          },
+          {
+            "gene": "OPG185",
+            "position": 176,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D176E"
+          },
+          {
+            "gene": "OPG185",
+            "position": 204,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I204T"
+          },
+          {
+            "gene": "OPG187",
+            "position": 299,
+            "refAa": "K",
+            "altAa": "*",
+            "change": "K299*"
+          },
+          {
+            "gene": "OPG188",
+            "position": 264,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V264I"
+          },
+          {
+            "gene": "OPG188",
+            "position": 418,
+            "refAa": "S",
+            "altAa": "R",
+            "change": "S418R"
+          },
+          {
+            "gene": "OPG189",
+            "position": 184,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K184R"
+          },
+          {
+            "gene": "OPG189",
+            "position": 505,
+            "refAa": "C",
+            "altAa": "H",
+            "change": "C505H"
+          },
+          {
+            "gene": "OPG191",
+            "position": 49,
+            "refAa": "P",
+            "altAa": "Q",
+            "change": "P49Q"
+          },
+          {
+            "gene": "OPG191",
+            "position": 79,
+            "refAa": "F",
+            "altAa": "C",
+            "change": "F79C"
+          },
+          {
+            "gene": "OPG192",
+            "position": 99,
+            "refAa": "G",
+            "altAa": "E",
+            "change": "G99E"
+          },
+          {
+            "gene": "OPG193",
+            "position": 107,
+            "refAa": "I",
+            "altAa": "R",
+            "change": "I107R"
+          },
+          {
+            "gene": "OPG195",
+            "position": 119,
+            "refAa": "C",
+            "altAa": "S",
+            "change": "C119S"
+          },
+          {
+            "gene": "OPG197",
+            "position": 0,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M0I"
+          },
+          {
+            "gene": "OPG198",
+            "position": 70,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N70D"
+          },
+          {
+            "gene": "OPG198",
+            "position": 99,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I99V"
+          },
+          {
+            "gene": "OPG198",
+            "position": 132,
+            "refAa": "Q",
+            "altAa": "R",
+            "change": "Q132R"
+          },
+          {
+            "gene": "OPG199",
+            "position": 229,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K229E"
+          },
+          {
+            "gene": "OPG200",
+            "position": 51,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D51G"
+          },
+          {
+            "gene": "OPG200",
+            "position": 133,
+            "refAa": "E",
+            "altAa": "G",
+            "change": "E133G"
+          },
+          {
+            "gene": "OPG204",
+            "position": 177,
+            "refAa": "N",
+            "altAa": "K",
+            "change": "N177K"
+          },
+          {
+            "gene": "OPG205",
+            "position": 168,
+            "refAa": "W",
+            "altAa": "R",
+            "change": "W168R"
+          },
+          {
+            "gene": "OPG205",
+            "position": 348,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C348Y"
+          },
+          {
+            "gene": "OPG205",
+            "position": 353,
+            "refAa": "G",
+            "altAa": "S",
+            "change": "G353S"
+          },
+          {
+            "gene": "OPG205",
+            "position": 620,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V620A"
+          },
+          {
+            "gene": "OPG205",
+            "position": 689,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V689A"
+          },
+          {
+            "gene": "OPG205",
+            "position": 732,
+            "refAa": "R",
+            "altAa": "Q",
+            "change": "R732Q"
+          },
+          {
+            "gene": "OPG208",
+            "position": 33,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A33V"
+          },
+          {
+            "gene": "OPG208",
+            "position": 141,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I141T"
+          },
+          {
+            "gene": "OPG208",
+            "position": 299,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T299A"
+          },
+          {
+            "gene": "OPG208",
+            "position": 310,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V310A"
+          },
+          {
+            "gene": "OPG209",
+            "position": 10,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I10V"
+          },
+          {
+            "gene": "OPG209",
+            "position": 20,
+            "refAa": "L",
+            "altAa": "F",
+            "change": "L20F"
+          },
+          {
+            "gene": "OPG210",
+            "position": 2,
+            "refAa": "F",
+            "altAa": "L",
+            "change": "F2L"
+          },
+          {
+            "gene": "OPG210",
+            "position": 97,
+            "refAa": "A",
+            "altAa": "D",
+            "change": "A97D"
+          },
+          {
+            "gene": "OPG210",
+            "position": 172,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V172I"
+          },
+          {
+            "gene": "OPG210",
+            "position": 330,
+            "refAa": "K",
+            "altAa": "N",
+            "change": "K330N"
+          },
+          {
+            "gene": "OPG210",
+            "position": 333,
+            "refAa": "N",
+            "altAa": "I",
+            "change": "N333I"
+          },
+          {
+            "gene": "OPG210",
+            "position": 362,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H362R"
+          },
+          {
+            "gene": "OPG210",
+            "position": 378,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D378G"
+          },
+          {
+            "gene": "OPG210",
+            "position": 514,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V514A"
+          },
+          {
+            "gene": "OPG210",
+            "position": 780,
+            "refAa": "S",
+            "altAa": "P",
+            "change": "S780P"
+          },
+          {
+            "gene": "OPG210",
+            "position": 787,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V787A"
+          },
+          {
+            "gene": "OPG210",
+            "position": 927,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T927A"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1304,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A1304T"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1703,
+            "refAa": "L",
+            "altAa": "R",
+            "change": "L1703R"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1716,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D1716G"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1862,
+            "refAa": "E",
+            "altAa": "D",
+            "change": "E1862D"
+          }
+        ],
+        "qcStatus": "mediocre"
+      }
+    },
+    {
+      "accession": "OZ462934",
+      "isolate": "2409EQT-MBK-I1019-000",
+      "country": "Dem. Rep. Congo",
+      "collectionDate": "2024-09",
+      "confidence": "confirmed",
+      "alignment": {
+        "clade": "Ia",
+        "totalSubstitutions": 778,
+        "mutations": [
+          {
+            "gene": "OPG005",
+            "position": 2,
+            "refAa": "S",
+            "altAa": "F",
+            "change": "S2F"
+          },
+          {
+            "gene": "OPG005",
+            "position": 73,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N73D"
+          },
+          {
+            "gene": "OPG005",
+            "position": 130,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M130I"
+          },
+          {
+            "gene": "OPG015_dup",
+            "position": 3,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V3A"
+          },
+          {
+            "gene": "OPG016",
+            "position": 62,
+            "refAa": "S",
+            "altAa": "A",
+            "change": "S62A"
+          },
+          {
+            "gene": "OPG016",
+            "position": 79,
+            "refAa": "E",
+            "altAa": "V",
+            "change": "E79V"
+          },
+          {
+            "gene": "OPG016",
+            "position": 120,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D120E"
+          },
+          {
+            "gene": "OPG019",
+            "position": 123,
+            "refAa": "M",
+            "altAa": "R",
+            "change": "M123R"
+          },
+          {
+            "gene": "OPG021",
+            "position": 37,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V37I"
+          },
+          {
+            "gene": "OPG021",
+            "position": 218,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S218L"
+          },
+          {
+            "gene": "OPG021",
+            "position": 229,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K229R"
+          },
+          {
+            "gene": "OPG022",
+            "position": 72,
+            "refAa": "G",
+            "altAa": "D",
+            "change": "G72D"
+          },
+          {
+            "gene": "OPG023",
+            "position": 89,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A89V"
+          },
+          {
+            "gene": "OPG023",
+            "position": 108,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M108I"
+          },
+          {
+            "gene": "OPG023",
+            "position": 173,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V173A"
+          },
+          {
+            "gene": "OPG023",
+            "position": 192,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A192S"
+          },
+          {
+            "gene": "OPG023",
+            "position": 257,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S257L"
+          },
+          {
+            "gene": "OPG023",
+            "position": 299,
+            "refAa": "Y",
+            "altAa": "H",
+            "change": "Y299H"
+          },
+          {
+            "gene": "OPG023",
+            "position": 303,
+            "refAa": "C",
+            "altAa": "R",
+            "change": "C303R"
+          },
+          {
+            "gene": "OPG023",
+            "position": 425,
+            "refAa": "V",
+            "altAa": "T",
+            "change": "V425T"
+          },
+          {
+            "gene": "OPG023",
+            "position": 487,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T487A"
+          },
+          {
+            "gene": "OPG023",
+            "position": 601,
+            "refAa": "L",
+            "altAa": "I",
+            "change": "L601I"
+          },
+          {
+            "gene": "OPG023",
+            "position": 636,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K636E"
+          },
+          {
+            "gene": "OPG024",
+            "position": 31,
+            "refAa": "S",
+            "altAa": "G",
+            "change": "S31G"
+          },
+          {
+            "gene": "OPG025",
+            "position": 392,
+            "refAa": "E",
+            "altAa": "K",
+            "change": "E392K"
+          },
+          {
+            "gene": "OPG025",
+            "position": 424,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I424V"
+          },
+          {
+            "gene": "OPG027",
+            "position": 46,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I46V"
+          },
+          {
+            "gene": "OPG027",
+            "position": 78,
+            "refAa": "F",
+            "altAa": "L",
+            "change": "F78L"
+          },
+          {
+            "gene": "OPG027",
+            "position": 125,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V125I"
+          },
+          {
+            "gene": "OPG029",
+            "position": 145,
+            "refAa": "C",
+            "altAa": "R",
+            "change": "C145R"
+          },
+          {
+            "gene": "OPG030",
+            "position": 11,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N11D"
+          },
+          {
+            "gene": "OPG030",
+            "position": 112,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S112N"
+          },
+          {
+            "gene": "OPG031",
+            "position": 79,
+            "refAa": "T",
+            "altAa": "M",
+            "change": "T79M"
+          },
+          {
+            "gene": "OPG031",
+            "position": 116,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D116E"
+          },
+          {
+            "gene": "OPG031",
+            "position": 240,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C240Y"
+          },
+          {
+            "gene": "OPG031",
+            "position": 270,
+            "refAa": "M",
+            "altAa": "K",
+            "change": "M270K"
+          },
+          {
+            "gene": "OPG034",
+            "position": 204,
+            "refAa": "L",
+            "altAa": "R",
+            "change": "L204R"
+          },
+          {
+            "gene": "OPG036",
+            "position": 10,
+            "refAa": "S",
+            "altAa": "P",
+            "change": "S10P"
+          },
+          {
+            "gene": "OPG036",
+            "position": 24,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D24E"
+          },
+          {
+            "gene": "OPG037",
+            "position": 143,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C143Y"
+          },
+          {
+            "gene": "OPG037",
+            "position": 414,
+            "refAa": "C",
+            "altAa": "R",
+            "change": "C414R"
+          },
+          {
+            "gene": "OPG038",
+            "position": 26,
+            "refAa": "H",
+            "altAa": "P",
+            "change": "H26P"
+          },
+          {
+            "gene": "OPG038",
+            "position": 77,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V77I"
+          },
+          {
+            "gene": "OPG039",
+            "position": 278,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C278Y"
+          },
+          {
+            "gene": "OPG040",
+            "position": 253,
+            "refAa": "P",
+            "altAa": "A",
+            "change": "P253A"
+          },
+          {
+            "gene": "OPG040",
+            "position": 373,
+            "refAa": "Y",
+            "altAa": "S",
+            "change": "Y373S"
+          },
+          {
+            "gene": "OPG043",
+            "position": 2,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T2A"
+          },
+          {
+            "gene": "OPG044",
+            "position": 62,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V62A"
+          },
+          {
+            "gene": "OPG044",
+            "position": 108,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T108A"
+          },
+          {
+            "gene": "OPG044",
+            "position": 147,
+            "refAa": "M",
+            "altAa": "L",
+            "change": "M147L"
+          },
+          {
+            "gene": "OPG045",
+            "position": 184,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A184T"
+          },
+          {
+            "gene": "OPG046",
+            "position": 94,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S94N"
+          },
+          {
+            "gene": "OPG047",
+            "position": 228,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D228G"
+          },
+          {
+            "gene": "OPG047",
+            "position": 231,
+            "refAa": "I",
+            "altAa": "K",
+            "change": "I231K"
+          },
+          {
+            "gene": "OPG049",
+            "position": 16,
+            "refAa": "E",
+            "altAa": "V",
+            "change": "E16V"
+          },
+          {
+            "gene": "OPG049",
+            "position": 36,
+            "refAa": "M",
+            "altAa": "V",
+            "change": "M36V"
+          },
+          {
+            "gene": "OPG049",
+            "position": 262,
+            "refAa": "T",
+            "altAa": "M",
+            "change": "T262M"
+          },
+          {
+            "gene": "OPG054",
+            "position": 437,
+            "refAa": "R",
+            "altAa": "G",
+            "change": "R437G"
+          },
+          {
+            "gene": "OPG056",
+            "position": 322,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V322A"
+          },
+          {
+            "gene": "OPG056",
+            "position": 601,
+            "refAa": "T",
+            "altAa": "N",
+            "change": "T601N"
+          },
+          {
+            "gene": "OPG056",
+            "position": 621,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C621Y"
+          },
+          {
+            "gene": "OPG059",
+            "position": 25,
+            "refAa": "I",
+            "altAa": "L",
+            "change": "I25L"
+          },
+          {
+            "gene": "OPG063",
+            "position": 306,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V306A"
+          },
+          {
+            "gene": "OPG064",
+            "position": 87,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A87S"
+          },
+          {
+            "gene": "OPG065",
+            "position": 16,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A16T"
+          },
+          {
+            "gene": "OPG065",
+            "position": 22,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N22D"
+          },
+          {
+            "gene": "OPG065",
+            "position": 60,
+            "refAa": "H",
+            "altAa": "N",
+            "change": "H60N"
+          },
+          {
+            "gene": "OPG066",
+            "position": 82,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K82R"
+          },
+          {
+            "gene": "OPG066",
+            "position": 96,
+            "refAa": "H",
+            "altAa": "N",
+            "change": "H96N"
+          },
+          {
+            "gene": "OPG068",
+            "position": 250,
+            "refAa": "P",
+            "altAa": "S",
+            "change": "P250S"
+          },
+          {
+            "gene": "OPG068",
+            "position": 340,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D340E"
+          },
+          {
+            "gene": "OPG070",
+            "position": 204,
+            "refAa": "H",
+            "altAa": "Y",
+            "change": "H204Y"
+          },
+          {
+            "gene": "OPG071",
+            "position": 410,
+            "refAa": "L",
+            "altAa": "W",
+            "change": "L410W"
+          },
+          {
+            "gene": "OPG071",
+            "position": 427,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I427T"
+          },
+          {
+            "gene": "OPG071",
+            "position": 483,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A483S"
+          },
+          {
+            "gene": "OPG071",
+            "position": 500,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I500V"
+          },
+          {
+            "gene": "OPG072",
+            "position": 9,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V9I"
+          },
+          {
+            "gene": "OPG074",
+            "position": 198,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N198D"
+          },
+          {
+            "gene": "OPG074",
+            "position": 440,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I440V"
+          },
+          {
+            "gene": "OPG076",
+            "position": 19,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S19N"
+          },
+          {
+            "gene": "OPG079",
+            "position": 44,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C44Y"
+          },
+          {
+            "gene": "OPG080",
+            "position": 320,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D320E"
+          },
+          {
+            "gene": "OPG080",
+            "position": 381,
+            "refAa": "C",
+            "altAa": "S",
+            "change": "C381S"
+          },
+          {
+            "gene": "OPG080",
+            "position": 520,
+            "refAa": "L",
+            "altAa": "P",
+            "change": "L520P"
+          },
+          {
+            "gene": "OPG080",
+            "position": 581,
+            "refAa": "P",
+            "altAa": "H",
+            "change": "P581H"
+          },
+          {
+            "gene": "OPG084",
+            "position": 210,
+            "refAa": "S",
+            "altAa": "T",
+            "change": "S210T"
+          },
+          {
+            "gene": "OPG084",
+            "position": 619,
+            "refAa": "Q",
+            "altAa": "R",
+            "change": "Q619R"
+          },
+          {
+            "gene": "OPG085",
+            "position": 78,
+            "refAa": "S",
+            "altAa": "T",
+            "change": "S78T"
+          },
+          {
+            "gene": "OPG085",
+            "position": 327,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T327A"
+          },
+          {
+            "gene": "OPG085",
+            "position": 590,
+            "refAa": "F",
+            "altAa": "V",
+            "change": "F590V"
+          },
+          {
+            "gene": "OPG086",
+            "position": 71,
+            "refAa": "L",
+            "altAa": "I",
+            "change": "L71I"
+          },
+          {
+            "gene": "OPG089",
+            "position": 302,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D302E"
+          },
+          {
+            "gene": "OPG089",
+            "position": 336,
+            "refAa": "E",
+            "altAa": "K",
+            "change": "E336K"
+          },
+          {
+            "gene": "OPG091",
+            "position": 61,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V61I"
+          },
+          {
+            "gene": "OPG091",
+            "position": 72,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S72N"
+          },
+          {
+            "gene": "OPG092",
+            "position": 243,
+            "refAa": "I",
+            "altAa": "N",
+            "change": "I243N"
+          },
+          {
+            "gene": "OPG094",
+            "position": 174,
+            "refAa": "R",
+            "altAa": "T",
+            "change": "R174T"
+          },
+          {
+            "gene": "OPG096",
+            "position": 67,
+            "refAa": "I",
+            "altAa": "M",
+            "change": "I67M"
+          },
+          {
+            "gene": "OPG100",
+            "position": 110,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M110I"
+          },
+          {
+            "gene": "OPG100",
+            "position": 151,
+            "refAa": "K",
+            "altAa": "Q",
+            "change": "K151Q"
+          },
+          {
+            "gene": "OPG101",
+            "position": 152,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T152A"
+          },
+          {
+            "gene": "OPG102",
+            "position": 248,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I248V"
+          },
+          {
+            "gene": "OPG104",
+            "position": 11,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T11A"
+          },
+          {
+            "gene": "OPG105",
+            "position": 112,
+            "refAa": "V",
+            "altAa": "G",
+            "change": "V112G"
+          },
+          {
+            "gene": "OPG105",
+            "position": 1069,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I1069V"
+          },
+          {
+            "gene": "OPG108",
+            "position": 3,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V3A"
+          },
+          {
+            "gene": "OPG108",
+            "position": 110,
+            "refAa": "T",
+            "altAa": "I",
+            "change": "T110I"
+          },
+          {
+            "gene": "OPG109",
+            "position": 363,
+            "refAa": "R",
+            "altAa": "S",
+            "change": "R363S"
+          },
+          {
+            "gene": "OPG109",
+            "position": 621,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A621T"
+          },
+          {
+            "gene": "OPG109",
+            "position": 629,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A629T"
+          },
+          {
+            "gene": "OPG111",
+            "position": 76,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I76V"
+          },
+          {
+            "gene": "OPG112",
+            "position": 33,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H33R"
+          },
+          {
+            "gene": "OPG113",
+            "position": 536,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V536I"
+          },
+          {
+            "gene": "OPG117",
+            "position": 453,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D453N"
+          },
+          {
+            "gene": "OPG118",
+            "position": 255,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K255R"
+          },
+          {
+            "gene": "OPG118",
+            "position": 412,
+            "refAa": "N",
+            "altAa": "S",
+            "change": "N412S"
+          },
+          {
+            "gene": "OPG118",
+            "position": 461,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V461A"
+          },
+          {
+            "gene": "OPG118",
+            "position": 605,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K605E"
+          },
+          {
+            "gene": "OPG119",
+            "position": 87,
+            "refAa": "T",
+            "altAa": "R",
+            "change": "T87R"
+          },
+          {
+            "gene": "OPG120",
+            "position": 18,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A18T"
+          },
+          {
+            "gene": "OPG120",
+            "position": 212,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H212R"
+          },
+          {
+            "gene": "OPG123",
+            "position": 171,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I171T"
+          },
+          {
+            "gene": "OPG123",
+            "position": 312,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A312T"
+          },
+          {
+            "gene": "OPG123",
+            "position": 435,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C435Y"
+          },
+          {
+            "gene": "OPG125",
+            "position": 110,
+            "refAa": "E",
+            "altAa": "D",
+            "change": "E110D"
+          },
+          {
+            "gene": "OPG125",
+            "position": 513,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I513V"
+          },
+          {
+            "gene": "OPG130",
+            "position": 62,
+            "refAa": "T",
+            "altAa": "V",
+            "change": "T62V"
+          },
+          {
+            "gene": "OPG130",
+            "position": 121,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T121A"
+          },
+          {
+            "gene": "OPG130",
+            "position": 269,
+            "refAa": "L",
+            "altAa": "I",
+            "change": "L269I"
+          },
+          {
+            "gene": "OPG133",
+            "position": 593,
+            "refAa": "F",
+            "altAa": "S",
+            "change": "F593S"
+          },
+          {
+            "gene": "OPG134",
+            "position": 225,
+            "refAa": "E",
+            "altAa": "D",
+            "change": "E225D"
+          },
+          {
+            "gene": "OPG135",
+            "position": 89,
+            "refAa": "V",
+            "altAa": "E",
+            "change": "V89E"
+          },
+          {
+            "gene": "OPG136",
+            "position": 228,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A228T"
+          },
+          {
+            "gene": "OPG136",
+            "position": 266,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D266N"
+          },
+          {
+            "gene": "OPG136",
+            "position": 282,
+            "refAa": "F",
+            "altAa": "Y",
+            "change": "F282Y"
+          },
+          {
+            "gene": "OPG136",
+            "position": 616,
+            "refAa": "E",
+            "altAa": "K",
+            "change": "E616K"
+          },
+          {
+            "gene": "OPG144",
+            "position": 183,
+            "refAa": "T",
+            "altAa": "I",
+            "change": "T183I"
+          },
+          {
+            "gene": "OPG145",
+            "position": 248,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I248V"
+          },
+          {
+            "gene": "OPG145",
+            "position": 263,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I263T"
+          },
+          {
+            "gene": "OPG145",
+            "position": 347,
+            "refAa": "A",
+            "altAa": "P",
+            "change": "A347P"
+          },
+          {
+            "gene": "OPG145",
+            "position": 462,
+            "refAa": "Q",
+            "altAa": "R",
+            "change": "Q462R"
+          },
+          {
+            "gene": "OPG148",
+            "position": 312,
+            "refAa": "I",
+            "altAa": "S",
+            "change": "I312S"
+          },
+          {
+            "gene": "OPG150",
+            "position": 99,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N99D"
+          },
+          {
+            "gene": "OPG150",
+            "position": 255,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D255E"
+          },
+          {
+            "gene": "OPG151",
+            "position": 5,
+            "refAa": "D",
+            "altAa": "V",
+            "change": "D5V"
+          },
+          {
+            "gene": "OPG151",
+            "position": 281,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N281D"
+          },
+          {
+            "gene": "OPG153",
+            "position": 13,
+            "refAa": "M",
+            "altAa": "T",
+            "change": "M13T"
+          },
+          {
+            "gene": "OPG153",
+            "position": 204,
+            "refAa": "R",
+            "altAa": "H",
+            "change": "R204H"
+          },
+          {
+            "gene": "OPG153",
+            "position": 354,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I354T"
+          },
+          {
+            "gene": "OPG153",
+            "position": 357,
+            "refAa": "Y",
+            "altAa": "H",
+            "change": "Y357H"
+          },
+          {
+            "gene": "OPG153",
+            "position": 492,
+            "refAa": "Q",
+            "altAa": "P",
+            "change": "Q492P"
+          },
+          {
+            "gene": "OPG154",
+            "position": 73,
+            "refAa": "R",
+            "altAa": "H",
+            "change": "R73H"
+          },
+          {
+            "gene": "OPG154",
+            "position": 106,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H106R"
+          },
+          {
+            "gene": "OPG156",
+            "position": 41,
+            "refAa": "Y",
+            "altAa": "S",
+            "change": "Y41S"
+          },
+          {
+            "gene": "OPG156",
+            "position": 221,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T221A"
+          },
+          {
+            "gene": "OPG156",
+            "position": 260,
+            "refAa": "I",
+            "altAa": "M",
+            "change": "I260M"
+          },
+          {
+            "gene": "OPG157",
+            "position": 23,
+            "refAa": "M",
+            "altAa": "V",
+            "change": "M23V"
+          },
+          {
+            "gene": "OPG159",
+            "position": 1,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T1A"
+          },
+          {
+            "gene": "OPG159",
+            "position": 35,
+            "refAa": "L",
+            "altAa": "S",
+            "change": "L35S"
+          },
+          {
+            "gene": "OPG160",
+            "position": 1,
+            "refAa": "P",
+            "altAa": "S",
+            "change": "P1S"
+          },
+          {
+            "gene": "OPG161",
+            "position": 66,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K66E"
+          },
+          {
+            "gene": "OPG161",
+            "position": 87,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V87A"
+          },
+          {
+            "gene": "OPG163",
+            "position": 45,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V45A"
+          },
+          {
+            "gene": "OPG164",
+            "position": 110,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I110V"
+          },
+          {
+            "gene": "OPG164",
+            "position": 216,
+            "refAa": "Y",
+            "altAa": "H",
+            "change": "Y216H"
+          },
+          {
+            "gene": "OPG165",
+            "position": 105,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D105N"
+          },
+          {
+            "gene": "OPG165",
+            "position": 160,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S160L"
+          },
+          {
+            "gene": "OPG167",
+            "position": 106,
+            "refAa": "Y",
+            "altAa": "S",
+            "change": "Y106S"
+          },
+          {
+            "gene": "OPG167",
+            "position": 111,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I111V"
+          },
+          {
+            "gene": "OPG170",
+            "position": 30,
+            "refAa": "G",
+            "altAa": "D",
+            "change": "G30D"
+          },
+          {
+            "gene": "OPG170",
+            "position": 56,
+            "refAa": "S",
+            "altAa": "Y",
+            "change": "S56Y"
+          },
+          {
+            "gene": "OPG170",
+            "position": 110,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M110I"
+          },
+          {
+            "gene": "OPG172",
+            "position": 124,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A124V"
+          },
+          {
+            "gene": "OPG172",
+            "position": 144,
+            "refAa": "M",
+            "altAa": "T",
+            "change": "M144T"
+          },
+          {
+            "gene": "OPG172",
+            "position": 159,
+            "refAa": "Y",
+            "altAa": "D",
+            "change": "Y159D"
+          },
+          {
+            "gene": "OPG176",
+            "position": 23,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D23N"
+          },
+          {
+            "gene": "OPG176",
+            "position": 226,
+            "refAa": "L",
+            "altAa": "S",
+            "change": "L226S"
+          },
+          {
+            "gene": "OPG178",
+            "position": 138,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I138V"
+          },
+          {
+            "gene": "OPG181",
+            "position": 84,
+            "refAa": "L",
+            "altAa": "M",
+            "change": "L84M"
+          },
+          {
+            "gene": "OPG181",
+            "position": 126,
+            "refAa": "S",
+            "altAa": "Y",
+            "change": "S126Y"
+          },
+          {
+            "gene": "OPG185",
+            "position": 166,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T166A"
+          },
+          {
+            "gene": "OPG185",
+            "position": 176,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D176E"
+          },
+          {
+            "gene": "OPG185",
+            "position": 204,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I204T"
+          },
+          {
+            "gene": "OPG187",
+            "position": 299,
+            "refAa": "K",
+            "altAa": "*",
+            "change": "K299*"
+          },
+          {
+            "gene": "OPG188",
+            "position": 264,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V264I"
+          },
+          {
+            "gene": "OPG188",
+            "position": 418,
+            "refAa": "S",
+            "altAa": "R",
+            "change": "S418R"
+          },
+          {
+            "gene": "OPG189",
+            "position": 184,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K184R"
+          },
+          {
+            "gene": "OPG189",
+            "position": 505,
+            "refAa": "C",
+            "altAa": "H",
+            "change": "C505H"
+          },
+          {
+            "gene": "OPG191",
+            "position": 49,
+            "refAa": "P",
+            "altAa": "Q",
+            "change": "P49Q"
+          },
+          {
+            "gene": "OPG191",
+            "position": 79,
+            "refAa": "F",
+            "altAa": "C",
+            "change": "F79C"
+          },
+          {
+            "gene": "OPG192",
+            "position": 99,
+            "refAa": "G",
+            "altAa": "E",
+            "change": "G99E"
+          },
+          {
+            "gene": "OPG193",
+            "position": 107,
+            "refAa": "I",
+            "altAa": "R",
+            "change": "I107R"
+          },
+          {
+            "gene": "OPG195",
+            "position": 119,
+            "refAa": "C",
+            "altAa": "S",
+            "change": "C119S"
+          },
+          {
+            "gene": "OPG197",
+            "position": 0,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M0I"
+          },
+          {
+            "gene": "OPG198",
+            "position": 70,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N70D"
+          },
+          {
+            "gene": "OPG198",
+            "position": 99,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I99V"
+          },
+          {
+            "gene": "OPG198",
+            "position": 132,
+            "refAa": "Q",
+            "altAa": "R",
+            "change": "Q132R"
+          },
+          {
+            "gene": "OPG199",
+            "position": 229,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K229E"
+          },
+          {
+            "gene": "OPG200",
+            "position": 51,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D51G"
+          },
+          {
+            "gene": "OPG200",
+            "position": 133,
+            "refAa": "E",
+            "altAa": "G",
+            "change": "E133G"
+          },
+          {
+            "gene": "OPG204",
+            "position": 177,
+            "refAa": "N",
+            "altAa": "K",
+            "change": "N177K"
+          },
+          {
+            "gene": "OPG205",
+            "position": 168,
+            "refAa": "W",
+            "altAa": "R",
+            "change": "W168R"
+          },
+          {
+            "gene": "OPG205",
+            "position": 348,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C348Y"
+          },
+          {
+            "gene": "OPG205",
+            "position": 353,
+            "refAa": "G",
+            "altAa": "S",
+            "change": "G353S"
+          },
+          {
+            "gene": "OPG205",
+            "position": 620,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V620A"
+          },
+          {
+            "gene": "OPG205",
+            "position": 689,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V689A"
+          },
+          {
+            "gene": "OPG205",
+            "position": 732,
+            "refAa": "R",
+            "altAa": "Q",
+            "change": "R732Q"
+          },
+          {
+            "gene": "OPG208",
+            "position": 33,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A33V"
+          },
+          {
+            "gene": "OPG208",
+            "position": 141,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I141T"
+          },
+          {
+            "gene": "OPG208",
+            "position": 299,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T299A"
+          },
+          {
+            "gene": "OPG208",
+            "position": 310,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V310A"
+          },
+          {
+            "gene": "OPG209",
+            "position": 10,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I10V"
+          },
+          {
+            "gene": "OPG209",
+            "position": 20,
+            "refAa": "L",
+            "altAa": "F",
+            "change": "L20F"
+          },
+          {
+            "gene": "OPG210",
+            "position": 2,
+            "refAa": "F",
+            "altAa": "L",
+            "change": "F2L"
+          },
+          {
+            "gene": "OPG210",
+            "position": 97,
+            "refAa": "A",
+            "altAa": "D",
+            "change": "A97D"
+          },
+          {
+            "gene": "OPG210",
+            "position": 172,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V172I"
+          },
+          {
+            "gene": "OPG210",
+            "position": 330,
+            "refAa": "K",
+            "altAa": "N",
+            "change": "K330N"
+          },
+          {
+            "gene": "OPG210",
+            "position": 333,
+            "refAa": "N",
+            "altAa": "I",
+            "change": "N333I"
+          },
+          {
+            "gene": "OPG210",
+            "position": 362,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H362R"
+          },
+          {
+            "gene": "OPG210",
+            "position": 378,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D378G"
+          },
+          {
+            "gene": "OPG210",
+            "position": 514,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V514A"
+          },
+          {
+            "gene": "OPG210",
+            "position": 780,
+            "refAa": "S",
+            "altAa": "P",
+            "change": "S780P"
+          },
+          {
+            "gene": "OPG210",
+            "position": 787,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V787A"
+          },
+          {
+            "gene": "OPG210",
+            "position": 927,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T927A"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1304,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A1304T"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1703,
+            "refAa": "L",
+            "altAa": "R",
+            "change": "L1703R"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1716,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D1716G"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1862,
+            "refAa": "E",
+            "altAa": "D",
+            "change": "E1862D"
+          }
+        ],
+        "qcStatus": "mediocre"
+      }
+    },
+    {
+      "accession": "OZ462933",
+      "isolate": "2409EQT-MBK-I1015-000",
+      "country": "Dem. Rep. Congo",
+      "collectionDate": "2024-09",
+      "confidence": "confirmed",
+      "alignment": {
+        "clade": "Ia",
+        "totalSubstitutions": 773,
+        "mutations": [
+          {
+            "gene": "OPG005",
+            "position": 2,
+            "refAa": "S",
+            "altAa": "F",
+            "change": "S2F"
+          },
+          {
+            "gene": "OPG005",
+            "position": 73,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N73D"
+          },
+          {
+            "gene": "OPG005",
+            "position": 130,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M130I"
+          },
+          {
+            "gene": "OPG015_dup",
+            "position": 3,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V3A"
+          },
+          {
+            "gene": "OPG016",
+            "position": 62,
+            "refAa": "S",
+            "altAa": "A",
+            "change": "S62A"
+          },
+          {
+            "gene": "OPG016",
+            "position": 79,
+            "refAa": "E",
+            "altAa": "V",
+            "change": "E79V"
+          },
+          {
+            "gene": "OPG016",
+            "position": 120,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D120E"
+          },
+          {
+            "gene": "OPG019",
+            "position": 123,
+            "refAa": "M",
+            "altAa": "R",
+            "change": "M123R"
+          },
+          {
+            "gene": "OPG021",
+            "position": 37,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V37I"
+          },
+          {
+            "gene": "OPG021",
+            "position": 218,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S218L"
+          },
+          {
+            "gene": "OPG021",
+            "position": 229,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K229R"
+          },
+          {
+            "gene": "OPG022",
+            "position": 72,
+            "refAa": "G",
+            "altAa": "D",
+            "change": "G72D"
+          },
+          {
+            "gene": "OPG023",
+            "position": 89,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A89V"
+          },
+          {
+            "gene": "OPG023",
+            "position": 108,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M108I"
+          },
+          {
+            "gene": "OPG023",
+            "position": 173,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V173A"
+          },
+          {
+            "gene": "OPG023",
+            "position": 192,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A192S"
+          },
+          {
+            "gene": "OPG023",
+            "position": 257,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S257L"
+          },
+          {
+            "gene": "OPG023",
+            "position": 299,
+            "refAa": "Y",
+            "altAa": "H",
+            "change": "Y299H"
+          },
+          {
+            "gene": "OPG023",
+            "position": 303,
+            "refAa": "C",
+            "altAa": "R",
+            "change": "C303R"
+          },
+          {
+            "gene": "OPG023",
+            "position": 425,
+            "refAa": "V",
+            "altAa": "T",
+            "change": "V425T"
+          },
+          {
+            "gene": "OPG023",
+            "position": 487,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T487A"
+          },
+          {
+            "gene": "OPG023",
+            "position": 601,
+            "refAa": "L",
+            "altAa": "I",
+            "change": "L601I"
+          },
+          {
+            "gene": "OPG023",
+            "position": 636,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K636E"
+          },
+          {
+            "gene": "OPG024",
+            "position": 31,
+            "refAa": "S",
+            "altAa": "G",
+            "change": "S31G"
+          },
+          {
+            "gene": "OPG025",
+            "position": 392,
+            "refAa": "E",
+            "altAa": "K",
+            "change": "E392K"
+          },
+          {
+            "gene": "OPG025",
+            "position": 424,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I424V"
+          },
+          {
+            "gene": "OPG027",
+            "position": 46,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I46V"
+          },
+          {
+            "gene": "OPG027",
+            "position": 78,
+            "refAa": "F",
+            "altAa": "L",
+            "change": "F78L"
+          },
+          {
+            "gene": "OPG027",
+            "position": 125,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V125I"
+          },
+          {
+            "gene": "OPG029",
+            "position": 145,
+            "refAa": "C",
+            "altAa": "R",
+            "change": "C145R"
+          },
+          {
+            "gene": "OPG030",
+            "position": 11,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N11D"
+          },
+          {
+            "gene": "OPG030",
+            "position": 112,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S112N"
+          },
+          {
+            "gene": "OPG031",
+            "position": 79,
+            "refAa": "T",
+            "altAa": "M",
+            "change": "T79M"
+          },
+          {
+            "gene": "OPG031",
+            "position": 116,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D116E"
+          },
+          {
+            "gene": "OPG031",
+            "position": 240,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C240Y"
+          },
+          {
+            "gene": "OPG031",
+            "position": 270,
+            "refAa": "M",
+            "altAa": "K",
+            "change": "M270K"
+          },
+          {
+            "gene": "OPG034",
+            "position": 204,
+            "refAa": "L",
+            "altAa": "R",
+            "change": "L204R"
+          },
+          {
+            "gene": "OPG036",
+            "position": 10,
+            "refAa": "S",
+            "altAa": "P",
+            "change": "S10P"
+          },
+          {
+            "gene": "OPG036",
+            "position": 24,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D24E"
+          },
+          {
+            "gene": "OPG037",
+            "position": 143,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C143Y"
+          },
+          {
+            "gene": "OPG037",
+            "position": 414,
+            "refAa": "C",
+            "altAa": "R",
+            "change": "C414R"
+          },
+          {
+            "gene": "OPG038",
+            "position": 26,
+            "refAa": "H",
+            "altAa": "P",
+            "change": "H26P"
+          },
+          {
+            "gene": "OPG038",
+            "position": 77,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V77I"
+          },
+          {
+            "gene": "OPG039",
+            "position": 278,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C278Y"
+          },
+          {
+            "gene": "OPG040",
+            "position": 253,
+            "refAa": "P",
+            "altAa": "A",
+            "change": "P253A"
+          },
+          {
+            "gene": "OPG040",
+            "position": 373,
+            "refAa": "Y",
+            "altAa": "S",
+            "change": "Y373S"
+          },
+          {
+            "gene": "OPG043",
+            "position": 2,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T2A"
+          },
+          {
+            "gene": "OPG044",
+            "position": 62,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V62A"
+          },
+          {
+            "gene": "OPG044",
+            "position": 108,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T108A"
+          },
+          {
+            "gene": "OPG044",
+            "position": 147,
+            "refAa": "M",
+            "altAa": "L",
+            "change": "M147L"
+          },
+          {
+            "gene": "OPG045",
+            "position": 184,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A184T"
+          },
+          {
+            "gene": "OPG046",
+            "position": 94,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S94N"
+          },
+          {
+            "gene": "OPG047",
+            "position": 228,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D228G"
+          },
+          {
+            "gene": "OPG047",
+            "position": 231,
+            "refAa": "I",
+            "altAa": "K",
+            "change": "I231K"
+          },
+          {
+            "gene": "OPG049",
+            "position": 16,
+            "refAa": "E",
+            "altAa": "V",
+            "change": "E16V"
+          },
+          {
+            "gene": "OPG049",
+            "position": 36,
+            "refAa": "M",
+            "altAa": "V",
+            "change": "M36V"
+          },
+          {
+            "gene": "OPG049",
+            "position": 262,
+            "refAa": "T",
+            "altAa": "M",
+            "change": "T262M"
+          },
+          {
+            "gene": "OPG054",
+            "position": 437,
+            "refAa": "R",
+            "altAa": "G",
+            "change": "R437G"
+          },
+          {
+            "gene": "OPG056",
+            "position": 322,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V322A"
+          },
+          {
+            "gene": "OPG056",
+            "position": 601,
+            "refAa": "T",
+            "altAa": "N",
+            "change": "T601N"
+          },
+          {
+            "gene": "OPG056",
+            "position": 621,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C621Y"
+          },
+          {
+            "gene": "OPG059",
+            "position": 25,
+            "refAa": "I",
+            "altAa": "L",
+            "change": "I25L"
+          },
+          {
+            "gene": "OPG063",
+            "position": 306,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V306A"
+          },
+          {
+            "gene": "OPG064",
+            "position": 87,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A87S"
+          },
+          {
+            "gene": "OPG065",
+            "position": 16,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A16T"
+          },
+          {
+            "gene": "OPG065",
+            "position": 22,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N22D"
+          },
+          {
+            "gene": "OPG065",
+            "position": 60,
+            "refAa": "H",
+            "altAa": "N",
+            "change": "H60N"
+          },
+          {
+            "gene": "OPG066",
+            "position": 82,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K82R"
+          },
+          {
+            "gene": "OPG066",
+            "position": 96,
+            "refAa": "H",
+            "altAa": "N",
+            "change": "H96N"
+          },
+          {
+            "gene": "OPG068",
+            "position": 250,
+            "refAa": "P",
+            "altAa": "S",
+            "change": "P250S"
+          },
+          {
+            "gene": "OPG068",
+            "position": 340,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D340E"
+          },
+          {
+            "gene": "OPG070",
+            "position": 204,
+            "refAa": "H",
+            "altAa": "Y",
+            "change": "H204Y"
+          },
+          {
+            "gene": "OPG071",
+            "position": 410,
+            "refAa": "L",
+            "altAa": "W",
+            "change": "L410W"
+          },
+          {
+            "gene": "OPG071",
+            "position": 427,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I427T"
+          },
+          {
+            "gene": "OPG071",
+            "position": 483,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A483S"
+          },
+          {
+            "gene": "OPG071",
+            "position": 500,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I500V"
+          },
+          {
+            "gene": "OPG072",
+            "position": 9,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V9I"
+          },
+          {
+            "gene": "OPG074",
+            "position": 198,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N198D"
+          },
+          {
+            "gene": "OPG074",
+            "position": 440,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I440V"
+          },
+          {
+            "gene": "OPG076",
+            "position": 19,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S19N"
+          },
+          {
+            "gene": "OPG079",
+            "position": 44,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C44Y"
+          },
+          {
+            "gene": "OPG080",
+            "position": 320,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D320E"
+          },
+          {
+            "gene": "OPG080",
+            "position": 381,
+            "refAa": "C",
+            "altAa": "S",
+            "change": "C381S"
+          },
+          {
+            "gene": "OPG080",
+            "position": 520,
+            "refAa": "L",
+            "altAa": "P",
+            "change": "L520P"
+          },
+          {
+            "gene": "OPG080",
+            "position": 581,
+            "refAa": "P",
+            "altAa": "H",
+            "change": "P581H"
+          },
+          {
+            "gene": "OPG084",
+            "position": 210,
+            "refAa": "S",
+            "altAa": "T",
+            "change": "S210T"
+          },
+          {
+            "gene": "OPG084",
+            "position": 619,
+            "refAa": "Q",
+            "altAa": "R",
+            "change": "Q619R"
+          },
+          {
+            "gene": "OPG085",
+            "position": 78,
+            "refAa": "S",
+            "altAa": "T",
+            "change": "S78T"
+          },
+          {
+            "gene": "OPG085",
+            "position": 327,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T327A"
+          },
+          {
+            "gene": "OPG085",
+            "position": 590,
+            "refAa": "F",
+            "altAa": "V",
+            "change": "F590V"
+          },
+          {
+            "gene": "OPG086",
+            "position": 71,
+            "refAa": "L",
+            "altAa": "I",
+            "change": "L71I"
+          },
+          {
+            "gene": "OPG089",
+            "position": 302,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D302E"
+          },
+          {
+            "gene": "OPG089",
+            "position": 336,
+            "refAa": "E",
+            "altAa": "K",
+            "change": "E336K"
+          },
+          {
+            "gene": "OPG091",
+            "position": 61,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V61I"
+          },
+          {
+            "gene": "OPG091",
+            "position": 72,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S72N"
+          },
+          {
+            "gene": "OPG092",
+            "position": 243,
+            "refAa": "I",
+            "altAa": "N",
+            "change": "I243N"
+          },
+          {
+            "gene": "OPG094",
+            "position": 174,
+            "refAa": "R",
+            "altAa": "T",
+            "change": "R174T"
+          },
+          {
+            "gene": "OPG096",
+            "position": 67,
+            "refAa": "I",
+            "altAa": "M",
+            "change": "I67M"
+          },
+          {
+            "gene": "OPG100",
+            "position": 151,
+            "refAa": "K",
+            "altAa": "Q",
+            "change": "K151Q"
+          },
+          {
+            "gene": "OPG101",
+            "position": 152,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T152A"
+          },
+          {
+            "gene": "OPG102",
+            "position": 248,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I248V"
+          },
+          {
+            "gene": "OPG104",
+            "position": 11,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T11A"
+          },
+          {
+            "gene": "OPG105",
+            "position": 112,
+            "refAa": "V",
+            "altAa": "G",
+            "change": "V112G"
+          },
+          {
+            "gene": "OPG105",
+            "position": 1069,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I1069V"
+          },
+          {
+            "gene": "OPG108",
+            "position": 3,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V3A"
+          },
+          {
+            "gene": "OPG108",
+            "position": 110,
+            "refAa": "T",
+            "altAa": "I",
+            "change": "T110I"
+          },
+          {
+            "gene": "OPG109",
+            "position": 363,
+            "refAa": "R",
+            "altAa": "S",
+            "change": "R363S"
+          },
+          {
+            "gene": "OPG109",
+            "position": 621,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A621T"
+          },
+          {
+            "gene": "OPG109",
+            "position": 629,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A629T"
+          },
+          {
+            "gene": "OPG111",
+            "position": 76,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I76V"
+          },
+          {
+            "gene": "OPG112",
+            "position": 33,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H33R"
+          },
+          {
+            "gene": "OPG113",
+            "position": 536,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V536I"
+          },
+          {
+            "gene": "OPG117",
+            "position": 453,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D453N"
+          },
+          {
+            "gene": "OPG118",
+            "position": 255,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K255R"
+          },
+          {
+            "gene": "OPG118",
+            "position": 412,
+            "refAa": "N",
+            "altAa": "S",
+            "change": "N412S"
+          },
+          {
+            "gene": "OPG118",
+            "position": 461,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V461A"
+          },
+          {
+            "gene": "OPG118",
+            "position": 605,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K605E"
+          },
+          {
+            "gene": "OPG119",
+            "position": 87,
+            "refAa": "T",
+            "altAa": "R",
+            "change": "T87R"
+          },
+          {
+            "gene": "OPG120",
+            "position": 18,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A18T"
+          },
+          {
+            "gene": "OPG120",
+            "position": 212,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H212R"
+          },
+          {
+            "gene": "OPG123",
+            "position": 171,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I171T"
+          },
+          {
+            "gene": "OPG123",
+            "position": 312,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A312T"
+          },
+          {
+            "gene": "OPG123",
+            "position": 435,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C435Y"
+          },
+          {
+            "gene": "OPG125",
+            "position": 110,
+            "refAa": "E",
+            "altAa": "D",
+            "change": "E110D"
+          },
+          {
+            "gene": "OPG125",
+            "position": 513,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I513V"
+          },
+          {
+            "gene": "OPG130",
+            "position": 62,
+            "refAa": "T",
+            "altAa": "V",
+            "change": "T62V"
+          },
+          {
+            "gene": "OPG130",
+            "position": 121,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T121A"
+          },
+          {
+            "gene": "OPG130",
+            "position": 269,
+            "refAa": "L",
+            "altAa": "I",
+            "change": "L269I"
+          },
+          {
+            "gene": "OPG133",
+            "position": 593,
+            "refAa": "F",
+            "altAa": "S",
+            "change": "F593S"
+          },
+          {
+            "gene": "OPG134",
+            "position": 225,
+            "refAa": "E",
+            "altAa": "D",
+            "change": "E225D"
+          },
+          {
+            "gene": "OPG135",
+            "position": 89,
+            "refAa": "V",
+            "altAa": "E",
+            "change": "V89E"
+          },
+          {
+            "gene": "OPG136",
+            "position": 228,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A228T"
+          },
+          {
+            "gene": "OPG136",
+            "position": 266,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D266N"
+          },
+          {
+            "gene": "OPG136",
+            "position": 282,
+            "refAa": "F",
+            "altAa": "Y",
+            "change": "F282Y"
+          },
+          {
+            "gene": "OPG144",
+            "position": 183,
+            "refAa": "T",
+            "altAa": "I",
+            "change": "T183I"
+          },
+          {
+            "gene": "OPG145",
+            "position": 248,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I248V"
+          },
+          {
+            "gene": "OPG145",
+            "position": 263,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I263T"
+          },
+          {
+            "gene": "OPG145",
+            "position": 347,
+            "refAa": "A",
+            "altAa": "P",
+            "change": "A347P"
+          },
+          {
+            "gene": "OPG145",
+            "position": 462,
+            "refAa": "Q",
+            "altAa": "R",
+            "change": "Q462R"
+          },
+          {
+            "gene": "OPG148",
+            "position": 312,
+            "refAa": "I",
+            "altAa": "S",
+            "change": "I312S"
+          },
+          {
+            "gene": "OPG150",
+            "position": 99,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N99D"
+          },
+          {
+            "gene": "OPG150",
+            "position": 255,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D255E"
+          },
+          {
+            "gene": "OPG151",
+            "position": 5,
+            "refAa": "D",
+            "altAa": "V",
+            "change": "D5V"
+          },
+          {
+            "gene": "OPG151",
+            "position": 281,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N281D"
+          },
+          {
+            "gene": "OPG153",
+            "position": 13,
+            "refAa": "M",
+            "altAa": "T",
+            "change": "M13T"
+          },
+          {
+            "gene": "OPG153",
+            "position": 204,
+            "refAa": "R",
+            "altAa": "H",
+            "change": "R204H"
+          },
+          {
+            "gene": "OPG153",
+            "position": 354,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I354T"
+          },
+          {
+            "gene": "OPG153",
+            "position": 357,
+            "refAa": "Y",
+            "altAa": "H",
+            "change": "Y357H"
+          },
+          {
+            "gene": "OPG153",
+            "position": 369,
+            "refAa": "I",
+            "altAa": "D",
+            "change": "I369D"
+          },
+          {
+            "gene": "OPG153",
+            "position": 492,
+            "refAa": "Q",
+            "altAa": "P",
+            "change": "Q492P"
+          },
+          {
+            "gene": "OPG154",
+            "position": 73,
+            "refAa": "R",
+            "altAa": "H",
+            "change": "R73H"
+          },
+          {
+            "gene": "OPG154",
+            "position": 106,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H106R"
+          },
+          {
+            "gene": "OPG156",
+            "position": 41,
+            "refAa": "Y",
+            "altAa": "S",
+            "change": "Y41S"
+          },
+          {
+            "gene": "OPG156",
+            "position": 221,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T221A"
+          },
+          {
+            "gene": "OPG156",
+            "position": 260,
+            "refAa": "I",
+            "altAa": "M",
+            "change": "I260M"
+          },
+          {
+            "gene": "OPG157",
+            "position": 23,
+            "refAa": "M",
+            "altAa": "V",
+            "change": "M23V"
+          },
+          {
+            "gene": "OPG159",
+            "position": 1,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T1A"
+          },
+          {
+            "gene": "OPG159",
+            "position": 35,
+            "refAa": "L",
+            "altAa": "S",
+            "change": "L35S"
+          },
+          {
+            "gene": "OPG160",
+            "position": 1,
+            "refAa": "P",
+            "altAa": "S",
+            "change": "P1S"
+          },
+          {
+            "gene": "OPG161",
+            "position": 66,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K66E"
+          },
+          {
+            "gene": "OPG161",
+            "position": 87,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V87A"
+          },
+          {
+            "gene": "OPG163",
+            "position": 45,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V45A"
+          },
+          {
+            "gene": "OPG164",
+            "position": 110,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I110V"
+          },
+          {
+            "gene": "OPG164",
+            "position": 216,
+            "refAa": "Y",
+            "altAa": "H",
+            "change": "Y216H"
+          },
+          {
+            "gene": "OPG165",
+            "position": 105,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D105N"
+          },
+          {
+            "gene": "OPG165",
+            "position": 160,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S160L"
+          },
+          {
+            "gene": "OPG167",
+            "position": 106,
+            "refAa": "Y",
+            "altAa": "S",
+            "change": "Y106S"
+          },
+          {
+            "gene": "OPG167",
+            "position": 111,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I111V"
+          },
+          {
+            "gene": "OPG170",
+            "position": 30,
+            "refAa": "G",
+            "altAa": "D",
+            "change": "G30D"
+          },
+          {
+            "gene": "OPG170",
+            "position": 56,
+            "refAa": "S",
+            "altAa": "Y",
+            "change": "S56Y"
+          },
+          {
+            "gene": "OPG170",
+            "position": 110,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M110I"
+          },
+          {
+            "gene": "OPG172",
+            "position": 124,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A124V"
+          },
+          {
+            "gene": "OPG172",
+            "position": 144,
+            "refAa": "M",
+            "altAa": "T",
+            "change": "M144T"
+          },
+          {
+            "gene": "OPG172",
+            "position": 159,
+            "refAa": "Y",
+            "altAa": "D",
+            "change": "Y159D"
+          },
+          {
+            "gene": "OPG176",
+            "position": 23,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D23N"
+          },
+          {
+            "gene": "OPG176",
+            "position": 226,
+            "refAa": "L",
+            "altAa": "S",
+            "change": "L226S"
+          },
+          {
+            "gene": "OPG178",
+            "position": 138,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I138V"
+          },
+          {
+            "gene": "OPG181",
+            "position": 84,
+            "refAa": "L",
+            "altAa": "M",
+            "change": "L84M"
+          },
+          {
+            "gene": "OPG181",
+            "position": 126,
+            "refAa": "S",
+            "altAa": "Y",
+            "change": "S126Y"
+          },
+          {
+            "gene": "OPG185",
+            "position": 166,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T166A"
+          },
+          {
+            "gene": "OPG185",
+            "position": 176,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D176E"
+          },
+          {
+            "gene": "OPG185",
+            "position": 204,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I204T"
+          },
+          {
+            "gene": "OPG187",
+            "position": 299,
+            "refAa": "K",
+            "altAa": "*",
+            "change": "K299*"
+          },
+          {
+            "gene": "OPG188",
+            "position": 264,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V264I"
+          },
+          {
+            "gene": "OPG188",
+            "position": 418,
+            "refAa": "S",
+            "altAa": "R",
+            "change": "S418R"
+          },
+          {
+            "gene": "OPG189",
+            "position": 184,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K184R"
+          },
+          {
+            "gene": "OPG189",
+            "position": 505,
+            "refAa": "C",
+            "altAa": "H",
+            "change": "C505H"
+          },
+          {
+            "gene": "OPG191",
+            "position": 49,
+            "refAa": "P",
+            "altAa": "Q",
+            "change": "P49Q"
+          },
+          {
+            "gene": "OPG191",
+            "position": 79,
+            "refAa": "F",
+            "altAa": "C",
+            "change": "F79C"
+          },
+          {
+            "gene": "OPG192",
+            "position": 99,
+            "refAa": "G",
+            "altAa": "E",
+            "change": "G99E"
+          },
+          {
+            "gene": "OPG193",
+            "position": 107,
+            "refAa": "I",
+            "altAa": "R",
+            "change": "I107R"
+          },
+          {
+            "gene": "OPG195",
+            "position": 119,
+            "refAa": "C",
+            "altAa": "S",
+            "change": "C119S"
+          },
+          {
+            "gene": "OPG197",
+            "position": 0,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M0I"
+          },
+          {
+            "gene": "OPG198",
+            "position": 70,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N70D"
+          },
+          {
+            "gene": "OPG198",
+            "position": 99,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I99V"
+          },
+          {
+            "gene": "OPG198",
+            "position": 132,
+            "refAa": "Q",
+            "altAa": "R",
+            "change": "Q132R"
+          },
+          {
+            "gene": "OPG199",
+            "position": 229,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K229E"
+          },
+          {
+            "gene": "OPG200",
+            "position": 51,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D51G"
+          },
+          {
+            "gene": "OPG200",
+            "position": 133,
+            "refAa": "E",
+            "altAa": "G",
+            "change": "E133G"
+          },
+          {
+            "gene": "OPG204",
+            "position": 177,
+            "refAa": "N",
+            "altAa": "K",
+            "change": "N177K"
+          },
+          {
+            "gene": "OPG205",
+            "position": 168,
+            "refAa": "W",
+            "altAa": "R",
+            "change": "W168R"
+          },
+          {
+            "gene": "OPG205",
+            "position": 348,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C348Y"
+          },
+          {
+            "gene": "OPG205",
+            "position": 353,
+            "refAa": "G",
+            "altAa": "S",
+            "change": "G353S"
+          },
+          {
+            "gene": "OPG205",
+            "position": 620,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V620A"
+          },
+          {
+            "gene": "OPG205",
+            "position": 689,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V689A"
+          },
+          {
+            "gene": "OPG205",
+            "position": 732,
+            "refAa": "R",
+            "altAa": "Q",
+            "change": "R732Q"
+          },
+          {
+            "gene": "OPG208",
+            "position": 33,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A33V"
+          },
+          {
+            "gene": "OPG208",
+            "position": 141,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I141T"
+          },
+          {
+            "gene": "OPG208",
+            "position": 299,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T299A"
+          },
+          {
+            "gene": "OPG208",
+            "position": 310,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V310A"
+          },
+          {
+            "gene": "OPG209",
+            "position": 10,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I10V"
+          },
+          {
+            "gene": "OPG209",
+            "position": 20,
+            "refAa": "L",
+            "altAa": "F",
+            "change": "L20F"
+          },
+          {
+            "gene": "OPG210",
+            "position": 2,
+            "refAa": "F",
+            "altAa": "L",
+            "change": "F2L"
+          },
+          {
+            "gene": "OPG210",
+            "position": 97,
+            "refAa": "A",
+            "altAa": "D",
+            "change": "A97D"
+          },
+          {
+            "gene": "OPG210",
+            "position": 172,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V172I"
+          },
+          {
+            "gene": "OPG210",
+            "position": 330,
+            "refAa": "K",
+            "altAa": "N",
+            "change": "K330N"
+          },
+          {
+            "gene": "OPG210",
+            "position": 333,
+            "refAa": "N",
+            "altAa": "I",
+            "change": "N333I"
+          },
+          {
+            "gene": "OPG210",
+            "position": 362,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H362R"
+          },
+          {
+            "gene": "OPG210",
+            "position": 378,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D378G"
+          },
+          {
+            "gene": "OPG210",
+            "position": 514,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V514A"
+          },
+          {
+            "gene": "OPG210",
+            "position": 780,
+            "refAa": "S",
+            "altAa": "P",
+            "change": "S780P"
+          },
+          {
+            "gene": "OPG210",
+            "position": 787,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V787A"
+          },
+          {
+            "gene": "OPG210",
+            "position": 927,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T927A"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1304,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A1304T"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1703,
+            "refAa": "L",
+            "altAa": "R",
+            "change": "L1703R"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1716,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D1716G"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1862,
+            "refAa": "E",
+            "altAa": "D",
+            "change": "E1862D"
+          }
+        ],
+        "qcStatus": "mediocre"
+      }
+    },
+    {
+      "accession": "OZ462932",
+      "isolate": "2409EQT-WGT-I1032-000",
+      "country": "Dem. Rep. Congo",
+      "collectionDate": "2024-09",
+      "confidence": "confirmed",
+      "alignment": {
+        "clade": "Ia",
+        "totalSubstitutions": 766,
+        "mutations": [
+          {
+            "gene": "OPG005",
+            "position": 73,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N73D"
+          },
+          {
+            "gene": "OPG005",
+            "position": 130,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M130I"
+          },
+          {
+            "gene": "OPG016",
+            "position": 62,
+            "refAa": "S",
+            "altAa": "A",
+            "change": "S62A"
+          },
+          {
+            "gene": "OPG016",
+            "position": 79,
+            "refAa": "E",
+            "altAa": "V",
+            "change": "E79V"
+          },
+          {
+            "gene": "OPG019",
+            "position": 123,
+            "refAa": "M",
+            "altAa": "R",
+            "change": "M123R"
+          },
+          {
+            "gene": "OPG021",
+            "position": 37,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V37I"
+          },
+          {
+            "gene": "OPG021",
+            "position": 218,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S218L"
+          },
+          {
+            "gene": "OPG021",
+            "position": 229,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K229R"
+          },
+          {
+            "gene": "OPG022",
+            "position": 72,
+            "refAa": "G",
+            "altAa": "D",
+            "change": "G72D"
+          },
+          {
+            "gene": "OPG023",
+            "position": 89,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A89V"
+          },
+          {
+            "gene": "OPG023",
+            "position": 108,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M108I"
+          },
+          {
+            "gene": "OPG023",
+            "position": 173,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V173A"
+          },
+          {
+            "gene": "OPG023",
+            "position": 192,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A192S"
+          },
+          {
+            "gene": "OPG023",
+            "position": 257,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S257L"
+          },
+          {
+            "gene": "OPG023",
+            "position": 299,
+            "refAa": "Y",
+            "altAa": "H",
+            "change": "Y299H"
+          },
+          {
+            "gene": "OPG023",
+            "position": 303,
+            "refAa": "C",
+            "altAa": "R",
+            "change": "C303R"
+          },
+          {
+            "gene": "OPG023",
+            "position": 425,
+            "refAa": "V",
+            "altAa": "T",
+            "change": "V425T"
+          },
+          {
+            "gene": "OPG023",
+            "position": 487,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T487A"
+          },
+          {
+            "gene": "OPG023",
+            "position": 601,
+            "refAa": "L",
+            "altAa": "I",
+            "change": "L601I"
+          },
+          {
+            "gene": "OPG023",
+            "position": 636,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K636E"
+          },
+          {
+            "gene": "OPG024",
+            "position": 31,
+            "refAa": "S",
+            "altAa": "G",
+            "change": "S31G"
+          },
+          {
+            "gene": "OPG025",
+            "position": 392,
+            "refAa": "E",
+            "altAa": "K",
+            "change": "E392K"
+          },
+          {
+            "gene": "OPG025",
+            "position": 424,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I424V"
+          },
+          {
+            "gene": "OPG027",
+            "position": 46,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I46V"
+          },
+          {
+            "gene": "OPG027",
+            "position": 78,
+            "refAa": "F",
+            "altAa": "L",
+            "change": "F78L"
+          },
+          {
+            "gene": "OPG027",
+            "position": 125,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V125I"
+          },
+          {
+            "gene": "OPG029",
+            "position": 145,
+            "refAa": "C",
+            "altAa": "R",
+            "change": "C145R"
+          },
+          {
+            "gene": "OPG030",
+            "position": 11,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N11D"
+          },
+          {
+            "gene": "OPG030",
+            "position": 112,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S112N"
+          },
+          {
+            "gene": "OPG031",
+            "position": 79,
+            "refAa": "T",
+            "altAa": "M",
+            "change": "T79M"
+          },
+          {
+            "gene": "OPG031",
+            "position": 240,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C240Y"
+          },
+          {
+            "gene": "OPG031",
+            "position": 270,
+            "refAa": "M",
+            "altAa": "K",
+            "change": "M270K"
+          },
+          {
+            "gene": "OPG034",
+            "position": 204,
+            "refAa": "L",
+            "altAa": "R",
+            "change": "L204R"
+          },
+          {
+            "gene": "OPG036",
+            "position": 10,
+            "refAa": "S",
+            "altAa": "P",
+            "change": "S10P"
+          },
+          {
+            "gene": "OPG036",
+            "position": 24,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D24E"
+          },
+          {
+            "gene": "OPG037",
+            "position": 143,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C143Y"
+          },
+          {
+            "gene": "OPG037",
+            "position": 414,
+            "refAa": "C",
+            "altAa": "R",
+            "change": "C414R"
+          },
+          {
+            "gene": "OPG038",
+            "position": 26,
+            "refAa": "H",
+            "altAa": "P",
+            "change": "H26P"
+          },
+          {
+            "gene": "OPG038",
+            "position": 77,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V77I"
+          },
+          {
+            "gene": "OPG039",
+            "position": 278,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C278Y"
+          },
+          {
+            "gene": "OPG040",
+            "position": 253,
+            "refAa": "P",
+            "altAa": "A",
+            "change": "P253A"
+          },
+          {
+            "gene": "OPG040",
+            "position": 373,
+            "refAa": "Y",
+            "altAa": "S",
+            "change": "Y373S"
+          },
+          {
+            "gene": "OPG043",
+            "position": 2,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T2A"
+          },
+          {
+            "gene": "OPG044",
+            "position": 62,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V62A"
+          },
+          {
+            "gene": "OPG044",
+            "position": 108,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T108A"
+          },
+          {
+            "gene": "OPG044",
+            "position": 147,
+            "refAa": "M",
+            "altAa": "L",
+            "change": "M147L"
+          },
+          {
+            "gene": "OPG045",
+            "position": 184,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A184T"
+          },
+          {
+            "gene": "OPG046",
+            "position": 94,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S94N"
+          },
+          {
+            "gene": "OPG047",
+            "position": 228,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D228G"
+          },
+          {
+            "gene": "OPG047",
+            "position": 231,
+            "refAa": "I",
+            "altAa": "K",
+            "change": "I231K"
+          },
+          {
+            "gene": "OPG049",
+            "position": 16,
+            "refAa": "E",
+            "altAa": "V",
+            "change": "E16V"
+          },
+          {
+            "gene": "OPG049",
+            "position": 36,
+            "refAa": "M",
+            "altAa": "V",
+            "change": "M36V"
+          },
+          {
+            "gene": "OPG049",
+            "position": 262,
+            "refAa": "T",
+            "altAa": "M",
+            "change": "T262M"
+          },
+          {
+            "gene": "OPG054",
+            "position": 437,
+            "refAa": "R",
+            "altAa": "G",
+            "change": "R437G"
+          },
+          {
+            "gene": "OPG056",
+            "position": 322,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V322A"
+          },
+          {
+            "gene": "OPG056",
+            "position": 601,
+            "refAa": "T",
+            "altAa": "N",
+            "change": "T601N"
+          },
+          {
+            "gene": "OPG056",
+            "position": 621,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C621Y"
+          },
+          {
+            "gene": "OPG059",
+            "position": 25,
+            "refAa": "I",
+            "altAa": "L",
+            "change": "I25L"
+          },
+          {
+            "gene": "OPG063",
+            "position": 306,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V306A"
+          },
+          {
+            "gene": "OPG064",
+            "position": 87,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A87S"
+          },
+          {
+            "gene": "OPG065",
+            "position": 16,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A16T"
+          },
+          {
+            "gene": "OPG065",
+            "position": 22,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N22D"
+          },
+          {
+            "gene": "OPG065",
+            "position": 60,
+            "refAa": "H",
+            "altAa": "N",
+            "change": "H60N"
+          },
+          {
+            "gene": "OPG066",
+            "position": 82,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K82R"
+          },
+          {
+            "gene": "OPG066",
+            "position": 96,
+            "refAa": "H",
+            "altAa": "N",
+            "change": "H96N"
+          },
+          {
+            "gene": "OPG068",
+            "position": 250,
+            "refAa": "P",
+            "altAa": "S",
+            "change": "P250S"
+          },
+          {
+            "gene": "OPG068",
+            "position": 340,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D340E"
+          },
+          {
+            "gene": "OPG070",
+            "position": 204,
+            "refAa": "H",
+            "altAa": "Y",
+            "change": "H204Y"
+          },
+          {
+            "gene": "OPG071",
+            "position": 410,
+            "refAa": "L",
+            "altAa": "W",
+            "change": "L410W"
+          },
+          {
+            "gene": "OPG071",
+            "position": 427,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I427T"
+          },
+          {
+            "gene": "OPG071",
+            "position": 483,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A483S"
+          },
+          {
+            "gene": "OPG071",
+            "position": 500,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I500V"
+          },
+          {
+            "gene": "OPG072",
+            "position": 9,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V9I"
+          },
+          {
+            "gene": "OPG074",
+            "position": 198,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N198D"
+          },
+          {
+            "gene": "OPG074",
+            "position": 440,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I440V"
+          },
+          {
+            "gene": "OPG076",
+            "position": 19,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S19N"
+          },
+          {
+            "gene": "OPG079",
+            "position": 44,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C44Y"
+          },
+          {
+            "gene": "OPG080",
+            "position": 320,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D320E"
+          },
+          {
+            "gene": "OPG080",
+            "position": 520,
+            "refAa": "L",
+            "altAa": "P",
+            "change": "L520P"
+          },
+          {
+            "gene": "OPG080",
+            "position": 581,
+            "refAa": "P",
+            "altAa": "H",
+            "change": "P581H"
+          },
+          {
+            "gene": "OPG084",
+            "position": 210,
+            "refAa": "S",
+            "altAa": "T",
+            "change": "S210T"
+          },
+          {
+            "gene": "OPG084",
+            "position": 619,
+            "refAa": "Q",
+            "altAa": "R",
+            "change": "Q619R"
+          },
+          {
+            "gene": "OPG085",
+            "position": 78,
+            "refAa": "S",
+            "altAa": "T",
+            "change": "S78T"
+          },
+          {
+            "gene": "OPG085",
+            "position": 327,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T327A"
+          },
+          {
+            "gene": "OPG085",
+            "position": 590,
+            "refAa": "F",
+            "altAa": "V",
+            "change": "F590V"
+          },
+          {
+            "gene": "OPG086",
+            "position": 71,
+            "refAa": "L",
+            "altAa": "I",
+            "change": "L71I"
+          },
+          {
+            "gene": "OPG089",
+            "position": 302,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D302E"
+          },
+          {
+            "gene": "OPG089",
+            "position": 336,
+            "refAa": "E",
+            "altAa": "K",
+            "change": "E336K"
+          },
+          {
+            "gene": "OPG091",
+            "position": 61,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V61I"
+          },
+          {
+            "gene": "OPG091",
+            "position": 72,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S72N"
+          },
+          {
+            "gene": "OPG092",
+            "position": 243,
+            "refAa": "I",
+            "altAa": "N",
+            "change": "I243N"
+          },
+          {
+            "gene": "OPG094",
+            "position": 174,
+            "refAa": "R",
+            "altAa": "T",
+            "change": "R174T"
+          },
+          {
+            "gene": "OPG096",
+            "position": 67,
+            "refAa": "I",
+            "altAa": "M",
+            "change": "I67M"
+          },
+          {
+            "gene": "OPG100",
+            "position": 151,
+            "refAa": "K",
+            "altAa": "Q",
+            "change": "K151Q"
+          },
+          {
+            "gene": "OPG101",
+            "position": 152,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T152A"
+          },
+          {
+            "gene": "OPG102",
+            "position": 248,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I248V"
+          },
+          {
+            "gene": "OPG104",
+            "position": 11,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T11A"
+          },
+          {
+            "gene": "OPG105",
+            "position": 112,
+            "refAa": "V",
+            "altAa": "G",
+            "change": "V112G"
+          },
+          {
+            "gene": "OPG105",
+            "position": 1069,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I1069V"
+          },
+          {
+            "gene": "OPG108",
+            "position": 3,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V3A"
+          },
+          {
+            "gene": "OPG108",
+            "position": 110,
+            "refAa": "T",
+            "altAa": "I",
+            "change": "T110I"
+          },
+          {
+            "gene": "OPG109",
+            "position": 363,
+            "refAa": "R",
+            "altAa": "S",
+            "change": "R363S"
+          },
+          {
+            "gene": "OPG109",
+            "position": 621,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A621T"
+          },
+          {
+            "gene": "OPG109",
+            "position": 629,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A629T"
+          },
+          {
+            "gene": "OPG111",
+            "position": 76,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I76V"
+          },
+          {
+            "gene": "OPG112",
+            "position": 33,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H33R"
+          },
+          {
+            "gene": "OPG113",
+            "position": 536,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V536I"
+          },
+          {
+            "gene": "OPG117",
+            "position": 453,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D453N"
+          },
+          {
+            "gene": "OPG118",
+            "position": 255,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K255R"
+          },
+          {
+            "gene": "OPG118",
+            "position": 412,
+            "refAa": "N",
+            "altAa": "S",
+            "change": "N412S"
+          },
+          {
+            "gene": "OPG118",
+            "position": 461,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V461A"
+          },
+          {
+            "gene": "OPG118",
+            "position": 605,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K605E"
+          },
+          {
+            "gene": "OPG119",
+            "position": 87,
+            "refAa": "T",
+            "altAa": "R",
+            "change": "T87R"
+          },
+          {
+            "gene": "OPG120",
+            "position": 18,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A18T"
+          },
+          {
+            "gene": "OPG120",
+            "position": 212,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H212R"
+          },
+          {
+            "gene": "OPG123",
+            "position": 171,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I171T"
+          },
+          {
+            "gene": "OPG123",
+            "position": 312,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A312T"
+          },
+          {
+            "gene": "OPG123",
+            "position": 435,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C435Y"
+          },
+          {
+            "gene": "OPG125",
+            "position": 110,
+            "refAa": "E",
+            "altAa": "D",
+            "change": "E110D"
+          },
+          {
+            "gene": "OPG125",
+            "position": 513,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I513V"
+          },
+          {
+            "gene": "OPG130",
+            "position": 62,
+            "refAa": "T",
+            "altAa": "V",
+            "change": "T62V"
+          },
+          {
+            "gene": "OPG130",
+            "position": 121,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T121A"
+          },
+          {
+            "gene": "OPG130",
+            "position": 269,
+            "refAa": "L",
+            "altAa": "I",
+            "change": "L269I"
+          },
+          {
+            "gene": "OPG133",
+            "position": 593,
+            "refAa": "F",
+            "altAa": "S",
+            "change": "F593S"
+          },
+          {
+            "gene": "OPG134",
+            "position": 225,
+            "refAa": "E",
+            "altAa": "D",
+            "change": "E225D"
+          },
+          {
+            "gene": "OPG135",
+            "position": 89,
+            "refAa": "V",
+            "altAa": "E",
+            "change": "V89E"
+          },
+          {
+            "gene": "OPG136",
+            "position": 228,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A228T"
+          },
+          {
+            "gene": "OPG144",
+            "position": 183,
+            "refAa": "T",
+            "altAa": "I",
+            "change": "T183I"
+          },
+          {
+            "gene": "OPG145",
+            "position": 248,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I248V"
+          },
+          {
+            "gene": "OPG148",
+            "position": 312,
+            "refAa": "I",
+            "altAa": "S",
+            "change": "I312S"
+          },
+          {
+            "gene": "OPG150",
+            "position": 99,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N99D"
+          },
+          {
+            "gene": "OPG150",
+            "position": 255,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D255E"
+          },
+          {
+            "gene": "OPG151",
+            "position": 5,
+            "refAa": "D",
+            "altAa": "V",
+            "change": "D5V"
+          },
+          {
+            "gene": "OPG151",
+            "position": 281,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N281D"
+          },
+          {
+            "gene": "OPG153",
+            "position": 13,
+            "refAa": "M",
+            "altAa": "T",
+            "change": "M13T"
+          },
+          {
+            "gene": "OPG153",
+            "position": 204,
+            "refAa": "R",
+            "altAa": "H",
+            "change": "R204H"
+          },
+          {
+            "gene": "OPG153",
+            "position": 354,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I354T"
+          },
+          {
+            "gene": "OPG153",
+            "position": 357,
+            "refAa": "Y",
+            "altAa": "H",
+            "change": "Y357H"
+          },
+          {
+            "gene": "OPG153",
+            "position": 492,
+            "refAa": "Q",
+            "altAa": "P",
+            "change": "Q492P"
+          },
+          {
+            "gene": "OPG154",
+            "position": 73,
+            "refAa": "R",
+            "altAa": "H",
+            "change": "R73H"
+          },
+          {
+            "gene": "OPG154",
+            "position": 106,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H106R"
+          },
+          {
+            "gene": "OPG156",
+            "position": 41,
+            "refAa": "Y",
+            "altAa": "S",
+            "change": "Y41S"
+          },
+          {
+            "gene": "OPG156",
+            "position": 221,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T221A"
+          },
+          {
+            "gene": "OPG156",
+            "position": 260,
+            "refAa": "I",
+            "altAa": "M",
+            "change": "I260M"
+          },
+          {
+            "gene": "OPG157",
+            "position": 23,
+            "refAa": "M",
+            "altAa": "V",
+            "change": "M23V"
+          },
+          {
+            "gene": "OPG159",
+            "position": 1,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T1A"
+          },
+          {
+            "gene": "OPG159",
+            "position": 35,
+            "refAa": "L",
+            "altAa": "S",
+            "change": "L35S"
+          },
+          {
+            "gene": "OPG160",
+            "position": 1,
+            "refAa": "P",
+            "altAa": "S",
+            "change": "P1S"
+          },
+          {
+            "gene": "OPG161",
+            "position": 66,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K66E"
+          },
+          {
+            "gene": "OPG161",
+            "position": 87,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V87A"
+          },
+          {
+            "gene": "OPG163",
+            "position": 45,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V45A"
+          },
+          {
+            "gene": "OPG164",
+            "position": 110,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I110V"
+          },
+          {
+            "gene": "OPG165",
+            "position": 105,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D105N"
+          },
+          {
+            "gene": "OPG165",
+            "position": 160,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S160L"
+          },
+          {
+            "gene": "OPG167",
+            "position": 106,
+            "refAa": "Y",
+            "altAa": "S",
+            "change": "Y106S"
+          },
+          {
+            "gene": "OPG167",
+            "position": 111,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I111V"
+          },
+          {
+            "gene": "OPG170",
+            "position": 30,
+            "refAa": "G",
+            "altAa": "D",
+            "change": "G30D"
+          },
+          {
+            "gene": "OPG170",
+            "position": 56,
+            "refAa": "S",
+            "altAa": "Y",
+            "change": "S56Y"
+          },
+          {
+            "gene": "OPG170",
+            "position": 110,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M110I"
+          },
+          {
+            "gene": "OPG172",
+            "position": 124,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A124V"
+          },
+          {
+            "gene": "OPG172",
+            "position": 144,
+            "refAa": "M",
+            "altAa": "T",
+            "change": "M144T"
+          },
+          {
+            "gene": "OPG172",
+            "position": 159,
+            "refAa": "Y",
+            "altAa": "D",
+            "change": "Y159D"
+          },
+          {
+            "gene": "OPG176",
+            "position": 23,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D23N"
+          },
+          {
+            "gene": "OPG176",
+            "position": 226,
+            "refAa": "L",
+            "altAa": "S",
+            "change": "L226S"
+          },
+          {
+            "gene": "OPG178",
+            "position": 138,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I138V"
+          },
+          {
+            "gene": "OPG181",
+            "position": 84,
+            "refAa": "L",
+            "altAa": "M",
+            "change": "L84M"
+          },
+          {
+            "gene": "OPG181",
+            "position": 126,
+            "refAa": "S",
+            "altAa": "Y",
+            "change": "S126Y"
+          },
+          {
+            "gene": "OPG185",
+            "position": 166,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T166A"
+          },
+          {
+            "gene": "OPG185",
+            "position": 176,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D176E"
+          },
+          {
+            "gene": "OPG185",
+            "position": 204,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I204T"
+          },
+          {
+            "gene": "OPG187",
+            "position": 299,
+            "refAa": "K",
+            "altAa": "*",
+            "change": "K299*"
+          },
+          {
+            "gene": "OPG188",
+            "position": 264,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V264I"
+          },
+          {
+            "gene": "OPG188",
+            "position": 418,
+            "refAa": "S",
+            "altAa": "R",
+            "change": "S418R"
+          },
+          {
+            "gene": "OPG189",
+            "position": 184,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K184R"
+          },
+          {
+            "gene": "OPG189",
+            "position": 505,
+            "refAa": "C",
+            "altAa": "H",
+            "change": "C505H"
+          },
+          {
+            "gene": "OPG191",
+            "position": 49,
+            "refAa": "P",
+            "altAa": "Q",
+            "change": "P49Q"
+          },
+          {
+            "gene": "OPG191",
+            "position": 79,
+            "refAa": "F",
+            "altAa": "C",
+            "change": "F79C"
+          },
+          {
+            "gene": "OPG192",
+            "position": 99,
+            "refAa": "G",
+            "altAa": "E",
+            "change": "G99E"
+          },
+          {
+            "gene": "OPG193",
+            "position": 107,
+            "refAa": "I",
+            "altAa": "R",
+            "change": "I107R"
+          },
+          {
+            "gene": "OPG195",
+            "position": 119,
+            "refAa": "C",
+            "altAa": "S",
+            "change": "C119S"
+          },
+          {
+            "gene": "OPG197",
+            "position": 0,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M0I"
+          },
+          {
+            "gene": "OPG197",
+            "position": 17,
+            "refAa": "S",
+            "altAa": "T",
+            "change": "S17T"
+          },
+          {
+            "gene": "OPG198",
+            "position": 70,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N70D"
+          },
+          {
+            "gene": "OPG198",
+            "position": 99,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I99V"
+          },
+          {
+            "gene": "OPG198",
+            "position": 132,
+            "refAa": "Q",
+            "altAa": "R",
+            "change": "Q132R"
+          },
+          {
+            "gene": "OPG199",
+            "position": 229,
+            "refAa": "K",
+            "altAa": "E",
+            "change": "K229E"
+          },
+          {
+            "gene": "OPG200",
+            "position": 51,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D51G"
+          },
+          {
+            "gene": "OPG200",
+            "position": 133,
+            "refAa": "E",
+            "altAa": "G",
+            "change": "E133G"
+          },
+          {
+            "gene": "OPG204",
+            "position": 177,
+            "refAa": "N",
+            "altAa": "K",
+            "change": "N177K"
+          },
+          {
+            "gene": "OPG205",
+            "position": 168,
+            "refAa": "W",
+            "altAa": "R",
+            "change": "W168R"
+          },
+          {
+            "gene": "OPG205",
+            "position": 348,
+            "refAa": "C",
+            "altAa": "Y",
+            "change": "C348Y"
+          },
+          {
+            "gene": "OPG205",
+            "position": 353,
+            "refAa": "G",
+            "altAa": "S",
+            "change": "G353S"
+          },
+          {
+            "gene": "OPG205",
+            "position": 620,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V620A"
+          },
+          {
+            "gene": "OPG205",
+            "position": 689,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V689A"
+          },
+          {
+            "gene": "OPG205",
+            "position": 732,
+            "refAa": "R",
+            "altAa": "Q",
+            "change": "R732Q"
+          },
+          {
+            "gene": "OPG208",
+            "position": 33,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A33V"
+          },
+          {
+            "gene": "OPG208",
+            "position": 141,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I141T"
+          },
+          {
+            "gene": "OPG208",
+            "position": 299,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T299A"
+          },
+          {
+            "gene": "OPG208",
+            "position": 310,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V310A"
+          },
+          {
+            "gene": "OPG209",
+            "position": 10,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I10V"
+          },
+          {
+            "gene": "OPG209",
+            "position": 20,
+            "refAa": "L",
+            "altAa": "F",
+            "change": "L20F"
+          },
+          {
+            "gene": "OPG210",
+            "position": 2,
+            "refAa": "F",
+            "altAa": "L",
+            "change": "F2L"
+          },
+          {
+            "gene": "OPG210",
+            "position": 97,
+            "refAa": "A",
+            "altAa": "D",
+            "change": "A97D"
+          },
+          {
+            "gene": "OPG210",
+            "position": 172,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V172I"
+          },
+          {
+            "gene": "OPG210",
+            "position": 330,
+            "refAa": "K",
+            "altAa": "N",
+            "change": "K330N"
+          },
+          {
+            "gene": "OPG210",
+            "position": 333,
+            "refAa": "N",
+            "altAa": "I",
+            "change": "N333I"
+          },
+          {
+            "gene": "OPG210",
+            "position": 362,
+            "refAa": "H",
+            "altAa": "R",
+            "change": "H362R"
+          },
+          {
+            "gene": "OPG210",
+            "position": 378,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D378G"
+          },
+          {
+            "gene": "OPG210",
+            "position": 514,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V514A"
+          },
+          {
+            "gene": "OPG210",
+            "position": 780,
+            "refAa": "S",
+            "altAa": "P",
+            "change": "S780P"
+          },
+          {
+            "gene": "OPG210",
+            "position": 787,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V787A"
+          },
+          {
+            "gene": "OPG210",
+            "position": 927,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T927A"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1304,
+            "refAa": "A",
+            "altAa": "T",
+            "change": "A1304T"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1703,
+            "refAa": "L",
+            "altAa": "R",
+            "change": "L1703R"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1716,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D1716G"
+          },
+          {
+            "gene": "OPG210",
+            "position": 1862,
+            "refAa": "E",
+            "altAa": "D",
+            "change": "E1862D"
+          }
+        ],
+        "qcStatus": "bad"
+      }
+    }
+  ]
+}

@@ -262,6 +262,30 @@
   dated articles, so they aren't included in the feed to avoid republishing the same
   number every cycle.</p>
 
+  <h2 id="strains">Strain / variant matching</h2>
+  <p>For a small allowlist of pathogens with a curated <a href="https://clades.nextstrain.org">Nextclade</a>
+  reference dataset (currently mpox and avian influenza A(H5N1)), a daily job searches public
+  NCBI GenBank sequences for any WHO-tracked outbreak whose country and report date plausibly
+  match a deposited sequence's collection metadata, aligns matches against the pathogen's
+  reference genome with Nextclade, and shows the resulting amino-acid differences by gene —
+  with each gene's known function pulled from the reference's own RefSeq annotation, where
+  the dataset provides one.</p>
+  <p>Every match is labeled by confidence: <strong>"country + date match"</strong> means the
+  sequence's own <code>/geo_loc_name</code> and <code>/collection_date</code> fields both fall
+  inside the outbreak's reported window; <strong>"country match, date uncertain"</strong> means
+  only geography lines up. WHO/CDC reports don't cite GenBank accessions, so this is always an
+  inferred association from public metadata, never an official confirmation — verify against
+  the linked GenBank record before relying on it.</p>
+  <div class="caveat">Coverage is inherently partial: a pathogen only gets a strain panel if
+  (a) it's on the allowlist, because Nextclade needs a curated reference per pathogen — there's
+  no generic "align anything" fallback, and bacteria are out of scope entirely since Nextclade's
+  datasets are viral; and (b) a matching sequence with usable metadata has actually been
+  deposited to public GenBank, which for a brand-new outbreak can lag case reports by weeks
+  or months, or may never happen if sequencing goes to a restricted database like GISAID
+  instead. No panel for a given outbreak just means neither condition was met yet, not that
+  nothing exists.</div>
+  <p>Implementation: <a href="https://github.com/hiyata/outbreak-watch/blob/main/scripts/fetch-strains.mjs">scripts/fetch-strains.mjs</a>.</p>
+
   <h2>Limitations &amp; scope</h2>
   <p>This is a hobbyist/educational aggregation project, not a public health authority.
   It reformats and cross-links data that is already public, but every figure should be

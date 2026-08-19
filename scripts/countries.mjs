@@ -25,7 +25,7 @@ const mapEntries = topology.objects.countries.geometries
 const byName = new Map(mapEntries.map((e) => [e.name, e.id]));
 
 // alias -> map "name" (the canonical name used above)
-const ALIASES = {
+export const ALIASES = {
   "Democratic Republic of the Congo": "Dem. Rep. Congo",
   "DR Congo": "Dem. Rep. Congo",
   DRC: "Dem. Rep. Congo",
