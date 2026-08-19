@@ -125,57 +125,211 @@ function escapeHtml(str) {
 // Renders a small inline SVG line+area sparkline from a series of numbers.
 // Points with null/undefined value show as a gap in the line rather than
 // a false zero. Returns an HTML string, not a live DOM node.
-function sparklineSvg(values, { width = 280, height = 56, labels = null } = {}) {
-  const pad = 4;
-  const nums = values.map((v) => (typeof v === "number" && Number.isFinite(v) ? v : null));
-  const present = nums.filter((v) => v !== null);
-  if (present.length < 2) return '<p style="color: var(--muted); font-size: 0.78rem;">Not enough data points for a trend chart yet.</p>';
+// Renders a real line chart (axes, gridlines, hover tooltip) into an
+// already-in-DOM container. Detail panels build their HTML as one big
+// string via innerHTML, so charts are rendered in a second pass: the
+// template leaves a `<div class="chart-box" data-chart-id="...">`
+// placeholder, then the caller invokes this against that element once
+// it actually exists in the DOM (see renderTrendChartInto below).
+//
+// points: [{ x: <string label>, y: number|null }] — null y draws a gap,
+// never a false zero or an interpolated line across missing weeks.
+let chartInstanceCounter = 0;
+const chartRegistry = new Map();
 
-  const max = Math.max(...present);
-  const min = Math.min(0, ...present);
-  const range = max - min || 1;
-  const stepX = (width - pad * 2) / (nums.length - 1);
-  const xy = nums.map((v, i) => {
-    if (v === null) return null;
-    const x = pad + i * stepX;
-    const y = height - pad - ((v - min) / range) * (height - pad * 2);
-    return [x, y];
-  });
+function renderTrendChart(container, points, opts = {}) {
+  chartRegistry.set(container, { points, opts });
+  const { color = "var(--accent)", valueFormat = fmtNumber } = opts;
+  const validCount = points.filter((p) => p.y !== null && Number.isFinite(p.y)).length;
+  if (validCount < 2) {
+    container.innerHTML = '<p style="color: var(--muted); font-size: 0.82rem; margin: 0.5rem 0;">Not enough data points for a trend chart yet.</p>';
+    return;
+  }
 
-  // Break the polyline into contiguous segments so gaps (nulls) don't draw
-  // a misleading straight line across missing weeks.
+  container.innerHTML = "";
+  const margin = { top: 20, right: 16, bottom: 30, left: 56 };
+  const width = Math.max(container.clientWidth || 560, 280);
+  const height = 240;
+  const innerW = width - margin.left - margin.right;
+  const innerH = height - margin.top - margin.bottom;
+
+  const presentValues = points.filter((p) => p.y !== null).map((p) => p.y);
+  const yMaxData = Math.max(...presentValues);
+  const yMinData = Math.min(0, ...presentValues);
+
+  const x = d3.scalePoint(points.map((_, i) => i), [0, innerW]).padding(0.5);
+  const y = d3.scaleLinear([yMinData, yMaxData], [innerH, 0]).nice(4);
+
+  const svg = d3.select(container).append("svg").attr("viewBox", `0 0 ${width} ${height}`).attr("width", "100%").attr("height", height).style("display", "block").style("overflow", "visible");
+
+  const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+  // Gridlines + y-axis labels, snapped to clean numbers by scale.nice().
+  const yTicks = y.ticks(4);
+  const isSmallScale = yTicks.every((t) => Number.isInteger(t * 10));
+  const fmtTick = (v) => (Number.isInteger(v) ? fmtNumber(v) : v.toFixed(isSmallScale ? 1 : 2));
+
+  g.selectAll(".gridline")
+    .data(yTicks)
+    .join("line")
+    .attr("x1", 0)
+    .attr("x2", innerW)
+    .attr("y1", (d) => y(d))
+    .attr("y2", (d) => y(d))
+    .attr("stroke", "var(--border)")
+    .attr("stroke-width", 1);
+
+  g.selectAll(".y-label")
+    .data(yTicks)
+    .join("text")
+    .attr("x", -10)
+    .attr("y", (d) => y(d))
+    .attr("dy", "0.32em")
+    .attr("text-anchor", "end")
+    .attr("fill", "var(--muted)")
+    .attr("font-size", 11)
+    .text(fmtTick);
+
+  // A handful of evenly-spaced x-axis labels rather than one per point —
+  // with 12+ points, one-per-tick collides into an unreadable smear. The
+  // count also has to shrink with the chart's own width (mobile), or wide
+  // date strings like "May 17, 2026" overlap into an unreadable smear too.
+  const n = points.length;
+  const longestLabel = Math.max(...points.map((p) => String(p.x).length), 1);
+  const estLabelWidth = longestLabel * 6.2 + 16;
+  const maxTicksByWidth = Math.max(2, Math.floor(innerW / estLabelWidth));
+  const tickCount = Math.min(6, n, maxTicksByWidth);
+  const tickIndices = [...new Set(Array.from({ length: tickCount }, (_, i) => Math.round((i * (n - 1)) / Math.max(1, tickCount - 1))))];
+
+  g.selectAll(".x-label")
+    .data(tickIndices)
+    .join("text")
+    .attr("x", (i) => x(i))
+    .attr("y", innerH + 22)
+    .attr("text-anchor", "middle")
+    .attr("fill", "var(--muted)")
+    .attr("font-size", 11)
+    .text((i) => points[i].x);
+
+  g.append("line").attr("x1", 0).attr("x2", innerW).attr("y1", innerH).attr("y2", innerH).attr("stroke", "var(--border)").attr("stroke-width", 1);
+
+  // Segment into contiguous runs so a null (missing week) draws a gap,
+  // never a straight line interpolated across data that isn't there.
   const segments = [];
   let current = [];
-  for (const p of xy) {
-    if (p === null) {
+  points.forEach((p, i) => {
+    if (p.y === null || !Number.isFinite(p.y)) {
       if (current.length) segments.push(current);
       current = [];
     } else {
-      current.push(p);
+      current.push([i, p.y]);
     }
-  }
+  });
   if (current.length) segments.push(current);
 
-  const lines = segments
-    .map((seg) => `<polyline points="${seg.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(" ")}" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" />`)
-    .join("");
+  const baseline = Math.min(innerH, y(Math.max(0, yMinData)));
+  const lineGen = d3.line().x((d) => x(d[0])).y((d) => y(d[1])).curve(d3.curveMonotoneX);
+  const areaGen = d3.area().x((d) => x(d[0])).y0(baseline).y1((d) => y(d[1])).curve(d3.curveMonotoneX);
 
-  const lastPoint = [...xy].reverse().find((p) => p !== null);
-  const dot = lastPoint
-    ? `<circle cx="${lastPoint[0].toFixed(1)}" cy="${lastPoint[1].toFixed(1)}" r="2.5" fill="var(--accent)" />`
-    : "";
+  for (const seg of segments) {
+    g.append("path").attr("d", areaGen(seg)).attr("fill", color).attr("opacity", 0.1);
+    g.append("path").attr("d", lineGen(seg)).attr("fill", "none").attr("stroke", color).attr("stroke-width", 2).attr("stroke-linecap", "round").attr("stroke-linejoin", "round");
+  }
 
-  const labelHtml = labels
-    ? `<div style="display:flex; justify-content:space-between; font-size:0.68rem; color:var(--muted); margin-top:0.2rem;"><span>${escapeHtml(labels[0])}</span><span>${escapeHtml(labels[labels.length - 1])}</span></div>`
-    : "";
+  const lastValidIndex = [...points].map((p, i) => ({ ...p, i })).reverse().find((p) => p.y !== null && Number.isFinite(p.y));
+  if (lastValidIndex) {
+    g.append("circle")
+      .attr("cx", x(lastValidIndex.i))
+      .attr("cy", y(lastValidIndex.y))
+      .attr("r", 5)
+      .attr("fill", color)
+      .attr("stroke", "var(--panel-2)")
+      .attr("stroke-width", 2);
+    g.append("text")
+      .attr("x", x(lastValidIndex.i))
+      .attr("y", y(lastValidIndex.y) - 12)
+      .attr("text-anchor", lastValidIndex.i > n * 0.8 ? "end" : "middle")
+      .attr("fill", "var(--text)")
+      .attr("font-size", 12.5)
+      .attr("font-weight", 700)
+      .text(valueFormat(lastValidIndex.y));
+  }
 
-  return `
-    <svg viewBox="0 0 ${width} ${height}" width="100%" height="${height}" preserveAspectRatio="none" style="display:block;">
-      ${lines}${dot}
-    </svg>
-    ${labelHtml}
-  `;
+  // Hover: a crosshair that snaps to the nearest point, plus a tooltip.
+  // Built once per chart instance and positioned with plain CSS so it
+  // works the same in every detail panel that uses this component.
+  chartInstanceCounter += 1;
+  const tooltipId = `chart-tip-${chartInstanceCounter}`;
+  container.style.position = "relative";
+  const tooltip = d3.select(container).append("div").attr("id", tooltipId).attr("class", "chart-tooltip").style("opacity", 0);
+
+  const crosshair = g.append("line").attr("class", "chart-crosshair").attr("y1", 0).attr("y2", innerH).style("opacity", 0);
+  const hoverDot = g.append("circle").attr("r", 4).attr("fill", color).attr("stroke", "var(--panel-2)").attr("stroke-width", 2).style("opacity", 0);
+
+  const indices = points.map((_, i) => i);
+  svg
+    .append("rect")
+    .attr("x", margin.left)
+    .attr("y", margin.top)
+    .attr("width", innerW)
+    .attr("height", innerH)
+    .attr("fill", "transparent")
+    .style("cursor", "crosshair")
+    .on("pointermove", (event) => {
+      const [mx] = d3.pointer(event, g.node());
+      const i = d3.least(indices, (a) => Math.abs(x(a) - mx));
+      const p = points[i];
+      crosshair.attr("x1", x(i)).attr("x2", x(i)).style("opacity", 1);
+      if (p.y !== null && Number.isFinite(p.y)) {
+        hoverDot.attr("cx", x(i)).attr("cy", y(p.y)).style("opacity", 1);
+      } else {
+        hoverDot.style("opacity", 0);
+      }
+      tooltip
+        .style("opacity", 1)
+        .style("left", `${margin.left + x(i)}px`)
+        .style("top", `${margin.top + (p.y !== null ? y(p.y) : innerH / 2)}px`)
+        .html(
+          `<div class="chart-tooltip-value">${p.y !== null && Number.isFinite(p.y) ? valueFormat(p.y) : "No data"}</div><div class="chart-tooltip-label"></div>`
+        );
+      tooltip.select(".chart-tooltip-label").text(p.x);
+    })
+    .on("pointerleave", () => {
+      crosshair.style("opacity", 0);
+      hoverDot.style("opacity", 0);
+      tooltip.style("opacity", 0);
+    });
 }
+
+// Builds the placeholder markup a detail-panel template embeds; the
+// caller renders the actual chart into it via renderTrendChartInto once
+// the HTML has been inserted into the DOM (SVG/d3 can't render into an
+// element that doesn't exist yet).
+function chartPlaceholder(id) {
+  return `<div class="chart-box" id="${id}"></div>`;
+}
+
+function renderTrendChartInto(id, points, opts) {
+  const el = document.getElementById(id);
+  if (el) renderTrendChart(el, points, opts);
+}
+
+// Charts size themselves off container.clientWidth at render time, so a
+// window resize (rotation, dev-tools split, browser resize) leaves the old
+// width baked into the SVG until something re-renders it.
+let chartResizeTimer = null;
+window.addEventListener("resize", () => {
+  clearTimeout(chartResizeTimer);
+  chartResizeTimer = setTimeout(() => {
+    for (const [container, { points, opts }] of chartRegistry) {
+      if (!container.isConnected) {
+        chartRegistry.delete(container);
+        continue;
+      }
+      renderTrendChart(container, points, opts);
+    }
+  }, 150);
+});
 
 function isNewOutbreak(ob) {
   return Boolean(lastSeen && ob.latest_update > lastSeen);
@@ -306,14 +460,12 @@ function renderDetail() {
     .join("");
 
   const chronological = [...ob.updates].sort((a, b) => a.date.localeCompare(b.date));
-  const caseSeries = chronological.map((u) => u.counts?.cases ?? null);
+  const casePoints = chronological.map((u) => ({ x: fmtDate(u.date), y: u.counts?.cases ?? null }));
   const chartHtml =
-    caseSeries.filter((v) => v !== null).length >= 2
+    casePoints.filter((p) => p.y !== null).length >= 2
       ? `
         <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">Cumulative cases over time</h3>
-        <div class="chart-box">${sparklineSvg(caseSeries, {
-          labels: [fmtDate(chronological[0].date), fmtDate(chronological[chronological.length - 1].date)],
-        })}</div>
+        ${chartPlaceholder("who-trend-chart")}
       `
       : "";
 
@@ -334,6 +486,7 @@ function renderDetail() {
     <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.6rem;">Update timeline</h3>
     ${updatesHtml}
   `;
+  renderTrendChartInto("who-trend-chart", casePoints, { valueFormat: fmtNumber });
   bindCrossLinkClicks();
 }
 
@@ -621,13 +774,11 @@ function renderCdcDetail() {
     )
     .join("");
 
+  const cdcTrendPoints = d.national_series ? d.national_series.map((p) => ({ x: `wk ${p.week}`, y: p.value })) : [];
   const trendHtml = d.national_series
     ? `
       <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">National weekly trend</h3>
-      <div class="chart-box">${sparklineSvg(
-        d.national_series.map((p) => p.value),
-        { labels: [`wk ${d.national_series[0].week}`, `wk ${d.national_series[d.national_series.length - 1].week}`] }
-      )}</div>
+      ${chartPlaceholder("cdc-trend-chart")}
     `
     : "";
 
@@ -654,6 +805,7 @@ function renderCdcDetail() {
       <tbody>${rowsHtml}</tbody>
     </table>
   `;
+  renderTrendChartInto("cdc-trend-chart", cdcTrendPoints, { valueFormat: fmtNumber });
   bindCrossLinkClicks();
 }
 
@@ -818,15 +970,15 @@ function renderBrDetail() {
       s.series && s.series.length >= 2
         ? `
           <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">Weekly cases, last ${s.series.length} weeks</h3>
-          <div class="chart-box">${sparklineSvg(
-            s.series.map((p) => p.value),
-            { labels: [`wk ${s.series[0].week}`, `wk ${s.series[s.series.length - 1].week}`] }
-          )}</div>
+          ${chartPlaceholder("br-trend-chart")}
         `
         : ""
     }
     ${findWhoLinkBack("influenza respiratory syndrome", "Brazil")}
   `;
+  if (s.series && s.series.length >= 2) {
+    renderTrendChartInto("br-trend-chart", s.series.map((p) => ({ x: `wk ${p.week}`, y: p.value })), { valueFormat: fmtNumber });
+  }
   bindCrossLinkClicks();
 }
 
@@ -995,15 +1147,15 @@ function renderClDetail() {
       r.series && r.series.length >= 2
         ? `
           <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">Weekly deaths, last ${r.series.length} weeks</h3>
-          <div class="chart-box">${sparklineSvg(
-            r.series.map((p) => p.value),
-            { labels: [`wk ${r.series[0].week}`, `wk ${r.series[r.series.length - 1].week}`] }
-          )}</div>
+          ${chartPlaceholder("cl-trend-chart")}
         `
         : ""
     }
     ${renderCountryLinkBack("Chile")}
   `;
+  if (r.series && r.series.length >= 2) {
+    renderTrendChartInto("cl-trend-chart", r.series.map((p) => ({ x: `wk ${p.week}`, y: p.value })), { valueFormat: fmtNumber });
+  }
   bindCrossLinkClicks();
 }
 
@@ -1164,6 +1316,10 @@ function renderUkDetail() {
     )
     .join("");
 
+  const ukTrend = ukNationalTrend(d);
+  const ukTrendPoints = ukTrend?.points ?? null;
+  const ukTrendLabel = ukTrend?.label ?? "";
+
   detailEl.innerHTML = `
     <div class="detail-head">
       <h2>${escapeHtml(d.topic)}</h2>
@@ -1179,7 +1335,7 @@ function renderUkDetail() {
       this is whichever one currently has the most recent data for this disease, so the
       unit differs disease to disease — always check before comparing across diseases.
     </div>
-    ${ukNationalTrendChart(d)}
+    ${ukTrendPoints ? `<h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">${ukTrendLabel}</h3>${chartPlaceholder("uk-trend-chart")}` : ""}
     ${findWhoLinkBack(d.topic, "United Kingdom")}
     <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.6rem;">By region</h3>
     <table class="state-table">
@@ -1187,26 +1343,28 @@ function renderUkDetail() {
       <tbody>${rowsHtml}</tbody>
     </table>
   `;
+  if (ukTrendPoints) renderTrendChartInto("uk-trend-chart", ukTrendPoints, { valueFormat: fmtNumber });
   bindCrossLinkClicks();
 }
 
-function ukNationalTrendChart(d) {
+// Returns { points, label } for the England-wide trend, or null if no
+// region has enough history yet. Rate/percentage metrics (test
+// positivity etc.) are averaged across regions; raw case-count metrics
+// are summed — averaging a count or summing a rate would both be wrong.
+function ukNationalTrend(d) {
   const withSeries = d.regions.filter((r) => r.series && r.series.length >= 2);
-  if (withSeries.length === 0) return "";
+  if (withSeries.length === 0) return null;
   const length = Math.min(...withSeries.map((r) => r.series.length));
-  const isRate = ukMetricUnit(d.metric) !== "cases"; // % positivity / rate metrics should average across regions, not sum
+  const isRate = ukMetricUnit(d.metric) !== "cases";
   const points = [];
   for (let i = 0; i < length; i++) {
     const values = withSeries.map((r) => r.series[r.series.length - length + i]?.value ?? 0);
     const total = values.reduce((a, b) => a + b, 0);
-    points.push(isRate ? total / values.length : total);
+    const date = withSeries[0].series[withSeries[0].series.length - length + i]?.date;
+    points.push({ x: fmtDate(date), y: isRate ? total / values.length : total });
   }
-  const dates = withSeries[0].series.slice(-length).map((p) => p.date);
   const label = isRate ? "England average, recent trend" : "England total, recent trend";
-  return `
-    <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">${label}</h3>
-    <div class="chart-box">${sparklineSvg(points, { labels: [fmtDate(dates[0]), fmtDate(dates[dates.length - 1])] })}</div>
-  `;
+  return { points, label };
 }
 
 function selectUkDisease(topic) {
@@ -1359,13 +1517,12 @@ function renderJpDetail() {
     )
     .join("");
 
-  const chartHtml = d.national_series && d.national_series.filter((p) => p.value !== null).length >= 2
+  const jpTrendPoints = d.national_series ? d.national_series.map((p) => ({ x: `wk ${p.week}`, y: p.value })) : [];
+  const hasJpTrend = jpTrendPoints.filter((p) => p.y !== null).length >= 2;
+  const chartHtml = hasJpTrend
     ? `
       <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">National weekly trend</h3>
-      <div class="chart-box">${sparklineSvg(
-        d.national_series.map((p) => p.value),
-        { labels: [`wk ${d.national_series[0].week}`, `wk ${d.national_series[d.national_series.length - 1].week}`] }
-      )}</div>
+      ${chartPlaceholder("jp-trend-chart")}
     `
     : "";
 
@@ -1397,6 +1554,7 @@ function renderJpDetail() {
       <tbody>${rowsHtml}</tbody>
     </table>
   `;
+  if (hasJpTrend) renderTrendChartInto("jp-trend-chart", jpTrendPoints, { valueFormat: fmtNumber });
   bindCrossLinkClicks();
 }
 
