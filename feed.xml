@@ -6,7 +6,7 @@
     <atom:link href="https://hiyata.github.io/outbreak-watch/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated daily.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 19 Aug 2026 21:35:24 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2026 22:49:19 GMT</lastBuildDate>
     <generator>outbreak-watch scripts/build-rss.mjs</generator>
     <item>
       <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo</title>
