@@ -1,0 +1,708 @@
+{
+  "generated_at": "2026-08-19T04:43:06.063Z",
+  "source": "UKHSA data dashboard (England regions)",
+  "recency_window_days": 90,
+  "disease_count": 10,
+  "diseases": [
+    {
+      "topic": "COVID-19",
+      "metric": "COVID-19_cases_casesByDay",
+      "latest_date": "2026-08-12",
+      "regions": [
+        {
+          "id": "east_midlands",
+          "name": "East Midlands",
+          "latest_value": 1,
+          "latest_date": "2026-08-12",
+          "value_4_weeks_ago": 2
+        },
+        {
+          "id": "east_of_england",
+          "name": "East of England",
+          "latest_value": 0,
+          "latest_date": "2026-08-12",
+          "value_4_weeks_ago": 2
+        },
+        {
+          "id": "london",
+          "name": "London",
+          "latest_value": 0,
+          "latest_date": "2026-08-12",
+          "value_4_weeks_ago": 3
+        },
+        {
+          "id": "north_east",
+          "name": "North East",
+          "latest_value": 0,
+          "latest_date": "2026-08-12",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "north_west",
+          "name": "North West",
+          "latest_value": 0,
+          "latest_date": "2026-08-12",
+          "value_4_weeks_ago": 1
+        },
+        {
+          "id": "south_east",
+          "name": "South East",
+          "latest_value": 0,
+          "latest_date": "2026-08-12",
+          "value_4_weeks_ago": 3
+        },
+        {
+          "id": "south_west",
+          "name": "South West",
+          "latest_value": 0,
+          "latest_date": "2026-08-12",
+          "value_4_weeks_ago": 3
+        },
+        {
+          "id": "west_midlands",
+          "name": "West Midlands",
+          "latest_value": 0,
+          "latest_date": "2026-08-12",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "yorkshire_and_humber",
+          "name": "Yorkshire and Humber",
+          "latest_value": 1,
+          "latest_date": "2026-08-12",
+          "value_4_weeks_ago": 0
+        }
+      ]
+    },
+    {
+      "topic": "Influenza",
+      "metric": "influenza_testing_positivityByWeek",
+      "latest_date": "2026-08-03",
+      "regions": [
+        {
+          "id": "east_midlands",
+          "name": "East Midlands",
+          "latest_value": 2.16,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0.69
+        },
+        {
+          "id": "east_of_england",
+          "name": "East of England",
+          "latest_value": 0.8,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0.44
+        },
+        {
+          "id": "london",
+          "name": "London",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 25
+        },
+        {
+          "id": "north_east",
+          "name": "North East",
+          "latest_value": 0.54,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0.72
+        },
+        {
+          "id": "north_west",
+          "name": "North West",
+          "latest_value": 1.02,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0.81
+        },
+        {
+          "id": "south_east",
+          "name": "South East",
+          "latest_value": 9.09,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "south_west",
+          "name": "South West",
+          "latest_value": 1.14,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0.62
+        },
+        {
+          "id": "west_midlands",
+          "name": "West Midlands",
+          "latest_value": 0.86,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 1.19
+        },
+        {
+          "id": "yorkshire_and_humber",
+          "name": "Yorkshire and Humber",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        }
+      ]
+    },
+    {
+      "topic": "RSV",
+      "metric": "RSV_testing_positivityByWeek",
+      "latest_date": "2026-08-03",
+      "regions": [
+        {
+          "id": "east_midlands",
+          "name": "East Midlands",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 2.07
+        },
+        {
+          "id": "east_of_england",
+          "name": "East of England",
+          "latest_value": 0.27,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "london",
+          "name": "London",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "north_east",
+          "name": "North East",
+          "latest_value": 0.54,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "north_west",
+          "name": "North West",
+          "latest_value": 0.15,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0.54
+        },
+        {
+          "id": "south_east",
+          "name": "South East",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "south_west",
+          "name": "South West",
+          "latest_value": 0.28,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0.21
+        },
+        {
+          "id": "west_midlands",
+          "name": "West Midlands",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "yorkshire_and_humber",
+          "name": "Yorkshire and Humber",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        }
+      ]
+    },
+    {
+      "topic": "Adenovirus",
+      "metric": "adenovirus_testing_positivityByWeek",
+      "latest_date": "2026-08-03",
+      "regions": [
+        {
+          "id": "east_midlands",
+          "name": "East Midlands",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "east_of_england",
+          "name": "East of England",
+          "latest_value": 0.27,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0.22
+        },
+        {
+          "id": "london",
+          "name": "London",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "north_east",
+          "name": "North East",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 2.47
+        },
+        {
+          "id": "north_west",
+          "name": "North West",
+          "latest_value": 3.24,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 3.46
+        },
+        {
+          "id": "south_east",
+          "name": "South East",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 7.14
+        },
+        {
+          "id": "south_west",
+          "name": "South West",
+          "latest_value": 2.26,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 1.8
+        },
+        {
+          "id": "west_midlands",
+          "name": "West Midlands",
+          "latest_value": 0.86,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 1.98
+        },
+        {
+          "id": "yorkshire_and_humber",
+          "name": "Yorkshire and Humber",
+          "latest_value": 4.76,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 5
+        }
+      ]
+    },
+    {
+      "topic": "Rhinovirus",
+      "metric": "rhinovirus_testing_positivityByWeek",
+      "latest_date": "2026-08-03",
+      "regions": [
+        {
+          "id": "east_midlands",
+          "name": "East Midlands",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "east_of_england",
+          "name": "East of England",
+          "latest_value": 4.29,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 9.35
+        },
+        {
+          "id": "london",
+          "name": "London",
+          "latest_value": 25,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "north_east",
+          "name": "North East",
+          "latest_value": 6.33,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 8.75
+        },
+        {
+          "id": "north_west",
+          "name": "North West",
+          "latest_value": 5.92,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 10.95
+        },
+        {
+          "id": "south_east",
+          "name": "South East",
+          "latest_value": 100,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 12.5
+        },
+        {
+          "id": "south_west",
+          "name": "South West",
+          "latest_value": 9.77,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 9.3
+        },
+        {
+          "id": "west_midlands",
+          "name": "West Midlands",
+          "latest_value": 3.98,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 5.74
+        },
+        {
+          "id": "yorkshire_and_humber",
+          "name": "Yorkshire and Humber",
+          "latest_value": 11.11,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 12.5
+        }
+      ]
+    },
+    {
+      "topic": "hMPV",
+      "metric": "hMPV_testing_positivityByWeek",
+      "latest_date": "2026-08-03",
+      "regions": [
+        {
+          "id": "east_midlands",
+          "name": "East Midlands",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 1.28
+        },
+        {
+          "id": "east_of_england",
+          "name": "East of England",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "london",
+          "name": "London",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "north_east",
+          "name": "North East",
+          "latest_value": 2.41,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "north_west",
+          "name": "North West",
+          "latest_value": 0.66,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 1.05
+        },
+        {
+          "id": "south_east",
+          "name": "South East",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "south_west",
+          "name": "South West",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "west_midlands",
+          "name": "West Midlands",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 1.63
+        },
+        {
+          "id": "yorkshire_and_humber",
+          "name": "Yorkshire and Humber",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        }
+      ]
+    },
+    {
+      "topic": "Parainfluenza",
+      "metric": "parainfluenza_testing_positivityByWeek",
+      "latest_date": "2026-08-03",
+      "regions": [
+        {
+          "id": "east_midlands",
+          "name": "East Midlands",
+          "latest_value": 2.94,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 6.17
+        },
+        {
+          "id": "east_of_england",
+          "name": "East of England",
+          "latest_value": 1.33,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 3.33
+        },
+        {
+          "id": "london",
+          "name": "London",
+          "latest_value": 16.67,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "north_east",
+          "name": "North East",
+          "latest_value": 100,
+          "latest_date": "2026-07-27",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "north_west",
+          "name": "North West",
+          "latest_value": 1.33,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0.85
+        },
+        {
+          "id": "south_east",
+          "name": "South East",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "south_west",
+          "name": "South West",
+          "latest_value": 3.36,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 2.84
+        },
+        {
+          "id": "west_midlands",
+          "name": "West Midlands",
+          "latest_value": 8.37,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 2.44
+        },
+        {
+          "id": "yorkshire_and_humber",
+          "name": "Yorkshire and Humber",
+          "latest_value": 0,
+          "latest_date": "2026-08-03",
+          "value_4_weeks_ago": 12.5
+        }
+      ]
+    },
+    {
+      "topic": "Measles",
+      "metric": "measles_cases_casesByOnsetWeek",
+      "latest_date": "2026-07-20",
+      "regions": [
+        {
+          "id": "east_midlands",
+          "name": "East Midlands",
+          "latest_value": 1,
+          "latest_date": "2026-07-20",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "east_of_england",
+          "name": "East of England",
+          "latest_value": 0,
+          "latest_date": "2026-07-20",
+          "value_4_weeks_ago": 8
+        },
+        {
+          "id": "london",
+          "name": "London",
+          "latest_value": 2,
+          "latest_date": "2026-07-20",
+          "value_4_weeks_ago": 18
+        },
+        {
+          "id": "north_east",
+          "name": "North East",
+          "latest_value": 0,
+          "latest_date": "2026-07-20",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "north_west",
+          "name": "North West",
+          "latest_value": 2,
+          "latest_date": "2026-07-20",
+          "value_4_weeks_ago": 3
+        },
+        {
+          "id": "south_east",
+          "name": "South East",
+          "latest_value": 1,
+          "latest_date": "2026-07-20",
+          "value_4_weeks_ago": 7
+        },
+        {
+          "id": "south_west",
+          "name": "South West",
+          "latest_value": 0,
+          "latest_date": "2026-07-20",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "west_midlands",
+          "name": "West Midlands",
+          "latest_value": 0,
+          "latest_date": "2026-07-20",
+          "value_4_weeks_ago": 2
+        },
+        {
+          "id": "yorkshire_and_humber",
+          "name": "Yorkshire and Humber",
+          "latest_value": 0,
+          "latest_date": "2026-07-20",
+          "value_4_weeks_ago": 5
+        }
+      ]
+    },
+    {
+      "topic": "C-difficile",
+      "metric": "c-difficile_cases_countsByOnsetTypeByMonth",
+      "latest_date": "2026-06-01",
+      "regions": [
+        {
+          "id": "east_midlands",
+          "name": "East Midlands",
+          "latest_value": 9,
+          "latest_date": "2026-06-01",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "east_of_england",
+          "name": "East of England",
+          "latest_value": 17,
+          "latest_date": "2026-06-01",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "london",
+          "name": "London",
+          "latest_value": 11,
+          "latest_date": "2026-06-01",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "north_east",
+          "name": "North East",
+          "latest_value": 16,
+          "latest_date": "2026-06-01",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "north_west",
+          "name": "North West",
+          "latest_value": 28,
+          "latest_date": "2026-06-01",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "south_east",
+          "name": "South East",
+          "latest_value": 13,
+          "latest_date": "2026-06-01",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "south_west",
+          "name": "South West",
+          "latest_value": 25,
+          "latest_date": "2026-06-01",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "west_midlands",
+          "name": "West Midlands",
+          "latest_value": 24,
+          "latest_date": "2026-06-01",
+          "value_4_weeks_ago": 0
+        },
+        {
+          "id": "yorkshire_and_humber",
+          "name": "Yorkshire and Humber",
+          "latest_value": 14,
+          "latest_date": "2026-06-01",
+          "value_4_weeks_ago": 0
+        }
+      ]
+    },
+    {
+      "topic": "Scarlet-fever",
+      "metric": "scarlet-fever_syndromic_GPInHours_baselineRateByDay",
+      "latest_date": "2026-08-10",
+      "regions": [
+        {
+          "id": "east_midlands",
+          "name": "East Midlands",
+          "latest_value": 0.06,
+          "latest_date": "2026-08-10",
+          "value_4_weeks_ago": 0.19
+        },
+        {
+          "id": "east_of_england",
+          "name": "East of England",
+          "latest_value": 0.06,
+          "latest_date": "2026-08-10",
+          "value_4_weeks_ago": 0.19
+        },
+        {
+          "id": "london",
+          "name": "London",
+          "latest_value": 0.07,
+          "latest_date": "2026-08-10",
+          "value_4_weeks_ago": 0.2
+        },
+        {
+          "id": "north_east",
+          "name": "North East",
+          "latest_value": 0.08,
+          "latest_date": "2026-08-10",
+          "value_4_weeks_ago": 0.22
+        },
+        {
+          "id": "north_west",
+          "name": "North West",
+          "latest_value": 0.11,
+          "latest_date": "2026-08-10",
+          "value_4_weeks_ago": 0.32
+        },
+        {
+          "id": "south_east",
+          "name": "South East",
+          "latest_value": 0.1,
+          "latest_date": "2026-08-10",
+          "value_4_weeks_ago": 0.29
+        },
+        {
+          "id": "south_west",
+          "name": "South West",
+          "latest_value": 0.08,
+          "latest_date": "2026-08-10",
+          "value_4_weeks_ago": 0.25
+        },
+        {
+          "id": "west_midlands",
+          "name": "West Midlands",
+          "latest_value": 0.08,
+          "latest_date": "2026-08-10",
+          "value_4_weeks_ago": 0.24
+        },
+        {
+          "id": "yorkshire_and_humber",
+          "name": "Yorkshire and Humber",
+          "latest_value": 0.06,
+          "latest_date": "2026-08-10",
+          "value_4_weeks_ago": 0.2
+        }
+      ]
+    }
+  ]
+}

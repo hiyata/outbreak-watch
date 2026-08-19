@@ -23,28 +23,37 @@ const clSearchEl = document.getElementById("cl-search");
 const clSortEl = document.getElementById("cl-sort");
 const clMapWrap = document.getElementById("cl-map-wrap");
 
+const ukListEl = document.getElementById("uk-list");
+const ukSearchEl = document.getElementById("uk-search");
+const ukSortEl = document.getElementById("uk-sort");
+const ukMapWrap = document.getElementById("uk-map-wrap");
+
 const tabWhoEl = document.getElementById("tab-who");
 const tabCdcEl = document.getElementById("tab-cdc");
 const tabBrEl = document.getElementById("tab-br");
 const tabClEl = document.getElementById("tab-cl");
+const tabUkEl = document.getElementById("tab-uk");
 const mapTitleEl = document.getElementById("map-title");
 const legendWhoEl = document.getElementById("legend-who");
 const legendCdcEl = document.getElementById("legend-cdc");
 const legendBrEl = document.getElementById("legend-br");
 const legendClEl = document.getElementById("legend-cl");
+const legendUkEl = document.getElementById("legend-uk");
 const controlsWhoEl = document.getElementById("controls-who");
 const controlsCdcEl = document.getElementById("controls-cdc");
 const controlsBrEl = document.getElementById("controls-br");
 const controlsClEl = document.getElementById("controls-cl");
+const controlsUkEl = document.getElementById("controls-uk");
 const footerWhoEl = document.getElementById("footer-who");
 const footerCdcEl = document.getElementById("footer-cdc");
 const footerBrEl = document.getElementById("footer-br");
 const footerClEl = document.getElementById("footer-cl");
+const footerUkEl = document.getElementById("footer-uk");
 
 const ACTIVE_WINDOW_DAYS = 365;
 const ACTIVE_CUTOFF = new Date(Date.now() - ACTIVE_WINDOW_DAYS * 24 * 60 * 60 * 1000).toISOString();
 
-let mode = "who"; // "who" | "cdc" | "br" | "cl"
+let mode = "who"; // "who" | "cdc" | "br" | "cl" | "uk"
 
 let allOutbreaks = [];
 let lastSeen = localStorage.getItem(LAST_SEEN_KEY);
@@ -75,6 +84,11 @@ let clFeed = null;
 let allClRegions = [];
 let selectedClRegion = null;
 let clSvgSelection = null;
+
+let ukFeed = null;
+let allUkDiseases = [];
+let selectedUkDisease = null;
+let ukSvgSelection = null;
 
 function fmtDate(iso) {
   if (!iso) return "";
@@ -630,6 +644,7 @@ const MAP_TITLES = {
   cdc: "US notifiable diseases by state",
   br: "Brazil SRAG risk level by state",
   cl: "Chile all-cause mortality by region",
+  uk: "England notifiable diseases by region",
 };
 
 // ---------- Chile (DEIS) mode ----------
@@ -789,6 +804,183 @@ async function initClMap() {
   paintClMap();
 }
 
+// ---------- England (UKHSA) mode ----------
+
+function ukNationalTotal(disease, field) {
+  return disease.regions.reduce((sum, r) => sum + (r[field] ?? 0), 0);
+}
+
+function ukTrendPct(disease) {
+  const now = ukNationalTotal(disease, "latest_value");
+  const before = ukNationalTotal(disease, "value_4_weeks_ago");
+  if (!before) return now > 0 ? Infinity : 0;
+  return ((now - before) / before) * 100;
+}
+
+function filteredUkDiseases() {
+  const query = ukSearchEl.value.trim().toLowerCase();
+  let diseases = allUkDiseases.filter((d) => !query || d.topic.toLowerCase().includes(query));
+
+  const sort = ukSortEl.value;
+  if (sort === "trend") {
+    diseases = [...diseases].sort((a, b) => ukTrendPct(b) - ukTrendPct(a));
+  } else if (sort === "name") {
+    diseases = [...diseases].sort((a, b) => a.topic.localeCompare(b.topic));
+  } else {
+    diseases = [...diseases].sort((a, b) => ukNationalTotal(b, "latest_value") - ukNationalTotal(a, "latest_value"));
+  }
+  return diseases;
+}
+
+function ukMetricUnit(metricName) {
+  if (metricName.includes("positivity")) return "% test positivity";
+  if (metricName.includes("Rate")) return "rate";
+  if (metricName.includes("cases")) return "cases";
+  return "value";
+}
+
+function renderUkSidebar() {
+  const diseases = filteredUkDiseases();
+
+  if (diseases.length === 0) {
+    ukListEl.innerHTML = '<p id="uk-status">No matching diseases.</p>';
+    return;
+  }
+
+  ukListEl.innerHTML = diseases
+    .map((d) => {
+      const isActive = d.topic === selectedUkDisease;
+      const total = ukNationalTotal(d, "latest_value");
+      const trend = ukTrendPct(d);
+      const trendLabel = Number.isFinite(trend) ? `${trend > 0 ? "+" : ""}${trend.toFixed(0)}% vs 4wk ago` : "new activity";
+      return `
+        <button class="list-item${isActive ? " active" : ""}" data-topic="${escapeHtml(d.topic)}">
+          <div class="li-title">${escapeHtml(d.topic)}</div>
+          <div class="li-meta"><span>${escapeHtml(ukMetricUnit(d.metric))}</span></div>
+          <div class="li-meta">
+            <span class="li-counts">${fmtNumber(Math.round(total * 100) / 100)}</span>
+            <span>· ${trendLabel}</span>
+          </div>
+        </button>
+      `;
+    })
+    .join("");
+
+  ukListEl.querySelectorAll(".list-item").forEach((btn) => {
+    btn.addEventListener("click", () => selectUkDisease(btn.dataset.topic));
+  });
+}
+
+function renderUkDetail() {
+  const d = allUkDiseases.find((x) => x.topic === selectedUkDisease);
+  if (!d) {
+    detailEl.innerHTML =
+      '<p style="color: var(--muted); font-size: 0.9rem;">Select a disease on the left, or a region on the map, for its regional breakdown.</p>';
+    return;
+  }
+
+  const rowsHtml = [...d.regions]
+    .sort((a, b) => b.latest_value - a.latest_value)
+    .map(
+      (r) => `
+        <tr>
+          <td>${escapeHtml(r.name)}</td>
+          <td class="num">${fmtNumber(r.latest_value)}</td>
+          <td class="num">${r.value_4_weeks_ago != null ? fmtNumber(r.value_4_weeks_ago) : "—"}</td>
+        </tr>
+      `
+    )
+    .join("");
+
+  detailEl.innerHTML = `
+    <div class="detail-head">
+      <h2>${escapeHtml(d.topic)}</h2>
+      <div class="detail-tags">
+        <span class="tag">${escapeHtml(ukMetricUnit(d.metric))}</span>
+        <span class="tag">as of ${fmtDate(d.latest_date)}</span>
+        <span class="tag">England only</span>
+      </div>
+    </div>
+    <div class="stat-note">
+      Metric: <code>${escapeHtml(d.metric)}</code>. UKHSA publishes several indicators
+      per disease (test positivity, hospital admissions, syndromic rates, case counts);
+      this is whichever one currently has the most recent data for this disease, so the
+      unit differs disease to disease — always check before comparing across diseases.
+    </div>
+    <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.6rem;">By region</h3>
+    <table class="state-table">
+      <thead><tr><th>Region</th><th class="num">Latest</th><th class="num">4 weeks ago</th></tr></thead>
+      <tbody>${rowsHtml}</tbody>
+    </table>
+  `;
+}
+
+function selectUkDisease(topic) {
+  selectedUkDisease = topic;
+  renderUkSidebar();
+  renderUkDetail();
+  paintUkMap();
+  detailEl.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function paintUkMap() {
+  if (!ukSvgSelection) return;
+  const d = allUkDiseases.find((x) => x.topic === selectedUkDisease);
+  const byRegion = new Map((d?.regions ?? []).map((r) => [r.id, r.latest_value]));
+  const max = Math.max(1, ...[...byRegion.values()]);
+  const scale = d3.scaleSequential(d3.interpolateOranges).domain([0, max]);
+
+  ukSvgSelection
+    .attr("fill", function () {
+      const id = this.getAttribute("data-id");
+      if (!d) return "var(--map-land)";
+      return byRegion.has(id) ? scale(byRegion.get(id)) : "var(--map-land)";
+    })
+    .classed("has-outbreak", function () {
+      return d ? byRegion.has(this.getAttribute("data-id")) : false;
+    });
+}
+
+async function initUkMap() {
+  const topo = await d3.json("data/uk-regions-topo.json");
+  const objectName = Object.keys(topo.objects)[0];
+  const geo = topojson.feature(topo, topo.objects[objectName]);
+
+  const width = ukMapWrap.clientWidth || 640;
+  const height = width * 1.3;
+  const projection = d3.geoMercator().fitSize([width - 4, height - 4], geo);
+  const pathGenerator = d3.geoPath(projection);
+
+  const svg = d3
+    .select(ukMapWrap)
+    .append("svg")
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .attr("preserveAspectRatio", "xMidYMid meet");
+
+  const byRegionName = new Map();
+
+  const paths = svg
+    .append("g")
+    .selectAll("path")
+    .data(geo.features)
+    .join("path")
+    .attr("class", "country-path")
+    .attr("data-id", (d) => d.properties.region_key)
+    .attr("d", pathGenerator)
+    .attr("fill", "var(--map-land)");
+
+  paths.append("title").text((d) => d.properties.display_name);
+  ukSvgSelection = paths;
+
+  ukSvgSelection.on("click", function (event, feature) {
+    const id = feature.properties.region_key;
+    const match = filteredUkDiseases().find((d) => d.regions.some((r) => r.id === id));
+    if (match) selectUkDisease(match.topic);
+  });
+
+  paintUkMap();
+}
+
 function switchMode(next) {
   if (mode === next) return;
   mode = next;
@@ -797,32 +989,39 @@ function switchMode(next) {
   tabCdcEl.classList.toggle("active", mode === "cdc");
   tabBrEl.classList.toggle("active", mode === "br");
   tabClEl.classList.toggle("active", mode === "cl");
+  tabUkEl.classList.toggle("active", mode === "uk");
   mapTitleEl.textContent = MAP_TITLES[mode];
 
   whoMapWrap.style.display = mode === "who" ? "" : "none";
   cdcMapWrap.style.display = mode === "cdc" ? "" : "none";
   brMapWrap.style.display = mode === "br" ? "" : "none";
   clMapWrap.style.display = mode === "cl" ? "" : "none";
+  ukMapWrap.style.display = mode === "uk" ? "" : "none";
   legendWhoEl.style.display = mode === "who" ? "" : "none";
   legendCdcEl.style.display = mode === "cdc" ? "" : "none";
   legendBrEl.style.display = mode === "br" ? "" : "none";
   legendClEl.style.display = mode === "cl" ? "" : "none";
+  legendUkEl.style.display = mode === "uk" ? "" : "none";
   controlsWhoEl.style.display = mode === "who" ? "" : "none";
   controlsCdcEl.style.display = mode === "cdc" ? "" : "none";
   controlsBrEl.style.display = mode === "br" ? "" : "none";
   controlsClEl.style.display = mode === "cl" ? "" : "none";
+  controlsUkEl.style.display = mode === "uk" ? "" : "none";
   listEl.style.display = mode === "who" ? "" : "none";
   cdcListEl.style.display = mode === "cdc" ? "" : "none";
   brListEl.style.display = mode === "br" ? "" : "none";
   clListEl.style.display = mode === "cl" ? "" : "none";
+  ukListEl.style.display = mode === "uk" ? "" : "none";
   footerWhoEl.style.display = mode === "who" ? "" : "none";
   footerCdcEl.style.display = mode === "cdc" ? "" : "none";
   footerBrEl.style.display = mode === "br" ? "" : "none";
   footerClEl.style.display = mode === "cl" ? "" : "none";
+  footerUkEl.style.display = mode === "uk" ? "" : "none";
 
   if (mode === "cdc") renderCdcDetail();
   else if (mode === "br") renderBrDetail();
   else if (mode === "cl") renderClDetail();
+  else if (mode === "uk") renderUkDetail();
   else renderDetail();
   renderHeaderStats();
 }
@@ -845,6 +1044,12 @@ function renderHeaderStats() {
       <span><b>${allClRegions.length}</b> regions tracked</span>
       <span>Epi. week ${clFeed.epidemiological_week}, ${clFeed.epidemiological_year}</span>
       <span>Updated ${fmtDate(clFeed.generated_at)}</span>
+    `;
+  } else if (mode === "uk" && ukFeed) {
+    headerStatsEl.innerHTML = `
+      <span><b>${allUkDiseases.length}</b> diseases tracked</span>
+      <span>England, 9 regions</span>
+      <span>Updated ${fmtDate(ukFeed.generated_at)}</span>
     `;
   } else if (mode === "who" && allOutbreaks.length) {
     const activeCount = allOutbreaks.filter((o) => o.latest_update >= ACTIVE_CUTOFF).length;
@@ -907,6 +1112,17 @@ async function init() {
     clListEl.innerHTML = '<p id="cl-status">Could not load Chile feed. Try again shortly.</p>';
     console.error(err);
   }
+
+  try {
+    const res = await fetch("data/uk-feed.json", { cache: "no-store" });
+    ukFeed = await res.json();
+    allUkDiseases = ukFeed.diseases;
+    renderUkSidebar();
+    await initUkMap();
+  } catch (err) {
+    ukListEl.innerHTML = '<p id="uk-status">Could not load England feed. Try again shortly.</p>';
+    console.error(err);
+  }
 }
 
 searchEl.addEventListener("input", () => {
@@ -940,9 +1156,17 @@ clSortEl.addEventListener("change", () => {
   renderClSidebar();
 });
 
+ukSearchEl.addEventListener("input", () => {
+  renderUkSidebar();
+});
+ukSortEl.addEventListener("change", () => {
+  renderUkSidebar();
+});
+
 tabWhoEl.addEventListener("click", () => switchMode("who"));
 tabCdcEl.addEventListener("click", () => switchMode("cdc"));
 tabBrEl.addEventListener("click", () => switchMode("br"));
 tabClEl.addEventListener("click", () => switchMode("cl"));
+tabUkEl.addEventListener("click", () => switchMode("uk"));
 
 init();

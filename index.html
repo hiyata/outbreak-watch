@@ -221,6 +221,7 @@
           <button class="mode-tab" id="tab-cdc" type="button">United States (CDC)</button>
           <button class="mode-tab" id="tab-br" type="button">Brazil (InfoGripe)</button>
           <button class="mode-tab" id="tab-cl" type="button">Chile (DEIS)</button>
+          <button class="mode-tab" id="tab-uk" type="button">England (UKHSA)</button>
         </span>
       </h2>
       <div id="map-container">
@@ -228,6 +229,7 @@
         <div id="cdc-map-wrap" style="display:none"></div>
         <div id="br-map-wrap" style="display:none"></div>
         <div id="cl-map-wrap" style="display:none"></div>
+        <div id="uk-map-wrap" style="display:none"></div>
       </div>
       <div class="legend" id="legend-who">
         <span class="legend-swatch" style="background:var(--map-land)"></span> no report
@@ -247,6 +249,9 @@
       </div>
       <div class="legend" id="legend-cl" style="display:none">
         Color = weekly all-cause deaths vs. that region's own recent 8-week average. Blue = below baseline, red = above. Not disease-specific — see note below.
+      </div>
+      <div class="legend" id="legend-uk" style="display:none">
+        Color intensity = value relative to that indicator's highest region this week. Select a disease to color the map.
       </div>
     </div>
 
@@ -294,11 +299,22 @@
           <option value="name">Region name (A–Z)</option>
         </select>
       </div>
+      <div class="sidebar-controls" id="controls-uk" style="display:none">
+        <input type="search" id="uk-search" placeholder="Search disease…" />
+        <select id="uk-sort">
+          <option value="value">Highest current value first</option>
+          <option value="trend">Rising fastest first</option>
+          <option value="name">Disease name (A–Z)</option>
+        </select>
+      </div>
       <div class="outbreak-list" id="br-list" style="display:none">
         <p id="br-status">Loading…</p>
       </div>
       <div class="outbreak-list" id="cl-list" style="display:none">
         <p id="cl-status">Loading…</p>
+      </div>
+      <div class="outbreak-list" id="uk-list" style="display:none">
+        <p id="uk-status">Loading…</p>
       </div>
     </div>
   </div>
@@ -336,6 +352,14 @@
     (Chile's Ministry of Health), weekly. The most recent week's death count is almost
     always an undercount — deaths take time to register — so the "vs. baseline" percentage
     for the latest week is not a reliable trend signal; treat it as provisional.
+  </footer>
+  <footer id="footer-uk" style="display:none">
+    England only (UKHSA's remit) — Scotland, Wales, and Northern Ireland have their own
+    public health agencies not covered here. Source: the UKHSA data dashboard API. Each
+    disease shown uses whichever of UKHSA's published indicators for it currently has the
+    most recent data (test positivity, case counts, syndromic rates — the unit varies by
+    disease, shown alongside each figure); a disease with no indicator updated in the last
+    90 days is left out entirely rather than shown with stale numbers.
   </footer>
 </div>
 

@@ -1,6 +1,6 @@
 # Outbreak Watch
 
-A global dashboard of ongoing disease outbreaks, with four modes:
+A global dashboard of ongoing disease outbreaks, with five modes:
 
 - **World (WHO)** — a world map highlighting affected countries, a sidebar
   ranking outbreaks by recency/updates/cases, and a detail view with the
@@ -17,13 +17,20 @@ A global dashboard of ongoing disease outbreaks, with four modes:
   why this is the one exception to the "outbreak" framing) — it's the only
   other Latin American national dataset found that was both structured
   and genuinely current, from Chile's Ministry of Health.
+- **England (UKHSA)** — an England-region choropleth across whichever
+  notifiable diseases currently have live data (COVID-19, flu, RSV, other
+  respiratory viruses, measles, C-difficile, scarlet fever — see below),
+  from the UK Health Security Agency's public data API. England only —
+  Scotland, Wales, and Northern Ireland have separate health agencies not
+  covered here.
 
 Live data lives in [`data/feed.json`](data/feed.json) (WHO),
 [`data/cdc-feed.json`](data/cdc-feed.json) (CDC),
-[`data/br-feed.json`](data/br-feed.json) (Brazil), and
-[`data/cl-feed.json`](data/cl-feed.json) (Chile), regenerated every 6 hours
-by a GitHub Actions workflow and served straight off GitHub Pages — no
-server, no database.
+[`data/br-feed.json`](data/br-feed.json) (Brazil),
+[`data/cl-feed.json`](data/cl-feed.json) (Chile), and
+[`data/uk-feed.json`](data/uk-feed.json) (England), regenerated every 6
+hours by a GitHub Actions workflow and served straight off GitHub Pages —
+no server, no database.
 
 ## How it's different from WHO's own DON page
 
@@ -102,15 +109,29 @@ server, no database.
   [`data/cl-regions-topo.json`](data/cl-regions-topo.json) at build time
   (see the script's comments) since Chile's 16 regions are a small, static
   set not worth a runtime matcher for.
+- [`scripts/fetch-uk.mjs`](scripts/fetch-uk.mjs) pulls England regional
+  data from the [UKHSA data dashboard API](https://ukhsa-dashboard.data.gov.uk/access-our-data)
+  — a real documented REST/JSON API, found via its own developer docs
+  rather than network-sniffing (unlike WHO/ECDC). Its data model is a
+  deep hierarchy (theme → sub-theme → topic → geography → metric), and
+  metrics go stale independently of each other — one Influenza metric
+  turned out to be 2 years stale while another for the same disease was
+  current to the week — so for each curated disease the script discovers
+  all its available metrics, picks whichever has the most recent data
+  point, and drops the disease entirely if even its freshest metric is
+  older than 90 days, rather than surface a years-old number as current.
+  This is why the disease list changes run to run: 10 of the 17 curated
+  diseases had current data as of this build, the rest (Hepatitis B/C,
+  HIV, mpox, iGAS, Lyme) didn't and were left out.
 - [`.github/workflows/update-and-deploy.yml`](.github/workflows/update-and-deploy.yml)
-  runs all four fetch scripts on a cron schedule, commits the refreshed
+  runs all five fetch scripts on a cron schedule, commits the refreshed
   feeds, and deploys the static site to GitHub Pages.
 - [`index.html`](index.html) / [`app.js`](app.js) render the dashboard:
   a D3 choropleth map per mode (topologies vendored locally,
   D3/topojson-client loaded from CDN), a filterable/sortable list, and a
   detail panel — full update timeline in WHO mode, per-state case table in
   CDC mode, per-state SRAG detail in Brazil mode, per-region mortality
-  detail in Chile mode.
+  detail in Chile mode, per-region indicator table in England mode.
 
 ## Running locally
 
@@ -119,6 +140,7 @@ node scripts/fetch-who.mjs       # regenerates data/feed.json
 node scripts/fetch-cdc.mjs       # regenerates data/cdc-feed.json
 node scripts/fetch-infogripe.mjs # regenerates data/br-feed.json
 node scripts/fetch-chile.mjs     # regenerates data/cl-feed.json
+node scripts/fetch-uk.mjs        # regenerates data/uk-feed.json
 python3 -m http.server           # or any static file server, then open index.html
 ```
 
@@ -171,6 +193,30 @@ No dependencies for the fetch script — it uses Node's built-in `fetch`.
     the development environment on every attempt (connection failures,
     not a confirmed block) — inconclusive, worth retrying rather than
     ruled out.
+- **UK (UKHSA)** — added (see above). A second, broader pass also checked
+  Canada, Germany, Singapore, Taiwan, the Netherlands, South Africa, and
+  India:
+  - **Canada** — PHAC's Notifiable Diseases Online exists, but the
+    underlying CNDSS is historically annual-cadence, not weekly; didn't
+    pursue further given UK's build already covers the "real API,
+    current" bar for this round.
+  - **Germany (RKI)** — SurvStat has a real web service, but it's
+    SOAP/WSDL, not REST/JSON — meaningfully more integration friction
+    than every other source in this project. Not attempted this round.
+  - **Singapore** — `data.gov.sg`'s API returned a Cloudflare bot-challenge
+    page on a plain request. Same category as ProMED/ECDC — not pursued.
+  - **Taiwan** — has a real, well-documented Open Data Portal
+    (`data.cdc.gov.tw`) with an API, but the domain was unreachable from
+    the development environment on every attempt (like Australia) —
+    inconclusive, not ruled out, worth retrying.
+  - **Netherlands (RIVM)** — open data found was COVID-specific; didn't
+    confirm a broader current notifiable-disease API in the time spent.
+    Worth another look.
+  - **South Africa (NICD)** — notification is via a mobile/paper form
+    system; no public API found.
+  - **India (IDSP)** — `data.gov.in` hosts IDSP outbreak datasets, but
+    what was found looked like periodic historical dumps, not a live
+    weekly feed; not confirmed either way.
 - **A full Latin America layer (all countries, state/province-level) was
   scoped and largely ruled out.** Unlike the US, there's no single regional
   API as clean as CDC's. What was checked, and why each was or wasn't
@@ -238,6 +284,12 @@ not a specific disease** — it answers "are more people dying than usual
 in this region," not "what disease is spreading," and its most recent
 week is close to always an undercount since deaths take time to register,
 so treat the "vs. baseline" figure as provisional rather than a confirmed
-trend. Either way, this aggregates and links to official sources; it does
-not replace them. For anything clinically or epidemiologically
+trend. **England mode's unit varies by disease** — UKHSA tracks different
+diseases with different indicators (test positivity %, case counts,
+syndromic rates), so a "134" for one disease and a "2" for another are not
+directly comparable; each list item and detail view states its unit.
+England mode also only ever shows diseases with data from the last 90
+days, so the list of diseases present changes over time as some go stale
+and drop out. Either way, this aggregates and links to official sources;
+it does not replace them. For anything clinically or epidemiologically
 load-bearing, follow the outbound link and read the original report.
