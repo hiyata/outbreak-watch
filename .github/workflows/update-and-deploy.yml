@@ -24,22 +24,58 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - run: node scripts/fetch-who.mjs
-      - run: node scripts/fetch-cdc.mjs
-      - run: node scripts/fetch-infogripe.mjs
-      - run: node scripts/fetch-chile.mjs
-      - run: node scripts/fetch-uk.mjs
-      - run: node scripts/fetch-japan.mjs
+      # Each source is independent: continue-on-error means one source
+      # breaking (a site changing format, going down, etc.) can't block
+      # the other five from updating, or block the deploy step below —
+      # previously a single failing step here halted the whole job, which
+      # meant one broken source froze the entire site at its last good
+      # deploy instead of just that one source going stale.
+      - id: who
+        run: node scripts/fetch-who.mjs
+        continue-on-error: true
+      - id: cdc
+        run: node scripts/fetch-cdc.mjs
+        continue-on-error: true
+      - id: br
+        run: node scripts/fetch-infogripe.mjs
+        continue-on-error: true
+      - id: cl
+        run: node scripts/fetch-chile.mjs
+        continue-on-error: true
+      - id: uk
+        run: node scripts/fetch-uk.mjs
+        continue-on-error: true
+      - id: jp
+        run: node scripts/fetch-japan.mjs
+        continue-on-error: true
+      - name: Write status
+        if: always()
+        run: |
+          cat > data/status.json <<EOF
+          {
+            "checked_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "sources": [
+              {"id": "who", "label": "World (WHO)", "outcome": "${{ steps.who.outcome }}"},
+              {"id": "cdc", "label": "United States (CDC)", "outcome": "${{ steps.cdc.outcome }}"},
+              {"id": "br", "label": "Brazil (InfoGripe)", "outcome": "${{ steps.br.outcome }}"},
+              {"id": "cl", "label": "Chile (DEIS)", "outcome": "${{ steps.cl.outcome }}"},
+              {"id": "uk", "label": "England (UKHSA)", "outcome": "${{ steps.uk.outcome }}"},
+              {"id": "jp", "label": "Japan (JIHS)", "outcome": "${{ steps.jp.outcome }}"}
+            ]
+          }
+          EOF
       - name: Commit updated feed
+        if: always()
         run: |
           git config user.name "outbreak-watch-bot"
           git config user.email "actions@github.com"
-          git add data/feed.json data/cdc-feed.json data/br-feed.json data/cl-feed.json data/uk-feed.json data/jp-feed.json
+          git add data/feed.json data/cdc-feed.json data/br-feed.json data/cl-feed.json data/uk-feed.json data/jp-feed.json data/status.json
           git diff --cached --quiet && echo "No changes" || git commit -m "Update feed [skip ci]"
           git push
 
   deploy:
     needs: update-feed
+    if: always()
     runs-on: ubuntu-latest
     environment:
       name: github-pages
