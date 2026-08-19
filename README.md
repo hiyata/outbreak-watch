@@ -91,6 +91,47 @@ start typing), and Open Graph/Twitter Card meta tags plus a proper
 favicon so links shared in Slack/Twitter/iMessage render a real title
 and description instead of a bare URL.
 
+## Performance and reliability
+
+**Performance:** `data/cdc-feed.json` was 2.5MB — the single largest
+asset on the site, real friction on a mobile connection — because
+[`fetch-cdc.mjs`](scripts/fetch-cdc.mjs) was writing a 12-week time
+series *per state per disease* into the output even though the
+frontend only ever charts the national total, never a per-state one.
+Stopped writing the unused per-state series (still computed
+internally, just not serialized) and cut the file to ~375KB, a 6.7x
+reduction, with zero change in what's actually displayed.
+
+**Reliability:** found a real bug by reading the GitHub Actions
+workflow closely rather than assuming it was fine — each of the six
+`fetch-*.mjs` steps ran sequentially with no `continue-on-error`, so
+if *any one* source's site changed format and its script threw, that
+step would halt the entire job. The commit step would never run, and
+since the `deploy` job requires `update-feed` to succeed, **the whole
+site would stop redeploying** — not just that one source going stale,
+every source frozen at its last all-six-succeeded run, silently,
+until someone noticed. Fixed with `continue-on-error: true` on each
+fetch step so they're independent, plus a `data/status.json` written
+every run (`if: always()`) recording which sources' most recent fetch
+attempt actually succeeded. The frontend reads it and shows a visible
+"⚠ update failed, showing last good data" badge on any mode whose
+source is currently failing — the dashboard now tells you when it
+doesn't trust its own data, instead of looking identically fine either
+way.
+
+## SEO
+
+Added `robots.txt`, `sitemap.xml`, and a `schema.org/Dataset`
+[JSON-LD block](index.html) listing all six underlying `data/*.json`
+files as `DataDownload` distributions — the schema Google Dataset
+Search specifically indexes, so this has a real shot at being found as
+an actual data source, not just a page. Deliberately left `license`
+out of that block rather than guess: this aggregates six government/
+international sources with licensing terms that weren't individually
+verified, and asserting a specific license without checking each one
+would be a real (if easy to make) mistake for something search engines
+and downstream tools might take at face value.
+
 ## How it's different from WHO's own DON page
 
 - **Outbreaks, not reports.** WHO publishes one report per update; this

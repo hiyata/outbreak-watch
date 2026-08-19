@@ -17,6 +17,28 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Outbreak Watch" />
 <meta name="twitter:description" content="A live, cross-linked dashboard of disease surveillance data from WHO, CDC, Brazil, Chile, England, and Japan." />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Outbreak Watch",
+  "description": "Aggregated, cross-linked infectious disease surveillance data from six official public health sources: WHO Disease Outbreak News (global), CDC NNDSS (United States), InfoGripe/Fiocruz (Brazil), DEIS/MINSAL (Chile), UKHSA data dashboard (England), and JIHS/IDWR (Japan). Updated every 6 hours.",
+  "url": "https://hiyata.github.io/outbreak-watch/",
+  "keywords": ["infectious disease", "disease surveillance", "outbreak tracking", "epidemiology", "public health", "WHO", "CDC", "NNDSS"],
+  "temporalCoverage": "2020/..",
+  "isAccessibleForFree": true,
+  "creator": { "@type": "Organization", "name": "Outbreak Watch" },
+  "distribution": [
+    { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://hiyata.github.io/outbreak-watch/data/feed.json", "name": "WHO Disease Outbreak News (global)" },
+    { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://hiyata.github.io/outbreak-watch/data/cdc-feed.json", "name": "CDC NNDSS (United States)" },
+    { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://hiyata.github.io/outbreak-watch/data/br-feed.json", "name": "InfoGripe (Brazil)" },
+    { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://hiyata.github.io/outbreak-watch/data/cl-feed.json", "name": "DEIS/MINSAL (Chile)" },
+    { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://hiyata.github.io/outbreak-watch/data/uk-feed.json", "name": "UKHSA data dashboard (England)" },
+    { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://hiyata.github.io/outbreak-watch/data/jp-feed.json", "name": "JIHS/IDWR (Japan)" }
+  ]
+}
+</script>
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
 <style>
@@ -30,6 +52,7 @@
     --accent: #ef8354;
     --accent-dim: #7a4a34;
     --accent-contrast: #1a1310;
+    --warning: #f0a875;
     --map-land: #2a3438;
     --map-hit-1: #6b3d2e;
     --map-hit-2: #9a4f34;
@@ -48,6 +71,7 @@
       --accent: #b8461f;
       --accent-dim: #f2cbb8;
       --accent-contrast: #ffffff;
+      --warning: #b8461f;
       --map-land: #e2e0da;
       --map-hit-1: #f3c9a8;
       --map-hit-2: #e08a55;
@@ -95,6 +119,14 @@
   header.top h1 span { color: var(--accent); }
   header.top .stats { font-size: 0.8rem; color: var(--muted); display: flex; gap: 1rem; }
   header.top .stats b { color: var(--text); font-weight: 600; }
+  .health-warning {
+    color: var(--warning);
+    font-weight: 600;
+    background: color-mix(in srgb, var(--warning) 14%, transparent);
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+    cursor: help;
+  }
 
   .global-search-wrap { position: relative; flex: 1; min-width: 220px; max-width: 420px; }
   .global-search-wrap input[type="search"] {

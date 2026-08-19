@@ -99,6 +99,8 @@ let allUkDiseases = [];
 let selectedUkDisease = null;
 let ukSvgSelection = null;
 
+let dataStatus = null; // data/status.json — which sources' last fetch attempt succeeded
+
 let jpFeed = null;
 let allJpDiseases = [];
 let selectedJpDisease = null;
@@ -1516,36 +1518,56 @@ function switchMode(next) {
   renderHeaderStats();
 }
 
+// The dashboard's data updates on a 6-hour cron with no human watching it
+// run — if a source's site changes format and its fetch script starts
+// failing, the page would otherwise look completely normal while quietly
+// showing data that's stopped updating. This surfaces that failure state
+// instead of hiding it: data/status.json records whether each source's
+// most recent fetch attempt actually succeeded (see the workflow's
+// continue-on-error steps), independent of whether the displayed data
+// itself is still the last good run.
+function sourceHealthBadge(sourceId) {
+  if (!dataStatus) return "";
+  const entry = dataStatus.sources.find((s) => s.id === sourceId);
+  if (!entry || entry.outcome === "success") return "";
+  return `<span class="health-warning" title="The most recent scheduled update for this source failed — showing the last successful data.">⚠ update failed, showing last good data</span>`;
+}
+
 function renderHeaderStats() {
   if (mode === "cdc" && cdcFeed) {
     headerStatsEl.innerHTML = `
       <span><b>${cdcFeed.disease_count}</b> notifiable diseases active</span>
       <span>MMWR week ${cdcFeed.week}, ${cdcFeed.year}</span>
       <span>Updated ${fmtDate(cdcFeed.generated_at)}</span>
+      ${sourceHealthBadge("cdc")}
     `;
   } else if (mode === "br" && brFeed) {
     headerStatsEl.innerHTML = `
       <span><b>${allBrStates.length}</b> states tracked</span>
       <span>Epi. week ${brFeed.epidemiological_week}, ${brFeed.epidemiological_year}</span>
       <span>Updated ${fmtDate(brFeed.generated_at)}</span>
+      ${sourceHealthBadge("br")}
     `;
   } else if (mode === "cl" && clFeed) {
     headerStatsEl.innerHTML = `
       <span><b>${allClRegions.length}</b> regions tracked</span>
       <span>Epi. week ${clFeed.epidemiological_week}, ${clFeed.epidemiological_year}</span>
       <span>Updated ${fmtDate(clFeed.generated_at)}</span>
+      ${sourceHealthBadge("cl")}
     `;
   } else if (mode === "uk" && ukFeed) {
     headerStatsEl.innerHTML = `
       <span><b>${allUkDiseases.length}</b> diseases tracked</span>
       <span>England, 9 regions</span>
       <span>Updated ${fmtDate(ukFeed.generated_at)}</span>
+      ${sourceHealthBadge("uk")}
     `;
   } else if (mode === "jp" && jpFeed) {
     headerStatsEl.innerHTML = `
       <span><b>${allJpDiseases.length}</b> diseases tracked</span>
       <span>Japan, 47 prefectures, week ${jpFeed.week}</span>
       <span>Updated ${fmtDate(jpFeed.generated_at)}</span>
+      ${sourceHealthBadge("jp")}
     `;
   } else if (mode === "who" && allOutbreaks.length) {
     const activeCount = allOutbreaks.filter((o) => o.latest_update >= ACTIVE_CUTOFF).length;
@@ -1553,11 +1575,19 @@ function renderHeaderStats() {
       <span><b>${activeCount}</b> active</span>
       <span><b>${allOutbreaks.length}</b> total tracked</span>
       <span>Updated ${fmtDate(whoGeneratedAt)}</span>
+      ${sourceHealthBadge("who")}
     `;
   }
 }
 
 async function init() {
+  try {
+    const res = await fetch("data/status.json", { cache: "no-store" });
+    if (res.ok) dataStatus = await res.json();
+  } catch {
+    // status.json may not exist yet (e.g. local dev before any deploy) — silently skip
+  }
+
   try {
     const res = await fetch("data/feed.json", { cache: "no-store" });
     const feed = await res.json();

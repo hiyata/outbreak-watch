@@ -75,13 +75,15 @@ async function main() {
 
   const diseaseList = [...diseases.entries()]
     .map(([disease, byState]) => {
+      // Per-state weekly series is only needed transiently to compute the
+      // national trend below — the frontend only ever charts the national
+      // series, never a per-state one, so it isn't included in the output
+      // (it alone made this file several MB for no reason anyone read).
       const states = [...byState.values()]
         .map((s) => {
-          const series = [...s.series.entries()]
-            .sort((a, b) => a[0] - b[0])
-            .map(([wk, value]) => ({ week: wk, value }));
-          const currentWeek = series.length ? series[series.length - 1].value : 0;
-          return { id: s.id, name: s.name, current_week: currentWeek, ytd: s.ytd, series };
+          const series = [...s.series.entries()].sort((a, b) => a[0] - b[0]);
+          const currentWeek = series.length ? series[series.length - 1][1] : 0;
+          return { id: s.id, name: s.name, current_week: currentWeek, ytd: s.ytd, weeklyById: s.series };
         })
         .filter((s) => s.current_week > 0 || s.ytd > 0);
 
@@ -89,7 +91,7 @@ async function main() {
       const totalYtd = states.reduce((sum, s) => sum + s.ytd, 0);
       const nationalSeries = [];
       for (let wk = minWeek; wk <= week; wk++) {
-        const total = states.reduce((sum, s) => sum + (s.series.find((p) => p.week === wk)?.value ?? 0), 0);
+        const total = states.reduce((sum, s) => sum + (s.weeklyById.get(wk) ?? 0), 0);
         nationalSeries.push({ week: wk, value: total });
       }
 
@@ -99,7 +101,9 @@ async function main() {
         total_ytd: totalYtd,
         states_reporting: states.length,
         national_series: nationalSeries,
-        states: states.sort((a, b) => b.current_week - a.current_week),
+        states: states
+          .map(({ id, name, current_week, ytd }) => ({ id, name, current_week, ytd }))
+          .sort((a, b) => b.current_week - a.current_week),
       };
     })
     .filter((d) => d.total_ytd > 0) // drop diseases with zero activity all year
