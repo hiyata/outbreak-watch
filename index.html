@@ -7,6 +7,7 @@
 <meta name="description" content="A live, cross-linked dashboard of disease surveillance data from WHO, CDC, Brazil, Chile, England, and Japan — real structured data, not guesses, with trend charts and unified search across all six sources." />
 <meta name="theme-color" content="#161d20" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦠</text></svg>" />
+<link rel="alternate" type="application/rss+xml" title="Outbreak Watch — WHO Disease Outbreak News" href="https://hiyata.github.io/outbreak-watch/feed.xml" />
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Outbreak Watch" />
@@ -373,6 +374,10 @@
     margin: 0 auto;
   }
   footer a { color: inherit; }
+  .site-footer { display: flex; gap: 0.6rem; align-items: center; padding-top: 0; margin-top: -0.5rem; }
+  .site-footer a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  .site-footer a:hover { text-decoration: underline; }
+  .site-footer span { color: var(--border); }
 </style>
 </head>
 <body>
@@ -560,6 +565,13 @@
     case counts are higher. "All-case" diseases (measles, TB, syphilis, dengue, and other
     nationally notifiable conditions) are comprehensive counts. Figures are provisional
     and may be revised in JIHS's later confirmed annual reports.
+  </footer>
+  <footer class="site-footer">
+    <a href="about.html">About &amp; methodology</a>
+    <span aria-hidden="true">·</span>
+    <a href="feed.xml">RSS feed</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://github.com/hiyata/outbreak-watch" target="_blank" rel="noopener">Source on GitHub</a>
   </footer>
 </div>
 

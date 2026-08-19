@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About &amp; Methodology — Outbreak Watch</title>
+<meta name="description" content="What Outbreak Watch is, how its six data sources are fetched and updated, and the specific limitations of each one — case-count extraction, provisional/revised figures, cross-source matching, and trend classification." />
+<meta name="theme-color" content="#161d20" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦠</text></svg>" />
+<link rel="canonical" href="https://hiyata.github.io/outbreak-watch/about.html" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="About &amp; Methodology — Outbreak Watch" />
+<meta property="og:description" content="How Outbreak Watch fetches, aggregates, and classifies disease surveillance data from six official public health sources, and the specific limitations of each." />
+<meta property="og:site_name" content="Outbreak Watch" />
+<meta property="og:url" content="https://hiyata.github.io/outbreak-watch/about.html" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="About &amp; Methodology — Outbreak Watch" />
+<meta name="twitter:description" content="How Outbreak Watch fetches, aggregates, and classifies disease surveillance data from six official public health sources." />
+
+<link rel="alternate" type="application/rss+xml" title="Outbreak Watch — WHO Disease Outbreak News" href="https://hiyata.github.io/outbreak-watch/feed.xml" />
+
+<style>
+  :root {
+    --bg: #0f1416;
+    --panel: #161d20;
+    --panel-2: #1c2427;
+    --border: #2b3438;
+    --text: #e8ecec;
+    --muted: #8b9699;
+    --accent: #ef8354;
+    --accent-contrast: #1a1310;
+    --ok: #6fae8f;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f4f4f2;
+      --panel: #ffffff;
+      --panel-2: #fafaf8;
+      --border: #e1e0dc;
+      --text: #1c1c1a;
+      --muted: #6b6a66;
+      --accent: #b8461f;
+      --accent-contrast: #ffffff;
+      --ok: #3f7a5c;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  header.top {
+    padding: 1.1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  header.top h1 { font-size: 1.15rem; margin: 0; letter-spacing: -0.01em; }
+  header.top h1 a { color: inherit; text-decoration: none; }
+  header.top h1 span { color: var(--accent); }
+  header.top nav a { color: var(--accent); font-weight: 600; text-decoration: none; font-size: 0.85rem; }
+  header.top nav a:hover { text-decoration: underline; }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+    margin: 2.2rem 0 0.8rem;
+    padding-top: 0.4rem;
+    border-top: 1px solid var(--border);
+  }
+  h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0.5rem; }
+  h3 { font-size: 1rem; margin: 1.4rem 0 0.4rem; }
+  p { margin: 0.6rem 0; color: var(--text); }
+  p.lead { font-size: 1.05rem; color: var(--muted); }
+  ul { padding-left: 1.2rem; }
+  li { margin: 0.4rem 0; }
+  code {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.05rem 0.35rem;
+    font-size: 0.88em;
+  }
+  a { color: var(--accent); }
+  .source-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin: 0.9rem 0;
+  }
+  .source-card h3 { margin-top: 0; }
+  .source-card .meta { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .caveat {
+    font-size: 0.85rem;
+    color: var(--muted);
+    border-left: 3px solid var(--ok);
+    padding: 0.1rem 0 0.1rem 0.8rem;
+    margin-top: 0.5rem;
+  }
+  .back-link { font-size: 0.9rem; }
+  footer.page-footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 3rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  footer.page-footer a { color: inherit; }
+</style>
+</head>
+<body>
+<header class="top">
+  <h1><a href="index.html">Outbreak<span>Watch</span></a></h1>
+  <nav><a href="index.html">&larr; Back to dashboard</a></nav>
+</header>
+
+<main>
+  <p class="lead">Outbreak Watch aggregates infectious-disease and mortality surveillance
+  data from six official public health sources into one cross-linked, searchable
+  dashboard. This page documents how it's built, how often it updates, and — source
+  by source — exactly what each number does and doesn't mean.</p>
+
+  <h2>What this is</h2>
+  <p>A static site with no backend: a GitHub Actions workflow fetches all six sources
+  every 6 hours, writes the results as plain JSON files, and GitHub Pages serves them
+  directly. There is no database, no server-side code, and no manual curation of the
+  data itself — everything shown is pulled straight from each source's own API or
+  published file, then reshaped for display.</p>
+  <p>The <a href="https://github.com/hiyata/outbreak-watch">source code is public</a>,
+  including every fetch script, so any figure on this site can be traced back to
+  exactly how it was computed.</p>
+
+  <h2>Data sources</h2>
+
+  <div class="source-card">
+    <h3>World (WHO)</h3>
+    <div class="meta">WHO Disease Outbreak News · global · event-driven, not scheduled</div>
+    <p>Groups individual WHO Disease Outbreak News (DON) reports into outbreaks, using
+    WHO's own event grouping where present. Case and death counts, and country
+    associations, are extracted automatically from each report's free text.</p>
+    <div class="caveat">Extraction is regex/keyword-based, not a WHO-provided structured
+    field — figures may be incomplete or lag the source text. Always verify against the
+    linked DON before using clinically or in publication.</div>
+  </div>
+
+  <div class="source-card">
+    <h3>United States (CDC)</h3>
+    <div class="meta">CDC NNDSS · weekly, all 50 states + territories</div>
+    <p>State-level counts are the latest provisional week from the National Notifiable
+    Diseases Surveillance System, fetched from CDC's open data platform.</p>
+    <div class="caveat">The most recent week is provisional and will revise upward as
+    late reports arrive. A blank state for a given disease means it isn't nationally
+    notifiable there, or data was unavailable that week — not that it had zero cases.</div>
+  </div>
+
+  <div class="source-card">
+    <h3>Brazil (InfoGripe)</h3>
+    <div class="meta">Fiocruz (PROCC) / FGV (EMAp) / Ministry of Health · weekly, all 27 states</div>
+    <p>Covers Severe Acute Respiratory Syndrome (SRAG) only — the condition InfoGripe
+    tracks — not a general outbreak feed. InfoGripe's own short/long-term trend
+    classification (labeled "InfoGripe" in the state detail view) is shown alongside
+    Outbreak Watch's independently computed one, so the two can be compared directly.</p>
+    <div class="caveat">The most recent epidemiological week is provisional and will
+    revise as more reports arrive. Risk levels ("intensidade") are Fiocruz's own
+    population-adjusted classification, not raw case counts.</div>
+  </div>
+
+  <div class="source-card">
+    <h3>Chile (DEIS/MINSAL)</h3>
+    <div class="meta">Chile Ministry of Health · weekly, all 16 regions</div>
+    <p><strong>This mode shows all-cause mortality, not a specific disease</strong> —
+    it was the only Latin American national dataset found (beyond Brazil) that was both
+    structured and genuinely current. Chile's actual notifiable-disease surveillance
+    (ENO) is roughly a year stale due to anonymization review.</p>
+    <div class="caveat">The most recent week's death count is almost always an
+    undercount — deaths take time to register — so the "vs. baseline" percentage and
+    trend classification for the latest week are not reliable signals; treat them as
+    provisional.</div>
+  </div>
+
+  <div class="source-card">
+    <h3>England (UKHSA)</h3>
+    <div class="meta">UKHSA data dashboard API · weekly, 9 English regions</div>
+    <p>England only — Scotland, Wales, and Northern Ireland run their own public health
+    agencies not covered here. Each disease uses whichever of UKHSA's published
+    indicators for it currently has the most recent data (test positivity, case counts,
+    syndromic rates).</p>
+    <div class="caveat">The unit varies disease to disease and is always shown alongside
+    the figure — never compare raw numbers across two diseases without checking the
+    unit first. A disease with no indicator updated in the last 90 days is left out
+    entirely rather than shown with stale numbers.</div>
+  </div>
+
+  <div class="source-card">
+    <h3>Japan (JIHS/IDWR)</h3>
+    <div class="meta">Japan Institute for Health Security (formerly NIID) · weekly, all 47 prefectures</div>
+    <p>Two kinds of diseases are mixed together here: "sentinel" diseases (common
+    illnesses like flu, RSV, hand-foot-mouth disease) are counts from a fixed network
+    of reporting clinics, not a national total; "all-case" diseases (measles, TB,
+    syphilis, dengue, and other nationally notifiable conditions) are comprehensive
+    counts.</p>
+    <div class="caveat">Sentinel-site counts are useful for tracking trend direction,
+    not absolute national burden — real case counts are higher. Figures are
+    provisional and may be revised in JIHS's later confirmed annual reports.</div>
+  </div>
+
+  <h2>Cross-source linking</h2>
+  <p>A WHO outbreak's detail view links to matching local data in the other five
+  sources when the outbreak's country and disease overlap with what that source
+  tracks; local-mode detail views link back to WHO the same way.</p>
+  <p>Matching is a best-effort keyword overlap on free-text disease names — there is no
+  shared disease taxonomy across six independent sources published in five languages —
+  so it's deliberately conservative: a missed link is preferred over a wrong one.</p>
+
+  <h2>Growth rate &amp; trend classification</h2>
+  <p>Every entity (a WHO outbreak, a CDC disease's national total, a Brazilian/Chilean/
+  English region, a Japanese disease) gets two related but distinct numbers:</p>
+  <ul>
+    <li><strong>Percent change</strong> — the literal difference between the latest and
+    previous reporting period.</li>
+    <li><strong>Trend (rising / falling / stable)</strong> — fit by linear regression
+    over the trailing few periods rather than a two-point comparison, so a single noisy
+    week doesn't flip the label.</li>
+  </ul>
+  <p>These two numbers are deliberately shown with different framing ("vs previous
+  report" vs. "recent trajectory") because they can legitimately disagree: a big prior
+  spike can leave a series classified "rising" even the week immediately after a real
+  decline, because it's still elevated relative to the rest of the trailing window.
+  That's correct behavior, not a bug — but it would look contradictory if the two
+  numbers weren't labeled as describing different timeframes.</p>
+  <div class="caveat">This is a descriptive read of each series, not an epidemiological
+  model. There is no effective reproduction number (R<sub>t</sub>), no serial interval,
+  and no forecast — computing a defensible R<sub>t</sub> requires a disease-specific
+  serial interval, which isn't something this project sources or claims to have.</div>
+  <p>Implementation: <a href="https://github.com/hiyata/outbreak-watch/blob/main/scripts/lib/trend.mjs">scripts/lib/trend.mjs</a>.</p>
+
+  <h2>Update cadence &amp; reliability</h2>
+  <p>All six sources are re-fetched every 6 hours by a GitHub Actions workflow. Each
+  source's fetch step runs independently — if one source's upstream API is down or
+  changes shape, the other five still update and deploy normally, and a
+  <code>data/status.json</code> health file records which sources last succeeded or
+  failed. The dashboard shows a warning badge when a source hasn't updated
+  successfully.</p>
+
+  <h2>Follow updates</h2>
+  <p>New and updated WHO Disease Outbreak News reports are available as an
+  <a href="feed.xml">RSS feed</a> — subscribe in any feed reader to get them without
+  revisiting the site. The other five sources are recurring weekly counts rather than
+  dated articles, so they aren't included in the feed to avoid republishing the same
+  number every cycle.</p>
+
+  <h2>Limitations &amp; scope</h2>
+  <p>This is a hobbyist/educational aggregation project, not a public health authority.
+  It reformats and cross-links data that is already public, but every figure should be
+  verified against its original source — linked throughout the dashboard — before being
+  used clinically, in reporting, or in research. See the
+  <a href="https://github.com/hiyata/outbreak-watch#readme">README</a> for the full,
+  ongoing list of what's been tried, built, and explicitly ruled out (additional
+  countries, additional metrics, and why).</p>
+
+  <p class="back-link"><a href="index.html">&larr; Back to the dashboard</a></p>
+</main>
+
+<footer class="page-footer">
+  Outbreak Watch is open source. <a href="https://github.com/hiyata/outbreak-watch">Source on GitHub</a> ·
+  <a href="feed.xml">RSS feed</a>
+</footer>
+</body>
+</html>

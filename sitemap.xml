@@ -5,4 +5,9 @@
     <changefreq>hourly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://hiyata.github.io/outbreak-watch/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>

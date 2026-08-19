@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Outbreak Watch — WHO Disease Outbreak News</title>
+    <link>https://hiyata.github.io/outbreak-watch/</link>
+    <atom:link href="https://hiyata.github.io/outbreak-watch/feed.xml" rel="self" type="application/rss+xml" />
+    <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated every 6 hours.</description>
+    <language>en</language>
+    <lastBuildDate>Wed, 19 Aug 2026 19:43:26 GMT</lastBuildDate>
+    <generator>outbreak-watch scripts/build-rss.mjs</generator>
+    <item>
+      <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo</title>
+      <link>https://www.who.int/2026-DON615</link>
+      <guid isPermaLink="false">3a950a6c-8e9a-4d58-b8db-6840bd02db92</guid>
+      <pubDate>Fri, 14 Aug 2026 15:54:20 GMT</pubDate>
+      <category>Ebola disease caused by Bundibugyo virus</category>
+      <description>Dem. Rep. Congo, Uganda — The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo is in a phase of intense transmission. It is the largest Ebola outbreak ever reported in the country and expanding faster than any previous Ebola outbreak. The epidemic is increasingly characterized by sustained transmission within… (4,665 cases, 2,184 deaths reported as of this update)</description>
+    </item>
+    <item>
+      <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo</title>
+      <link>https://www.who.int/2026-DON614</link>
+      <guid isPermaLink="false">19668b4d-5e4f-45bf-94d5-4e2ebcb5a67d</guid>
+      <pubDate>Sat, 01 Aug 2026 10:46:53 GMT</pubDate>
+      <category>Ebola disease caused by Bundibugyo virus</category>
+      <description>Dem. Rep. Congo, Uganda — The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo is intensifying, with sustained transmission and continued increases in reported cases and deaths. Initially confined to the Mongbwalu health zone in Ituri Province, over the last two months, the outbreak has expanded to five provinces… (3,605 cases, 1,587 deaths reported as of this update)</description>
+    </item>
+    <item>
+      <title>Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo &amp; Uganda</title>
+      <link>https://www.who.int/2026-DON613</link>
+      <guid isPermaLink="false">a06665c4-2ff2-411b-8767-25e299dac63f</guid>
+      <pubDate>Fri, 17 Jul 2026 16:51:09 GMT</pubDate>
+      <category>Ebola disease caused by Bundibugyo virus</category>
+      <description>Dem. Rep. Congo, Uganda — The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo remains active, with sustained transmission driving increases in reported cases and deaths. As of 15 July 2026, a cumulative total of 2124 confirmed cases, including 828 deaths, have been reported from the Democratic Republic of the… (2,124 cases, 828 deaths reported as of this update)</description>
+    </item>
+    <item>
+      <title>Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo &amp; Uganda</title>
+      <link>https://www.who.int/2026-DON612</link>
+      <guid isPermaLink="false">608d728d-b078-4614-9ccf-682229ebfee8</guid>
+      <pubDate>Fri, 03 Jul 2026 15:31:57 GMT</pubDate>
+      <category>Ebola disease caused by Bundibugyo virus</category>
+      <description>Dem. Rep. Congo, Uganda — The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo continues to evolve rapidly, with sustained transmission and increasing numbers of reported cases. As of 1 July, a cumulative of 1460 confirmed cases, including 452 deaths, have been reported from the Democratic Republic of the Congo.… (1,460 cases, 452 deaths reported as of this update)</description>
+    </item>
+    <item>
+      <title>Hantavirus outbreak linked to cruise ship travel, Multi-locations</title>
+      <link>https://www.who.int/2026-DON611</link>
+      <guid isPermaLink="false">b4022b8d-0ad5-4022-b1ac-1d6661578e74</guid>
+      <pubDate>Thu, 02 Jul 2026 18:27:48 GMT</pubDate>
+      <category>Hantavirus</category>
+      <description>Multi-country / global — This is the fifth Disease Outbreak News posting on the Andes hantavirus (ANDV) outbreak linked to the cruise ship M/V Hondius. The outbreak identification followed the notification to the World Health Organization (WHO) on 2 May 2026 of severe acute respiratory illness cases onboard. Since the previous Disease…</description>
+    </item>
+    <item>
+      <title>Nipah virus disease - India</title>
+      <link>https://www.who.int/2026-DON609</link>
+      <guid isPermaLink="false">ff0edd89-ede9-4566-8196-6fd2e302637c</guid>
+      <pubDate>Thu, 25 Jun 2026 15:43:28 GMT</pubDate>
+      <category>Nipah virus disease - India</category>
+      <description>India — On 11 June 2026, the Kerala State Health Department confirmed one laboratory confirmed case of Nipah virus (NiV) infection in Kozhikode district, Kerala State, India. The case is an adult male who developed symptoms on 30 May 2026 and was hospitalized on 10 June 2026. He presented with neurological manifestations and…</description>
+    </item>
+    <item>
+      <title>Yellow fever - Global</title>
+      <link>https://www.who.int/2026-DON610</link>
+      <guid isPermaLink="false">10a3727f-44e6-48dd-9655-1ecd02e8e6fd</guid>
+      <pubDate>Wed, 24 Jun 2026 15:23:22 GMT</pubDate>
+      <category>Yellow fever - Global</category>
+      <description>Multi-country / global — Yellow fever is a viral disease found in areas of Africa and the Americas, spread by infected mosquitoes. Following an increase of cases in the Americas in 2025, transmission activity remained into 2026. From 1 January to 26 May 2026, six countries reported a total of 79 human infections along with multiple…</description>
+    </item>
+    <item>
+      <title>Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo &amp; Uganda</title>
+      <link>https://www.who.int/2026-DON608</link>
+      <guid isPermaLink="false">fb4b241b-9a51-4098-ac84-3a6b74469487</guid>
+      <pubDate>Fri, 19 Jun 2026 12:51:03 GMT</pubDate>
+      <category>Ebola disease caused by Bundibugyo virus</category>
+      <description>Dem. Rep. Congo, Uganda — The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo continues to evolve rapidly, with sustained transmission and increasing numbers of reported cases. As of 17 June, a cumulative of 896 confirmed cases, including 232 deaths, have been reported from the Democratic Republic of the Congo.… (896 cases, 232 deaths reported as of this update)</description>
+    </item>
+    <item>
+      <title>Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo &amp; Uganda</title>
+      <link>https://www.who.int/2026-DON607</link>
+      <guid isPermaLink="false">375711fd-e6fe-4251-8cd5-ebc3ef02d9fe</guid>
+      <pubDate>Sat, 13 Jun 2026 08:15:15 GMT</pubDate>
+      <category>Ebola disease caused by Bundibugyo virus</category>
+      <description>Dem. Rep. Congo, Uganda — The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo continues to evolve rapidly, with increasing case numbers and geographic spread. As of 10 June, a cumulative of 676 confirmed cases, including 136 deaths, have been reported from the Democratic Republic of the Congo. As of 11 June,… (676 cases, 136 deaths reported as of this update)</description>
+    </item>
+    <item>
+      <title>Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo &amp; Uganda</title>
+      <link>https://www.who.int/2026-DON606</link>
+      <guid isPermaLink="false">3325c520-37a9-4d24-8b30-18ebe5bf202d</guid>
+      <pubDate>Mon, 08 Jun 2026 13:12:23 GMT</pubDate>
+      <category>Ebola disease caused by Bundibugyo virus</category>
+      <description>Dem. Rep. Congo, Uganda — The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo continues to evolve rapidly, with increasing case numbers, geographic spread, and cross-border transmission to Uganda. As of 6 June, a total of 515 confirmed cases, with 91 deaths among these confirmed cases, have been reported from… (515 cases, 91 deaths reported as of this update)</description>
+    </item>
+    <item>
+      <title>Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo &amp; Uganda</title>
+      <link>https://www.who.int/2026-DON605</link>
+      <guid isPermaLink="false">ae3c204f-4b7b-412a-9ef7-1450a5073c23</guid>
+      <pubDate>Fri, 29 May 2026 15:43:01 GMT</pubDate>
+      <category>Ebola disease caused by Bundibugyo virus</category>
+      <description>Dem. Rep. Congo, Uganda — The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo and Uganda continues to evolve rapidly, with increasing case numbers, geographic spread, and ongoing cross-border transmission. As of 27 May, a total of 906 suspected cases and 223 deaths among suspected cases have been reported in the… (125 cases, 17 deaths reported as of this update)</description>
+    </item>
+    <item>
+      <title>Hantavirus outbreak linked to cruise ship travel, Multi-locations</title>
+      <link>https://www.who.int/2026-DON604</link>
+      <guid isPermaLink="false">210abff3-3710-483b-b003-ec87933f1f4c</guid>
+      <pubDate>Thu, 28 May 2026 14:43:00 GMT</pubDate>
+      <category>Hantavirus</category>
+      <description>Multi-country / global — This is the fourth Disease Outbreak News report on the Andes hantavirus outbreak linked to cruise ship travel, following the notification to the World Health Organization (WHO) on 2 May 2026 of severe respiratory illness cases aboard M/V Hondius, a cruise ship. Since the last DON was published on 13 May, three…</description>
+    </item>
+    <item>
+      <title>Ebola disease caused by Bundibugyo virus – Democratic Republic of the Congo</title>
+      <link>https://www.who.int/2026-DON603</link>
+      <guid isPermaLink="false">f2a48407-d580-4988-94d7-ccc683f54cb0</guid>
+      <pubDate>Fri, 22 May 2026 21:06:24 GMT</pubDate>
+      <category>Ebola disease caused by Bundibugyo virus</category>
+      <description>Dem. Rep. Congo, Uganda — On 15 May 2026, the Ministry of Public Health, Hygiene and Social Welfare, Democratic Republic of the Congo (DRC), and the Ministry of Health of Uganda declared an outbreak of Ebola Disease following the confirmation of Bundibugyo virus disease (BVD) in both countries. On 17 May 2026, the World Health Organization…</description>
+    </item>
+    <item>
+      <title>Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo &amp; Uganda</title>
+      <link>https://www.who.int/2026-DON602</link>
+      <guid isPermaLink="false">dfc49ad5-c3b6-41ca-a2d6-f51092ff8b33</guid>
+      <pubDate>Sun, 17 May 2026 09:35:15 GMT</pubDate>
+      <category>Ebola disease caused by Bundibugyo virus</category>
+      <description>Dem. Rep. Congo, Uganda — On 5 May 2026, the World Health Organization (WHO) was alerted of a high-mortality outbreak of unknown illness in Mongbwalu Health Zone, Ituri Province, Democratic Republic of the Congo (DRC), including deaths among health workers. On 14 May 2026, the Institut national de recherche biomédicale (INRB) Kinshasa analyzed…</description>
+    </item>
+    <item>
+      <title>Hantavirus cluster linked to cruise ship travel, Multi-country</title>
+      <link>https://www.who.int/2026-DON601</link>
+      <guid isPermaLink="false">45441730-c794-4004-a197-e7cc49df2f55</guid>
+      <pubDate>Wed, 13 May 2026 19:30:36 GMT</pubDate>
+      <category>Hantavirus</category>
+      <description>Multi-country / global — This is the third Disease Outbreak News report on the hantavirus cluster, following the notification to the World Health Organization (WHO) on 2 May 2026 of severe respiratory illness cases aboard MV Hondius, a cruise ship. Since the last DON was published on 8 May, two additional confirmed cases were reported from…</description>
+    </item>
+    <item>
+      <title>Hantavirus cluster linked to cruise ship travel, Multi-country</title>
+      <link>https://www.who.int/2026-DON600</link>
+      <guid isPermaLink="false">f6d5a10e-d6a4-4156-a203-4845ea2f878a</guid>
+      <pubDate>Fri, 08 May 2026 21:31:10 GMT</pubDate>
+      <category>Hantavirus</category>
+      <description>Multi-country / global — On 2 May 2026, a cluster of passengers with severe respiratory illness aboard a cruise ship was reported to the World Health Organization (WHO). At that time, according to the ship operator, 147 passengers and crew were onboard, and 34 passengers and crew had previously disembarked. Since the last Disease Outbreak…</description>
+    </item>
+    <item>
+      <title>Hantavirus cluster linked to cruise ship travel, Multi-country</title>
+      <link>https://www.who.int/2026-DON599</link>
+      <guid isPermaLink="false">daf6528b-00a6-41f6-9b3c-7122cc3f6cac</guid>
+      <pubDate>Mon, 04 May 2026 21:48:22 GMT</pubDate>
+      <category>Hantavirus</category>
+      <description>Multi-country / global — On 2 May 2026, a cluster of passengers with severe respiratory illness aboard a cruise ship was reported to the World Health Organization. The ship is carrying 147 passengers and crew. As of 4 May 2026, seven cases (two laboratory confirmed cases of hantavirus and five suspected cases) have been identified, including…</description>
+    </item>
+    <item>
+      <title>Measles - Bangladesh</title>
+      <link>https://www.who.int/2026-DON598</link>
+      <guid isPermaLink="false">a0884e79-da88-4907-ae66-c73b4b4a7636</guid>
+      <pubDate>Thu, 23 Apr 2026 13:14:13 GMT</pubDate>
+      <category>Measles</category>
+      <description>Bangladesh — On 4 April 2026, the National International Health Regulations (IHR) Focal Point for Bangladesh notified WHO of a nationwide increase in measles cases, geographically affecting 58 out of 64 districts across all eight divisions in Bangladesh. A total of 19 161 suspected measles cases and 2897 laboratory-confirmed…</description>
+    </item>
+    <item>
+      <title>Avian Influenza A(H9N2) - Italy</title>
+      <link>https://www.who.int/2026-DON597</link>
+      <guid isPermaLink="false">a4502f7e-b680-4414-ab38-bce40aa09246</guid>
+      <pubDate>Fri, 10 Apr 2026 14:03:01 GMT</pubDate>
+      <category>Avian Influenza A(H9N2)</category>
+      <description>Italy — On 21 March 2026, the National International Health Regulations (IHR) Focal Point for Italy notified the World Health Organization (WHO) of the identification of a human case of avian influenza A(H9) in an adult male returning from Senegal. Next generation sequencing confirmed Influenza A(H9N2). According to…</description>
+    </item>
+    <item>
+      <title>International food safety event: Infant formula and products containing arachidonic acid oil contaminated with cereulide toxin - Multi-country</title>
+      <link>https://www.who.int/2026-DON596</link>
+      <guid isPermaLink="false">f76a3c74-7987-43d9-9072-cc1d9230a4cf</guid>
+      <pubDate>Fri, 13 Mar 2026 16:05:10 GMT</pubDate>
+      <category>International food safety event: Infant formula and products containing arachidonic acid oil contaminated with cereulide toxin - Multi-country</category>
+      <description>Multi-country / global — Multi-country recalls of infant formula and other products have been initiated after cereulide toxin, was detected in batches of multiple internationally distributed brands. Investigations have identified arachidonic acid (ARA) oil, used as an ingredient in the implicated products, as the source of contamination.…</description>
+    </item>
+    <item>
+      <title>Mpox: recombinant virus with genomic elements of clades Ib and IIb – Global situation</title>
+      <link>https://www.who.int/2026-DON595</link>
+      <guid isPermaLink="false">52a263de-c5a6-4ba1-b710-dfb5fe46e025</guid>
+      <pubDate>Sat, 14 Feb 2026 14:07:30 GMT</pubDate>
+      <category>Mpox: recombinant virus with genomic elements of clades Ib and IIb</category>
+      <description>Multi-country / global — Recombination of monkeypox virus (MPXV) strains has been documented in recent months, with two cases of a recombinant strain comprising clade Ib and IIb MPXV reported. Recombination is a known natural process that can occur when two related viruses infecting the same individual exchange genetic material, producing a…</description>
+    </item>
+    <item>
+      <title>Nipah virus infection - Bangladesh</title>
+      <link>https://www.who.int/2026-DON594</link>
+      <guid isPermaLink="false">d6231257-b960-4355-b365-e527415c41e3</guid>
+      <pubDate>Fri, 06 Feb 2026 21:43:10 GMT</pubDate>
+      <category>Nipah virus infection</category>
+      <description>Bangladesh — On 3 February 2026, the International Health Regulations National Focal Point (IHR NFP) for Bangladesh notified WHO of one confirmed case of Nipah virus (NiV) infection in Rajshahi Division. The patient developed fever and neurological symptoms on 21 January. Nipah virus infection was laboratory-confirmed on 29…</description>
+    </item>
+    <item>
+      <title>Nipah virus disease - India</title>
+      <link>https://www.who.int/2026-DON593</link>
+      <guid isPermaLink="false">d010ef65-ce68-4180-a614-c67d6f2fcbbb</guid>
+      <pubDate>Fri, 30 Jan 2026 16:32:57 GMT</pubDate>
+      <category>Nipah virus infection</category>
+      <description>India — On 26 January 2026, the National IHR Focal Point for India notified WHO of two laboratory‑confirmed cases of Nipah virus (NiV) infection in West Bengal State. Both are healthcare workers at the same private hospital in Barasat (North 24 Parganas district). NiV infection was confirmed at the National Institute of…</description>
+    </item>
+    <item>
+      <title>Marburg virus disease- Ethiopia</title>
+      <link>https://www.who.int/2026-DON592</link>
+      <guid isPermaLink="false">555e13f3-7aa5-445b-83eb-36e2f050a55c</guid>
+      <pubDate>Mon, 26 Jan 2026 17:02:50 GMT</pubDate>
+      <category>Marburg virus disease</category>
+      <description>Ethiopia — On 26 January 2026, the Ministry of Health of Ethiopia declared the end of the Marburg virus disease (MVD) outbreak. This declaration came after two consecutive incubation periods (a total of 42 days) since the last person confirmed with MVD died and was given a safe and dignified burial, in accordance with WHO…</description>
+    </item>
+    <item>
+      <title>Middle East respiratory syndrome coronavirus - Global update</title>
+      <link>https://www.who.int/2025-DON591</link>
+      <guid isPermaLink="false">0fc174d2-cdc3-4d5d-afed-4df595977a02</guid>
+      <pubDate>Wed, 24 Dec 2025 09:19:23 GMT</pubDate>
+      <category>Middle East respiratory syndrome coronavirus (MERS-CoV)</category>
+      <description>Multi-country / global — Since the beginning of 2025 and as of 21 December 2025, a total of 19 cases of Middle East respiratory syndrome coronavirus (MERS- CoV), including four deaths have been reported to WHO globally. Of the 19 cases, 17 were reported by the Kingdom of Saudi Arabia (KSA), and two were reported from France. Between 4 June…</description>
+    </item>
+    <item>
+      <title>Seasonal influenza - Global situation</title>
+      <link>https://www.who.int/2025-DON586</link>
+      <guid isPermaLink="false">ab2dc9ee-d61e-4f41-999d-5b1a48151352</guid>
+      <pubDate>Wed, 10 Dec 2025 19:54:36 GMT</pubDate>
+      <category>Seasonal influenza - Global situation</category>
+      <description>Multi-country / global — Seasonal influenza (‘the flu’) is an acute respiratory infection caused by influenza viruses that circulate globally and year-round. It can cause illness ranging from mild to severe, sometimes resulting in hospitalization or death. Seasonal influenza activity has increased globally in recent months, with an increased…</description>
+    </item>
+    <item>
+      <title>Broader transmission of mpox due to clade Ib MPXV – Global situation</title>
+      <link>https://www.who.int/2025-DON587</link>
+      <guid isPermaLink="false">f15969ab-d67f-4380-b32b-98b301dcb5ad</guid>
+      <pubDate>Fri, 05 Dec 2025 17:52:36 GMT</pubDate>
+      <category>Mpox (monkeypox)- Democratic Republic of the Congo</category>
+      <description>Multi-country / global — The purpose of this report is to raise awareness about the local transmission of clade Ib monkeypox virus (MPXV) among men who have sex with men (MSM) in countries previously unaffected or to date reporting only cases linked to travel. This report summarizes recent epidemiological developments, response activities,…</description>
+    </item>
+    <item>
+      <title>Avian Influenza A(H5N5)- United States of America</title>
+      <link>https://www.who.int/2025-DON590</link>
+      <guid isPermaLink="false">92731816-3909-4b16-bd67-3bb7f8220ae9</guid>
+      <pubDate>Fri, 05 Dec 2025 17:06:31 GMT</pubDate>
+      <category>Avian Influenza A(H5N5)</category>
+      <description>United States of America — On 15 November 2025, WHO was notified of the 71st confirmed human case with influenza A(H5) since early 2024 in the United States of America— the first human case reported in the United States of America since February 2025. On 20 November, U.S. Centers for Disease Control and Prevention (CDC) laboratory sequencing…</description>
+    </item>
+    <item>
+      <title>Ebola virus disease – Democratic Republic of the Congo</title>
+      <link>https://www.who.int/2025-DON589</link>
+      <guid isPermaLink="false">bac6e717-f63e-496f-ae44-65f072fa75e6</guid>
+      <pubDate>Mon, 01 Dec 2025 13:57:19 GMT</pubDate>
+      <category>Ebola virus disease</category>
+      <description>Dem. Rep. Congo — On 1 December 2025, the Ministry of Health (MoH) of the Democratic Republic of the Congo (DRC) declared the end of the Ebola virus disease (EVD) outbreak which had been declared on 4 September 2025. The end was declared after two consecutive incubation periods (a total of 42 days) since the last person confirmed with…</description>
+    </item>
+    <item>
+      <title>Diphtheria - African Region (AFRO)</title>
+      <link>https://www.who.int/DON588</link>
+      <guid isPermaLink="false">1369e947-2f40-4dc9-a7da-f8f21f873ae1</guid>
+      <pubDate>Fri, 21 Nov 2025 18:29:27 GMT</pubDate>
+      <category>Diphtheria - African Region (AFRO)</category>
+      <description> — From 1 January to 2 November 2025, a total of 20 412 suspected diphtheria cases, including 1 252 deaths (an average case fatality ratio [CFR] - 6 %) have been reported across eight Member States in the WHO African Region (Algeria, Chad, Guinea, Mali, Mauritania, Niger, Nigeria, and South Africa). Several of these… (318 cases reported as of this update)</description>
+    </item>
+    <item>
+      <title>Marburg virus disease- Ethiopia</title>
+      <link>https://www.who.int/2025-DON585</link>
+      <guid isPermaLink="false">78353ac3-ac5f-41c6-8d9d-61017609c263</guid>
+      <pubDate>Fri, 21 Nov 2025 16:33:57 GMT</pubDate>
+      <category>Marburg virus disease</category>
+      <description>Ethiopia — On 12 November 2025, WHO noted a press release from the Ethiopian Ministry of Health (MoH), and the Ethiopian Public Health Institute (EPHI), announcing suspected viral hemorrhagic viral fever (VHF) in Jinka town, South Ethiopia Regional State, Ethiopia. On 14 November 2025, the Ministry of Health of Ethiopia…</description>
+    </item>
+    <item>
+      <title>Rift Valley fever- Mauritania and Senegal</title>
+      <link>https://www.who.int/2025-DON584</link>
+      <guid isPermaLink="false">c24a7ff0-9f3e-45bb-85a8-53c872ebb516</guid>
+      <pubDate>Wed, 05 Nov 2025 15:38:08 GMT</pubDate>
+      <category>Rift Valley fever- Mauritania and Senegal</category>
+      <description>Mauritania, Senegal — Between 20 September and 30 October 2025, a total of 404 confirmed human cases of Rift Valley fever (RVF), including 42 deaths, were reported by national health authorities in two West African countries: Mauritania and Senegal. RVF is a zoonotic disease, which mainly affects animals, but can also infect humans. The…</description>
+    </item>
+    <item>
+      <title>Chikungunya virus disease- Global situation</title>
+      <link>https://www.who.int/2025-DON581</link>
+      <guid isPermaLink="false">78881320-515f-4e5c-b5fc-e3d75acf80b1</guid>
+      <pubDate>Fri, 03 Oct 2025 13:08:06 GMT</pubDate>
+      <category>Chikungunya virus disease- Global situation</category>
+      <description>Multi-country / global — In 2025, a resurgence of chikungunya virus (CHIKV) disease was noted in a number of countries, including some that had not reported substantial case numbers in recent years. Between 1 January and 30 September 2025, a total of 445 271 suspected and confirmed CHIKV disease cases and 155 deaths were reported globally… (1,741 cases, 40 deaths reported as of this update)</description>
+    </item>
+    <item>
+      <title>Nipah virus infection - Bangladesh</title>
+      <link>https://www.who.int/2025-DON582</link>
+      <guid isPermaLink="false">72c4cfb7-3981-46eb-96c3-bbbb498cae0d</guid>
+      <pubDate>Thu, 18 Sep 2025 09:38:38 GMT</pubDate>
+      <category>Nipah virus infection</category>
+      <description>Bangladesh — Between 1 January and 29 August 2025, the International Health Regulations National Focal Point (IHR NFP) for Bangladesh notified WHO of four confirmed fatal Nipah virus (NiV) infection cases, temporally unrelated, reported from four different districts across three separated geographical divisions (Barisal, Dhaka,…</description>
+    </item>
+    <item>
+      <title>Ebola virus disease – Democratic Republic of the Congo</title>
+      <link>https://www.who.int/2025-DON580</link>
+      <guid isPermaLink="false">d3961cc9-af4d-4a49-aa7b-6b97f4b0b4c3</guid>
+      <pubDate>Fri, 05 Sep 2025 15:56:22 GMT</pubDate>
+      <category>Ebola virus disease</category>
+      <description>Dem. Rep. Congo — On 1 September 2025, WHO received an alert from the Ministry of Health of the Democratic Republic of the Congo (DRC) regarding suspected cases of Ebola virus disease (EVD) in the Bulape Health Zone, Kasai Province, DRC. The first known index case was a pregnant woman who presented at Bulape General Reference Hospital…</description>
+    </item>
+    <item>
+      <title>Cholera – Multi-country with a focus on countries experiencing current surges</title>
+      <link>https://www.who.int/2025-DON579</link>
+      <guid isPermaLink="false">bd3a42d6-1c7c-4fec-9a80-3d210e491608</guid>
+      <pubDate>Fri, 29 Aug 2025 09:00:18 GMT</pubDate>
+      <category>Cholera – Multi-country with a focus on countries experiencing current surges</category>
+      <description>Multi-country / global — The global cholera situation continues to deteriorate, driven by conflict and poverty, posing a significant public health challenge across multiple WHO regions. Between 1 January and 17 August 2025, a total of 409 222 cholera/Acute Watery Diarrhoea (AWD) cases and 4738 deaths were reported globally, from 31 countries,…</description>
+    </item>
+    <item>
+      <title>Circulating vaccine-derived poliovirus type 1- Israel</title>
+      <link>https://www.who.int/2025-DON578</link>
+      <guid isPermaLink="false">c5801d5f-89ef-4a9e-ae02-10076f2ca6a6</guid>
+      <pubDate>Wed, 20 Aug 2025 16:36:57 GMT</pubDate>
+      <category>Circulating vaccine-derived poliovirus type 1</category>
+      <description>Israel — On 4 August 2025, Israel notified WHO of a circulating vaccine-derived poliovirus type 1 (cVDPV1) outbreak. Between February and July 2025, nine genetically linked virus isolates were found in environmental samples from seven sites, mainly in Jerusalem and the Central Region. No human cases of paralytic polio have…</description>
+    </item>
+    <item>
+      <title>Nipah Virus Infection - India</title>
+      <link>https://www.who.int/2025-DON577</link>
+      <guid isPermaLink="false">62f952d7-6521-43c9-af05-e2467b1b1423</guid>
+      <pubDate>Wed, 06 Aug 2025 11:33:56 GMT</pubDate>
+      <category>Nipah virus infection</category>
+      <description>India — Between 17 May and 12 July 2025, the Information and Public Relations Department, Government of Kerala informed through a series of official press releases about four confirmed cases, including two deaths, due to Nipah virus (NiV) infection in two districts of Kerala State. NiV infection is a bat-borne disease…</description>
+    </item>
+    <item>
+      <title>Rabies - Timor-Leste</title>
+      <link>https://www.who.int/2025-DON576</link>
+      <guid isPermaLink="false">06b298d7-ddd4-4a98-a8ff-91a377c4bda1</guid>
+      <pubDate>Thu, 24 Jul 2025 15:43:44 GMT</pubDate>
+      <category>Rabies</category>
+      <description>Timor-Leste — On 17 May 2025, the Timor-Leste government reported to the World Health Organization (WHO) a fatal human case of rabies from Ermera Municipality. Between May and mid-June 2025, Timor-Leste confirmed four human rabies deaths in the municipalities of Bobonaro (n=2), Ermera (n=1) and Oecusse (n=1). All cases involved…</description>
+    </item>
+    <item>
+      <title>Avian Influenza A(H5N1) - Cambodia</title>
+      <link>https://www.who.int/2025-DON575</link>
+      <guid isPermaLink="false">89f9e700-3014-4d99-8b27-209ac074a48e</guid>
+      <pubDate>Sat, 05 Jul 2025 05:49:39 GMT</pubDate>
+      <category>Avian Influenza A(H5N1)</category>
+      <description>Cambodia — Between 1 January and 1 July 2025, the World Health Organization (WHO) was notified by Cambodia’s International Health Regulations (IHR) National Focal Point (NFP) of 11 laboratory-confirmed cases of human infection with avian influenza A(H5N1) virus. Seven of the 11 cases were reported in June, an unusual monthly…</description>
+    </item>
+    <item>
+      <title>Anthrax – Thailand</title>
+      <link>https://www.who.int/2025-DON573</link>
+      <guid isPermaLink="false">5085bedf-99a3-4ac7-94b2-27af1d2995e7</guid>
+      <pubDate>Thu, 29 May 2025 16:34:32 GMT</pubDate>
+      <category>Anthrax</category>
+      <description>Thailand — In early May 2025, the International Health Regulations National Focal Point (IHR NFP) for Thailand notified WHO of four cases of cutaneous anthrax. One of the affected individuals died as a result of disease complications, while the remaining three cases were hospitalized and received appropriate medical care. All…</description>
+    </item>
+    <item>
+      <title>COVID-19 - Global Situation</title>
+      <link>https://www.who.int/2025-DON572</link>
+      <guid isPermaLink="false">5292d2f8-1c50-4a58-94d4-2aa270f87a05</guid>
+      <pubDate>Wed, 28 May 2025 10:36:17 GMT</pubDate>
+      <category>COVID-19 - Global Situation</category>
+      <description>Multi-country / global — Since mid-February 2025, according to data available from sentinel sites, global SARS-CoV-2 activity has been increasing, with the test positivity rate reaching 11%, levels that have not been observed since July 2024. This rise is primarily observed in countries in the Eastern Mediterranean, South-East Asia, and…</description>
+    </item>
+    <item>
+      <title>Circulating vaccine-derived poliovirus type 2 (cVDPV2) - Papua New Guinea</title>
+      <link>https://www.who.int/2025-DON571</link>
+      <guid isPermaLink="false">346f0b12-f522-45fe-b839-fd5e6e08414c</guid>
+      <pubDate>Tue, 20 May 2025 13:42:18 GMT</pubDate>
+      <category>Circulating vaccine-derived poliovirus type 2 (cVDPV2)</category>
+      <description>Papua New Guinea — On 9 May 2025, the International Health Regulations (IHR) National Focal Point (NFP) for Papua New Guinea (PNG) notified WHO of the detection of circulating vaccine-derived poliovirus type 2 (cVDPV2) from stool specimens of two healthy children from Morobe province, Papua New Guinea (PNG). The detection of wild…</description>
+    </item>
+    <item>
+      <title>Yellow fever - Region of the Americas</title>
+      <link>https://www.who.int/2025-DON570</link>
+      <guid isPermaLink="false">994a3a23-5156-4f66-9303-f83ed8fd48e9</guid>
+      <pubDate>Fri, 16 May 2025 13:03:06 GMT</pubDate>
+      <category>Yellow fever - Region of the Americas</category>
+      <description> — From 29 December 2024 and as of 26 April 2025 (with data for Ecuador updated as of 2 May 2025), a total of 212 confirmed human cases of yellow fever, including 85 deaths, have been reported to WHO by five countries in the Region of the Americas (case fatality rate (CFR) 40%). The cases have been reported in the… (110 cases, 44 deaths reported as of this update)</description>
+    </item>
+    <item>
+      <title>Measles - Morocco</title>
+      <link>https://www.who.int/2025-DON568</link>
+      <guid isPermaLink="false">8e2169d0-8a98-45fd-85d9-40cee91b178f</guid>
+      <pubDate>Tue, 13 May 2025 13:55:16 GMT</pubDate>
+      <category>Measles - Morocco</category>
+      <description>Morocco — Since late 2023, Morocco has been experiencing a widespread measles outbreak. Cases have been recorded across all regions of the country, particularly among children and people who are unvaccinated. In response, the Ministry of Health and Social Protection (MOHSP), in collaboration with relevant sectors, activated the…</description>
+    </item>
+    <item>
+      <title>Middle East respiratory syndrome coronavirus - Kingdom of Saudi Arabia</title>
+      <link>https://www.who.int/2025-DON569</link>
+      <guid isPermaLink="false">88055beb-bcec-43e0-a498-284c0321cf15</guid>
+      <pubDate>Mon, 12 May 2025 17:56:18 GMT</pubDate>
+      <category>Middle East respiratory syndrome coronavirus (MERS-CoV)</category>
+      <description>Multi-country / global — Between 1 March and 21 April 2025, the Ministry of Health (MoH) of the Kingdom of Saudi Arabia (KSA) reported nine cases of Middle East respiratory syndrome coronavirus (MERS-CoV) infection. Two of these cases died. Among the nine cases, a cluster of seven cases were identified in Riyadh, including six health and care…</description>
+    </item>
+    <item>
+      <title>Chikungunya - La Réunion and Mayotte</title>
+      <link>https://www.who.int/2025-DON567</link>
+      <guid isPermaLink="false">db07ae68-2fff-471e-a8b0-7b4a2edd1c82</guid>
+      <pubDate>Mon, 12 May 2025 16:26:39 GMT</pubDate>
+      <category>Chikungunya - La Réunion and Mayotte</category>
+      <description> — Since August 2024, widespread transmission of chikungunya virus disease has been documented in La Réunion as well as increasing locally transmitted cases in Mayotte. Although chikungunya outbreaks and endemic transmission occur annually in several countries and territories around the world, the Indian Ocean islands… (500 cases reported as of this update)</description>
+    </item>
+    <item>
+      <title>Measles – Region of the Americas</title>
+      <link>https://www.who.int/2025-DON565</link>
+      <guid isPermaLink="false">8cb97564-ce9a-4059-92bc-2d1fbdfe9990</guid>
+      <pubDate>Mon, 28 Apr 2025 16:29:32 GMT</pubDate>
+      <category>Measles – Region of the Americas</category>
+      <description> — As of 18 April 2025, a total of 2318 measles cases, including three deaths, have been confirmed in six countries in the WHO Region of the Americas, an 11-fold increase compared to the same period in 2024. The majority of cases have occurred among people between 1 to 29 years, who are either unvaccinated or have an… (971 cases reported as of this update)</description>
+    </item>
+    <item>
+      <title>Sudan virus disease – Uganda</title>
+      <link>https://www.who.int/2025-DON566</link>
+      <guid isPermaLink="false">42cc5b42-7a88-4ab6-abab-a078fc0ac0cb</guid>
+      <pubDate>Sat, 26 Apr 2025 10:38:47 GMT</pubDate>
+      <category>Sudan virus disease</category>
+      <description>Uganda, Sudan — On 26 April 2025, the Ministry of Health (MoH) of Uganda declared the end of the Sudan virus disease (SVD) outbreak after two consecutive incubation periods (a total of 42 days) since the last person confirmed with SVD tested negative for the virus on 14 March 2025. A total of 14 SVD cases (including 12 confirmed…</description>
+    </item>
+    <item>
+      <title>Avian Influenza A(H5N1) - Mexico</title>
+      <link>https://www.who.int/2025-DON564</link>
+      <guid isPermaLink="false">09929cee-ce3c-4859-b2e4-cee053e42c4c</guid>
+      <pubDate>Thu, 17 Apr 2025 15:49:08 GMT</pubDate>
+      <category>Avian Influenza A(H5N1)</category>
+      <description>Mexico — On 2 April 2025, the International Health Regulations (IHR) National Focal Point (NFP) for Mexico notified the World Health Organization (WHO) of the country’s first laboratory-confirmed human infection with an avian influenza A(H5N1) virus in the state of Durango. In response, local and national health authorities…</description>
+    </item>
+    <item>
+      <title>Invasive meningococcal disease - Kingdom of Saudi Arabia</title>
+      <link>https://www.who.int/2025-DON563</link>
+      <guid isPermaLink="false">308b2eb8-7bf5-49db-9de5-be3b2b6c5030</guid>
+      <pubDate>Fri, 11 Apr 2025 12:11:28 GMT</pubDate>
+      <category>Invasive meningococcal disease</category>
+      <description>Saudi Arabia — On 13 March 2025, the International Health Regulations (IHR) National Focal Point (NFP) for the Kingdom of Saudi Arabia (KSA) reported 11 cases of invasive meningococcal disease (IMD) to WHO. Additionally, between 11 February and 18 March 2025, the WHO Eastern Mediterranean Regional IHR contact point received reports…</description>
+    </item>
+    <item>
+      <title>Cholera - Angola</title>
+      <link>https://www.who.int/2025-DON562</link>
+      <guid isPermaLink="false">4179c55d-5ebe-4e98-a997-0d0324bdaa09</guid>
+      <pubDate>Fri, 28 Mar 2025 19:19:26 GMT</pubDate>
+      <category>Cholera - Angola</category>
+      <description>Angola — Since January 2025, Angola has been experiencing a substantial cholera outbreak. As of 23 March 2025, a total of 8543 cases and 329 deaths (Case Fatality Rate (CFR) 3.9%) have been reported, with one-third of the deaths occurring in the community. The outbreak has rapidly spread to 16 out of Angola’s 21 provinces,…</description>
+    </item>
+    <item>
+      <title>Measles - United States of America</title>
+      <link>https://www.who.int/2025-DON561</link>
+      <guid isPermaLink="false">a1151663-3f67-41b0-be1b-06af835aafac</guid>
+      <pubDate>Thu, 27 Mar 2025 18:47:40 GMT</pubDate>
+      <category>Measles</category>
+      <description>United States of America — On 11 March 2025, the World Health Organization (WHO) received a report from the International Health Regulation (2005) (IHR) National Focal Point (NFP) of the United States of America (United States) on the ongoing measles outbreak in the country, notified under IHR because it is an unusual event with potential… (378 cases reported as of this update)</description>
+    </item>
+    <item>
+      <title>Middle East respiratory syndrome coronavirus - Kingdom of Saudi Arabia</title>
+      <link>https://www.who.int/2025-DON560</link>
+      <guid isPermaLink="false">b06a6fb9-792e-465f-98fc-9f01b44e4de5</guid>
+      <pubDate>Thu, 13 Mar 2025 14:49:00 GMT</pubDate>
+      <category>Middle East respiratory syndrome coronavirus (MERS-CoV)</category>
+      <description>Multi-country / global — This is the bi-annual update on the Middle East respiratory syndrome coronavirus (MERS-CoV) infections reported to the World Health Organization (WHO) from the Kingdom of Saudi Arabia (KSA). From 6 September 2024 to 28 February 2025, four laboratory-confirmed cases of MERS-CoV infection, including two deaths, were…</description>
+    </item>
+    <item>
+      <title>Marburg virus disease– United Republic of Tanzania</title>
+      <link>https://www.who.int/2025-DON559</link>
+      <guid isPermaLink="false">d9b66549-68b8-4e00-8ec5-8b643e9e3984</guid>
+      <pubDate>Thu, 13 Mar 2025 12:45:18 GMT</pubDate>
+      <category>Marburg virus disease– United Republic of Tanzania</category>
+      <description>Tanzania — On 13 March 2025, the Ministry of Health of the United Republic of Tanzania declared the end of the Marburg virus disease (MVD) outbreak. This declaration came after two consecutive incubation periods (a total of 42 days) since the last person confirmed with MVD died on 28 January 2025 and was given a safe and…</description>
+    </item>
+    <item>
+      <title>Sudan virus disease – Uganda</title>
+      <link>https://www.who.int/2025-DON558</link>
+      <guid isPermaLink="false">1efb6bc0-bade-4150-bf2d-e2e8c34d0eb7</guid>
+      <pubDate>Sat, 08 Mar 2025 09:03:25 GMT</pubDate>
+      <category>Sudan virus disease</category>
+      <description>Uganda, Sudan — Since the outbreak of Sudan virus disease (SVD) was declared in Uganda on 30 January 2025, and as of 5 March 2025, a total of 14 cases (including 12 confirmed cases and two probable cases) including four deaths (two confirmed and two probable) have been reported. On 1 March 2025, the Ministry of Health released a…</description>
+    </item>
+    <item>
+      <title>Cluster of community deaths in Basankusu, Equateur- Democratic Republic of the Congo</title>
+      <link>https://www.who.int/2025-DON557</link>
+      <guid isPermaLink="false">2d5ad2b7-f3e5-41c2-9e35-54f83f9c30e3</guid>
+      <pubDate>Mon, 03 Mar 2025 20:10:52 GMT</pubDate>
+      <category>Cluster of community deaths in Basankusu, Equateur- Democratic Republic of the Congo</category>
+      <description>Dem. Rep. Congo — On 9 February 2025, officials in the Democratic Republic of the Congo reported to regional health authorities a cluster of 24 unexplained community deaths in a single village in Ekoto health area, Basankusu health zone, Equateur province. As of 25 February, a total of 53 deaths have been reported, with the last death…</description>
+    </item>
+    <item>
+      <title>Sudan virus disease - Uganda</title>
+      <link>https://www.who.int/2025-DON556</link>
+      <guid isPermaLink="false">e4af3b0c-ac60-4570-aece-b3d10aa39dad</guid>
+      <pubDate>Fri, 21 Feb 2025 17:57:19 GMT</pubDate>
+      <category>Sudan virus disease</category>
+      <description>Uganda, Sudan — As of 20 February 2025, a total of nine confirmed cases of Sudan virus disease, including one death have been reported from Uganda, since the outbreak was declared on 30 January 2025. Eight cases received care at treatment centres in the capital Kampala and in Mbale and were discharged on 18 February after two…</description>
+    </item>
+    <item>
+      <title>Marburg Virus Disease–United Republic of Tanzania</title>
+      <link>https://www.who.int/2025-DON554</link>
+      <guid isPermaLink="false">8370029e-f279-408a-acc0-c4ae390a5c0a</guid>
+      <pubDate>Fri, 14 Feb 2025 14:17:26 GMT</pubDate>
+      <category>Marburg Virus Disease–United Republic of Tanzania</category>
+      <description>Tanzania — Since the declaration of the Marburg Virus Disease (MVD) outbreak on 20 January 2025 in the United Republic of Tanzania, one additional confirmed death was reported by the Ministry of Health from the epicentre of the outbreak in Biharamulo district in Kagera region. As of 10 February 2025, a cumulative of two…</description>
+    </item>
+    <item>
+      <title>Sudan virus disease – Uganda</title>
+      <link>https://www.who.int/2025-DON555</link>
+      <guid isPermaLink="false">dca8f16e-0837-415c-96be-d9682951e009</guid>
+      <pubDate>Sat, 01 Feb 2025 10:10:31 GMT</pubDate>
+      <category>Sudan virus disease</category>
+      <description>Uganda, Sudan — On 30 January 2025, the Ministry of Health of Uganda declared an outbreak of Sudan virus disease (SVD) following confirmation from three national reference laboratories. The case presented with signs and symptoms between 20 and 21 January and died on 29 January at the National Referral Hospital in Kampala. As of 30…</description>
+    </item>
+  </channel>
+</rss>
