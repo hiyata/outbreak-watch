@@ -33,13 +33,18 @@ A global dashboard of ongoing disease outbreaks, with six modes:
 
 All six modes are cross-linked and searchable together:
 
-- **Trend charts.** Every disease/region/outbreak detail view now shows a
-  short sparkline of its recent history (12 weeks for CDC/Brazil/Chile/
-  England/Japan, the full update history for WHO outbreaks) instead of
-  just a single latest number — CDC, Brazil, and Chile's fetch scripts
-  pull data they were already discarding, UK's already-fetched pages just
-  keep more of what they return, and Japan's per-week files are fetched
-  12 times over.
+- **Trend charts.** Every disease/region/outbreak detail view shows its
+  recent history (12 weeks for CDC/Brazil/Chile/England/Japan, the full
+  update history for WHO outbreaks) instead of just a single latest number
+  — CDC, Brazil, and Chile's fetch scripts pull data they were already
+  discarding, UK's already-fetched pages just keep more of what they
+  return, and Japan's per-week files are fetched 12 times over. Charts are
+  full D3 line charts with y-axis gridlines, x-axis date labels (tick
+  count scales down with chart width so mobile doesn't collide), gap
+  segments for missing weeks, an end-value label, and a crosshair+tooltip
+  on hover — they also re-render on window resize, since sizing off
+  `container.clientWidth` once at render time otherwise left a
+  desktop-width chart overflowing after rotating to mobile.
 - **Cross-source linking.** A WHO outbreak's detail view shows links to
   matching local data in CDC/Brazil/Chile/England/Japan when the
   outbreak's country and disease overlap with what that source tracks
