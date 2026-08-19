@@ -45,6 +45,26 @@ All six modes are cross-linked and searchable together:
   on hover — they also re-render on window resize, since sizing off
   `container.clientWidth` once at render time otherwise left a
   desktop-width chart overflowing after rotating to mobile.
+- **Growth rate & trend classification.** Every entity (a WHO outbreak,
+  a CDC disease's national total, a Brazilian/Chilean/English
+  region, a Japanese disease) gets a computed trend: the literal
+  latest-vs-previous-period change (absolute + %), and a
+  rising/falling/stable classification fit by linear regression over
+  the trailing few periods rather than a two-point comparison, so one
+  noisy week doesn't flip the label. WHO's case counts are cumulative,
+  so its trend is computed on the first-differenced (incident) series,
+  not the ever-increasing total. The two numbers are deliberately
+  labeled with different timeframes ("recent trajectory" vs. "vs
+  previous report") — a big prior spike can leave the window
+  classified "rising" even the week after a real decline, which is
+  correct (the outbreak is still elevated), not a bug, but reads as
+  contradictory if the two aren't visually separated. This is a
+  descriptive read of each series, not an epidemiological model — no
+  Rt, no serial interval, no forecast. Brazil's InfoGripe feed already
+  ships its own official trend classification (`trend_short`); it's
+  shown alongside ours rather than replaced, so the two can be
+  compared directly. Shared logic lives in
+  [`scripts/lib/trend.mjs`](scripts/lib/trend.mjs).
 - **Cross-source linking.** A WHO outbreak's detail view shows links to
   matching local data in CDC/Brazil/Chile/England/Japan when the
   outbreak's country and disease overlap with what that source tracks
