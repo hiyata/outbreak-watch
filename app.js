@@ -106,6 +106,61 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
+// Renders a small inline SVG line+area sparkline from a series of numbers.
+// Points with null/undefined value show as a gap in the line rather than
+// a false zero. Returns an HTML string, not a live DOM node.
+function sparklineSvg(values, { width = 280, height = 56, labels = null } = {}) {
+  const pad = 4;
+  const nums = values.map((v) => (typeof v === "number" && Number.isFinite(v) ? v : null));
+  const present = nums.filter((v) => v !== null);
+  if (present.length < 2) return '<p style="color: var(--muted); font-size: 0.78rem;">Not enough data points for a trend chart yet.</p>';
+
+  const max = Math.max(...present);
+  const min = Math.min(0, ...present);
+  const range = max - min || 1;
+  const stepX = (width - pad * 2) / (nums.length - 1);
+  const xy = nums.map((v, i) => {
+    if (v === null) return null;
+    const x = pad + i * stepX;
+    const y = height - pad - ((v - min) / range) * (height - pad * 2);
+    return [x, y];
+  });
+
+  // Break the polyline into contiguous segments so gaps (nulls) don't draw
+  // a misleading straight line across missing weeks.
+  const segments = [];
+  let current = [];
+  for (const p of xy) {
+    if (p === null) {
+      if (current.length) segments.push(current);
+      current = [];
+    } else {
+      current.push(p);
+    }
+  }
+  if (current.length) segments.push(current);
+
+  const lines = segments
+    .map((seg) => `<polyline points="${seg.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(" ")}" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" />`)
+    .join("");
+
+  const lastPoint = [...xy].reverse().find((p) => p !== null);
+  const dot = lastPoint
+    ? `<circle cx="${lastPoint[0].toFixed(1)}" cy="${lastPoint[1].toFixed(1)}" r="2.5" fill="var(--accent)" />`
+    : "";
+
+  const labelHtml = labels
+    ? `<div style="display:flex; justify-content:space-between; font-size:0.68rem; color:var(--muted); margin-top:0.2rem;"><span>${escapeHtml(labels[0])}</span><span>${escapeHtml(labels[labels.length - 1])}</span></div>`
+    : "";
+
+  return `
+    <svg viewBox="0 0 ${width} ${height}" width="100%" height="${height}" preserveAspectRatio="none" style="display:block;">
+      ${lines}${dot}
+    </svg>
+    ${labelHtml}
+  `;
+}
+
 function isNewOutbreak(ob) {
   return Boolean(lastSeen && ob.latest_update > lastSeen);
 }
@@ -234,6 +289,20 @@ function renderDetail() {
     )
     .join("");
 
+  const chronological = [...ob.updates].sort((a, b) => a.date.localeCompare(b.date));
+  const caseSeries = chronological.map((u) => u.counts?.cases ?? null);
+  const chartHtml =
+    caseSeries.filter((v) => v !== null).length >= 2
+      ? `
+        <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">Cumulative cases over time</h3>
+        <div class="chart-box">${sparklineSvg(caseSeries, {
+          labels: [fmtDate(chronological[0].date), fmtDate(chronological[chronological.length - 1].date)],
+        })}</div>
+      `
+      : "";
+
+  const crossLinksHtml = renderCrossLinks(ob);
+
   detailEl.innerHTML = `
     <div class="detail-head">
       <h2>${escapeHtml(ob.disease)}</h2>
@@ -244,9 +313,148 @@ function renderDetail() {
       </div>
     </div>
     ${statsHtml}
+    ${chartHtml}
+    ${crossLinksHtml}
     <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.6rem;">Update timeline</h3>
     ${updatesHtml}
   `;
+  bindCrossLinkClicks();
+}
+
+// ---------- Cross-source linking ----------
+// Best-effort: WHO reports diseases in free text with no shared taxonomy
+// across sources, so this matches on shared significant keywords (>3
+// letters, common words stripped) rather than an exact disease code.
+// Conservative on purpose — a missed link is better than a wrong one.
+
+const CROSS_LINK_STOPWORDS = new Set([
+  "disease", "virus", "infection", "caused", "outbreak", "syndrome", "clade",
+  "acute", "severe", "novel", "recombinant", "elements", "genomic", "with",
+]);
+
+function diseaseKeywords(str) {
+  return (str ?? "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .split(/\s+/)
+    .filter((w) => w.length > 3 && !CROSS_LINK_STOPWORDS.has(w));
+}
+
+function diseaseKeywordMatch(a, b) {
+  const setA = new Set(diseaseKeywords(a));
+  return diseaseKeywords(b).some((w) => setA.has(w));
+}
+
+const CROSS_LINK_SOURCES = [
+  { mode: "cdc", label: "United States (CDC)", country: "United States of America" },
+  { mode: "br", label: "Brazil (InfoGripe)", country: "Brazil" },
+  { mode: "uk", label: "England (UKHSA)", country: "United Kingdom" },
+  { mode: "cl", label: "Chile (DEIS)", country: "Chile" },
+];
+
+// Returns [{mode, label, matchLabel}] — local-source cross-links relevant
+// to a WHO outbreak, based on country + (for disease-specific sources)
+// keyword overlap. Chile is country-only since it's not disease-specific.
+function findCrossLinks(ob) {
+  if (ob.is_global) return [];
+  const countryNames = new Set(ob.countries.map((c) => c.name));
+  const links = [];
+
+  for (const src of CROSS_LINK_SOURCES) {
+    if (!countryNames.has(src.country)) continue;
+
+    if (src.mode === "cl") {
+      if (allClRegions.length) links.push({ ...src, matchLabel: "weekly mortality data" });
+      continue;
+    }
+    if (src.mode === "cdc" && allDiseases.length) {
+      const match = allDiseases.find((d) => diseaseKeywordMatch(ob.disease, d.disease));
+      if (match) links.push({ ...src, matchLabel: match.disease, target: match.disease });
+    }
+    if (src.mode === "br" && allBrStates.length && diseaseKeywordMatch(ob.disease, "influenza respiratory")) {
+      links.push({ ...src, matchLabel: "SRAG (severe respiratory illness) surveillance" });
+    }
+    if (src.mode === "uk" && allUkDiseases.length) {
+      const match = allUkDiseases.find((d) => diseaseKeywordMatch(ob.disease, d.topic));
+      if (match) links.push({ ...src, matchLabel: match.topic, target: match.topic });
+    }
+  }
+  return links;
+}
+
+function renderCrossLinks(ob) {
+  const links = findCrossLinks(ob);
+  if (links.length === 0) return "";
+
+  const chips = links
+    .map(
+      (l) =>
+        `<button class="cross-link" data-mode="${l.mode}" data-target="${escapeHtml(l.target ?? "")}">
+          ${escapeHtml(l.label)} → ${escapeHtml(l.matchLabel)}
+        </button>`
+    )
+    .join("");
+
+  return `
+    <div class="cross-links">
+      <div class="cross-links-label">Also tracked locally</div>
+      <div class="cross-links-row">${chips}</div>
+    </div>
+  `;
+}
+
+// Reverse direction: from a local-source disease, find a matching WHO
+// outbreak in the same country, so CDC/Brazil/UK detail panels can link
+// back to the global picture too.
+function findWhoLinkBack(diseaseName, countryName) {
+  if (!allOutbreaks.length) return "";
+  const match = allOutbreaks.find(
+    (ob) => !ob.is_global && ob.countries.some((c) => c.name === countryName) && diseaseKeywordMatch(diseaseName, ob.disease)
+  );
+  if (!match) return "";
+  return `
+    <div class="cross-links">
+      <div class="cross-links-label">Also in the global outbreak feed</div>
+      <div class="cross-links-row">
+        <button class="cross-link" data-mode="who" data-target="${escapeHtml(match.id)}">World (WHO) → ${escapeHtml(match.disease)}</button>
+      </div>
+    </div>
+  `;
+}
+
+// Country-only reverse link (for Chile mode, which isn't disease-specific
+// so keyword matching doesn't apply — any active WHO outbreak in-country
+// is potentially relevant context).
+function renderCountryLinkBack(countryName) {
+  if (!allOutbreaks.length) return "";
+  const matches = allOutbreaks.filter((ob) => !ob.is_global && ob.countries.some((c) => c.name === countryName));
+  if (matches.length === 0) return "";
+  const chips = matches
+    .slice(0, 5)
+    .map(
+      (ob) =>
+        `<button class="cross-link" data-mode="who" data-target="${escapeHtml(ob.id)}">World (WHO) → ${escapeHtml(ob.disease)}</button>`
+    )
+    .join("");
+  return `
+    <div class="cross-links">
+      <div class="cross-links-label">Active WHO outbreaks in this country</div>
+      <div class="cross-links-row">${chips}</div>
+    </div>
+  `;
+}
+
+function bindCrossLinkClicks() {
+  detailEl.querySelectorAll(".cross-link").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetMode = btn.dataset.mode;
+      const target = btn.dataset.target;
+      switchMode(targetMode);
+      if (targetMode === "cdc" && target) selectDisease(target);
+      else if (targetMode === "uk" && target) selectUkDisease(target);
+      else if (targetMode === "who" && target) selectOutbreak(target);
+    });
+  });
 }
 
 function selectOutbreak(id) {
@@ -391,6 +599,18 @@ function renderCdcDetail() {
     )
     .join("");
 
+  const trendHtml = d.national_series
+    ? `
+      <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">National weekly trend</h3>
+      <div class="chart-box">${sparklineSvg(
+        d.national_series.map((p) => p.value),
+        { labels: [`wk ${d.national_series[0].week}`, `wk ${d.national_series[d.national_series.length - 1].week}`] }
+      )}</div>
+    `
+    : "";
+
+  const whoLink = findWhoLinkBack(d.disease, "United States of America");
+
   detailEl.innerHTML = `
     <div class="detail-head">
       <h2>${escapeHtml(d.disease)}</h2>
@@ -404,12 +624,15 @@ function renderCdcDetail() {
       <div class="stat"><div class="n">${fmtNumber(d.total_ytd)}</div><div class="l">cumulative cases this year</div></div>
     </div>
     <div class="stat-note">Source: CDC NNDSS weekly tables. Most recent week is provisional and will revise upward as more reports come in.</div>
+    ${trendHtml}
+    ${whoLink}
     <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.6rem;">By state${d.states.length > 25 ? ` (top 25 of ${d.states.length})` : ""}</h3>
     <table class="state-table">
       <thead><tr><th>State</th><th class="num">This week</th><th class="num">YTD</th></tr></thead>
       <tbody>${rowsHtml}</tbody>
     </table>
   `;
+  bindCrossLinkClicks();
 }
 
 function selectDisease(disease) {
@@ -569,7 +792,20 @@ function renderBrDetail() {
       Trend: ${escapeHtml(s.trend_short ?? "unknown")} (short-term), ${escapeHtml(s.trend_long ?? "unknown")} (long-term).
       Source: InfoGripe (Fiocruz/FGV). Most recent week is provisional.
     </div>
+    ${
+      s.series && s.series.length >= 2
+        ? `
+          <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">Weekly cases, last ${s.series.length} weeks</h3>
+          <div class="chart-box">${sparklineSvg(
+            s.series.map((p) => p.value),
+            { labels: [`wk ${s.series[0].week}`, `wk ${s.series[s.series.length - 1].week}`] }
+          )}</div>
+        `
+        : ""
+    }
+    ${findWhoLinkBack("influenza respiratory syndrome", "Brazil")}
   `;
+  bindCrossLinkClicks();
 }
 
 function selectBrState(id) {
@@ -732,7 +968,20 @@ function renderClDetail() {
       region's ${r.pct_vs_baseline != null ? `${r.pct_vs_baseline.toFixed(1)}% vs. baseline` : "comparison"}
       figure should be read as provisional, not a confirmed trend. Source: DEIS/MINSAL.
     </div>
+    ${
+      r.series && r.series.length >= 2
+        ? `
+          <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">Weekly deaths, last ${r.series.length} weeks</h3>
+          <div class="chart-box">${sparklineSvg(
+            r.series.map((p) => p.value),
+            { labels: [`wk ${r.series[0].week}`, `wk ${r.series[r.series.length - 1].week}`] }
+          )}</div>
+        `
+        : ""
+    }
+    ${renderCountryLinkBack("Chile")}
   `;
+  bindCrossLinkClicks();
 }
 
 function selectClRegion(id) {
@@ -907,11 +1156,33 @@ function renderUkDetail() {
       this is whichever one currently has the most recent data for this disease, so the
       unit differs disease to disease — always check before comparing across diseases.
     </div>
+    ${ukNationalTrendChart(d)}
+    ${findWhoLinkBack(d.topic, "United Kingdom")}
     <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.6rem;">By region</h3>
     <table class="state-table">
       <thead><tr><th>Region</th><th class="num">Latest</th><th class="num">4 weeks ago</th></tr></thead>
       <tbody>${rowsHtml}</tbody>
     </table>
+  `;
+  bindCrossLinkClicks();
+}
+
+function ukNationalTrendChart(d) {
+  const withSeries = d.regions.filter((r) => r.series && r.series.length >= 2);
+  if (withSeries.length === 0) return "";
+  const length = Math.min(...withSeries.map((r) => r.series.length));
+  const isRate = ukMetricUnit(d.metric) !== "cases"; // % positivity / rate metrics should average across regions, not sum
+  const points = [];
+  for (let i = 0; i < length; i++) {
+    const values = withSeries.map((r) => r.series[r.series.length - length + i]?.value ?? 0);
+    const total = values.reduce((a, b) => a + b, 0);
+    points.push(isRate ? total / values.length : total);
+  }
+  const dates = withSeries[0].series.slice(-length).map((p) => p.date);
+  const label = isRate ? "England average, recent trend" : "England total, recent trend";
+  return `
+    <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">${label}</h3>
+    <div class="chart-box">${sparklineSvg(points, { labels: [fmtDate(dates[0]), fmtDate(dates[dates.length - 1])] })}</div>
   `;
 }
 
@@ -1168,5 +1439,127 @@ tabCdcEl.addEventListener("click", () => switchMode("cdc"));
 tabBrEl.addEventListener("click", () => switchMode("br"));
 tabClEl.addEventListener("click", () => switchMode("cl"));
 tabUkEl.addEventListener("click", () => switchMode("uk"));
+
+// ---------- Unified search ----------
+
+const globalSearchEl = document.getElementById("global-search");
+const globalSearchResultsEl = document.getElementById("global-search-results");
+const GSR_LIMIT_PER_SOURCE = 6;
+
+function globalSearch(query) {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  const groups = [];
+
+  const whoMatches = allOutbreaks
+    .filter((ob) => `${ob.disease} ${ob.countries.map((c) => c.name).join(" ")}`.toLowerCase().includes(q))
+    .slice(0, GSR_LIMIT_PER_SOURCE)
+    .map((ob) => ({
+      label: ob.disease,
+      sub: ob.is_global ? "Multi-country / global" : ob.countries.map((c) => c.name).join(", "),
+      action: () => { switchMode("who"); selectOutbreak(ob.id); },
+    }));
+  if (whoMatches.length) groups.push({ label: "World (WHO)", items: whoMatches });
+
+  const cdcMatches = allDiseases
+    .filter((d) => d.disease.toLowerCase().includes(q))
+    .slice(0, GSR_LIMIT_PER_SOURCE)
+    .map((d) => ({
+      label: d.disease,
+      sub: `${d.states_reporting} states reporting`,
+      action: () => { switchMode("cdc"); selectDisease(d.disease); },
+    }));
+  if (cdcMatches.length) groups.push({ label: "United States (CDC)", items: cdcMatches });
+
+  const brMatches = allBrStates
+    .filter((s) => s.name.toLowerCase().includes(q))
+    .slice(0, GSR_LIMIT_PER_SOURCE)
+    .map((s) => ({
+      label: s.name,
+      sub: s.intensity ?? "No data",
+      action: () => { switchMode("br"); selectBrState(s.id); },
+    }));
+  if (brMatches.length) groups.push({ label: "Brazil (InfoGripe)", items: brMatches });
+
+  const clMatches = allClRegions
+    .filter((r) => r.name.toLowerCase().includes(q))
+    .slice(0, GSR_LIMIT_PER_SOURCE)
+    .map((r) => ({
+      label: r.name,
+      sub: `${fmtNumber(r.latest_deaths)} deaths this week`,
+      action: () => { switchMode("cl"); selectClRegion(r.id); },
+    }));
+  if (clMatches.length) groups.push({ label: "Chile (DEIS)", items: clMatches });
+
+  const ukMatches = allUkDiseases
+    .filter((d) => d.topic.toLowerCase().includes(q))
+    .slice(0, GSR_LIMIT_PER_SOURCE)
+    .map((d) => ({
+      label: d.topic,
+      sub: ukMetricUnit(d.metric),
+      action: () => { switchMode("uk"); selectUkDisease(d.topic); },
+    }));
+  if (ukMatches.length) groups.push({ label: "England (UKHSA)", items: ukMatches });
+
+  return groups;
+}
+
+function renderGlobalSearchResults() {
+  const groups = globalSearch(globalSearchEl.value);
+
+  if (globalSearchEl.value.trim() === "") {
+    globalSearchResultsEl.hidden = true;
+    globalSearchResultsEl.innerHTML = "";
+    return;
+  }
+
+  if (groups.length === 0) {
+    globalSearchResultsEl.innerHTML = '<div class="gsr-empty">No matches across any source.</div>';
+    globalSearchResultsEl.hidden = false;
+    return;
+  }
+
+  globalSearchResultsEl.innerHTML = groups
+    .map(
+      (g) => `
+        <div class="gsr-group-label">${escapeHtml(g.label)}</div>
+        ${g.items
+          .map(
+            (item, i) => `
+              <button class="gsr-item" data-group="${escapeHtml(g.label)}" data-index="${i}">
+                ${escapeHtml(item.label)}
+                <span class="gsr-sub">${escapeHtml(item.sub)}</span>
+              </button>
+            `
+          )
+          .join("")}
+      `
+    )
+    .join("");
+  globalSearchResultsEl.hidden = false;
+
+  globalSearchResultsEl.querySelectorAll(".gsr-item").forEach((btn) => {
+    const group = groups.find((g) => g.label === btn.dataset.group);
+    const item = group?.items[Number(btn.dataset.index)];
+    if (!item) return;
+    btn.addEventListener("click", () => {
+      item.action();
+      globalSearchResultsEl.hidden = true;
+      globalSearchEl.value = "";
+    });
+  });
+}
+
+globalSearchEl.addEventListener("input", renderGlobalSearchResults);
+globalSearchEl.addEventListener("focus", renderGlobalSearchResults);
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".global-search-wrap")) globalSearchResultsEl.hidden = true;
+});
+globalSearchEl.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    globalSearchResultsEl.hidden = true;
+    globalSearchEl.blur();
+  }
+});
 
 init();

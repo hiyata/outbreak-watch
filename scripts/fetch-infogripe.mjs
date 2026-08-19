@@ -10,6 +10,7 @@
 import { lookupBrState } from "./br-states.mjs";
 
 const RAW_BASE = "https://raw.githubusercontent.com/infogripe/Boletim_InfoGripe/master/Dados/InfoGripe";
+const HISTORY_WEEKS = 12;
 
 const TREND_LABELS = {
   "1,0": "Increasing",
@@ -47,23 +48,56 @@ async function main() {
   const seriesRows = await fetchCsv("estados_e_pais_serie_estimativas_tendencia_sem_filtro_febre.csv");
 
   const casosRows = seriesRows.filter((r) => r["escala"] === "casos" && r["DS_UF_SIGLA"] !== "BR");
-  const latestYear = Math.max(...casosRows.map((r) => Number(r["Ano epidemiológico"])));
-  const latestWeek = Math.max(
-    ...casosRows.filter((r) => Number(r["Ano epidemiológico"]) === latestYear).map((r) => Number(r["Semana epidemiológica"]))
-  );
+  const latestYear = casosRows.reduce((max, r) => Math.max(max, Number(r["Ano epidemiológico"])), 0);
+  const latestWeek = casosRows
+    .filter((r) => Number(r["Ano epidemiológico"]) === latestYear)
+    .reduce((max, r) => Math.max(max, Number(r["Semana epidemiológica"])), 0);
+
+  // Weeks are numbered within each epidemiological year, so "last 12 weeks"
+  // spanning a year boundary needs both the tail of the previous year and
+  // the start of the current one — build the list of (year, week) pairs
+  // to keep rather than assuming a single year's numbering.
+  const historyKeys = [];
+  {
+    let y = latestYear;
+    let w = latestWeek;
+    for (let i = 0; i < HISTORY_WEEKS; i++) {
+      historyKeys.push(`${y}-${w}`);
+      w -= 1;
+      if (w < 1) {
+        y -= 1;
+        w = 52;
+      }
+    }
+  }
+  const historyKeySet = new Set(historyKeys);
 
   const seriesByState = new Map();
+  const latestByState = new Map();
   for (const r of casosRows) {
-    if (Number(r["Ano epidemiológico"]) !== latestYear || Number(r["Semana epidemiológica"]) !== latestWeek) continue;
     const state = lookupBrState(r["CO_UF"]);
     if (!state) continue;
-    seriesByState.set(state.id, {
-      cases_reported: parseBrNumber(r["Casos semanais reportados até a última atualização"]),
-      cases_estimated: parseBrNumber(r["casos estimados"]),
-      population: parseBrNumber(r["População"]),
-      trend_long: TREND_LABELS[r["tendência de longo prazo"]] ?? null,
-      trend_short: TREND_LABELS[r["tendência de curto prazo"]] ?? null,
-    });
+    const year = Number(r["Ano epidemiológico"]);
+    const week = Number(r["Semana epidemiológica"]);
+    const cases = parseBrNumber(r["Casos semanais reportados até a última atualização"]);
+
+    if (historyKeySet.has(`${year}-${week}`) && cases !== null) {
+      if (!seriesByState.has(state.id)) seriesByState.set(state.id, []);
+      seriesByState.get(state.id).push({ year, week, value: cases });
+    }
+
+    if (year === latestYear && week === latestWeek) {
+      latestByState.set(state.id, {
+        cases_reported: cases,
+        cases_estimated: parseBrNumber(r["casos estimados"]),
+        population: parseBrNumber(r["População"]),
+        trend_long: TREND_LABELS[r["tendência de longo prazo"]] ?? null,
+        trend_short: TREND_LABELS[r["tendência de curto prazo"]] ?? null,
+      });
+    }
+  }
+  for (const [id, series] of seriesByState) {
+    series.sort((a, b) => (a.year - b.year) || (a.week - b.week));
   }
 
   const intensityByState = new Map();
@@ -73,16 +107,17 @@ async function main() {
     intensityByState.set(state.id, r["intensidade"]);
   }
 
-  const states = [...new Set([...seriesByState.keys(), ...intensityByState.keys()])]
+  const states = [...new Set([...latestByState.keys(), ...intensityByState.keys()])]
     .map((id) => {
       const state = lookupBrState(id);
-      const series = seriesByState.get(id) ?? {};
+      const latest = latestByState.get(id) ?? {};
       return {
         id,
         abbr: state.abbr,
         name: state.name,
         intensity: intensityByState.get(id) ?? null,
-        ...series,
+        series: seriesByState.get(id) ?? [],
+        ...latest,
       };
     })
     .sort((a, b) => (b.cases_reported ?? 0) - (a.cases_reported ?? 0));
@@ -93,6 +128,7 @@ async function main() {
     disease: "Severe Acute Respiratory Syndrome (SRAG)",
     epidemiological_week: latestWeek,
     epidemiological_year: latestYear,
+    history_weeks: HISTORY_WEEKS,
     states,
   };
 

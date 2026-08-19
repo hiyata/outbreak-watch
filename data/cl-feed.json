@@ -1,138 +1,939 @@
 {
-  "generated_at": "2026-08-18T05:48:41.655Z",
+  "generated_at": "2026-08-19T05:04:29.275Z",
   "source": "Chile DEIS/MINSAL — all-cause mortality (not disease-specific)",
   "metric": "Weekly all-cause deaths by region",
-  "epidemiological_week": 31,
+  "epidemiological_week": 32,
   "epidemiological_year": 2026,
-  "baseline_week_count": 8,
+  "baseline_week_count": 11,
+  "history_weeks": 12,
   "regions": [
-    {
-      "id": "de_antofagasta",
-      "name": "De Antofagasta",
-      "population": 725843,
-      "latest_deaths": 67,
-      "baseline_avg_deaths": 67.125,
-      "pct_vs_baseline": -0.186219739292365
-    },
-    {
-      "id": "de_los_lagos",
-      "name": "De Los Lagos",
-      "population": 921079,
-      "latest_deaths": 118,
-      "baseline_avg_deaths": 126.125,
-      "pct_vs_baseline": -6.442021803766106
-    },
-    {
-      "id": "del_biobio",
-      "name": "Del Bíobío",
-      "population": 1694602,
-      "latest_deaths": 224,
-      "baseline_avg_deaths": 244,
-      "pct_vs_baseline": -8.19672131147541
-    },
     {
       "id": "de_aisen_del_gral_c_ibanez_del_campo",
       "name": "De Aisén del Gral. C. Ibáñez del Campo",
       "population": 108920,
-      "latest_deaths": 12,
-      "baseline_avg_deaths": 13.125,
-      "pct_vs_baseline": -8.571428571428571
-    },
-    {
-      "id": "de_magallanes_y_de_la_antartica_chilena",
-      "name": "De Magallanes y de La Antártica Chilena",
-      "population": 185163,
-      "latest_deaths": 21,
-      "baseline_avg_deaths": 24.375,
-      "pct_vs_baseline": -13.846153846153847
+      "latest_deaths": 15,
+      "baseline_avg_deaths": 12.454545454545455,
+      "pct_vs_baseline": 20.437956204379557,
+      "series": [
+        {
+          "week": 21,
+          "value": 12
+        },
+        {
+          "week": 22,
+          "value": 8
+        },
+        {
+          "week": 23,
+          "value": 11
+        },
+        {
+          "week": 24,
+          "value": 17
+        },
+        {
+          "week": 25,
+          "value": 8
+        },
+        {
+          "week": 26,
+          "value": 11
+        },
+        {
+          "week": 27,
+          "value": 10
+        },
+        {
+          "week": 28,
+          "value": 12
+        },
+        {
+          "week": 29,
+          "value": 16
+        },
+        {
+          "week": 30,
+          "value": 20
+        },
+        {
+          "week": 31,
+          "value": 12
+        },
+        {
+          "week": 32,
+          "value": 15
+        }
+      ]
     },
     {
       "id": "de_atacama",
       "name": "De Atacama",
       "population": 321644,
-      "latest_deaths": 33,
-      "baseline_avg_deaths": 38.5,
-      "pct_vs_baseline": -14.285714285714285
-    },
-    {
-      "id": "de_arica_y_parinacota",
-      "name": "De Arica y Parinacota",
-      "population": 265533,
-      "latest_deaths": 30,
-      "baseline_avg_deaths": 35.375,
-      "pct_vs_baseline": -15.19434628975265
-    },
-    {
-      "id": "metropolitana_de_santiago",
-      "name": "Metropolitana de Santiago",
-      "population": 8519527,
-      "latest_deaths": 882,
-      "baseline_avg_deaths": 1048,
-      "pct_vs_baseline": -15.839694656488549
-    },
-    {
-      "id": "de_valparaiso",
-      "name": "De Valparaíso",
-      "population": 2054246,
-      "latest_deaths": 272,
-      "baseline_avg_deaths": 333,
-      "pct_vs_baseline": -18.31831831831832
+      "latest_deaths": 40,
+      "baseline_avg_deaths": 37.36363636363637,
+      "pct_vs_baseline": 7.0559610705596025,
+      "series": [
+        {
+          "week": 21,
+          "value": 40
+        },
+        {
+          "week": 22,
+          "value": 28
+        },
+        {
+          "week": 23,
+          "value": 46
+        },
+        {
+          "week": 24,
+          "value": 30
+        },
+        {
+          "week": 25,
+          "value": 32
+        },
+        {
+          "week": 26,
+          "value": 57
+        },
+        {
+          "week": 27,
+          "value": 30
+        },
+        {
+          "week": 28,
+          "value": 44
+        },
+        {
+          "week": 29,
+          "value": 45
+        },
+        {
+          "week": 30,
+          "value": 24
+        },
+        {
+          "week": 31,
+          "value": 35
+        },
+        {
+          "week": 32,
+          "value": 40
+        }
+      ]
     },
     {
       "id": "del_maule",
       "name": "Del Maule",
       "population": 1189907,
-      "latest_deaths": 136,
-      "baseline_avg_deaths": 168.625,
-      "pct_vs_baseline": -19.347664936990363
+      "latest_deaths": 174,
+      "baseline_avg_deaths": 163.63636363636363,
+      "pct_vs_baseline": 6.333333333333339,
+      "series": [
+        {
+          "week": 21,
+          "value": 150
+        },
+        {
+          "week": 22,
+          "value": 157
+        },
+        {
+          "week": 23,
+          "value": 155
+        },
+        {
+          "week": 24,
+          "value": 179
+        },
+        {
+          "week": 25,
+          "value": 162
+        },
+        {
+          "week": 26,
+          "value": 190
+        },
+        {
+          "week": 27,
+          "value": 194
+        },
+        {
+          "week": 28,
+          "value": 164
+        },
+        {
+          "week": 29,
+          "value": 146
+        },
+        {
+          "week": 30,
+          "value": 160
+        },
+        {
+          "week": 31,
+          "value": 143
+        },
+        {
+          "week": 32,
+          "value": 174
+        }
+      ]
     },
     {
-      "id": "de_los_rios",
-      "name": "De Los Ríos",
-      "population": 415720,
-      "latest_deaths": 54,
-      "baseline_avg_deaths": 67.875,
-      "pct_vs_baseline": -20.441988950276244
+      "id": "del_biobio",
+      "name": "Del Bíobío",
+      "population": 1694602,
+      "latest_deaths": 244,
+      "baseline_avg_deaths": 242.36363636363637,
+      "pct_vs_baseline": 0.6751687921980453,
+      "series": [
+        {
+          "week": 21,
+          "value": 248
+        },
+        {
+          "week": 22,
+          "value": 230
+        },
+        {
+          "week": 23,
+          "value": 230
+        },
+        {
+          "week": 24,
+          "value": 214
+        },
+        {
+          "week": 25,
+          "value": 242
+        },
+        {
+          "week": 26,
+          "value": 240
+        },
+        {
+          "week": 27,
+          "value": 277
+        },
+        {
+          "week": 28,
+          "value": 281
+        },
+        {
+          "week": 29,
+          "value": 234
+        },
+        {
+          "week": 30,
+          "value": 234
+        },
+        {
+          "week": 31,
+          "value": 236
+        },
+        {
+          "week": 32,
+          "value": 244
+        }
+      ]
     },
     {
       "id": "de_nuble",
       "name": "De Ñuble",
       "population": 525925,
-      "latest_deaths": 68,
-      "baseline_avg_deaths": 86.875,
-      "pct_vs_baseline": -21.72661870503597
+      "latest_deaths": 86,
+      "baseline_avg_deaths": 85.54545454545455,
+      "pct_vs_baseline": 0.5313496280552588,
+      "series": [
+        {
+          "week": 21,
+          "value": 72
+        },
+        {
+          "week": 22,
+          "value": 96
+        },
+        {
+          "week": 23,
+          "value": 74
+        },
+        {
+          "week": 24,
+          "value": 93
+        },
+        {
+          "week": 25,
+          "value": 77
+        },
+        {
+          "week": 26,
+          "value": 80
+        },
+        {
+          "week": 27,
+          "value": 108
+        },
+        {
+          "week": 28,
+          "value": 97
+        },
+        {
+          "week": 29,
+          "value": 78
+        },
+        {
+          "week": 30,
+          "value": 88
+        },
+        {
+          "week": 31,
+          "value": 78
+        },
+        {
+          "week": 32,
+          "value": 86
+        }
+      ]
     },
     {
-      "id": "de_coquimbo",
-      "name": "De Coquimbo",
-      "population": 899128,
-      "latest_deaths": 96,
-      "baseline_avg_deaths": 125,
-      "pct_vs_baseline": -23.200000000000003
+      "id": "de_los_lagos",
+      "name": "De Los Lagos",
+      "population": 921079,
+      "latest_deaths": 124,
+      "baseline_avg_deaths": 124.9090909090909,
+      "pct_vs_baseline": -0.7278020378457039,
+      "series": [
+        {
+          "week": 21,
+          "value": 123
+        },
+        {
+          "week": 22,
+          "value": 108
+        },
+        {
+          "week": 23,
+          "value": 118
+        },
+        {
+          "week": 24,
+          "value": 122
+        },
+        {
+          "week": 25,
+          "value": 127
+        },
+        {
+          "week": 26,
+          "value": 115
+        },
+        {
+          "week": 27,
+          "value": 159
+        },
+        {
+          "week": 28,
+          "value": 123
+        },
+        {
+          "week": 29,
+          "value": 130
+        },
+        {
+          "week": 30,
+          "value": 118
+        },
+        {
+          "week": 31,
+          "value": 131
+        },
+        {
+          "week": 32,
+          "value": 124
+        }
+      ]
     },
     {
-      "id": "de_la_araucania",
-      "name": "De La Araucanía",
-      "population": 1039468,
-      "latest_deaths": 126,
-      "baseline_avg_deaths": 165.875,
-      "pct_vs_baseline": -24.039186134137154
+      "id": "de_arica_y_parinacota",
+      "name": "De Arica y Parinacota",
+      "population": 265533,
+      "latest_deaths": 31,
+      "baseline_avg_deaths": 33.54545454545455,
+      "pct_vs_baseline": -7.588075880758812,
+      "series": [
+        {
+          "week": 21,
+          "value": 33
+        },
+        {
+          "week": 22,
+          "value": 22
+        },
+        {
+          "week": 23,
+          "value": 20
+        },
+        {
+          "week": 24,
+          "value": 39
+        },
+        {
+          "week": 25,
+          "value": 34
+        },
+        {
+          "week": 26,
+          "value": 36
+        },
+        {
+          "week": 27,
+          "value": 36
+        },
+        {
+          "week": 28,
+          "value": 42
+        },
+        {
+          "week": 29,
+          "value": 30
+        },
+        {
+          "week": 30,
+          "value": 46
+        },
+        {
+          "week": 31,
+          "value": 31
+        },
+        {
+          "week": 32,
+          "value": 31
+        }
+      ]
+    },
+    {
+      "id": "metropolitana_de_santiago",
+      "name": "Metropolitana de Santiago",
+      "population": 8519527,
+      "latest_deaths": 953,
+      "baseline_avg_deaths": 1032.2727272727273,
+      "pct_vs_baseline": -7.6794363716424465,
+      "series": [
+        {
+          "week": 21,
+          "value": 1022
+        },
+        {
+          "week": 22,
+          "value": 1029
+        },
+        {
+          "week": 23,
+          "value": 1003
+        },
+        {
+          "week": 24,
+          "value": 981
+        },
+        {
+          "week": 25,
+          "value": 1096
+        },
+        {
+          "week": 26,
+          "value": 1125
+        },
+        {
+          "week": 27,
+          "value": 1155
+        },
+        {
+          "week": 28,
+          "value": 1071
+        },
+        {
+          "week": 29,
+          "value": 1007
+        },
+        {
+          "week": 30,
+          "value": 954
+        },
+        {
+          "week": 31,
+          "value": 912
+        },
+        {
+          "week": 32,
+          "value": 953
+        }
+      ]
     },
     {
       "id": "del_libertador_b_o_higgins",
       "name": "Del Libertador B. O'Higgins",
       "population": 1040655,
-      "latest_deaths": 103,
-      "baseline_avg_deaths": 144.625,
-      "pct_vs_baseline": -28.78133102852204
+      "latest_deaths": 132,
+      "baseline_avg_deaths": 144.27272727272728,
+      "pct_vs_baseline": -8.506616257088853,
+      "series": [
+        {
+          "week": 21,
+          "value": 165
+        },
+        {
+          "week": 22,
+          "value": 148
+        },
+        {
+          "week": 23,
+          "value": 150
+        },
+        {
+          "week": 24,
+          "value": 121
+        },
+        {
+          "week": 25,
+          "value": 147
+        },
+        {
+          "week": 26,
+          "value": 181
+        },
+        {
+          "week": 27,
+          "value": 175
+        },
+        {
+          "week": 28,
+          "value": 131
+        },
+        {
+          "week": 29,
+          "value": 120
+        },
+        {
+          "week": 30,
+          "value": 133
+        },
+        {
+          "week": 31,
+          "value": 116
+        },
+        {
+          "week": 32,
+          "value": 132
+        }
+      ]
+    },
+    {
+      "id": "de_antofagasta",
+      "name": "De Antofagasta",
+      "population": 725843,
+      "latest_deaths": 61,
+      "baseline_avg_deaths": 68.72727272727273,
+      "pct_vs_baseline": -11.24338624338625,
+      "series": [
+        {
+          "week": 21,
+          "value": 65
+        },
+        {
+          "week": 22,
+          "value": 82
+        },
+        {
+          "week": 23,
+          "value": 66
+        },
+        {
+          "week": 24,
+          "value": 73
+        },
+        {
+          "week": 25,
+          "value": 61
+        },
+        {
+          "week": 26,
+          "value": 57
+        },
+        {
+          "week": 27,
+          "value": 79
+        },
+        {
+          "week": 28,
+          "value": 64
+        },
+        {
+          "week": 29,
+          "value": 65
+        },
+        {
+          "week": 30,
+          "value": 73
+        },
+        {
+          "week": 31,
+          "value": 71
+        },
+        {
+          "week": 32,
+          "value": 61
+        }
+      ]
+    },
+    {
+      "id": "de_coquimbo",
+      "name": "De Coquimbo",
+      "population": 899128,
+      "latest_deaths": 104,
+      "baseline_avg_deaths": 120.0909090909091,
+      "pct_vs_baseline": -13.398940196820591,
+      "series": [
+        {
+          "week": 21,
+          "value": 105
+        },
+        {
+          "week": 22,
+          "value": 112
+        },
+        {
+          "week": 23,
+          "value": 111
+        },
+        {
+          "week": 24,
+          "value": 118
+        },
+        {
+          "week": 25,
+          "value": 120
+        },
+        {
+          "week": 26,
+          "value": 147
+        },
+        {
+          "week": 27,
+          "value": 124
+        },
+        {
+          "week": 28,
+          "value": 147
+        },
+        {
+          "week": 29,
+          "value": 130
+        },
+        {
+          "week": 30,
+          "value": 105
+        },
+        {
+          "week": 31,
+          "value": 102
+        },
+        {
+          "week": 32,
+          "value": 104
+        }
+      ]
     },
     {
       "id": "de_tarapaca",
       "name": "De Tarapacá",
       "population": 415447,
-      "latest_deaths": 20,
-      "baseline_avg_deaths": 31.625,
-      "pct_vs_baseline": -36.75889328063241
+      "latest_deaths": 27,
+      "baseline_avg_deaths": 31.181818181818183,
+      "pct_vs_baseline": -13.411078717201171,
+      "series": [
+        {
+          "week": 21,
+          "value": 32
+        },
+        {
+          "week": 22,
+          "value": 34
+        },
+        {
+          "week": 23,
+          "value": 35
+        },
+        {
+          "week": 24,
+          "value": 31
+        },
+        {
+          "week": 25,
+          "value": 32
+        },
+        {
+          "week": 26,
+          "value": 39
+        },
+        {
+          "week": 27,
+          "value": 35
+        },
+        {
+          "week": 28,
+          "value": 35
+        },
+        {
+          "week": 29,
+          "value": 19
+        },
+        {
+          "week": 30,
+          "value": 28
+        },
+        {
+          "week": 31,
+          "value": 23
+        },
+        {
+          "week": 32,
+          "value": 27
+        }
+      ]
+    },
+    {
+      "id": "de_valparaiso",
+      "name": "De Valparaíso",
+      "population": 2054246,
+      "latest_deaths": 281,
+      "baseline_avg_deaths": 326.45454545454544,
+      "pct_vs_baseline": -13.923698134224447,
+      "series": [
+        {
+          "week": 21,
+          "value": 323
+        },
+        {
+          "week": 22,
+          "value": 313
+        },
+        {
+          "week": 23,
+          "value": 331
+        },
+        {
+          "week": 24,
+          "value": 313
+        },
+        {
+          "week": 25,
+          "value": 325
+        },
+        {
+          "week": 26,
+          "value": 327
+        },
+        {
+          "week": 27,
+          "value": 386
+        },
+        {
+          "week": 28,
+          "value": 310
+        },
+        {
+          "week": 29,
+          "value": 330
+        },
+        {
+          "week": 30,
+          "value": 343
+        },
+        {
+          "week": 31,
+          "value": 290
+        },
+        {
+          "week": 32,
+          "value": 281
+        }
+      ]
+    },
+    {
+      "id": "de_los_rios",
+      "name": "De Los Ríos",
+      "population": 415720,
+      "latest_deaths": 53,
+      "baseline_avg_deaths": 65.0909090909091,
+      "pct_vs_baseline": -18.57541899441341,
+      "series": [
+        {
+          "week": 21,
+          "value": 73
+        },
+        {
+          "week": 22,
+          "value": 44
+        },
+        {
+          "week": 23,
+          "value": 60
+        },
+        {
+          "week": 24,
+          "value": 73
+        },
+        {
+          "week": 25,
+          "value": 74
+        },
+        {
+          "week": 26,
+          "value": 72
+        },
+        {
+          "week": 27,
+          "value": 65
+        },
+        {
+          "week": 28,
+          "value": 58
+        },
+        {
+          "week": 29,
+          "value": 63
+        },
+        {
+          "week": 30,
+          "value": 78
+        },
+        {
+          "week": 31,
+          "value": 56
+        },
+        {
+          "week": 32,
+          "value": 53
+        }
+      ]
+    },
+    {
+      "id": "de_la_araucania",
+      "name": "De La Araucanía",
+      "population": 1039468,
+      "latest_deaths": 129,
+      "baseline_avg_deaths": 160.0909090909091,
+      "pct_vs_baseline": -19.420783645655877,
+      "series": [
+        {
+          "week": 21,
+          "value": 149
+        },
+        {
+          "week": 22,
+          "value": 145
+        },
+        {
+          "week": 23,
+          "value": 147
+        },
+        {
+          "week": 24,
+          "value": 178
+        },
+        {
+          "week": 25,
+          "value": 184
+        },
+        {
+          "week": 26,
+          "value": 190
+        },
+        {
+          "week": 27,
+          "value": 160
+        },
+        {
+          "week": 28,
+          "value": 168
+        },
+        {
+          "week": 29,
+          "value": 147
+        },
+        {
+          "week": 30,
+          "value": 154
+        },
+        {
+          "week": 31,
+          "value": 139
+        },
+        {
+          "week": 32,
+          "value": 129
+        }
+      ]
+    },
+    {
+      "id": "de_magallanes_y_de_la_antartica_chilena",
+      "name": "De Magallanes y de La Antártica Chilena",
+      "population": 185163,
+      "latest_deaths": 16,
+      "baseline_avg_deaths": 25.09090909090909,
+      "pct_vs_baseline": -36.231884057971016,
+      "series": [
+        {
+          "week": 21,
+          "value": 22
+        },
+        {
+          "week": 22,
+          "value": 35
+        },
+        {
+          "week": 23,
+          "value": 26
+        },
+        {
+          "week": 24,
+          "value": 22
+        },
+        {
+          "week": 25,
+          "value": 26
+        },
+        {
+          "week": 26,
+          "value": 26
+        },
+        {
+          "week": 27,
+          "value": 25
+        },
+        {
+          "week": 28,
+          "value": 23
+        },
+        {
+          "week": 29,
+          "value": 19
+        },
+        {
+          "week": 30,
+          "value": 30
+        },
+        {
+          "week": 31,
+          "value": 22
+        },
+        {
+          "week": 32,
+          "value": 16
+        }
+      ]
     }
   ]
 }

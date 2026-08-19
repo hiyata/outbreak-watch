@@ -1,15 +1,78 @@
 {
-  "generated_at": "2026-08-19T04:43:55.611Z",
+  "generated_at": "2026-08-19T05:04:56.558Z",
   "source": "InfoGripe (Fiocruz/FGV) — SRAG surveillance",
   "disease": "Severe Acute Respiratory Syndrome (SRAG)",
   "epidemiological_week": 32,
   "epidemiological_year": 2026,
+  "history_weeks": 12,
   "states": [
     {
       "id": "35",
       "abbr": "SP",
       "name": "São Paulo",
       "intensity": "Baixo risco",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 1537
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 1655
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 1548
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 1544
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 1403
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 1369
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 1142
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 791
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 618
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 581
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 543
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 157
+        }
+      ],
       "cases_reported": 157,
       "cases_estimated": 678,
       "population": 46179008,
@@ -21,6 +84,68 @@
       "abbr": "PR",
       "name": "Paraná",
       "intensity": "Segurança",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 673
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 650
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 602
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 596
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 577
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 651
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 652
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 522
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 396
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 294
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 274
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 117
+        }
+      ],
       "cases_reported": 117,
       "cases_estimated": 352,
       "population": 11952524,
@@ -32,6 +157,68 @@
       "abbr": "RS",
       "name": "Rio Grande do Sul",
       "intensity": "Risco",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 416
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 440
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 441
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 530
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 501
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 541
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 529
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 544
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 449
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 403
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 265
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 79
+        }
+      ],
       "cases_reported": 79,
       "cases_estimated": 359,
       "population": 11233317,
@@ -43,6 +230,68 @@
       "abbr": "MG",
       "name": "Minas Gerais",
       "intensity": "Alerta",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 861
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 909
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 910
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 980
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 924
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 873
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 788
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 663
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 597
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 408
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 233
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 50
+        }
+      ],
       "cases_reported": 50,
       "cases_estimated": 494,
       "population": 21460311,
@@ -54,6 +303,68 @@
       "abbr": "RJ",
       "name": "Rio de Janeiro",
       "intensity": "Alerta",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 425
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 413
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 403
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 438
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 342
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 401
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 341
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 291
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 245
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 161
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 102
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 46
+        }
+      ],
       "cases_reported": 46,
       "cases_estimated": 242,
       "population": 17225410,
@@ -65,6 +376,68 @@
       "abbr": "SC",
       "name": "Santa Catarina",
       "intensity": null,
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 275
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 286
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 328
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 294
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 306
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 329
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 325
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 301
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 267
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 173
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 159
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 40
+        }
+      ],
       "cases_reported": 40,
       "cases_estimated": 191,
       "population": 8312691,
@@ -76,6 +449,68 @@
       "abbr": "PB",
       "name": "Paraíba",
       "intensity": "Segurança",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 142
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 138
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 123
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 87
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 88
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 73
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 93
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 68
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 57
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 64
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 49
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 35
+        }
+      ],
       "cases_reported": 35,
       "cases_estimated": 77,
       "population": 4182828,
@@ -87,6 +522,68 @@
       "abbr": "DF",
       "name": "Distrito Federal",
       "intensity": "Baixo risco",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 213
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 234
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 207
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 183
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 158
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 152
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 129
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 103
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 74
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 61
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 59
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 34
+        }
+      ],
       "cases_reported": 34,
       "cases_estimated": 99,
       "population": 3009996,
@@ -98,6 +595,68 @@
       "abbr": "BA",
       "name": "Bahia",
       "intensity": "Alerta",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 267
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 237
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 240
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 193
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 164
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 164
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 132
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 138
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 146
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 136
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 119
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 26
+        }
+      ],
       "cases_reported": 26,
       "cases_estimated": 157,
       "population": 14889472,
@@ -109,6 +668,68 @@
       "abbr": "CE",
       "name": "Ceará",
       "intensity": "Baixo risco",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 230
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 259
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 195
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 186
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 122
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 131
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 113
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 86
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 73
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 61
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 50
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 23
+        }
+      ],
       "cases_reported": 23,
       "cases_estimated": 76,
       "population": 9302211,
@@ -120,6 +741,68 @@
       "abbr": "GO",
       "name": "Goiás",
       "intensity": "Alerta",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 153
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 156
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 177
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 171
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 127
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 118
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 111
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 96
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 91
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 72
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 72
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 21
+        }
+      ],
       "cases_reported": 21,
       "cases_estimated": 79,
       "population": 7495033,
@@ -131,6 +814,68 @@
       "abbr": "SE",
       "name": "Sergipe",
       "intensity": "Alerta",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 95
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 75
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 71
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 65
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 73
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 50
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 55
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 51
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 57
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 50
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 40
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 18
+        }
+      ],
       "cases_reported": 18,
       "cases_estimated": 63,
       "population": 2307255,
@@ -142,6 +887,68 @@
       "abbr": "PA",
       "name": "Pará",
       "intensity": "Segurança",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 179
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 219
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 171
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 162
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 86
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 76
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 71
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 50
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 42
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 48
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 32
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 14
+        }
+      ],
       "cases_reported": 14,
       "cases_estimated": 61,
       "population": 8756324,
@@ -153,6 +960,68 @@
       "abbr": "AM",
       "name": "Amazonas",
       "intensity": "Alerta",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 68
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 69
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 75
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 81
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 73
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 74
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 73
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 60
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 57
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 58
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 41
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 12
+        }
+      ],
       "cases_reported": 12,
       "cases_estimated": 52,
       "population": 4360926,
@@ -164,6 +1033,68 @@
       "abbr": "PE",
       "name": "Pernambuco",
       "intensity": "Baixo risco",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 142
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 141
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 109
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 113
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 98
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 81
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 74
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 63
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 53
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 40
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 42
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 12
+        }
+      ],
       "cases_reported": 12,
       "cases_estimated": 47,
       "population": 9583176,
@@ -175,6 +1106,68 @@
       "abbr": "AL",
       "name": "Alagoas",
       "intensity": "Segurança",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 57
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 64
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 74
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 50
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 29
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 36
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 26
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 24
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 17
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 18
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 20
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 11
+        }
+      ],
       "cases_reported": 11,
       "cases_estimated": 26,
       "population": 3221128,
@@ -186,6 +1179,68 @@
       "abbr": "RN",
       "name": "Rio Grande do Norte",
       "intensity": "Baixo risco",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 70
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 69
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 40
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 45
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 42
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 32
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 21
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 34
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 32
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 22
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 18
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 8
+        }
+      ],
       "cases_reported": 8,
       "cases_estimated": 26,
       "population": 3463737,
@@ -197,6 +1252,68 @@
       "abbr": "AC",
       "name": "Acre",
       "intensity": "Alerta",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 64
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 64
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 48
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 56
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 47
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 45
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 47
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 43
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 33
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 29
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 32
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 7
+        }
+      ],
       "cases_reported": 7,
       "cases_estimated": 28,
       "population": 887794,
@@ -208,6 +1325,68 @@
       "abbr": "RR",
       "name": "Roraima",
       "intensity": "Alto risco",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 39
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 44
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 42
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 40
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 51
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 37
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 36
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 34
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 29
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 26
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 35
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 7
+        }
+      ],
       "cases_reported": 7,
       "cases_estimated": 25,
       "population": 761012,
@@ -219,6 +1398,68 @@
       "abbr": "MS",
       "name": "Mato Grosso do Sul",
       "intensity": "Baixo risco",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 263
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 282
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 256
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 272
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 253
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 265
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 259
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 193
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 149
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 95
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 35
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 7
+        }
+      ],
       "cases_reported": 7,
       "cases_estimated": 62,
       "population": 2946317,
@@ -230,6 +1471,68 @@
       "abbr": "AP",
       "name": "Amapá",
       "intensity": "Segurança",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 107
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 106
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 88
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 75
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 46
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 53
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 39
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 36
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 35
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 19
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 26
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 5
+        }
+      ],
       "cases_reported": 5,
       "cases_estimated": 27,
       "population": 809953,
@@ -241,6 +1544,68 @@
       "abbr": "ES",
       "name": "Espírito Santo",
       "intensity": "Segurança",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 47
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 70
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 60
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 50
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 58
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 50
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 52
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 27
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 31
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 34
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 27
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 5
+        }
+      ],
       "cases_reported": 5,
       "cases_estimated": 36,
       "population": 4150692,
@@ -252,6 +1617,68 @@
       "abbr": "RO",
       "name": "Rondônia",
       "intensity": "Segurança",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 12
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 17
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 18
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 7
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 13
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 10
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 6
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 19
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 13
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 17
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 6
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 4
+        }
+      ],
       "cases_reported": 4,
       "cases_estimated": 16,
       "population": 1757338,
@@ -263,6 +1690,68 @@
       "abbr": "PI",
       "name": "Piauí",
       "intensity": "Segurança",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 25
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 26
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 21
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 32
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 13
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 14
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 12
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 9
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 7
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 7
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 11
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 2
+        }
+      ],
       "cases_reported": 2,
       "cases_estimated": 18,
       "population": 3392617,
@@ -274,6 +1763,68 @@
       "abbr": "MT",
       "name": "Mato Grosso",
       "intensity": "Risco",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 70
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 50
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 24
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 50
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 35
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 48
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 26
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 24
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 33
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 28
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 18
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 1
+        }
+      ],
       "cases_reported": 1,
       "cases_estimated": 32,
       "population": 3950330,
@@ -285,6 +1836,68 @@
       "abbr": "TO",
       "name": "Tocantins",
       "intensity": "Baixo risco",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 6
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 6
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 11
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 5
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 5
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 8
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 3
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 3
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 3
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 6
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 1
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 0
+        }
+      ],
       "cases_reported": 0,
       "cases_estimated": 2,
       "population": 1595994,
@@ -296,6 +1909,68 @@
       "abbr": "MA",
       "name": "Maranhão",
       "intensity": "Alerta",
+      "series": [
+        {
+          "year": 2026,
+          "week": 21,
+          "value": 76
+        },
+        {
+          "year": 2026,
+          "week": 22,
+          "value": 84
+        },
+        {
+          "year": 2026,
+          "week": 23,
+          "value": 61
+        },
+        {
+          "year": 2026,
+          "week": 24,
+          "value": 68
+        },
+        {
+          "year": 2026,
+          "week": 25,
+          "value": 51
+        },
+        {
+          "year": 2026,
+          "week": 26,
+          "value": 69
+        },
+        {
+          "year": 2026,
+          "week": 27,
+          "value": 56
+        },
+        {
+          "year": 2026,
+          "week": 28,
+          "value": 39
+        },
+        {
+          "year": 2026,
+          "week": 29,
+          "value": 38
+        },
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 15
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 17
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 0
+        }
+      ],
       "cases_reported": 0,
       "cases_estimated": 27,
       "population": 7024557,

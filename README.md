@@ -24,6 +24,26 @@ A global dashboard of ongoing disease outbreaks, with five modes:
   Scotland, Wales, and Northern Ireland have separate health agencies not
   covered here.
 
+All five modes are cross-linked and searchable together:
+
+- **Trend charts.** Every disease/region/outbreak detail view now shows a
+  short sparkline of its recent history (12 weeks for CDC/Brazil/Chile/
+  England, the full update history for WHO outbreaks) instead of just a
+  single latest number — CDC, Brazil, and Chile's fetch scripts pull data
+  they were already discarding, and UK's already-fetched pages just keep
+  more of what they return.
+- **Cross-source linking.** A WHO outbreak's detail view shows links to
+  matching local data in CDC/Brazil/Chile/England when the outbreak's
+  country and disease overlap with what that source tracks (e.g. a US
+  avian influenza DON links to CDC's influenza surveillance); local-mode
+  detail views link back to WHO the same way. Matching is a best-effort
+  keyword overlap on free-text disease names — there's no shared disease
+  taxonomy across five independent sources — so it's deliberately
+  conservative: a missed link is preferred over a wrong one.
+- **Unified search.** The search box in the header queries all five feeds
+  at once — disease names, countries, US states, Brazilian/Chilean/English
+  regions — grouped by source, click a result to jump straight to it.
+
 Live data lives in [`data/feed.json`](data/feed.json) (WHO),
 [`data/cdc-feed.json`](data/cdc-feed.json) (CDC),
 [`data/br-feed.json`](data/br-feed.json) (Brazil),

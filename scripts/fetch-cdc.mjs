@@ -1,7 +1,7 @@
-// Pulls the latest week of the CDC NNDSS ("National Notifiable Diseases
+// Pulls the last 12 weeks of the CDC NNDSS ("National Notifiable Diseases
 // Surveillance System") weekly tables from CDC's open data platform
-// (data.cdc.gov, Socrata) and writes a per-disease, per-state breakdown to
-// data/cdc-feed.json.
+// (data.cdc.gov, Socrata) and writes a per-disease, per-state breakdown
+// (with a 12-week time series per state) to data/cdc-feed.json.
 //
 // Dataset: https://data.cdc.gov/d/x9gk-5huc ("NNDSS Weekly Data")
 // Columns: m1 = current week count, m3 = cumulative YTD current year.
@@ -9,10 +9,15 @@
 // (data unavailable) when the corresponding number isn't a real count —
 // those rows are skipped rather than treated as zero, so an unreported
 // state never silently reads as "no cases".
+//
+// The week-range query only looks within the current calendar year, so
+// weeks 1-11 of January will have fewer than 12 points of history rather
+// than wrapping into the previous MMWR year — a known, minor limitation.
 
 import { lookupState } from "./us-states.mjs";
 
 const BASE = "https://data.cdc.gov/resource/x9gk-5huc.json";
+const HISTORY_WEEKS = 12;
 
 async function socrata(params) {
   const res = await fetch(`${BASE}?${params}`, {
@@ -36,13 +41,14 @@ function isValidCount(value, flag) {
 
 async function main() {
   const { year, week } = await latestYearWeek();
+  const minWeek = Math.max(1, week - (HISTORY_WEEKS - 1));
 
   const rows = await socrata(
-    `year=${year}&week=${week}&$where=location1 IS NOT NULL&$limit=10000` +
-      `&$select=states,label,m1,m1_flag,m3,m3_flag`
+    `year=${year}&$where=week between ${minWeek} and ${week} AND location1 IS NOT NULL&$limit=200000` +
+      `&$select=states,label,week,m1,m1_flag,m3,m3_flag`
   );
 
-  // disease -> Map(stateId -> { state, id, current_week, ytd })
+  // disease -> stateId -> { state, id, series: Map(week -> value), ytd }
   const diseases = new Map();
 
   for (const row of rows) {
@@ -52,32 +58,47 @@ async function main() {
     if (!diseases.has(row.label)) diseases.set(row.label, new Map());
     const byState = diseases.get(row.label);
 
-    const currentWeek = isValidCount(row.m1, row.m1_flag) ? Number(row.m1) : null;
+    const weekValue = isValidCount(row.m1, row.m1_flag) ? Number(row.m1) : null;
     const ytd = isValidCount(row.m3, row.m3_flag) ? Number(row.m3) : null;
-    if (currentWeek === null && ytd === null) continue;
+    if (weekValue === null && ytd === null) continue;
 
-    // "New York City" and "New York" are reported as separate NNDSS
-    // jurisdictions that both map to the New York state map region —
-    // sum them so the state total isn't missing NYC's cases.
-    const existing = byState.get(state.id);
-    if (existing) {
-      existing.current_week = (existing.current_week ?? 0) + (currentWeek ?? 0);
-      existing.ytd = (existing.ytd ?? 0) + (ytd ?? 0);
-    } else {
-      byState.set(state.id, { id: state.id, name: state.name, current_week: currentWeek ?? 0, ytd: ytd ?? 0 });
+    if (!byState.has(state.id)) {
+      byState.set(state.id, { id: state.id, name: state.name, series: new Map(), ytd: 0 });
     }
+    const entry = byState.get(state.id);
+    const wk = Number(row.week);
+    entry.series.set(wk, (entry.series.get(wk) ?? 0) + (weekValue ?? 0));
+    // Only the latest week's row carries the authoritative YTD figure;
+    // summing YTD across weeks would double count, so just take the max.
+    if (ytd !== null) entry.ytd = Math.max(entry.ytd, ytd);
   }
 
   const diseaseList = [...diseases.entries()]
     .map(([disease, byState]) => {
-      const states = [...byState.values()].filter((s) => s.current_week > 0 || s.ytd > 0);
+      const states = [...byState.values()]
+        .map((s) => {
+          const series = [...s.series.entries()]
+            .sort((a, b) => a[0] - b[0])
+            .map(([wk, value]) => ({ week: wk, value }));
+          const currentWeek = series.length ? series[series.length - 1].value : 0;
+          return { id: s.id, name: s.name, current_week: currentWeek, ytd: s.ytd, series };
+        })
+        .filter((s) => s.current_week > 0 || s.ytd > 0);
+
       const totalCurrentWeek = states.reduce((sum, s) => sum + s.current_week, 0);
       const totalYtd = states.reduce((sum, s) => sum + s.ytd, 0);
+      const nationalSeries = [];
+      for (let wk = minWeek; wk <= week; wk++) {
+        const total = states.reduce((sum, s) => sum + (s.series.find((p) => p.week === wk)?.value ?? 0), 0);
+        nationalSeries.push({ week: wk, value: total });
+      }
+
       return {
         disease,
         total_current_week: totalCurrentWeek,
         total_ytd: totalYtd,
         states_reporting: states.length,
+        national_series: nationalSeries,
         states: states.sort((a, b) => b.current_week - a.current_week),
       };
     })
@@ -89,13 +110,14 @@ async function main() {
     source: "CDC NNDSS",
     year,
     week,
+    history_weeks: HISTORY_WEEKS,
     disease_count: diseaseList.length,
     diseases: diseaseList,
   };
 
   const fs = await import("node:fs/promises");
   await fs.writeFile("data/cdc-feed.json", JSON.stringify(feed, null, 2) + "\n");
-  console.log(`Wrote ${diseaseList.length} diseases (MMWR week ${week}, ${year}) to data/cdc-feed.json`);
+  console.log(`Wrote ${diseaseList.length} diseases (MMWR week ${week}, ${year}, ${HISTORY_WEEKS}wk history) to data/cdc-feed.json`);
 }
 
 main().catch((err) => {

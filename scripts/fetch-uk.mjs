@@ -22,6 +22,7 @@
 
 const API_BASE = "https://api.ukhsa-dashboard.data.gov.uk";
 const RECENCY_WINDOW_DAYS = 90;
+const HISTORY_POINTS = 12;
 
 // Curated from the API's own topic listing (themes/infectious_disease/sub_themes/*/topics).
 const TOPICS = [
@@ -115,15 +116,17 @@ async function fetchTopicData(subTheme, topic) {
     await sleep(100);
     const rows = await getAllPages(`${regionBase}/geographies/${encodeURIComponent(g.name)}/metrics/${bestMetric}`);
     if (rows.length === 0) continue;
-    rows.sort((a, b) => b.date.localeCompare(a.date));
-    const latest = rows[0];
-    const monthAgo = rows.find((r) => r.date <= addDays(latest.date, -28));
+    rows.sort((a, b) => a.date.localeCompare(b.date));
+    const recent = rows.slice(-HISTORY_POINTS);
+    const latest = recent[recent.length - 1];
+    const monthAgo = recent.find((r) => r.date <= addDays(latest.date, -28));
     regions.push({
       id: slugify(g.name),
       name: g.name,
       latest_value: latest.metric_value,
       latest_date: latest.date,
       value_4_weeks_ago: monthAgo ? monthAgo.metric_value : null,
+      series: recent.map((r) => ({ date: r.date, value: r.metric_value })),
     });
   }
   if (regions.length === 0) return null;
@@ -158,6 +161,7 @@ async function main() {
     generated_at: new Date().toISOString(),
     source: "UKHSA data dashboard (England regions)",
     recency_window_days: RECENCY_WINDOW_DAYS,
+    history_points: HISTORY_POINTS,
     disease_count: diseases.length,
     diseases,
   };

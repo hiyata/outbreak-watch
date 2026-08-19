@@ -16,6 +16,7 @@
 
 const CSV_URL =
   "https://datos.gob.cl/dataset/1c2811cd-13a4-4406-b20d-cda1544b65d0/resource/90d092cc-bf19-4bcc-bfb0-22b0c5db6707/download/def_semana_epidemiologica.csv";
+const HISTORY_WEEKS = 12;
 
 function slugify(str) {
   return str
@@ -55,24 +56,27 @@ async function main() {
   const realWeeks = [...weeklyTotals.entries()].filter(([, total]) => total > 0).map(([w]) => w);
   const latestWeek = Math.max(...realWeeks);
 
-  // 8-week baseline (excluding the latest week itself) to flag regions
-  // running meaningfully above their own recent trend.
-  const baselineWeeks = realWeeks.filter((w) => w < latestWeek && w >= latestWeek - 8);
+  // 12-week history (excluding the latest week itself for the baseline
+  // average) to flag regions running meaningfully above their own recent
+  // trend, and to chart a short-term trajectory per region.
+  const historyWeeks = realWeeks.filter((w) => w <= latestWeek && w >= latestWeek - HISTORY_WEEKS + 1).sort((a, b) => a - b);
+  const baselineWeeks = historyWeeks.filter((w) => w !== latestWeek);
 
   const byRegion = new Map();
   for (const r of rows) {
     if (Number(r["ANO_ESTADISTICO"]) !== latestYear) continue;
     const week = Number(r["SEMANA_ESTADISTICA"]);
-    if (week !== latestWeek && !baselineWeeks.includes(week)) continue;
+    if (!historyWeeks.includes(week)) continue;
 
     const key = slugify(r["REGION"]);
     if (!byRegion.has(key)) {
-      byRegion.set(key, { id: key, name: r["REGION"], population: 0, latest_deaths: 0, baseline_deaths: [] });
+      byRegion.set(key, { id: key, name: r["REGION"], population: 0, latest_deaths: 0, baseline_deaths: [], series: new Map() });
     }
     const entry = byRegion.get(key);
     const deaths = Number(r["MUERTES_OBS"]);
     const pop = Number(r["POBLACION"]);
 
+    entry.series.set(week, (entry.series.get(week) ?? 0) + deaths);
     if (week === latestWeek) {
       entry.latest_deaths += deaths;
       entry.population += pop; // population is per age/sex row; sum gives total regional population
@@ -86,6 +90,7 @@ async function main() {
       const baselineTotal = r.baseline_deaths.reduce((a, b) => a + b, 0);
       const baselineAvg = r.baseline_deaths.length ? baselineTotal / (baselineWeeks.length || 1) : null;
       const pctVsBaseline = baselineAvg ? ((r.latest_deaths - baselineAvg) / baselineAvg) * 100 : null;
+      const series = historyWeeks.map((w) => ({ week: w, value: r.series.get(w) ?? 0 }));
       return {
         id: r.id,
         name: r.name,
@@ -93,6 +98,7 @@ async function main() {
         latest_deaths: r.latest_deaths,
         baseline_avg_deaths: baselineAvg,
         pct_vs_baseline: pctVsBaseline,
+        series,
       };
     })
     .sort((a, b) => (b.pct_vs_baseline ?? -Infinity) - (a.pct_vs_baseline ?? -Infinity));
@@ -104,6 +110,7 @@ async function main() {
     epidemiological_week: latestWeek,
     epidemiological_year: latestYear,
     baseline_week_count: baselineWeeks.length,
+    history_weeks: HISTORY_WEEKS,
     regions,
   };
 
