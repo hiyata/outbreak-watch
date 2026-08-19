@@ -3,8 +3,8 @@
 // feed reader instead of requiring a repeat visit. WHO's updates are the
 // only source here that are genuine dated articles (title/summary/URL) —
 // the other five sources are recurring numeric counts, and re-publishing
-// the same "cases this week: 1,234" item every 6-hour fetch cycle would
-// just spam a subscriber's reader, so this feed is WHO-only by design.
+// the same "cases this week: 1,234" item every fetch cycle would just
+// spam a subscriber's reader, so this feed is WHO-only by design.
 //
 // Run after fetch-who.mjs (reads its output, data/feed.json) as part of
 // the same workflow step.
@@ -66,7 +66,7 @@ async function main() {
     <title>Outbreak Watch — WHO Disease Outbreak News</title>
     <link>${SITE_URL}/</link>
     <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml" />
-    <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated every 6 hours.</description>
+    <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated daily.</description>
     <language>en</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <generator>outbreak-watch scripts/build-rss.mjs</generator>${itemsXml}

@@ -135,7 +135,7 @@
 
   <h2>What this is</h2>
   <p>A static site with no backend: a GitHub Actions workflow fetches all six sources
-  every 6 hours, writes the results as plain JSON files, and GitHub Pages serves them
+  once a day, writes the results as plain JSON files, and GitHub Pages serves them
   directly. There is no database, no server-side code, and no manual curation of the
   data itself — everything shown is pulled straight from each source's own API or
   published file, then reshaped for display.</p>
@@ -248,7 +248,7 @@
   <p>Implementation: <a href="https://github.com/hiyata/outbreak-watch/blob/main/scripts/lib/trend.mjs">scripts/lib/trend.mjs</a>.</p>
 
   <h2>Update cadence &amp; reliability</h2>
-  <p>All six sources are re-fetched every 6 hours by a GitHub Actions workflow. Each
+  <p>All six sources are re-fetched once a day by a GitHub Actions workflow. Each
   source's fetch step runs independently — if one source's upstream API is down or
   changes shape, the other five still update and deploy normally, and a
   <code>data/status.json</code> health file records which sources last succeeded or

@@ -84,8 +84,8 @@ Live data lives in [`data/feed.json`](data/feed.json) (WHO),
 [`data/br-feed.json`](data/br-feed.json) (Brazil),
 [`data/cl-feed.json`](data/cl-feed.json) (Chile),
 [`data/uk-feed.json`](data/uk-feed.json) (England), and
-[`data/jp-feed.json`](data/jp-feed.json) (Japan), regenerated every 6
-hours by a GitHub Actions workflow and served straight off GitHub Pages —
+[`data/jp-feed.json`](data/jp-feed.json) (Japan), regenerated daily
+by a GitHub Actions workflow and served straight off GitHub Pages —
 no server, no database.
 
 ## Reach: mobile, accessibility, shareability
@@ -295,7 +295,7 @@ No dependencies for the fetch script — it uses Node's built-in `fetch`.
 1. Push this repo to GitHub.
 2. In **Settings → Pages**, set Source to **GitHub Actions**.
 3. The included workflow handles the rest (initial deploy on push, then a
-   refresh every 6 hours).
+   daily refresh).
 
 ## Scope and honesty about what's *not* here yet
 
