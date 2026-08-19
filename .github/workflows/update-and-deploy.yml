@@ -2,7 +2,7 @@ name: Update feed and deploy
 
 on:
   schedule:
-    - cron: "17 */6 * * *" # every 6 hours
+    - cron: "17 6 * * *" # once a day, 06:17 UTC
   workflow_dispatch: {}
   push:
     branches: [main]
@@ -48,6 +48,10 @@ jobs:
       - id: jp
         run: node scripts/fetch-japan.mjs
         continue-on-error: true
+      - name: Build RSS feed
+        if: always()
+        run: node scripts/build-rss.mjs
+        continue-on-error: true
       - name: Write status
         if: always()
         run: |
@@ -69,7 +73,7 @@ jobs:
         run: |
           git config user.name "outbreak-watch-bot"
           git config user.email "actions@github.com"
-          git add data/feed.json data/cdc-feed.json data/br-feed.json data/cl-feed.json data/uk-feed.json data/jp-feed.json data/status.json
+          git add data/feed.json data/cdc-feed.json data/br-feed.json data/cl-feed.json data/uk-feed.json data/jp-feed.json data/status.json feed.xml
           git diff --cached --quiet && echo "No changes" || git commit -m "Update feed [skip ci]"
           git push
 
