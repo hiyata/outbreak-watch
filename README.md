@@ -63,6 +63,34 @@ Live data lives in [`data/feed.json`](data/feed.json) (WHO),
 hours by a GitHub Actions workflow and served straight off GitHub Pages —
 no server, no database.
 
+## Reach: mobile, accessibility, shareability
+
+The dashboard had never actually been opened on a phone before this pass —
+a nested flexbox/grid `min-width: auto` bug (each level of a flex/grid
+container defaults to not shrinking below its content's natural size
+unless told to) meant the mode-tab pills forced the entire page 320px
+wider than the viewport on mobile, and on top of that the sidebar list
+had no height cap on narrow screens, so tapping into a disease's detail
+meant scrolling past all 91 CDC diseases first — a single "quick check"
+page came out over 25,000px tall. Both fixed: `min-width: 0` added at
+every level of the nesting chain, and the sidebar keeps a bounded,
+independently-scrollable height on mobile instead of expanding to fit
+all its content.
+
+Also fixed a real WCAG failure found by calculating actual contrast
+ratios rather than eyeballing it: the active-tab text color was a
+hardcoded dark brown that only had 3.44:1 contrast against the light
+theme's accent orange (WCAG AA requires 4.5:1 for normal-size text) —
+introduced an `--accent-contrast` token that resolves differently per
+theme instead of one hardcoded value for both.
+
+Added: a keyboard skip-link (jumps past the header straight to the
+data), `aria-label`s on every search/sort control (placeholder text
+alone isn't a reliable accessible name — it disappears the moment you
+start typing), and Open Graph/Twitter Card meta tags plus a proper
+favicon so links shared in Slack/Twitter/iMessage render a real title
+and description instead of a bare URL.
+
 ## How it's different from WHO's own DON page
 
 - **Outbreaks, not reports.** WHO publishes one report per update; this

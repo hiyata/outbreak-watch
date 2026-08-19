@@ -4,6 +4,19 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Outbreak Watch</title>
+<meta name="description" content="A live, cross-linked dashboard of disease surveillance data from WHO, CDC, Brazil, Chile, England, and Japan — real structured data, not guesses, with trend charts and unified search across all six sources." />
+<meta name="theme-color" content="#161d20" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦠</text></svg>" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Outbreak Watch" />
+<meta property="og:description" content="A live, cross-linked dashboard of disease surveillance data from WHO, CDC, Brazil, Chile, England, and Japan — real structured data, not guesses, with trend charts and unified search across all six sources." />
+<meta property="og:site_name" content="Outbreak Watch" />
+<meta property="og:url" content="https://hiyata.github.io/outbreak-watch/" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Outbreak Watch" />
+<meta name="twitter:description" content="A live, cross-linked dashboard of disease surveillance data from WHO, CDC, Brazil, Chile, England, and Japan." />
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
 <style>
@@ -16,6 +29,7 @@
     --muted: #8b9699;
     --accent: #ef8354;
     --accent-dim: #7a4a34;
+    --accent-contrast: #1a1310;
     --map-land: #2a3438;
     --map-hit-1: #6b3d2e;
     --map-hit-2: #9a4f34;
@@ -33,6 +47,7 @@
       --muted: #6b6a66;
       --accent: #b8461f;
       --accent-dim: #f2cbb8;
+      --accent-contrast: #ffffff;
       --map-land: #e2e0da;
       --map-hit-1: #f3c9a8;
       --map-hit-2: #e08a55;
@@ -42,6 +57,21 @@
     }
   }
   * { box-sizing: border-box; }
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0.5rem;
+    background: var(--accent);
+    color: var(--accent-contrast, #fff);
+    padding: 0.6rem 1rem;
+    border-radius: 0 0 8px 8px;
+    z-index: 1000;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: top 0.15s;
+  }
+  .skip-link:focus { top: 0; }
   html, body { height: 100%; }
   body {
     margin: 0;
@@ -128,9 +158,18 @@
     padding: 1rem 1rem 0.5rem;
     display: flex;
     flex-direction: column;
+    min-width: 0;
   }
-  .map-panel h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 0 0 0.6rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between; }
-  .mode-tabs { display: flex; gap: 0.3rem; }
+  .map-panel h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 0 0 0.6rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; min-width: 0; width: 100%; }
+  .mode-tabs {
+    display: flex;
+    gap: 0.3rem;
+    overflow-x: auto;
+    min-width: 0;
+    flex: 1 1 auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
   .mode-tab {
     background: var(--panel-2);
     border: 1px solid var(--border);
@@ -139,11 +178,14 @@
     font-weight: 600;
     text-transform: none;
     letter-spacing: 0;
-    padding: 0.3rem 0.7rem;
+    padding: 0.35rem 0.7rem;
     border-radius: 999px;
     cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-height: 30px;
   }
-  .mode-tab.active { background: var(--accent); border-color: var(--accent); color: #1a1310; }
+  .mode-tab.active { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
   #map-container { flex: 1; min-height: 320px; }
   #map-container svg { width: 100%; height: auto; display: block; }
   .country-path { stroke: var(--bg); stroke-width: 0.4; cursor: default; transition: opacity 0.1s; }
@@ -160,7 +202,7 @@
     flex-direction: column;
     max-height: calc(100vh - 62px);
   }
-  @media (max-width: 900px) { .sidebar { max-height: none; } }
+  @media (max-width: 900px) { .sidebar { max-height: 55vh; } }
 
   .sidebar-controls {
     padding: 0.9rem 1rem 0.7rem;
@@ -261,7 +303,7 @@
     font-weight: 600;
     cursor: pointer;
   }
-  .cross-link:hover { background: var(--accent); color: #1a1310; }
+  .cross-link:hover { background: var(--accent); color: var(--accent-contrast); }
 
   footer {
     padding: 1rem 1.5rem 2rem;
@@ -275,17 +317,18 @@
 </style>
 </head>
 <body>
+<a href="#main-layout" class="skip-link">Skip to outbreak data</a>
 <div class="app">
   <header class="top">
     <h1>Outbreak<span>Watch</span></h1>
     <div class="global-search-wrap">
-      <input type="search" id="global-search" placeholder="Search everything — disease, country, region…" autocomplete="off" />
+      <input type="search" id="global-search" placeholder="Search everything — disease, country, region…" aria-label="Search all outbreak data sources" autocomplete="off" />
       <div id="global-search-results" class="global-search-results" hidden></div>
     </div>
     <div class="stats" id="header-stats">Loading…</div>
   </header>
 
-  <div class="layout">
+  <div class="layout" id="main-layout">
     <div class="map-panel">
       <h2>
         <span id="map-title">Active outbreaks by country</span>
@@ -335,8 +378,8 @@
 
     <div class="sidebar">
       <div class="sidebar-controls" id="controls-who">
-        <input type="search" id="search" placeholder="Search disease, country…" />
-        <select id="sort">
+        <input type="search" id="search" placeholder="Search disease, country…" aria-label="Search WHO outbreaks by disease or country" />
+        <select id="sort" aria-label="Sort WHO outbreaks">
           <option value="new">Recently updated first</option>
           <option value="unread">Unread first</option>
           <option value="count">Most updates first</option>
@@ -348,16 +391,16 @@
         </label>
       </div>
       <div class="sidebar-controls" id="controls-cdc" style="display:none">
-        <input type="search" id="cdc-search" placeholder="Search notifiable disease…" />
-        <select id="cdc-sort">
+        <input type="search" id="cdc-search" placeholder="Search notifiable disease…" aria-label="Search CDC notifiable diseases" />
+        <select id="cdc-sort" aria-label="Sort CDC diseases">
           <option value="week">Most cases this week first</option>
           <option value="ytd">Most cases this year first</option>
           <option value="states">Most states reporting first</option>
         </select>
       </div>
       <div class="sidebar-controls" id="controls-br" style="display:none">
-        <input type="search" id="br-search" placeholder="Search state…" />
-        <select id="br-sort">
+        <input type="search" id="br-search" placeholder="Search state…" aria-label="Search Brazilian states" />
+        <select id="br-sort" aria-label="Sort Brazilian states">
           <option value="cases">Most cases first</option>
           <option value="intensity">Highest risk level first</option>
           <option value="name">State name (A–Z)</option>
@@ -370,24 +413,24 @@
         <p id="cdc-status">Loading…</p>
       </div>
       <div class="sidebar-controls" id="controls-cl" style="display:none">
-        <input type="search" id="cl-search" placeholder="Search region…" />
-        <select id="cl-sort">
+        <input type="search" id="cl-search" placeholder="Search region…" aria-label="Search Chilean regions" />
+        <select id="cl-sort" aria-label="Sort Chilean regions">
           <option value="pct">Most above baseline first</option>
           <option value="deaths">Most deaths first</option>
           <option value="name">Region name (A–Z)</option>
         </select>
       </div>
       <div class="sidebar-controls" id="controls-uk" style="display:none">
-        <input type="search" id="uk-search" placeholder="Search disease…" />
-        <select id="uk-sort">
+        <input type="search" id="uk-search" placeholder="Search disease…" aria-label="Search England notifiable diseases" />
+        <select id="uk-sort" aria-label="Sort England diseases">
           <option value="value">Highest current value first</option>
           <option value="trend">Rising fastest first</option>
           <option value="name">Disease name (A–Z)</option>
         </select>
       </div>
       <div class="sidebar-controls" id="controls-jp" style="display:none">
-        <input type="search" id="jp-search" placeholder="Search disease…" />
-        <select id="jp-sort">
+        <input type="search" id="jp-search" placeholder="Search disease…" aria-label="Search Japan notifiable diseases" />
+        <select id="jp-sort" aria-label="Sort Japan diseases">
           <option value="value">Highest case count first</option>
           <option value="trend">Rising fastest first</option>
           <option value="name">Disease name (A–Z)</option>
