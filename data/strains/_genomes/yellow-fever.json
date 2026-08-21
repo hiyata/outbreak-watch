@@ -1,0 +1,103 @@
+{
+  "pathogen": "yellow-fever",
+  "label": "Yellow fever",
+  "genomeLength": 10862,
+  "genes": [
+    {
+      "name": "C",
+      "start": 119,
+      "end": 421,
+      "strand": "+",
+      "product": "core protein C",
+      "note": null
+    },
+    {
+      "name": "prM",
+      "start": 482,
+      "end": 973,
+      "strand": "+",
+      "product": "M protein precursor",
+      "note": null
+    },
+    {
+      "name": "M",
+      "start": 749,
+      "end": 973,
+      "strand": "+",
+      "product": "matrix protein M",
+      "note": null
+    },
+    {
+      "name": "E",
+      "start": 974,
+      "end": 2452,
+      "strand": "+",
+      "product": "envelope protein",
+      "note": null
+    },
+    {
+      "name": "NS1",
+      "start": 2453,
+      "end": 3508,
+      "strand": "+",
+      "product": "non-structural protein NS1",
+      "note": null
+    },
+    {
+      "name": "NS2a",
+      "start": 3509,
+      "end": 4180,
+      "strand": "+",
+      "product": "non-structural protein NS2a",
+      "note": null
+    },
+    {
+      "name": "NS2b",
+      "start": 4181,
+      "end": 4570,
+      "strand": "+",
+      "product": "non-structural protein NS2b",
+      "note": null
+    },
+    {
+      "name": "NS3",
+      "start": 4571,
+      "end": 6439,
+      "strand": "+",
+      "product": "non-structural protein NS3",
+      "note": "proteinase and putative helicase"
+    },
+    {
+      "name": "NS4a",
+      "start": 6440,
+      "end": 6817,
+      "strand": "+",
+      "product": "non-structural protein NS4a",
+      "note": null
+    },
+    {
+      "name": "2K",
+      "start": 6818,
+      "end": 6886,
+      "strand": "+",
+      "product": "2K protein",
+      "note": null
+    },
+    {
+      "name": "NS4b",
+      "start": 6887,
+      "end": 7636,
+      "strand": "+",
+      "product": "non-structural protein NS4b",
+      "note": null
+    },
+    {
+      "name": "RdRPol",
+      "start": 7637,
+      "end": 10351,
+      "strand": "+",
+      "product": "RNA-dependent RNA polymerase",
+      "note": null
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "pathogen": "covid-19",
+  "label": "COVID-19",
+  "genomeLength": 29903,
+  "genes": [
+    {
+      "name": "ORF1a",
+      "start": 266,
+      "end": 13468,
+      "strand": "+",
+      "product": null,
+      "note": null
+    },
+    {
+      "name": "ORF1b",
+      "start": 13468,
+      "end": 21555,
+      "strand": "+",
+      "product": null,
+      "note": null
+    },
+    {
+      "name": "S",
+      "start": 21563,
+      "end": 25384,
+      "strand": "+",
+      "product": null,
+      "note": null
+    },
+    {
+      "name": "ORF3a",
+      "start": 25393,
+      "end": 26220,
+      "strand": "+",
+      "product": null,
+      "note": null
+    },
+    {
+      "name": "E",
+      "start": 26245,
+      "end": 26472,
+      "strand": "+",
+      "product": null,
+      "note": null
+    },
+    {
+      "name": "M",
+      "start": 26523,
+      "end": 27191,
+      "strand": "+",
+      "product": null,
+      "note": null
+    },
+    {
+      "name": "ORF6",
+      "start": 27202,
+      "end": 27387,
+      "strand": "+",
+      "product": null,
+      "note": null
+    },
+    {
+      "name": "ORF7a",
+      "start": 27394,
+      "end": 27759,
+      "strand": "+",
+      "product": null,
+      "note": null
+    },
+    {
+      "name": "ORF7b",
+      "start": 27756,
+      "end": 27887,
+      "strand": "+",
+      "product": null,
+      "note": null
+    },
+    {
+      "name": "ORF8",
+      "start": 27894,
+      "end": 28259,
+      "strand": "+",
+      "product": null,
+      "note": null
+    },
+    {
+      "name": "N",
+      "start": 28274,
+      "end": 29533,
+      "strand": "+",
+      "product": null,
+      "note": null
+    },
+    {
+      "name": "ORF9b",
+      "start": 28284,
+      "end": 28577,
+      "strand": "+",
+      "product": null,
+      "note": null
+    }
+  ]
+}

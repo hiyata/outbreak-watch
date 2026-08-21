@@ -1,0 +1,79 @@
+{
+  "pathogen": "ebola-sudan",
+  "label": "Ebola disease caused by Sudan virus",
+  "genomeLength": 18875,
+  "genes": [
+    {
+      "name": "NP",
+      "start": 458,
+      "end": 2674,
+      "strand": "+",
+      "product": "nucleoprotein",
+      "note": "predominant component of nucleocapsid"
+    },
+    {
+      "name": "VP35",
+      "start": 3138,
+      "end": 4127,
+      "strand": "+",
+      "product": "polymerase complex protein",
+      "note": "cofactor in polymerase complex; type I IFN antagonist"
+    },
+    {
+      "name": "VP40",
+      "start": 4454,
+      "end": 5434,
+      "strand": "+",
+      "product": "matrix protein",
+      "note": "most abundant protein in virion"
+    },
+    {
+      "name": "sGP",
+      "start": 5998,
+      "end": 7116,
+      "strand": "+",
+      "product": "small secreted glycoprotein",
+      "note": "small non-structural secreted glycoprotein; forms dimers linked by disulfide bonds (parallel orientation); processed by furin to yield sGP and delta peptide; sGP"
+    },
+    {
+      "name": "GP",
+      "start": 6882,
+      "end": 8027,
+      "strand": "+",
+      "product": "spike glycoprotein",
+      "note": "structural glycoprotein; processed by furin to yield GP1-GP2 heterodimer that forms membrane-anchored trimers (peplomers)"
+    },
+    {
+      "name": "ssGP",
+      "start": 6883,
+      "end": 6955,
+      "strand": "+",
+      "product": "second secreted glycoprotein",
+      "note": "second non-structural secreted glycoprotein; super small secreted glycoprotein; secreted in a monomeric form; one A residue is deleted or two additional A residues are inserted at the editing site during transcription of the GP gene"
+    },
+    {
+      "name": "VP30",
+      "start": 8441,
+      "end": 9307,
+      "strand": "+",
+      "product": "minor nucleoprotein",
+      "note": null
+    },
+    {
+      "name": "VP24",
+      "start": 10299,
+      "end": 11054,
+      "strand": "+",
+      "product": "membrane-associated protein",
+      "note": null
+    },
+    {
+      "name": "L",
+      "start": 11535,
+      "end": 18167,
+      "strand": "+",
+      "product": "RNA-dependent RNA polymerase",
+      "note": "translation may start at the 2nd methionine codon of the ORF"
+    }
+  ]
+}

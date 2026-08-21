@@ -1,0 +1,71 @@
+{
+  "pathogen": "ebola-bundibugyo",
+  "label": "Ebola disease caused by Bundibugyo virus",
+  "genomeLength": 18940,
+  "genes": [
+    {
+      "name": "NP",
+      "start": 458,
+      "end": 2677,
+      "strand": "+",
+      "product": "nucleoprotein",
+      "note": "encapsidation of genomic RNA"
+    },
+    {
+      "name": "VP35",
+      "start": 3108,
+      "end": 4133,
+      "strand": "+",
+      "product": "polymerase complex protein",
+      "note": "putative type-1 IFN antagonist"
+    },
+    {
+      "name": "VP40",
+      "start": 4461,
+      "end": 5441,
+      "strand": "+",
+      "product": "matrix protein",
+      "note": null
+    },
+    {
+      "name": "GP_003",
+      "start": 6021,
+      "end": 7142,
+      "strand": "+",
+      "product": "small secreted glycoprotein",
+      "note": "solulbe secreted glycoprotein; small non-structural secreted glycoprotein; sGP"
+    },
+    {
+      "name": "GP",
+      "start": 6905,
+      "end": 8050,
+      "strand": "+",
+      "product": "spike glycoprotein",
+      "note": "GP1,2; structural glycoprotein; cleaved by furin into subunits GP1 and GP2 to yield a heterodimer linked by a disulfide bond"
+    },
+    {
+      "name": "VP30",
+      "start": 8496,
+      "end": 9365,
+      "strand": "+",
+      "product": "minor nucleoprotein",
+      "note": "polymerase complex protein"
+    },
+    {
+      "name": "VP24",
+      "start": 10335,
+      "end": 11090,
+      "strand": "+",
+      "product": "membrane-associated protein",
+      "note": null
+    },
+    {
+      "name": "L",
+      "start": 11567,
+      "end": 18199,
+      "strand": "+",
+      "product": "RNA-dependent RNA polymerase",
+      "note": "synthesis of viral RNAs; transcriptional RNA editing"
+    }
+  ]
+}

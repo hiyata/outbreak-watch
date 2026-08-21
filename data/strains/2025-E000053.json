@@ -1,0 +1,205 @@
+{
+  "outbreakId": "2025-E000053",
+  "disease": "Sudan virus disease",
+  "pathogen": "ebola-sudan",
+  "nextcladeDataset": "nextstrain/orthoebolavirus/sudv",
+  "generatedAt": "2026-08-21T04:11:30.698Z",
+  "matches": [
+    {
+      "accession": "OZ222062",
+      "isolate": null,
+      "country": "Uganda",
+      "collectionDate": "2025-01-19",
+      "confidence": "confirmed",
+      "alignment": {
+        "clade": null,
+        "totalSubstitutions": 171,
+        "mutations": [
+          {
+            "gene": "GP",
+            "position": 16,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S16N"
+          },
+          {
+            "gene": "GP",
+            "position": 410,
+            "refAa": "P",
+            "altAa": "L",
+            "change": "P410L"
+          },
+          {
+            "gene": "GP",
+            "position": 416,
+            "refAa": "T",
+            "altAa": "M",
+            "change": "T416M"
+          },
+          {
+            "gene": "GP",
+            "position": 418,
+            "refAa": "P",
+            "altAa": "L",
+            "change": "P418L"
+          },
+          {
+            "gene": "GP",
+            "position": 441,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T441A"
+          },
+          {
+            "gene": "GP",
+            "position": 450,
+            "refAa": "P",
+            "altAa": "S",
+            "change": "P450S"
+          },
+          {
+            "gene": "L",
+            "position": 42,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K42R"
+          },
+          {
+            "gene": "L",
+            "position": 119,
+            "refAa": "N",
+            "altAa": "S",
+            "change": "N119S"
+          },
+          {
+            "gene": "L",
+            "position": 953,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I953V"
+          },
+          {
+            "gene": "L",
+            "position": 1382,
+            "refAa": "D",
+            "altAa": "E",
+            "change": "D1382E"
+          },
+          {
+            "gene": "L",
+            "position": 1584,
+            "refAa": "S",
+            "altAa": "P",
+            "change": "S1584P"
+          },
+          {
+            "gene": "L",
+            "position": 1703,
+            "refAa": "T",
+            "altAa": "P",
+            "change": "T1703P"
+          },
+          {
+            "gene": "L",
+            "position": 1747,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A1747V"
+          },
+          {
+            "gene": "L",
+            "position": 1759,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V1759I"
+          },
+          {
+            "gene": "L",
+            "position": 1876,
+            "refAa": "P",
+            "altAa": "S",
+            "change": "P1876S"
+          },
+          {
+            "gene": "L",
+            "position": 1888,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V1888I"
+          },
+          {
+            "gene": "NP",
+            "position": 478,
+            "refAa": "T",
+            "altAa": "I",
+            "change": "T478I"
+          },
+          {
+            "gene": "NP",
+            "position": 596,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S596L"
+          },
+          {
+            "gene": "NP",
+            "position": 644,
+            "refAa": "G",
+            "altAa": "R",
+            "change": "G644R"
+          },
+          {
+            "gene": "NP",
+            "position": 720,
+            "refAa": "L",
+            "altAa": "F",
+            "change": "L720F"
+          },
+          {
+            "gene": "VP30",
+            "position": 70,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V70I"
+          },
+          {
+            "gene": "VP35",
+            "position": 184,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V184I"
+          },
+          {
+            "gene": "VP35",
+            "position": 189,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I189T"
+          },
+          {
+            "gene": "VP40",
+            "position": 275,
+            "refAa": "M",
+            "altAa": "I",
+            "change": "M275I"
+          },
+          {
+            "gene": "sGP",
+            "position": 16,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S16N"
+          },
+          {
+            "gene": "ssGP",
+            "position": 16,
+            "refAa": "S",
+            "altAa": "N",
+            "change": "S16N"
+          }
+        ],
+        "qcStatus": "good"
+      }
+    }
+  ]
+}

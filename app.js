@@ -617,9 +617,9 @@ function renderGenomeSvg(genome, mutations) {
       const x2 = (Math.max(g.start, g.end) / len) * width;
       const w = Math.max(x2 - x1, 0.6);
       const hit = mutatedGenes.has(g.name);
-      const fill = hit ? "var(--accent-dim)" : "var(--panel-2)";
+      const fill = hit ? "var(--accent)" : "var(--panel-2)";
       const label = `${g.name}${g.product ? " — " + g.product : ""}`;
-      return `<rect class="genome-gene${hit ? " has-mut" : ""}" x="${x1.toFixed(2)}" y="${trackY}" width="${w.toFixed(2)}" height="${trackH}" fill="${fill}"><title>${escapeHtml(label)}</title></rect>`;
+      return `<rect class="genome-gene${hit ? " has-mut" : ""}" x="${x1.toFixed(2)}" y="${trackY}" width="${w.toFixed(2)}" height="${trackH}" fill="${fill}" data-tip="${escapeHtml(label)}"></rect>`;
     })
     .join("");
 
@@ -635,19 +635,72 @@ function renderGenomeSvg(genome, mutations) {
       const geneX2 = (Math.max(gene.start, gene.end) / len) * width;
       const x = geneX1 + frac * (geneX2 - geneX1);
       const label = `${m.gene} ${m.change}${gene.product ? " — " + gene.product : ""}`;
-      return `<line class="genome-mut" x1="${x.toFixed(2)}" y1="${trackY - 5}" x2="${x.toFixed(2)}" y2="${trackY + trackH + 5}"><title>${escapeHtml(label)}</title></line>`;
+      // Two overlapping lines (a wider pale halo under a thin dark core) so
+      // the tick stays visible whether it lands on a mutated (orange) gene
+      // rect or the plain background — a single flat color disappears
+      // against one or the other depending on theme.
+      return (
+        `<line class="genome-mut-halo" x1="${x.toFixed(2)}" y1="${trackY - 5}" x2="${x.toFixed(2)}" y2="${trackY + trackH + 5}"></line>` +
+        `<line class="genome-mut" x1="${x.toFixed(2)}" y1="${trackY - 5}" x2="${x.toFixed(2)}" y2="${trackY + trackH + 5}" data-tip="${escapeHtml(label)}"></line>`
+      );
     })
     .join("");
 
-  return `
-    <svg class="genome-map" viewBox="0 0 ${width} ${height}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Genome map with mutation positions">
-      <rect x="0" y="${trackY}" width="${width}" height="${trackH}" rx="2" fill="var(--border)" opacity="0.35"></rect>
-      ${geneRects}
-      ${markers}
-      <text x="0" y="${trackY + trackH + 14}" class="genome-axis-label">0 bp</text>
-      <text x="${width}" y="${trackY + trackH + 14}" class="genome-axis-label" text-anchor="end">${fmtNumber(len)} bp</text>
-    </svg>
+  const geneCount = mutatedGenes.size;
+  const summaryHtml = `
+    <div class="genome-summary">
+      <span><strong>${fmtNumber(mutations.length)}</strong> amino-acid difference${mutations.length === 1 ? "" : "s"}</span>
+      <span>across <strong>${fmtNumber(geneCount)}</strong> gene${geneCount === 1 ? "" : "s"}</span>
+      <span class="muted-note">of ${fmtNumber(genome.genes.length)} annotated</span>
+    </div>
   `;
+
+  return `
+    ${summaryHtml}
+    <div class="genome-map-wrap">
+      <svg class="genome-map" viewBox="0 0 ${width} ${height}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Genome map with mutation positions">
+        <rect x="0" y="${trackY}" width="${width}" height="${trackH}" rx="2" fill="var(--border)" opacity="0.35"></rect>
+        ${geneRects}
+        ${markers}
+        <text x="0" y="${trackY + trackH + 14}" class="genome-axis-label">0 bp</text>
+        <text x="${width}" y="${trackY + trackH + 14}" class="genome-axis-label" text-anchor="end">${fmtNumber(len)} bp</text>
+      </svg>
+    </div>
+    <div class="genome-legend">
+      <span><span class="legend-swatch" style="background: var(--accent);"></span> gene with differences</span>
+      <span><span class="legend-swatch" style="background: var(--panel-2); border: 1px solid var(--border);"></span> gene unchanged</span>
+      <span><span class="legend-tick"></span> individual substitution — hover for detail</span>
+    </div>
+  `;
+}
+
+// Custom hover tooltip for the genome map (SVG's native <title> has an
+// inconsistent, sluggish browser tooltip) — reuses the site's existing
+// .chart-tooltip look from the trend charts so it feels like one system.
+function attachGenomeTooltips(container) {
+  const wrap = container.querySelector(".genome-map-wrap");
+  if (!wrap) return;
+  wrap.style.position = "relative";
+  const tooltip = document.createElement("div");
+  tooltip.className = "chart-tooltip";
+  tooltip.style.opacity = 0;
+  tooltip.style.transform = "translate(-50%, calc(-100% - 12px))";
+  wrap.appendChild(tooltip);
+
+  wrap.querySelectorAll("[data-tip]").forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+      tooltip.innerHTML = `<div class="chart-tooltip-value">${escapeHtml(el.dataset.tip)}</div>`;
+      tooltip.style.opacity = 1;
+    });
+    el.addEventListener("mousemove", (e) => {
+      const rect = wrap.getBoundingClientRect();
+      tooltip.style.left = `${e.clientX - rect.left}px`;
+      tooltip.style.top = `${e.clientY - rect.top}px`;
+    });
+    el.addEventListener("mouseleave", () => {
+      tooltip.style.opacity = 0;
+    });
+  });
 }
 
 const MUTATION_GROUPS_COLLAPSED = 12;
@@ -655,7 +708,8 @@ const MUTATION_GROUPS_COLLAPSED = 12;
 function renderMutationGroup(genome, geneName, muts) {
   const gene = genome.genes.find((g) => g.name === geneName);
   const product = gene?.product;
-  const tags = muts.map((m) => `<span class="mut-tag">${escapeHtml(m.change)}</span>`).join("");
+  const sorted = [...muts].sort((a, b) => a.position - b.position);
+  const tags = sorted.map((m) => `<span class="mut-tag">${escapeHtml(m.change)}</span>`).join("");
   return `
     <div class="gene-mut-group">
       <div class="gene-mut-head">
@@ -754,7 +808,10 @@ function renderStrainPanel(container, strainData, genome) {
         paint();
       });
     });
-    if (hasMutations) renderMutationList(document.getElementById("gene-mut-list"), genome, mutations);
+    if (hasMutations) {
+      attachGenomeTooltips(container);
+      renderMutationList(document.getElementById("gene-mut-list"), genome, mutations);
+    }
   }
 
   paint();

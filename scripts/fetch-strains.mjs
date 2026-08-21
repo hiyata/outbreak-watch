@@ -75,6 +75,82 @@ const PATHOGENS = [
     excludeRecordText: /\bsegment [1235678]\b/i,
     nextcladeDataset: "community/moncla-lab/iav-h5/ha/all-clades",
   },
+  {
+    id: "covid-19",
+    label: "COVID-19",
+    matchDisease: (disease) => /covid-19|novel coronavirus/i.test(disease),
+    organism: "Severe acute respiratory syndrome coronavirus 2",
+    nextcladeDataset: "nextstrain/sars-cov-2/wuhan-hu-1/orfs",
+  },
+  {
+    // WHO's "Ebola virus disease" (no species named) is almost always Zaire
+    // ebolavirus, the species behind the great majority of historical
+    // outbreaks — but never the title when a report explicitly names Sudan
+    // or Bundibugyo virus instead, so those are excluded here.
+    id: "ebola-zaire",
+    label: "Ebola virus disease (Zaire ebolavirus)",
+    matchDisease: (disease) => /ebola/i.test(disease) && !/sudan|bundibugyo/i.test(disease),
+    organism: "Zaire ebolavirus",
+    nextcladeDataset: "nextstrain/orthoebolavirus/ebov",
+  },
+  {
+    id: "ebola-sudan",
+    label: "Ebola disease caused by Sudan virus",
+    matchDisease: (disease) => /sudan virus|ebola.*sudan/i.test(disease),
+    organism: "Sudan ebolavirus",
+    nextcladeDataset: "nextstrain/orthoebolavirus/sudv",
+  },
+  {
+    id: "ebola-bundibugyo",
+    label: "Ebola disease caused by Bundibugyo virus",
+    matchDisease: (disease) => /bundibugyo/i.test(disease),
+    organism: "Bundibugyo ebolavirus",
+    nextcladeDataset: "nextstrain/orthoebolavirus/bdbv",
+  },
+  {
+    id: "marburg",
+    label: "Marburg virus disease",
+    matchDisease: (disease) => /marburg/i.test(disease),
+    organism: "Marburg marburgvirus",
+    nextcladeDataset: "community/genspectrum/marburg/HK1980/all-lineages",
+  },
+  {
+    id: "yellow-fever",
+    label: "Yellow fever",
+    matchDisease: (disease) => /yellow fever/i.test(disease),
+    organism: "Yellow fever virus",
+    nextcladeDataset: "community/pathoplexus/yellow-fever-virus",
+  },
+  {
+    id: "measles",
+    label: "Measles",
+    matchDisease: (disease) => /\bmeasles\b/i.test(disease),
+    organism: "Measles virus",
+    nextcladeDataset: "nextstrain/measles/genome/WHO-2012",
+  },
+  {
+    id: "west-nile",
+    label: "West Nile virus",
+    matchDisease: (disease) => /west nile/i.test(disease),
+    organism: "West Nile virus",
+    nextcladeDataset: "nextstrain/wnv/all-lineages",
+  },
+  {
+    id: "zika",
+    label: "Zika virus disease",
+    matchDisease: (disease) => /zika/i.test(disease),
+    organism: "Zika virus",
+    nextcladeDataset: "community/itps/zikav",
+  },
+  {
+    id: "dengue",
+    label: "Dengue",
+    // NCBI's Organism field is hierarchical/exploded, so the "Dengue
+    // virus" parent taxon matches all four serotypes' records too.
+    matchDisease: (disease) => /dengue/i.test(disease),
+    organism: "Dengue virus",
+    nextcladeDataset: "nextstrain/dengue/all",
+  },
 ];
 
 function sleep(ms) {
@@ -222,12 +298,23 @@ function parseGffAttrs(attrStr) {
   return attrs;
 }
 
-// Reads the dataset's genome_annotation.gff3 to get each gene/protein's
-// position and (when available) its known function, so the genome map can
-// be drawn to scale and mutations can be labelled with what the gene does —
-// this is Nextclade dataset metadata, not something fetched live per view.
+// Reads the dataset's GFF3 to get each gene/protein's position and (when
+// available) its known function, so the genome map can be drawn to scale
+// and mutations can be labelled with what the gene does — this is
+// Nextclade dataset metadata, not something fetched live per view.
+//
+// The annotation file isn't always named genome_annotation.gff3 (the
+// measles dataset, for one, calls it annotation.gff3) — pathogen.json's
+// files.genomeAnnotation is the authoritative filename.
 async function extractGenomeAnnotation(datasetDir) {
-  const gffText = await readFile(path.join(datasetDir, "genome_annotation.gff3"), "utf-8").catch(() => null);
+  let annotationFile = "genome_annotation.gff3";
+  try {
+    const pathogenJson = JSON.parse(await readFile(path.join(datasetDir, "pathogen.json"), "utf-8"));
+    if (pathogenJson.files?.genomeAnnotation) annotationFile = pathogenJson.files.genomeAnnotation;
+  } catch {
+    // fall back to the conventional filename
+  }
+  const gffText = await readFile(path.join(datasetDir, annotationFile), "utf-8").catch(() => null);
   if (!gffText) return null;
 
   const genesByName = new Map();

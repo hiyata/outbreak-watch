@@ -381,14 +381,23 @@
   }
   .strain-tab.active { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
 
-  .genome-map { width: 100%; height: auto; display: block; margin: 0.4rem 0 0.7rem; overflow: visible; }
-  .genome-gene { transition: opacity 0.1s; }
-  .genome-gene.has-mut { opacity: 1; }
-  .genome-gene:not(.has-mut) { opacity: 0.55; }
+  .genome-summary { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; align-items: baseline; font-size: 0.86rem; margin-bottom: 0.3rem; }
+  .genome-summary strong { color: var(--accent); font-size: 1.05em; }
+
+  .genome-map-wrap { position: relative; }
+  .genome-map { width: 100%; height: auto; display: block; margin: 0.4rem 0 0.4rem; overflow: visible; cursor: default; }
+  .genome-gene { transition: opacity 0.1s; cursor: pointer; }
+  .genome-gene.has-mut { opacity: 0.85; }
+  .genome-gene:not(.has-mut) { opacity: 0.7; }
   .genome-gene:hover { opacity: 1; }
-  .genome-mut { stroke: var(--accent); stroke-width: 1.4; cursor: pointer; }
-  .genome-mut:hover { stroke-width: 2.4; }
+  .genome-mut-halo { stroke: var(--bg); stroke-width: 3.2; opacity: 0.8; pointer-events: none; }
+  .genome-mut { stroke: var(--text); stroke-width: 1.3; cursor: pointer; }
+  .genome-mut:hover { stroke-width: 2.2; stroke: var(--accent); }
   .genome-axis-label { font-size: 6px; fill: var(--muted); }
+
+  .genome-legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; font-size: 0.72rem; color: var(--muted); margin-bottom: 1rem; }
+  .genome-legend .legend-swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; margin-right: 0.3rem; vertical-align: -1px; }
+  .genome-legend .legend-tick { display: inline-block; width: 2px; height: 11px; background: var(--accent); margin-right: 0.3rem; vertical-align: -2px; }
 
   .gene-mut-list { display: flex; flex-direction: column; gap: 0.5rem; }
   .gene-mut-group {

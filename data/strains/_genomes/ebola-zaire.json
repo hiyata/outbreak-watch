@@ -1,0 +1,79 @@
+{
+  "pathogen": "ebola-zaire",
+  "label": "Ebola virus disease (Zaire ebolavirus)",
+  "genomeLength": 18959,
+  "genes": [
+    {
+      "name": "NP",
+      "start": 470,
+      "end": 2689,
+      "strand": "+",
+      "product": "nucleoprotein",
+      "note": null
+    },
+    {
+      "name": "VP35",
+      "start": 3129,
+      "end": 4151,
+      "strand": "+",
+      "product": "polymerase complex protein",
+      "note": null
+    },
+    {
+      "name": "VP40",
+      "start": 4479,
+      "end": 5459,
+      "strand": "+",
+      "product": "matrix protein",
+      "note": null
+    },
+    {
+      "name": "sGP",
+      "start": 6039,
+      "end": 7133,
+      "strand": "+",
+      "product": "small secreted glycoprotein",
+      "note": "sGP, small non-structural, secreted glycoprotein; sGP secreted as an anti-parallel oriented homodimer"
+    },
+    {
+      "name": "GP",
+      "start": 6923,
+      "end": 8068,
+      "strand": "+",
+      "product": "spike glycoprotein",
+      "note": "virion spike glycoprotein precursor; an additional A residue is inserted during transcription; encodes two disulfide linked subunits GP1 and GP2"
+    },
+    {
+      "name": "ssGP",
+      "start": 6924,
+      "end": 6933,
+      "strand": "+",
+      "product": "second secreted glycoprotein",
+      "note": "second non-structural secreted glycoprotein; super small secreted glycoprotein; secreted in a monomeric form; one A residue is deleted or two additional A residues are inserted at the editing site during transcription of the GP gene"
+    },
+    {
+      "name": "VP30",
+      "start": 8509,
+      "end": 9375,
+      "strand": "+",
+      "product": "minor nucleoprotein",
+      "note": "polymerase complex protein"
+    },
+    {
+      "name": "VP24",
+      "start": 10345,
+      "end": 11100,
+      "strand": "+",
+      "product": "membrane-associated protein",
+      "note": null
+    },
+    {
+      "name": "L",
+      "start": 11581,
+      "end": 18219,
+      "strand": "+",
+      "product": "RNA-dependent RNA polymerase",
+      "note": null
+    }
+  ]
+}

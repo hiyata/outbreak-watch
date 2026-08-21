@@ -1,0 +1,63 @@
+{
+  "pathogen": "marburg",
+  "label": "Marburg virus disease",
+  "genomeLength": 19111,
+  "genes": [
+    {
+      "name": "NP",
+      "start": 104,
+      "end": 2191,
+      "strand": "+",
+      "product": "nucleoprotein",
+      "note": "encapsidates RNA genome"
+    },
+    {
+      "name": "VP35",
+      "start": 2945,
+      "end": 3934,
+      "strand": "+",
+      "product": "polymerase complex protein",
+      "note": "polymerase cofactor; type I interferon antagonist"
+    },
+    {
+      "name": "VP40",
+      "start": 4568,
+      "end": 5479,
+      "strand": "+",
+      "product": "matrix protein",
+      "note": "budding; virus particle formation"
+    },
+    {
+      "name": "GP",
+      "start": 5941,
+      "end": 7986,
+      "strand": "+",
+      "product": "glycoprotein",
+      "note": "fusion; receptor binding"
+    },
+    {
+      "name": "VP30",
+      "start": 8869,
+      "end": 9714,
+      "strand": "+",
+      "product": "minor nucleoprotein",
+      "note": "binds to NP"
+    },
+    {
+      "name": "VP24",
+      "start": 10207,
+      "end": 10968,
+      "strand": "+",
+      "product": "matrix protein",
+      "note": null
+    },
+    {
+      "name": "L",
+      "start": 11481,
+      "end": 18476,
+      "strand": "+",
+      "product": "RNA-dependent RNA polymerase",
+      "note": null
+    }
+  ]
+}

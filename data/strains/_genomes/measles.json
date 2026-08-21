@@ -1,0 +1,79 @@
+{
+  "pathogen": "measles",
+  "label": "Measles",
+  "genomeLength": 15894,
+  "genes": [
+    {
+      "name": "N",
+      "start": 108,
+      "end": 1685,
+      "strand": "+",
+      "product": "nucleocapsid protein",
+      "note": null
+    },
+    {
+      "name": "P_V_C",
+      "start": 1748,
+      "end": 3402,
+      "strand": "+",
+      "product": null,
+      "note": null
+    },
+    {
+      "name": "P",
+      "start": 1807,
+      "end": 3330,
+      "strand": "+",
+      "product": "phosphoprotein",
+      "note": null
+    },
+    {
+      "name": "C",
+      "start": 1829,
+      "end": 2389,
+      "strand": "+",
+      "product": "C protein",
+      "note": null
+    },
+    {
+      "name": "V",
+      "start": 2499,
+      "end": 2705,
+      "strand": "+",
+      "product": "V protein",
+      "note": null
+    },
+    {
+      "name": "M",
+      "start": 3438,
+      "end": 4445,
+      "strand": "+",
+      "product": "matrix protein",
+      "note": null
+    },
+    {
+      "name": "F",
+      "start": 5458,
+      "end": 7110,
+      "strand": "+",
+      "product": "fusion protein",
+      "note": null
+    },
+    {
+      "name": "H",
+      "start": 7271,
+      "end": 9124,
+      "strand": "+",
+      "product": "hemagglutinin protein",
+      "note": null
+    },
+    {
+      "name": "L",
+      "start": 9234,
+      "end": 15785,
+      "strand": "+",
+      "product": "large polymerase protein",
+      "note": null
+    }
+  ]
+}
