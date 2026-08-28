@@ -6,8 +6,16 @@
     <atom:link href="https://hiyata.github.io/outbreak-watch/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated daily.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 27 Aug 2026 17:43:21 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 18:45:21 GMT</lastBuildDate>
     <generator>outbreak-watch scripts/build-rss.mjs</generator>
+    <item>
+      <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo</title>
+      <link>https://www.who.int/2026-DON616</link>
+      <guid isPermaLink="false">c835cb1d-25ad-4dd9-b065-ee09c054fe81</guid>
+      <pubDate>Fri, 28 Aug 2026 15:31:07 GMT</pubDate>
+      <category>Ebola disease caused by Bundibugyo virus</category>
+      <description>Dem. Rep. Congo, Uganda — Since the last Disease Outbreak News was published on 14 August 2026, the outbreak has spread from 54 to 60 health zones. The number of affected provinces stands at six out of 26 provinces of the country: Bas-Uélé, Haut-Uélé, Ituri, North Kivu, South Kivu, and Tshopo. Six additional health zones reported cases since… (5,794 cases, 2,786 deaths reported as of this update)</description>
+    </item>
     <item>
       <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo</title>
       <link>https://www.who.int/2026-DON615</link>
@@ -479,14 +487,6 @@
       <pubDate>Fri, 14 Feb 2025 14:17:26 GMT</pubDate>
       <category>Marburg Virus Disease–United Republic of Tanzania</category>
       <description>Tanzania — Since the declaration of the Marburg Virus Disease (MVD) outbreak on 20 January 2025 in the United Republic of Tanzania, one additional confirmed death was reported by the Ministry of Health from the epicentre of the outbreak in Biharamulo district in Kagera region. As of 10 February 2025, a cumulative of two…</description>
-    </item>
-    <item>
-      <title>Sudan virus disease – Uganda</title>
-      <link>https://www.who.int/2025-DON555</link>
-      <guid isPermaLink="false">dca8f16e-0837-415c-96be-d9682951e009</guid>
-      <pubDate>Sat, 01 Feb 2025 10:10:31 GMT</pubDate>
-      <category>Sudan virus disease</category>
-      <description>Uganda, Sudan — On 30 January 2025, the Ministry of Health of Uganda declared an outbreak of Sudan virus disease (SVD) following confirmation from three national reference laboratories. The case presented with signs and symptoms between 20 and 21 January and died on 29 January at the National Referral Hospital in Kampala. As of 30…</description>
     </item>
   </channel>
 </rss>

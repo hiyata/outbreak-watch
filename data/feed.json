@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T17:39:02.162Z",
+  "generated_at": "2026-08-28T18:44:04.944Z",
   "sources": [
     "WHO"
   ],
@@ -10,8 +10,8 @@
       "id": "2026-E000253",
       "disease": "Ebola disease caused by Bundibugyo virus",
       "first_seen": "2026-05-14T06:00:00Z",
-      "latest_update": "2026-08-14T15:54:20Z",
-      "update_count": 10,
+      "latest_update": "2026-08-28T15:31:07Z",
+      "update_count": 11,
       "countries": [
         {
           "id": "180",
@@ -24,19 +24,31 @@
       ],
       "is_global": false,
       "latest_counts": {
-        "cases": 4665,
-        "deaths": 2184,
-        "as_of": "12 August 2026"
+        "cases": 5794,
+        "deaths": 2786,
+        "as_of": "26 August 2026"
       },
       "trend": {
-        "latest_value": 1060,
-        "previous_value": 1481,
-        "absolute_change": -421,
-        "percent_change": -28.4,
-        "trend": "rising",
+        "latest_value": 1129,
+        "previous_value": 1060,
+        "absolute_change": 69,
+        "percent_change": 6.5,
+        "trend": "stable",
         "window_size": 4
       },
       "updates": [
+        {
+          "id": "c835cb1d-25ad-4dd9-b065-ee09c054fe81",
+          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
+          "url": "https://www.who.int/2026-DON616",
+          "date": "2026-08-28T15:31:07Z",
+          "summary": "Since the last Disease Outbreak News was published on 14 August 2026, the outbreak has spread from 54 to 60 health zones. The number of affected provinces stands at six out of 26 provinces of the country: Bas-Uélé, Haut-Uélé, Ituri, North Kivu, South Kivu, and Tshopo. Six additional health zones reported cases since…",
+          "counts": {
+            "cases": 5794,
+            "deaths": 2786,
+            "as_of": "26 August 2026"
+          }
+        },
         {
           "id": "3a950a6c-8e9a-4d58-b8db-6840bd02db92",
           "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
@@ -7901,7 +7913,7 @@
       "disease": "2018",
       "first_seen": "2021-06-03T09:07:11Z",
       "latest_update": "2021-06-03T09:07:52Z",
-      "update_count": 16,
+      "update_count": 15,
       "countries": [
         {
           "id": "682",
@@ -8054,14 +8066,6 @@
           "url": "https://www.who.int/01-november-2018-ebola-drc-en",
           "date": "2018-11-01T00:00:00Z",
           "summary": "The increase over the past four weeks in confirmed case incidence (Figure 1), most notably in the city of Beni and communities around Butembo, is concerning. Security incidents continue to severely impact both civilians and frontline workers. Moreover, pockets of community resistance or reluctance continue to hamper…",
-          "counts": null
-        },
-        {
-          "id": "30086194-9613-4055-965e-e811dda873b7",
-          "title": "Ebola virus disease – Democratic Republic of the Congo",
-          "url": "https://www.who.int/25-october-2018-ebola-drc-en",
-          "date": "2018-10-25T00:00:00Z",
-          "summary": "Security incidents over the past week, ranging from clashes between rebel and government forces resulting in civilian deaths to response vehicles being pelted with stones, continued to cause community distress and severely impede response activities for the Ebola virus disease (EVD) outbreak in the Democratic Republic…",
           "counts": null
         }
       ]
