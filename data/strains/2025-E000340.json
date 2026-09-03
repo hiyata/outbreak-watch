@@ -1,0 +1,429 @@
+{
+  "outbreakId": "2025-E000340",
+  "disease": "Ebola virus disease",
+  "pathogen": "ebola-zaire",
+  "nextcladeDataset": "nextstrain/orthoebolavirus/ebov",
+  "generatedAt": "2026-09-03T11:18:18.280Z",
+  "matches": [
+    {
+      "accession": "OZ538127",
+      "isolate": "25FHV170",
+      "country": "Dem. Rep. Congo",
+      "collectionDate": "2025-09-01/2025-09-03",
+      "confidence": "confirmed",
+      "alignment": {
+        "clade": "Ebov-2025",
+        "totalSubstitutions": 85,
+        "mutations": [
+          {
+            "gene": "GP",
+            "position": 337,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D337N"
+          },
+          {
+            "gene": "GP",
+            "position": 543,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I543T"
+          },
+          {
+            "gene": "L",
+            "position": 78,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V78I"
+          },
+          {
+            "gene": "L",
+            "position": 478,
+            "refAa": "S",
+            "altAa": "G",
+            "change": "S478G"
+          },
+          {
+            "gene": "L",
+            "position": 936,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K936R"
+          },
+          {
+            "gene": "L",
+            "position": 1124,
+            "refAa": "R",
+            "altAa": "K",
+            "change": "R1124K"
+          },
+          {
+            "gene": "L",
+            "position": 1694,
+            "refAa": "M",
+            "altAa": "V",
+            "change": "M1694V"
+          },
+          {
+            "gene": "L",
+            "position": 2136,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I2136V"
+          },
+          {
+            "gene": "NP",
+            "position": 516,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I516T"
+          },
+          {
+            "gene": "VP24",
+            "position": 211,
+            "refAa": "M",
+            "altAa": "K",
+            "change": "M211K"
+          },
+          {
+            "gene": "VP35",
+            "position": 203,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N203D"
+          },
+          {
+            "gene": "VP40",
+            "position": 53,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I53T"
+          },
+          {
+            "gene": "VP40",
+            "position": 297,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V297A"
+          }
+        ],
+        "qcStatus": "good"
+      }
+    },
+    {
+      "accession": "OZ538111",
+      "isolate": "25FHV173",
+      "country": "Dem. Rep. Congo",
+      "collectionDate": "2025-09-01",
+      "confidence": "confirmed",
+      "alignment": {
+        "clade": "Ebov-2025",
+        "totalSubstitutions": 93,
+        "mutations": [
+          {
+            "gene": "GP",
+            "position": 337,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D337N"
+          },
+          {
+            "gene": "GP",
+            "position": 543,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I543T"
+          },
+          {
+            "gene": "L",
+            "position": 78,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V78I"
+          },
+          {
+            "gene": "L",
+            "position": 478,
+            "refAa": "S",
+            "altAa": "G",
+            "change": "S478G"
+          },
+          {
+            "gene": "L",
+            "position": 936,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K936R"
+          },
+          {
+            "gene": "L",
+            "position": 1124,
+            "refAa": "R",
+            "altAa": "K",
+            "change": "R1124K"
+          },
+          {
+            "gene": "L",
+            "position": 1694,
+            "refAa": "M",
+            "altAa": "V",
+            "change": "M1694V"
+          },
+          {
+            "gene": "L",
+            "position": 2136,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I2136V"
+          },
+          {
+            "gene": "NP",
+            "position": 516,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I516T"
+          },
+          {
+            "gene": "VP24",
+            "position": 211,
+            "refAa": "M",
+            "altAa": "K",
+            "change": "M211K"
+          },
+          {
+            "gene": "VP35",
+            "position": 203,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N203D"
+          },
+          {
+            "gene": "VP40",
+            "position": 53,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I53T"
+          },
+          {
+            "gene": "VP40",
+            "position": 297,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V297A"
+          }
+        ],
+        "qcStatus": "good"
+      }
+    },
+    {
+      "accession": "OZ538089",
+      "isolate": "25FHV168",
+      "country": "Dem. Rep. Congo",
+      "collectionDate": "2025-09-01",
+      "confidence": "confirmed",
+      "alignment": {
+        "clade": "Ebov-2025",
+        "totalSubstitutions": 97,
+        "mutations": [
+          {
+            "gene": "GP",
+            "position": 337,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D337N"
+          },
+          {
+            "gene": "GP",
+            "position": 543,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I543T"
+          },
+          {
+            "gene": "L",
+            "position": 78,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V78I"
+          },
+          {
+            "gene": "L",
+            "position": 478,
+            "refAa": "S",
+            "altAa": "G",
+            "change": "S478G"
+          },
+          {
+            "gene": "L",
+            "position": 936,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K936R"
+          },
+          {
+            "gene": "L",
+            "position": 1124,
+            "refAa": "R",
+            "altAa": "K",
+            "change": "R1124K"
+          },
+          {
+            "gene": "L",
+            "position": 1694,
+            "refAa": "M",
+            "altAa": "V",
+            "change": "M1694V"
+          },
+          {
+            "gene": "L",
+            "position": 2136,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I2136V"
+          },
+          {
+            "gene": "NP",
+            "position": 516,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I516T"
+          },
+          {
+            "gene": "VP24",
+            "position": 211,
+            "refAa": "M",
+            "altAa": "K",
+            "change": "M211K"
+          },
+          {
+            "gene": "VP35",
+            "position": 203,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N203D"
+          },
+          {
+            "gene": "VP40",
+            "position": 53,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I53T"
+          },
+          {
+            "gene": "VP40",
+            "position": 297,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V297A"
+          }
+        ],
+        "qcStatus": "good"
+      }
+    },
+    {
+      "accession": "OZ538128",
+      "isolate": "25FHV172",
+      "country": "Dem. Rep. Congo",
+      "collectionDate": "2025-08-29",
+      "confidence": "confirmed",
+      "alignment": {
+        "clade": "Ebov-2025",
+        "totalSubstitutions": 88,
+        "mutations": [
+          {
+            "gene": "GP",
+            "position": 337,
+            "refAa": "D",
+            "altAa": "N",
+            "change": "D337N"
+          },
+          {
+            "gene": "GP",
+            "position": 543,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I543T"
+          },
+          {
+            "gene": "L",
+            "position": 78,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V78I"
+          },
+          {
+            "gene": "L",
+            "position": 478,
+            "refAa": "S",
+            "altAa": "G",
+            "change": "S478G"
+          },
+          {
+            "gene": "L",
+            "position": 936,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K936R"
+          },
+          {
+            "gene": "L",
+            "position": 1124,
+            "refAa": "R",
+            "altAa": "K",
+            "change": "R1124K"
+          },
+          {
+            "gene": "L",
+            "position": 1694,
+            "refAa": "M",
+            "altAa": "V",
+            "change": "M1694V"
+          },
+          {
+            "gene": "L",
+            "position": 2136,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I2136V"
+          },
+          {
+            "gene": "NP",
+            "position": 516,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I516T"
+          },
+          {
+            "gene": "VP24",
+            "position": 211,
+            "refAa": "M",
+            "altAa": "K",
+            "change": "M211K"
+          },
+          {
+            "gene": "VP35",
+            "position": 203,
+            "refAa": "N",
+            "altAa": "D",
+            "change": "N203D"
+          },
+          {
+            "gene": "VP40",
+            "position": 53,
+            "refAa": "I",
+            "altAa": "T",
+            "change": "I53T"
+          },
+          {
+            "gene": "VP40",
+            "position": 297,
+            "refAa": "V",
+            "altAa": "A",
+            "change": "V297A"
+          }
+        ],
+        "qcStatus": "good"
+      }
+    }
+  ]
+}

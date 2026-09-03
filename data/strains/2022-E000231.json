@@ -3,7 +3,7 @@
   "disease": "Mpox (monkeypox)- Democratic Republic of the Congo",
   "pathogen": "mpox",
   "nextcladeDataset": "nextstrain/mpox/all-clades",
-  "generatedAt": "2026-09-02T11:24:49.354Z",
+  "generatedAt": "2026-09-03T11:18:10.472Z",
   "matches": [
     {
       "accession": "OZ531712",
@@ -1161,91 +1161,49 @@
       }
     },
     {
-      "accession": "OZ462940",
-      "isolate": "2409EQT-WGT-I1027-000",
+      "accession": "OZ540047",
+      "isolate": "24MPX5328V",
       "country": "Dem. Rep. Congo",
-      "collectionDate": "2024-09",
+      "collectionDate": "2024-11-11",
       "confidence": "confirmed",
       "alignment": {
         "clade": "Ia",
-        "totalSubstitutions": 775,
+        "totalSubstitutions": 690,
         "mutations": [
           {
-            "gene": "OPG005",
-            "position": 2,
-            "refAa": "S",
-            "altAa": "F",
-            "change": "S2F"
+            "gene": "OPG001",
+            "position": 85,
+            "refAa": "T",
+            "altAa": "N",
+            "change": "T85N"
           },
           {
-            "gene": "OPG005",
-            "position": 73,
+            "gene": "OPG002",
+            "position": 120,
+            "refAa": "A",
+            "altAa": "S",
+            "change": "A120S"
+          },
+          {
+            "gene": "OPG002",
+            "position": 312,
             "refAa": "N",
-            "altAa": "D",
-            "change": "N73D"
+            "altAa": "T",
+            "change": "N312T"
           },
           {
-            "gene": "OPG005",
-            "position": 130,
-            "refAa": "M",
-            "altAa": "I",
-            "change": "M130I"
-          },
-          {
-            "gene": "OPG015_dup",
+            "gene": "OPG015",
             "position": 3,
             "refAa": "V",
             "altAa": "A",
             "change": "V3A"
           },
           {
-            "gene": "OPG016",
-            "position": 62,
-            "refAa": "S",
-            "altAa": "A",
-            "change": "S62A"
-          },
-          {
-            "gene": "OPG016",
-            "position": 79,
-            "refAa": "E",
-            "altAa": "V",
-            "change": "E79V"
-          },
-          {
-            "gene": "OPG016",
-            "position": 120,
-            "refAa": "D",
-            "altAa": "E",
-            "change": "D120E"
-          },
-          {
-            "gene": "OPG019",
-            "position": 123,
-            "refAa": "M",
-            "altAa": "R",
-            "change": "M123R"
-          },
-          {
-            "gene": "OPG021",
-            "position": 37,
-            "refAa": "V",
-            "altAa": "I",
-            "change": "V37I"
-          },
-          {
-            "gene": "OPG021",
-            "position": 218,
-            "refAa": "S",
-            "altAa": "L",
-            "change": "S218L"
-          },
-          {
-            "gene": "OPG021",
-            "position": 229,
-            "refAa": "K",
-            "altAa": "R",
-            "change": "K229R"
+            "gene": "OPG015",
+            "position": 135,
+            "refAa": "L",
+            "altAa": "F",
+            "change": "L135F"
           },
           {
             "gene": "OPG022",
@@ -1473,24 +1431,10 @@
           },
           {
             "gene": "OPG039",
-            "position": 255,
-            "refAa": "D",
-            "altAa": "N",
-            "change": "D255N"
-          },
-          {
-            "gene": "OPG039",
             "position": 278,
             "refAa": "C",
             "altAa": "Y",
             "change": "C278Y"
-          },
-          {
-            "gene": "OPG040",
-            "position": 253,
-            "refAa": "P",
-            "altAa": "A",
-            "change": "P253A"
           },
           {
             "gene": "OPG040",
@@ -1540,62 +1484,6 @@
             "refAa": "S",
             "altAa": "N",
             "change": "S94N"
-          },
-          {
-            "gene": "OPG047",
-            "position": 231,
-            "refAa": "I",
-            "altAa": "K",
-            "change": "I231K"
-          },
-          {
-            "gene": "OPG049",
-            "position": 16,
-            "refAa": "E",
-            "altAa": "V",
-            "change": "E16V"
-          },
-          {
-            "gene": "OPG049",
-            "position": 36,
-            "refAa": "M",
-            "altAa": "V",
-            "change": "M36V"
-          },
-          {
-            "gene": "OPG049",
-            "position": 262,
-            "refAa": "T",
-            "altAa": "M",
-            "change": "T262M"
-          },
-          {
-            "gene": "OPG054",
-            "position": 437,
-            "refAa": "R",
-            "altAa": "G",
-            "change": "R437G"
-          },
-          {
-            "gene": "OPG056",
-            "position": 322,
-            "refAa": "V",
-            "altAa": "A",
-            "change": "V322A"
-          },
-          {
-            "gene": "OPG056",
-            "position": 601,
-            "refAa": "T",
-            "altAa": "N",
-            "change": "T601N"
-          },
-          {
-            "gene": "OPG056",
-            "position": 621,
-            "refAa": "C",
-            "altAa": "Y",
-            "change": "C621Y"
           },
           {
             "gene": "OPG059",
@@ -1675,34 +1563,6 @@
             "change": "H204Y"
           },
           {
-            "gene": "OPG071",
-            "position": 410,
-            "refAa": "L",
-            "altAa": "W",
-            "change": "L410W"
-          },
-          {
-            "gene": "OPG071",
-            "position": 427,
-            "refAa": "I",
-            "altAa": "T",
-            "change": "I427T"
-          },
-          {
-            "gene": "OPG071",
-            "position": 483,
-            "refAa": "A",
-            "altAa": "S",
-            "change": "A483S"
-          },
-          {
-            "gene": "OPG071",
-            "position": 500,
-            "refAa": "I",
-            "altAa": "V",
-            "change": "I500V"
-          },
-          {
             "gene": "OPG072",
             "position": 9,
             "refAa": "V",
@@ -1778,13 +1638,6 @@
             "refAa": "Q",
             "altAa": "R",
             "change": "Q619R"
-          },
-          {
-            "gene": "OPG085",
-            "position": 78,
-            "refAa": "S",
-            "altAa": "T",
-            "change": "S78T"
           },
           {
             "gene": "OPG085",
@@ -1955,6 +1808,13 @@
             "change": "D453N"
           },
           {
+            "gene": "OPG117",
+            "position": 782,
+            "refAa": "S",
+            "altAa": "L",
+            "change": "S782L"
+          },
+          {
             "gene": "OPG118",
             "position": 255,
             "refAa": "K",
@@ -2039,27 +1899,6 @@
             "change": "I513V"
           },
           {
-            "gene": "OPG130",
-            "position": 62,
-            "refAa": "T",
-            "altAa": "V",
-            "change": "T62V"
-          },
-          {
-            "gene": "OPG130",
-            "position": 121,
-            "refAa": "T",
-            "altAa": "A",
-            "change": "T121A"
-          },
-          {
-            "gene": "OPG130",
-            "position": 269,
-            "refAa": "L",
-            "altAa": "I",
-            "change": "L269I"
-          },
-          {
             "gene": "OPG133",
             "position": 593,
             "refAa": "F",
@@ -2100,6 +1939,13 @@
             "refAa": "F",
             "altAa": "Y",
             "change": "F282Y"
+          },
+          {
+            "gene": "OPG136",
+            "position": 475,
+            "refAa": "R",
+            "altAa": "Q",
+            "change": "R475Q"
           },
           {
             "gene": "OPG144",
@@ -2144,20 +1990,6 @@
             "change": "Q462R"
           },
           {
-            "gene": "OPG148",
-            "position": 312,
-            "refAa": "I",
-            "altAa": "S",
-            "change": "I312S"
-          },
-          {
-            "gene": "OPG148",
-            "position": 328,
-            "refAa": "A",
-            "altAa": "S",
-            "change": "A328S"
-          },
-          {
             "gene": "OPG150",
             "position": 99,
             "refAa": "N",
@@ -2170,13 +2002,6 @@
             "refAa": "D",
             "altAa": "E",
             "change": "D255E"
-          },
-          {
-            "gene": "OPG151",
-            "position": 5,
-            "refAa": "D",
-            "altAa": "V",
-            "change": "D5V"
           },
           {
             "gene": "OPG151",
@@ -2334,13 +2159,6 @@
           },
           {
             "gene": "OPG165",
-            "position": 141,
-            "refAa": "S",
-            "altAa": "L",
-            "change": "S141L"
-          },
-          {
-            "gene": "OPG165",
             "position": 160,
             "refAa": "S",
             "altAa": "L",
@@ -2425,13 +2243,6 @@
           },
           {
             "gene": "OPG181",
-            "position": 84,
-            "refAa": "L",
-            "altAa": "M",
-            "change": "L84M"
-          },
-          {
-            "gene": "OPG181",
             "position": 126,
             "refAa": "S",
             "altAa": "Y",
@@ -2478,13 +2289,6 @@
             "refAa": "S",
             "altAa": "R",
             "change": "S418R"
-          },
-          {
-            "gene": "OPG189",
-            "position": 184,
-            "refAa": "K",
-            "altAa": "R",
-            "change": "K184R"
           },
           {
             "gene": "OPG189",
@@ -2536,6 +2340,13 @@
             "change": "M0I"
           },
           {
+            "gene": "OPG197",
+            "position": 17,
+            "refAa": "S",
+            "altAa": "T",
+            "change": "S17T"
+          },
+          {
             "gene": "OPG198",
             "position": 70,
             "refAa": "N",
@@ -2562,6 +2373,13 @@
             "refAa": "K",
             "altAa": "E",
             "change": "K229E"
+          },
+          {
+            "gene": "OPG199",
+            "position": 303,
+            "refAa": "V",
+            "altAa": "M",
+            "change": "V303M"
           },
           {
             "gene": "OPG200",
@@ -2625,13 +2443,6 @@
             "refAa": "R",
             "altAa": "Q",
             "change": "R732Q"
-          },
-          {
-            "gene": "OPG208",
-            "position": 33,
-            "refAa": "A",
-            "altAa": "V",
-            "change": "A33V"
           },
           {
             "gene": "OPG208",
@@ -2702,13 +2513,6 @@
             "refAa": "N",
             "altAa": "I",
             "change": "N333I"
-          },
-          {
-            "gene": "OPG210",
-            "position": 344,
-            "refAa": "E",
-            "altAa": "V",
-            "change": "E344V"
           },
           {
             "gene": "OPG210",
