@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T11:25:27.587Z",
+  "generated_at": "2026-09-10T11:22:06.470Z",
   "sources": [
     "WHO"
   ],
@@ -10,8 +10,8 @@
       "id": "2026-E000253",
       "disease": "Ebola disease caused by Bundibugyo virus",
       "first_seen": "2026-05-14T06:00:00Z",
-      "latest_update": "2026-08-28T15:31:07Z",
-      "update_count": 11,
+      "latest_update": "2026-09-10T08:52:02Z",
+      "update_count": 12,
       "countries": [
         {
           "id": "180",
@@ -24,19 +24,31 @@
       ],
       "is_global": false,
       "latest_counts": {
-        "cases": 5794,
-        "deaths": 2786,
-        "as_of": "26 August 2026"
+        "cases": 6757,
+        "deaths": 3267,
+        "as_of": "7 September 2026"
       },
       "trend": {
-        "latest_value": 1129,
-        "previous_value": 1060,
-        "absolute_change": 69,
-        "percent_change": 6.5,
-        "trend": "stable",
+        "latest_value": 963,
+        "previous_value": 1129,
+        "absolute_change": -166,
+        "percent_change": -14.7,
+        "trend": "falling",
         "window_size": 4
       },
       "updates": [
+        {
+          "id": "0381aabe-6109-425c-a3f9-2b33cb482486",
+          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
+          "url": "https://www.who.int/2026-DON617",
+          "date": "2026-09-10T08:52:02Z",
+          "summary": "Since the last Disease Outbreak News was published on 28 August 2026, the Bundibugyo virus outbreak in the Democratic Republic of the Congo has expanded to one additional health zone, Kayna, in North Kivu. This increase brings the total number of affected health zones to 61 across six out of 26 provinces of the…",
+          "counts": {
+            "cases": 6757,
+            "deaths": 3267,
+            "as_of": "7 September 2026"
+          }
+        },
         {
           "id": "c835cb1d-25ad-4dd9-b065-ee09c054fe81",
           "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
@@ -7912,8 +7924,8 @@
       "id": "2018",
       "disease": "2018",
       "first_seen": "2021-06-03T09:07:11Z",
-      "latest_update": "2021-06-03T09:07:52Z",
-      "update_count": 15,
+      "latest_update": "2021-06-03T09:07:47Z",
+      "update_count": 14,
       "countries": [
         {
           "id": "682",
@@ -7930,10 +7942,6 @@
         {
           "id": "528",
           "name": "Netherlands"
-        },
-        {
-          "id": "562",
-          "name": "Niger"
         }
       ],
       "is_global": false,
@@ -7944,14 +7952,6 @@
       },
       "trend": null,
       "updates": [
-        {
-          "id": "f58558d7-c891-4dcb-b821-987bea7b7bf9",
-          "title": "Circulating vaccine-derived poliovirus type 2 – Niger",
-          "url": "https://www.who.int/30-october-2018-polio-niger-en",
-          "date": "2021-06-03T09:07:52Z",
-          "summary": "From July through September 2018, six cases of circulating vaccine-derived poliovirus type 2 (cVDPV2) were reported from Niger, genetically linked to a cVDPV2 case in Jigawa and Katsina States, Nigeria. The virus was isolated from children with acute flaccid paralysis (AFP) from Zinder region, located in the south of…",
-          "counts": null
-        },
         {
           "id": "745549e4-4ab0-4757-ad98-ebd7880b07be",
           "title": "Middle East respiratory syndrome coronavirus (MERS-CoV) – Saudi Arabia",

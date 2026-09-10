@@ -6,8 +6,16 @@
     <atom:link href="https://hiyata.github.io/outbreak-watch/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated daily.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 09 Sep 2026 11:28:18 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 11:26:41 GMT</lastBuildDate>
     <generator>outbreak-watch scripts/build-rss.mjs</generator>
+    <item>
+      <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo</title>
+      <link>https://www.who.int/2026-DON617</link>
+      <guid isPermaLink="false">0381aabe-6109-425c-a3f9-2b33cb482486</guid>
+      <pubDate>Thu, 10 Sep 2026 08:52:02 GMT</pubDate>
+      <category>Ebola disease caused by Bundibugyo virus</category>
+      <description>Dem. Rep. Congo, Uganda — Since the last Disease Outbreak News was published on 28 August 2026, the Bundibugyo virus outbreak in the Democratic Republic of the Congo has expanded to one additional health zone, Kayna, in North Kivu. This increase brings the total number of affected health zones to 61 across six out of 26 provinces of the… (6,757 cases, 3,267 deaths reported as of this update)</description>
+    </item>
     <item>
       <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo</title>
       <link>https://www.who.int/2026-DON616</link>
@@ -479,14 +487,6 @@
       <pubDate>Fri, 21 Feb 2025 17:57:19 GMT</pubDate>
       <category>Sudan virus disease</category>
       <description>Uganda, Sudan — As of 20 February 2025, a total of nine confirmed cases of Sudan virus disease, including one death have been reported from Uganda, since the outbreak was declared on 30 January 2025. Eight cases received care at treatment centres in the capital Kampala and in Mbale and were discharged on 18 February after two…</description>
-    </item>
-    <item>
-      <title>Marburg Virus Disease–United Republic of Tanzania</title>
-      <link>https://www.who.int/2025-DON554</link>
-      <guid isPermaLink="false">8370029e-f279-408a-acc0-c4ae390a5c0a</guid>
-      <pubDate>Fri, 14 Feb 2025 14:17:26 GMT</pubDate>
-      <category>Marburg Virus Disease–United Republic of Tanzania</category>
-      <description>Tanzania — Since the declaration of the Marburg Virus Disease (MVD) outbreak on 20 January 2025 in the United Republic of Tanzania, one additional confirmed death was reported by the Ministry of Health from the epicentre of the outbreak in Biharamulo district in Kagera region. As of 10 February 2025, a cumulative of two…</description>
     </item>
   </channel>
 </rss>
