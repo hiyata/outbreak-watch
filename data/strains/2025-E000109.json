@@ -3,7 +3,7 @@
   "disease": "Measles",
   "pathogen": "measles",
   "nextcladeDataset": "nextstrain/measles/genome/WHO-2012",
-  "generatedAt": "2026-09-24T11:51:09.499Z",
+  "generatedAt": "2026-09-25T11:57:55.332Z",
   "matches": [
     {
       "accession": "PZ966762",
@@ -2295,29 +2295,15 @@
       }
     },
     {
-      "accession": "PZ938626",
-      "isolate": "DE-2026-0013",
+      "accession": "QB017949",
+      "isolate": "WAPHL-853557",
       "country": "United States of America",
-      "collectionDate": "Aug-2026",
+      "collectionDate": "2026-08-21",
       "confidence": "likely",
       "alignment": {
         "clade": "D8",
-        "totalSubstitutions": 527,
+        "totalSubstitutions": 518,
         "mutations": [
-          {
-            "gene": "C",
-            "position": 4,
-            "refAa": "D",
-            "altAa": "G",
-            "change": "D4G"
-          },
-          {
-            "gene": "C",
-            "position": 39,
-            "refAa": "E",
-            "altAa": "D",
-            "change": "E39D"
-          },
           {
             "gene": "C",
             "position": 77,
@@ -2331,6 +2317,20 @@
             "refAa": "G",
             "altAa": "V",
             "change": "G180V"
+          },
+          {
+            "gene": "F",
+            "position": 1,
+            "refAa": "G",
+            "altAa": "D",
+            "change": "G1D"
+          },
+          {
+            "gene": "F",
+            "position": 3,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K3R"
           },
           {
             "gene": "F",
@@ -2348,24 +2348,10 @@
           },
           {
             "gene": "F",
-            "position": 275,
-            "refAa": "S",
+            "position": 21,
+            "refAa": "T",
             "altAa": "A",
-            "change": "S275A"
-          },
-          {
-            "gene": "F",
-            "position": 418,
-            "refAa": "H",
-            "altAa": "R",
-            "change": "H418R"
-          },
-          {
-            "gene": "H",
-            "position": 174,
-            "refAa": "R",
-            "altAa": "K",
-            "change": "R174K"
+            "change": "T21A"
           },
           {
             "gene": "H",
@@ -2383,13 +2369,6 @@
           },
           {
             "gene": "H",
-            "position": 266,
-            "refAa": "A",
-            "altAa": "I",
-            "change": "A266I"
-          },
-          {
-            "gene": "H",
             "position": 333,
             "refAa": "R",
             "altAa": "Q",
@@ -2404,17 +2383,17 @@
           },
           {
             "gene": "H",
+            "position": 390,
+            "refAa": "Q",
+            "altAa": "R",
+            "change": "Q390R"
+          },
+          {
+            "gene": "H",
             "position": 399,
             "refAa": "A",
             "altAa": "T",
             "change": "A399T"
-          },
-          {
-            "gene": "H",
-            "position": 411,
-            "refAa": "V",
-            "altAa": "L",
-            "change": "V411L"
           },
           {
             "gene": "H",
@@ -2439,17 +2418,17 @@
           },
           {
             "gene": "H",
-            "position": 574,
-            "refAa": "K",
-            "altAa": "Q",
-            "change": "K574Q"
-          },
-          {
-            "gene": "H",
             "position": 607,
             "refAa": "V",
             "altAa": "A",
             "change": "V607A"
+          },
+          {
+            "gene": "H",
+            "position": 614,
+            "refAa": "N",
+            "altAa": "S",
+            "change": "N614S"
           },
           {
             "gene": "L",
@@ -2467,10 +2446,24 @@
           },
           {
             "gene": "L",
-            "position": 141,
-            "refAa": "R",
-            "altAa": "K",
-            "change": "R141K"
+            "position": 182,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T182A"
+          },
+          {
+            "gene": "L",
+            "position": 214,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K214R"
+          },
+          {
+            "gene": "L",
+            "position": 234,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I234V"
           },
           {
             "gene": "L",
@@ -2502,6 +2495,20 @@
           },
           {
             "gene": "L",
+            "position": 410,
+            "refAa": "L",
+            "altAa": "M",
+            "change": "L410M"
+          },
+          {
+            "gene": "L",
+            "position": 481,
+            "refAa": "K",
+            "altAa": "R",
+            "change": "K481R"
+          },
+          {
+            "gene": "L",
             "position": 609,
             "refAa": "L",
             "altAa": "S",
@@ -2513,20 +2520,6 @@
             "refAa": "Y",
             "altAa": "H",
             "change": "Y612H"
-          },
-          {
-            "gene": "L",
-            "position": 622,
-            "refAa": "R",
-            "altAa": "K",
-            "change": "R622K"
-          },
-          {
-            "gene": "L",
-            "position": 627,
-            "refAa": "E",
-            "altAa": "K",
-            "change": "E627K"
           },
           {
             "gene": "L",
@@ -2572,6 +2565,13 @@
           },
           {
             "gene": "L",
+            "position": 1100,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T1100A"
+          },
+          {
+            "gene": "L",
             "position": 1342,
             "refAa": "V",
             "altAa": "I",
@@ -2586,10 +2586,10 @@
           },
           {
             "gene": "L",
-            "position": 1428,
-            "refAa": "T",
-            "altAa": "I",
-            "change": "T1428I"
+            "position": 1405,
+            "refAa": "D",
+            "altAa": "G",
+            "change": "D1405G"
           },
           {
             "gene": "L",
@@ -2604,6 +2604,13 @@
             "refAa": "I",
             "altAa": "V",
             "change": "I1662V"
+          },
+          {
+            "gene": "L",
+            "position": 1699,
+            "refAa": "V",
+            "altAa": "I",
+            "change": "V1699I"
           },
           {
             "gene": "L",
@@ -2635,6 +2642,13 @@
           },
           {
             "gene": "L",
+            "position": 1915,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I1915V"
+          },
+          {
+            "gene": "L",
             "position": 1998,
             "refAa": "S",
             "altAa": "N",
@@ -2653,13 +2667,6 @@
             "refAa": "I",
             "altAa": "T",
             "change": "I2016T"
-          },
-          {
-            "gene": "L",
-            "position": 2029,
-            "refAa": "S",
-            "altAa": "N",
-            "change": "S2029N"
           },
           {
             "gene": "L",
@@ -2684,6 +2691,13 @@
           },
           {
             "gene": "N",
+            "position": 58,
+            "refAa": "I",
+            "altAa": "V",
+            "change": "I58V"
+          },
+          {
+            "gene": "N",
             "position": 143,
             "refAa": "S",
             "altAa": "F",
@@ -2691,17 +2705,10 @@
           },
           {
             "gene": "N",
-            "position": 213,
-            "refAa": "K",
-            "altAa": "Q",
-            "change": "K213Q"
-          },
-          {
-            "gene": "N",
-            "position": 233,
-            "refAa": "V",
-            "altAa": "I",
-            "change": "V233I"
+            "position": 297,
+            "refAa": "S",
+            "altAa": "A",
+            "change": "S297A"
           },
           {
             "gene": "N",
@@ -2709,6 +2716,13 @@
             "refAa": "I",
             "altAa": "T",
             "change": "I405T"
+          },
+          {
+            "gene": "N",
+            "position": 433,
+            "refAa": "G",
+            "altAa": "S",
+            "change": "G433S"
           },
           {
             "gene": "N",
@@ -2726,13 +2740,6 @@
           },
           {
             "gene": "N",
-            "position": 445,
-            "refAa": "E",
-            "altAa": "G",
-            "change": "E445G"
-          },
-          {
-            "gene": "N",
             "position": 450,
             "refAa": "Y",
             "altAa": "N",
@@ -2740,24 +2747,10 @@
           },
           {
             "gene": "N",
-            "position": 456,
-            "refAa": "S",
-            "altAa": "I",
-            "change": "S456I"
-          },
-          {
-            "gene": "N",
             "position": 458,
             "refAa": "A",
-            "altAa": "L",
-            "change": "A458L"
-          },
-          {
-            "gene": "N",
-            "position": 466,
-            "refAa": "P",
-            "altAa": "L",
-            "change": "P466L"
+            "altAa": "S",
+            "change": "A458S"
           },
           {
             "gene": "N",
@@ -2779,20 +2772,6 @@
             "refAa": "G",
             "altAa": "S",
             "change": "G508S"
-          },
-          {
-            "gene": "N",
-            "position": 521,
-            "refAa": "D",
-            "altAa": "N",
-            "change": "D521N"
-          },
-          {
-            "gene": "P",
-            "position": 47,
-            "refAa": "A",
-            "altAa": "S",
-            "change": "A47S"
           },
           {
             "gene": "P",
@@ -2824,17 +2803,24 @@
           },
           {
             "gene": "P",
+            "position": 222,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T222A"
+          },
+          {
+            "gene": "P",
+            "position": 243,
+            "refAa": "A",
+            "altAa": "V",
+            "change": "A243V"
+          },
+          {
+            "gene": "P",
             "position": 268,
             "refAa": "A",
             "altAa": "V",
             "change": "A268V"
-          },
-          {
-            "gene": "P",
-            "position": 269,
-            "refAa": "G",
-            "altAa": "E",
-            "change": "G269E"
           },
           {
             "gene": "P",
@@ -2845,10 +2831,10 @@
           },
           {
             "gene": "P",
-            "position": 349,
-            "refAa": "K",
-            "altAa": "R",
-            "change": "K349R"
+            "position": 302,
+            "refAa": "G",
+            "altAa": "E",
+            "change": "G302E"
           },
           {
             "gene": "P",
@@ -2880,13 +2866,6 @@
           },
           {
             "gene": "V",
-            "position": 47,
-            "refAa": "A",
-            "altAa": "S",
-            "change": "A47S"
-          },
-          {
-            "gene": "V",
             "position": 53,
             "refAa": "E",
             "altAa": "K",
@@ -2912,6 +2891,13 @@
             "refAa": "S",
             "altAa": "G",
             "change": "S218G"
+          },
+          {
+            "gene": "V",
+            "position": 222,
+            "refAa": "T",
+            "altAa": "A",
+            "change": "T222A"
           },
           {
             "gene": "V",
