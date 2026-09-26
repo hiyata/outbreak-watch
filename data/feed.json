@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T11:52:48.290Z",
+  "generated_at": "2026-09-26T11:27:01.202Z",
   "sources": [
     "WHO"
   ],
@@ -10,8 +10,8 @@
       "id": "2026-E000253",
       "disease": "Ebola disease caused by Bundibugyo virus",
       "first_seen": "2026-05-14T06:00:00Z",
-      "latest_update": "2026-09-10T08:52:02Z",
-      "update_count": 12,
+      "latest_update": "2026-09-25T15:30:18Z",
+      "update_count": 13,
       "countries": [
         {
           "id": "180",
@@ -24,19 +24,31 @@
       ],
       "is_global": false,
       "latest_counts": {
-        "cases": 6757,
-        "deaths": 3267,
-        "as_of": "7 September 2026"
+        "cases": 7890,
+        "deaths": 3799,
+        "as_of": "23 September 2026"
       },
       "trend": {
-        "latest_value": 963,
-        "previous_value": 1129,
-        "absolute_change": -166,
-        "percent_change": -14.7,
-        "trend": "falling",
+        "latest_value": 1133,
+        "previous_value": 963,
+        "absolute_change": 170,
+        "percent_change": 17.7,
+        "trend": "stable",
         "window_size": 4
       },
       "updates": [
+        {
+          "id": "5df1872c-3aab-4e1b-9d78-475f6ead4040",
+          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
+          "url": "https://www.who.int/2026-DON618",
+          "date": "2026-09-25T15:30:18Z",
+          "summary": "Since the last Disease Outbreak News was published on 11 September 2026, the Bundibugyo virus outbreak in the Democratic Republic of the Congo has expanded further, with two additional health zones affected. These include Bulu health zone in a new province, Sud Ubangi, located on the north-west part of the country and…",
+          "counts": {
+            "cases": 7890,
+            "deaths": 3799,
+            "as_of": "23 September 2026"
+          }
+        },
         {
           "id": "0381aabe-6109-425c-a3f9-2b33cb482486",
           "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
@@ -7924,8 +7936,8 @@
       "id": "2018",
       "disease": "2018",
       "first_seen": "2021-06-03T09:07:11Z",
-      "latest_update": "2021-06-03T09:07:47Z",
-      "update_count": 14,
+      "latest_update": "2021-06-03T09:07:39Z",
+      "update_count": 13,
       "countries": [
         {
           "id": "682",
@@ -7952,14 +7964,6 @@
       },
       "trend": null,
       "updates": [
-        {
-          "id": "745549e4-4ab0-4757-ad98-ebd7880b07be",
-          "title": "Middle East respiratory syndrome coronavirus (MERS-CoV) – Saudi Arabia",
-          "url": "https://www.who.int/01-november-2018-mers-saudi-arabia-en",
-          "date": "2021-06-03T09:07:47Z",
-          "summary": "From 17 September through 15 October 2018, the International Health Regulations (IHR 2005) National Focal Point of Saudi Arabia reported eight additional cases of MERS-CoV infection, including three deaths. Of the eight cases reported, three were hospital contacts from one hospital in Dammam and two were household…",
-          "counts": null
-        },
         {
           "id": "b7fdf232-2e61-4ae6-9bac-410b3438c2fd",
           "title": "Middle East respiratory syndrome coronavirus (MERS-CoV) – Saudi Arabia",

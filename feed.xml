@@ -6,8 +6,16 @@
     <atom:link href="https://hiyata.github.io/outbreak-watch/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated daily.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 25 Sep 2026 11:57:55 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 11:28:20 GMT</lastBuildDate>
     <generator>outbreak-watch scripts/build-rss.mjs</generator>
+    <item>
+      <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo</title>
+      <link>https://www.who.int/2026-DON618</link>
+      <guid isPermaLink="false">5df1872c-3aab-4e1b-9d78-475f6ead4040</guid>
+      <pubDate>Fri, 25 Sep 2026 15:30:18 GMT</pubDate>
+      <category>Ebola disease caused by Bundibugyo virus</category>
+      <description>Dem. Rep. Congo, Uganda — Since the last Disease Outbreak News was published on 11 September 2026, the Bundibugyo virus outbreak in the Democratic Republic of the Congo has expanded further, with two additional health zones affected. These include Bulu health zone in a new province, Sud Ubangi, located on the north-west part of the country and… (7,890 cases, 3,799 deaths reported as of this update)</description>
+    </item>
     <item>
       <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo</title>
       <link>https://www.who.int/2026-DON617</link>
@@ -479,14 +487,6 @@
       <pubDate>Mon, 03 Mar 2025 20:10:52 GMT</pubDate>
       <category>Cluster of community deaths in Basankusu, Equateur- Democratic Republic of the Congo</category>
       <description>Dem. Rep. Congo — On 9 February 2025, officials in the Democratic Republic of the Congo reported to regional health authorities a cluster of 24 unexplained community deaths in a single village in Ekoto health area, Basankusu health zone, Equateur province. As of 25 February, a total of 53 deaths have been reported, with the last death…</description>
-    </item>
-    <item>
-      <title>Sudan virus disease - Uganda</title>
-      <link>https://www.who.int/2025-DON556</link>
-      <guid isPermaLink="false">e4af3b0c-ac60-4570-aece-b3d10aa39dad</guid>
-      <pubDate>Fri, 21 Feb 2025 17:57:19 GMT</pubDate>
-      <category>Sudan virus disease</category>
-      <description>Uganda, Sudan — As of 20 February 2025, a total of nine confirmed cases of Sudan virus disease, including one death have been reported from Uganda, since the outbreak was declared on 30 January 2025. Eight cases received care at treatment centres in the capital Kampala and in Mbale and were discharged on 18 February after two…</description>
     </item>
   </channel>
 </rss>
