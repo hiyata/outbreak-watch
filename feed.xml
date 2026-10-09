@@ -6,8 +6,16 @@
     <atom:link href="https://hiyata.github.io/outbreak-watch/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated daily.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 08 Oct 2026 13:37:31 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 13:24:04 GMT</lastBuildDate>
     <generator>outbreak-watch scripts/build-rss.mjs</generator>
+    <item>
+      <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo</title>
+      <link>https://www.who.int/2026-DON619</link>
+      <guid isPermaLink="false">8fbb14a7-4f4d-4e4a-b113-68b944028ebf</guid>
+      <pubDate>Thu, 08 Oct 2026 16:06:26 GMT</pubDate>
+      <category>Ebola disease caused by Bundibugyo virus</category>
+      <description>Dem. Rep. Congo, Uganda — On 5 October 2026, WHO was informed about a laboratory-confirmed imported case of Bundibugyo virus disease (BVD) in Kenya with travel history from the Democratic Republic of the Congo. The patient travelled from the Democratic Republic of the Congo to Kenya through Uganda. The patient was hospitalized and treated in…</description>
+    </item>
     <item>
       <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo</title>
       <link>https://www.who.int/2026-DON618</link>
@@ -479,14 +487,6 @@
       <pubDate>Sat, 08 Mar 2025 09:03:25 GMT</pubDate>
       <category>Sudan virus disease</category>
       <description>Uganda, Sudan — Since the outbreak of Sudan virus disease (SVD) was declared in Uganda on 30 January 2025, and as of 5 March 2025, a total of 14 cases (including 12 confirmed cases and two probable cases) including four deaths (two confirmed and two probable) have been reported. On 1 March 2025, the Ministry of Health released a…</description>
-    </item>
-    <item>
-      <title>Cluster of community deaths in Basankusu, Equateur- Democratic Republic of the Congo</title>
-      <link>https://www.who.int/2025-DON557</link>
-      <guid isPermaLink="false">2d5ad2b7-f3e5-41c2-9e35-54f83f9c30e3</guid>
-      <pubDate>Mon, 03 Mar 2025 20:10:52 GMT</pubDate>
-      <category>Cluster of community deaths in Basankusu, Equateur- Democratic Republic of the Congo</category>
-      <description>Dem. Rep. Congo — On 9 February 2025, officials in the Democratic Republic of the Congo reported to regional health authorities a cluster of 24 unexplained community deaths in a single village in Ekoto health area, Basankusu health zone, Equateur province. As of 25 February, a total of 53 deaths have been reported, with the last death…</description>
     </item>
   </channel>
 </rss>

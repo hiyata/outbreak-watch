@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T13:32:11.865Z",
+  "generated_at": "2026-10-09T13:19:35.957Z",
   "sources": [
     "WHO"
   ],
@@ -10,8 +10,8 @@
       "id": "2026-E000253",
       "disease": "Ebola disease caused by Bundibugyo virus",
       "first_seen": "2026-05-14T06:00:00Z",
-      "latest_update": "2026-09-25T15:30:18Z",
-      "update_count": 13,
+      "latest_update": "2026-10-08T16:06:26Z",
+      "update_count": 14,
       "countries": [
         {
           "id": "180",
@@ -37,6 +37,14 @@
         "window_size": 4
       },
       "updates": [
+        {
+          "id": "8fbb14a7-4f4d-4e4a-b113-68b944028ebf",
+          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
+          "url": "https://www.who.int/2026-DON619",
+          "date": "2026-10-08T16:06:26Z",
+          "summary": "On 5 October 2026, WHO was informed about a laboratory-confirmed imported case of Bundibugyo virus disease (BVD) in Kenya with travel history from the Democratic Republic of the Congo. The patient travelled from the Democratic Republic of the Congo to Kenya through Uganda. The patient was hospitalized and treated in…",
+          "counts": null
+        },
         {
           "id": "5df1872c-3aab-4e1b-9d78-475f6ead4040",
           "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
@@ -7937,7 +7945,7 @@
       "disease": "2018",
       "first_seen": "2021-06-03T09:07:11Z",
       "latest_update": "2021-06-03T09:07:39Z",
-      "update_count": 13,
+      "update_count": 12,
       "countries": [
         {
           "id": "682",
@@ -8062,14 +8070,6 @@
           "url": "https://www.who.int/08-november-2018-ebola-drc-en",
           "date": "2018-11-08T00:00:00Z",
           "summary": "As the Ebola virus disease (EVD) outbreak enters the fourth month since declaration, and case numbers surpass 300, substantial progress has been achieved in all aspects of the response. Nevertheless, there remains a challenging road ahead to control intense transmission in the city of Beni and emerging hotspots in…",
-          "counts": null
-        },
-        {
-          "id": "69d489d7-bb42-4fa9-9455-cac7a9794f08",
-          "title": "Ebola virus disease – Democratic Republic of the Congo",
-          "url": "https://www.who.int/01-november-2018-ebola-drc-en",
-          "date": "2018-11-01T00:00:00Z",
-          "summary": "The increase over the past four weeks in confirmed case incidence (Figure 1), most notably in the city of Beni and communities around Butembo, is concerning. Security incidents continue to severely impact both civilians and frontline workers. Moreover, pockets of community resistance or reluctance continue to hamper…",
           "counts": null
         }
       ]
