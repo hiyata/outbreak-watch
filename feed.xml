@@ -6,8 +6,16 @@
     <atom:link href="https://hiyata.github.io/outbreak-watch/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated daily.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Oct 2026 12:35:15 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 12:55:58 GMT</lastBuildDate>
     <generator>outbreak-watch scripts/build-rss.mjs</generator>
+    <item>
+      <title>Pneumonia of undetermined etiology - the Russian Federation</title>
+      <link>https://www.who.int/2026-DON620</link>
+      <guid isPermaLink="false">9cca163d-6ef3-4d3e-b149-2cd7acf408f6</guid>
+      <pubDate>Sat, 10 Oct 2026 15:53:19 GMT</pubDate>
+      <category>Pneumonia of undetermined etiology</category>
+      <description>Russia — On 2 October 2026, WHO became aware through media reports of the death of an employee of the Irkutsk Antiplague Research Institute (APRI) of Siberia and the Far East, the Russian Federation. According to these reports, the individual died on 2 October following hospitalization for severe pneumonia on 29 September, and…</description>
+    </item>
     <item>
       <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo</title>
       <link>https://www.who.int/2026-DON619</link>
@@ -479,14 +487,6 @@
       <pubDate>Thu, 13 Mar 2025 12:45:18 GMT</pubDate>
       <category>Marburg virus disease– United Republic of Tanzania</category>
       <description>Tanzania — On 13 March 2025, the Ministry of Health of the United Republic of Tanzania declared the end of the Marburg virus disease (MVD) outbreak. This declaration came after two consecutive incubation periods (a total of 42 days) since the last person confirmed with MVD died on 28 January 2025 and was given a safe and…</description>
-    </item>
-    <item>
-      <title>Sudan virus disease – Uganda</title>
-      <link>https://www.who.int/2025-DON558</link>
-      <guid isPermaLink="false">1efb6bc0-bade-4150-bf2d-e2e8c34d0eb7</guid>
-      <pubDate>Sat, 08 Mar 2025 09:03:25 GMT</pubDate>
-      <category>Sudan virus disease</category>
-      <description>Uganda, Sudan — Since the outbreak of Sudan virus disease (SVD) was declared in Uganda on 30 January 2025, and as of 5 March 2025, a total of 14 cases (including 12 confirmed cases and two probable cases) including four deaths (two confirmed and two probable) have been reported. On 1 March 2025, the Ministry of Health released a…</description>
     </item>
   </channel>
 </rss>

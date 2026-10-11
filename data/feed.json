@@ -1,11 +1,37 @@
 {
-  "generated_at": "2026-10-10T12:34:08.650Z",
+  "generated_at": "2026-10-11T12:52:36.197Z",
   "sources": [
     "WHO"
   ],
-  "outbreak_count": 260,
+  "outbreak_count": 261,
   "update_count": 500,
   "outbreaks": [
+    {
+      "id": "2026-E000390",
+      "disease": "Pneumonia of undetermined etiology",
+      "first_seen": "2026-10-10T15:00:00Z",
+      "latest_update": "2026-10-10T15:53:19Z",
+      "update_count": 1,
+      "countries": [
+        {
+          "id": "643",
+          "name": "Russia"
+        }
+      ],
+      "is_global": false,
+      "latest_counts": null,
+      "trend": null,
+      "updates": [
+        {
+          "id": "9cca163d-6ef3-4d3e-b149-2cd7acf408f6",
+          "title": "Pneumonia of undetermined etiology - the Russian Federation",
+          "url": "https://www.who.int/2026-DON620",
+          "date": "2026-10-10T15:53:19Z",
+          "summary": "On 2 October 2026, WHO became aware through media reports of the death of an employee of the Irkutsk Antiplague Research Institute (APRI) of Siberia and the Far East, the Russian Federation. According to these reports, the individual died on 2 October following hospitalization for severe pneumonia on 29 September, and…",
+          "counts": null
+        }
+      ]
+    },
     {
       "id": "2026-E000253",
       "disease": "Ebola disease caused by Bundibugyo virus",
@@ -7945,7 +7971,7 @@
       "disease": "2018",
       "first_seen": "2021-06-03T09:07:11Z",
       "latest_update": "2021-06-03T09:07:39Z",
-      "update_count": 12,
+      "update_count": 11,
       "countries": [
         {
           "id": "682",
@@ -8062,14 +8088,6 @@
           "url": "https://www.who.int/15-november-2018-ebola-drc-en",
           "date": "2018-11-15T00:00:00Z",
           "summary": "New measures to overcome obstacles in responding to the Ebola virus disease (EVD) outbreak in the Democratic Republic of the Congo are having a positive impact. The Ministry of Health (MoH), WHO and partners continue to be confident that, despite challenges, the outbreak can be contained. Over the past week (7 &ndash;…",
-          "counts": null
-        },
-        {
-          "id": "31664dc3-0a04-4822-ab82-414789077360",
-          "title": "Ebola virus disease – Democratic Republic of the Congo",
-          "url": "https://www.who.int/08-november-2018-ebola-drc-en",
-          "date": "2018-11-08T00:00:00Z",
-          "summary": "As the Ebola virus disease (EVD) outbreak enters the fourth month since declaration, and case numbers surpass 300, substantial progress has been achieved in all aspects of the response. Nevertheless, there remains a challenging road ahead to control intense transmission in the city of Beni and emerging hotspots in…",
           "counts": null
         }
       ]
