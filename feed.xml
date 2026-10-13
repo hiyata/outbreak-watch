@@ -6,7 +6,7 @@
     <atom:link href="https://hiyata.github.io/outbreak-watch/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated daily.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 12 Oct 2026 15:29:33 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 14:16:03 GMT</lastBuildDate>
     <generator>outbreak-watch scripts/build-rss.mjs</generator>
     <item>
       <title>Pneumonia of undetermined etiology - the Russian Federation</title>
