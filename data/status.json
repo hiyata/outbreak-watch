@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-14T03:14:59Z",
+  "checked_at": "2026-10-14T04:37:29Z",
   "sources": [
     {"id": "who", "label": "World (WHO)", "outcome": "success"},
     {"id": "cdc", "label": "United States (CDC)", "outcome": "success"},
@@ -7,6 +7,7 @@
     {"id": "cl", "label": "Chile (DEIS)", "outcome": "success"},
     {"id": "uk", "label": "England (UKHSA)", "outcome": "success"},
     {"id": "jp", "label": "Japan (JIHS)", "outcome": "success"},
+    {"id": "de", "label": "Germany (RKI)", "outcome": "success"},
     {"id": "strains", "label": "Strain matching (NCBI + Nextclade)", "outcome": "success"}
   ]
 }
