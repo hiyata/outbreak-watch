@@ -55,7 +55,7 @@ function normalizeUpdate(row) {
   return {
     id: row.Id,
     title: title ?? "(untitled)",
-    url: `https://www.who.int${row.ItemDefaultUrl}`,
+    url: `https://www.who.int/emergencies/disease-outbreak-news/item/${row.UrlName}`,
     date: row.PublicationDate,
     summary: truncate(stripHtml(summarySource)),
     counts: extractCaseCounts(numberSource),
