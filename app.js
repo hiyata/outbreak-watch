@@ -1,110 +1,24 @@
-const LAST_SEEN_KEY = "outbreak-watch:last-seen";
-
-const listEl = document.getElementById("outbreak-list");
-const headerStatsEl = document.getElementById("header-stats");
-const detailEl = document.getElementById("detail");
-const searchEl = document.getElementById("search");
-const sortEl = document.getElementById("sort");
-const showHistoricalEl = document.getElementById("show-historical");
-const whoMapWrap = document.getElementById("who-map-wrap");
-
-const cdcListEl = document.getElementById("cdc-list");
-const cdcSearchEl = document.getElementById("cdc-search");
-const cdcSortEl = document.getElementById("cdc-sort");
-const cdcMapWrap = document.getElementById("cdc-map-wrap");
-
-const brListEl = document.getElementById("br-list");
-const brSearchEl = document.getElementById("br-search");
-const brSortEl = document.getElementById("br-sort");
-const brMapWrap = document.getElementById("br-map-wrap");
-
-const clListEl = document.getElementById("cl-list");
-const clSearchEl = document.getElementById("cl-search");
-const clSortEl = document.getElementById("cl-sort");
-const clMapWrap = document.getElementById("cl-map-wrap");
-
-const ukListEl = document.getElementById("uk-list");
-const ukSearchEl = document.getElementById("uk-search");
-const ukSortEl = document.getElementById("uk-sort");
-const ukMapWrap = document.getElementById("uk-map-wrap");
-
-const jpListEl = document.getElementById("jp-list");
-const jpSearchEl = document.getElementById("jp-search");
-const jpSortEl = document.getElementById("jp-sort");
-const jpMapWrap = document.getElementById("jp-map-wrap");
-
-const tabWhoEl = document.getElementById("tab-who");
-const tabCdcEl = document.getElementById("tab-cdc");
-const tabBrEl = document.getElementById("tab-br");
-const tabClEl = document.getElementById("tab-cl");
-const tabUkEl = document.getElementById("tab-uk");
-const tabJpEl = document.getElementById("tab-jp");
-const mapTitleEl = document.getElementById("map-title");
-const legendWhoEl = document.getElementById("legend-who");
-const legendCdcEl = document.getElementById("legend-cdc");
-const legendBrEl = document.getElementById("legend-br");
-const legendClEl = document.getElementById("legend-cl");
-const legendUkEl = document.getElementById("legend-uk");
-const legendJpEl = document.getElementById("legend-jp");
-const controlsWhoEl = document.getElementById("controls-who");
-const controlsCdcEl = document.getElementById("controls-cdc");
-const controlsBrEl = document.getElementById("controls-br");
-const controlsClEl = document.getElementById("controls-cl");
-const controlsUkEl = document.getElementById("controls-uk");
-const controlsJpEl = document.getElementById("controls-jp");
-const footerWhoEl = document.getElementById("footer-who");
-const footerCdcEl = document.getElementById("footer-cdc");
-const footerBrEl = document.getElementById("footer-br");
-const footerClEl = document.getElementById("footer-cl");
-const footerUkEl = document.getElementById("footer-uk");
-const footerJpEl = document.getElementById("footer-jp");
+// Outbreak Watch frontend. Every data source is a "mode" in the MODES
+// registry below: each mode describes how to load its feed, list and
+// search its items, render a detail view, and color/label its map. All
+// shared behavior — URL routing, lazy feed loading, sidebar rendering, map
+// drawing, tooltips, keyboard access, the watchlist and the cross-source
+// overview — is written once against that interface, so adding a source
+// means adding one mode object plus its controls/legend/footer markup in
+// index.html, not another copy of every function.
 
 const ACTIVE_WINDOW_DAYS = 365;
 const ACTIVE_CUTOFF = new Date(Date.now() - ACTIVE_WINDOW_DAYS * 24 * 60 * 60 * 1000).toISOString();
 
-let mode = "who"; // "who" | "cdc" | "br" | "cl" | "uk" | "jp"
+const headerStatsEl = document.getElementById("header-stats");
+const detailEl = document.getElementById("detail");
+const mapTitleEl = document.getElementById("map-title");
+const modeTabsEl = document.getElementById("mode-tabs");
+const mapContainerEl = document.getElementById("map-container");
+const sidebarEl = document.getElementById("sidebar");
 
-let allOutbreaks = [];
-let lastSeen = localStorage.getItem(LAST_SEEN_KEY);
-let selectedId = null;
-let countryHitCounts = new Map(); // map country id -> count of matching outbreaks (post-filter)
-let svgSelection = null;
-
-let cdcFeed = null;
-let allDiseases = [];
-let selectedDisease = null;
-let cdcSvgSelection = null;
-let whoGeneratedAt = null;
-
-let brFeed = null;
-let allBrStates = [];
-let selectedBrState = null;
-let brSvgSelection = null;
-
-const BR_INTENSITY_COLOR = {
-  Segurança: "#3f7a5c",
-  "Baixo risco": "#8bb08a",
-  Alerta: "#e0c34f",
-  Risco: "#e0883f",
-  "Alto risco": "#b8461f",
-};
-
-let clFeed = null;
-let allClRegions = [];
-let selectedClRegion = null;
-let clSvgSelection = null;
-
-let ukFeed = null;
-let allUkDiseases = [];
-let selectedUkDisease = null;
-let ukSvgSelection = null;
-
+let currentModeId = "who";
 let dataStatus = null; // data/status.json — which sources' last fetch attempt succeeded
-
-let jpFeed = null;
-let allJpDiseases = [];
-let selectedJpDisease = null;
-let jpSvgSelection = null;
 
 function fmtDate(iso) {
   if (!iso) return "";
@@ -116,15 +30,89 @@ function fmtNumber(n) {
   return n.toLocaleString();
 }
 
+function fmtRate(n) {
+  if (n == null || !Number.isFinite(n)) return "—";
+  return n >= 100 ? fmtNumber(Math.round(n)) : n >= 10 ? n.toFixed(1) : n.toFixed(2);
+}
+
 function escapeHtml(str) {
   const div = document.createElement("div");
   div.textContent = str ?? "";
   return div.innerHTML;
 }
 
-// Renders a small inline SVG line+area sparkline from a series of numbers.
-// Points with null/undefined value show as a gap in the line rather than
-// a false zero. Returns an HTML string, not a live DOM node.
+function per100k(count, population) {
+  if (count == null || !population) return null;
+  return (count / population) * 100000;
+}
+
+const SECTION_HEADING_STYLE = "font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;";
+
+// ---------- Storage ----------
+// localStorage can be unavailable (private windows, blocked site data) or
+// throw on access; everything stored here is a per-viewer convenience, so
+// failures just mean the feature starts empty rather than breaking the page.
+
+function storeGet(key, fallback) {
+  try {
+    const raw = localStorage.getItem(key);
+    return raw === null ? fallback : JSON.parse(raw);
+  } catch {
+    return fallback;
+  }
+}
+
+function storeSet(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    // ignore — see above
+  }
+}
+
+// "Since your last visit" needs a baseline that survives refreshes: the
+// old approach overwrote the last-seen marker on every page load, so a
+// single refresh wiped out every "new" badge. Instead, the first load in a
+// browser session snapshots the previous visit's record into
+// sessionStorage, and every load in that session compares against the same
+// snapshot, while the persistent record is free to be updated as data loads.
+const VISIT_KEY = "outbreak-watch:visit"; // { who_newest, items: { "<mode>/<key>": { value, asOf } } }
+const BASELINE_SESSION_KEY = "outbreak-watch:visit-baseline";
+const LEGACY_LAST_SEEN_KEY = "outbreak-watch:last-seen";
+
+const visitBaseline = (() => {
+  try {
+    const saved = sessionStorage.getItem(BASELINE_SESSION_KEY);
+    if (saved !== null) return JSON.parse(saved);
+  } catch {
+    // fall through to localStorage
+  }
+  let previous = storeGet(VISIT_KEY, null);
+  if (!previous) {
+    let legacy = null;
+    try {
+      legacy = localStorage.getItem(LEGACY_LAST_SEEN_KEY);
+    } catch {
+      // ignore
+    }
+    if (legacy) previous = { who_newest: legacy, items: {} };
+  }
+  try {
+    sessionStorage.setItem(BASELINE_SESSION_KEY, JSON.stringify(previous));
+  } catch {
+    // ignore
+  }
+  return previous;
+})();
+
+const visitRecord = storeGet(VISIT_KEY, null) ?? { items: {} };
+visitRecord.items ??= {};
+
+function saveVisitRecord() {
+  storeSet(VISIT_KEY, visitRecord);
+}
+
+// ---------- Trend charts ----------
 // Renders a real line chart (axes, gridlines, hover tooltip) into an
 // already-in-DOM container. Detail panels build their HTML as one big
 // string via innerHTML, so charts are rendered in a second pass: the
@@ -331,6 +319,11 @@ window.addEventListener("resize", () => {
   }, 150);
 });
 
+function weeklySeriesPoints(series) {
+  return (series ?? []).map((p) => ({ x: `wk ${p.week}`, y: p.value }));
+}
+
+// ---------- Trend labels ----------
 // trend.trend classifies the recent window (a handful of reports) by
 // regression slope, which can read "rising" even after a single down-tick —
 // real behavior when a big prior spike still dominates the window, not a
@@ -376,166 +369,42 @@ function trendFromPct(pct) {
   return { trend, percent_change: Math.round(pct * 10) / 10 };
 }
 
-function isNewOutbreak(ob) {
-  return Boolean(lastSeen && ob.latest_update > lastSeen);
-}
+// ---------- Shared detail-panel pieces ----------
 
-function filteredOutbreaks() {
-  const query = searchEl.value.trim().toLowerCase();
-  const includeHistorical = showHistoricalEl.checked;
-
-  let outbreaks = allOutbreaks.filter((ob) => {
-    if (!includeHistorical && ob.latest_update < ACTIVE_CUTOFF) return false;
-    if (!query) return true;
-    const haystack = `${ob.disease} ${ob.countries.map((c) => c.name).join(" ")} ${ob.updates
-      .map((u) => u.title + " " + u.summary)
-      .join(" ")}`.toLowerCase();
-    return haystack.includes(query);
-  });
-
-  const sort = sortEl.value;
-  if (sort === "unread") {
-    outbreaks = [...outbreaks].sort((a, b) => {
-      const aNew = isNewOutbreak(a) ? 1 : 0;
-      const bNew = isNewOutbreak(b) ? 1 : 0;
-      if (aNew !== bNew) return bNew - aNew;
-      return b.latest_update.localeCompare(a.latest_update);
-    });
-  } else if (sort === "count") {
-    outbreaks = [...outbreaks].sort((a, b) => b.update_count - a.update_count);
-  } else if (sort === "cases") {
-    outbreaks = [...outbreaks].sort((a, b) => (b.latest_counts?.cases ?? -1) - (a.latest_counts?.cases ?? -1));
-  } else {
-    outbreaks = [...outbreaks].sort((a, b) => b.latest_update.localeCompare(a.latest_update));
-  }
-
-  return outbreaks;
-}
-
-function renderSidebar() {
-  const outbreaks = filteredOutbreaks();
-
-  countryHitCounts = new Map();
-  for (const ob of outbreaks) {
-    for (const c of ob.countries) {
-      countryHitCounts.set(c.id, (countryHitCounts.get(c.id) ?? 0) + 1);
-    }
-  }
-  paintMap();
-
-  if (outbreaks.length === 0) {
-    listEl.innerHTML = '<p id="status">No matching outbreaks.</p>';
-    return;
-  }
-
-  listEl.innerHTML = outbreaks
-    .map((ob) => {
-      const isNew = isNewOutbreak(ob);
-      const isActive = ob.id === selectedId;
-      const countryLabel = ob.is_global
-        ? "Multi-country / global"
-        : ob.countries.map((c) => c.name).join(", ") || "Location unspecified";
-      const countsLabel = ob.latest_counts
-        ? `${fmtNumber(ob.latest_counts.cases)} cases${
-            ob.latest_counts.deaths ? ` · ${fmtNumber(ob.latest_counts.deaths)} deaths` : ""
-          }`
-        : "";
-
-      return `
-        <button class="list-item${isNew ? " is-new" : ""}${isActive ? " active" : ""}" data-id="${escapeHtml(ob.id)}">
-          <div class="li-title">${escapeHtml(ob.disease)}</div>
-          <div class="li-meta">
-            <span>${escapeHtml(countryLabel)}</span>
-          </div>
-          <div class="li-meta">
-            <span>${ob.update_count} update${ob.update_count === 1 ? "" : "s"}</span>
-            <span>·</span>
-            <span>${fmtDate(ob.latest_update)}</span>
-            ${countsLabel ? `<span class="li-counts">${countsLabel}${trendIcon(ob.trend)}</span>` : ""}
-          </div>
-        </button>
-      `;
-    })
-    .join("");
-
-  listEl.querySelectorAll(".list-item").forEach((btn) => {
-    btn.addEventListener("click", () => selectOutbreak(btn.dataset.id));
-  });
-}
-
-function renderDetail() {
-  const ob = allOutbreaks.find((o) => o.id === selectedId);
-  if (!ob) {
-    detailEl.innerHTML =
-      '<p style="color: var(--muted); font-size: 0.9rem;">Select an outbreak on the left, or a highlighted country on the map, to see its full update timeline.</p>';
-    return;
-  }
-
-  const countryLabel = ob.is_global
-    ? "Multi-country / global"
-    : ob.countries.map((c) => c.name).join(", ") || "Location unspecified";
-
-  const statsHtml = ob.latest_counts
-    ? `
-      <div class="stat-row">
-        <div class="stat"><div class="n">${fmtNumber(ob.latest_counts.cases)}</div><div class="l">cumulative cases</div></div>
-        ${
-          ob.latest_counts.deaths
-            ? `<div class="stat"><div class="n">${fmtNumber(ob.latest_counts.deaths)}</div><div class="l">deaths</div></div>
-               <div class="stat"><div class="n">${((ob.latest_counts.deaths / ob.latest_counts.cases) * 100).toFixed(1)}%</div><div class="l">case fatality (reported)</div></div>`
-            : ""
-        }
-      </div>
-      <div class="stat-note">Extracted automatically from WHO's latest report text${
-        ob.latest_counts.as_of ? `, as of ${ob.latest_counts.as_of}` : ""
-      }. May be incomplete — verify against the source report.</div>
-    `
-    : `<p style="color: var(--muted); font-size: 0.82rem;">No parseable case/death figures found in WHO's report text for this outbreak.</p>`;
-
-  const updatesHtml = ob.updates
-    .map(
-      (u) => `
-        <div class="update">
-          <div class="update-date">${fmtDate(u.date)}</div>
-          <h3><a href="${u.url}" target="_blank" rel="noopener">${escapeHtml(u.title)}</a></h3>
-          <p>${escapeHtml(u.summary)}</p>
-        </div>
-      `
-    )
-    .join("");
-
-  const chronological = [...ob.updates].sort((a, b) => a.date.localeCompare(b.date));
-  const casePoints = chronological.map((u) => ({ x: fmtDate(u.date), y: u.counts?.cases ?? null }));
-  const chartHtml =
-    casePoints.filter((p) => p.y !== null).length >= 2
-      ? `
-        <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">Cumulative cases over time</h3>
-        ${chartPlaceholder("who-trend-chart")}
-      `
-      : "";
-
-  const crossLinksHtml = renderCrossLinks(ob);
-
-  detailEl.innerHTML = `
+function detailHead(mode, item, title, tagsHtml) {
+  return `
     <div class="detail-head">
-      <h2>${escapeHtml(ob.disease)}</h2>
-      <div class="detail-tags">
-        <span class="tag">${escapeHtml(countryLabel)}</span>
-        <span class="tag">first seen ${fmtDate(ob.first_seen)}</span>
-        <span class="tag">${ob.update_count} update${ob.update_count === 1 ? "" : "s"}</span>
-        ${trendTag(ob.trend)}
+      <div class="detail-title-row">
+        <h2>${escapeHtml(title)}</h2>
+        <div class="detail-actions">
+          ${watchButtonHtml(mode, item)}
+          <button class="detail-action copy-link-btn" type="button">Copy link</button>
+        </div>
       </div>
+      <div class="detail-tags">${tagsHtml}</div>
     </div>
-    ${statsHtml}
-    ${chartHtml}
-    ${crossLinksHtml}
-    <div id="strain-panel-wrap"></div>
-    <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.6rem;">Update timeline</h3>
-    ${updatesHtml}
   `;
-  renderTrendChartInto("who-trend-chart", casePoints, { valueFormat: fmtNumber });
-  bindCrossLinkClicks();
-  loadAndRenderStrainPanel(ob.id);
+}
+
+const CROSS_LINKS_SLOT = '<div id="cross-links-slot"></div>';
+
+// Per-region table used by every disease-by-region mode. The per-100k
+// column only appears when the feed carries populations for that source.
+function regionTableHtml({ regionNoun, rows, columns, limit = 25 }) {
+  const shown = rows.slice(0, limit);
+  return `
+    <h3 style="${SECTION_HEADING_STYLE} margin-bottom: 0.6rem;">By ${regionNoun}${rows.length > limit ? ` (top ${limit} of ${rows.length})` : ""}</h3>
+    <table class="state-table">
+      <thead><tr>${columns.map((c) => `<th${c.num ? ' class="num"' : ""}>${c.label}</th>`).join("")}</tr></thead>
+      <tbody>${shown
+        .map((r) => `<tr data-region="${escapeHtml(r.id)}">${columns.map((c) => `<td${c.num ? ' class="num"' : ""}>${c.cell(r)}</td>`).join("")}</tr>`)
+        .join("")}</tbody>
+    </table>
+  `;
+}
+
+function hasPopulation(regions) {
+  return regions.some((r) => r.population);
 }
 
 // ---------- Strain / variant matching ----------
@@ -551,7 +420,7 @@ async function loadStrainData(outbreakId) {
   if (strainDataCache.has(outbreakId)) return strainDataCache.get(outbreakId);
   let data = null;
   try {
-    const res = await fetch(`data/strains/${outbreakId}.json`, { cache: "no-store" });
+    const res = await fetch(`data/strains/${outbreakId}.json`);
     if (res.ok) data = await res.json();
   } catch {
     // network hiccup or no such file — treated the same as "no data"
@@ -564,7 +433,7 @@ async function loadGenomeAnnotation(pathogenId) {
   if (genomeAnnotationCache.has(pathogenId)) return genomeAnnotationCache.get(pathogenId);
   let data = null;
   try {
-    const res = await fetch(`data/strains/_genomes/${pathogenId}.json`, { cache: "no-store" });
+    const res = await fetch(`data/strains/_genomes/${pathogenId}.json`);
     if (res.ok) data = await res.json();
   } catch {
     // ignore
@@ -573,9 +442,13 @@ async function loadGenomeAnnotation(pathogenId) {
   return data;
 }
 
+function isShowingOutbreak(outbreakId) {
+  return currentModeId === "who" && MODE.who.selected === outbreakId;
+}
+
 async function loadAndRenderStrainPanel(outbreakId) {
   const data = await loadStrainData(outbreakId);
-  if (selectedId !== outbreakId) return; // user selected something else while this was in flight
+  if (!isShowingOutbreak(outbreakId)) return; // user selected something else while this was in flight
   const wrap = document.getElementById("strain-panel-wrap");
   if (!wrap) return;
 
@@ -585,12 +458,12 @@ async function loadAndRenderStrainPanel(outbreakId) {
   }
 
   const genome = await loadGenomeAnnotation(data.pathogen);
-  if (selectedId !== outbreakId) return;
+  if (!isShowingOutbreak(outbreakId)) return;
   const wrapNow = document.getElementById("strain-panel-wrap");
   if (!wrapNow) return;
 
   wrapNow.innerHTML = `
-    <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">
+    <h3 style="${SECTION_HEADING_STYLE}">
       Sequenced strain match${data.matches.length === 1 ? "" : "es"}
     </h3>
     <p class="muted-note" style="margin: 0 0 0.8rem;">
@@ -841,131 +714,76 @@ function diseaseKeywordMatch(a, b) {
   return diseaseKeywords(b).some((w) => setA.has(w));
 }
 
-const CROSS_LINK_SOURCES = [
-  { mode: "cdc", label: "United States (CDC)", country: "United States of America" },
-  { mode: "br", label: "Brazil (InfoGripe)", country: "Brazil" },
-  { mode: "uk", label: "England (UKHSA)", country: "United Kingdom" },
-  { mode: "cl", label: "Chile (DEIS)", country: "Chile" },
-  { mode: "jp", label: "Japan (JIHS)", country: "Japan" },
-];
-
-// Returns [{mode, label, matchLabel}] — local-source cross-links relevant
-// to a WHO outbreak, based on country + (for disease-specific sources)
-// keyword overlap. Chile is country-only since it's not disease-specific.
-function findCrossLinks(ob) {
-  if (ob.is_global) return [];
-  const countryNames = new Set(ob.countries.map((c) => c.name));
-  const links = [];
-
-  for (const src of CROSS_LINK_SOURCES) {
-    if (!countryNames.has(src.country)) continue;
-
-    if (src.mode === "cl") {
-      if (allClRegions.length) links.push({ ...src, matchLabel: "weekly mortality data" });
-      continue;
-    }
-    if (src.mode === "cdc" && allDiseases.length) {
-      const match = allDiseases.find((d) => diseaseKeywordMatch(ob.disease, d.disease));
-      if (match) links.push({ ...src, matchLabel: match.disease, target: match.disease });
-    }
-    if (src.mode === "br" && allBrStates.length && diseaseKeywordMatch(ob.disease, "influenza respiratory")) {
-      links.push({ ...src, matchLabel: "SRAG (severe respiratory illness) surveillance" });
-    }
-    if (src.mode === "uk" && allUkDiseases.length) {
-      const match = allUkDiseases.find((d) => diseaseKeywordMatch(ob.disease, d.topic));
-      if (match) links.push({ ...src, matchLabel: match.topic, target: match.topic });
-    }
-    if (src.mode === "jp" && allJpDiseases.length) {
-      const match = allJpDiseases.find((d) => diseaseKeywordMatch(ob.disease, d.disease));
-      if (match) links.push({ ...src, matchLabel: match.disease, target: match.disease });
-    }
-  }
-  return links;
+function crossLinkChip(modeId, target, text) {
+  return `<button class="cross-link" type="button" data-mode="${modeId}" data-target="${escapeHtml(target ?? "")}">${escapeHtml(text)}</button>`;
 }
 
-function renderCrossLinks(ob) {
-  const links = findCrossLinks(ob);
-  if (links.length === 0) return "";
-
-  const chips = links
-    .map(
-      (l) =>
-        `<button class="cross-link" data-mode="${l.mode}" data-target="${escapeHtml(l.target ?? "")}">
-          ${escapeHtml(l.label)} → ${escapeHtml(l.matchLabel)}
-        </button>`
-    )
-    .join("");
-
+function crossLinksBlock(label, chips) {
+  if (!chips.length) return "";
   return `
     <div class="cross-links">
-      <div class="cross-links-label">Also tracked locally</div>
-      <div class="cross-links-row">${chips}</div>
+      <div class="cross-links-label">${label}</div>
+      <div class="cross-links-row">${chips.join("")}</div>
     </div>
   `;
+}
+
+// Local-source links relevant to a WHO outbreak: each local mode with a
+// `country` decides via its own crossLinkFrom() whether it has a match.
+function whoCrossLinksHtml(ob) {
+  if (ob.is_global) return "";
+  const countryNames = new Set(ob.countries.map((c) => c.name));
+  const chips = [];
+  for (const mode of MODES) {
+    if (!mode.country || !mode.crossLinkFrom || !countryNames.has(mode.country) || !mode.feed) continue;
+    const match = mode.crossLinkFrom(ob);
+    if (match) chips.push(crossLinkChip(mode.id, match.target, `${mode.label} → ${match.label}`));
+  }
+  return crossLinksBlock("Also tracked locally", chips);
 }
 
 // Reverse direction: from a local-source disease, find a matching WHO
-// outbreak in the same country, so CDC/Brazil/UK detail panels can link
-// back to the global picture too.
-function findWhoLinkBack(diseaseName, countryName) {
-  if (!allOutbreaks.length) return "";
-  const match = allOutbreaks.find(
+// outbreak in the same country, so local detail panels can link back to
+// the global picture too.
+function whoLinkBackHtml(diseaseName, countryName) {
+  const who = MODE.who;
+  if (!who.feed) return "";
+  const match = who.items.find(
     (ob) => !ob.is_global && ob.countries.some((c) => c.name === countryName) && diseaseKeywordMatch(diseaseName, ob.disease)
   );
   if (!match) return "";
-  return `
-    <div class="cross-links">
-      <div class="cross-links-label">Also in the global outbreak feed</div>
-      <div class="cross-links-row">
-        <button class="cross-link" data-mode="who" data-target="${escapeHtml(match.id)}">World (WHO) → ${escapeHtml(match.disease)}</button>
-      </div>
-    </div>
-  `;
+  return crossLinksBlock("Also in the global outbreak feed", [crossLinkChip("who", match.id, `World (WHO) → ${match.disease}`)]);
 }
 
 // Country-only reverse link (for Chile mode, which isn't disease-specific
 // so keyword matching doesn't apply — any active WHO outbreak in-country
 // is potentially relevant context).
-function renderCountryLinkBack(countryName) {
-  if (!allOutbreaks.length) return "";
-  const matches = allOutbreaks.filter((ob) => !ob.is_global && ob.countries.some((c) => c.name === countryName));
-  if (matches.length === 0) return "";
-  const chips = matches
-    .slice(0, 5)
-    .map(
-      (ob) =>
-        `<button class="cross-link" data-mode="who" data-target="${escapeHtml(ob.id)}">World (WHO) → ${escapeHtml(ob.disease)}</button>`
-    )
-    .join("");
-  return `
-    <div class="cross-links">
-      <div class="cross-links-label">Active WHO outbreaks in this country</div>
-      <div class="cross-links-row">${chips}</div>
-    </div>
-  `;
+function countryLinkBackHtml(countryName) {
+  const who = MODE.who;
+  if (!who.feed) return "";
+  const matches = who.items.filter((ob) => !ob.is_global && ob.countries.some((c) => c.name === countryName));
+  return crossLinksBlock(
+    "Active WHO outbreaks in this country",
+    matches.slice(0, 5).map((ob) => crossLinkChip("who", ob.id, `World (WHO) → ${ob.disease}`))
+  );
 }
 
-function bindCrossLinkClicks() {
-  detailEl.querySelectorAll(".cross-link").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const targetMode = btn.dataset.mode;
-      const target = btn.dataset.target;
-      switchMode(targetMode);
-      if (targetMode === "cdc" && target) selectDisease(target);
-      else if (targetMode === "uk" && target) selectUkDisease(target);
-      else if (targetMode === "jp" && target) selectJpDisease(target);
-      else if (targetMode === "who" && target) selectOutbreak(target);
-    });
+// Cross-links depend on *other* sources' feeds, which load in the
+// background — so they live in their own slot that can be refilled when a
+// feed arrives, without re-rendering (and re-scrolling) the whole panel.
+function fillCrossLinks() {
+  const slot = document.getElementById("cross-links-slot");
+  if (!slot) return;
+  const mode = currentMode();
+  const item = selectedItem(mode);
+  if (!item || !mode.crossLinksHtml) return;
+  slot.innerHTML = mode.crossLinksHtml(item);
+  slot.querySelectorAll(".cross-link").forEach((btn) => {
+    btn.addEventListener("click", () => navigate(btn.dataset.mode, btn.dataset.target || null));
   });
 }
 
-function selectOutbreak(id) {
-  selectedId = id;
-  renderSidebar();
-  renderDetail();
-  paintMap();
-  detailEl.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+// ---------- Map coloring helpers ----------
 
 function hitColor(count) {
   if (count >= 3) return "var(--map-hit-3)";
@@ -974,436 +792,13 @@ function hitColor(count) {
   return "var(--map-land)";
 }
 
-function paintMap() {
-  if (!svgSelection) return;
-  const selectedOb = allOutbreaks.find((o) => o.id === selectedId);
-  const selectedCountryIds = new Set((selectedOb?.countries ?? []).map((c) => c.id));
-
-  svgSelection.attr("fill", function () {
-    const id = this.getAttribute("data-id");
-    return hitColor(countryHitCounts.get(id) ?? 0);
-  });
-  svgSelection
-    .classed("has-outbreak", function () {
-      return (countryHitCounts.get(this.getAttribute("data-id")) ?? 0) > 0;
-    })
-    .classed("selected", function () {
-      return selectedCountryIds.has(this.getAttribute("data-id"));
-    });
-}
-
-async function initMap() {
-  const topo = await d3.json("data/countries-110m.json");
-  const geo = topojson.feature(topo, topo.objects.countries);
-
-  const width = whoMapWrap.clientWidth || 640;
-  const height = width * 0.55;
-  const projection = d3.geoNaturalEarth1().fitSize([width - 4, height - 4], geo);
-  const pathGenerator = d3.geoPath(projection);
-
-  const svg = d3
-    .select(whoMapWrap)
-    .append("svg")
-    .attr("viewBox", `0 0 ${width} ${height}`)
-    .attr("preserveAspectRatio", "xMidYMid meet");
-
-  const paths = svg
-    .append("g")
-    .selectAll("path")
-    .data(geo.features)
-    .join("path")
-    .attr("class", "country-path")
-    .attr("data-id", (d) => String(d.id).padStart(3, "0"))
-    .attr("d", pathGenerator)
-    .attr("fill", "var(--map-land)");
-
-  paths.append("title").text((d) => d.properties.name);
-  svgSelection = paths;
-
-  svgSelection.on("click", function (event, d) {
-    const id = String(d.id).padStart(3, "0");
-    const count = countryHitCounts.get(id) ?? 0;
-    if (count === 0) return;
-    const match = filteredOutbreaks().find((ob) => ob.countries.some((c) => c.id === id));
-    if (match) selectOutbreak(match.id);
-  });
-
-  paintMap();
-}
-
-// ---------- CDC (US states) mode ----------
-
-function filteredDiseases() {
-  const query = cdcSearchEl.value.trim().toLowerCase();
-  let diseases = allDiseases.filter((d) => !query || d.disease.toLowerCase().includes(query));
-
-  const sort = cdcSortEl.value;
-  if (sort === "ytd") {
-    diseases = [...diseases].sort((a, b) => b.total_ytd - a.total_ytd);
-  } else if (sort === "states") {
-    diseases = [...diseases].sort((a, b) => b.states_reporting - a.states_reporting);
-  } else {
-    diseases = [...diseases].sort((a, b) => b.total_current_week - a.total_current_week);
-  }
-  return diseases;
-}
-
-function renderCdcSidebar() {
-  const diseases = filteredDiseases();
-
-  if (diseases.length === 0) {
-    cdcListEl.innerHTML = '<p id="cdc-status">No matching diseases.</p>';
-    return;
-  }
-
-  cdcListEl.innerHTML = diseases
-    .map((d) => {
-      const isActive = d.disease === selectedDisease;
-      return `
-        <button class="list-item${isActive ? " active" : ""}" data-disease="${escapeHtml(d.disease)}">
-          <div class="li-title">${escapeHtml(d.disease)}</div>
-          <div class="li-meta">
-            <span>${d.states_reporting} state${d.states_reporting === 1 ? "" : "s"} reporting</span>
-          </div>
-          <div class="li-meta">
-            <span class="li-counts">${fmtNumber(d.total_current_week)} this week${trendIcon(d.national_trend)}</span>
-            <span>·</span>
-            <span>${fmtNumber(d.total_ytd)} YTD</span>
-          </div>
-        </button>
-      `;
-    })
-    .join("");
-
-  cdcListEl.querySelectorAll(".list-item").forEach((btn) => {
-    btn.addEventListener("click", () => selectDisease(btn.dataset.disease));
-  });
-}
-
-function renderCdcDetail() {
-  const d = allDiseases.find((x) => x.disease === selectedDisease);
-  if (!d) {
-    detailEl.innerHTML =
-      '<p style="color: var(--muted); font-size: 0.9rem;">Select a notifiable disease on the left, or a highlighted state on the map, to see its state-by-state breakdown.</p>';
-    return;
-  }
-
-  const rowsHtml = d.states
-    .slice(0, 25)
-    .map(
-      (s) => `
-        <tr>
-          <td>${escapeHtml(s.name)}</td>
-          <td class="num">${fmtNumber(s.current_week)}</td>
-          <td class="num">${fmtNumber(s.ytd)}</td>
-        </tr>
-      `
-    )
-    .join("");
-
-  const cdcTrendPoints = d.national_series ? d.national_series.map((p) => ({ x: `wk ${p.week}`, y: p.value })) : [];
-  const trendHtml = d.national_series
-    ? `
-      <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">National weekly trend</h3>
-      ${chartPlaceholder("cdc-trend-chart")}
-    `
-    : "";
-
-  const whoLink = findWhoLinkBack(d.disease, "United States of America");
-
-  detailEl.innerHTML = `
-    <div class="detail-head">
-      <h2>${escapeHtml(d.disease)}</h2>
-      <div class="detail-tags">
-        <span class="tag">MMWR week ${cdcFeed.week}, ${cdcFeed.year}</span>
-        <span class="tag">${d.states_reporting} states reporting</span>
-        ${trendTag(d.national_trend)}
-      </div>
-    </div>
-    <div class="stat-row">
-      <div class="stat"><div class="n">${fmtNumber(d.total_current_week)}</div><div class="l">cases this week (provisional)</div></div>
-      <div class="stat"><div class="n">${fmtNumber(d.total_ytd)}</div><div class="l">cumulative cases this year</div></div>
-    </div>
-    <div class="stat-note">Source: CDC NNDSS weekly tables. Most recent week is provisional and will revise upward as more reports come in.</div>
-    ${trendHtml}
-    ${whoLink}
-    <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.6rem;">By state${d.states.length > 25 ? ` (top 25 of ${d.states.length})` : ""}</h3>
-    <table class="state-table">
-      <thead><tr><th>State</th><th class="num">This week</th><th class="num">YTD</th></tr></thead>
-      <tbody>${rowsHtml}</tbody>
-    </table>
-  `;
-  renderTrendChartInto("cdc-trend-chart", cdcTrendPoints, { valueFormat: fmtNumber });
-  bindCrossLinkClicks();
-}
-
-function selectDisease(disease) {
-  selectedDisease = disease;
-  renderCdcSidebar();
-  renderCdcDetail();
-  paintCdcMap();
-  detailEl.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-function paintCdcMap() {
-  if (!cdcSvgSelection) return;
-  const d = allDiseases.find((x) => x.disease === selectedDisease);
-  const byState = new Map((d?.states ?? []).map((s) => [s.id, s.current_week]));
-  const max = Math.max(1, ...[...byState.values()]);
-  const scale = d3.scaleSequential(d3.interpolateOranges).domain([0, max]);
-
-  cdcSvgSelection
-    .attr("fill", function () {
-      const id = this.getAttribute("data-id");
-      if (!d) return "var(--map-land)";
-      return byState.has(id) ? scale(byState.get(id)) : "var(--map-land)";
-    })
-    .classed("has-outbreak", function () {
-      return d ? byState.has(this.getAttribute("data-id")) : false;
-    });
-}
-
-async function initCdcMap() {
-  const topo = await d3.json("data/us-states-10m.json");
-  const geo = topojson.feature(topo, topo.objects.states);
-
-  const width = cdcMapWrap.clientWidth || 640;
-  const height = width * 0.62;
-  const projection = d3.geoAlbersUsa().fitSize([width - 4, height - 4], geo);
-  const pathGenerator = d3.geoPath(projection);
-
-  const svg = d3
-    .select(cdcMapWrap)
-    .append("svg")
-    .attr("viewBox", `0 0 ${width} ${height}`)
-    .attr("preserveAspectRatio", "xMidYMid meet");
-
-  const paths = svg
-    .append("g")
-    .selectAll("path")
-    .data(geo.features)
-    .join("path")
-    .attr("class", "country-path")
-    .attr("data-id", (d) => String(d.id).padStart(2, "0"))
-    .attr("d", pathGenerator)
-    .attr("fill", "var(--map-land)");
-
-  paths.append("title").text((d) => d.properties.name);
-  cdcSvgSelection = paths;
-
-  cdcSvgSelection.on("click", function (event, feature) {
-    const id = String(feature.id).padStart(2, "0");
-    const d = allDiseases.find((x) => x.disease === selectedDisease);
-    if (!d || !d.states.some((s) => s.id === id)) return;
-    // clicking a state while a disease is selected just keeps that disease selected;
-    // clicking with none selected picks the state's top disease this week
-    if (!selectedDisease) {
-      const top = [...allDiseases]
-        .map((x) => ({ x, s: x.states.find((s) => s.id === id) }))
-        .filter((r) => r.s)
-        .sort((a, b) => b.s.current_week - a.s.current_week)[0];
-      if (top) selectDisease(top.x.disease);
-    }
-  });
-
-  paintCdcMap();
-}
-
-// ---------- Brazil (InfoGripe) mode ----------
-
-function fmtIncidence(cases, population) {
-  if (cases == null || !population) return null;
-  return (cases / population) * 100000;
-}
-
-function filteredBrStates() {
-  const query = brSearchEl.value.trim().toLowerCase();
-  let states = allBrStates.filter((s) => !query || s.name.toLowerCase().includes(query) || s.abbr.toLowerCase().includes(query));
-
-  const intensityRank = { "Alto risco": 4, Risco: 3, Alerta: 2, "Baixo risco": 1, Segurança: 0 };
-  const sort = brSortEl.value;
-  if (sort === "intensity") {
-    states = [...states].sort((a, b) => (intensityRank[b.intensity] ?? -1) - (intensityRank[a.intensity] ?? -1));
-  } else if (sort === "name") {
-    states = [...states].sort((a, b) => a.name.localeCompare(b.name));
-  } else {
-    states = [...states].sort((a, b) => (b.cases_reported ?? 0) - (a.cases_reported ?? 0));
-  }
-  return states;
-}
-
-function renderBrSidebar() {
-  const states = filteredBrStates();
-
-  if (states.length === 0) {
-    brListEl.innerHTML = '<p id="br-status">No matching states.</p>';
-    return;
-  }
-
-  brListEl.innerHTML = states
-    .map((s) => {
-      const isActive = s.id === selectedBrState;
-      return `
-        <button class="list-item${isActive ? " active" : ""}" data-id="${escapeHtml(s.id)}">
-          <div class="li-title">${escapeHtml(s.name)} (${escapeHtml(s.abbr)})</div>
-          <div class="li-meta">
-            <span>${escapeHtml(s.intensity ?? "No data")}</span>
-          </div>
-          <div class="li-meta">
-            <span class="li-counts">${s.cases_reported != null ? fmtNumber(s.cases_reported) + " cases" : "No data"}${trendIcon(s.trend)}</span>
-            ${s.trend_short ? `<span>· ${escapeHtml(s.trend_short)}</span>` : ""}
-          </div>
-        </button>
-      `;
-    })
-    .join("");
-
-  brListEl.querySelectorAll(".list-item").forEach((btn) => {
-    btn.addEventListener("click", () => selectBrState(btn.dataset.id));
-  });
-}
-
-function renderBrDetail() {
-  const s = allBrStates.find((x) => x.id === selectedBrState);
-  if (!s) {
-    detailEl.innerHTML =
-      '<p style="color: var(--muted); font-size: 0.9rem;">Select a state on the left, or on the map, for its SRAG surveillance detail.</p>';
-    return;
-  }
-
-  const incidence = fmtIncidence(s.cases_reported, s.population);
-
-  detailEl.innerHTML = `
-    <div class="detail-head">
-      <h2>${escapeHtml(s.name)}</h2>
-      <div class="detail-tags">
-        <span class="tag">Epi. week ${brFeed.epidemiological_week}, ${brFeed.epidemiological_year}</span>
-        <span class="tag" style="border-color: ${BR_INTENSITY_COLOR[s.intensity] ?? "var(--border)"}">${escapeHtml(s.intensity ?? "No data")}</span>
-        ${s.trend_short ? `<span class="tag">InfoGripe: ${escapeHtml(s.trend_short)}</span>` : ""}
-        ${trendTag(s.trend)}
-      </div>
-    </div>
-    <div class="stat-row">
-      <div class="stat"><div class="n">${s.cases_reported != null ? fmtNumber(s.cases_reported) : "—"}</div><div class="l">SRAG cases reported this week</div></div>
-      ${
-        s.cases_estimated != null
-          ? `<div class="stat"><div class="n">${fmtNumber(Math.round(s.cases_estimated))}</div><div class="l">nowcast estimate</div></div>`
-          : ""
-      }
-      ${incidence != null ? `<div class="stat"><div class="n">${incidence.toFixed(2)}</div><div class="l">per 100,000 population</div></div>` : ""}
-    </div>
-    <div class="stat-note">
-      Trend: ${escapeHtml(s.trend_short ?? "unknown")} (short-term), ${escapeHtml(s.trend_long ?? "unknown")} (long-term).
-      Source: InfoGripe (Fiocruz/FGV). Most recent week is provisional.
-    </div>
-    ${
-      s.series && s.series.length >= 2
-        ? `
-          <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">Weekly cases, last ${s.series.length} weeks</h3>
-          ${chartPlaceholder("br-trend-chart")}
-        `
-        : ""
-    }
-    ${findWhoLinkBack("influenza respiratory syndrome", "Brazil")}
-  `;
-  if (s.series && s.series.length >= 2) {
-    renderTrendChartInto("br-trend-chart", s.series.map((p) => ({ x: `wk ${p.week}`, y: p.value })), { valueFormat: fmtNumber });
-  }
-  bindCrossLinkClicks();
-}
-
-function selectBrState(id) {
-  selectedBrState = id;
-  renderBrSidebar();
-  renderBrDetail();
-  paintBrMap();
-  detailEl.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-function paintBrMap() {
-  if (!brSvgSelection) return;
-  const byState = new Map(allBrStates.map((s) => [s.id, s]));
-
-  brSvgSelection
-    .attr("fill", function () {
-      const id = this.getAttribute("data-id");
-      const s = byState.get(id);
-      return s?.intensity ? BR_INTENSITY_COLOR[s.intensity] ?? "var(--map-land)" : "var(--map-land)";
-    })
-    .classed("has-outbreak", function () {
-      return byState.has(this.getAttribute("data-id"));
-    })
-    .classed("selected", function () {
-      return this.getAttribute("data-id") === selectedBrState;
-    });
-}
-
-async function initBrMap() {
-  const geo = await d3.json("data/br-states-geo.json");
-
-  const width = brMapWrap.clientWidth || 640;
-  const height = width * 0.9;
-  const projection = d3.geoMercator().fitSize([width - 4, height - 4], geo);
-  const pathGenerator = d3.geoPath(projection);
-
-  const svg = d3
-    .select(brMapWrap)
-    .append("svg")
-    .attr("viewBox", `0 0 ${width} ${height}`)
-    .attr("preserveAspectRatio", "xMidYMid meet");
-
-  const byState = new Map(allBrStates.map((s) => [s.id, s]));
-
-  const paths = svg
-    .append("g")
-    .selectAll("path")
-    .data(geo.features)
-    .join("path")
-    .attr("class", "country-path")
-    .attr("data-id", (d) => String(d.properties.codarea).padStart(2, "0"))
-    .attr("d", pathGenerator)
-    .attr("fill", "var(--map-land)");
-
-  paths.append("title").text((d) => {
-    const s = byState.get(String(d.properties.codarea).padStart(2, "0"));
-    return s ? s.name : d.properties.codarea;
-  });
-  brSvgSelection = paths;
-
-  brSvgSelection.on("click", function (event, feature) {
-    const id = String(feature.properties.codarea).padStart(2, "0");
-    if (!byState.has(id)) return;
-    selectBrState(id);
-  });
-
-  paintBrMap();
-}
-
-const MAP_TITLES = {
-  who: "Active outbreaks by country",
-  cdc: "US notifiable diseases by state",
-  br: "Brazil SRAG risk level by state",
-  cl: "Chile all-cause mortality by region",
-  uk: "England notifiable diseases by region",
-  jp: "Japan notifiable diseases by prefecture",
+const BR_INTENSITY_COLOR = {
+  Segurança: "#3f7a5c",
+  "Baixo risco": "#8bb08a",
+  Alerta: "#e0c34f",
+  Risco: "#e0883f",
+  "Alto risco": "#b8461f",
 };
-
-// ---------- Chile (DEIS) mode ----------
-
-function filteredClRegions() {
-  const query = clSearchEl.value.trim().toLowerCase();
-  let regions = allClRegions.filter((r) => !query || r.name.toLowerCase().includes(query));
-
-  const sort = clSortEl.value;
-  if (sort === "deaths") {
-    regions = [...regions].sort((a, b) => b.latest_deaths - a.latest_deaths);
-  } else if (sort === "name") {
-    regions = [...regions].sort((a, b) => a.name.localeCompare(b.name));
-  } else {
-    regions = [...regions].sort((a, b) => (b.pct_vs_baseline ?? -Infinity) - (a.pct_vs_baseline ?? -Infinity));
-  }
-  return regions;
-}
 
 function clColor(pct) {
   if (pct == null) return "var(--map-land)";
@@ -1411,155 +806,657 @@ function clColor(pct) {
   return scale(pct);
 }
 
-function renderClSidebar() {
-  const regions = filteredClRegions();
+// ---------- Disease-by-region behavior ----------
+// CDC, Germany, Japan and England all list diseases and color the map by
+// the selected disease's per-region values. A mode opts in by defining
+// regionsOf(item) -> [{ id, value, population? }] plus a few labels; this
+// supplies its fill/tooltip/click behavior, including the per-100k toggle.
 
-  if (regions.length === 0) {
-    clListEl.innerHTML = '<p id="cl-status">No matching regions.</p>';
-    return;
-  }
-
-  clListEl.innerHTML = regions
-    .map((r) => {
-      const isActive = r.id === selectedClRegion;
-      const pctLabel = r.pct_vs_baseline != null ? `${r.pct_vs_baseline > 0 ? "+" : ""}${r.pct_vs_baseline.toFixed(1)}% vs baseline` : "";
-      return `
-        <button class="list-item${isActive ? " active" : ""}" data-id="${escapeHtml(r.id)}">
-          <div class="li-title">${escapeHtml(r.name)}</div>
-          <div class="li-meta">
-            <span class="li-counts">${fmtNumber(r.latest_deaths)} deaths this week${trendIcon(r.trend)}</span>
-            ${pctLabel ? `<span>· ${pctLabel}</span>` : ""}
-          </div>
-        </button>
-      `;
-    })
-    .join("");
-
-  clListEl.querySelectorAll(".list-item").forEach((btn) => {
-    btn.addEventListener("click", () => selectClRegion(btn.dataset.id));
-  });
+// Per-capita needs both a meaningful denominator for this disease (see
+// jpMode.perCapitaApplies) and populations actually present in the feed.
+function perCapitaAvailable(mode, item) {
+  if (!item) return true;
+  if (mode.perCapitaApplies && !mode.perCapitaApplies(item)) return false;
+  return mode.regionsOf(item).some((r) => r.population);
 }
 
-function renderClDetail() {
-  const r = allClRegions.find((x) => x.id === selectedClRegion);
-  if (!r) {
-    detailEl.innerHTML =
-      '<p style="color: var(--muted); font-size: 0.9rem;">Select a region on the left, or on the map, for its mortality detail.</p>';
-    return;
-  }
+function usePerCapita(mode, item) {
+  return Boolean(mode.perCapitaEl?.checked && item && perCapitaAvailable(mode, item));
+}
 
-  const incidence = fmtIncidence(r.latest_deaths, r.population);
+function regionMetric(mode, item, region) {
+  return usePerCapita(mode, item) ? per100k(region.value, region.population) : region.value;
+}
 
-  detailEl.innerHTML = `
-    <div class="detail-head">
-      <h2>${escapeHtml(r.name)}</h2>
-      <div class="detail-tags">
-        <span class="tag">Epi. week ${clFeed.epidemiological_week}, ${clFeed.epidemiological_year}</span>
+const diseaseByRegion = {
+  regionLookup() {
+    const item = selectedItem(this);
+    return { item, byId: new Map((item ? this.regionsOf(item) : []).map((r) => [r.id, r])) };
+  },
+  hasData(id) {
+    const { item, byId } = this.regionLookup();
+    if (item) return byId.has(id);
+    // With nothing selected, a region is clickable if any listed disease
+    // has data there — clicking it picks that region's top disease.
+    return this.regionIndex().has(id);
+  },
+  fill(id) {
+    const { item, byId } = this.regionLookup();
+    if (!item || !byId.has(id)) return "var(--map-land)";
+    const values = [...byId.values()].map((r) => regionMetric(this, item, r)).filter((v) => v != null);
+    const max = Math.max(1e-9, ...values);
+    const v = regionMetric(this, item, byId.get(id));
+    return v == null ? "var(--map-land)" : d3.scaleSequential(d3.interpolateOranges).domain([0, max])(v);
+  },
+  tooltip(id, name) {
+    const { item, byId } = this.regionLookup();
+    if (!item) {
+      const count = this.regionIndex().get(id) ?? 0;
+      return { title: name, lines: count ? [`${count} disease${count === 1 ? "" : "s"} with data — click for the top one`] : ["No data"] };
+    }
+    const r = byId.get(id);
+    if (!r) return { title: name, lines: [`No ${this.title(item)} data`] };
+    const lines = [`${fmtNumber(r.value)} ${this.valueLabel(item)}`];
+    const rate = per100k(r.value, r.population);
+    if (rate != null && perCapitaAvailable(this, item)) lines.push(`${fmtRate(rate)} per 100,000 residents`);
+    return { title: name, lines };
+  },
+  clickRegion(id) {
+    const item = selectedItem(this);
+    if (item) {
+      flashTableRow(id);
+      return;
+    }
+    const top = this.topItemForRegion(id);
+    if (top) navigate(this.id, this.key(top));
+  },
+  // region id -> number of diseases (in the current filtered list) with
+  // data there. Cached per filtered list, since paintMap asks per region.
+  regionIndex() {
+    if (this.regionIndexFor !== this.visibleItems) {
+      const counts = new Map();
+      for (const item of this.visibleItems ?? []) {
+        for (const r of this.regionsOf(item)) counts.set(r.id, (counts.get(r.id) ?? 0) + 1);
+      }
+      this.regionIndexCache = counts;
+      this.regionIndexFor = this.visibleItems;
+    }
+    return this.regionIndexCache;
+  },
+  topItemForRegion(id) {
+    return [...(this.visibleItems ?? [])]
+      .map((item) => ({ item, r: this.regionsOf(item).find((r) => r.id === id) }))
+      .filter((x) => x.r)
+      .sort((a, b) => (b.r.value ?? 0) - (a.r.value ?? 0))[0]?.item;
+  },
+  legendBasis() {
+    const item = selectedItem(this);
+    return usePerCapita(this, item) ? "cases per 100,000 residents" : "case count";
+  },
+};
+
+function flashTableRow(regionId) {
+  const row = detailEl.querySelector(`tr[data-region="${CSS.escape(regionId)}"]`);
+  if (!row) return;
+  row.scrollIntoView({ behavior: "smooth", block: "center" });
+  row.classList.remove("flash");
+  void row.offsetWidth; // restart the animation if it's already applied
+  row.classList.add("flash");
+}
+
+// CDC and Germany publish the same shape (see scripts/fetch-cdc.mjs and
+// scripts/fetch-germany.mjs), so they share list/detail rendering.
+function weeklyCountsMode(cfg) {
+  return {
+    ...diseaseByRegion,
+    sortOptions: true,
+    perCapita: true,
+    key: (d) => d.disease,
+    title: (d) => d.disease,
+    searchText: (d) => d.disease,
+    searchSub: (d) => `${d.states_reporting} ${cfg.regionNounPlural} reporting`,
+    ingest(feed) {
+      this.items = feed.diseases;
+    },
+    filter(items, q) {
+      return items.filter((d) => !q || d.disease.toLowerCase().includes(q));
+    },
+    sort(items, by) {
+      if (by === "ytd") return [...items].sort((a, b) => b.total_ytd - a.total_ytd);
+      if (by === "states") return [...items].sort((a, b) => b.states_reporting - a.states_reporting);
+      return [...items].sort((a, b) => b.total_current_week - a.total_current_week);
+    },
+    listItemHtml(d) {
+      return `
+        <div class="li-title">${escapeHtml(d.disease)}</div>
+        <div class="li-meta">
+          <span>${d.states_reporting} ${d.states_reporting === 1 ? cfg.regionNoun : cfg.regionNounPlural} reporting</span>
+        </div>
+        <div class="li-meta">
+          <span class="li-counts">${fmtNumber(d.total_current_week)} this week${trendIcon(d.national_trend)}</span>
+          <span>·</span>
+          <span>${fmtNumber(d.total_ytd)} YTD</span>
+        </div>
+      `;
+    },
+    regionsOf: (d) => d.states.map((s) => ({ id: s.id, name: s.name, value: s.current_week, population: s.population })),
+    valueLabel: () => "cases this week",
+    headline(d) {
+      return { value: d.total_current_week, asOf: `${this.feed.year}-W${this.feed.week}`, text: `${fmtNumber(d.total_current_week)} cases this week` };
+    },
+    risingCandidates() {
+      return this.items
+        .filter((d) => d.national_trend?.trend === "rising" && d.total_current_week >= RISING_MIN_COUNT)
+        .map((d) => ({ item: d, trend: d.national_trend, valueText: `${fmtNumber(d.total_current_week)} this week` }));
+    },
+    detail(d) {
+      const hasPop = hasPopulation(d.states);
+      const columns = [
+        { label: cfg.regionNounTitle, cell: (s) => escapeHtml(s.name) },
+        { label: "This week", num: true, cell: (s) => fmtNumber(s.current_week) },
+        ...(hasPop ? [{ label: "Per 100k", num: true, cell: (s) => fmtRate(per100k(s.current_week, s.population)) }] : []),
+        { label: "YTD", num: true, cell: (s) => fmtNumber(s.ytd) },
+      ];
+      return `
+        ${detailHead(this, d, d.disease, `
+          <span class="tag">${cfg.weekLabel(this.feed)}</span>
+          <span class="tag">${d.states_reporting} ${cfg.regionNounPlural} reporting</span>
+          ${trendTag(d.national_trend)}
+        `)}
+        <div class="stat-row">
+          <div class="stat"><div class="n">${fmtNumber(d.total_current_week)}</div><div class="l">cases this week (provisional)</div></div>
+          <div class="stat"><div class="n">${fmtNumber(d.total_ytd)}</div><div class="l">cumulative cases this year</div></div>
+        </div>
+        <div class="stat-note">${cfg.sourceNote(d)}</div>
+        ${d.national_series ? `<h3 style="${SECTION_HEADING_STYLE}">National weekly trend</h3>${chartPlaceholder("trend-chart")}` : ""}
+        ${CROSS_LINKS_SLOT}
+        ${regionTableHtml({ regionNoun: cfg.regionNoun, rows: d.states, columns })}
+      `;
+    },
+    afterDetail(d) {
+      if (d.national_series) renderTrendChartInto("trend-chart", weeklySeriesPoints(d.national_series), { valueFormat: fmtNumber });
+    },
+    crossLinksHtml(d) {
+      return whoLinkBackHtml(d.disease, this.country);
+    },
+    crossLinkFrom(ob) {
+      const match = this.items.find((d) => diseaseKeywordMatch(ob.disease, d.disease));
+      return match ? { target: match.disease, label: match.disease } : null;
+    },
+    ...cfg.overrides,
+  };
+}
+
+// "Rising" in the cross-source overview ignores tiny counts, where a jump
+// from 1 to 3 cases classifies as a steep rise but means very little.
+const RISING_MIN_COUNT = 10;
+
+// ---------- Modes ----------
+
+const whoMode = {
+  id: "who",
+  label: "World (WHO)",
+  feedUrl: "data/feed.json",
+  mapTitle: "Active outbreaks by country",
+  emptyText: "Select an outbreak on the left, or a highlighted country on the map, to see its full update timeline.",
+  sortOptions: true,
+  countryHitCounts: new Map(), // country id -> count of matching outbreaks (post-filter)
+  ingest(feed) {
+    this.items = feed.outbreaks;
+    const newest = this.items.reduce((max, o) => (o.latest_update > max ? o.latest_update : max), "");
+    if (newest) {
+      visitRecord.who_newest = newest;
+      saveVisitRecord();
+    }
+  },
+  key: (ob) => ob.id,
+  title: (ob) => ob.disease,
+  searchText: (ob) => `${ob.disease} ${ob.countries.map((c) => c.name).join(" ")}`,
+  searchSub: (ob) => whoCountryLabel(ob),
+  filter(items, q) {
+    const includeHistorical = document.getElementById("show-historical").checked;
+    return items.filter((ob) => {
+      if (!includeHistorical && ob.latest_update < ACTIVE_CUTOFF) return false;
+      if (!q) return true;
+      const haystack = `${ob.disease} ${ob.countries.map((c) => c.name).join(" ")} ${ob.updates
+        .map((u) => u.title + " " + u.summary)
+        .join(" ")}`.toLowerCase();
+      return haystack.includes(q);
+    });
+  },
+  sort(items, by) {
+    if (by === "unread") {
+      return [...items].sort((a, b) => {
+        const aNew = isNewOutbreak(a) ? 1 : 0;
+        const bNew = isNewOutbreak(b) ? 1 : 0;
+        if (aNew !== bNew) return bNew - aNew;
+        return b.latest_update.localeCompare(a.latest_update);
+      });
+    }
+    if (by === "count") return [...items].sort((a, b) => b.update_count - a.update_count);
+    if (by === "cases") return [...items].sort((a, b) => (b.latest_counts?.cases ?? -1) - (a.latest_counts?.cases ?? -1));
+    return [...items].sort((a, b) => b.latest_update.localeCompare(a.latest_update));
+  },
+  afterFilter(visible) {
+    this.countryHitCounts = new Map();
+    for (const ob of visible) {
+      for (const c of ob.countries) this.countryHitCounts.set(c.id, (this.countryHitCounts.get(c.id) ?? 0) + 1);
+    }
+  },
+  listItemClass: (ob) => (isNewOutbreak(ob) ? "is-new" : ""),
+  listItemHtml(ob) {
+    const countsLabel = ob.latest_counts
+      ? `${fmtNumber(ob.latest_counts.cases)} cases${ob.latest_counts.deaths ? ` · ${fmtNumber(ob.latest_counts.deaths)} deaths` : ""}`
+      : "";
+    return `
+      <div class="li-title">${escapeHtml(ob.disease)}</div>
+      <div class="li-meta">
+        <span>${escapeHtml(whoCountryLabel(ob))}</span>
+      </div>
+      <div class="li-meta">
+        <span>${ob.update_count} update${ob.update_count === 1 ? "" : "s"}</span>
+        <span>·</span>
+        <span>${fmtDate(ob.latest_update)}</span>
+        ${countsLabel ? `<span class="li-counts">${countsLabel}${trendIcon(ob.trend)}</span>` : ""}
+      </div>
+    `;
+  },
+  detail(ob) {
+    const statsHtml = ob.latest_counts
+      ? `
+        <div class="stat-row">
+          <div class="stat"><div class="n">${fmtNumber(ob.latest_counts.cases)}</div><div class="l">cumulative cases</div></div>
+          ${
+            ob.latest_counts.deaths
+              ? `<div class="stat"><div class="n">${fmtNumber(ob.latest_counts.deaths)}</div><div class="l">deaths</div></div>
+                 <div class="stat"><div class="n">${((ob.latest_counts.deaths / ob.latest_counts.cases) * 100).toFixed(1)}%</div><div class="l">case fatality (reported)</div></div>`
+              : ""
+          }
+        </div>
+        <div class="stat-note">Extracted automatically from WHO's latest report text${
+          ob.latest_counts.as_of ? `, as of ${ob.latest_counts.as_of}` : ""
+        }. May be incomplete — verify against the source report.</div>
+      `
+      : `<p style="color: var(--muted); font-size: 0.82rem;">No parseable case/death figures found in WHO's report text for this outbreak.</p>`;
+
+    const updatesHtml = ob.updates
+      .map(
+        (u) => `
+          <div class="update">
+            <div class="update-date">${fmtDate(u.date)}</div>
+            <h3><a href="${u.url}" target="_blank" rel="noopener">${escapeHtml(u.title)}</a></h3>
+            <p>${escapeHtml(u.summary)}</p>
+          </div>
+        `
+      )
+      .join("");
+
+    const hasChart = this.casePoints(ob).filter((p) => p.y !== null).length >= 2;
+
+    return `
+      ${detailHead(this, ob, ob.disease, `
+        <span class="tag">${escapeHtml(whoCountryLabel(ob))}</span>
+        <span class="tag">first seen ${fmtDate(ob.first_seen)}</span>
+        <span class="tag">${ob.update_count} update${ob.update_count === 1 ? "" : "s"}</span>
+        ${trendTag(ob.trend)}
+      `)}
+      ${statsHtml}
+      ${hasChart ? `<h3 style="${SECTION_HEADING_STYLE}">Cumulative cases over time</h3>${chartPlaceholder("trend-chart")}` : ""}
+      ${CROSS_LINKS_SLOT}
+      <div id="strain-panel-wrap"></div>
+      <h3 style="${SECTION_HEADING_STYLE} margin-bottom: 0.6rem;">Update timeline</h3>
+      ${updatesHtml}
+    `;
+  },
+  casePoints(ob) {
+    const chronological = [...ob.updates].sort((a, b) => a.date.localeCompare(b.date));
+    return chronological.map((u) => ({ x: fmtDate(u.date), y: u.counts?.cases ?? null }));
+  },
+  afterDetail(ob) {
+    renderTrendChartInto("trend-chart", this.casePoints(ob), { valueFormat: fmtNumber });
+    loadAndRenderStrainPanel(ob.id);
+  },
+  crossLinksHtml: (ob) => whoCrossLinksHtml(ob),
+  headerStats() {
+    const activeCount = this.items.filter((o) => o.latest_update >= ACTIVE_CUTOFF).length;
+    return `<span><b>${activeCount}</b> active</span><span><b>${this.items.length}</b> total tracked</span><span>Updated ${fmtDate(this.feed.generated_at)}</span>`;
+  },
+  headline(ob) {
+    const text = ob.latest_counts ? `${fmtNumber(ob.latest_counts.cases)} cases` : `${ob.update_count} update${ob.update_count === 1 ? "" : "s"}`;
+    return { value: ob.latest_counts?.cases ?? ob.update_count, asOf: ob.latest_update, text, asOfText: `updated ${fmtDate(ob.latest_update)}` };
+  },
+  risingCandidates() {
+    return this.items
+      .filter((ob) => ob.latest_update >= ACTIVE_CUTOFF && ob.trend?.trend === "rising")
+      .map((ob) => ({ item: ob, trend: ob.trend, valueText: ob.latest_counts ? `${fmtNumber(ob.latest_counts.cases)} cumulative cases` : "" }));
+  },
+  map: {
+    url: "data/countries-110m.json",
+    features: (topo) => topojson.feature(topo, topo.objects.countries).features,
+    aspect: 0.55,
+    projection: () => d3.geoNaturalEarth1(),
+    id: (f) => String(f.id).padStart(3, "0"),
+    name: (f) => f.properties.name,
+  },
+  hasData(id) {
+    return (this.countryHitCounts.get(id) ?? 0) > 0;
+  },
+  fill(id) {
+    return hitColor(this.countryHitCounts.get(id) ?? 0);
+  },
+  isRegionSelected(id) {
+    return (selectedItem(this)?.countries ?? []).some((c) => c.id === id);
+  },
+  tooltip(id, name) {
+    const matches = (this.visibleItems ?? []).filter((ob) => ob.countries.some((c) => c.id === id));
+    if (!matches.length) return { title: name, lines: ["No outbreaks in the current list"] };
+    const lines = [`${matches.length} outbreak${matches.length === 1 ? "" : "s"}:`, ...matches.slice(0, 4).map((ob) => ob.disease)];
+    if (matches.length > 4) lines.push(`+${matches.length - 4} more`);
+    return { title: name, lines };
+  },
+  clickRegion(id) {
+    const match = (this.visibleItems ?? []).find((ob) => ob.countries.some((c) => c.id === id));
+    if (match) navigate(this.id, match.id);
+  },
+};
+
+function whoCountryLabel(ob) {
+  return ob.is_global ? "Multi-country / global" : ob.countries.map((c) => c.name).join(", ") || "Location unspecified";
+}
+
+function isNewOutbreak(ob) {
+  return Boolean(visitBaseline?.who_newest && ob.latest_update > visitBaseline.who_newest);
+}
+
+const cdcMode = weeklyCountsMode({
+  regionNoun: "state",
+  regionNounPlural: "states",
+  regionNounTitle: "State",
+  weekLabel: (feed) => `MMWR week ${feed.week}, ${feed.year}`,
+  sourceNote: () => "Source: CDC NNDSS weekly tables. Most recent week is provisional and will revise upward as more reports come in.",
+  overrides: {
+    id: "cdc",
+    label: "United States (CDC)",
+    country: "United States of America",
+    feedUrl: "data/cdc-feed.json",
+    mapTitle: "US notifiable diseases by state",
+    emptyText: "Select a notifiable disease on the left, or a state on the map, to see its state-by-state breakdown.",
+    headerStats() {
+      return `<span><b>${this.feed.disease_count}</b> notifiable diseases active</span><span>MMWR week ${this.feed.week}, ${this.feed.year}</span><span>Updated ${fmtDate(this.feed.generated_at)}</span>`;
+    },
+    map: {
+      url: "data/us-states-10m.json",
+      features: (topo) => topojson.feature(topo, topo.objects.states).features,
+      aspect: 0.62,
+      projection: () => d3.geoAlbersUsa(),
+      id: (f) => String(f.id).padStart(2, "0"),
+      name: (f) => f.properties.name,
+    },
+  },
+});
+
+const deMode = weeklyCountsMode({
+  regionNoun: "state",
+  regionNounPlural: "states",
+  regionNounTitle: "State",
+  weekLabel: (feed) => `Reporting week ${feed.week}, ${feed.year}`,
+  sourceNote: (d) =>
+    `Source: RKI SurvStat, counted by the week the case was notified to the health office. The most recent week is provisional and will revise upward as reports arrive.${
+      /Landes(melde)?verordnung/.test(d.disease)
+        ? " <strong>Notifiable only under individual states' own regulations</strong> — states without one report nothing here, which doesn't mean zero cases."
+        : ""
+    }`,
+  overrides: {
+    id: "de",
+    label: "Germany (RKI)",
+    country: "Germany",
+    feedUrl: "data/de-feed.json",
+    mapTitle: "Germany notifiable diseases by state",
+    emptyText: "Select a notifiable disease on the left, or a state on the map, to see its state-by-state breakdown.",
+    headerStats() {
+      return `<span><b>${this.feed.disease_count}</b> notifiable diseases active</span><span>Reporting week ${this.feed.week}, ${this.feed.year}</span><span>Updated ${fmtDate(this.feed.generated_at)}</span>`;
+    },
+    map: {
+      url: "data/de-states-geo.json",
+      features: (geo) => geo.features,
+      aspect: 1.25,
+      projection: () => d3.geoMercator(),
+      id: (f) => f.properties.ags,
+      name: (f) => f.properties.display_name,
+    },
+  },
+});
+
+const brMode = {
+  id: "br",
+  label: "Brazil (InfoGripe)",
+  country: "Brazil",
+  feedUrl: "data/br-feed.json",
+  mapTitle: "Brazil SRAG risk level by state",
+  emptyText: "Select a state on the left, or on the map, for its SRAG surveillance detail.",
+  sortOptions: true,
+  ingest(feed) {
+    this.items = feed.states;
+  },
+  key: (s) => s.id,
+  title: (s) => s.name,
+  searchText: (s) => `${s.name} ${s.abbr}`,
+  searchSub: (s) => s.intensity ?? "No data",
+  filter(items, q) {
+    return items.filter((s) => !q || s.name.toLowerCase().includes(q) || s.abbr.toLowerCase().includes(q));
+  },
+  sort(items, by) {
+    const intensityRank = { "Alto risco": 4, Risco: 3, Alerta: 2, "Baixo risco": 1, Segurança: 0 };
+    if (by === "intensity") return [...items].sort((a, b) => (intensityRank[b.intensity] ?? -1) - (intensityRank[a.intensity] ?? -1));
+    if (by === "name") return [...items].sort((a, b) => a.name.localeCompare(b.name));
+    return [...items].sort((a, b) => (b.cases_reported ?? 0) - (a.cases_reported ?? 0));
+  },
+  listItemHtml(s) {
+    return `
+      <div class="li-title">${escapeHtml(s.name)} (${escapeHtml(s.abbr)})</div>
+      <div class="li-meta">
+        <span>${escapeHtml(s.intensity ?? "No data")}</span>
+      </div>
+      <div class="li-meta">
+        <span class="li-counts">${s.cases_reported != null ? fmtNumber(s.cases_reported) + " cases" : "No data"}${trendIcon(s.trend)}</span>
+        ${s.trend_short ? `<span>· ${escapeHtml(s.trend_short)}</span>` : ""}
+      </div>
+    `;
+  },
+  detail(s) {
+    const incidence = per100k(s.cases_reported, s.population);
+    const hasChart = s.series && s.series.length >= 2;
+    return `
+      ${detailHead(this, s, s.name, `
+        <span class="tag">Epi. week ${this.feed.epidemiological_week}, ${this.feed.epidemiological_year}</span>
+        <span class="tag" style="border-color: ${BR_INTENSITY_COLOR[s.intensity] ?? "var(--border)"}">${escapeHtml(s.intensity ?? "No data")}</span>
+        ${s.trend_short ? `<span class="tag">InfoGripe: ${escapeHtml(s.trend_short)}</span>` : ""}
+        ${trendTag(s.trend)}
+      `)}
+      <div class="stat-row">
+        <div class="stat"><div class="n">${s.cases_reported != null ? fmtNumber(s.cases_reported) : "—"}</div><div class="l">SRAG cases reported this week</div></div>
+        ${
+          s.cases_estimated != null
+            ? `<div class="stat"><div class="n">${fmtNumber(Math.round(s.cases_estimated))}</div><div class="l">nowcast estimate</div></div>`
+            : ""
+        }
+        ${incidence != null ? `<div class="stat"><div class="n">${incidence.toFixed(2)}</div><div class="l">per 100,000 population</div></div>` : ""}
+      </div>
+      <div class="stat-note">
+        Trend: ${escapeHtml(s.trend_short ?? "unknown")} (short-term), ${escapeHtml(s.trend_long ?? "unknown")} (long-term).
+        Source: InfoGripe (Fiocruz/FGV). Most recent week is provisional.
+      </div>
+      ${hasChart ? `<h3 style="${SECTION_HEADING_STYLE}">Weekly cases, last ${s.series.length} weeks</h3>${chartPlaceholder("trend-chart")}` : ""}
+      ${CROSS_LINKS_SLOT}
+    `;
+  },
+  afterDetail(s) {
+    if (s.series && s.series.length >= 2) renderTrendChartInto("trend-chart", weeklySeriesPoints(s.series), { valueFormat: fmtNumber });
+  },
+  crossLinksHtml: () => whoLinkBackHtml("influenza respiratory syndrome", "Brazil"),
+  crossLinkFrom(ob) {
+    return diseaseKeywordMatch(ob.disease, "influenza respiratory") ? { target: null, label: "SRAG (severe respiratory illness) surveillance" } : null;
+  },
+  headerStats() {
+    return `<span><b>${this.items.length}</b> states tracked</span><span>Epi. week ${this.feed.epidemiological_week}, ${this.feed.epidemiological_year}</span><span>Updated ${fmtDate(this.feed.generated_at)}</span>`;
+  },
+  headline(s) {
+    return {
+      value: s.cases_reported,
+      asOf: `${this.feed.epidemiological_year}-W${this.feed.epidemiological_week}`,
+      text: s.cases_reported != null ? `${fmtNumber(s.cases_reported)} SRAG cases this week` : "No data",
+    };
+  },
+  risingCandidates() {
+    return this.items
+      .filter((s) => s.trend?.trend === "rising" && (s.cases_reported ?? 0) >= RISING_MIN_COUNT)
+      .map((s) => ({ item: s, trend: s.trend, valueText: `${fmtNumber(s.cases_reported)} SRAG cases this week` }));
+  },
+  map: {
+    url: "data/br-states-geo.json",
+    features: (geo) => geo.features,
+    aspect: 0.9,
+    projection: () => d3.geoMercator(),
+    id: (f) => String(f.properties.codarea).padStart(2, "0"),
+    name(f) {
+      return MODE.br.items?.find((s) => s.id === String(f.properties.codarea).padStart(2, "0"))?.name ?? f.properties.codarea;
+    },
+  },
+  hasData(id) {
+    return this.items.some((s) => s.id === id);
+  },
+  fill(id) {
+    const s = this.items.find((x) => x.id === id);
+    return s?.intensity ? BR_INTENSITY_COLOR[s.intensity] ?? "var(--map-land)" : "var(--map-land)";
+  },
+  isRegionSelected(id) {
+    return this.selected === id;
+  },
+  tooltip(id, name) {
+    const s = this.items.find((x) => x.id === id);
+    if (!s) return { title: name, lines: ["No data"] };
+    return { title: s.name, lines: [s.intensity ?? "No risk level", s.cases_reported != null ? `${fmtNumber(s.cases_reported)} SRAG cases this week` : "No case data"] };
+  },
+  clickRegion(id) {
+    if (this.hasData(id)) navigate(this.id, id);
+  },
+};
+
+const clMode = {
+  id: "cl",
+  label: "Chile (DEIS)",
+  country: "Chile",
+  feedUrl: "data/cl-feed.json",
+  mapTitle: "Chile all-cause mortality by region",
+  emptyText: "Select a region on the left, or on the map, for its mortality detail.",
+  sortOptions: true,
+  ingest(feed) {
+    this.items = feed.regions;
+  },
+  key: (r) => r.id,
+  title: (r) => r.name,
+  searchText: (r) => r.name,
+  searchSub: (r) => `${fmtNumber(r.latest_deaths)} deaths this week`,
+  filter(items, q) {
+    return items.filter((r) => !q || r.name.toLowerCase().includes(q));
+  },
+  sort(items, by) {
+    if (by === "deaths") return [...items].sort((a, b) => b.latest_deaths - a.latest_deaths);
+    if (by === "name") return [...items].sort((a, b) => a.name.localeCompare(b.name));
+    return [...items].sort((a, b) => (b.pct_vs_baseline ?? -Infinity) - (a.pct_vs_baseline ?? -Infinity));
+  },
+  pctLabel(r) {
+    return r.pct_vs_baseline != null ? `${r.pct_vs_baseline > 0 ? "+" : ""}${r.pct_vs_baseline.toFixed(1)}% vs baseline` : "";
+  },
+  listItemHtml(r) {
+    const pctLabel = this.pctLabel(r);
+    return `
+      <div class="li-title">${escapeHtml(r.name)}</div>
+      <div class="li-meta">
+        <span class="li-counts">${fmtNumber(r.latest_deaths)} deaths this week${trendIcon(r.trend)}</span>
+        ${pctLabel ? `<span>· ${pctLabel}</span>` : ""}
+      </div>
+    `;
+  },
+  detail(r) {
+    const incidence = per100k(r.latest_deaths, r.population);
+    const hasChart = r.series && r.series.length >= 2;
+    return `
+      ${detailHead(this, r, r.name, `
+        <span class="tag">Epi. week ${this.feed.epidemiological_week}, ${this.feed.epidemiological_year}</span>
         <span class="tag">All-cause mortality</span>
         ${trendTag(r.trend)}
+      `)}
+      <div class="stat-row">
+        <div class="stat"><div class="n">${fmtNumber(r.latest_deaths)}</div><div class="l">deaths this week</div></div>
+        ${
+          r.baseline_avg_deaths != null
+            ? `<div class="stat"><div class="n">${r.baseline_avg_deaths.toFixed(0)}</div><div class="l">${this.feed.baseline_week_count}-week baseline avg</div></div>`
+            : ""
+        }
+        ${incidence != null ? `<div class="stat"><div class="n">${incidence.toFixed(1)}</div><div class="l">per 100,000 population</div></div>` : ""}
       </div>
-    </div>
-    <div class="stat-row">
-      <div class="stat"><div class="n">${fmtNumber(r.latest_deaths)}</div><div class="l">deaths this week</div></div>
-      ${
-        r.baseline_avg_deaths != null
-          ? `<div class="stat"><div class="n">${r.baseline_avg_deaths.toFixed(0)}</div><div class="l">${clFeed.baseline_week_count}-week baseline avg</div></div>`
-          : ""
-      }
-      ${incidence != null ? `<div class="stat"><div class="n">${incidence.toFixed(1)}</div><div class="l">per 100,000 population</div></div>` : ""}
-    </div>
-    <div class="stat-note">
-      <strong>All-cause mortality, not disease-specific.</strong> The most recent week's
-      count is almost always an undercount (deaths take time to register), so this
-      region's ${r.pct_vs_baseline != null ? `${r.pct_vs_baseline.toFixed(1)}% vs. baseline` : "comparison"}
-      figure should be read as provisional, not a confirmed trend. Source: DEIS/MINSAL.
-    </div>
-    ${
-      r.series && r.series.length >= 2
-        ? `
-          <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">Weekly deaths, last ${r.series.length} weeks</h3>
-          ${chartPlaceholder("cl-trend-chart")}
-        `
-        : ""
-    }
-    ${renderCountryLinkBack("Chile")}
-  `;
-  if (r.series && r.series.length >= 2) {
-    renderTrendChartInto("cl-trend-chart", r.series.map((p) => ({ x: `wk ${p.week}`, y: p.value })), { valueFormat: fmtNumber });
-  }
-  bindCrossLinkClicks();
-}
-
-function selectClRegion(id) {
-  selectedClRegion = id;
-  renderClSidebar();
-  renderClDetail();
-  paintClMap();
-  detailEl.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-function paintClMap() {
-  if (!clSvgSelection) return;
-  const byRegion = new Map(allClRegions.map((r) => [r.id, r]));
-
-  clSvgSelection
-    .attr("fill", function () {
-      const id = this.getAttribute("data-id");
-      const r = byRegion.get(id);
-      return r ? clColor(r.pct_vs_baseline) : "var(--map-land)";
-    })
-    .classed("has-outbreak", function () {
-      return byRegion.has(this.getAttribute("data-id"));
-    })
-    .classed("selected", function () {
-      return this.getAttribute("data-id") === selectedClRegion;
-    });
-}
-
-async function initClMap() {
-  const topo = await d3.json("data/cl-regions-topo.json");
-  const objectName = Object.keys(topo.objects)[0];
-  const geo = topojson.feature(topo, topo.objects[objectName]);
-
-  const width = clMapWrap.clientWidth || 640;
-  const height = width * 1.35;
-  const projection = d3.geoMercator().fitSize([width - 4, height - 4], geo);
-  const pathGenerator = d3.geoPath(projection);
-
-  const svg = d3
-    .select(clMapWrap)
-    .append("svg")
-    .attr("viewBox", `0 0 ${width} ${height}`)
-    .attr("preserveAspectRatio", "xMidYMid meet");
-
-  const byRegion = new Map(allClRegions.map((r) => [r.id, r]));
-
-  const paths = svg
-    .append("g")
-    .selectAll("path")
-    .data(geo.features)
-    .join("path")
-    .attr("class", "country-path")
-    .attr("data-id", (d) => d.properties.region_key)
-    .attr("d", pathGenerator)
-    .attr("fill", "var(--map-land)");
-
-  paths.append("title").text((d) => {
-    const r = byRegion.get(d.properties.region_key);
-    return r ? r.name : d.properties.display_name;
-  });
-  clSvgSelection = paths;
-
-  clSvgSelection.on("click", function (event, feature) {
-    const id = feature.properties.region_key;
-    if (!byRegion.has(id)) return;
-    selectClRegion(id);
-  });
-
-  paintClMap();
-}
-
-// ---------- England (UKHSA) mode ----------
+      <div class="stat-note">
+        <strong>All-cause mortality, not disease-specific.</strong> The most recent week's
+        count is almost always an undercount (deaths take time to register), so this
+        region's ${r.pct_vs_baseline != null ? `${r.pct_vs_baseline.toFixed(1)}% vs. baseline` : "comparison"}
+        figure should be read as provisional, not a confirmed trend. Source: DEIS/MINSAL.
+      </div>
+      ${hasChart ? `<h3 style="${SECTION_HEADING_STYLE}">Weekly deaths, last ${r.series.length} weeks</h3>${chartPlaceholder("trend-chart")}` : ""}
+      ${CROSS_LINKS_SLOT}
+    `;
+  },
+  afterDetail(r) {
+    if (r.series && r.series.length >= 2) renderTrendChartInto("trend-chart", weeklySeriesPoints(r.series), { valueFormat: fmtNumber });
+  },
+  crossLinksHtml: () => countryLinkBackHtml("Chile"),
+  crossLinkFrom() {
+    return { target: null, label: "weekly mortality data" };
+  },
+  headerStats() {
+    return `<span><b>${this.items.length}</b> regions tracked</span><span>Epi. week ${this.feed.epidemiological_week}, ${this.feed.epidemiological_year}</span><span>Updated ${fmtDate(this.feed.generated_at)}</span>`;
+  },
+  headline(r) {
+    return {
+      value: r.latest_deaths,
+      asOf: `${this.feed.epidemiological_year}-W${this.feed.epidemiological_week}`,
+      text: `${fmtNumber(r.latest_deaths)} deaths this week`,
+    };
+  },
+  risingCandidates() {
+    return this.items
+      .filter((r) => r.trend?.trend === "rising")
+      .map((r) => ({ item: r, trend: r.trend, valueText: `${fmtNumber(r.latest_deaths)} deaths this week (all-cause)` }));
+  },
+  map: {
+    url: "data/cl-regions-topo.json",
+    features: (topo) => topojson.feature(topo, topo.objects[Object.keys(topo.objects)[0]]).features,
+    aspect: 1.35,
+    projection: () => d3.geoMercator(),
+    id: (f) => f.properties.region_key,
+    name(f) {
+      return MODE.cl.items?.find((r) => r.id === f.properties.region_key)?.name ?? f.properties.display_name;
+    },
+  },
+  hasData(id) {
+    return this.items.some((r) => r.id === id);
+  },
+  fill(id) {
+    const r = this.items.find((x) => x.id === id);
+    return r ? clColor(r.pct_vs_baseline) : "var(--map-land)";
+  },
+  isRegionSelected(id) {
+    return this.selected === id;
+  },
+  tooltip(id, name) {
+    const r = this.items.find((x) => x.id === id);
+    if (!r) return { title: name, lines: ["No data"] };
+    return { title: r.name, lines: [`${fmtNumber(r.latest_deaths)} deaths this week`, this.pctLabel(r)].filter(Boolean) };
+  },
+  clickRegion(id) {
+    if (this.hasData(id)) navigate(this.id, id);
+  },
+};
 
 function ukNationalTotal(disease, field) {
   return disease.regions.reduce((sum, r) => sum + (r[field] ?? 0), 0);
@@ -1572,111 +1469,11 @@ function ukTrendPct(disease) {
   return ((now - before) / before) * 100;
 }
 
-function filteredUkDiseases() {
-  const query = ukSearchEl.value.trim().toLowerCase();
-  let diseases = allUkDiseases.filter((d) => !query || d.topic.toLowerCase().includes(query));
-
-  const sort = ukSortEl.value;
-  if (sort === "trend") {
-    diseases = [...diseases].sort((a, b) => ukTrendPct(b) - ukTrendPct(a));
-  } else if (sort === "name") {
-    diseases = [...diseases].sort((a, b) => a.topic.localeCompare(b.topic));
-  } else {
-    diseases = [...diseases].sort((a, b) => ukNationalTotal(b, "latest_value") - ukNationalTotal(a, "latest_value"));
-  }
-  return diseases;
-}
-
 function ukMetricUnit(metricName) {
   if (metricName.includes("positivity")) return "% test positivity";
   if (metricName.includes("Rate")) return "rate";
   if (metricName.includes("cases")) return "cases";
   return "value";
-}
-
-function renderUkSidebar() {
-  const diseases = filteredUkDiseases();
-
-  if (diseases.length === 0) {
-    ukListEl.innerHTML = '<p id="uk-status">No matching diseases.</p>';
-    return;
-  }
-
-  ukListEl.innerHTML = diseases
-    .map((d) => {
-      const isActive = d.topic === selectedUkDisease;
-      const total = ukNationalTotal(d, "latest_value");
-      const trendPct = ukTrendPct(d);
-      const trendLabel = Number.isFinite(trendPct) ? `${trendPct > 0 ? "+" : ""}${trendPct.toFixed(0)}% vs 4wk ago` : "new activity";
-      return `
-        <button class="list-item${isActive ? " active" : ""}" data-topic="${escapeHtml(d.topic)}">
-          <div class="li-title">${escapeHtml(d.topic)}</div>
-          <div class="li-meta"><span>${escapeHtml(ukMetricUnit(d.metric))}</span></div>
-          <div class="li-meta">
-            <span class="li-counts">${fmtNumber(Math.round(total * 100) / 100)}${trendIcon(trendFromPct(trendPct), { windowText: "4 weeks" })}</span>
-            <span>· ${trendLabel}</span>
-          </div>
-        </button>
-      `;
-    })
-    .join("");
-
-  ukListEl.querySelectorAll(".list-item").forEach((btn) => {
-    btn.addEventListener("click", () => selectUkDisease(btn.dataset.topic));
-  });
-}
-
-function renderUkDetail() {
-  const d = allUkDiseases.find((x) => x.topic === selectedUkDisease);
-  if (!d) {
-    detailEl.innerHTML =
-      '<p style="color: var(--muted); font-size: 0.9rem;">Select a disease on the left, or a region on the map, for its regional breakdown.</p>';
-    return;
-  }
-
-  const rowsHtml = [...d.regions]
-    .sort((a, b) => b.latest_value - a.latest_value)
-    .map(
-      (r) => `
-        <tr>
-          <td>${escapeHtml(r.name)}</td>
-          <td class="num">${fmtNumber(r.latest_value)}</td>
-          <td class="num">${r.value_4_weeks_ago != null ? fmtNumber(r.value_4_weeks_ago) : "—"}</td>
-        </tr>
-      `
-    )
-    .join("");
-
-  const ukTrend = ukNationalTrend(d);
-  const ukTrendPoints = ukTrend?.points ?? null;
-  const ukTrendLabel = ukTrend?.label ?? "";
-
-  detailEl.innerHTML = `
-    <div class="detail-head">
-      <h2>${escapeHtml(d.topic)}</h2>
-      <div class="detail-tags">
-        <span class="tag">${escapeHtml(ukMetricUnit(d.metric))}</span>
-        <span class="tag">as of ${fmtDate(d.latest_date)}</span>
-        <span class="tag">England only</span>
-        ${trendTag(trendFromPct(ukTrendPct(d)), { windowText: "4 weeks" })}
-      </div>
-    </div>
-    <div class="stat-note">
-      Metric: <code>${escapeHtml(d.metric)}</code>. UKHSA publishes several indicators
-      per disease (test positivity, hospital admissions, syndromic rates, case counts);
-      this is whichever one currently has the most recent data for this disease, so the
-      unit differs disease to disease — always check before comparing across diseases.
-    </div>
-    ${ukTrendPoints ? `<h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">${ukTrendLabel}</h3>${chartPlaceholder("uk-trend-chart")}` : ""}
-    ${findWhoLinkBack(d.topic, "United Kingdom")}
-    <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.6rem;">By region</h3>
-    <table class="state-table">
-      <thead><tr><th>Region</th><th class="num">Latest</th><th class="num">4 weeks ago</th></tr></thead>
-      <tbody>${rowsHtml}</tbody>
-    </table>
-  `;
-  if (ukTrendPoints) renderTrendChartInto("uk-trend-chart", ukTrendPoints, { valueFormat: fmtNumber });
-  bindCrossLinkClicks();
 }
 
 // Returns { points, label } for the England-wide trend, or null if no
@@ -1699,73 +1496,115 @@ function ukNationalTrend(d) {
   return { points, label };
 }
 
-function selectUkDisease(topic) {
-  selectedUkDisease = topic;
-  renderUkSidebar();
-  renderUkDetail();
-  paintUkMap();
-  detailEl.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-function paintUkMap() {
-  if (!ukSvgSelection) return;
-  const d = allUkDiseases.find((x) => x.topic === selectedUkDisease);
-  const byRegion = new Map((d?.regions ?? []).map((r) => [r.id, r.latest_value]));
-  const max = Math.max(1, ...[...byRegion.values()]);
-  const scale = d3.scaleSequential(d3.interpolateOranges).domain([0, max]);
-
-  ukSvgSelection
-    .attr("fill", function () {
-      const id = this.getAttribute("data-id");
-      if (!d) return "var(--map-land)";
-      return byRegion.has(id) ? scale(byRegion.get(id)) : "var(--map-land)";
-    })
-    .classed("has-outbreak", function () {
-      return d ? byRegion.has(this.getAttribute("data-id")) : false;
-    });
-}
-
-async function initUkMap() {
-  const topo = await d3.json("data/uk-regions-topo.json");
-  const objectName = Object.keys(topo.objects)[0];
-  const geo = topojson.feature(topo, topo.objects[objectName]);
-
-  const width = ukMapWrap.clientWidth || 640;
-  const height = width * 1.3;
-  const projection = d3.geoMercator().fitSize([width - 4, height - 4], geo);
-  const pathGenerator = d3.geoPath(projection);
-
-  const svg = d3
-    .select(ukMapWrap)
-    .append("svg")
-    .attr("viewBox", `0 0 ${width} ${height}`)
-    .attr("preserveAspectRatio", "xMidYMid meet");
-
-  const byRegionName = new Map();
-
-  const paths = svg
-    .append("g")
-    .selectAll("path")
-    .data(geo.features)
-    .join("path")
-    .attr("class", "country-path")
-    .attr("data-id", (d) => d.properties.region_key)
-    .attr("d", pathGenerator)
-    .attr("fill", "var(--map-land)");
-
-  paths.append("title").text((d) => d.properties.display_name);
-  ukSvgSelection = paths;
-
-  ukSvgSelection.on("click", function (event, feature) {
-    const id = feature.properties.region_key;
-    const match = filteredUkDiseases().find((d) => d.regions.some((r) => r.id === id));
-    if (match) selectUkDisease(match.topic);
-  });
-
-  paintUkMap();
-}
-
-// ---------- Japan (JIHS) mode ----------
+const ukMode = {
+  ...diseaseByRegion,
+  id: "uk",
+  label: "England (UKHSA)",
+  country: "United Kingdom",
+  feedUrl: "data/uk-feed.json",
+  mapTitle: "England notifiable diseases by region",
+  emptyText: "Select a disease on the left, or a region on the map, for its regional breakdown.",
+  sortOptions: true,
+  ingest(feed) {
+    this.items = feed.diseases;
+  },
+  key: (d) => d.topic,
+  title: (d) => d.topic,
+  searchText: (d) => d.topic,
+  searchSub: (d) => ukMetricUnit(d.metric),
+  filter(items, q) {
+    return items.filter((d) => !q || d.topic.toLowerCase().includes(q));
+  },
+  sort(items, by) {
+    if (by === "trend") return [...items].sort((a, b) => ukTrendPct(b) - ukTrendPct(a));
+    if (by === "name") return [...items].sort((a, b) => a.topic.localeCompare(b.topic));
+    return [...items].sort((a, b) => ukNationalTotal(b, "latest_value") - ukNationalTotal(a, "latest_value"));
+  },
+  listItemHtml(d) {
+    const total = ukNationalTotal(d, "latest_value");
+    const trendPct = ukTrendPct(d);
+    const trendLabel = Number.isFinite(trendPct) ? `${trendPct > 0 ? "+" : ""}${trendPct.toFixed(0)}% vs 4wk ago` : "new activity";
+    return `
+      <div class="li-title">${escapeHtml(d.topic)}</div>
+      <div class="li-meta"><span>${escapeHtml(ukMetricUnit(d.metric))}</span></div>
+      <div class="li-meta">
+        <span class="li-counts">${fmtNumber(Math.round(total * 100) / 100)}${trendIcon(trendFromPct(trendPct), { windowText: "4 weeks" })}</span>
+        <span>· ${trendLabel}</span>
+      </div>
+    `;
+  },
+  detail(d) {
+    const rows = [...d.regions].sort((a, b) => b.latest_value - a.latest_value);
+    const trend = ukNationalTrend(d);
+    return `
+      ${detailHead(this, d, d.topic, `
+        <span class="tag">${escapeHtml(ukMetricUnit(d.metric))}</span>
+        <span class="tag">as of ${fmtDate(d.latest_date)}</span>
+        <span class="tag">England only</span>
+        ${trendTag(trendFromPct(ukTrendPct(d)), { windowText: "4 weeks" })}
+      `)}
+      <div class="stat-note">
+        Metric: <code>${escapeHtml(d.metric)}</code>. UKHSA publishes several indicators
+        per disease (test positivity, hospital admissions, syndromic rates, case counts);
+        this is whichever one currently has the most recent data for this disease, so the
+        unit differs disease to disease — always check before comparing across diseases.
+      </div>
+      ${trend ? `<h3 style="${SECTION_HEADING_STYLE}">${trend.label}</h3>${chartPlaceholder("trend-chart")}` : ""}
+      ${CROSS_LINKS_SLOT}
+      ${regionTableHtml({
+        regionNoun: "region",
+        rows,
+        limit: Infinity,
+        columns: [
+          { label: "Region", cell: (r) => escapeHtml(r.name) },
+          { label: "Latest", num: true, cell: (r) => fmtNumber(r.latest_value) },
+          { label: "4 weeks ago", num: true, cell: (r) => (r.value_4_weeks_ago != null ? fmtNumber(r.value_4_weeks_ago) : "—") },
+        ],
+      })}
+    `;
+  },
+  afterDetail(d) {
+    const trend = ukNationalTrend(d);
+    if (trend) renderTrendChartInto("trend-chart", trend.points, { valueFormat: fmtNumber });
+  },
+  crossLinksHtml(d) {
+    return whoLinkBackHtml(d.topic, "United Kingdom");
+  },
+  crossLinkFrom(ob) {
+    const match = this.items.find((d) => diseaseKeywordMatch(ob.disease, d.topic));
+    return match ? { target: match.topic, label: match.topic } : null;
+  },
+  headerStats() {
+    return `<span><b>${this.items.length}</b> diseases tracked</span><span>England, 9 regions</span><span>Updated ${fmtDate(this.feed.generated_at)}</span>`;
+  },
+  headline(d) {
+    const total = Math.round(ukNationalTotal(d, "latest_value") * 100) / 100;
+    return { value: total, asOf: d.latest_date, text: `${fmtNumber(total)} (${ukMetricUnit(d.metric)})`, asOfText: `as of ${fmtDate(d.latest_date)}` };
+  },
+  risingCandidates() {
+    return this.items
+      .map((d) => ({ d, trend: trendFromPct(ukTrendPct(d)) }))
+      .filter(({ trend }) => trend?.trend === "rising")
+      .map(({ d, trend }) => ({ item: d, trend, windowText: "4 weeks", valueText: `${ukMetricUnit(d.metric)}, vs 4 weeks ago` }));
+  },
+  regionsOf: (d) => d.regions.map((r) => ({ id: r.id, name: r.name, value: r.latest_value })),
+  valueLabel: (d) => `(${ukMetricUnit(d.metric)})`,
+  legendBasis: () => "value",
+  // England's indicators aren't comparable across diseases (see the metric
+  // note), so "top disease in this region" isn't meaningful here; clicking
+  // a region with nothing selected picks the first listed disease there.
+  topItemForRegion(id) {
+    return (this.visibleItems ?? []).find((d) => d.regions.some((r) => r.id === id));
+  },
+  map: {
+    url: "data/uk-regions-topo.json",
+    features: (topo) => topojson.feature(topo, topo.objects[Object.keys(topo.objects)[0]]).features,
+    aspect: 1.3,
+    projection: () => d3.geoMercator(),
+    id: (f) => f.properties.region_key,
+    name: (f) => f.properties.display_name,
+  },
+};
 
 let jpPrefNames = new Map(); // pref_id ("01".."47") -> display name, populated when the map loads
 
@@ -1782,241 +1621,414 @@ function jpTrendPct(d) {
   return ((now - before) / before) * 100;
 }
 
-function filteredJpDiseases() {
-  const query = jpSearchEl.value.trim().toLowerCase();
-  let diseases = allJpDiseases.filter((d) => !query || d.disease.toLowerCase().includes(query));
-
-  const sort = jpSortEl.value;
-  if (sort === "trend") {
-    diseases = [...diseases].sort((a, b) => jpTrendPct(b) - jpTrendPct(a));
-  } else if (sort === "name") {
-    diseases = [...diseases].sort((a, b) => a.disease.localeCompare(b.disease));
-  } else {
-    diseases = [...diseases].sort((a, b) => (b.latest_total ?? 0) - (a.latest_total ?? 0));
-  }
-  return diseases;
-}
-
-function renderJpSidebar() {
-  const diseases = filteredJpDiseases();
-
-  if (diseases.length === 0) {
-    jpListEl.innerHTML = '<p id="jp-status">No matching diseases.</p>';
-    return;
-  }
-
-  jpListEl.innerHTML = diseases
-    .map((d) => {
-      const isActive = d.disease === selectedJpDisease;
-      const trend = jpTrendPct(d);
-      const trendLabel = Number.isFinite(trend) ? `${trend > 0 ? "+" : ""}${trend.toFixed(0)}% vs 12wk ago` : "new activity";
-      return `
-        <button class="list-item${isActive ? " active" : ""}" data-disease="${escapeHtml(d.disease)}">
-          <div class="li-title">${escapeHtml(d.disease)}</div>
-          <div class="li-meta"><span>${d.category === "sentinel" ? "sentinel-site count" : "all-case reporting"}</span></div>
-          <div class="li-meta">
-            <span class="li-counts">${fmtNumber(d.latest_total)}${trendIcon(d.national_trend)}</span>
-            <span>· ${trendLabel}</span>
-          </div>
-        </button>
-      `;
-    })
-    .join("");
-
-  jpListEl.querySelectorAll(".list-item").forEach((btn) => {
-    btn.addEventListener("click", () => selectJpDisease(btn.dataset.disease));
-  });
-}
-
-function renderJpDetail() {
-  const d = allJpDiseases.find((x) => x.disease === selectedJpDisease);
-  if (!d) {
-    detailEl.innerHTML =
-      '<p style="color: var(--muted); font-size: 0.9rem;">Select a disease on the left, or a prefecture on the map, for its prefecture-by-prefecture breakdown.</p>';
-    return;
-  }
-
-  const rowsHtml = [...d.prefectures]
-    .sort((a, b) => (b.current_week ?? 0) - (a.current_week ?? 0))
-    .slice(0, 25)
-    .map(
-      (p) => `
-        <tr>
-          <td>${escapeHtml(jpPrefName(p.id))}</td>
-          <td class="num">${p.current_week != null ? fmtNumber(p.current_week) : "—"}</td>
-        </tr>
-      `
-    )
-    .join("");
-
-  const jpTrendPoints = d.national_series ? d.national_series.map((p) => ({ x: `wk ${p.week}`, y: p.value })) : [];
-  const hasJpTrend = jpTrendPoints.filter((p) => p.y !== null).length >= 2;
-  const chartHtml = hasJpTrend
-    ? `
-      <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.4rem;">National weekly trend</h3>
-      ${chartPlaceholder("jp-trend-chart")}
-    `
-    : "";
-
-  detailEl.innerHTML = `
-    <div class="detail-head">
-      <h2>${escapeHtml(d.disease)}</h2>
-      <div class="detail-tags">
+const jpMode = {
+  ...diseaseByRegion,
+  id: "jp",
+  label: "Japan (JIHS)",
+  country: "Japan",
+  feedUrl: "data/jp-feed.json",
+  mapTitle: "Japan notifiable diseases by prefecture",
+  emptyText: "Select a disease on the left, or a prefecture on the map, for its prefecture-by-prefecture breakdown.",
+  sortOptions: true,
+  perCapita: true,
+  ingest(feed) {
+    this.items = feed.diseases;
+  },
+  key: (d) => d.disease,
+  title: (d) => d.disease,
+  searchText: (d) => d.disease,
+  searchSub: (d) => (d.category === "sentinel" ? "sentinel-site count" : "all-case reporting"),
+  filter(items, q) {
+    return items.filter((d) => !q || d.disease.toLowerCase().includes(q));
+  },
+  sort(items, by) {
+    if (by === "trend") return [...items].sort((a, b) => jpTrendPct(b) - jpTrendPct(a));
+    if (by === "name") return [...items].sort((a, b) => a.disease.localeCompare(b.disease));
+    return [...items].sort((a, b) => (b.latest_total ?? 0) - (a.latest_total ?? 0));
+  },
+  listItemHtml(d) {
+    const trend = jpTrendPct(d);
+    const trendLabel = Number.isFinite(trend) ? `${trend > 0 ? "+" : ""}${trend.toFixed(0)}% vs 12wk ago` : "new activity";
+    return `
+      <div class="li-title">${escapeHtml(d.disease)}</div>
+      <div class="li-meta"><span>${d.category === "sentinel" ? "sentinel-site count" : "all-case reporting"}</span></div>
+      <div class="li-meta">
+        <span class="li-counts">${fmtNumber(d.latest_total)}${trendIcon(d.national_trend)}</span>
+        <span>· ${trendLabel}</span>
+      </div>
+    `;
+  },
+  detail(d) {
+    const points = weeklySeriesPoints(d.national_series);
+    const hasChart = points.filter((p) => p.y !== null).length >= 2;
+    const showRate = this.perCapitaApplies(d) && hasPopulation(d.prefectures);
+    const rows = [...d.prefectures].sort((a, b) => (b.current_week ?? 0) - (a.current_week ?? 0));
+    return `
+      ${detailHead(this, d, d.disease, `
         <span class="tag">${d.category === "sentinel" ? "Sentinel-site surveillance" : "All-case reporting"}</span>
-        <span class="tag">week ${d.latest_week}, ${jpFeed.year}</span>
+        <span class="tag">week ${d.latest_week}, ${this.feed.year}</span>
         <span class="tag">${d.prefectures_reporting} of 47 prefectures with cases</span>
         ${trendTag(d.national_trend)}
+      `)}
+      <div class="stat-row">
+        <div class="stat"><div class="n">${fmtNumber(d.latest_total)}</div><div class="l">${d.category === "sentinel" ? "cases (sentinel sites)" : "cases (all-case reporting)"}</div></div>
       </div>
-    </div>
-    <div class="stat-row">
-      <div class="stat"><div class="n">${fmtNumber(d.latest_total)}</div><div class="l">${d.category === "sentinel" ? "cases (sentinel sites)" : "cases (all-case reporting)"}</div></div>
-    </div>
-    <div class="stat-note">
-      ${
-        d.category === "sentinel"
-          ? "Sentinel-site count: reported from a fixed network of clinics, not a national total — actual case counts nationwide are higher. Useful for tracking trend direction, not absolute burden."
-          : "All-case (mandatory) reporting: this is a comprehensive national count, not sampled."
-      }
-      Source: JIHS IDWR, provisional and subject to revision.
-    </div>
-    ${chartHtml}
-    ${findWhoLinkBack(d.disease, "Japan")}
-    <h3 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 1.5rem 0 0.6rem;">By prefecture${d.prefectures.length > 25 ? ` (top 25 of ${d.prefectures.length})` : ""}</h3>
-    <table class="state-table">
-      <thead><tr><th>Prefecture</th><th class="num">This week</th></tr></thead>
-      <tbody>${rowsHtml}</tbody>
-    </table>
-  `;
-  if (hasJpTrend) renderTrendChartInto("jp-trend-chart", jpTrendPoints, { valueFormat: fmtNumber });
-  bindCrossLinkClicks();
+      <div class="stat-note">
+        ${
+          d.category === "sentinel"
+            ? "Sentinel-site count: reported from a fixed network of clinics, not a national total — actual case counts nationwide are higher. Useful for tracking trend direction, not absolute burden, which is also why no per-capita rate is shown."
+            : "All-case (mandatory) reporting: this is a comprehensive national count, not sampled."
+        }
+        Source: JIHS IDWR, provisional and subject to revision.
+      </div>
+      ${hasChart ? `<h3 style="${SECTION_HEADING_STYLE}">National weekly trend</h3>${chartPlaceholder("trend-chart")}` : ""}
+      ${CROSS_LINKS_SLOT}
+      ${regionTableHtml({
+        regionNoun: "prefecture",
+        rows,
+        columns: [
+          { label: "Prefecture", cell: (p) => escapeHtml(jpPrefName(p.id)) },
+          { label: "This week", num: true, cell: (p) => (p.current_week != null ? fmtNumber(p.current_week) : "—") },
+          ...(showRate ? [{ label: "Per 100k", num: true, cell: (p) => fmtRate(per100k(p.current_week, p.population)) }] : []),
+        ],
+      })}
+    `;
+  },
+  afterDetail(d) {
+    const points = weeklySeriesPoints(d.national_series);
+    if (points.filter((p) => p.y !== null).length >= 2) renderTrendChartInto("trend-chart", points, { valueFormat: fmtNumber });
+  },
+  crossLinksHtml(d) {
+    return whoLinkBackHtml(d.disease, "Japan");
+  },
+  crossLinkFrom(ob) {
+    const match = this.items.find((d) => diseaseKeywordMatch(ob.disease, d.disease));
+    return match ? { target: match.disease, label: match.disease } : null;
+  },
+  headerStats() {
+    return `<span><b>${this.items.length}</b> diseases tracked</span><span>Japan, 47 prefectures, week ${this.feed.week}</span><span>Updated ${fmtDate(this.feed.generated_at)}</span>`;
+  },
+  headline(d) {
+    return { value: d.latest_total, asOf: `${this.feed.year}-W${d.latest_week}`, text: `${fmtNumber(d.latest_total)} cases this week` };
+  },
+  risingCandidates() {
+    return this.items
+      .filter((d) => d.national_trend?.trend === "rising" && (d.latest_total ?? 0) >= RISING_MIN_COUNT)
+      .map((d) => ({ item: d, trend: d.national_trend, valueText: `${fmtNumber(d.latest_total)} this week${d.category === "sentinel" ? " (sentinel sites)" : ""}` }));
+  },
+  regionsOf: (d) => d.prefectures.map((p) => ({ id: p.id, name: jpPrefName(p.id), value: p.current_week ?? 0, population: p.population })),
+  valueLabel: (d) => (d.category === "sentinel" ? "cases this week (sentinel sites)" : "cases this week"),
+  // Sentinel counts are a sample from a fixed clinic network, not a count
+  // of everyone — dividing them by total population would look like an
+  // incidence rate while not being one.
+  perCapitaApplies: (d) => d.category !== "sentinel",
+  map: {
+    url: "data/jp-prefectures-topo.json",
+    features(topo) {
+      const features = topojson.feature(topo, topo.objects[Object.keys(topo.objects)[0]]).features;
+      features.forEach((f) => jpPrefNames.set(f.properties.pref_id, f.properties.display_name));
+      return features;
+    },
+    aspect: 1.1,
+    projection: () => d3.geoMercator(),
+    id: (f) => f.properties.pref_id,
+    name: (f) => f.properties.display_name,
+  },
+};
+
+const MODES = [whoMode, cdcMode, brMode, clMode, ukMode, jpMode, deMode];
+const MODE = Object.fromEntries(MODES.map((m) => [m.id, m]));
+
+function currentMode() {
+  return MODE[currentModeId];
 }
 
-function selectJpDisease(disease) {
-  selectedJpDisease = disease;
-  renderJpSidebar();
-  renderJpDetail();
-  paintJpMap();
-  detailEl.scrollIntoView({ behavior: "smooth", block: "start" });
+function selectedItem(mode) {
+  if (!mode.feed || mode.selected == null) return null;
+  return mode.items.find((item) => mode.key(item) === mode.selected) ?? null;
 }
 
-function paintJpMap() {
-  if (!jpSvgSelection) return;
-  const d = allJpDiseases.find((x) => x.disease === selectedJpDisease);
-  const byPref = new Map((d?.prefectures ?? []).map((p) => [p.id, p.current_week ?? 0]));
-  const max = Math.max(1, ...[...byPref.values()]);
-  const scale = d3.scaleSequential(d3.interpolateOranges).domain([0, max]);
+// ---------- DOM scaffolding ----------
+// Tabs, map wrappers and sidebar lists are generated per mode; the
+// content-heavy per-mode markup (controls, legend, footer) lives in
+// index.html under ids following the controls-<id> / legend-<id> /
+// footer-<id> convention.
 
-  jpSvgSelection
-    .attr("fill", function () {
-      const id = this.getAttribute("data-id");
-      if (!d) return "var(--map-land)";
-      return byPref.has(id) ? scale(byPref.get(id)) : "var(--map-land)";
-    })
-    .classed("has-outbreak", function () {
-      return d ? byPref.has(this.getAttribute("data-id")) : false;
+for (const mode of MODES) {
+  mode.items = [];
+  mode.selected = null;
+  mode.feed = null;
+  mode.error = null;
+
+  const tab = document.createElement("button");
+  tab.className = "mode-tab";
+  tab.type = "button";
+  tab.textContent = mode.label;
+  tab.addEventListener("click", () => navigate(mode.id, mode.selected));
+  modeTabsEl.appendChild(tab);
+  mode.tabEl = tab;
+
+  const mapWrap = document.createElement("div");
+  mapWrap.hidden = true;
+  mapContainerEl.appendChild(mapWrap);
+  mode.mapWrapEl = mapWrap;
+
+  const list = document.createElement("div");
+  list.className = "outbreak-list";
+  list.hidden = true;
+  list.innerHTML = '<p class="list-status">Loading…</p>';
+  sidebarEl.appendChild(list);
+  mode.listEl = list;
+
+  mode.controlsEl = document.getElementById(`controls-${mode.id}`);
+  mode.legendEl = document.getElementById(`legend-${mode.id}`);
+  mode.footerEl = document.getElementById(`footer-${mode.id}`);
+  mode.searchEl = document.getElementById(`search-${mode.id}`);
+  mode.sortEl = document.getElementById(`sort-${mode.id}`);
+  mode.perCapitaEl = document.getElementById(`percap-${mode.id}`);
+
+  mode.searchEl?.addEventListener("input", () => renderList(mode));
+  mode.sortEl?.addEventListener("change", () => renderList(mode));
+  mode.perCapitaEl?.addEventListener("change", () => {
+    paintMap(mode);
+    updateLegend(mode);
+  });
+}
+document.getElementById("show-historical").addEventListener("change", () => renderList(MODE.who));
+
+const mapTooltipEl = document.createElement("div");
+mapTooltipEl.className = "chart-tooltip map-tooltip";
+mapTooltipEl.style.opacity = 0;
+mapTooltipEl.setAttribute("aria-hidden", "true");
+mapContainerEl.appendChild(mapTooltipEl);
+
+// ---------- Feed loading ----------
+// Only the active mode's feed is on the critical path. The rest load in
+// parallel once it has rendered: they're still needed (cross-links,
+// unified search, the overview), but no longer block first paint, and the
+// browser's normal HTTP cache handles repeat visits — these files change
+// once a day, so the old `cache: "no-store"` only forced redundant
+// downloads.
+
+function loadFeed(mode) {
+  if (!mode.loadPromise) {
+    mode.loadPromise = fetch(mode.feedUrl)
+      .then((res) => {
+        if (!res.ok) throw new Error(`${mode.feedUrl}: HTTP ${res.status}`);
+        return res.json();
+      })
+      .then((feed) => {
+        mode.feed = feed;
+        mode.ingest(feed);
+        onFeedLoaded(mode);
+      })
+      .catch((err) => {
+        mode.error = err;
+        console.error(err);
+        if (mode.id === currentModeId) renderModeView(mode);
+      });
+  }
+  return mode.loadPromise;
+}
+
+let backgroundRefreshTimer = null;
+
+function onFeedLoaded(mode) {
+  recordWatchSnapshots(mode);
+  if (mode.id === currentModeId) {
+    renderModeView(mode);
+    ensureMap(mode);
+    if (mode.selected != null && pendingScroll) scrollToDetail(false);
+    return;
+  }
+  // Another source arrived in the background: refresh only the parts of
+  // the current view that read from other feeds.
+  clearTimeout(backgroundRefreshTimer);
+  backgroundRefreshTimer = setTimeout(() => {
+    const cur = currentMode();
+    if (selectedItem(cur)) fillCrossLinks();
+    else if (cur.feed || cur.selected == null) renderDetail();
+    if (!globalSearchResultsEl.hidden) renderGlobalSearchResults();
+  }, 60);
+}
+
+function loadRemainingFeeds() {
+  for (const mode of MODES) loadFeed(mode);
+}
+
+// ---------- Maps ----------
+// Built lazily the first time a mode is shown, so each map measures its
+// real (visible) width instead of a hidden container's zero.
+
+function ensureMap(mode) {
+  if (mode.mapBuilt || !mode.feed || mode.mapWrapEl.hidden) return;
+  mode.mapBuilt = true;
+  d3.json(mode.map.url)
+    .then((data) => buildMap(mode, data))
+    .catch((err) => {
+      mode.mapBuilt = false;
+      console.error(err);
     });
 }
 
-async function initJpMap() {
-  const topo = await d3.json("data/jp-prefectures-topo.json");
-  const objectName = Object.keys(topo.objects)[0];
-  const geo = topojson.feature(topo, topo.objects[objectName]);
+function buildMap(mode, data) {
+  const cfg = mode.map;
+  // Sorted by name so keyboard focus moves through regions alphabetically
+  // rather than in the source file's arbitrary order.
+  const features = cfg.features(data).sort((a, b) => String(cfg.name(a)).localeCompare(String(cfg.name(b))));
+  const collection = { type: "FeatureCollection", features };
 
-  geo.features.forEach((f) => jpPrefNames.set(f.properties.pref_id, f.properties.display_name));
-
-  const width = jpMapWrap.clientWidth || 640;
-  const height = width * 1.1;
-  const projection = d3.geoMercator().fitSize([width - 4, height - 4], geo);
+  const width = mode.mapWrapEl.clientWidth || 640;
+  const height = width * cfg.aspect;
+  const projection = cfg.projection().fitSize([width - 4, height - 4], collection);
   const pathGenerator = d3.geoPath(projection);
 
   const svg = d3
-    .select(jpMapWrap)
+    .select(mode.mapWrapEl)
     .append("svg")
     .attr("viewBox", `0 0 ${width} ${height}`)
-    .attr("preserveAspectRatio", "xMidYMid meet");
+    .attr("preserveAspectRatio", "xMidYMid meet")
+    .attr("role", "group")
+    .attr("aria-label", mode.mapTitle);
 
-  const paths = svg
+  mode.paths = svg
     .append("g")
     .selectAll("path")
-    .data(geo.features)
+    .data(features)
     .join("path")
     .attr("class", "country-path")
-    .attr("data-id", (d) => d.properties.pref_id)
+    .attr("data-id", (f) => cfg.id(f))
     .attr("d", pathGenerator)
-    .attr("fill", "var(--map-land)");
+    .attr("fill", "var(--map-land)")
+    .on("pointermove", (event, f) => showMapTooltip(mode, f, event.clientX, event.clientY))
+    .on("pointerleave", hideMapTooltip)
+    .on("focus", function (event, f) {
+      const box = this.getBoundingClientRect();
+      showMapTooltip(mode, f, box.left + box.width / 2, box.top + box.height / 2);
+    })
+    .on("blur", hideMapTooltip)
+    .on("click", (event, f) => {
+      const id = cfg.id(f);
+      if (mode.hasData(id)) mode.clickRegion(id);
+    })
+    .on("keydown", (event, f) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      const id = cfg.id(f);
+      if (mode.hasData(id)) mode.clickRegion(id);
+    });
 
-  paths.append("title").text((d) => d.properties.display_name);
-  jpSvgSelection = paths;
+  paintMap(mode);
+}
 
-  jpSvgSelection.on("click", function (event, feature) {
-    const id = feature.properties.pref_id;
-    const match = filteredJpDiseases().find((d) => d.prefectures.some((p) => p.id === id));
-    if (match) selectJpDisease(match.disease);
+// Colors every region and keeps its interactivity in sync with the data:
+// only regions that do something on click are focusable buttons (with a
+// spoken label carrying the same text as the hover tooltip); the rest are
+// hidden from assistive tech rather than adding hundreds of dead stops.
+function paintMap(mode) {
+  if (!mode.paths) return;
+  const cfg = mode.map;
+  mode.paths.each(function (f) {
+    const id = cfg.id(f);
+    const active = mode.hasData(id);
+    this.setAttribute("fill", mode.fill(id));
+    this.classList.toggle("has-outbreak", active);
+    this.classList.toggle("selected", Boolean(mode.isRegionSelected?.(id)));
+    if (active) {
+      const tip = mode.tooltip(id, cfg.name(f));
+      this.setAttribute("tabindex", "0");
+      this.setAttribute("role", "button");
+      this.setAttribute("aria-label", [tip.title, ...tip.lines].join(". "));
+      this.removeAttribute("aria-hidden");
+    } else {
+      this.removeAttribute("tabindex");
+      this.removeAttribute("role");
+      this.removeAttribute("aria-label");
+      this.setAttribute("aria-hidden", "true");
+    }
   });
-
-  paintJpMap();
 }
 
-function switchMode(next) {
-  if (mode === next) return;
-  mode = next;
-
-  tabWhoEl.classList.toggle("active", mode === "who");
-  tabCdcEl.classList.toggle("active", mode === "cdc");
-  tabBrEl.classList.toggle("active", mode === "br");
-  tabClEl.classList.toggle("active", mode === "cl");
-  tabUkEl.classList.toggle("active", mode === "uk");
-  tabJpEl.classList.toggle("active", mode === "jp");
-  mapTitleEl.textContent = MAP_TITLES[mode];
-
-  whoMapWrap.style.display = mode === "who" ? "" : "none";
-  cdcMapWrap.style.display = mode === "cdc" ? "" : "none";
-  brMapWrap.style.display = mode === "br" ? "" : "none";
-  clMapWrap.style.display = mode === "cl" ? "" : "none";
-  ukMapWrap.style.display = mode === "uk" ? "" : "none";
-  jpMapWrap.style.display = mode === "jp" ? "" : "none";
-  legendWhoEl.style.display = mode === "who" ? "" : "none";
-  legendCdcEl.style.display = mode === "cdc" ? "" : "none";
-  legendBrEl.style.display = mode === "br" ? "" : "none";
-  legendClEl.style.display = mode === "cl" ? "" : "none";
-  legendUkEl.style.display = mode === "uk" ? "" : "none";
-  legendJpEl.style.display = mode === "jp" ? "" : "none";
-  controlsWhoEl.style.display = mode === "who" ? "" : "none";
-  controlsCdcEl.style.display = mode === "cdc" ? "" : "none";
-  controlsBrEl.style.display = mode === "br" ? "" : "none";
-  controlsClEl.style.display = mode === "cl" ? "" : "none";
-  controlsUkEl.style.display = mode === "uk" ? "" : "none";
-  controlsJpEl.style.display = mode === "jp" ? "" : "none";
-  listEl.style.display = mode === "who" ? "" : "none";
-  cdcListEl.style.display = mode === "cdc" ? "" : "none";
-  brListEl.style.display = mode === "br" ? "" : "none";
-  clListEl.style.display = mode === "cl" ? "" : "none";
-  ukListEl.style.display = mode === "uk" ? "" : "none";
-  jpListEl.style.display = mode === "jp" ? "" : "none";
-  footerWhoEl.style.display = mode === "who" ? "" : "none";
-  footerCdcEl.style.display = mode === "cdc" ? "" : "none";
-  footerBrEl.style.display = mode === "br" ? "" : "none";
-  footerClEl.style.display = mode === "cl" ? "" : "none";
-  footerUkEl.style.display = mode === "uk" ? "" : "none";
-  footerJpEl.style.display = mode === "jp" ? "" : "none";
-
-  if (mode === "cdc") renderCdcDetail();
-  else if (mode === "br") renderBrDetail();
-  else if (mode === "cl") renderClDetail();
-  else if (mode === "uk") renderUkDetail();
-  else if (mode === "jp") renderJpDetail();
-  else renderDetail();
-  renderHeaderStats();
+function showMapTooltip(mode, feature, clientX, clientY) {
+  const tip = mode.tooltip(mode.map.id(feature), mode.map.name(feature));
+  mapTooltipEl.innerHTML = `<div class="chart-tooltip-value"></div>${tip.lines.map(() => '<div class="chart-tooltip-label"></div>').join("")}`;
+  mapTooltipEl.firstElementChild.textContent = tip.title;
+  [...mapTooltipEl.querySelectorAll(".chart-tooltip-label")].forEach((el, i) => (el.textContent = tip.lines[i]));
+  const rect = mapContainerEl.getBoundingClientRect();
+  mapTooltipEl.style.left = `${clientX - rect.left}px`;
+  mapTooltipEl.style.top = `${clientY - rect.top}px`;
+  mapTooltipEl.style.opacity = 1;
 }
 
-// The dashboard's data updates on a 6-hour cron with no human watching it
-// run — if a source's site changes format and its fetch script starts
-// failing, the page would otherwise look completely normal while quietly
-// showing data that's stopped updating. This surfaces that failure state
-// instead of hiding it: data/status.json records whether each source's
-// most recent fetch attempt actually succeeded (see the workflow's
-// continue-on-error steps), independent of whether the displayed data
-// itself is still the last good run.
+function hideMapTooltip() {
+  mapTooltipEl.style.opacity = 0;
+}
+
+function updateLegend(mode) {
+  const basisEl = mode.legendEl?.querySelector("[data-legend-basis]");
+  if (basisEl && mode.legendBasis) basisEl.textContent = mode.legendBasis();
+  if (mode.perCapitaEl) {
+    const item = selectedItem(mode);
+    const available = perCapitaAvailable(mode, item);
+    mode.perCapitaEl.disabled = !available;
+    mode.perCapitaEl.closest("label").title = available
+      ? ""
+      : mode.perCapitaApplies && item && !mode.perCapitaApplies(item)
+        ? "Not available for sentinel-site counts, which are a sample rather than a population count"
+        : "No population data in this feed yet";
+  }
+}
+
+// ---------- Sidebar, detail, header ----------
+
+function renderList(mode) {
+  if (!mode.feed) {
+    mode.listEl.innerHTML = mode.error
+      ? `<p class="list-status">Could not load the ${escapeHtml(mode.label)} feed. Try again shortly.</p>`
+      : '<p class="list-status">Loading…</p>';
+    return;
+  }
+  const q = (mode.searchEl?.value ?? "").trim().toLowerCase();
+  const visible = mode.sort(mode.filter(mode.items, q), mode.sortEl?.value);
+  mode.visibleItems = visible;
+  mode.afterFilter?.(visible);
+  paintMap(mode);
+
+  if (visible.length === 0) {
+    mode.listEl.innerHTML = '<p class="list-status">No matches.</p>';
+    return;
+  }
+
+  mode.listEl.innerHTML = visible
+    .map((item) => {
+      const key = mode.key(item);
+      const classes = ["list-item", mode.listItemClass?.(item), key === mode.selected ? "active" : ""].filter(Boolean).join(" ");
+      return `<button class="${classes}" type="button" data-key="${escapeHtml(key)}"${key === mode.selected ? ' aria-current="true"' : ""}>${mode.listItemHtml(item)}</button>`;
+    })
+    .join("");
+
+  mode.listEl.querySelectorAll(".list-item").forEach((btn) => {
+    btn.addEventListener("click", () => navigate(mode.id, btn.dataset.key));
+  });
+}
+
+function renderDetail() {
+  const mode = currentMode();
+  if (mode.selected != null && !mode.feed && !mode.error) {
+    detailEl.innerHTML = '<p class="muted-note">Loading…</p>';
+    return;
+  }
+  const item = selectedItem(mode);
+  if (!item) {
+    renderOverview(mode);
+    return;
+  }
+  detailEl.innerHTML = mode.detail(item);
+  mode.afterDetail?.(item);
+  bindDetailActions(mode, item);
+  fillCrossLinks();
+}
+
 function sourceHealthBadge(sourceId) {
   if (!dataStatus) return "";
   const entry = dataStatus.sources.find((s) => s.id === sourceId);
@@ -2024,186 +2036,281 @@ function sourceHealthBadge(sourceId) {
   return `<span class="health-warning" title="The most recent scheduled update for this source failed — showing the last successful data.">⚠ update failed, showing last good data</span>`;
 }
 
+// The dashboard's data updates on a daily cron with no human watching it
+// run — if a source's site changes format and its fetch script starts
+// failing, the page would otherwise look completely normal while quietly
+// showing data that's stopped updating. This surfaces that failure state
+// instead of hiding it: data/status.json records whether each source's
+// most recent fetch attempt actually succeeded (see the workflow's
+// continue-on-error steps), independent of whether the displayed data
+// itself is still the last good run.
 function renderHeaderStats() {
-  if (mode === "cdc" && cdcFeed) {
-    headerStatsEl.innerHTML = `
-      <span><b>${cdcFeed.disease_count}</b> notifiable diseases active</span>
-      <span>MMWR week ${cdcFeed.week}, ${cdcFeed.year}</span>
-      <span>Updated ${fmtDate(cdcFeed.generated_at)}</span>
-      ${sourceHealthBadge("cdc")}
-    `;
-  } else if (mode === "br" && brFeed) {
-    headerStatsEl.innerHTML = `
-      <span><b>${allBrStates.length}</b> states tracked</span>
-      <span>Epi. week ${brFeed.epidemiological_week}, ${brFeed.epidemiological_year}</span>
-      <span>Updated ${fmtDate(brFeed.generated_at)}</span>
-      ${sourceHealthBadge("br")}
-    `;
-  } else if (mode === "cl" && clFeed) {
-    headerStatsEl.innerHTML = `
-      <span><b>${allClRegions.length}</b> regions tracked</span>
-      <span>Epi. week ${clFeed.epidemiological_week}, ${clFeed.epidemiological_year}</span>
-      <span>Updated ${fmtDate(clFeed.generated_at)}</span>
-      ${sourceHealthBadge("cl")}
-    `;
-  } else if (mode === "uk" && ukFeed) {
-    headerStatsEl.innerHTML = `
-      <span><b>${allUkDiseases.length}</b> diseases tracked</span>
-      <span>England, 9 regions</span>
-      <span>Updated ${fmtDate(ukFeed.generated_at)}</span>
-      ${sourceHealthBadge("uk")}
-    `;
-  } else if (mode === "jp" && jpFeed) {
-    headerStatsEl.innerHTML = `
-      <span><b>${allJpDiseases.length}</b> diseases tracked</span>
-      <span>Japan, 47 prefectures, week ${jpFeed.week}</span>
-      <span>Updated ${fmtDate(jpFeed.generated_at)}</span>
-      ${sourceHealthBadge("jp")}
-    `;
-  } else if (mode === "who" && allOutbreaks.length) {
-    const activeCount = allOutbreaks.filter((o) => o.latest_update >= ACTIVE_CUTOFF).length;
-    headerStatsEl.innerHTML = `
-      <span><b>${activeCount}</b> active</span>
-      <span><b>${allOutbreaks.length}</b> total tracked</span>
-      <span>Updated ${fmtDate(whoGeneratedAt)}</span>
-      ${sourceHealthBadge("who")}
-    `;
+  const mode = currentMode();
+  if (!mode.feed) {
+    headerStatsEl.innerHTML = mode.error ? `<span>Could not load ${escapeHtml(mode.label)}</span>` : "Loading…";
+    return;
+  }
+  headerStatsEl.innerHTML = mode.headerStats() + sourceHealthBadge(mode.id);
+}
+
+function renderModeView(mode) {
+  renderList(mode);
+  renderDetail();
+  renderHeaderStats();
+  updateLegend(mode);
+  updateDocumentTitle();
+}
+
+function updateDocumentTitle() {
+  const mode = currentMode();
+  const item = selectedItem(mode);
+  document.title = item ? `${mode.title(item)} — ${mode.label} — Outbreak Watch` : mode.id === "who" ? "Outbreak Watch" : `${mode.label} — Outbreak Watch`;
+}
+
+function showMode(modeId) {
+  currentModeId = modeId;
+  hideMapTooltip();
+  for (const mode of MODES) {
+    const on = mode.id === modeId;
+    mode.tabEl.classList.toggle("active", on);
+    mode.tabEl.setAttribute("aria-pressed", String(on));
+    mode.mapWrapEl.hidden = !on;
+    mode.listEl.hidden = !on;
+    for (const el of [mode.controlsEl, mode.legendEl, mode.footerEl]) if (el) el.hidden = !on;
+  }
+  mapTitleEl.textContent = currentMode().mapTitle;
+}
+
+// ---------- Detail actions: watch + copy link ----------
+
+const WATCHLIST_KEY = "outbreak-watch:watchlist"; // [{ mode, key, label }]
+
+function getWatchlist() {
+  const list = storeGet(WATCHLIST_KEY, []);
+  return Array.isArray(list) ? list.filter((w) => MODE[w.mode]) : [];
+}
+
+function isWatched(modeId, key) {
+  return getWatchlist().some((w) => w.mode === modeId && w.key === key);
+}
+
+function watchButtonHtml(mode, item) {
+  const on = isWatched(mode.id, mode.key(item));
+  return `<button class="detail-action watch-btn${on ? " on" : ""}" type="button" aria-pressed="${on}">${on ? "★ Watching" : "☆ Watch"}</button>`;
+}
+
+function toggleWatch(mode, item) {
+  const key = mode.key(item);
+  let list = getWatchlist();
+  if (list.some((w) => w.mode === mode.id && w.key === key)) {
+    list = list.filter((w) => !(w.mode === mode.id && w.key === key));
+  } else {
+    list.push({ mode: mode.id, key, label: mode.title(item) });
+  }
+  storeSet(WATCHLIST_KEY, list);
+  recordWatchSnapshots(mode);
+}
+
+function bindDetailActions(mode, item) {
+  const watchBtn = detailEl.querySelector(".watch-btn");
+  watchBtn?.addEventListener("click", () => {
+    toggleWatch(mode, item);
+    watchBtn.outerHTML = watchButtonHtml(mode, item);
+    bindDetailActions(mode, item);
+  });
+  const copyBtn = detailEl.querySelector(".copy-link-btn");
+  if (copyBtn && !copyBtn.dataset.bound) {
+    copyBtn.dataset.bound = "1";
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        copyBtn.textContent = "Link copied";
+      } catch {
+        copyBtn.textContent = "Copy failed — use the address bar";
+      }
+      setTimeout(() => (copyBtn.textContent = "Copy link"), 2000);
+    });
   }
 }
 
-async function init() {
-  try {
-    const res = await fetch("data/status.json", { cache: "no-store" });
-    if (res.ok) dataStatus = await res.json();
-  } catch {
-    // status.json may not exist yet (e.g. local dev before any deploy) — silently skip
+// Saves each watched item's current headline into the persistent visit
+// record, so the *next* session's baseline can say what changed.
+function recordWatchSnapshots(mode) {
+  if (!mode.feed || !mode.headline) return;
+  let changed = false;
+  for (const w of getWatchlist()) {
+    if (w.mode !== mode.id) continue;
+    const item = mode.items.find((i) => mode.key(i) === w.key);
+    if (!item) continue;
+    const h = mode.headline(item);
+    visitRecord.items[`${w.mode}/${w.key}`] = { value: h.value, asOf: h.asOf, text: h.text };
+    changed = true;
   }
+  if (changed) saveVisitRecord();
+}
 
-  try {
-    const res = await fetch("data/feed.json", { cache: "no-store" });
-    const feed = await res.json();
-    allOutbreaks = feed.outbreaks;
-    whoGeneratedAt = feed.generated_at;
-    renderHeaderStats();
+// ---------- Overview: watchlist + rising across sources ----------
+// Shown in the detail area whenever nothing is selected, which used to be
+// a single line of "select something" text.
 
-    renderSidebar();
-    renderDetail();
-    await initMap();
+function renderOverview(mode) {
+  const missing = mode.selected != null && mode.feed && !selectedItem(mode);
+  detailEl.innerHTML = `
+    ${
+      missing
+        ? `<p class="notice">“${escapeHtml(mode.selected)}” isn't in the current ${escapeHtml(mode.label)} data — it may have dropped out of the latest report.</p>`
+        : ""
+    }
+    <p style="color: var(--muted); font-size: 0.9rem; margin-top: 0;">${mode.emptyText}</p>
+    <section class="overview-section">
+      <h2 class="overview-heading">Your watchlist</h2>
+      ${watchlistHtml()}
+    </section>
+    <section class="overview-section">
+      <h2 class="overview-heading">Rising now, across all sources</h2>
+      <p class="muted-note" style="margin-top: 0;">
+        Everything currently classified as rising from its own recent series (same
+        regression-based classification as the ▲ icons; see
+        <a href="about.html">methodology</a>), ignoring counts under ${RISING_MIN_COUNT}.
+        Units differ by source — compare within a source, not across them.
+      </p>
+      ${risingHtml()}
+    </section>
+  `;
+  detailEl.querySelectorAll("[data-nav-mode]").forEach((el) => {
+    el.addEventListener("click", () => navigate(el.dataset.navMode, el.dataset.navKey));
+  });
+  detailEl.querySelectorAll("[data-unwatch-mode]").forEach((el) => {
+    el.addEventListener("click", () => {
+      storeSet(
+        WATCHLIST_KEY,
+        getWatchlist().filter((w) => !(w.mode === el.dataset.unwatchMode && w.key === el.dataset.unwatchKey))
+      );
+      renderDetail();
+    });
+  });
+}
 
-    const newest = allOutbreaks.reduce((max, o) => (o.latest_update > max ? o.latest_update : max), "");
-    if (newest) localStorage.setItem(LAST_SEEN_KEY, newest);
-  } catch (err) {
-    listEl.innerHTML = '<p id="status">Could not load feed. Try again shortly.</p>';
-    console.error(err);
+function watchlistHtml() {
+  const list = getWatchlist();
+  if (!list.length) {
+    return `<p class="muted-note">Nothing watched yet. Open any outbreak, disease or region and press <strong>☆ Watch</strong> to pin it here — you'll see what changed since your last visit.</p>`;
   }
+  const rows = list.map((w) => {
+    const mode = MODE[w.mode];
+    const item = mode.feed ? mode.items.find((i) => mode.key(i) === w.key) : null;
+    let status;
+    if (!mode.feed) status = '<span class="muted-note">loading…</span>';
+    else if (!item) status = '<span class="muted-note">not in the current data</span>';
+    else {
+      const h = mode.headline(item);
+      const before = visitBaseline?.items?.[`${w.mode}/${w.key}`];
+      let change = "";
+      if (before && before.asOf !== h.asOf) {
+        change = `<span class="watch-change">new data since your last visit${before.text && before.text !== h.text ? ` (was ${escapeHtml(before.text)})` : ""}</span>`;
+      } else if (before) {
+        change = '<span class="muted-note">no new data since your last visit</span>';
+      }
+      status = `<span class="li-counts">${escapeHtml(h.text)}</span>${h.asOfText ? ` <span class="muted-note">${escapeHtml(h.asOfText)}</span>` : ""} ${change}`;
+    }
+    return `
+      <li class="overview-row">
+        <button class="overview-link" type="button" data-nav-mode="${w.mode}" data-nav-key="${escapeHtml(w.key)}">${escapeHtml(w.label)}</button>
+        <span class="overview-source">${escapeHtml(mode.label)}</span>
+        <span class="overview-status">${status}</span>
+        <button class="overview-remove" type="button" data-unwatch-mode="${w.mode}" data-unwatch-key="${escapeHtml(w.key)}" aria-label="Stop watching ${escapeHtml(w.label)}">×</button>
+      </li>
+    `;
+  });
+  return `<ul class="overview-list">${rows.join("")}</ul>`;
+}
 
-  try {
-    const res = await fetch("data/cdc-feed.json", { cache: "no-store" });
-    cdcFeed = await res.json();
-    allDiseases = cdcFeed.diseases;
-    renderCdcSidebar();
-    await initCdcMap();
-  } catch (err) {
-    cdcListEl.innerHTML = '<p id="cdc-status">Could not load CDC feed. Try again shortly.</p>';
-    console.error(err);
+const RISING_PER_SOURCE = 5;
+
+function risingHtml() {
+  const groups = MODES.map((mode) => {
+    if (mode.error) return `<div class="rising-group"><h3>${escapeHtml(mode.label)}</h3><p class="muted-note">Feed failed to load.</p></div>`;
+    if (!mode.feed) return `<div class="rising-group"><h3>${escapeHtml(mode.label)}</h3><p class="muted-note">Loading…</p></div>`;
+    const candidates = mode
+      .risingCandidates()
+      .sort((a, b) => (b.trend.percent_change ?? -Infinity) - (a.trend.percent_change ?? -Infinity));
+    if (!candidates.length) return `<div class="rising-group"><h3>${escapeHtml(mode.label)}</h3><p class="muted-note">Nothing currently classified as rising.</p></div>`;
+    const rows = candidates.slice(0, RISING_PER_SOURCE).map((c) => {
+      const pct = c.trend.percent_change;
+      const pctText = pct == null ? "" : `${pct > 0 ? "+" : ""}${pct}% ${c.windowText ? `over ${c.windowText}` : "vs previous"}`;
+      return `
+        <li class="overview-row">
+          <button class="overview-link" type="button" data-nav-mode="${mode.id}" data-nav-key="${escapeHtml(mode.key(c.item))}">${trendIcon(c.trend, { windowText: c.windowText })} ${escapeHtml(mode.title(c.item))}</button>
+          <span class="overview-status"><span class="muted-note">${escapeHtml(c.valueText)}${pctText ? ` · ${pctText}` : ""}</span></span>
+        </li>
+      `;
+    });
+    const more = candidates.length > RISING_PER_SOURCE ? `<p class="muted-note">+${candidates.length - RISING_PER_SOURCE} more rising in this source</p>` : "";
+    return `<div class="rising-group"><h3>${escapeHtml(mode.label)}</h3><ul class="overview-list">${rows.join("")}</ul>${more}</div>`;
+  });
+  return groups.join("");
+}
+
+// ---------- Routing ----------
+// The URL hash carries the mode and selection (#/cdc/Pertussis), so any
+// view can be shared, bookmarked, or reached with back/forward. Hashes
+// that don't start with "#/" (the skip link's #main-layout) aren't routes.
+
+let pendingScroll = false;
+
+function parseRoute(hash) {
+  const m = /^#\/([a-z]+)(?:\/(.*))?$/.exec(hash);
+  if (!m || !MODE[m[1]]) return { modeId: "who", key: null };
+  let key = null;
+  if (m[2]) {
+    try {
+      key = decodeURIComponent(m[2]);
+    } catch {
+      key = null;
+    }
   }
+  return { modeId: m[1], key };
+}
 
-  try {
-    const res = await fetch("data/br-feed.json", { cache: "no-store" });
-    brFeed = await res.json();
-    allBrStates = brFeed.states;
-    renderBrSidebar();
-    await initBrMap();
-  } catch (err) {
-    brListEl.innerHTML = '<p id="br-status">Could not load Brazil feed. Try again shortly.</p>';
-    console.error(err);
-  }
+function routeHash(modeId, key) {
+  return `#/${modeId}${key != null ? "/" + encodeURIComponent(key) : ""}`;
+}
 
-  try {
-    const res = await fetch("data/cl-feed.json", { cache: "no-store" });
-    clFeed = await res.json();
-    allClRegions = clFeed.regions;
-    renderClSidebar();
-    await initClMap();
-  } catch (err) {
-    clListEl.innerHTML = '<p id="cl-status">Could not load Chile feed. Try again shortly.</p>';
-    console.error(err);
-  }
+function navigate(modeId, key) {
+  const hash = routeHash(modeId, key ?? null);
+  if (location.hash !== hash) history.pushState(null, "", hash);
+  applyRoute({ modeId, key: key ?? null }, { scroll: key != null });
+}
 
-  try {
-    const res = await fetch("data/uk-feed.json", { cache: "no-store" });
-    ukFeed = await res.json();
-    allUkDiseases = ukFeed.diseases;
-    renderUkSidebar();
-    await initUkMap();
-  } catch (err) {
-    ukListEl.innerHTML = '<p id="uk-status">Could not load England feed. Try again shortly.</p>';
-    console.error(err);
-  }
-
-  try {
-    const res = await fetch("data/jp-feed.json", { cache: "no-store" });
-    jpFeed = await res.json();
-    allJpDiseases = jpFeed.diseases;
-    renderJpSidebar();
-    await initJpMap();
-  } catch (err) {
-    jpListEl.innerHTML = '<p id="jp-status">Could not load Japan feed. Try again shortly.</p>';
-    console.error(err);
+function applyRoute({ modeId, key }, { scroll }) {
+  const mode = MODE[modeId];
+  const modeChanged = modeId !== currentModeId || !mode.tabEl.classList.contains("active");
+  mode.selected = key;
+  if (modeChanged) showMode(modeId);
+  loadFeed(mode);
+  renderModeView(mode);
+  ensureMap(mode);
+  if (scroll) {
+    if (mode.feed) scrollToDetail(true);
+    else pendingScroll = true;
   }
 }
 
-searchEl.addEventListener("input", () => {
-  renderSidebar();
-});
-sortEl.addEventListener("change", () => {
-  renderSidebar();
-});
-showHistoricalEl.addEventListener("change", () => {
-  renderSidebar();
+function scrollToDetail(smooth) {
+  pendingScroll = false;
+  detailEl.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+}
+
+window.addEventListener("popstate", () => {
+  if (location.hash && !location.hash.startsWith("#/")) return;
+  applyRoute(parseRoute(location.hash), { scroll: false });
 });
 
-cdcSearchEl.addEventListener("input", () => {
-  renderCdcSidebar();
+document.getElementById("home-link").addEventListener("click", (e) => {
+  e.preventDefault();
+  navigate(currentModeId, null);
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
-cdcSortEl.addEventListener("change", () => {
-  renderCdcSidebar();
-});
-
-brSearchEl.addEventListener("input", () => {
-  renderBrSidebar();
-});
-brSortEl.addEventListener("change", () => {
-  renderBrSidebar();
-});
-
-clSearchEl.addEventListener("input", () => {
-  renderClSidebar();
-});
-clSortEl.addEventListener("change", () => {
-  renderClSidebar();
-});
-
-ukSearchEl.addEventListener("input", () => {
-  renderUkSidebar();
-});
-ukSortEl.addEventListener("change", () => {
-  renderUkSidebar();
-});
-
-jpSearchEl.addEventListener("input", () => {
-  renderJpSidebar();
-});
-jpSortEl.addEventListener("change", () => {
-  renderJpSidebar();
-});
-
-tabWhoEl.addEventListener("click", () => switchMode("who"));
-tabCdcEl.addEventListener("click", () => switchMode("cdc"));
-tabBrEl.addEventListener("click", () => switchMode("br"));
-tabClEl.addEventListener("click", () => switchMode("cl"));
-tabUkEl.addEventListener("click", () => switchMode("uk"));
-tabJpEl.addEventListener("click", () => switchMode("jp"));
 
 // ---------- Unified search ----------
 
@@ -2213,112 +2320,62 @@ const GSR_LIMIT_PER_SOURCE = 6;
 
 function globalSearch(query) {
   const q = query.trim().toLowerCase();
-  if (!q) return [];
+  if (!q) return { groups: [], pending: [] };
   const groups = [];
-
-  const whoMatches = allOutbreaks
-    .filter((ob) => `${ob.disease} ${ob.countries.map((c) => c.name).join(" ")}`.toLowerCase().includes(q))
-    .slice(0, GSR_LIMIT_PER_SOURCE)
-    .map((ob) => ({
-      label: ob.disease,
-      sub: ob.is_global ? "Multi-country / global" : ob.countries.map((c) => c.name).join(", "),
-      action: () => { switchMode("who"); selectOutbreak(ob.id); },
-    }));
-  if (whoMatches.length) groups.push({ label: "World (WHO)", items: whoMatches });
-
-  const cdcMatches = allDiseases
-    .filter((d) => d.disease.toLowerCase().includes(q))
-    .slice(0, GSR_LIMIT_PER_SOURCE)
-    .map((d) => ({
-      label: d.disease,
-      sub: `${d.states_reporting} states reporting`,
-      action: () => { switchMode("cdc"); selectDisease(d.disease); },
-    }));
-  if (cdcMatches.length) groups.push({ label: "United States (CDC)", items: cdcMatches });
-
-  const brMatches = allBrStates
-    .filter((s) => s.name.toLowerCase().includes(q))
-    .slice(0, GSR_LIMIT_PER_SOURCE)
-    .map((s) => ({
-      label: s.name,
-      sub: s.intensity ?? "No data",
-      action: () => { switchMode("br"); selectBrState(s.id); },
-    }));
-  if (brMatches.length) groups.push({ label: "Brazil (InfoGripe)", items: brMatches });
-
-  const clMatches = allClRegions
-    .filter((r) => r.name.toLowerCase().includes(q))
-    .slice(0, GSR_LIMIT_PER_SOURCE)
-    .map((r) => ({
-      label: r.name,
-      sub: `${fmtNumber(r.latest_deaths)} deaths this week`,
-      action: () => { switchMode("cl"); selectClRegion(r.id); },
-    }));
-  if (clMatches.length) groups.push({ label: "Chile (DEIS)", items: clMatches });
-
-  const ukMatches = allUkDiseases
-    .filter((d) => d.topic.toLowerCase().includes(q))
-    .slice(0, GSR_LIMIT_PER_SOURCE)
-    .map((d) => ({
-      label: d.topic,
-      sub: ukMetricUnit(d.metric),
-      action: () => { switchMode("uk"); selectUkDisease(d.topic); },
-    }));
-  if (ukMatches.length) groups.push({ label: "England (UKHSA)", items: ukMatches });
-
-  const jpMatches = allJpDiseases
-    .filter((d) => d.disease.toLowerCase().includes(q))
-    .slice(0, GSR_LIMIT_PER_SOURCE)
-    .map((d) => ({
-      label: d.disease,
-      sub: d.category === "sentinel" ? "sentinel-site count" : "all-case reporting",
-      action: () => { switchMode("jp"); selectJpDisease(d.disease); },
-    }));
-  if (jpMatches.length) groups.push({ label: "Japan (JIHS)", items: jpMatches });
-
-  return groups;
+  const pending = [];
+  for (const mode of MODES) {
+    if (!mode.feed) {
+      if (!mode.error) pending.push(mode.label);
+      continue;
+    }
+    const items = mode.items
+      .filter((item) => mode.searchText(item).toLowerCase().includes(q))
+      .slice(0, GSR_LIMIT_PER_SOURCE)
+      .map((item) => ({ label: mode.title(item), sub: mode.searchSub(item), modeId: mode.id, key: mode.key(item) }));
+    if (items.length) groups.push({ label: mode.label, items });
+  }
+  return { groups, pending };
 }
 
 function renderGlobalSearchResults() {
-  const groups = globalSearch(globalSearchEl.value);
-
   if (globalSearchEl.value.trim() === "") {
     globalSearchResultsEl.hidden = true;
     globalSearchResultsEl.innerHTML = "";
     return;
   }
 
+  const { groups, pending } = globalSearch(globalSearchEl.value);
+  const pendingHtml = pending.length ? `<div class="gsr-empty">Still loading: ${escapeHtml(pending.join(", "))}</div>` : "";
+
   if (groups.length === 0) {
-    globalSearchResultsEl.innerHTML = '<div class="gsr-empty">No matches across any source.</div>';
+    globalSearchResultsEl.innerHTML = (pending.length ? "" : '<div class="gsr-empty">No matches across any source.</div>') + pendingHtml;
     globalSearchResultsEl.hidden = false;
     return;
   }
 
-  globalSearchResultsEl.innerHTML = groups
-    .map(
-      (g) => `
-        <div class="gsr-group-label">${escapeHtml(g.label)}</div>
-        ${g.items
-          .map(
-            (item, i) => `
-              <button class="gsr-item" data-group="${escapeHtml(g.label)}" data-index="${i}">
-                ${escapeHtml(item.label)}
-                <span class="gsr-sub">${escapeHtml(item.sub)}</span>
-              </button>
-            `
-          )
-          .join("")}
-      `
-    )
-    .join("");
+  globalSearchResultsEl.innerHTML =
+    groups
+      .map(
+        (g) => `
+          <div class="gsr-group-label">${escapeHtml(g.label)}</div>
+          ${g.items
+            .map(
+              (item) => `
+                <button class="gsr-item" type="button" data-mode="${item.modeId}" data-key="${escapeHtml(item.key)}">
+                  ${escapeHtml(item.label)}
+                  <span class="gsr-sub">${escapeHtml(item.sub)}</span>
+                </button>
+              `
+            )
+            .join("")}
+        `
+      )
+      .join("") + pendingHtml;
   globalSearchResultsEl.hidden = false;
 
   globalSearchResultsEl.querySelectorAll(".gsr-item").forEach((btn) => {
-    const group = groups.find((g) => g.label === btn.dataset.group);
-    const item = group?.items[Number(btn.dataset.index)];
-    if (!item) return;
     btn.addEventListener("click", () => {
-      item.action();
+      navigate(btn.dataset.mode, btn.dataset.key);
       globalSearchResultsEl.hidden = true;
       globalSearchEl.value = "";
     });
@@ -2326,7 +2383,10 @@ function renderGlobalSearchResults() {
 }
 
 globalSearchEl.addEventListener("input", renderGlobalSearchResults);
-globalSearchEl.addEventListener("focus", renderGlobalSearchResults);
+globalSearchEl.addEventListener("focus", () => {
+  loadRemainingFeeds();
+  renderGlobalSearchResults();
+});
 document.addEventListener("click", (e) => {
   if (!e.target.closest(".global-search-wrap")) globalSearchResultsEl.hidden = true;
 });
@@ -2336,5 +2396,30 @@ globalSearchEl.addEventListener("keydown", (e) => {
     globalSearchEl.blur();
   }
 });
+
+// ---------- Init ----------
+
+function init() {
+  fetch("data/status.json", { cache: "no-store" })
+    .then((res) => (res.ok ? res.json() : null))
+    .then((status) => {
+      dataStatus = status;
+      renderHeaderStats();
+    })
+    .catch(() => {
+      // status.json may not exist yet (e.g. local dev before any deploy) — silently skip
+    });
+
+  const route = parseRoute(location.hash);
+  // Normalize a non-route hash (or none) without adding a history entry.
+  if (location.hash.startsWith("#/") && location.hash !== routeHash(route.modeId, route.key)) {
+    history.replaceState(null, "", routeHash(route.modeId, route.key));
+  }
+  applyRoute(route, { scroll: route.key != null });
+  loadFeed(currentMode()).then(() => {
+    const idle = window.requestIdleCallback ?? ((fn) => setTimeout(fn, 200));
+    idle(loadRemainingFeeds);
+  });
+}
 
 init();

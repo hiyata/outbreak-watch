@@ -20,6 +20,7 @@
 
 import { TEITEN_DISEASES, ZENSU_DISEASES } from "./jp-diseases.mjs";
 import { computeTrend } from "./lib/trend.mjs";
+import { JP_PREFECTURE_POPULATION } from "./lib/populations.mjs";
 
 const BASE = "https://id-info.jihs.go.jp/surveillance/idwr/provisional";
 const HISTORY_WEEKS = 12;
@@ -158,17 +159,18 @@ async function main() {
   const diseaseList = [...diseases.entries()]
     .map(([disease, d]) => {
       const latest = d.nationalSeries[d.nationalSeries.length - 1];
+      // The per-prefecture series is only used here, to decide which
+      // prefectures had any cases in the window: the frontend only ever
+      // charts the national series, so (as in fetch-cdc.mjs) it isn't
+      // serialized. It was ~90% of this file's size for data nothing read.
       const prefectures = d.prefectureSeries
-        .map((series, i) => {
-          const id = String(i + 1).padStart(2, "0");
-          const lastPoint = series[series.length - 1];
-          return {
-            id,
-            current_week: lastPoint?.value ?? null,
-            series,
-          };
-        })
-        .filter((p) => p.series.some((pt) => pt.value !== null && pt.value > 0));
+        .map((series, i) => ({ id: String(i + 1).padStart(2, "0"), series }))
+        .filter(({ series }) => series.some((pt) => pt.value !== null && pt.value > 0))
+        .map(({ id, series }) => ({
+          id,
+          current_week: series[series.length - 1]?.value ?? null,
+          population: JP_PREFECTURE_POPULATION[id] ?? null,
+        }));
 
       return {
         disease,

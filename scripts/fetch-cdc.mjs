@@ -16,6 +16,7 @@
 
 import { lookupState } from "./us-states.mjs";
 import { computeTrend } from "./lib/trend.mjs";
+import { US_STATE_POPULATION } from "./lib/populations.mjs";
 
 const BASE = "https://data.cdc.gov/resource/x9gk-5huc.json";
 const HISTORY_WEEKS = 12;
@@ -104,7 +105,7 @@ async function main() {
         national_series: nationalSeries,
         national_trend: computeTrend(nationalSeries),
         states: states
-          .map(({ id, name, current_week, ytd }) => ({ id, name, current_week, ytd }))
+          .map(({ id, name, current_week, ytd }) => ({ id, name, current_week, ytd, population: US_STATE_POPULATION[id] ?? null }))
           .sort((a, b) => b.current_week - a.current_week),
       };
     })

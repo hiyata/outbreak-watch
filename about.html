@@ -4,19 +4,19 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>About &amp; Methodology — Outbreak Watch</title>
-<meta name="description" content="What Outbreak Watch is, how its six data sources are fetched and updated, and the specific limitations of each one — case-count extraction, provisional/revised figures, cross-source matching, and trend classification." />
+<meta name="description" content="What Outbreak Watch is, how its seven data sources are fetched and updated, and the specific limitations of each one — case-count extraction, provisional/revised figures, cross-source matching, and trend classification." />
 <meta name="theme-color" content="#161d20" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦠</text></svg>" />
 <link rel="canonical" href="https://hiyata.github.io/outbreak-watch/about.html" />
 
 <meta property="og:type" content="article" />
 <meta property="og:title" content="About &amp; Methodology — Outbreak Watch" />
-<meta property="og:description" content="How Outbreak Watch fetches, aggregates, and classifies disease surveillance data from six official public health sources, and the specific limitations of each." />
+<meta property="og:description" content="How Outbreak Watch fetches, aggregates, and classifies disease surveillance data from seven official public health sources, and the specific limitations of each." />
 <meta property="og:site_name" content="Outbreak Watch" />
 <meta property="og:url" content="https://hiyata.github.io/outbreak-watch/about.html" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="About &amp; Methodology — Outbreak Watch" />
-<meta name="twitter:description" content="How Outbreak Watch fetches, aggregates, and classifies disease surveillance data from six official public health sources." />
+<meta name="twitter:description" content="How Outbreak Watch fetches, aggregates, and classifies disease surveillance data from seven official public health sources." />
 
 <link rel="alternate" type="application/rss+xml" title="Outbreak Watch — WHO Disease Outbreak News" href="https://hiyata.github.io/outbreak-watch/feed.xml" />
 
@@ -129,12 +129,12 @@
 
 <main>
   <p class="lead">Outbreak Watch aggregates infectious-disease and mortality surveillance
-  data from six official public health sources into one cross-linked, searchable
+  data from seven official public health sources into one cross-linked, searchable
   dashboard. This page documents how it's built, how often it updates, and — source
   by source — exactly what each number does and doesn't mean.</p>
 
   <h2>What this is</h2>
-  <p>A static site with no backend: a GitHub Actions workflow fetches all six sources
+  <p>A static site with no backend: a GitHub Actions workflow fetches all seven sources
   once a day, writes the results as plain JSON files, and GitHub Pages serves them
   directly. There is no database, no server-side code, and no manual curation of the
   data itself — everything shown is pulled straight from each source's own API or
@@ -214,20 +214,48 @@
     counts.</p>
     <div class="caveat">Sentinel-site counts are useful for tracking trend direction,
     not absolute national burden — real case counts are higher. Figures are
-    provisional and may be revised in JIHS's later confirmed annual reports.</div>
+    provisional and may be revised in JIHS's later confirmed annual reports.
+    Per-100,000 rates are offered for all-case diseases only, using 2020 census
+    populations — dividing a sentinel sample by total population would look like an
+    incidence rate without being one.</div>
   </div>
 
+  <div class="source-card">
+    <h3>Germany (RKI SurvStat)</h3>
+    <div class="meta">Robert Koch Institute · weekly, all 16 federal states</div>
+    <p>Notifiable-disease reports under Germany's Infection Protection Act (IfSG),
+    queried from RKI's SurvStat database. SurvStat has no REST API — its web interface
+    is backed by a SOAP/OLAP service whose request format was recovered from the
+    open-source <a href="https://github.com/bristol-vaccine-centre/rsurvstat">rsurvstat</a>
+    R package. Counts are by reporting week (when the local health office was
+    notified), not symptom onset, and only the latest <em>complete</em> week is shown.</p>
+    <div class="caveat">The latest week is provisional and rises as late reports arrive.
+    Disease names appear exactly as SurvStat's English catalogue labels them — some only
+    in German, some prefixed "(e)", a marker RKI doesn't document in its query service,
+    so it's shown rather than interpreted. Some diseases are notifiable only under
+    individual states' own regulations ("Landesmeldeverordnung"): a blank state means
+    "not reported there", not zero cases.</div>
+  </div>
+
+  <h2>Per-capita rates</h2>
+  <p>The US, Japan and Germany maps can be colored per 100,000 residents instead of by
+  raw count, so populous regions don't dominate by size alone. Denominators are
+  vendored in
+  <a href="https://github.com/hiyata/outbreak-watch/blob/main/scripts/lib/populations.mjs">scripts/lib/populations.mjs</a>:
+  US Census Bureau 2024 state estimates, Japan's 2020 census, and Destatis end-of-2023
+  state populations.</p>
+
   <h2>Cross-source linking</h2>
-  <p>A WHO outbreak's detail view links to matching local data in the other five
+  <p>A WHO outbreak's detail view links to matching local data in the other six
   sources when the outbreak's country and disease overlap with what that source
   tracks; local-mode detail views link back to WHO the same way.</p>
   <p>Matching is a best-effort keyword overlap on free-text disease names — there is no
-  shared disease taxonomy across six independent sources published in five languages —
+  shared disease taxonomy across seven independent sources published in five languages —
   so it's deliberately conservative: a missed link is preferred over a wrong one.</p>
 
   <h2>Growth rate &amp; trend classification</h2>
   <p>Every entity (a WHO outbreak, a CDC disease's national total, a Brazilian/Chilean/
-  English region, a Japanese disease) gets two related but distinct numbers:</p>
+  English region, a Japanese or German disease) gets two related but distinct numbers:</p>
   <ul>
     <li><strong>Percent change</strong> — the literal difference between the latest and
     previous reporting period.</li>
@@ -248,9 +276,9 @@
   <p>Implementation: <a href="https://github.com/hiyata/outbreak-watch/blob/main/scripts/lib/trend.mjs">scripts/lib/trend.mjs</a>.</p>
 
   <h2>Update cadence &amp; reliability</h2>
-  <p>All six sources are re-fetched once a day by a GitHub Actions workflow. Each
+  <p>All seven sources are re-fetched once a day by a GitHub Actions workflow. Each
   source's fetch step runs independently — if one source's upstream API is down or
-  changes shape, the other five still update and deploy normally, and a
+  changes shape, the others still update and deploy normally, and a
   <code>data/status.json</code> health file records which sources last succeeded or
   failed. The dashboard shows a warning badge when a source hasn't updated
   successfully.</p>
@@ -258,9 +286,16 @@
   <h2>Follow updates</h2>
   <p>New and updated WHO Disease Outbreak News reports are available as an
   <a href="feed.xml">RSS feed</a> — subscribe in any feed reader to get them without
-  revisiting the site. The other five sources are recurring weekly counts rather than
+  revisiting the site. The other six sources are recurring weekly counts rather than
   dated articles, so they aren't included in the feed to avoid republishing the same
   number every cycle.</p>
+  <p>Inside the dashboard, <strong>☆ Watch</strong> on any outbreak, disease or region
+  pins it to the overview shown when nothing is selected, which tells you whether it
+  has new data since your last visit. The watchlist is stored only in your own
+  browser. The same overview lists everything currently classified as rising, source
+  by source (ignoring counts under 10, where a jump from 1 to 3 reads as a steep rise
+  but means little). Every view has its own URL, so any outbreak, disease or region
+  can be linked to directly.</p>
 
   <h2 id="strains">Strain / variant matching</h2>
   <p>For a small allowlist of pathogens with a curated <a href="https://clades.nextstrain.org">Nextclade</a>

@@ -48,11 +48,23 @@ jobs:
       - id: jp
         run: node scripts/fetch-japan.mjs
         continue-on-error: true
+      - id: de
+        run: node scripts/fetch-germany.mjs
+        continue-on-error: true
+      # Pinned to an exact release and verified by checksum, rather than
+      # pulling "latest": an unpinned binary download means a breaking
+      # upstream release (or a tampered asset) would silently change what
+      # this job runs. To upgrade, bump the version and replace the sha256
+      # with the "digest" GitHub lists for that release's linux asset.
       - name: Install Nextclade CLI
+        env:
+          NEXTCLADE_VERSION: "3.24.0"
+          NEXTCLADE_SHA256: "3ac4fca7cc2c8b2f93a8998b37a2344f428176cd970cfa713a1a6f8ba30f0156"
         run: |
-          curl -fsSL -o /usr/local/bin/nextclade \
-            https://github.com/nextstrain/nextclade/releases/latest/download/nextclade-x86_64-unknown-linux-gnu
-          chmod +x /usr/local/bin/nextclade
+          curl -fsSL -o /tmp/nextclade \
+            "https://github.com/nextstrain/nextclade/releases/download/${NEXTCLADE_VERSION}/nextclade-x86_64-unknown-linux-gnu"
+          echo "${NEXTCLADE_SHA256}  /tmp/nextclade" | sha256sum -c -
+          install -m 755 /tmp/nextclade /usr/local/bin/nextclade
         continue-on-error: true
       # Strain matching depends on data/feed.json already being fresh (it
       # reads outbreak country/date to search NCBI), so this has to run
@@ -79,6 +91,7 @@ jobs:
               {"id": "cl", "label": "Chile (DEIS)", "outcome": "${{ steps.cl.outcome }}"},
               {"id": "uk", "label": "England (UKHSA)", "outcome": "${{ steps.uk.outcome }}"},
               {"id": "jp", "label": "Japan (JIHS)", "outcome": "${{ steps.jp.outcome }}"},
+              {"id": "de", "label": "Germany (RKI)", "outcome": "${{ steps.de.outcome }}"},
               {"id": "strains", "label": "Strain matching (NCBI + Nextclade)", "outcome": "${{ steps.strains.outcome }}"}
             ]
           }
@@ -88,7 +101,7 @@ jobs:
         run: |
           git config user.name "outbreak-watch-bot"
           git config user.email "actions@github.com"
-          git add data/feed.json data/cdc-feed.json data/br-feed.json data/cl-feed.json data/uk-feed.json data/jp-feed.json data/status.json data/strains feed.xml
+          git add data/feed.json data/cdc-feed.json data/br-feed.json data/cl-feed.json data/uk-feed.json data/jp-feed.json data/de-feed.json data/status.json data/strains feed.xml
           git diff --cached --quiet && echo "No changes" || git commit -m "Update feed [skip ci]"
           git push
 

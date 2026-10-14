@@ -4,29 +4,29 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Outbreak Watch</title>
-<meta name="description" content="A live, cross-linked dashboard of disease surveillance data from WHO, CDC, Brazil, Chile, England, and Japan — real structured data, not guesses, with trend charts and unified search across all six sources." />
+<meta name="description" content="A live, cross-linked dashboard of disease surveillance data from WHO, CDC, Brazil, Chile, England, Japan, and Germany — real structured data, not guesses, with trend charts and unified search across all seven sources." />
 <meta name="theme-color" content="#161d20" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦠</text></svg>" />
 <link rel="alternate" type="application/rss+xml" title="Outbreak Watch — WHO Disease Outbreak News" href="https://hiyata.github.io/outbreak-watch/feed.xml" />
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Outbreak Watch" />
-<meta property="og:description" content="A live, cross-linked dashboard of disease surveillance data from WHO, CDC, Brazil, Chile, England, and Japan — real structured data, not guesses, with trend charts and unified search across all six sources." />
+<meta property="og:description" content="A live, cross-linked dashboard of disease surveillance data from WHO, CDC, Brazil, Chile, England, Japan, and Germany — real structured data, not guesses, with trend charts and unified search across all seven sources." />
 <meta property="og:site_name" content="Outbreak Watch" />
 <meta property="og:url" content="https://hiyata.github.io/outbreak-watch/" />
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Outbreak Watch" />
-<meta name="twitter:description" content="A live, cross-linked dashboard of disease surveillance data from WHO, CDC, Brazil, Chile, England, and Japan." />
+<meta name="twitter:description" content="A live, cross-linked dashboard of disease surveillance data from WHO, CDC, Brazil, Chile, England, Japan, and Germany." />
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "Outbreak Watch",
-  "description": "Aggregated, cross-linked infectious disease surveillance data from six official public health sources: WHO Disease Outbreak News (global), CDC NNDSS (United States), InfoGripe/Fiocruz (Brazil), DEIS/MINSAL (Chile), UKHSA data dashboard (England), and JIHS/IDWR (Japan). Updated daily.",
+  "description": "Aggregated, cross-linked infectious disease surveillance data from seven official public health sources: WHO Disease Outbreak News (global), CDC NNDSS (United States), InfoGripe/Fiocruz (Brazil), DEIS/MINSAL (Chile), UKHSA data dashboard (England), JIHS/IDWR (Japan), and RKI SurvStat (Germany). Updated daily.",
   "url": "https://hiyata.github.io/outbreak-watch/",
-  "keywords": ["infectious disease", "disease surveillance", "outbreak tracking", "epidemiology", "public health", "WHO", "CDC", "NNDSS"],
+  "keywords": ["infectious disease", "disease surveillance", "outbreak tracking", "epidemiology", "public health", "WHO", "CDC", "NNDSS", "RKI"],
   "temporalCoverage": "2020/..",
   "isAccessibleForFree": true,
   "creator": { "@type": "Organization", "name": "Outbreak Watch" },
@@ -36,12 +36,13 @@
     { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://hiyata.github.io/outbreak-watch/data/br-feed.json", "name": "InfoGripe (Brazil)" },
     { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://hiyata.github.io/outbreak-watch/data/cl-feed.json", "name": "DEIS/MINSAL (Chile)" },
     { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://hiyata.github.io/outbreak-watch/data/uk-feed.json", "name": "UKHSA data dashboard (England)" },
-    { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://hiyata.github.io/outbreak-watch/data/jp-feed.json", "name": "JIHS/IDWR (Japan)" }
+    { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://hiyata.github.io/outbreak-watch/data/jp-feed.json", "name": "JIHS/IDWR (Japan)" },
+    { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://hiyata.github.io/outbreak-watch/data/de-feed.json", "name": "RKI SurvStat (Germany)" }
   ]
 }
 </script>
-<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
 <style>
   :root {
     --bg: #0f1416;
@@ -82,6 +83,8 @@
     }
   }
   * { box-sizing: border-box; }
+  /* Author display rules (.legend { display: flex } etc.) would otherwise beat the UA's [hidden] rule. */
+  [hidden] { display: none !important; }
   .skip-link {
     position: absolute;
     top: -100px;
@@ -118,6 +121,7 @@
   }
   header.top h1 { font-size: 1.15rem; margin: 0; letter-spacing: -0.01em; }
   header.top h1 span { color: var(--accent); }
+  header.top h1 a { color: inherit; text-decoration: none; }
   header.top .stats { font-size: 0.8rem; color: var(--muted); display: flex; gap: 1rem; }
   header.top .stats b { color: var(--text); font-weight: 600; }
   .health-warning {
@@ -219,12 +223,17 @@
     min-height: 30px;
   }
   .mode-tab.active { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
-  #map-container { flex: 1; min-height: 320px; }
-  #map-container svg { width: 100%; height: auto; display: block; }
+  #map-container { flex: 1; min-height: 320px; position: relative; }
+  /* Capped to the viewport so tall maps (Chile, Germany, Japan) stay level with the
+     viewport-capped sidebar instead of overhanging it; the viewBox keeps proportions. */
+  #map-container svg { width: 100%; height: auto; max-height: calc(100vh - 150px); display: block; }
   .country-path { stroke: var(--bg); stroke-width: 0.4; cursor: default; transition: opacity 0.1s; }
   .country-path.has-outbreak { cursor: pointer; }
   .country-path.has-outbreak:hover { opacity: 0.8; }
   .country-path.selected { stroke: var(--accent); stroke-width: 1.5; }
+  .country-path:focus { outline: none; }
+  .country-path:focus-visible { stroke: var(--text); stroke-width: 2; }
+  .map-tooltip { white-space: normal; max-width: 240px; }
 
   .legend { display: flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; color: var(--muted); padding: 0.4rem 0 0.8rem; }
   .legend-swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
@@ -278,6 +287,8 @@
     font: inherit;
   }
   .list-item:hover { background: var(--panel-2); }
+  .list-item:focus-visible, .cross-link:focus-visible, .mode-tab:focus-visible, .detail-action:focus-visible, .overview-link:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .list-status { color: var(--muted); font-size: 0.85rem; padding: 1rem 0; text-align: center; }
   .list-item.active { background: var(--panel-2); border-left: 3px solid var(--accent); padding-left: calc(1rem - 3px); }
   .list-item.is-new { border-left: 3px solid var(--new-border); padding-left: calc(1rem - 3px); }
   .li-title { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.25rem; line-height: 1.3; }
@@ -285,10 +296,39 @@
   .li-counts { font-size: 0.74rem; color: var(--accent); font-weight: 600; }
 
   main.detail { padding: 1.25rem 1.5rem 3rem; max-width: 900px; margin: 0 auto; width: 100%; }
-  #status { color: var(--muted); font-size: 0.85rem; padding: 1rem 0; text-align: center; }
 
   .detail-head { margin-bottom: 1rem; }
   .detail-head h2 { font-size: 1.35rem; margin: 0 0 0.4rem; }
+  .detail-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; }
+  .detail-actions { display: flex; gap: 0.4rem; flex-shrink: 0; }
+  .detail-action {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    border-radius: 999px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.76rem;
+    font-weight: 600;
+    cursor: pointer;
+    min-height: 30px;
+  }
+  .detail-action:hover { color: var(--text); border-color: var(--accent); }
+  .watch-btn.on { color: var(--accent); border-color: var(--accent); }
+  .notice { background: color-mix(in srgb, var(--warning) 12%, transparent); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 0.8rem; font-size: 0.85rem; }
+
+  .overview-section { margin-top: 1.5rem; }
+  .overview-heading { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 0 0 0.6rem; font-weight: 600; }
+  .overview-list { list-style: none; margin: 0; padding: 0; }
+  .overview-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 0.7rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+  .overview-link { background: none; border: none; padding: 0; font: inherit; font-weight: 600; color: var(--text); cursor: pointer; text-align: left; }
+  .overview-link:hover { color: var(--accent); text-decoration: underline; }
+  .overview-source { font-size: 0.74rem; color: var(--muted); }
+  .overview-status { flex: 1 1 220px; min-width: 0; }
+  .overview-remove { background: none; border: none; color: var(--muted); font-size: 1.1rem; line-height: 1; cursor: pointer; padding: 0.1rem 0.4rem; margin-left: auto; }
+  .overview-remove:hover { color: var(--accent); }
+  .watch-change { color: var(--accent); font-size: 0.78rem; font-weight: 600; }
+  .rising-group { margin-bottom: 1.1rem; }
+  .rising-group h3 { font-size: 0.86rem; margin: 0.8rem 0 0.2rem; }
   .detail-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; font-size: 0.78rem; color: var(--muted); align-items: center; }
   .tag { background: var(--panel-2); border: 1px solid var(--border); border-radius: 999px; padding: 0.15rem 0.6rem; }
   .trend-tag { font-weight: 600; }
@@ -323,6 +363,9 @@
   table.state-table th, table.state-table td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--border); }
   table.state-table th { color: var(--muted); font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; }
   table.state-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  table.state-table th.num { text-align: right; }
+  @keyframes row-flash { from { background: color-mix(in srgb, var(--accent) 35%, transparent); } to { background: transparent; } }
+  table.state-table tr.flash td { animation: row-flash 1.6s ease-out; }
 
   .chart-box {
     background: var(--panel-2);
@@ -453,7 +496,7 @@
 <a href="#main-layout" class="skip-link">Skip to outbreak data</a>
 <div class="app">
   <header class="top">
-    <h1>Outbreak<span>Watch</span></h1>
+    <h1><a href="#/" id="home-link" title="Back to the overview">Outbreak<span>Watch</span></a></h1>
     <div class="global-search-wrap">
       <input type="search" id="global-search" placeholder="Search everything — disease, country, region…" aria-label="Search all outbreak data sources" autocomplete="off" />
       <div id="global-search-results" class="global-search-results" hidden></div>
@@ -461,58 +504,50 @@
     <div class="stats" id="header-stats">Loading…</div>
   </header>
 
+  <!-- Mode tabs, map containers and sidebar lists are generated by app.js from
+       its MODES registry; per-mode controls, legends and footers below follow
+       the controls-<id> / legend-<id> / footer-<id> naming it looks up. -->
   <div class="layout" id="main-layout">
     <div class="map-panel">
       <h2>
         <span id="map-title">Active outbreaks by country</span>
-        <span class="mode-tabs">
-          <button class="mode-tab active" id="tab-who" type="button">World (WHO)</button>
-          <button class="mode-tab" id="tab-cdc" type="button">United States (CDC)</button>
-          <button class="mode-tab" id="tab-br" type="button">Brazil (InfoGripe)</button>
-          <button class="mode-tab" id="tab-cl" type="button">Chile (DEIS)</button>
-          <button class="mode-tab" id="tab-uk" type="button">England (UKHSA)</button>
-          <button class="mode-tab" id="tab-jp" type="button">Japan (JIHS)</button>
-        </span>
+        <span class="mode-tabs" id="mode-tabs" role="group" aria-label="Data source"></span>
       </h2>
-      <div id="map-container">
-        <div id="who-map-wrap"></div>
-        <div id="cdc-map-wrap" style="display:none"></div>
-        <div id="br-map-wrap" style="display:none"></div>
-        <div id="cl-map-wrap" style="display:none"></div>
-        <div id="uk-map-wrap" style="display:none"></div>
-        <div id="jp-map-wrap" style="display:none"></div>
-      </div>
+      <div id="map-container"></div>
       <div class="legend" id="legend-who">
         <span class="legend-swatch" style="background:var(--map-land)"></span> no report
         <span class="legend-swatch" style="background:var(--map-hit-1)"></span> 1 outbreak
         <span class="legend-swatch" style="background:var(--map-hit-2)"></span> 2
         <span class="legend-swatch" style="background:var(--map-hit-3)"></span> 3+
       </div>
-      <div class="legend" id="legend-cdc" style="display:none">
-        Color intensity = share of that disease's national case total reported by each state. Select a disease to color the map.
+      <div class="legend" id="legend-cdc" hidden>
+        <span>Color intensity = <span data-legend-basis>case count</span> this week, relative to the highest state. Select a disease to color the map; hover a state for its numbers.</span>
       </div>
-      <div class="legend" id="legend-br" style="display:none">
+      <div class="legend" id="legend-br" hidden>
         <span class="legend-swatch" style="background:#3f7a5c"></span> Segurança
         <span class="legend-swatch" style="background:#8bb08a"></span> Baixo risco
         <span class="legend-swatch" style="background:#e0c34f"></span> Alerta
         <span class="legend-swatch" style="background:#e0883f"></span> Risco
         <span class="legend-swatch" style="background:#b8461f"></span> Alto risco
       </div>
-      <div class="legend" id="legend-cl" style="display:none">
+      <div class="legend" id="legend-cl" hidden>
         Color = weekly all-cause deaths vs. that region's own recent 8-week average. Blue = below baseline, red = above. Not disease-specific — see note below.
       </div>
-      <div class="legend" id="legend-uk" style="display:none">
-        Color intensity = value relative to that indicator's highest region this week. Select a disease to color the map.
+      <div class="legend" id="legend-uk" hidden>
+        <span>Color intensity = <span data-legend-basis>value</span> relative to that indicator's highest region this week. Select a disease to color the map.</span>
       </div>
-      <div class="legend" id="legend-jp" style="display:none">
-        Color intensity = case count relative to that disease's highest-reporting prefecture this week. Select a disease to color the map.
+      <div class="legend" id="legend-jp" hidden>
+        <span>Color intensity = <span data-legend-basis>case count</span> this week, relative to the highest prefecture. Select a disease to color the map; hover a prefecture for its numbers.</span>
+      </div>
+      <div class="legend" id="legend-de" hidden>
+        <span>Color intensity = <span data-legend-basis>case count</span> this week, relative to the highest state. Select a disease to color the map; hover a state for its numbers.</span>
       </div>
     </div>
 
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
       <div class="sidebar-controls" id="controls-who">
-        <input type="search" id="search" placeholder="Search disease, country…" aria-label="Search WHO outbreaks by disease or country" />
-        <select id="sort" aria-label="Sort WHO outbreaks">
+        <input type="search" id="search-who" placeholder="Search disease, country…" aria-label="Search WHO outbreaks by disease or country" />
+        <select id="sort-who" aria-label="Sort WHO outbreaks">
           <option value="new">Recently updated first</option>
           <option value="unread">Unread first</option>
           <option value="count">Most updates first</option>
@@ -523,69 +558,71 @@
           Show historical (no update in 12+ months)
         </label>
       </div>
-      <div class="sidebar-controls" id="controls-cdc" style="display:none">
-        <input type="search" id="cdc-search" placeholder="Search notifiable disease…" aria-label="Search CDC notifiable diseases" />
-        <select id="cdc-sort" aria-label="Sort CDC diseases">
+      <div class="sidebar-controls" id="controls-cdc" hidden>
+        <input type="search" id="search-cdc" placeholder="Search notifiable disease…" aria-label="Search CDC notifiable diseases" />
+        <select id="sort-cdc" aria-label="Sort CDC diseases">
           <option value="week">Most cases this week first</option>
           <option value="ytd">Most cases this year first</option>
           <option value="states">Most states reporting first</option>
         </select>
+        <label class="checkbox-row">
+          <input type="checkbox" id="percap-cdc" />
+          Color map per 100,000 residents
+        </label>
       </div>
-      <div class="sidebar-controls" id="controls-br" style="display:none">
-        <input type="search" id="br-search" placeholder="Search state…" aria-label="Search Brazilian states" />
-        <select id="br-sort" aria-label="Sort Brazilian states">
+      <div class="sidebar-controls" id="controls-br" hidden>
+        <input type="search" id="search-br" placeholder="Search state…" aria-label="Search Brazilian states" />
+        <select id="sort-br" aria-label="Sort Brazilian states">
           <option value="cases">Most cases first</option>
           <option value="intensity">Highest risk level first</option>
           <option value="name">State name (A–Z)</option>
         </select>
       </div>
-      <div class="outbreak-list" id="outbreak-list">
-        <p id="status">Loading…</p>
-      </div>
-      <div class="outbreak-list" id="cdc-list" style="display:none">
-        <p id="cdc-status">Loading…</p>
-      </div>
-      <div class="sidebar-controls" id="controls-cl" style="display:none">
-        <input type="search" id="cl-search" placeholder="Search region…" aria-label="Search Chilean regions" />
-        <select id="cl-sort" aria-label="Sort Chilean regions">
+      <div class="sidebar-controls" id="controls-cl" hidden>
+        <input type="search" id="search-cl" placeholder="Search region…" aria-label="Search Chilean regions" />
+        <select id="sort-cl" aria-label="Sort Chilean regions">
           <option value="pct">Most above baseline first</option>
           <option value="deaths">Most deaths first</option>
           <option value="name">Region name (A–Z)</option>
         </select>
       </div>
-      <div class="sidebar-controls" id="controls-uk" style="display:none">
-        <input type="search" id="uk-search" placeholder="Search disease…" aria-label="Search England notifiable diseases" />
-        <select id="uk-sort" aria-label="Sort England diseases">
+      <div class="sidebar-controls" id="controls-uk" hidden>
+        <input type="search" id="search-uk" placeholder="Search disease…" aria-label="Search England notifiable diseases" />
+        <select id="sort-uk" aria-label="Sort England diseases">
           <option value="value">Highest current value first</option>
           <option value="trend">Rising fastest first</option>
           <option value="name">Disease name (A–Z)</option>
         </select>
       </div>
-      <div class="sidebar-controls" id="controls-jp" style="display:none">
-        <input type="search" id="jp-search" placeholder="Search disease…" aria-label="Search Japan notifiable diseases" />
-        <select id="jp-sort" aria-label="Sort Japan diseases">
+      <div class="sidebar-controls" id="controls-jp" hidden>
+        <input type="search" id="search-jp" placeholder="Search disease…" aria-label="Search Japan notifiable diseases" />
+        <select id="sort-jp" aria-label="Sort Japan diseases">
           <option value="value">Highest case count first</option>
           <option value="trend">Rising fastest first</option>
           <option value="name">Disease name (A–Z)</option>
         </select>
+        <label class="checkbox-row">
+          <input type="checkbox" id="percap-jp" />
+          Color map per 100,000 residents (all-case diseases only)
+        </label>
       </div>
-      <div class="outbreak-list" id="br-list" style="display:none">
-        <p id="br-status">Loading…</p>
-      </div>
-      <div class="outbreak-list" id="cl-list" style="display:none">
-        <p id="cl-status">Loading…</p>
-      </div>
-      <div class="outbreak-list" id="uk-list" style="display:none">
-        <p id="uk-status">Loading…</p>
-      </div>
-      <div class="outbreak-list" id="jp-list" style="display:none">
-        <p id="jp-status">Loading…</p>
+      <div class="sidebar-controls" id="controls-de" hidden>
+        <input type="search" id="search-de" placeholder="Search notifiable disease…" aria-label="Search Germany notifiable diseases" />
+        <select id="sort-de" aria-label="Sort Germany diseases">
+          <option value="week">Most cases this week first</option>
+          <option value="ytd">Most cases this year first</option>
+          <option value="states">Most states reporting first</option>
+        </select>
+        <label class="checkbox-row">
+          <input type="checkbox" id="percap-de" />
+          Color map per 100,000 residents
+        </label>
       </div>
     </div>
   </div>
 
   <main class="detail" id="detail">
-    <p style="color: var(--muted); font-size: 0.9rem;">Select an outbreak on the left, or a highlighted country on the map, to see its full update timeline.</p>
+    <p style="color: var(--muted); font-size: 0.9rem;">Loading…</p>
   </main>
 
   <footer id="footer-who">
@@ -594,14 +631,15 @@
     and may be incomplete or delayed — always verify against the linked source before
     using clinically. Open-source; PRs adding more sources welcome.
   </footer>
-  <footer id="footer-cdc" style="display:none">
+  <footer id="footer-cdc" hidden>
     US state-level counts are the latest provisional week from CDC's National Notifiable
     Diseases Surveillance System (NNDSS), which is updated weekly and revised as reports
     come in — figures for the most recent week are usually incomplete and will rise.
     A blank state for a given disease means it isn't nationally notifiable there or data
-    was unavailable that week, not that it had zero cases.
+    was unavailable that week, not that it had zero cases. Per-100,000 rates use Census
+    Bureau 2024 state population estimates.
   </footer>
-  <footer id="footer-br" style="display:none">
+  <footer id="footer-br" hidden>
     Brazil state-level data covers Severe Acute Respiratory Syndrome (SRAG) only — the
     condition InfoGripe tracks — not a general outbreak feed. Source: InfoGripe, a
     partnership between Fiocruz (PROCC), FGV (EMAp), and Brazil's Ministry of Health,
@@ -609,7 +647,7 @@
     revise as more reports arrive. Risk levels ("intensidade") are Fiocruz's own
     population-adjusted classification, not raw case counts.
   </footer>
-  <footer id="footer-cl" style="display:none">
+  <footer id="footer-cl" hidden>
     <strong>This mode shows all-cause mortality, not a specific disease</strong> — it was
     the only Latin American national dataset found (beyond Brazil) that was both
     structured and genuinely current; Chile's actual notifiable-disease surveillance
@@ -618,7 +656,7 @@
     always an undercount — deaths take time to register — so the "vs. baseline" percentage
     for the latest week is not a reliable trend signal; treat it as provisional.
   </footer>
-  <footer id="footer-uk" style="display:none">
+  <footer id="footer-uk" hidden>
     England only (UKHSA's remit) — Scotland, Wales, and Northern Ireland have their own
     public health agencies not covered here. Source: the UKHSA data dashboard API. Each
     disease shown uses whichever of UKHSA's published indicators for it currently has the
@@ -626,14 +664,26 @@
     disease, shown alongside each figure); a disease with no indicator updated in the last
     90 days is left out entirely rather than shown with stale numbers.
   </footer>
-  <footer id="footer-jp" style="display:none">
+  <footer id="footer-jp" hidden>
     Source: JIHS (Japan Institute for Health Security, formerly NIID), weekly IDWR
     provisional data across all 47 prefectures. Two kinds of diseases are mixed together
     here: "sentinel" diseases (common illnesses like flu, RSV, hand-foot-mouth disease)
     are counts from a fixed network of reporting clinics, not a national total — real
     case counts are higher. "All-case" diseases (measles, TB, syphilis, dengue, and other
     nationally notifiable conditions) are comprehensive counts. Figures are provisional
-    and may be revised in JIHS's later confirmed annual reports.
+    and may be revised in JIHS's later confirmed annual reports. Per-100,000 rates (all-case
+    diseases only) use 2020 census populations.
+  </footer>
+  <footer id="footer-de" hidden>
+    Source: the Robert Koch Institute's SurvStat database of notifiable-disease reports
+    under Germany's Infection Protection Act (IfSG), by reporting week (when the local
+    health office was notified, not symptom onset). The latest complete week is shown;
+    it's provisional and rises as late reports arrive. Disease names appear exactly as
+    SurvStat's English catalogue labels them — some only in German, some prefixed "(e)",
+    a marker RKI doesn't document in its query service. Some diseases are notifiable only
+    under individual states' own regulations ("Landesmeldeverordnung"), so a blank state
+    means "not reported there", not zero cases. Per-100,000 rates use Destatis end-of-2023
+    state populations.
   </footer>
   <footer class="site-footer">
     <a href="about.html">About &amp; methodology</a>

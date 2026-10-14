@@ -1,6 +1,6 @@
 # Outbreak Watch
 
-A global dashboard of ongoing disease outbreaks, with six modes:
+A global dashboard of ongoing disease outbreaks, with seven modes:
 
 - **World (WHO)** — a world map highlighting affected countries, a sidebar
   ranking outbreaks by recency/updates/cases, and a detail view with the
@@ -30,8 +30,12 @@ A global dashboard of ongoing disease outbreaks, with six modes:
   common illnesses are sentinel-site counts (a sample, not a national
   total), rarer/severe diseases are comprehensive mandatory-reporting
   counts — each disease is tagged with which kind it is.
+- **Germany (RKI)** — a 16-state choropleth across ~80 currently-active
+  notifiable diseases from the Robert Koch Institute's SurvStat database,
+  by reporting week, with the same shape (and the same list/detail code)
+  as the CDC mode.
 
-All six modes are cross-linked and searchable together:
+All seven modes are cross-linked and searchable together:
 
 - **Trend charts.** Every disease/region/outbreak detail view shows its
   recent history (12 weeks for CDC/Brazil/Chile/England/Japan, the full
@@ -71,10 +75,10 @@ All six modes are cross-linked and searchable together:
   (e.g. a US avian influenza DON links to CDC's influenza surveillance);
   local-mode detail views link back to WHO the same way. Matching is a
   best-effort keyword overlap on free-text disease names — there's no
-  shared disease taxonomy across six independent sources in five
+  shared disease taxonomy across seven independent sources in five
   languages — so it's deliberately conservative: a missed link is
   preferred over a wrong one.
-- **Unified search.** The search box in the header queries all six feeds
+- **Unified search.** The search box in the header queries all seven feeds
   at once — disease names, countries, US states, Brazilian/Chilean/English
   regions, Japanese prefectures — grouped by source, click a result to
   jump straight to it.
@@ -83,10 +87,43 @@ Live data lives in [`data/feed.json`](data/feed.json) (WHO),
 [`data/cdc-feed.json`](data/cdc-feed.json) (CDC),
 [`data/br-feed.json`](data/br-feed.json) (Brazil),
 [`data/cl-feed.json`](data/cl-feed.json) (Chile),
-[`data/uk-feed.json`](data/uk-feed.json) (England), and
-[`data/jp-feed.json`](data/jp-feed.json) (Japan), regenerated daily
+[`data/uk-feed.json`](data/uk-feed.json) (England),
+[`data/jp-feed.json`](data/jp-feed.json) (Japan), and
+[`data/de-feed.json`](data/de-feed.json) (Germany), regenerated daily
 by a GitHub Actions workflow and served straight off GitHub Pages —
 no server, no database.
+
+## Navigation, watchlist, and the overview
+
+- **Every view has a URL.** The hash carries the mode and selection
+  (`#/cdc/Pertussis`, `#/who/<outbreak id>`), so links shared in
+  Slack/iMessage open the exact view, and back/forward work. A link to
+  something that has since dropped out of a feed says so instead of
+  silently showing something else. Each detail view has a "Copy link"
+  button.
+- **Watchlist.** "☆ Watch" on any outbreak, disease or region pins it to
+  the overview (stored in your browser only), which shows whether each
+  watched item has new data since your last visit and what its headline
+  number was then. "Since your last visit" is snapshotted once per
+  browser session, so refreshing no longer wipes it — previously the WHO
+  "new" badges were cleared by the first reload.
+- **Overview.** When nothing is selected, the detail area shows the
+  watchlist plus everything currently classified as rising across all
+  seven sources (up to five per source, ignoring counts under 10), instead
+  of a single line of "select something" text.
+- **Maps.** Hovering (or keyboard-focusing) a region shows its numbers in a
+  tooltip. Regions that do something on click are focusable buttons with
+  a spoken label (Enter/Space activates them); the rest are hidden from
+  assistive tech. With a disease selected, clicking a region scrolls to
+  and highlights its row in the table; with nothing selected, it opens
+  that region's top disease.
+- **Per-capita.** The US, Japan and Germany maps can be colored per
+  100,000 residents, and their tables gain a per-100k column. Population
+  denominators are vendored in
+  [`scripts/lib/populations.mjs`](scripts/lib/populations.mjs) (sources
+  listed there). Japan's sentinel-site diseases are excluded: a sample
+  from a fixed clinic network divided by total population would look
+  like an incidence rate without being one.
 
 ## Reach: mobile, accessibility, shareability
 
@@ -126,6 +163,17 @@ frontend only ever charts the national total, never a per-state one.
 Stopped writing the unused per-state series (still computed
 internally, just not serialized) and cut the file to ~375KB, a 6.7x
 reduction, with zero change in what's actually displayed.
+`data/jp-feed.json` had the same problem (a per-prefecture series per
+disease that nothing read) and dropped from 1.7MB to ~220KB the same way.
+
+Loading is lazy too: only the active mode's feed is on the critical
+path. The others load in parallel once it has rendered (they're still
+needed for cross-links, unified search and the overview), and each map
+is built the first time its mode is shown. Feeds are fetched with the
+browser's normal HTTP caching rather than `cache: "no-store"`, since
+they change once a day. The Nextclade binary the workflow installs is
+pinned to an exact release and checked against its SHA-256 rather than
+pulled from `releases/latest`.
 
 **Reliability:** found a real bug by reading the GitHub Actions
 workflow closely rather than assuming it was fine — each of the six
@@ -147,11 +195,11 @@ way.
 ## SEO
 
 Added `robots.txt`, `sitemap.xml`, and a `schema.org/Dataset`
-[JSON-LD block](index.html) listing all six underlying `data/*.json`
+[JSON-LD block](index.html) listing all seven underlying `data/*.json`
 files as `DataDownload` distributions — the schema Google Dataset
 Search specifically indexes, so this has a real shot at being found as
 an actual data source, not just a page. Deliberately left `license`
-out of that block rather than guess: this aggregates six government/
+out of that block rather than guess: this aggregates seven government/
 international sources with licensing terms that weren't individually
 verified, and asserting a specific license without checking each one
 would be a real (if easy to make) mistake for something search engines
@@ -266,7 +314,7 @@ and downstream tools might take at face value.
   position against the vendored map's ISO 3166-2:JP codes rather than by
   name.
 - [`.github/workflows/update-and-deploy.yml`](.github/workflows/update-and-deploy.yml)
-  runs all six fetch scripts on a cron schedule, commits the refreshed
+  runs all seven fetch scripts on a cron schedule, commits the refreshed
   feeds, and deploys the static site to GitHub Pages.
 - [`index.html`](index.html) / [`app.js`](app.js) render the dashboard:
   a D3 choropleth map per mode (topologies vendored locally,
@@ -274,7 +322,21 @@ and downstream tools might take at face value.
   detail panel — full update timeline in WHO mode, per-state case table in
   CDC mode, per-state SRAG detail in Brazil mode, per-region mortality
   detail in Chile mode, per-region indicator table in England mode,
-  per-prefecture case table in Japan mode.
+  per-prefecture case table in Japan and Germany modes. Each source is one
+  entry in the `MODES` registry in `app.js` (feed URL, list/search/sort,
+  detail view, map coloring and tooltip); routing, lazy loading, the
+  sidebar, maps, the watchlist and the overview are written once against
+  that interface.
+- [`scripts/fetch-germany.mjs`](scripts/fetch-germany.mjs) queries RKI's
+  SurvStat SOAP/OLAP service (format recovered from
+  [rsurvstat](https://github.com/bristol-vaccine-centre/rsurvstat)) —
+  reporting week × disease, one request per federal state, two years at
+  a time so January still gets 12 weeks of history — and drops the
+  in-progress ISO week, which is always a fraction of its final count.
+  The state map ([`data/de-states-geo.json`](data/de-states-geo.json)) is
+  vendored from
+  [deutschlandGeoJSON](https://github.com/isellsoap/deutschlandGeoJSON)
+  (Unlicense), keyed by AGS state code.
 
 ## Running locally
 
@@ -285,6 +347,7 @@ node scripts/fetch-infogripe.mjs # regenerates data/br-feed.json
 node scripts/fetch-chile.mjs     # regenerates data/cl-feed.json
 node scripts/fetch-uk.mjs        # regenerates data/uk-feed.json
 node scripts/fetch-japan.mjs     # regenerates data/jp-feed.json
+node scripts/fetch-germany.mjs   # regenerates data/de-feed.json
 python3 -m http.server           # or any static file server, then open index.html
 ```
 
@@ -357,9 +420,8 @@ No dependencies for the fetch script — it uses Node's built-in `fetch`.
     that had already reverse-engineered it — turned out to be plain XML
     over HTTP POST once the format was known, no SOAP library needed. A
     test query returned real, current (this week) COVID-19 case counts
-    for all 16 German states. Not yet built into the dashboard as a
-    seventh mode — the query format is proven but the full fetch
-    script/frontend integration hasn't been written.
+    for all 16 German states. Now built in as the seventh mode (see
+    above).
 - **UK (UKHSA)** — added (see above). A second, broader pass also checked
   Canada, Germany, Singapore, Taiwan, the Netherlands, South Africa, and
   India:
@@ -367,9 +429,8 @@ No dependencies for the fetch script — it uses Node's built-in `fetch`.
     underlying CNDSS is historically annual-cadence, not weekly; didn't
     pursue further given UK's build already covers the "real API,
     current" bar for this round.
-  - **Germany (RKI)** — SurvStat has a real web service, but it's
-    SOAP/WSDL, not REST/JSON — meaningfully more integration friction
-    than every other source in this project. Not attempted this round.
+  - **Germany (RKI)** — not attempted in this round (SOAP, not REST);
+    later added as the seventh mode — see above.
   - **Singapore** — `data.gov.sg`'s API returned a Cloudflare bot-challenge
     page on a plain request. Same category as ProMED/ECDC — not pursued.
   - **Taiwan** — has a real, well-documented Open Data Portal
@@ -455,6 +516,11 @@ trend. **England mode's unit varies by disease** — UKHSA tracks different
 diseases with different indicators (test positivity %, case counts,
 syndromic rates), so a "134" for one disease and a "2" for another are not
 directly comparable; each list item and detail view states its unit.
+**Germany mode** counts by reporting week (when the health office was
+notified), shows disease names exactly as SurvStat labels them (some in
+German, some with an undocumented "(e)" prefix), and includes diseases
+notifiable only under some states' own regulations — a blank state there
+means "not reported", not zero.
 England mode also only ever shows diseases with data from the last 90
 days, so the list of diseases present changes over time as some go stale
 and drop out. **Japan mode mixes two different reporting styles** —
