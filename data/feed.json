@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T14:13:55.622Z",
+  "generated_at": "2026-10-14T03:13:53.816Z",
   "sources": [
     "WHO"
   ],
@@ -25,7 +25,7 @@
         {
           "id": "9cca163d-6ef3-4d3e-b149-2cd7acf408f6",
           "title": "Pneumonia of undetermined etiology - the Russian Federation",
-          "url": "https://www.who.int/2026-DON620",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON620",
           "date": "2026-10-10T15:53:19Z",
           "summary": "On 2 October 2026, WHO became aware through media reports of the death of an employee of the Irkutsk Antiplague Research Institute (APRI) of Siberia and the Far East, the Russian Federation. According to these reports, the individual died on 2 October following hospitalization for severe pneumonia on 29 September, and…",
           "counts": null
@@ -66,7 +66,7 @@
         {
           "id": "8fbb14a7-4f4d-4e4a-b113-68b944028ebf",
           "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
-          "url": "https://www.who.int/2026-DON619",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619",
           "date": "2026-10-08T16:06:26Z",
           "summary": "On 5 October 2026, WHO was informed about a laboratory-confirmed imported case of Bundibugyo virus disease (BVD) in Kenya with travel history from the Democratic Republic of the Congo. The patient travelled from the Democratic Republic of the Congo to Kenya through Uganda. The patient was hospitalized and treated in…",
           "counts": null
@@ -74,7 +74,7 @@
         {
           "id": "5df1872c-3aab-4e1b-9d78-475f6ead4040",
           "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
-          "url": "https://www.who.int/2026-DON618",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON618",
           "date": "2026-09-25T15:30:18Z",
           "summary": "Since the last Disease Outbreak News was published on 11 September 2026, the Bundibugyo virus outbreak in the Democratic Republic of the Congo has expanded further, with two additional health zones affected. These include Bulu health zone in a new province, Sud Ubangi, located on the north-west part of the country and…",
           "counts": {
@@ -86,7 +86,7 @@
         {
           "id": "0381aabe-6109-425c-a3f9-2b33cb482486",
           "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
-          "url": "https://www.who.int/2026-DON617",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON617",
           "date": "2026-09-10T08:52:02Z",
           "summary": "Since the last Disease Outbreak News was published on 28 August 2026, the Bundibugyo virus outbreak in the Democratic Republic of the Congo has expanded to one additional health zone, Kayna, in North Kivu. This increase brings the total number of affected health zones to 61 across six out of 26 provinces of the…",
           "counts": {
@@ -98,7 +98,7 @@
         {
           "id": "c835cb1d-25ad-4dd9-b065-ee09c054fe81",
           "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
-          "url": "https://www.who.int/2026-DON616",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON616",
           "date": "2026-08-28T15:31:07Z",
           "summary": "Since the last Disease Outbreak News was published on 14 August 2026, the outbreak has spread from 54 to 60 health zones. The number of affected provinces stands at six out of 26 provinces of the country: Bas-Uélé, Haut-Uélé, Ituri, North Kivu, South Kivu, and Tshopo. Six additional health zones reported cases since…",
           "counts": {
@@ -7999,25 +7999,6 @@
       "trend": null,
       "updates": [
         {
-<<<<<<< HEAD
-=======
-          "id": "f58558d7-c891-4dcb-b821-987bea7b7bf9",
-          "title": "Circulating vaccine-derived poliovirus type 2 – Niger",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/30-october-2018-polio-niger-en",
-          "date": "2021-06-03T09:07:52Z",
-          "summary": "From July through September 2018, six cases of circulating vaccine-derived poliovirus type 2 (cVDPV2) were reported from Niger, genetically linked to a cVDPV2 case in Jigawa and Katsina States, Nigeria. The virus was isolated from children with acute flaccid paralysis (AFP) from Zinder region, located in the south of…",
-          "counts": null
-        },
-        {
-          "id": "745549e4-4ab0-4757-ad98-ebd7880b07be",
-          "title": "Middle East respiratory syndrome coronavirus (MERS-CoV) – Saudi Arabia",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/01-november-2018-mers-saudi-arabia-en",
-          "date": "2021-06-03T09:07:47Z",
-          "summary": "From 17 September through 15 October 2018, the International Health Regulations (IHR 2005) National Focal Point of Saudi Arabia reported eight additional cases of MERS-CoV infection, including three deaths. Of the eight cases reported, three were hospital contacts from one hospital in Dammam and two were household…",
-          "counts": null
-        },
-        {
->>>>>>> 433eca0 (Update)
           "id": "b7fdf232-2e61-4ae6-9bac-410b3438c2fd",
           "title": "Middle East respiratory syndrome coronavirus (MERS-CoV) – Saudi Arabia",
           "url": "https://www.who.int/emergencies/disease-outbreak-news/item/20-november-2018-mers-saudi-arabia-en",
@@ -8108,33 +8089,6 @@
           "date": "2018-11-15T00:00:00Z",
           "summary": "New measures to overcome obstacles in responding to the Ebola virus disease (EVD) outbreak in the Democratic Republic of the Congo are having a positive impact. The Ministry of Health (MoH), WHO and partners continue to be confident that, despite challenges, the outbreak can be contained. Over the past week (7 &ndash;…",
           "counts": null
-<<<<<<< HEAD
-=======
-        },
-        {
-          "id": "31664dc3-0a04-4822-ab82-414789077360",
-          "title": "Ebola virus disease – Democratic Republic of the Congo",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/08-november-2018-ebola-drc-en",
-          "date": "2018-11-08T00:00:00Z",
-          "summary": "As the Ebola virus disease (EVD) outbreak enters the fourth month since declaration, and case numbers surpass 300, substantial progress has been achieved in all aspects of the response. Nevertheless, there remains a challenging road ahead to control intense transmission in the city of Beni and emerging hotspots in…",
-          "counts": null
-        },
-        {
-          "id": "69d489d7-bb42-4fa9-9455-cac7a9794f08",
-          "title": "Ebola virus disease – Democratic Republic of the Congo",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/01-november-2018-ebola-drc-en",
-          "date": "2018-11-01T00:00:00Z",
-          "summary": "The increase over the past four weeks in confirmed case incidence (Figure 1), most notably in the city of Beni and communities around Butembo, is concerning. Security incidents continue to severely impact both civilians and frontline workers. Moreover, pockets of community resistance or reluctance continue to hamper…",
-          "counts": null
-        },
-        {
-          "id": "30086194-9613-4055-965e-e811dda873b7",
-          "title": "Ebola virus disease – Democratic Republic of the Congo",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/25-october-2018-ebola-drc-en",
-          "date": "2018-10-25T00:00:00Z",
-          "summary": "Security incidents over the past week, ranging from clashes between rebel and government forces resulting in civilian deaths to response vehicles being pelted with stones, continued to cause community distress and severely impede response activities for the Ebola virus disease (EVD) outbreak in the Democratic Republic…",
-          "counts": null
->>>>>>> 433eca0 (Update)
         }
       ]
     },
