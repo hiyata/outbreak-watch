@@ -6,8 +6,16 @@
     <atom:link href="https://hiyata.github.io/outbreak-watch/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated daily.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 15 Oct 2026 11:37:08 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 11:31:44 GMT</lastBuildDate>
     <generator>outbreak-watch scripts/build-rss.mjs</generator>
+    <item>
+      <title>Middle East respiratory syndrome coronavirus - Kingdom of Saudi Arabia</title>
+      <link>https://www.who.int/emergencies/disease-outbreak-news/item/middle-east-respiratory-syndrome-coronavirus---kingdom-of-saudi-arabia</link>
+      <guid isPermaLink="false">eafb07ec-9187-4b39-b310-94b99a89571a</guid>
+      <pubDate>Thu, 15 Oct 2026 16:22:00 GMT</pubDate>
+      <category>Middle East respiratory syndrome coronavirus (MERS-CoV)</category>
+      <description>Multi-country / global — Between 1 January and 5 October 2026, the Kingdom of Saudi Arabia reported eight laboratory-confirmed cases of Middle East Respiratory Syndrome Coronavirus (MERS-CoV) infection, including one death. Cases were detected across six locations: Al Jouf (1), Arar (1), Hafr Al-Batin (1), Riyadh (2), Tabuk (1) and Taif (2).…</description>
+    </item>
     <item>
       <title>Pneumonia of undetermined etiology - the Russian Federation</title>
       <link>https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON620</link>
@@ -479,14 +487,6 @@
       <pubDate>Thu, 13 Mar 2025 14:49:00 GMT</pubDate>
       <category>Middle East respiratory syndrome coronavirus (MERS-CoV)</category>
       <description>Multi-country / global — This is the bi-annual update on the Middle East respiratory syndrome coronavirus (MERS-CoV) infections reported to the World Health Organization (WHO) from the Kingdom of Saudi Arabia (KSA). From 6 September 2024 to 28 February 2025, four laboratory-confirmed cases of MERS-CoV infection, including two deaths, were…</description>
-    </item>
-    <item>
-      <title>Marburg virus disease– United Republic of Tanzania</title>
-      <link>https://www.who.int/emergencies/disease-outbreak-news/item/2025-DON559</link>
-      <guid isPermaLink="false">d9b66549-68b8-4e00-8ec5-8b643e9e3984</guid>
-      <pubDate>Thu, 13 Mar 2025 12:45:18 GMT</pubDate>
-      <category>Marburg virus disease– United Republic of Tanzania</category>
-      <description>Tanzania — On 13 March 2025, the Ministry of Health of the United Republic of Tanzania declared the end of the Marburg virus disease (MVD) outbreak. This declaration came after two consecutive incubation periods (a total of 42 days) since the last person confirmed with MVD died on 28 January 2025 and was given a safe and…</description>
     </item>
   </channel>
 </rss>
