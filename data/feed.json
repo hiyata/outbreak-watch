@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T11:26:28.519Z",
+  "generated_at": "2026-10-17T10:46:35.624Z",
   "sources": [
     "WHO"
   ],
@@ -11,7 +11,7 @@
       "disease": "Middle East respiratory syndrome coronavirus (MERS-CoV)",
       "first_seen": "2021-04-14T18:00:00Z",
       "latest_update": "2026-10-15T16:22:00Z",
-      "update_count": 25,
+      "update_count": 26,
       "countries": [
         {
           "id": "682",
@@ -124,6 +124,14 @@
           "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2019-DON191",
           "date": "2022-07-28T09:15:25Z",
           "summary": "From 1 through 31 August 2019, the National IHR Focal Point of Saudi Arabia reported 6 additional laboratory-confirmed cases of Middle East respiratory syndrome (MERS-CoV) infection and one associated death. The cases were reported from Riyadh (3 cases), Taif (1 case), Quriyat (1 case), and Najran (1 case) regions.…",
+          "counts": null
+        },
+        {
+          "id": "7ead475f-6b23-4288-8f0f-1d22d92275ab",
+          "title": "Middle East respiratory syndrome coronavirus (MERS-CoV) – The Kingdom of Saudi Arabia",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2019-DON196",
+          "date": "2022-07-28T09:14:59Z",
+          "summary": "From 1 through 30 September 2019, the National IHR Focal Point of Saudi Arabia reported 4 additional laboratory-confirmed cases of Middle East respiratory syndrome (MERS-CoV) infection and one associated death. The cases were reported from Al-Qassim (2 cases), Riyadh (1 case), and Al-Ahsaa (1 case) regions. The link…",
           "counts": null
         },
         {
@@ -7971,7 +7979,7 @@
       "disease": "2018",
       "first_seen": "2021-06-03T09:07:11Z",
       "latest_update": "2021-06-03T09:07:39Z",
-      "update_count": 11,
+      "update_count": 10,
       "countries": [
         {
           "id": "682",
@@ -8080,14 +8088,6 @@
           "url": "https://www.who.int/emergencies/disease-outbreak-news/item/22-november-2018-ebola-drc-en",
           "date": "2018-11-22T00:00:00Z",
           "summary": "Containing the ongoing Ebola virus disease (EVD) outbreak in the Democratic Republic of the Congo is a complex and challenging task but WHO remains confident that the outbreak can be successfully contained in collaboration with the Ministry of Health (MoH) and partners. On 16 November 2018, an armed group attacked the…",
-          "counts": null
-        },
-        {
-          "id": "67fea012-2279-4531-af55-b61c27759c54",
-          "title": "Ebola virus disease – Democratic Republic of the Congo",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/15-november-2018-ebola-drc-en",
-          "date": "2018-11-15T00:00:00Z",
-          "summary": "New measures to overcome obstacles in responding to the Ebola virus disease (EVD) outbreak in the Democratic Republic of the Congo are having a positive impact. The Ministry of Health (MoH), WHO and partners continue to be confident that, despite challenges, the outbreak can be contained. Over the past week (7 &ndash;…",
           "counts": null
         }
       ]

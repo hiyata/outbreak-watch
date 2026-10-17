@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-16T11:31:44Z",
+  "checked_at": "2026-10-17T10:52:10Z",
   "sources": [
     {"id": "who", "label": "World (WHO)", "outcome": "success"},
     {"id": "cdc", "label": "United States (CDC)", "outcome": "success"},
