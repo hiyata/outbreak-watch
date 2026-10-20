@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T13:21:25.254Z",
+  "generated_at": "2026-10-20T11:42:30.055Z",
   "source": "RKI SurvStat (Robert Koch Institute)",
   "year": 2026,
   "week": 42,
@@ -8,8 +8,8 @@
   "diseases": [
     {
       "disease": "Campylobacteriosis",
-      "total_current_week": 1331,
-      "total_ytd": 63755,
+      "total_current_week": 1407,
+      "total_ytd": 63832,
       "states_reporting": 16,
       "national_series": [
         {
@@ -65,19 +65,19 @@
         {
           "year": 2026,
           "week": 41,
-          "value": 1571
+          "value": 1572
         },
         {
           "year": 2026,
           "week": 42,
-          "value": 1331
+          "value": 1407
         }
       ],
       "national_trend": {
-        "latest_value": 1331,
-        "previous_value": 1571,
-        "absolute_change": -240,
-        "percent_change": -15.3,
+        "latest_value": 1407,
+        "previous_value": 1572,
+        "absolute_change": -165,
+        "percent_change": -10.5,
         "trend": "stable",
         "window_size": 4
       },
@@ -85,44 +85,51 @@
         {
           "id": "05",
           "name": "North Rhine-Westphalia",
-          "current_week": 292,
-          "ytd": 14439,
+          "current_week": 319,
+          "ytd": 14467,
           "population": 18017520
         },
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 204,
-          "ytd": 9233,
+          "current_week": 216,
+          "ytd": 9245,
           "population": 13176426
         },
         {
           "id": "08",
           "name": "Baden-Württemberg",
-          "current_week": 168,
-          "ytd": 7183,
+          "current_week": 173,
+          "ytd": 7188,
           "population": 11230740
         },
         {
           "id": "03",
           "name": "Lower Saxony",
-          "current_week": 120,
-          "ytd": 6239,
+          "current_week": 124,
+          "ytd": 6243,
           "population": 8008135
         },
         {
           "id": "06",
           "name": "Hesse",
-          "current_week": 98,
-          "ytd": 4186,
+          "current_week": 100,
+          "ytd": 4188,
           "population": 6267546
         },
         {
           "id": "14",
           "name": "Saxony",
-          "current_week": 76,
-          "ytd": 3944,
+          "current_week": 87,
+          "ytd": 3955,
           "population": 4054689
+        },
+        {
+          "id": "11",
+          "name": "Berlin",
+          "current_week": 61,
+          "ytd": 2481,
+          "population": 3662381
         },
         {
           "id": "01",
@@ -132,52 +139,45 @@
           "population": 2953202
         },
         {
-          "id": "11",
-          "name": "Berlin",
-          "current_week": 56,
-          "ytd": 2476,
-          "population": 3662381
-        },
-        {
           "id": "12",
           "name": "Brandenburg",
-          "current_week": 55,
-          "ytd": 1909,
+          "current_week": 56,
+          "ytd": 1910,
           "population": 2554464
         },
         {
           "id": "07",
           "name": "Rhineland-Palatinate",
-          "current_week": 46,
-          "ytd": 3662,
+          "current_week": 49,
+          "ytd": 3665,
           "population": 4125163
         },
         {
           "id": "13",
           "name": "Mecklenburg-Western Pomerania",
-          "current_week": 37,
-          "ytd": 1707,
+          "current_week": 40,
+          "ytd": 1710,
           "population": 1578041
         },
         {
           "id": "16",
           "name": "Thuringia",
-          "current_week": 37,
-          "ytd": 1920,
+          "current_week": 38,
+          "ytd": 1921,
           "population": 2114870
         },
         {
           "id": "02",
           "name": "Hamburg",
-          "current_week": 32,
-          "ytd": 1363,
+          "current_week": 33,
+          "ytd": 1364,
           "population": 1851596
         },
         {
           "id": "15",
           "name": "Saxony-Anhalt",
-          "current_week": 28,
-          "ytd": 1683,
+          "current_week": 29,
+          "ytd": 1684,
           "population": 2144570
         },
         {
@@ -198,8 +198,8 @@
     },
     {
       "disease": "(e) COVID-19",
-      "total_current_week": 848,
-      "total_ytd": 33956,
+      "total_current_week": 909,
+      "total_ytd": 34017,
       "states_reporting": 16,
       "national_series": [
         {
@@ -245,29 +245,29 @@
         {
           "year": 2026,
           "week": 39,
-          "value": 409
+          "value": 407
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 598
+          "value": 597
         },
         {
           "year": 2026,
           "week": 41,
-          "value": 858
+          "value": 860
         },
         {
           "year": 2026,
           "week": 42,
-          "value": 848
+          "value": 909
         }
       ],
       "national_trend": {
-        "latest_value": 848,
-        "previous_value": 858,
-        "absolute_change": -10,
-        "percent_change": -1.2,
+        "latest_value": 909,
+        "previous_value": 860,
+        "absolute_change": 49,
+        "percent_change": 5.7,
         "trend": "rising",
         "window_size": 4
       },
@@ -275,78 +275,78 @@
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 217,
-          "ytd": 5868,
+          "current_week": 236,
+          "ytd": 5888,
           "population": 13176426
         },
         {
           "id": "05",
           "name": "North Rhine-Westphalia",
-          "current_week": 181,
-          "ytd": 5776,
+          "current_week": 190,
+          "ytd": 5784,
           "population": 18017520
         },
         {
           "id": "08",
           "name": "Baden-Württemberg",
-          "current_week": 129,
-          "ytd": 3347,
+          "current_week": 133,
+          "ytd": 3350,
           "population": 11230740
         },
         {
           "id": "06",
           "name": "Hesse",
-          "current_week": 65,
-          "ytd": 2160,
+          "current_week": 68,
+          "ytd": 2163,
           "population": 6267546
         },
         {
           "id": "14",
           "name": "Saxony",
-          "current_week": 44,
-          "ytd": 2891,
+          "current_week": 47,
+          "ytd": 2894,
           "population": 4054689
         },
         {
           "id": "11",
           "name": "Berlin",
-          "current_week": 40,
-          "ytd": 1607,
+          "current_week": 42,
+          "ytd": 1608,
           "population": 3662381
         },
         {
           "id": "12",
           "name": "Brandenburg",
-          "current_week": 29,
-          "ytd": 1834,
+          "current_week": 33,
+          "ytd": 1838,
           "population": 2554464
-        },
-        {
-          "id": "03",
-          "name": "Lower Saxony",
-          "current_week": 29,
-          "ytd": 2226,
-          "population": 8008135
         },
         {
           "id": "07",
           "name": "Rhineland-Palatinate",
-          "current_week": 25,
-          "ytd": 1695,
+          "current_week": 33,
+          "ytd": 1703,
           "population": 4125163
+        },
+        {
+          "id": "03",
+          "name": "Lower Saxony",
+          "current_week": 31,
+          "ytd": 2230,
+          "population": 8008135
         },
         {
           "id": "15",
           "name": "Saxony-Anhalt",
-          "current_week": 22,
-          "ytd": 1379,
+          "current_week": 25,
+          "ytd": 1382,
           "population": 2144570
         },
         {
           "id": "01",
           "name": "Schleswig-Holstein",
-          "current_week": 19,
-          "ytd": 1352,
+          "current_week": 20,
+          "ytd": 1353,
           "population": 2953202
         },
         {
@@ -357,18 +357,18 @@
           "population": 1851596
         },
         {
+          "id": "13",
+          "name": "Mecklenburg-Western Pomerania",
+          "current_week": 13,
+          "ytd": 1194,
+          "population": 1578041
+        },
+        {
           "id": "16",
           "name": "Thuringia",
           "current_week": 11,
           "ytd": 1312,
           "population": 2114870
-        },
-        {
-          "id": "13",
-          "name": "Mecklenburg-Western Pomerania",
-          "current_week": 10,
-          "ytd": 1191,
-          "population": 1578041
         },
         {
           "id": "10",
@@ -388,8 +388,8 @@
     },
     {
       "disease": "Noroviral gastroenteritis",
-      "total_current_week": 719,
-      "total_ytd": 100081,
+      "total_current_week": 775,
+      "total_ytd": 100140,
       "states_reporting": 16,
       "national_series": [
         {
@@ -410,7 +410,7 @@
         {
           "year": 2026,
           "week": 34,
-          "value": 911
+          "value": 912
         },
         {
           "year": 2026,
@@ -445,19 +445,19 @@
         {
           "year": 2026,
           "week": 41,
-          "value": 772
+          "value": 773
         },
         {
           "year": 2026,
           "week": 42,
-          "value": 719
+          "value": 775
         }
       ],
       "national_trend": {
-        "latest_value": 719,
-        "previous_value": 772,
-        "absolute_change": -53,
-        "percent_change": -6.9,
+        "latest_value": 775,
+        "previous_value": 773,
+        "absolute_change": 2,
+        "percent_change": 0.3,
         "trend": "stable",
         "window_size": 4
       },
@@ -465,30 +465,37 @@
         {
           "id": "05",
           "name": "North Rhine-Westphalia",
-          "current_week": 139,
-          "ytd": 16569,
+          "current_week": 151,
+          "ytd": 16581,
           "population": 18017520
         },
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 139,
-          "ytd": 12250,
+          "current_week": 147,
+          "ytd": 12259,
           "population": 13176426
         },
         {
           "id": "03",
           "name": "Lower Saxony",
-          "current_week": 70,
-          "ytd": 8751,
+          "current_week": 77,
+          "ytd": 8758,
           "population": 8008135
         },
         {
           "id": "08",
           "name": "Baden-Württemberg",
-          "current_week": 70,
-          "ytd": 8607,
+          "current_week": 72,
+          "ytd": 8609,
           "population": 11230740
+        },
+        {
+          "id": "14",
+          "name": "Saxony",
+          "current_week": 56,
+          "ytd": 6519,
+          "population": 4054689
         },
         {
           "id": "06",
@@ -498,25 +505,32 @@
           "population": 6267546
         },
         {
-          "id": "15",
-          "name": "Saxony-Anhalt",
-          "current_week": 50,
-          "ytd": 5112,
-          "population": 2144570
-        },
-        {
           "id": "01",
           "name": "Schleswig-Holstein",
-          "current_week": 50,
-          "ytd": 4743,
+          "current_week": 52,
+          "ytd": 4745,
           "population": 2953202
         },
         {
-          "id": "14",
-          "name": "Saxony",
-          "current_week": 49,
-          "ytd": 6512,
-          "population": 4054689
+          "id": "15",
+          "name": "Saxony-Anhalt",
+          "current_week": 51,
+          "ytd": 5114,
+          "population": 2144570
+        },
+        {
+          "id": "16",
+          "name": "Thuringia",
+          "current_week": 23,
+          "ytd": 5653,
+          "population": 2114870
+        },
+        {
+          "id": "07",
+          "name": "Rhineland-Palatinate",
+          "current_week": 22,
+          "ytd": 4507,
+          "population": 4125163
         },
         {
           "id": "02",
@@ -526,38 +540,24 @@
           "population": 1851596
         },
         {
-          "id": "07",
-          "name": "Rhineland-Palatinate",
-          "current_week": 20,
-          "ytd": 4505,
-          "population": 4125163
-        },
-        {
           "id": "13",
           "name": "Mecklenburg-Western Pomerania",
-          "current_week": 18,
-          "ytd": 4342,
+          "current_week": 19,
+          "ytd": 4343,
           "population": 1578041
         },
         {
           "id": "12",
           "name": "Brandenburg",
-          "current_week": 13,
-          "ytd": 5610,
+          "current_week": 16,
+          "ytd": 5613,
           "population": 2554464
-        },
-        {
-          "id": "16",
-          "name": "Thuringia",
-          "current_week": 13,
-          "ytd": 5642,
-          "population": 2114870
         },
         {
           "id": "11",
           "name": "Berlin",
-          "current_week": 8,
-          "ytd": 5999,
+          "current_week": 9,
+          "ytd": 6000,
           "population": 3662381
         },
         {
@@ -578,8 +578,8 @@
     },
     {
       "disease": "(e) Keuchhusten (Meldepflicht gemäß IfSG)",
-      "total_current_week": 545,
-      "total_ytd": 17211,
+      "total_current_week": 606,
+      "total_ytd": 17272,
       "states_reporting": 16,
       "national_series": [
         {
@@ -640,73 +640,80 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 545
+          "value": 606
         }
       ],
       "national_trend": {
-        "latest_value": 545,
+        "latest_value": 606,
         "previous_value": 605,
-        "absolute_change": -60,
-        "percent_change": -9.9,
-        "trend": "stable",
+        "absolute_change": 1,
+        "percent_change": 0.2,
+        "trend": "rising",
         "window_size": 4
       },
       "states": [
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 180,
-          "ytd": 5990,
+          "current_week": 219,
+          "ytd": 6029,
           "population": 13176426
         },
         {
           "id": "05",
           "name": "North Rhine-Westphalia",
-          "current_week": 65,
-          "ytd": 1764,
+          "current_week": 70,
+          "ytd": 1769,
           "population": 18017520
         },
         {
           "id": "15",
           "name": "Saxony-Anhalt",
-          "current_week": 58,
-          "ytd": 761,
+          "current_week": 65,
+          "ytd": 768,
           "population": 2144570
         },
         {
           "id": "14",
           "name": "Saxony",
-          "current_week": 50,
-          "ytd": 1473,
+          "current_week": 53,
+          "ytd": 1476,
           "population": 4054689
         },
         {
           "id": "16",
           "name": "Thuringia",
-          "current_week": 35,
-          "ytd": 752,
+          "current_week": 36,
+          "ytd": 753,
           "population": 2114870
         },
         {
           "id": "06",
           "name": "Hesse",
-          "current_week": 29,
-          "ytd": 945,
+          "current_week": 30,
+          "ytd": 946,
           "population": 6267546
         },
         {
           "id": "08",
           "name": "Baden-Württemberg",
-          "current_week": 28,
-          "ytd": 1916,
+          "current_week": 27,
+          "ytd": 1915,
           "population": 11230740
         },
         {
           "id": "12",
           "name": "Brandenburg",
-          "current_week": 23,
-          "ytd": 465,
+          "current_week": 24,
+          "ytd": 466,
           "population": 2554464
+        },
+        {
+          "id": "13",
+          "name": "Mecklenburg-Western Pomerania",
+          "current_week": 18,
+          "ytd": 412,
+          "population": 1578041
         },
         {
           "id": "11",
@@ -714,13 +721,6 @@
           "current_week": 16,
           "ytd": 370,
           "population": 3662381
-        },
-        {
-          "id": "13",
-          "name": "Mecklenburg-Western Pomerania",
-          "current_week": 15,
-          "ytd": 409,
-          "population": 1578041
         },
         {
           "id": "03",
@@ -732,8 +732,8 @@
         {
           "id": "07",
           "name": "Rhineland-Palatinate",
-          "current_week": 13,
-          "ytd": 1041,
+          "current_week": 15,
+          "ytd": 1043,
           "population": 4125163
         },
         {
@@ -768,8 +768,8 @@
     },
     {
       "disease": "Influenza, saisonal",
-      "total_current_week": 521,
-      "total_ytd": 213766,
+      "total_current_week": 546,
+      "total_ytd": 213791,
       "states_reporting": 16,
       "national_series": [
         {
@@ -830,14 +830,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 521
+          "value": 546
         }
       ],
       "national_trend": {
-        "latest_value": 521,
+        "latest_value": 546,
         "previous_value": 582,
-        "absolute_change": -61,
-        "percent_change": -10.5,
+        "absolute_change": -36,
+        "percent_change": -6.2,
         "trend": "rising",
         "window_size": 4
       },
@@ -845,15 +845,15 @@
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 160,
-          "ytd": 32056,
+          "current_week": 169,
+          "ytd": 32065,
           "population": 13176426
         },
         {
           "id": "05",
           "name": "North Rhine-Westphalia",
-          "current_week": 60,
-          "ytd": 34711,
+          "current_week": 64,
+          "ytd": 34715,
           "population": 18017520
         },
         {
@@ -866,37 +866,37 @@
         {
           "id": "14",
           "name": "Saxony",
-          "current_week": 38,
-          "ytd": 22041,
+          "current_week": 39,
+          "ytd": 22042,
           "population": 4054689
         },
         {
           "id": "11",
           "name": "Berlin",
-          "current_week": 31,
-          "ytd": 8028,
+          "current_week": 32,
+          "ytd": 8029,
           "population": 3662381
         },
         {
           "id": "16",
           "name": "Thuringia",
-          "current_week": 28,
-          "ytd": 10921,
+          "current_week": 30,
+          "ytd": 10923,
           "population": 2114870
-        },
-        {
-          "id": "06",
-          "name": "Hesse",
-          "current_week": 28,
-          "ytd": 11107,
-          "population": 6267546
         },
         {
           "id": "13",
           "name": "Mecklenburg-Western Pomerania",
-          "current_week": 27,
-          "ytd": 11807,
+          "current_week": 29,
+          "ytd": 11809,
           "population": 1578041
+        },
+        {
+          "id": "06",
+          "name": "Hesse",
+          "current_week": 29,
+          "ytd": 11108,
+          "population": 6267546
         },
         {
           "id": "02",
@@ -908,22 +908,22 @@
         {
           "id": "15",
           "name": "Saxony-Anhalt",
-          "current_week": 18,
-          "ytd": 11446,
+          "current_week": 19,
+          "ytd": 11447,
           "population": 2144570
         },
         {
           "id": "03",
           "name": "Lower Saxony",
-          "current_week": 17,
-          "ytd": 14966,
+          "current_week": 18,
+          "ytd": 14967,
           "population": 8008135
         },
         {
           "id": "07",
           "name": "Rhineland-Palatinate",
-          "current_week": 16,
-          "ytd": 9284,
+          "current_week": 18,
+          "ytd": 9286,
           "population": 4125163
         },
         {
@@ -943,8 +943,8 @@
         {
           "id": "04",
           "name": "Bremen",
-          "current_week": 3,
-          "ytd": 1004,
+          "current_week": 4,
+          "ytd": 1005,
           "population": 702655
         },
         {
@@ -958,8 +958,8 @@
     },
     {
       "disease": "Salmonellosis",
-      "total_current_week": 379,
-      "total_ytd": 11531,
+      "total_current_week": 406,
+      "total_ytd": 11555,
       "states_reporting": 16,
       "national_series": [
         {
@@ -1000,7 +1000,7 @@
         {
           "year": 2026,
           "week": 38,
-          "value": 497
+          "value": 496
         },
         {
           "year": 2026,
@@ -1010,7 +1010,7 @@
         {
           "year": 2026,
           "week": 40,
-          "value": 447
+          "value": 445
         },
         {
           "year": 2026,
@@ -1020,14 +1020,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 379
+          "value": 406
         }
       ],
       "national_trend": {
-        "latest_value": 379,
+        "latest_value": 406,
         "previous_value": 407,
-        "absolute_change": -28,
-        "percent_change": -6.9,
+        "absolute_change": -1,
+        "percent_change": -0.2,
         "trend": "stable",
         "window_size": 4
       },
@@ -1035,36 +1035,36 @@
         {
           "id": "05",
           "name": "North Rhine-Westphalia",
-          "current_week": 80,
-          "ytd": 2176,
+          "current_week": 88,
+          "ytd": 2184,
           "population": 18017520
         },
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 80,
-          "ytd": 2082,
+          "current_week": 88,
+          "ytd": 2088,
           "population": 13176426
         },
         {
           "id": "08",
           "name": "Baden-Württemberg",
-          "current_week": 53,
-          "ytd": 1637,
+          "current_week": 56,
+          "ytd": 1640,
           "population": 11230740
         },
         {
           "id": "07",
           "name": "Rhineland-Palatinate",
-          "current_week": 33,
-          "ytd": 707,
+          "current_week": 35,
+          "ytd": 709,
           "population": 4125163
         },
         {
           "id": "03",
           "name": "Lower Saxony",
-          "current_week": 30,
-          "ytd": 971,
+          "current_week": 31,
+          "ytd": 972,
           "population": 8008135
         },
         {
@@ -1077,29 +1077,29 @@
         {
           "id": "14",
           "name": "Saxony",
-          "current_week": 14,
-          "ytd": 541,
+          "current_week": 15,
+          "ytd": 542,
           "population": 4054689
-        },
-        {
-          "id": "12",
-          "name": "Brandenburg",
-          "current_week": 12,
-          "ytd": 312,
-          "population": 2554464
         },
         {
           "id": "16",
           "name": "Thuringia",
-          "current_week": 12,
-          "ytd": 596,
+          "current_week": 15,
+          "ytd": 599,
           "population": 2114870
+        },
+        {
+          "id": "12",
+          "name": "Brandenburg",
+          "current_week": 13,
+          "ytd": 313,
+          "population": 2554464
         },
         {
           "id": "11",
           "name": "Berlin",
           "current_week": 11,
-          "ytd": 476,
+          "ytd": 475,
           "population": 3662381
         },
         {
@@ -1148,14 +1148,14 @@
     },
     {
       "disease": "Hepatitis B",
-      "total_current_week": 257,
-      "total_ytd": 13598,
+      "total_current_week": 281,
+      "total_ytd": 13625,
       "states_reporting": 16,
       "national_series": [
         {
           "year": 2026,
           "week": 31,
-          "value": 298
+          "value": 299
         },
         {
           "year": 2026,
@@ -1200,7 +1200,7 @@
         {
           "year": 2026,
           "week": 40,
-          "value": 288
+          "value": 287
         },
         {
           "year": 2026,
@@ -1210,14 +1210,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 257
+          "value": 281
         }
       ],
       "national_trend": {
-        "latest_value": 257,
+        "latest_value": 281,
         "previous_value": 303,
-        "absolute_change": -46,
-        "percent_change": -15.2,
+        "absolute_change": -22,
+        "percent_change": -7.3,
         "trend": "stable",
         "window_size": 4
       },
@@ -1225,36 +1225,36 @@
         {
           "id": "05",
           "name": "North Rhine-Westphalia",
-          "current_week": 47,
-          "ytd": 3160,
+          "current_week": 54,
+          "ytd": 3167,
           "population": 18017520
         },
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 47,
-          "ytd": 2319,
+          "current_week": 50,
+          "ytd": 2323,
           "population": 13176426
         },
         {
           "id": "08",
           "name": "Baden-Württemberg",
-          "current_week": 41,
-          "ytd": 1751,
+          "current_week": 44,
+          "ytd": 1754,
           "population": 11230740
         },
         {
           "id": "03",
           "name": "Lower Saxony",
-          "current_week": 25,
-          "ytd": 1300,
+          "current_week": 27,
+          "ytd": 1302,
           "population": 8008135
         },
         {
           "id": "11",
           "name": "Berlin",
-          "current_week": 24,
-          "ytd": 1069,
+          "current_week": 26,
+          "ytd": 1071,
           "population": 3662381
         },
         {
@@ -1267,15 +1267,15 @@
         {
           "id": "07",
           "name": "Rhineland-Palatinate",
-          "current_week": 11,
-          "ytd": 732,
+          "current_week": 12,
+          "ytd": 733,
           "population": 4125163
         },
         {
           "id": "02",
           "name": "Hamburg",
           "current_week": 10,
-          "ytd": 572,
+          "ytd": 573,
           "population": 1851596
         },
         {
@@ -1288,22 +1288,29 @@
         {
           "id": "14",
           "name": "Saxony",
-          "current_week": 6,
-          "ytd": 277,
+          "current_week": 7,
+          "ytd": 278,
           "population": 4054689
         },
         {
           "id": "16",
           "name": "Thuringia",
-          "current_week": 5,
-          "ytd": 145,
+          "current_week": 7,
+          "ytd": 147,
           "population": 2114870
+        },
+        {
+          "id": "01",
+          "name": "Schleswig-Holstein",
+          "current_week": 7,
+          "ytd": 344,
+          "population": 2953202
         },
         {
           "id": "10",
           "name": "Saarland",
           "current_week": 4,
-          "ytd": 165,
+          "ytd": 166,
           "population": 1014047
         },
         {
@@ -1312,13 +1319,6 @@
           "current_week": 4,
           "ytd": 247,
           "population": 2554464
-        },
-        {
-          "id": "01",
-          "name": "Schleswig-Holstein",
-          "current_week": 4,
-          "ytd": 341,
-          "population": 2953202
         },
         {
           "id": "13",
@@ -1338,8 +1338,8 @@
     },
     {
       "disease": "Hepatitis E",
-      "total_current_week": 247,
-      "total_ytd": 11576,
+      "total_current_week": 267,
+      "total_ytd": 11598,
       "states_reporting": 16,
       "national_series": [
         {
@@ -1360,7 +1360,7 @@
         {
           "year": 2026,
           "week": 34,
-          "value": 239
+          "value": 240
         },
         {
           "year": 2026,
@@ -1390,7 +1390,7 @@
         {
           "year": 2026,
           "week": 40,
-          "value": 236
+          "value": 237
         },
         {
           "year": 2026,
@@ -1400,14 +1400,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 247
+          "value": 267
         }
       ],
       "national_trend": {
-        "latest_value": 247,
+        "latest_value": 267,
         "previous_value": 264,
-        "absolute_change": -17,
-        "percent_change": -6.4,
+        "absolute_change": 3,
+        "percent_change": 1.1,
         "trend": "stable",
         "window_size": 4
       },
@@ -1415,72 +1415,79 @@
         {
           "id": "05",
           "name": "North Rhine-Westphalia",
-          "current_week": 59,
-          "ytd": 2305,
+          "current_week": 62,
+          "ytd": 2308,
           "population": 18017520
         },
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 34,
-          "ytd": 1381,
+          "current_week": 36,
+          "ytd": 1384,
           "population": 13176426
         },
         {
           "id": "03",
           "name": "Lower Saxony",
-          "current_week": 23,
-          "ytd": 1357,
+          "current_week": 25,
+          "ytd": 1359,
           "population": 8008135
         },
         {
           "id": "06",
           "name": "Hesse",
-          "current_week": 23,
-          "ytd": 757,
+          "current_week": 24,
+          "ytd": 758,
           "population": 6267546
         },
         {
           "id": "08",
           "name": "Baden-Württemberg",
-          "current_week": 23,
-          "ytd": 1050,
+          "current_week": 24,
+          "ytd": 1051,
           "population": 11230740
         },
         {
           "id": "14",
           "name": "Saxony",
-          "current_week": 14,
-          "ytd": 864,
+          "current_week": 17,
+          "ytd": 867,
           "population": 4054689
         },
         {
           "id": "07",
           "name": "Rhineland-Palatinate",
-          "current_week": 14,
-          "ytd": 630,
+          "current_week": 16,
+          "ytd": 632,
           "population": 4125163
         },
         {
           "id": "13",
           "name": "Mecklenburg-Western Pomerania",
-          "current_week": 11,
-          "ytd": 532,
+          "current_week": 13,
+          "ytd": 534,
           "population": 1578041
         },
         {
           "id": "01",
           "name": "Schleswig-Holstein",
-          "current_week": 11,
-          "ytd": 465,
+          "current_week": 12,
+          "ytd": 466,
           "population": 2953202
         },
         {
           "id": "12",
           "name": "Brandenburg",
-          "current_week": 9,
-          "ytd": 536,
+          "current_week": 10,
+          "ytd": 537,
           "population": 2554464
+        },
+        {
+          "id": "15",
+          "name": "Saxony-Anhalt",
+          "current_week": 8,
+          "ytd": 406,
+          "population": 2144570
         },
         {
           "id": "11",
@@ -1490,17 +1497,10 @@
           "population": 3662381
         },
         {
-          "id": "15",
-          "name": "Saxony-Anhalt",
-          "current_week": 6,
-          "ytd": 404,
-          "population": 2144570
-        },
-        {
           "id": "16",
           "name": "Thuringia",
           "current_week": 5,
-          "ytd": 495,
+          "ytd": 496,
           "population": 2114870
         },
         {
@@ -1528,8 +1528,8 @@
     },
     {
       "disease": "Chickenpox",
-      "total_current_week": 232,
-      "total_ytd": 15964,
+      "total_current_week": 247,
+      "total_ytd": 15978,
       "states_reporting": 16,
       "national_series": [
         {
@@ -1585,19 +1585,19 @@
         {
           "year": 2026,
           "week": 41,
-          "value": 243
+          "value": 242
         },
         {
           "year": 2026,
           "week": 42,
-          "value": 232
+          "value": 247
         }
       ],
       "national_trend": {
-        "latest_value": 232,
-        "previous_value": 243,
-        "absolute_change": -11,
-        "percent_change": -4.5,
+        "latest_value": 247,
+        "previous_value": 242,
+        "absolute_change": 5,
+        "percent_change": 2.1,
         "trend": "stable",
         "window_size": 4
       },
@@ -1605,9 +1605,16 @@
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 63,
-          "ytd": 3685,
+          "current_week": 71,
+          "ytd": 3693,
           "population": 13176426
+        },
+        {
+          "id": "05",
+          "name": "North Rhine-Westphalia",
+          "current_week": 47,
+          "ytd": 3226,
+          "population": 18017520
         },
         {
           "id": "08",
@@ -1615,13 +1622,6 @@
           "current_week": 45,
           "ytd": 2293,
           "population": 11230740
-        },
-        {
-          "id": "05",
-          "name": "North Rhine-Westphalia",
-          "current_week": 43,
-          "ytd": 3222,
-          "population": 18017520
         },
         {
           "id": "14",
@@ -1633,22 +1633,22 @@
         {
           "id": "03",
           "name": "Lower Saxony",
-          "current_week": 11,
-          "ytd": 1179,
+          "current_week": 12,
+          "ytd": 1180,
           "population": 8008135
         },
         {
           "id": "11",
           "name": "Berlin",
           "current_week": 9,
-          "ytd": 733,
+          "ytd": 732,
           "population": 3662381
         },
         {
           "id": "12",
           "name": "Brandenburg",
-          "current_week": 8,
-          "ytd": 411,
+          "current_week": 9,
+          "ytd": 412,
           "population": 2554464
         },
         {
@@ -1675,8 +1675,8 @@
         {
           "id": "07",
           "name": "Rhineland-Palatinate",
-          "current_week": 5,
-          "ytd": 541,
+          "current_week": 6,
+          "ytd": 542,
           "population": 4125163
         },
         {
@@ -1718,8 +1718,8 @@
     },
     {
       "disease": "Rotavirus gastroenteritis",
-      "total_current_week": 219,
-      "total_ytd": 30633,
+      "total_current_week": 243,
+      "total_ytd": 30657,
       "states_reporting": 16,
       "national_series": [
         {
@@ -1780,30 +1780,30 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 219
+          "value": 243
         }
       ],
       "national_trend": {
-        "latest_value": 219,
+        "latest_value": 243,
         "previous_value": 246,
-        "absolute_change": -27,
-        "percent_change": -11,
-        "trend": "falling",
+        "absolute_change": -3,
+        "percent_change": -1.2,
+        "trend": "stable",
         "window_size": 4
       },
       "states": [
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 57,
-          "ytd": 4033,
+          "current_week": 62,
+          "ytd": 4038,
           "population": 13176426
         },
         {
           "id": "05",
           "name": "North Rhine-Westphalia",
-          "current_week": 35,
-          "ytd": 4995,
+          "current_week": 43,
+          "ytd": 5003,
           "population": 18017520
         },
         {
@@ -1814,6 +1814,20 @@
           "population": 11230740
         },
         {
+          "id": "07",
+          "name": "Rhineland-Palatinate",
+          "current_week": 16,
+          "ytd": 1197,
+          "population": 4125163
+        },
+        {
+          "id": "15",
+          "name": "Saxony-Anhalt",
+          "current_week": 14,
+          "ytd": 1046,
+          "population": 2144570
+        },
+        {
           "id": "06",
           "name": "Hesse",
           "current_week": 14,
@@ -1821,24 +1835,10 @@
           "population": 6267546
         },
         {
-          "id": "15",
-          "name": "Saxony-Anhalt",
-          "current_week": 13,
-          "ytd": 1045,
-          "population": 2144570
-        },
-        {
-          "id": "07",
-          "name": "Rhineland-Palatinate",
-          "current_week": 13,
-          "ytd": 1194,
-          "population": 4125163
-        },
-        {
           "id": "01",
           "name": "Schleswig-Holstein",
-          "current_week": 11,
-          "ytd": 1133,
+          "current_week": 13,
+          "ytd": 1135,
           "population": 2953202
         },
         {
@@ -1849,6 +1849,20 @@
           "population": 8008135
         },
         {
+          "id": "14",
+          "name": "Saxony",
+          "current_week": 10,
+          "ytd": 3353,
+          "population": 4054689
+        },
+        {
+          "id": "11",
+          "name": "Berlin",
+          "current_week": 9,
+          "ytd": 1531,
+          "population": 3662381
+        },
+        {
           "id": "16",
           "name": "Thuringia",
           "current_week": 9,
@@ -1856,25 +1870,11 @@
           "population": 2114870
         },
         {
-          "id": "11",
-          "name": "Berlin",
-          "current_week": 8,
-          "ytd": 1530,
-          "population": 3662381
-        },
-        {
           "id": "12",
           "name": "Brandenburg",
           "current_week": 7,
           "ytd": 1960,
           "population": 2554464
-        },
-        {
-          "id": "14",
-          "name": "Saxony",
-          "current_week": 6,
-          "ytd": 3349,
-          "population": 4054689
         },
         {
           "id": "13",
@@ -1908,8 +1908,8 @@
     },
     {
       "disease": "VTEC disease",
-      "total_current_week": 200,
-      "total_ytd": 7489,
+      "total_current_week": 212,
+      "total_ytd": 7503,
       "states_reporting": 16,
       "national_series": [
         {
@@ -1955,12 +1955,12 @@
         {
           "year": 2026,
           "week": 39,
-          "value": 278
+          "value": 279
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 245
+          "value": 246
         },
         {
           "year": 2026,
@@ -1970,14 +1970,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 200
+          "value": 212
         }
       ],
       "national_trend": {
-        "latest_value": 200,
+        "latest_value": 212,
         "previous_value": 240,
-        "absolute_change": -40,
-        "percent_change": -16.7,
+        "absolute_change": -28,
+        "percent_change": -11.7,
         "trend": "stable",
         "window_size": 4
       },
@@ -1985,22 +1985,22 @@
         {
           "id": "05",
           "name": "North Rhine-Westphalia",
-          "current_week": 47,
-          "ytd": 1474,
+          "current_week": 50,
+          "ytd": 1478,
           "population": 18017520
         },
         {
           "id": "03",
           "name": "Lower Saxony",
-          "current_week": 32,
-          "ytd": 1231,
+          "current_week": 34,
+          "ytd": 1233,
           "population": 8008135
         },
         {
           "id": "08",
           "name": "Baden-Württemberg",
-          "current_week": 26,
-          "ytd": 692,
+          "current_week": 27,
+          "ytd": 693,
           "population": 11230740
         },
         {
@@ -2013,9 +2013,23 @@
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 21,
-          "ytd": 794,
+          "current_week": 22,
+          "ytd": 795,
           "population": 13176426
+        },
+        {
+          "id": "11",
+          "name": "Berlin",
+          "current_week": 9,
+          "ytd": 298,
+          "population": 3662381
+        },
+        {
+          "id": "01",
+          "name": "Schleswig-Holstein",
+          "current_week": 9,
+          "ytd": 375,
+          "population": 2953202
         },
         {
           "id": "07",
@@ -2025,25 +2039,11 @@
           "population": 4125163
         },
         {
-          "id": "11",
-          "name": "Berlin",
-          "current_week": 7,
-          "ytd": 296,
-          "population": 3662381
-        },
-        {
           "id": "16",
           "name": "Thuringia",
           "current_week": 6,
           "ytd": 241,
           "population": 2114870
-        },
-        {
-          "id": "01",
-          "name": "Schleswig-Holstein",
-          "current_week": 6,
-          "ytd": 372,
-          "population": 2953202
         },
         {
           "id": "12",
@@ -2063,7 +2063,7 @@
           "id": "02",
           "name": "Hamburg",
           "current_week": 5,
-          "ytd": 200,
+          "ytd": 201,
           "population": 1851596
         },
         {
@@ -2098,8 +2098,8 @@
     },
     {
       "disease": "(e) Enterobacteriaceae-Infektion oder –Kolonisation",
-      "total_current_week": 190,
-      "total_ytd": 7736,
+      "total_current_week": 199,
+      "total_ytd": 7747,
       "states_reporting": 16,
       "national_series": [
         {
@@ -2135,12 +2135,12 @@
         {
           "year": 2026,
           "week": 37,
-          "value": 257
+          "value": 258
         },
         {
           "year": 2026,
           "week": 38,
-          "value": 210
+          "value": 211
         },
         {
           "year": 2026,
@@ -2155,19 +2155,19 @@
         {
           "year": 2026,
           "week": 41,
-          "value": 204
+          "value": 205
         },
         {
           "year": 2026,
           "week": 42,
-          "value": 190
+          "value": 199
         }
       ],
       "national_trend": {
-        "latest_value": 190,
-        "previous_value": 204,
-        "absolute_change": -14,
-        "percent_change": -6.9,
+        "latest_value": 199,
+        "previous_value": 205,
+        "absolute_change": -6,
+        "percent_change": -2.9,
         "trend": "stable",
         "window_size": 4
       },
@@ -2175,30 +2175,37 @@
         {
           "id": "05",
           "name": "North Rhine-Westphalia",
-          "current_week": 47,
-          "ytd": 1768,
+          "current_week": 50,
+          "ytd": 1773,
           "population": 18017520
         },
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 30,
-          "ytd": 866,
+          "current_week": 31,
+          "ytd": 867,
           "population": 13176426
         },
         {
           "id": "08",
           "name": "Baden-Württemberg",
-          "current_week": 22,
-          "ytd": 1067,
+          "current_week": 23,
+          "ytd": 1068,
           "population": 11230740
         },
         {
           "id": "06",
           "name": "Hesse",
-          "current_week": 17,
-          "ytd": 911,
+          "current_week": 18,
+          "ytd": 912,
           "population": 6267546
+        },
+        {
+          "id": "11",
+          "name": "Berlin",
+          "current_week": 13,
+          "ytd": 526,
+          "population": 3662381
         },
         {
           "id": "12",
@@ -2208,17 +2215,10 @@
           "population": 2554464
         },
         {
-          "id": "11",
-          "name": "Berlin",
-          "current_week": 12,
-          "ytd": 525,
-          "population": 3662381
-        },
-        {
           "id": "03",
           "name": "Lower Saxony",
-          "current_week": 11,
-          "ytd": 685,
+          "current_week": 12,
+          "ytd": 686,
           "population": 8008135
         },
         {
@@ -2236,18 +2236,18 @@
           "population": 1851596
         },
         {
+          "id": "07",
+          "name": "Rhineland-Palatinate",
+          "current_week": 7,
+          "ytd": 293,
+          "population": 4125163
+        },
+        {
           "id": "16",
           "name": "Thuringia",
           "current_week": 6,
           "ytd": 142,
           "population": 2114870
-        },
-        {
-          "id": "07",
-          "name": "Rhineland-Palatinate",
-          "current_week": 6,
-          "ytd": 292,
-          "population": 4125163
         },
         {
           "id": "01",
@@ -2288,8 +2288,8 @@
     },
     {
       "disease": "Lyme disease",
-      "total_current_week": 164,
-      "total_ytd": 10703,
+      "total_current_week": 176,
+      "total_ytd": 10719,
       "states_reporting": 9,
       "national_series": [
         {
@@ -2315,7 +2315,7 @@
         {
           "year": 2026,
           "week": 35,
-          "value": 404
+          "value": 405
         },
         {
           "year": 2026,
@@ -2335,7 +2335,7 @@
         {
           "year": 2026,
           "week": 39,
-          "value": 263
+          "value": 264
         },
         {
           "year": 2026,
@@ -2345,19 +2345,19 @@
         {
           "year": 2026,
           "week": 41,
-          "value": 204
+          "value": 206
         },
         {
           "year": 2026,
           "week": 42,
-          "value": 164
+          "value": 176
         }
       ],
       "national_trend": {
-        "latest_value": 164,
-        "previous_value": 204,
-        "absolute_change": -40,
-        "percent_change": -19.6,
+        "latest_value": 176,
+        "previous_value": 206,
+        "absolute_change": -30,
+        "percent_change": -14.6,
         "trend": "falling",
         "window_size": 4
       },
@@ -2365,43 +2365,43 @@
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 70,
-          "ytd": 3893,
+          "current_week": 74,
+          "ytd": 3897,
           "population": 13176426
         },
         {
           "id": "12",
           "name": "Brandenburg",
-          "current_week": 33,
-          "ytd": 1879,
+          "current_week": 36,
+          "ytd": 1883,
           "population": 2554464
         },
         {
           "id": "14",
           "name": "Saxony",
-          "current_week": 17,
-          "ytd": 1640,
+          "current_week": 21,
+          "ytd": 1644,
           "population": 4054689
         },
         {
           "id": "15",
           "name": "Saxony-Anhalt",
           "current_week": 15,
-          "ytd": 1052,
+          "ytd": 1054,
           "population": 2144570
         },
         {
           "id": "07",
           "name": "Rhineland-Palatinate",
-          "current_week": 11,
-          "ytd": 749,
+          "current_week": 12,
+          "ytd": 750,
           "population": 4125163
         },
         {
           "id": "11",
           "name": "Berlin",
           "current_week": 9,
-          "ytd": 832,
+          "ytd": 833,
           "population": 3662381
         },
         {
@@ -2429,8 +2429,8 @@
     },
     {
       "disease": "(e) Pneumokokken (Meldepflicht gemäß IfSG)",
-      "total_current_week": 148,
-      "total_ytd": 7531,
+      "total_current_week": 163,
+      "total_ytd": 7546,
       "states_reporting": 16,
       "national_series": [
         {
@@ -2491,14 +2491,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 148
+          "value": 163
         }
       ],
       "national_trend": {
-        "latest_value": 148,
+        "latest_value": 163,
         "previous_value": 163,
-        "absolute_change": -15,
-        "percent_change": -9.2,
+        "absolute_change": 0,
+        "percent_change": 0,
         "trend": "rising",
         "window_size": 4
       },
@@ -2506,8 +2506,8 @@
         {
           "id": "05",
           "name": "North Rhine-Westphalia",
-          "current_week": 37,
-          "ytd": 1850,
+          "current_week": 40,
+          "ytd": 1853,
           "population": 18017520
         },
         {
@@ -2520,37 +2520,51 @@
         {
           "id": "08",
           "name": "Baden-Württemberg",
-          "current_week": 18,
-          "ytd": 934,
+          "current_week": 19,
+          "ytd": 935,
           "population": 11230740
         },
         {
           "id": "11",
           "name": "Berlin",
-          "current_week": 14,
-          "ytd": 470,
+          "current_week": 16,
+          "ytd": 472,
           "population": 3662381
         },
         {
           "id": "03",
           "name": "Lower Saxony",
-          "current_week": 10,
-          "ytd": 705,
+          "current_week": 11,
+          "ytd": 706,
           "population": 8008135
         },
         {
           "id": "06",
           "name": "Hesse",
-          "current_week": 10,
-          "ytd": 516,
+          "current_week": 11,
+          "ytd": 517,
           "population": 6267546
         },
         {
           "id": "07",
           "name": "Rhineland-Palatinate",
-          "current_week": 10,
-          "ytd": 333,
+          "current_week": 11,
+          "ytd": 334,
           "population": 4125163
+        },
+        {
+          "id": "14",
+          "name": "Saxony",
+          "current_week": 8,
+          "ytd": 394,
+          "population": 4054689
+        },
+        {
+          "id": "01",
+          "name": "Schleswig-Holstein",
+          "current_week": 7,
+          "ytd": 302,
+          "population": 2953202
         },
         {
           "id": "15",
@@ -2558,20 +2572,6 @@
           "current_week": 6,
           "ytd": 136,
           "population": 2144570
-        },
-        {
-          "id": "01",
-          "name": "Schleswig-Holstein",
-          "current_week": 6,
-          "ytd": 301,
-          "population": 2953202
-        },
-        {
-          "id": "14",
-          "name": "Saxony",
-          "current_week": 4,
-          "ytd": 390,
-          "population": 4054689
         },
         {
           "id": "16",
@@ -2590,8 +2590,8 @@
         {
           "id": "13",
           "name": "Mecklenburg-Western Pomerania",
-          "current_week": 1,
-          "ytd": 138,
+          "current_week": 2,
+          "ytd": 139,
           "population": 1578041
         },
         {
@@ -2619,8 +2619,8 @@
     },
     {
       "disease": "Hepatitis C",
-      "total_current_week": 124,
-      "total_ytd": 6501,
+      "total_current_week": 131,
+      "total_ytd": 6508,
       "states_reporting": 16,
       "national_series": [
         {
@@ -2666,29 +2666,29 @@
         {
           "year": 2026,
           "week": 39,
-          "value": 141
+          "value": 140
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 132
+          "value": 131
         },
         {
           "year": 2026,
           "week": 41,
-          "value": 141
+          "value": 142
         },
         {
           "year": 2026,
           "week": 42,
-          "value": 124
+          "value": 131
         }
       ],
       "national_trend": {
-        "latest_value": 124,
-        "previous_value": 141,
-        "absolute_change": -17,
-        "percent_change": -12.1,
+        "latest_value": 131,
+        "previous_value": 142,
+        "absolute_change": -11,
+        "percent_change": -7.7,
         "trend": "stable",
         "window_size": 4
       },
@@ -2696,7 +2696,7 @@
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 25,
+          "current_week": 26,
           "ytd": 1110,
           "population": 13176426
         },
@@ -2710,8 +2710,8 @@
         {
           "id": "08",
           "name": "Baden-Württemberg",
-          "current_week": 17,
-          "ytd": 832,
+          "current_week": 19,
+          "ytd": 833,
           "population": 11230740
         },
         {
@@ -2724,8 +2724,8 @@
         {
           "id": "11",
           "name": "Berlin",
-          "current_week": 8,
-          "ytd": 491,
+          "current_week": 9,
+          "ytd": 494,
           "population": 3662381
         },
         {
@@ -2764,25 +2764,25 @@
           "population": 2144570
         },
         {
-          "id": "14",
-          "name": "Saxony",
-          "current_week": 3,
-          "ytd": 193,
-          "population": 4054689
-        },
-        {
           "id": "04",
           "name": "Bremen",
-          "current_week": 3,
-          "ytd": 88,
+          "current_week": 4,
+          "ytd": 89,
           "population": 702655
         },
         {
           "id": "07",
           "name": "Rhineland-Palatinate",
-          "current_week": 3,
-          "ytd": 305,
+          "current_week": 4,
+          "ytd": 306,
           "population": 4125163
+        },
+        {
+          "id": "14",
+          "name": "Saxony",
+          "current_week": 3,
+          "ytd": 193,
+          "population": 4054689
         },
         {
           "id": "10",
@@ -2794,8 +2794,8 @@
         {
           "id": "13",
           "name": "Mecklenburg-Western Pomerania",
-          "current_week": 1,
-          "ytd": 65,
+          "current_week": 2,
+          "ytd": 66,
           "population": 1578041
         },
         {
@@ -2809,8 +2809,8 @@
     },
     {
       "disease": "Shigellosis",
-      "total_current_week": 112,
-      "total_ytd": 3358,
+      "total_current_week": 126,
+      "total_ytd": 3372,
       "states_reporting": 16,
       "national_series": [
         {
@@ -2871,14 +2871,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 112
+          "value": 126
         }
       ],
       "national_trend": {
-        "latest_value": 112,
+        "latest_value": 126,
         "previous_value": 120,
-        "absolute_change": -8,
-        "percent_change": -6.7,
+        "absolute_change": 6,
+        "percent_change": 5,
         "trend": "stable",
         "window_size": 4
       },
@@ -2886,37 +2886,44 @@
         {
           "id": "05",
           "name": "North Rhine-Westphalia",
-          "current_week": 28,
-          "ytd": 771,
+          "current_week": 29,
+          "ytd": 772,
           "population": 18017520
         },
         {
           "id": "08",
           "name": "Baden-Württemberg",
-          "current_week": 22,
-          "ytd": 419,
+          "current_week": 23,
+          "ytd": 420,
           "population": 11230740
         },
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 16,
-          "ytd": 528,
+          "current_week": 18,
+          "ytd": 530,
           "population": 13176426
         },
         {
           "id": "03",
           "name": "Lower Saxony",
-          "current_week": 12,
-          "ytd": 300,
+          "current_week": 14,
+          "ytd": 302,
           "population": 8008135
         },
         {
           "id": "11",
           "name": "Berlin",
-          "current_week": 7,
-          "ytd": 270,
+          "current_week": 8,
+          "ytd": 271,
           "population": 3662381
+        },
+        {
+          "id": "14",
+          "name": "Saxony",
+          "current_week": 7,
+          "ytd": 151,
+          "population": 4054689
         },
         {
           "id": "01",
@@ -2933,11 +2940,11 @@
           "population": 6267546
         },
         {
-          "id": "14",
-          "name": "Saxony",
-          "current_week": 4,
-          "ytd": 148,
-          "population": 4054689
+          "id": "07",
+          "name": "Rhineland-Palatinate",
+          "current_week": 5,
+          "ytd": 118,
+          "population": 4125163
         },
         {
           "id": "16",
@@ -2975,13 +2982,6 @@
           "population": 1851596
         },
         {
-          "id": "07",
-          "name": "Rhineland-Palatinate",
-          "current_week": 1,
-          "ytd": 114,
-          "population": 4125163
-        },
-        {
           "id": "10",
           "name": "Saarland",
           "current_week": 0,
@@ -2999,8 +2999,8 @@
     },
     {
       "disease": "Giardiasis",
-      "total_current_week": 81,
-      "total_ytd": 2977,
+      "total_current_week": 85,
+      "total_ytd": 2981,
       "states_reporting": 16,
       "national_series": [
         {
@@ -3061,14 +3061,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 81
+          "value": 85
         }
       ],
       "national_trend": {
-        "latest_value": 81,
+        "latest_value": 85,
         "previous_value": 90,
-        "absolute_change": -9,
-        "percent_change": -10,
+        "absolute_change": -5,
+        "percent_change": -5.6,
         "trend": "stable",
         "window_size": 4
       },
@@ -3076,8 +3076,8 @@
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 17,
-          "ytd": 586,
+          "current_week": 18,
+          "ytd": 587,
           "population": 13176426
         },
         {
@@ -3090,8 +3090,8 @@
         {
           "id": "05",
           "name": "North Rhine-Westphalia",
-          "current_week": 10,
-          "ytd": 560,
+          "current_week": 11,
+          "ytd": 561,
           "population": 18017520
         },
         {
@@ -3104,8 +3104,8 @@
         {
           "id": "07",
           "name": "Rhineland-Palatinate",
-          "current_week": 7,
-          "ytd": 136,
+          "current_week": 8,
+          "ytd": 137,
           "population": 4125163
         },
         {
@@ -3130,18 +3130,18 @@
           "population": 1851596
         },
         {
+          "id": "13",
+          "name": "Mecklenburg-Western Pomerania",
+          "current_week": 3,
+          "ytd": 56,
+          "population": 1578041
+        },
+        {
           "id": "14",
           "name": "Saxony",
           "current_week": 3,
           "ytd": 140,
           "population": 4054689
-        },
-        {
-          "id": "13",
-          "name": "Mecklenburg-Western Pomerania",
-          "current_week": 2,
-          "ytd": 55,
-          "population": 1578041
         },
         {
           "id": "15",
@@ -3189,8 +3189,8 @@
     },
     {
       "disease": "Legionnaires' disease",
-      "total_current_week": 80,
-      "total_ytd": 2253,
+      "total_current_week": 83,
+      "total_ytd": 2256,
       "states_reporting": 16,
       "national_series": [
         {
@@ -3251,14 +3251,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 80
+          "value": 83
         }
       ],
       "national_trend": {
-        "latest_value": 80,
+        "latest_value": 83,
         "previous_value": 73,
-        "absolute_change": 7,
-        "percent_change": 9.6,
+        "absolute_change": 10,
+        "percent_change": 13.7,
         "trend": "stable",
         "window_size": 4
       },
@@ -3273,8 +3273,8 @@
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 10,
-          "ytd": 373,
+          "current_week": 11,
+          "ytd": 374,
           "population": 13176426
         },
         {
@@ -3285,6 +3285,13 @@
           "population": 3662381
         },
         {
+          "id": "08",
+          "name": "Baden-Württemberg",
+          "current_week": 7,
+          "ytd": 346,
+          "population": 11230740
+        },
+        {
           "id": "06",
           "name": "Hesse",
           "current_week": 6,
@@ -3292,18 +3299,18 @@
           "population": 6267546
         },
         {
-          "id": "08",
-          "name": "Baden-Württemberg",
-          "current_week": 6,
-          "ytd": 345,
-          "population": 11230740
-        },
-        {
           "id": "01",
           "name": "Schleswig-Holstein",
           "current_week": 5,
           "ytd": 69,
           "population": 2953202
+        },
+        {
+          "id": "15",
+          "name": "Saxony-Anhalt",
+          "current_week": 3,
+          "ytd": 40,
+          "population": 2144570
         },
         {
           "id": "03",
@@ -3325,13 +3332,6 @@
           "current_week": 2,
           "ytd": 135,
           "population": 4054689
-        },
-        {
-          "id": "15",
-          "name": "Saxony-Anhalt",
-          "current_week": 2,
-          "ytd": 39,
-          "population": 2144570
         },
         {
           "id": "16",
@@ -3379,8 +3379,8 @@
     },
     {
       "disease": "Yersiniosis",
-      "total_current_week": 61,
-      "total_ytd": 4491,
+      "total_current_week": 65,
+      "total_ytd": 4495,
       "states_reporting": 16,
       "national_series": [
         {
@@ -3441,14 +3441,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 61
+          "value": 65
         }
       ],
       "national_trend": {
-        "latest_value": 61,
+        "latest_value": 65,
         "previous_value": 113,
-        "absolute_change": -52,
-        "percent_change": -46,
+        "absolute_change": -48,
+        "percent_change": -42.5,
         "trend": "stable",
         "window_size": 4
       },
@@ -3484,8 +3484,8 @@
         {
           "id": "03",
           "name": "Lower Saxony",
-          "current_week": 4,
-          "ytd": 509,
+          "current_week": 5,
+          "ytd": 510,
           "population": 8008135
         },
         {
@@ -3503,25 +3503,25 @@
           "population": 2554464
         },
         {
-          "id": "10",
-          "name": "Saarland",
-          "current_week": 2,
-          "ytd": 30,
-          "population": 1014047
-        },
-        {
           "id": "13",
           "name": "Mecklenburg-Western Pomerania",
-          "current_week": 2,
-          "ytd": 146,
+          "current_week": 3,
+          "ytd": 147,
           "population": 1578041
         },
         {
           "id": "14",
           "name": "Saxony",
-          "current_week": 2,
-          "ytd": 368,
+          "current_week": 3,
+          "ytd": 369,
           "population": 4054689
+        },
+        {
+          "id": "10",
+          "name": "Saarland",
+          "current_week": 2,
+          "ytd": 30,
+          "population": 1014047
         },
         {
           "id": "01",
@@ -3538,18 +3538,18 @@
           "population": 1851596
         },
         {
+          "id": "07",
+          "name": "Rhineland-Palatinate",
+          "current_week": 2,
+          "ytd": 227,
+          "population": 4125163
+        },
+        {
           "id": "06",
           "name": "Hesse",
           "current_week": 1,
           "ytd": 312,
           "population": 6267546
-        },
-        {
-          "id": "07",
-          "name": "Rhineland-Palatinate",
-          "current_week": 1,
-          "ytd": 226,
-          "population": 4125163
         },
         {
           "id": "15",
@@ -3569,8 +3569,8 @@
     },
     {
       "disease": "Adenovirus (andere Form, Meldepflichtig gemäß Landesmeldeverordnung)",
-      "total_current_week": 60,
-      "total_ytd": 2837,
+      "total_current_week": 64,
+      "total_ytd": 2841,
       "states_reporting": 12,
       "national_series": [
         {
@@ -3631,14 +3631,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 60
+          "value": 64
         }
       ],
       "national_trend": {
-        "latest_value": 60,
+        "latest_value": 64,
         "previous_value": 76,
-        "absolute_change": -16,
-        "percent_change": -21.1,
+        "absolute_change": -12,
+        "percent_change": -15.8,
         "trend": "stable",
         "window_size": 4
       },
@@ -3646,8 +3646,8 @@
         {
           "id": "14",
           "name": "Saxony",
-          "current_week": 55,
-          "ytd": 2731,
+          "current_week": 59,
+          "ytd": 2735,
           "population": 4054689
         },
         {
@@ -3731,8 +3731,8 @@
     },
     {
       "disease": "Tuberculosis",
-      "total_current_week": 56,
-      "total_ytd": 3365,
+      "total_current_week": 61,
+      "total_ytd": 3369,
       "states_reporting": 16,
       "national_series": [
         {
@@ -3763,7 +3763,7 @@
         {
           "year": 2026,
           "week": 36,
-          "value": 74
+          "value": 75
         },
         {
           "year": 2026,
@@ -3778,7 +3778,7 @@
         {
           "year": 2026,
           "week": 39,
-          "value": 70
+          "value": 71
         },
         {
           "year": 2026,
@@ -3788,19 +3788,19 @@
         {
           "year": 2026,
           "week": 41,
-          "value": 68
+          "value": 67
         },
         {
           "year": 2026,
           "week": 42,
-          "value": 56
+          "value": 61
         }
       ],
       "national_trend": {
-        "latest_value": 56,
-        "previous_value": 68,
-        "absolute_change": -12,
-        "percent_change": -17.6,
+        "latest_value": 61,
+        "previous_value": 67,
+        "absolute_change": -6,
+        "percent_change": -9,
         "trend": "stable",
         "window_size": 4
       },
@@ -3815,9 +3815,16 @@
         {
           "id": "03",
           "name": "Lower Saxony",
-          "current_week": 9,
-          "ytd": 294,
+          "current_week": 10,
+          "ytd": 295,
           "population": 8008135
+        },
+        {
+          "id": "11",
+          "name": "Berlin",
+          "current_week": 9,
+          "ytd": 268,
+          "population": 3662381
         },
         {
           "id": "08",
@@ -3827,30 +3834,23 @@
           "population": 11230740
         },
         {
-          "id": "11",
-          "name": "Berlin",
-          "current_week": 8,
-          "ytd": 266,
-          "population": 3662381
+          "id": "07",
+          "name": "Rhineland-Palatinate",
+          "current_week": 6,
+          "ytd": 163,
+          "population": 4125163
         },
         {
           "id": "09",
           "name": "Bavaria",
           "current_week": 5,
-          "ytd": 466,
+          "ytd": 465,
           "population": 13176426
-        },
-        {
-          "id": "07",
-          "name": "Rhineland-Palatinate",
-          "current_week": 4,
-          "ytd": 161,
-          "population": 4125163
         },
         {
           "id": "01",
           "name": "Schleswig-Holstein",
-          "current_week": 3,
+          "current_week": 4,
           "ytd": 87,
           "population": 2953202
         },
@@ -3920,94 +3920,9 @@
       ]
     },
     {
-      "disease": "(e) Chlamydia-trachomatis-Infektion",
-      "total_current_week": 55,
-      "total_ytd": 2399,
-      "states_reporting": 1,
-      "national_series": [
-        {
-          "year": 2026,
-          "week": 31,
-          "value": 61
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 63
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 62
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 49
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 78
-        },
-        {
-          "year": 2026,
-          "week": 36,
-          "value": 57
-        },
-        {
-          "year": 2026,
-          "week": 37,
-          "value": 68
-        },
-        {
-          "year": 2026,
-          "week": 38,
-          "value": 51
-        },
-        {
-          "year": 2026,
-          "week": 39,
-          "value": 58
-        },
-        {
-          "year": 2026,
-          "week": 40,
-          "value": 59
-        },
-        {
-          "year": 2026,
-          "week": 41,
-          "value": 62
-        },
-        {
-          "year": 2026,
-          "week": 42,
-          "value": 55
-        }
-      ],
-      "national_trend": {
-        "latest_value": 55,
-        "previous_value": 62,
-        "absolute_change": -7,
-        "percent_change": -11.3,
-        "trend": "stable",
-        "window_size": 4
-      },
-      "states": [
-        {
-          "id": "14",
-          "name": "Saxony",
-          "current_week": 55,
-          "ytd": 2399,
-          "population": 4054689
-        }
-      ]
-    },
-    {
       "disease": "Cryptosporidiosis",
-      "total_current_week": 55,
-      "total_ytd": 2412,
+      "total_current_week": 59,
+      "total_ytd": 2417,
       "states_reporting": 16,
       "national_series": [
         {
@@ -4063,19 +3978,19 @@
         {
           "year": 2026,
           "week": 41,
-          "value": 72
+          "value": 73
         },
         {
           "year": 2026,
           "week": 42,
-          "value": 55
+          "value": 59
         }
       ],
       "national_trend": {
-        "latest_value": 55,
-        "previous_value": 72,
-        "absolute_change": -17,
-        "percent_change": -23.6,
+        "latest_value": 59,
+        "previous_value": 73,
+        "absolute_change": -14,
+        "percent_change": -19.2,
         "trend": "stable",
         "window_size": 4
       },
@@ -4083,22 +3998,22 @@
         {
           "id": "09",
           "name": "Bavaria",
-          "current_week": 17,
-          "ytd": 644,
+          "current_week": 19,
+          "ytd": 646,
           "population": 13176426
         },
         {
           "id": "05",
           "name": "North Rhine-Westphalia",
           "current_week": 13,
-          "ytd": 420,
+          "ytd": 421,
           "population": 18017520
         },
         {
           "id": "13",
           "name": "Mecklenburg-Western Pomerania",
-          "current_week": 6,
-          "ytd": 115,
+          "current_week": 7,
+          "ytd": 116,
           "population": 1578041
         },
         {
@@ -4123,18 +4038,18 @@
           "population": 2144570
         },
         {
+          "id": "12",
+          "name": "Brandenburg",
+          "current_week": 2,
+          "ytd": 53,
+          "population": 2554464
+        },
+        {
           "id": "16",
           "name": "Thuringia",
           "current_week": 2,
           "ytd": 84,
           "population": 2114870
-        },
-        {
-          "id": "12",
-          "name": "Brandenburg",
-          "current_week": 1,
-          "ytd": 52,
-          "population": 2554464
         },
         {
           "id": "14",
@@ -4196,8 +4111,8 @@
     },
     {
       "disease": "Enterovirus",
-      "total_current_week": 54,
-      "total_ytd": 1807,
+      "total_current_week": 58,
+      "total_ytd": 1811,
       "states_reporting": 3,
       "national_series": [
         {
@@ -4258,14 +4173,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 54
+          "value": 58
         }
       ],
       "national_trend": {
-        "latest_value": 54,
+        "latest_value": 58,
         "previous_value": 90,
-        "absolute_change": -36,
-        "percent_change": -40,
+        "absolute_change": -32,
+        "percent_change": -35.6,
         "trend": "falling",
         "window_size": 4
       },
@@ -4273,8 +4188,8 @@
         {
           "id": "14",
           "name": "Saxony",
-          "current_week": 49,
-          "ytd": 1640,
+          "current_week": 53,
+          "ytd": 1644,
           "population": 4054689
         },
         {
@@ -4294,9 +4209,94 @@
       ]
     },
     {
+      "disease": "(e) Chlamydia-trachomatis-Infektion",
+      "total_current_week": 57,
+      "total_ytd": 2401,
+      "states_reporting": 1,
+      "national_series": [
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 61
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 63
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 62
+        },
+        {
+          "year": 2026,
+          "week": 34,
+          "value": 49
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 78
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 57
+        },
+        {
+          "year": 2026,
+          "week": 37,
+          "value": 68
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 51
+        },
+        {
+          "year": 2026,
+          "week": 39,
+          "value": 58
+        },
+        {
+          "year": 2026,
+          "week": 40,
+          "value": 59
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 62
+        },
+        {
+          "year": 2026,
+          "week": 42,
+          "value": 57
+        }
+      ],
+      "national_trend": {
+        "latest_value": 57,
+        "previous_value": 62,
+        "absolute_change": -5,
+        "percent_change": -8.1,
+        "trend": "stable",
+        "window_size": 4
+      },
+      "states": [
+        {
+          "id": "14",
+          "name": "Saxony",
+          "current_week": 57,
+          "ytd": 2401,
+          "population": 4054689
+        }
+      ]
+    },
+    {
       "disease": "Parainfluenza",
-      "total_current_week": 49,
-      "total_ytd": 2445,
+      "total_current_week": 54,
+      "total_ytd": 2450,
       "states_reporting": 1,
       "national_series": [
         {
@@ -4357,14 +4357,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 49
+          "value": 54
         }
       ],
       "national_trend": {
-        "latest_value": 49,
+        "latest_value": 54,
         "previous_value": 81,
-        "absolute_change": -32,
-        "percent_change": -39.5,
+        "absolute_change": -27,
+        "percent_change": -33.3,
         "trend": "stable",
         "window_size": 4
       },
@@ -4372,16 +4372,16 @@
         {
           "id": "14",
           "name": "Saxony",
-          "current_week": 49,
-          "ytd": 2445,
+          "current_week": 54,
+          "ytd": 2450,
           "population": 4054689
         }
       ]
     },
     {
       "disease": "(e) Clostridium difficile, nicht schwerer Verlauf",
-      "total_current_week": 47,
-      "total_ytd": 1780,
+      "total_current_week": 51,
+      "total_ytd": 1784,
       "states_reporting": 15,
       "national_series": [
         {
@@ -4442,14 +4442,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 47
+          "value": 51
         }
       ],
       "national_trend": {
-        "latest_value": 47,
+        "latest_value": 51,
         "previous_value": 55,
-        "absolute_change": -8,
-        "percent_change": -14.5,
+        "absolute_change": -4,
+        "percent_change": -7.3,
         "trend": "stable",
         "window_size": 4
       },
@@ -4457,8 +4457,8 @@
         {
           "id": "14",
           "name": "Saxony",
-          "current_week": 45,
-          "ytd": 1675,
+          "current_week": 49,
+          "ytd": 1679,
           "population": 4054689
         },
         {
@@ -4563,8 +4563,8 @@
     },
     {
       "disease": "Hepatitis A",
-      "total_current_week": 45,
-      "total_ytd": 1332,
+      "total_current_week": 47,
+      "total_ytd": 1334,
       "states_reporting": 16,
       "national_series": [
         {
@@ -4625,14 +4625,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 45
+          "value": 47
         }
       ],
       "national_trend": {
-        "latest_value": 45,
+        "latest_value": 47,
         "previous_value": 45,
-        "absolute_change": 0,
-        "percent_change": 0,
+        "absolute_change": 2,
+        "percent_change": 4.4,
         "trend": "stable",
         "window_size": 4
       },
@@ -4640,8 +4640,8 @@
         {
           "id": "05",
           "name": "North Rhine-Westphalia",
-          "current_week": 20,
-          "ytd": 392,
+          "current_week": 22,
+          "ytd": 394,
           "population": 18017520
         },
         {
@@ -4753,8 +4753,8 @@
     },
     {
       "disease": "Mycoplasma",
-      "total_current_week": 36,
-      "total_ytd": 2410,
+      "total_current_week": 43,
+      "total_ytd": 2417,
       "states_reporting": 1,
       "national_series": [
         {
@@ -4815,14 +4815,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 36
+          "value": 43
         }
       ],
       "national_trend": {
-        "latest_value": 36,
+        "latest_value": 43,
         "previous_value": 69,
-        "absolute_change": -33,
-        "percent_change": -47.8,
+        "absolute_change": -26,
+        "percent_change": -37.7,
         "trend": "falling",
         "window_size": 4
       },
@@ -4830,16 +4830,206 @@
         {
           "id": "14",
           "name": "Saxony",
-          "current_week": 36,
-          "ytd": 2410,
+          "current_week": 43,
+          "ytd": 2417,
           "population": 4054689
+        }
+      ]
+    },
+    {
+      "disease": "(e) RSV (Meldepflicht gemäß IfSG)",
+      "total_current_week": 38,
+      "total_ytd": 67039,
+      "states_reporting": 16,
+      "national_series": [
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 9
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 13
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 9
+        },
+        {
+          "year": 2026,
+          "week": 34,
+          "value": 8
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 8
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 10
+        },
+        {
+          "year": 2026,
+          "week": 37,
+          "value": 23
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 20
+        },
+        {
+          "year": 2026,
+          "week": 39,
+          "value": 17
+        },
+        {
+          "year": 2026,
+          "week": 40,
+          "value": 19
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 32
+        },
+        {
+          "year": 2026,
+          "week": 42,
+          "value": 38
+        }
+      ],
+      "national_trend": {
+        "latest_value": 38,
+        "previous_value": 32,
+        "absolute_change": 6,
+        "percent_change": 18.8,
+        "trend": "rising",
+        "window_size": 4
+      },
+      "states": [
+        {
+          "id": "14",
+          "name": "Saxony",
+          "current_week": 9,
+          "ytd": 8150,
+          "population": 4054689
+        },
+        {
+          "id": "08",
+          "name": "Baden-Württemberg",
+          "current_week": 8,
+          "ytd": 6106,
+          "population": 11230740
+        },
+        {
+          "id": "11",
+          "name": "Berlin",
+          "current_week": 5,
+          "ytd": 2279,
+          "population": 3662381
+        },
+        {
+          "id": "06",
+          "name": "Hesse",
+          "current_week": 3,
+          "ytd": 3631,
+          "population": 6267546
+        },
+        {
+          "id": "09",
+          "name": "Bavaria",
+          "current_week": 3,
+          "ytd": 13441,
+          "population": 13176426
+        },
+        {
+          "id": "02",
+          "name": "Hamburg",
+          "current_week": 2,
+          "ytd": 1417,
+          "population": 1851596
+        },
+        {
+          "id": "05",
+          "name": "North Rhine-Westphalia",
+          "current_week": 2,
+          "ytd": 8249,
+          "population": 18017520
+        },
+        {
+          "id": "07",
+          "name": "Rhineland-Palatinate",
+          "current_week": 2,
+          "ytd": 2398,
+          "population": 4125163
+        },
+        {
+          "id": "12",
+          "name": "Brandenburg",
+          "current_week": 1,
+          "ytd": 3309,
+          "population": 2554464
+        },
+        {
+          "id": "16",
+          "name": "Thuringia",
+          "current_week": 1,
+          "ytd": 3117,
+          "population": 2114870
+        },
+        {
+          "id": "01",
+          "name": "Schleswig-Holstein",
+          "current_week": 1,
+          "ytd": 1553,
+          "population": 2953202
+        },
+        {
+          "id": "03",
+          "name": "Lower Saxony",
+          "current_week": 1,
+          "ytd": 4343,
+          "population": 8008135
+        },
+        {
+          "id": "10",
+          "name": "Saarland",
+          "current_week": 0,
+          "ytd": 580,
+          "population": 1014047
+        },
+        {
+          "id": "13",
+          "name": "Mecklenburg-Western Pomerania",
+          "current_week": 0,
+          "ytd": 2365,
+          "population": 1578041
+        },
+        {
+          "id": "15",
+          "name": "Saxony-Anhalt",
+          "current_week": 0,
+          "ytd": 5852,
+          "population": 2144570
+        },
+        {
+          "id": "04",
+          "name": "Bremen",
+          "current_week": 0,
+          "ytd": 249,
+          "population": 702655
         }
       ]
     },
     {
       "disease": "(e) Clostridium difficile, schwerer Verlauf",
       "total_current_week": 33,
-      "total_ytd": 1590,
+      "total_ytd": 1591,
       "states_reporting": 16,
       "national_series": [
         {
@@ -4890,7 +5080,7 @@
         {
           "year": 2026,
           "week": 40,
-          "value": 32
+          "value": 33
         },
         {
           "year": 2026,
@@ -4993,7 +5183,7 @@
           "id": "16",
           "name": "Thuringia",
           "current_week": 0,
-          "ytd": 40,
+          "ytd": 41,
           "population": 2114870
         },
         {
@@ -5027,199 +5217,9 @@
       ]
     },
     {
-      "disease": "(e) RSV (Meldepflicht gemäß IfSG)",
-      "total_current_week": 31,
-      "total_ytd": 67032,
-      "states_reporting": 16,
-      "national_series": [
-        {
-          "year": 2026,
-          "week": 31,
-          "value": 9
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 13
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 9
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 8
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 8
-        },
-        {
-          "year": 2026,
-          "week": 36,
-          "value": 10
-        },
-        {
-          "year": 2026,
-          "week": 37,
-          "value": 23
-        },
-        {
-          "year": 2026,
-          "week": 38,
-          "value": 20
-        },
-        {
-          "year": 2026,
-          "week": 39,
-          "value": 17
-        },
-        {
-          "year": 2026,
-          "week": 40,
-          "value": 19
-        },
-        {
-          "year": 2026,
-          "week": 41,
-          "value": 32
-        },
-        {
-          "year": 2026,
-          "week": 42,
-          "value": 31
-        }
-      ],
-      "national_trend": {
-        "latest_value": 31,
-        "previous_value": 32,
-        "absolute_change": -1,
-        "percent_change": -3.1,
-        "trend": "rising",
-        "window_size": 4
-      },
-      "states": [
-        {
-          "id": "14",
-          "name": "Saxony",
-          "current_week": 9,
-          "ytd": 8150,
-          "population": 4054689
-        },
-        {
-          "id": "11",
-          "name": "Berlin",
-          "current_week": 5,
-          "ytd": 2279,
-          "population": 3662381
-        },
-        {
-          "id": "06",
-          "name": "Hesse",
-          "current_week": 3,
-          "ytd": 3631,
-          "population": 6267546
-        },
-        {
-          "id": "08",
-          "name": "Baden-Württemberg",
-          "current_week": 3,
-          "ytd": 6101,
-          "population": 11230740
-        },
-        {
-          "id": "09",
-          "name": "Bavaria",
-          "current_week": 3,
-          "ytd": 13441,
-          "population": 13176426
-        },
-        {
-          "id": "07",
-          "name": "Rhineland-Palatinate",
-          "current_week": 2,
-          "ytd": 2398,
-          "population": 4125163
-        },
-        {
-          "id": "12",
-          "name": "Brandenburg",
-          "current_week": 1,
-          "ytd": 3309,
-          "population": 2554464
-        },
-        {
-          "id": "16",
-          "name": "Thuringia",
-          "current_week": 1,
-          "ytd": 3117,
-          "population": 2114870
-        },
-        {
-          "id": "01",
-          "name": "Schleswig-Holstein",
-          "current_week": 1,
-          "ytd": 1553,
-          "population": 2953202
-        },
-        {
-          "id": "02",
-          "name": "Hamburg",
-          "current_week": 1,
-          "ytd": 1416,
-          "population": 1851596
-        },
-        {
-          "id": "03",
-          "name": "Lower Saxony",
-          "current_week": 1,
-          "ytd": 4343,
-          "population": 8008135
-        },
-        {
-          "id": "05",
-          "name": "North Rhine-Westphalia",
-          "current_week": 1,
-          "ytd": 8248,
-          "population": 18017520
-        },
-        {
-          "id": "10",
-          "name": "Saarland",
-          "current_week": 0,
-          "ytd": 580,
-          "population": 1014047
-        },
-        {
-          "id": "13",
-          "name": "Mecklenburg-Western Pomerania",
-          "current_week": 0,
-          "ytd": 2365,
-          "population": 1578041
-        },
-        {
-          "id": "15",
-          "name": "Saxony-Anhalt",
-          "current_week": 0,
-          "ytd": 5852,
-          "population": 2144570
-        },
-        {
-          "id": "04",
-          "name": "Bremen",
-          "current_week": 0,
-          "ytd": 249,
-          "population": 702655
-        }
-      ]
-    },
-    {
       "disease": "(e) Gruppe-B-Streptokokken",
-      "total_current_week": 21,
-      "total_ytd": 1328,
+      "total_current_week": 24,
+      "total_ytd": 1331,
       "states_reporting": 1,
       "national_series": [
         {
@@ -5280,14 +5280,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 21
+          "value": 24
         }
       ],
       "national_trend": {
-        "latest_value": 21,
+        "latest_value": 24,
         "previous_value": 35,
-        "absolute_change": -14,
-        "percent_change": -40,
+        "absolute_change": -11,
+        "percent_change": -31.4,
         "trend": "stable",
         "window_size": 4
       },
@@ -5295,16 +5295,16 @@
         {
           "id": "14",
           "name": "Saxony",
-          "current_week": 21,
-          "ytd": 1328,
+          "current_week": 24,
+          "ytd": 1331,
           "population": 4054689
         }
       ]
     },
     {
       "disease": "Haemophilus influenzae disease, invasive",
-      "total_current_week": 21,
-      "total_ytd": 1034,
+      "total_current_week": 22,
+      "total_ytd": 1035,
       "states_reporting": 16,
       "national_series": [
         {
@@ -5365,14 +5365,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 21
+          "value": 22
         }
       ],
       "national_trend": {
-        "latest_value": 21,
+        "latest_value": 22,
         "previous_value": 29,
-        "absolute_change": -8,
-        "percent_change": -27.6,
+        "absolute_change": -7,
+        "percent_change": -24.1,
         "trend": "rising",
         "window_size": 4
       },
@@ -5413,6 +5413,13 @@
           "population": 8008135
         },
         {
+          "id": "06",
+          "name": "Hesse",
+          "current_week": 2,
+          "ytd": 71,
+          "population": 6267546
+        },
+        {
           "id": "12",
           "name": "Brandenburg",
           "current_week": 1,
@@ -5432,13 +5439,6 @@
           "current_week": 1,
           "ytd": 8,
           "population": 702655
-        },
-        {
-          "id": "06",
-          "name": "Hesse",
-          "current_week": 1,
-          "ytd": 70,
-          "population": 6267546
         },
         {
           "id": "08",
@@ -5493,8 +5493,8 @@
     },
     {
       "disease": "(e) Mpox",
-      "total_current_week": 19,
-      "total_ytd": 572,
+      "total_current_week": 20,
+      "total_ytd": 573,
       "states_reporting": 14,
       "national_series": [
         {
@@ -5555,14 +5555,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 19
+          "value": 20
         }
       ],
       "national_trend": {
-        "latest_value": 19,
+        "latest_value": 20,
         "previous_value": 29,
-        "absolute_change": -10,
-        "percent_change": -34.5,
+        "absolute_change": -9,
+        "percent_change": -31,
         "trend": "stable",
         "window_size": 4
       },
@@ -5570,8 +5570,8 @@
         {
           "id": "11",
           "name": "Berlin",
-          "current_week": 6,
-          "ytd": 214,
+          "current_week": 7,
+          "ytd": 215,
           "population": 3662381
         },
         {
@@ -5668,9 +5668,199 @@
       ]
     },
     {
+      "disease": "(e) Acinetobacter-Infektion oder –Kolonisation",
+      "total_current_week": 19,
+      "total_ytd": 696,
+      "states_reporting": 16,
+      "national_series": [
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 19
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 29
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 20
+        },
+        {
+          "year": 2026,
+          "week": 34,
+          "value": 16
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 17
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 17
+        },
+        {
+          "year": 2026,
+          "week": 37,
+          "value": 16
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 21
+        },
+        {
+          "year": 2026,
+          "week": 39,
+          "value": 24
+        },
+        {
+          "year": 2026,
+          "week": 40,
+          "value": 17
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 14
+        },
+        {
+          "year": 2026,
+          "week": 42,
+          "value": 19
+        }
+      ],
+      "national_trend": {
+        "latest_value": 19,
+        "previous_value": 14,
+        "absolute_change": 5,
+        "percent_change": 35.7,
+        "trend": "stable",
+        "window_size": 4
+      },
+      "states": [
+        {
+          "id": "08",
+          "name": "Baden-Württemberg",
+          "current_week": 4,
+          "ytd": 90,
+          "population": 11230740
+        },
+        {
+          "id": "05",
+          "name": "North Rhine-Westphalia",
+          "current_week": 3,
+          "ytd": 166,
+          "population": 18017520
+        },
+        {
+          "id": "09",
+          "name": "Bavaria",
+          "current_week": 3,
+          "ytd": 103,
+          "population": 13176426
+        },
+        {
+          "id": "12",
+          "name": "Brandenburg",
+          "current_week": 2,
+          "ytd": 14,
+          "population": 2554464
+        },
+        {
+          "id": "14",
+          "name": "Saxony",
+          "current_week": 2,
+          "ytd": 33,
+          "population": 4054689
+        },
+        {
+          "id": "15",
+          "name": "Saxony-Anhalt",
+          "current_week": 2,
+          "ytd": 32,
+          "population": 2144570
+        },
+        {
+          "id": "11",
+          "name": "Berlin",
+          "current_week": 1,
+          "ytd": 62,
+          "population": 3662381
+        },
+        {
+          "id": "01",
+          "name": "Schleswig-Holstein",
+          "current_week": 1,
+          "ytd": 40,
+          "population": 2953202
+        },
+        {
+          "id": "02",
+          "name": "Hamburg",
+          "current_week": 1,
+          "ytd": 20,
+          "population": 1851596
+        },
+        {
+          "id": "10",
+          "name": "Saarland",
+          "current_week": 0,
+          "ytd": 7,
+          "population": 1014047
+        },
+        {
+          "id": "13",
+          "name": "Mecklenburg-Western Pomerania",
+          "current_week": 0,
+          "ytd": 2,
+          "population": 1578041
+        },
+        {
+          "id": "16",
+          "name": "Thuringia",
+          "current_week": 0,
+          "ytd": 7,
+          "population": 2114870
+        },
+        {
+          "id": "03",
+          "name": "Lower Saxony",
+          "current_week": 0,
+          "ytd": 47,
+          "population": 8008135
+        },
+        {
+          "id": "04",
+          "name": "Bremen",
+          "current_week": 0,
+          "ytd": 2,
+          "population": 702655
+        },
+        {
+          "id": "06",
+          "name": "Hesse",
+          "current_week": 0,
+          "ytd": 45,
+          "population": 6267546
+        },
+        {
+          "id": "07",
+          "name": "Rhineland-Palatinate",
+          "current_week": 0,
+          "ytd": 26,
+          "population": 4125163
+        }
+      ]
+    },
+    {
       "disease": "Methicillin-resistant Staphylococcus aureus (MRSA), invasive Infection",
       "total_current_week": 17,
-      "total_ytd": 982,
+      "total_ytd": 983,
       "states_reporting": 16,
       "national_series": [
         {
@@ -5706,7 +5896,7 @@
         {
           "year": 2026,
           "week": 37,
-          "value": 15
+          "value": 16
         },
         {
           "year": 2026,
@@ -5747,7 +5937,7 @@
           "id": "05",
           "name": "North Rhine-Westphalia",
           "current_week": 7,
-          "ytd": 266,
+          "ytd": 267,
           "population": 18017520
         },
         {
@@ -5858,199 +6048,9 @@
       ]
     },
     {
-      "disease": "(e) Acinetobacter-Infektion oder –Kolonisation",
-      "total_current_week": 16,
-      "total_ytd": 692,
-      "states_reporting": 16,
-      "national_series": [
-        {
-          "year": 2026,
-          "week": 31,
-          "value": 19
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 29
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 20
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 16
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 17
-        },
-        {
-          "year": 2026,
-          "week": 36,
-          "value": 17
-        },
-        {
-          "year": 2026,
-          "week": 37,
-          "value": 16
-        },
-        {
-          "year": 2026,
-          "week": 38,
-          "value": 21
-        },
-        {
-          "year": 2026,
-          "week": 39,
-          "value": 24
-        },
-        {
-          "year": 2026,
-          "week": 40,
-          "value": 17
-        },
-        {
-          "year": 2026,
-          "week": 41,
-          "value": 14
-        },
-        {
-          "year": 2026,
-          "week": 42,
-          "value": 16
-        }
-      ],
-      "national_trend": {
-        "latest_value": 16,
-        "previous_value": 14,
-        "absolute_change": 2,
-        "percent_change": 14.3,
-        "trend": "falling",
-        "window_size": 4
-      },
-      "states": [
-        {
-          "id": "08",
-          "name": "Baden-Württemberg",
-          "current_week": 4,
-          "ytd": 90,
-          "population": 11230740
-        },
-        {
-          "id": "09",
-          "name": "Bavaria",
-          "current_week": 3,
-          "ytd": 103,
-          "population": 13176426
-        },
-        {
-          "id": "12",
-          "name": "Brandenburg",
-          "current_week": 2,
-          "ytd": 14,
-          "population": 2554464
-        },
-        {
-          "id": "14",
-          "name": "Saxony",
-          "current_week": 2,
-          "ytd": 33,
-          "population": 4054689
-        },
-        {
-          "id": "05",
-          "name": "North Rhine-Westphalia",
-          "current_week": 2,
-          "ytd": 165,
-          "population": 18017520
-        },
-        {
-          "id": "11",
-          "name": "Berlin",
-          "current_week": 1,
-          "ytd": 62,
-          "population": 3662381
-        },
-        {
-          "id": "01",
-          "name": "Schleswig-Holstein",
-          "current_week": 1,
-          "ytd": 40,
-          "population": 2953202
-        },
-        {
-          "id": "02",
-          "name": "Hamburg",
-          "current_week": 1,
-          "ytd": 20,
-          "population": 1851596
-        },
-        {
-          "id": "10",
-          "name": "Saarland",
-          "current_week": 0,
-          "ytd": 7,
-          "population": 1014047
-        },
-        {
-          "id": "13",
-          "name": "Mecklenburg-Western Pomerania",
-          "current_week": 0,
-          "ytd": 2,
-          "population": 1578041
-        },
-        {
-          "id": "15",
-          "name": "Saxony-Anhalt",
-          "current_week": 0,
-          "ytd": 30,
-          "population": 2144570
-        },
-        {
-          "id": "16",
-          "name": "Thuringia",
-          "current_week": 0,
-          "ytd": 7,
-          "population": 2114870
-        },
-        {
-          "id": "03",
-          "name": "Lower Saxony",
-          "current_week": 0,
-          "ytd": 47,
-          "population": 8008135
-        },
-        {
-          "id": "04",
-          "name": "Bremen",
-          "current_week": 0,
-          "ytd": 2,
-          "population": 702655
-        },
-        {
-          "id": "06",
-          "name": "Hesse",
-          "current_week": 0,
-          "ytd": 44,
-          "population": 6267546
-        },
-        {
-          "id": "07",
-          "name": "Rhineland-Palatinate",
-          "current_week": 0,
-          "ytd": 26,
-          "population": 4125163
-        }
-      ]
-    },
-    {
       "disease": "(e) Cytomegalie",
-      "total_current_week": 12,
-      "total_ytd": 631,
+      "total_current_week": 14,
+      "total_ytd": 633,
       "states_reporting": 1,
       "national_series": [
         {
@@ -6111,14 +6111,14 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 12
+          "value": 14
         }
       ],
       "national_trend": {
-        "latest_value": 12,
+        "latest_value": 14,
         "previous_value": 11,
-        "absolute_change": 1,
-        "percent_change": 9.1,
+        "absolute_change": 3,
+        "percent_change": 27.3,
         "trend": "stable",
         "window_size": 4
       },
@@ -6126,16 +6126,16 @@
         {
           "id": "14",
           "name": "Saxony",
-          "current_week": 12,
-          "ytd": 631,
+          "current_week": 14,
+          "ytd": 633,
           "population": 4054689
         }
       ]
     },
     {
       "disease": "Scarlet fever",
-      "total_current_week": 12,
-      "total_ytd": 615,
+      "total_current_week": 13,
+      "total_ytd": 616,
       "states_reporting": 3,
       "national_series": [
         {
@@ -6196,31 +6196,31 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 12
+          "value": 13
         }
       ],
       "national_trend": {
-        "latest_value": 12,
+        "latest_value": 13,
         "previous_value": 21,
-        "absolute_change": -9,
-        "percent_change": -42.9,
+        "absolute_change": -8,
+        "percent_change": -38.1,
         "trend": "stable",
         "window_size": 4
       },
       "states": [
+        {
+          "id": "16",
+          "name": "Thuringia",
+          "current_week": 6,
+          "ytd": 438,
+          "population": 2114870
+        },
         {
           "id": "14",
           "name": "Saxony",
           "current_week": 5,
           "ytd": 83,
           "population": 4054689
-        },
-        {
-          "id": "16",
-          "name": "Thuringia",
-          "current_week": 5,
-          "ytd": 437,
-          "population": 2114870
         },
         {
           "id": "15",
@@ -6232,192 +6232,9 @@
       ]
     },
     {
-      "disease": "(e) Mumps (Meldepflicht gemäß IfSG)",
-      "total_current_week": 10,
-      "total_ytd": 397,
-      "states_reporting": 15,
-      "national_series": [
-        {
-          "year": 2026,
-          "week": 31,
-          "value": 8
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 7
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 9
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 9
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 9
-        },
-        {
-          "year": 2026,
-          "week": 36,
-          "value": 6
-        },
-        {
-          "year": 2026,
-          "week": 37,
-          "value": 4
-        },
-        {
-          "year": 2026,
-          "week": 38,
-          "value": 11
-        },
-        {
-          "year": 2026,
-          "week": 39,
-          "value": 9
-        },
-        {
-          "year": 2026,
-          "week": 40,
-          "value": 13
-        },
-        {
-          "year": 2026,
-          "week": 41,
-          "value": 9
-        },
-        {
-          "year": 2026,
-          "week": 42,
-          "value": 10
-        }
-      ],
-      "national_trend": {
-        "latest_value": 10,
-        "previous_value": 9,
-        "absolute_change": 1,
-        "percent_change": 11.1,
-        "trend": "stable",
-        "window_size": 4
-      },
-      "states": [
-        {
-          "id": "05",
-          "name": "North Rhine-Westphalia",
-          "current_week": 3,
-          "ytd": 103,
-          "population": 18017520
-        },
-        {
-          "id": "14",
-          "name": "Saxony",
-          "current_week": 2,
-          "ytd": 20,
-          "population": 4054689
-        },
-        {
-          "id": "03",
-          "name": "Lower Saxony",
-          "current_week": 2,
-          "ytd": 45,
-          "population": 8008135
-        },
-        {
-          "id": "06",
-          "name": "Hesse",
-          "current_week": 2,
-          "ytd": 40,
-          "population": 6267546
-        },
-        {
-          "id": "16",
-          "name": "Thuringia",
-          "current_week": 1,
-          "ytd": 4,
-          "population": 2114870
-        },
-        {
-          "id": "10",
-          "name": "Saarland",
-          "current_week": 0,
-          "ytd": 10,
-          "population": 1014047
-        },
-        {
-          "id": "11",
-          "name": "Berlin",
-          "current_week": 0,
-          "ytd": 27,
-          "population": 3662381
-        },
-        {
-          "id": "12",
-          "name": "Brandenburg",
-          "current_week": 0,
-          "ytd": 9,
-          "population": 2554464
-        },
-        {
-          "id": "15",
-          "name": "Saxony-Anhalt",
-          "current_week": 0,
-          "ytd": 5,
-          "population": 2144570
-        },
-        {
-          "id": "01",
-          "name": "Schleswig-Holstein",
-          "current_week": 0,
-          "ytd": 20,
-          "population": 2953202
-        },
-        {
-          "id": "02",
-          "name": "Hamburg",
-          "current_week": 0,
-          "ytd": 11,
-          "population": 1851596
-        },
-        {
-          "id": "04",
-          "name": "Bremen",
-          "current_week": 0,
-          "ytd": 2,
-          "population": 702655
-        },
-        {
-          "id": "07",
-          "name": "Rhineland-Palatinate",
-          "current_week": 0,
-          "ytd": 22,
-          "population": 4125163
-        },
-        {
-          "id": "08",
-          "name": "Baden-Württemberg",
-          "current_week": 0,
-          "ytd": 26,
-          "population": 11230740
-        },
-        {
-          "id": "09",
-          "name": "Bavaria",
-          "current_week": 0,
-          "ytd": 53,
-          "population": 13176426
-        }
-      ]
-    },
-    {
       "disease": "Tick-borne encephalitis (TBE)",
-      "total_current_week": 9,
-      "total_ytd": 653,
+      "total_current_week": 12,
+      "total_ytd": 656,
       "states_reporting": 15,
       "national_series": [
         {
@@ -6458,7 +6275,7 @@
         {
           "year": 2026,
           "week": 38,
-          "value": 10
+          "value": 11
         },
         {
           "year": 2026,
@@ -6468,7 +6285,7 @@
         {
           "year": 2026,
           "week": 40,
-          "value": 12
+          "value": 11
         },
         {
           "year": 2026,
@@ -6478,31 +6295,38 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 9
+          "value": 12
         }
       ],
       "national_trend": {
-        "latest_value": 9,
+        "latest_value": 12,
         "previous_value": 18,
-        "absolute_change": -9,
-        "percent_change": -50,
+        "absolute_change": -6,
+        "percent_change": -33.3,
         "trend": "stable",
         "window_size": 4
       },
       "states": [
         {
+          "id": "09",
+          "name": "Bavaria",
+          "current_week": 6,
+          "ytd": 269,
+          "population": 13176426
+        },
+        {
           "id": "08",
           "name": "Baden-Württemberg",
           "current_week": 5,
-          "ytd": 212,
+          "ytd": 211,
           "population": 11230740
         },
         {
-          "id": "09",
-          "name": "Bavaria",
-          "current_week": 4,
-          "ytd": 266,
-          "population": 13176426
+          "id": "07",
+          "name": "Rhineland-Palatinate",
+          "current_week": 1,
+          "ytd": 11,
+          "population": 4125163
         },
         {
           "id": "10",
@@ -6587,20 +6411,13 @@
           "current_week": 0,
           "ytd": 22,
           "population": 6267546
-        },
-        {
-          "id": "07",
-          "name": "Rhineland-Palatinate",
-          "current_week": 0,
-          "ytd": 10,
-          "population": 4125163
         }
       ]
     },
     {
       "disease": "Listeriosis",
-      "total_current_week": 9,
-      "total_ytd": 479,
+      "total_current_week": 11,
+      "total_ytd": 481,
       "states_reporting": 16,
       "national_series": [
         {
@@ -6661,24 +6478,31 @@
         {
           "year": 2026,
           "week": 42,
-          "value": 9
+          "value": 11
         }
       ],
       "national_trend": {
-        "latest_value": 9,
+        "latest_value": 11,
         "previous_value": 5,
-        "absolute_change": 4,
-        "percent_change": 80,
-        "trend": "falling",
+        "absolute_change": 6,
+        "percent_change": 120,
+        "trend": "stable",
         "window_size": 4
       },
       "states": [
         {
           "id": "03",
           "name": "Lower Saxony",
-          "current_week": 2,
-          "ytd": 39,
+          "current_week": 3,
+          "ytd": 40,
           "population": 8008135
+        },
+        {
+          "id": "16",
+          "name": "Thuringia",
+          "current_week": 2,
+          "ytd": 15,
+          "population": 2114870
         },
         {
           "id": "09",
@@ -6686,13 +6510,6 @@
           "current_week": 2,
           "ytd": 80,
           "population": 13176426
-        },
-        {
-          "id": "16",
-          "name": "Thuringia",
-          "current_week": 1,
-          "ytd": 14,
-          "population": 2114870
         },
         {
           "id": "05",
@@ -6784,6 +6601,189 @@
           "current_week": 0,
           "ytd": 5,
           "population": 702655
+        }
+      ]
+    },
+    {
+      "disease": "(e) Mumps (Meldepflicht gemäß IfSG)",
+      "total_current_week": 10,
+      "total_ytd": 396,
+      "states_reporting": 15,
+      "national_series": [
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 8
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 7
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 9
+        },
+        {
+          "year": 2026,
+          "week": 34,
+          "value": 9
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 9
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 6
+        },
+        {
+          "year": 2026,
+          "week": 37,
+          "value": 4
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 11
+        },
+        {
+          "year": 2026,
+          "week": 39,
+          "value": 9
+        },
+        {
+          "year": 2026,
+          "week": 40,
+          "value": 13
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 8
+        },
+        {
+          "year": 2026,
+          "week": 42,
+          "value": 10
+        }
+      ],
+      "national_trend": {
+        "latest_value": 10,
+        "previous_value": 8,
+        "absolute_change": 2,
+        "percent_change": 25,
+        "trend": "stable",
+        "window_size": 4
+      },
+      "states": [
+        {
+          "id": "05",
+          "name": "North Rhine-Westphalia",
+          "current_week": 3,
+          "ytd": 103,
+          "population": 18017520
+        },
+        {
+          "id": "14",
+          "name": "Saxony",
+          "current_week": 2,
+          "ytd": 20,
+          "population": 4054689
+        },
+        {
+          "id": "03",
+          "name": "Lower Saxony",
+          "current_week": 2,
+          "ytd": 45,
+          "population": 8008135
+        },
+        {
+          "id": "06",
+          "name": "Hesse",
+          "current_week": 2,
+          "ytd": 40,
+          "population": 6267546
+        },
+        {
+          "id": "01",
+          "name": "Schleswig-Holstein",
+          "current_week": 1,
+          "ytd": 21,
+          "population": 2953202
+        },
+        {
+          "id": "10",
+          "name": "Saarland",
+          "current_week": 0,
+          "ytd": 10,
+          "population": 1014047
+        },
+        {
+          "id": "11",
+          "name": "Berlin",
+          "current_week": 0,
+          "ytd": 27,
+          "population": 3662381
+        },
+        {
+          "id": "12",
+          "name": "Brandenburg",
+          "current_week": 0,
+          "ytd": 9,
+          "population": 2554464
+        },
+        {
+          "id": "15",
+          "name": "Saxony-Anhalt",
+          "current_week": 0,
+          "ytd": 5,
+          "population": 2144570
+        },
+        {
+          "id": "16",
+          "name": "Thuringia",
+          "current_week": 0,
+          "ytd": 3,
+          "population": 2114870
+        },
+        {
+          "id": "02",
+          "name": "Hamburg",
+          "current_week": 0,
+          "ytd": 11,
+          "population": 1851596
+        },
+        {
+          "id": "04",
+          "name": "Bremen",
+          "current_week": 0,
+          "ytd": 2,
+          "population": 702655
+        },
+        {
+          "id": "07",
+          "name": "Rhineland-Palatinate",
+          "current_week": 0,
+          "ytd": 22,
+          "population": 4125163
+        },
+        {
+          "id": "08",
+          "name": "Baden-Württemberg",
+          "current_week": 0,
+          "ytd": 26,
+          "population": 11230740
+        },
+        {
+          "id": "09",
+          "name": "Bavaria",
+          "current_week": 0,
+          "ytd": 52,
+          "population": 13176426
         }
       ]
     },
@@ -7112,189 +7112,6 @@
       ]
     },
     {
-      "disease": "Measles",
-      "total_current_week": 5,
-      "total_ytd": 146,
-      "states_reporting": 15,
-      "national_series": [
-        {
-          "year": 2026,
-          "week": 31,
-          "value": 2
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 4
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 3
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 3
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 2
-        },
-        {
-          "year": 2026,
-          "week": 36,
-          "value": 5
-        },
-        {
-          "year": 2026,
-          "week": 37,
-          "value": 0
-        },
-        {
-          "year": 2026,
-          "week": 38,
-          "value": 5
-        },
-        {
-          "year": 2026,
-          "week": 39,
-          "value": 4
-        },
-        {
-          "year": 2026,
-          "week": 40,
-          "value": 6
-        },
-        {
-          "year": 2026,
-          "week": 41,
-          "value": 4
-        },
-        {
-          "year": 2026,
-          "week": 42,
-          "value": 5
-        }
-      ],
-      "national_trend": {
-        "latest_value": 5,
-        "previous_value": 4,
-        "absolute_change": 1,
-        "percent_change": 25,
-        "trend": "stable",
-        "window_size": 4
-      },
-      "states": [
-        {
-          "id": "11",
-          "name": "Berlin",
-          "current_week": 1,
-          "ytd": 2,
-          "population": 3662381
-        },
-        {
-          "id": "16",
-          "name": "Thuringia",
-          "current_week": 1,
-          "ytd": 1,
-          "population": 2114870
-        },
-        {
-          "id": "01",
-          "name": "Schleswig-Holstein",
-          "current_week": 1,
-          "ytd": 4,
-          "population": 2953202
-        },
-        {
-          "id": "03",
-          "name": "Lower Saxony",
-          "current_week": 1,
-          "ytd": 18,
-          "population": 8008135
-        },
-        {
-          "id": "06",
-          "name": "Hesse",
-          "current_week": 1,
-          "ytd": 15,
-          "population": 6267546
-        },
-        {
-          "id": "10",
-          "name": "Saarland",
-          "current_week": 0,
-          "ytd": 1,
-          "population": 1014047
-        },
-        {
-          "id": "12",
-          "name": "Brandenburg",
-          "current_week": 0,
-          "ytd": 3,
-          "population": 2554464
-        },
-        {
-          "id": "13",
-          "name": "Mecklenburg-Western Pomerania",
-          "current_week": 0,
-          "ytd": 1,
-          "population": 1578041
-        },
-        {
-          "id": "14",
-          "name": "Saxony",
-          "current_week": 0,
-          "ytd": 1,
-          "population": 4054689
-        },
-        {
-          "id": "02",
-          "name": "Hamburg",
-          "current_week": 0,
-          "ytd": 4,
-          "population": 1851596
-        },
-        {
-          "id": "04",
-          "name": "Bremen",
-          "current_week": 0,
-          "ytd": 2,
-          "population": 702655
-        },
-        {
-          "id": "05",
-          "name": "North Rhine-Westphalia",
-          "current_week": 0,
-          "ytd": 45,
-          "population": 18017520
-        },
-        {
-          "id": "07",
-          "name": "Rhineland-Palatinate",
-          "current_week": 0,
-          "ytd": 9,
-          "population": 4125163
-        },
-        {
-          "id": "08",
-          "name": "Baden-Württemberg",
-          "current_week": 0,
-          "ytd": 22,
-          "population": 11230740
-        },
-        {
-          "id": "09",
-          "name": "Bavaria",
-          "current_week": 0,
-          "ytd": 18,
-          "population": 13176426
-        }
-      ]
-    },
-    {
       "disease": "(e) Astrovirus-Infektion",
       "total_current_week": 4,
       "total_ytd": 810,
@@ -7570,6 +7387,182 @@
       ]
     },
     {
+      "disease": "Measles",
+      "total_current_week": 3,
+      "total_ytd": 144,
+      "states_reporting": 14,
+      "national_series": [
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 2
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 4
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 3
+        },
+        {
+          "year": 2026,
+          "week": 34,
+          "value": 3
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 2
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 5
+        },
+        {
+          "year": 2026,
+          "week": 37,
+          "value": 0
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 5
+        },
+        {
+          "year": 2026,
+          "week": 39,
+          "value": 4
+        },
+        {
+          "year": 2026,
+          "week": 40,
+          "value": 6
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 4
+        },
+        {
+          "year": 2026,
+          "week": 42,
+          "value": 3
+        }
+      ],
+      "national_trend": {
+        "latest_value": 3,
+        "previous_value": 4,
+        "absolute_change": -1,
+        "percent_change": -25,
+        "trend": "falling",
+        "window_size": 4
+      },
+      "states": [
+        {
+          "id": "11",
+          "name": "Berlin",
+          "current_week": 1,
+          "ytd": 2,
+          "population": 3662381
+        },
+        {
+          "id": "01",
+          "name": "Schleswig-Holstein",
+          "current_week": 1,
+          "ytd": 4,
+          "population": 2953202
+        },
+        {
+          "id": "06",
+          "name": "Hesse",
+          "current_week": 1,
+          "ytd": 15,
+          "population": 6267546
+        },
+        {
+          "id": "10",
+          "name": "Saarland",
+          "current_week": 0,
+          "ytd": 1,
+          "population": 1014047
+        },
+        {
+          "id": "12",
+          "name": "Brandenburg",
+          "current_week": 0,
+          "ytd": 3,
+          "population": 2554464
+        },
+        {
+          "id": "13",
+          "name": "Mecklenburg-Western Pomerania",
+          "current_week": 0,
+          "ytd": 1,
+          "population": 1578041
+        },
+        {
+          "id": "14",
+          "name": "Saxony",
+          "current_week": 0,
+          "ytd": 1,
+          "population": 4054689
+        },
+        {
+          "id": "02",
+          "name": "Hamburg",
+          "current_week": 0,
+          "ytd": 4,
+          "population": 1851596
+        },
+        {
+          "id": "03",
+          "name": "Lower Saxony",
+          "current_week": 0,
+          "ytd": 17,
+          "population": 8008135
+        },
+        {
+          "id": "04",
+          "name": "Bremen",
+          "current_week": 0,
+          "ytd": 2,
+          "population": 702655
+        },
+        {
+          "id": "05",
+          "name": "North Rhine-Westphalia",
+          "current_week": 0,
+          "ytd": 45,
+          "population": 18017520
+        },
+        {
+          "id": "07",
+          "name": "Rhineland-Palatinate",
+          "current_week": 0,
+          "ytd": 9,
+          "population": 4125163
+        },
+        {
+          "id": "08",
+          "name": "Baden-Württemberg",
+          "current_week": 0,
+          "ytd": 22,
+          "population": 11230740
+        },
+        {
+          "id": "09",
+          "name": "Bavaria",
+          "current_week": 0,
+          "ytd": 18,
+          "population": 13176426
+        }
+      ]
+    },
+    {
       "disease": "(e) Gonorrhoe",
       "total_current_week": 2,
       "total_ytd": 479,
@@ -7754,6 +7747,189 @@
       ]
     },
     {
+      "disease": "Meningococcal disease, invasive",
+      "total_current_week": 2,
+      "total_ytd": 177,
+      "states_reporting": 15,
+      "national_series": [
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 2
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 1
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 4
+        },
+        {
+          "year": 2026,
+          "week": 34,
+          "value": 3
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 3
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 1
+        },
+        {
+          "year": 2026,
+          "week": 37,
+          "value": 1
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 4
+        },
+        {
+          "year": 2026,
+          "week": 39,
+          "value": 1
+        },
+        {
+          "year": 2026,
+          "week": 40,
+          "value": 2
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 0
+        },
+        {
+          "year": 2026,
+          "week": 42,
+          "value": 2
+        }
+      ],
+      "national_trend": {
+        "latest_value": 2,
+        "previous_value": 0,
+        "absolute_change": 2,
+        "percent_change": null,
+        "trend": "stable",
+        "window_size": 4
+      },
+      "states": [
+        {
+          "id": "16",
+          "name": "Thuringia",
+          "current_week": 1,
+          "ytd": 3,
+          "population": 2114870
+        },
+        {
+          "id": "05",
+          "name": "North Rhine-Westphalia",
+          "current_week": 1,
+          "ytd": 43,
+          "population": 18017520
+        },
+        {
+          "id": "10",
+          "name": "Saarland",
+          "current_week": 0,
+          "ytd": 1,
+          "population": 1014047
+        },
+        {
+          "id": "11",
+          "name": "Berlin",
+          "current_week": 0,
+          "ytd": 9,
+          "population": 3662381
+        },
+        {
+          "id": "12",
+          "name": "Brandenburg",
+          "current_week": 0,
+          "ytd": 11,
+          "population": 2554464
+        },
+        {
+          "id": "14",
+          "name": "Saxony",
+          "current_week": 0,
+          "ytd": 8,
+          "population": 4054689
+        },
+        {
+          "id": "15",
+          "name": "Saxony-Anhalt",
+          "current_week": 0,
+          "ytd": 2,
+          "population": 2144570
+        },
+        {
+          "id": "01",
+          "name": "Schleswig-Holstein",
+          "current_week": 0,
+          "ytd": 7,
+          "population": 2953202
+        },
+        {
+          "id": "02",
+          "name": "Hamburg",
+          "current_week": 0,
+          "ytd": 6,
+          "population": 1851596
+        },
+        {
+          "id": "03",
+          "name": "Lower Saxony",
+          "current_week": 0,
+          "ytd": 10,
+          "population": 8008135
+        },
+        {
+          "id": "04",
+          "name": "Bremen",
+          "current_week": 0,
+          "ytd": 3,
+          "population": 702655
+        },
+        {
+          "id": "06",
+          "name": "Hesse",
+          "current_week": 0,
+          "ytd": 14,
+          "population": 6267546
+        },
+        {
+          "id": "07",
+          "name": "Rhineland-Palatinate",
+          "current_week": 0,
+          "ytd": 6,
+          "population": 4125163
+        },
+        {
+          "id": "08",
+          "name": "Baden-Württemberg",
+          "current_week": 0,
+          "ytd": 27,
+          "population": 11230740
+        },
+        {
+          "id": "09",
+          "name": "Bavaria",
+          "current_week": 0,
+          "ytd": 27,
+          "population": 13176426
+        }
+      ]
+    },
+    {
       "disease": "Q Fever",
       "total_current_week": 2,
       "total_ytd": 148,
@@ -7911,6 +8087,175 @@
           "name": "Bavaria",
           "current_week": 0,
           "ytd": 25,
+          "population": 13176426
+        }
+      ]
+    },
+    {
+      "disease": "Diphtheria",
+      "total_current_week": 1,
+      "total_ytd": 42,
+      "states_reporting": 13,
+      "national_series": [
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 2
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 1
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 1
+        },
+        {
+          "year": 2026,
+          "week": 34,
+          "value": 2
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 1
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 0
+        },
+        {
+          "year": 2026,
+          "week": 37,
+          "value": 2
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 3
+        },
+        {
+          "year": 2026,
+          "week": 39,
+          "value": 2
+        },
+        {
+          "year": 2026,
+          "week": 40,
+          "value": 1
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 1
+        },
+        {
+          "year": 2026,
+          "week": 42,
+          "value": 1
+        }
+      ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 1,
+        "absolute_change": 0,
+        "percent_change": 0,
+        "trend": "falling",
+        "window_size": 4
+      },
+      "states": [
+        {
+          "id": "02",
+          "name": "Hamburg",
+          "current_week": 1,
+          "ytd": 2,
+          "population": 1851596
+        },
+        {
+          "id": "10",
+          "name": "Saarland",
+          "current_week": 0,
+          "ytd": 2,
+          "population": 1014047
+        },
+        {
+          "id": "11",
+          "name": "Berlin",
+          "current_week": 0,
+          "ytd": 6,
+          "population": 3662381
+        },
+        {
+          "id": "12",
+          "name": "Brandenburg",
+          "current_week": 0,
+          "ytd": 2,
+          "population": 2554464
+        },
+        {
+          "id": "13",
+          "name": "Mecklenburg-Western Pomerania",
+          "current_week": 0,
+          "ytd": 1,
+          "population": 1578041
+        },
+        {
+          "id": "14",
+          "name": "Saxony",
+          "current_week": 0,
+          "ytd": 2,
+          "population": 4054689
+        },
+        {
+          "id": "15",
+          "name": "Saxony-Anhalt",
+          "current_week": 0,
+          "ytd": 2,
+          "population": 2144570
+        },
+        {
+          "id": "01",
+          "name": "Schleswig-Holstein",
+          "current_week": 0,
+          "ytd": 3,
+          "population": 2953202
+        },
+        {
+          "id": "03",
+          "name": "Lower Saxony",
+          "current_week": 0,
+          "ytd": 1,
+          "population": 8008135
+        },
+        {
+          "id": "05",
+          "name": "North Rhine-Westphalia",
+          "current_week": 0,
+          "ytd": 8,
+          "population": 18017520
+        },
+        {
+          "id": "07",
+          "name": "Rhineland-Palatinate",
+          "current_week": 0,
+          "ytd": 2,
+          "population": 4125163
+        },
+        {
+          "id": "08",
+          "name": "Baden-Württemberg",
+          "current_week": 0,
+          "ytd": 6,
+          "population": 11230740
+        },
+        {
+          "id": "09",
+          "name": "Bavaria",
+          "current_week": 0,
+          "ytd": 5,
           "population": 13176426
         }
       ]
@@ -8078,9 +8423,178 @@
       ]
     },
     {
+      "disease": "Typhoid",
+      "total_current_week": 1,
+      "total_ytd": 76,
+      "states_reporting": 13,
+      "national_series": [
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 1
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 2
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 1
+        },
+        {
+          "year": 2026,
+          "week": 34,
+          "value": 0
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 7
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 10
+        },
+        {
+          "year": 2026,
+          "week": 37,
+          "value": 6
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 3
+        },
+        {
+          "year": 2026,
+          "week": 39,
+          "value": 3
+        },
+        {
+          "year": 2026,
+          "week": 40,
+          "value": 1
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 3
+        },
+        {
+          "year": 2026,
+          "week": 42,
+          "value": 1
+        }
+      ],
+      "national_trend": {
+        "latest_value": 1,
+        "previous_value": 3,
+        "absolute_change": -2,
+        "percent_change": -66.7,
+        "trend": "falling",
+        "window_size": 4
+      },
+      "states": [
+        {
+          "id": "06",
+          "name": "Hesse",
+          "current_week": 1,
+          "ytd": 15,
+          "population": 6267546
+        },
+        {
+          "id": "11",
+          "name": "Berlin",
+          "current_week": 0,
+          "ytd": 10,
+          "population": 3662381
+        },
+        {
+          "id": "12",
+          "name": "Brandenburg",
+          "current_week": 0,
+          "ytd": 1,
+          "population": 2554464
+        },
+        {
+          "id": "14",
+          "name": "Saxony",
+          "current_week": 0,
+          "ytd": 1,
+          "population": 4054689
+        },
+        {
+          "id": "15",
+          "name": "Saxony-Anhalt",
+          "current_week": 0,
+          "ytd": 1,
+          "population": 2144570
+        },
+        {
+          "id": "01",
+          "name": "Schleswig-Holstein",
+          "current_week": 0,
+          "ytd": 2,
+          "population": 2953202
+        },
+        {
+          "id": "02",
+          "name": "Hamburg",
+          "current_week": 0,
+          "ytd": 3,
+          "population": 1851596
+        },
+        {
+          "id": "03",
+          "name": "Lower Saxony",
+          "current_week": 0,
+          "ytd": 3,
+          "population": 8008135
+        },
+        {
+          "id": "04",
+          "name": "Bremen",
+          "current_week": 0,
+          "ytd": 2,
+          "population": 702655
+        },
+        {
+          "id": "05",
+          "name": "North Rhine-Westphalia",
+          "current_week": 0,
+          "ytd": 15,
+          "population": 18017520
+        },
+        {
+          "id": "07",
+          "name": "Rhineland-Palatinate",
+          "current_week": 0,
+          "ytd": 4,
+          "population": 4125163
+        },
+        {
+          "id": "08",
+          "name": "Baden-Württemberg",
+          "current_week": 0,
+          "ytd": 10,
+          "population": 11230740
+        },
+        {
+          "id": "09",
+          "name": "Bavaria",
+          "current_week": 0,
+          "ytd": 9,
+          "population": 13176426
+        }
+      ]
+    },
+    {
       "disease": "(e) Vibrionen",
       "total_current_week": 1,
-      "total_ytd": 133,
+      "total_ytd": 134,
       "states_reporting": 16,
       "national_series": [
         {
@@ -8136,7 +8650,7 @@
         {
           "year": 2026,
           "week": 41,
-          "value": 1
+          "value": 2
         },
         {
           "year": 2026,
@@ -8146,9 +8660,9 @@
       ],
       "national_trend": {
         "latest_value": 1,
-        "previous_value": 1,
-        "absolute_change": 0,
-        "percent_change": 0,
+        "previous_value": 2,
+        "absolute_change": -1,
+        "percent_change": -50,
         "trend": "falling",
         "window_size": 4
       },
@@ -8213,7 +8727,7 @@
           "id": "01",
           "name": "Schleswig-Holstein",
           "current_week": 0,
-          "ytd": 14,
+          "ytd": 15,
           "population": 2953202
         },
         {
@@ -8715,7 +9229,7 @@
     {
       "disease": "Brucellosis",
       "total_current_week": 0,
-      "total_ytd": 48,
+      "total_ytd": 49,
       "states_reporting": 13,
       "national_series": [
         {
@@ -8761,7 +9275,7 @@
         {
           "year": 2026,
           "week": 39,
-          "value": 0
+          "value": 1
         },
         {
           "year": 2026,
@@ -8784,7 +9298,7 @@
         "previous_value": 0,
         "absolute_change": 0,
         "percent_change": null,
-        "trend": "stable",
+        "trend": "falling",
         "window_size": 4
       },
       "states": [
@@ -8876,7 +9390,7 @@
           "id": "09",
           "name": "Bavaria",
           "current_week": 0,
-          "ytd": 11,
+          "ytd": 12,
           "population": 13176426
         }
       ]
@@ -9462,168 +9976,6 @@
           "name": "Bavaria",
           "current_week": 0,
           "ytd": 16,
-          "population": 13176426
-        }
-      ]
-    },
-    {
-      "disease": "Diphtheria",
-      "total_current_week": 0,
-      "total_ytd": 39,
-      "states_reporting": 12,
-      "national_series": [
-        {
-          "year": 2026,
-          "week": 31,
-          "value": 2
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 1
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 1
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 2
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 1
-        },
-        {
-          "year": 2026,
-          "week": 36,
-          "value": 0
-        },
-        {
-          "year": 2026,
-          "week": 37,
-          "value": 2
-        },
-        {
-          "year": 2026,
-          "week": 38,
-          "value": 3
-        },
-        {
-          "year": 2026,
-          "week": 39,
-          "value": 2
-        },
-        {
-          "year": 2026,
-          "week": 40,
-          "value": 0
-        },
-        {
-          "year": 2026,
-          "week": 41,
-          "value": 0
-        },
-        {
-          "year": 2026,
-          "week": 42,
-          "value": 0
-        }
-      ],
-      "national_trend": {
-        "latest_value": 0,
-        "previous_value": 0,
-        "absolute_change": 0,
-        "percent_change": null,
-        "trend": "falling",
-        "window_size": 4
-      },
-      "states": [
-        {
-          "id": "10",
-          "name": "Saarland",
-          "current_week": 0,
-          "ytd": 2,
-          "population": 1014047
-        },
-        {
-          "id": "11",
-          "name": "Berlin",
-          "current_week": 0,
-          "ytd": 6,
-          "population": 3662381
-        },
-        {
-          "id": "12",
-          "name": "Brandenburg",
-          "current_week": 0,
-          "ytd": 2,
-          "population": 2554464
-        },
-        {
-          "id": "14",
-          "name": "Saxony",
-          "current_week": 0,
-          "ytd": 2,
-          "population": 4054689
-        },
-        {
-          "id": "15",
-          "name": "Saxony-Anhalt",
-          "current_week": 0,
-          "ytd": 2,
-          "population": 2144570
-        },
-        {
-          "id": "01",
-          "name": "Schleswig-Holstein",
-          "current_week": 0,
-          "ytd": 3,
-          "population": 2953202
-        },
-        {
-          "id": "02",
-          "name": "Hamburg",
-          "current_week": 0,
-          "ytd": 1,
-          "population": 1851596
-        },
-        {
-          "id": "03",
-          "name": "Lower Saxony",
-          "current_week": 0,
-          "ytd": 1,
-          "population": 8008135
-        },
-        {
-          "id": "05",
-          "name": "North Rhine-Westphalia",
-          "current_week": 0,
-          "ytd": 7,
-          "population": 18017520
-        },
-        {
-          "id": "07",
-          "name": "Rhineland-Palatinate",
-          "current_week": 0,
-          "ytd": 2,
-          "population": 4125163
-        },
-        {
-          "id": "08",
-          "name": "Baden-Württemberg",
-          "current_week": 0,
-          "ytd": 6,
-          "population": 11230740
-        },
-        {
-          "id": "09",
-          "name": "Bavaria",
-          "current_week": 0,
-          "ytd": 5,
           "population": 13176426
         }
       ]
@@ -10414,7 +10766,7 @@
     {
       "disease": "Malaria",
       "total_current_week": 0,
-      "total_ytd": 829,
+      "total_ytd": 828,
       "states_reporting": 16,
       "national_series": [
         {
@@ -10568,7 +10920,7 @@
           "id": "05",
           "name": "North Rhine-Westphalia",
           "current_week": 0,
-          "ytd": 189,
+          "ytd": 188,
           "population": 18017520
         },
         {
@@ -10597,189 +10949,6 @@
           "name": "Bavaria",
           "current_week": 0,
           "ytd": 132,
-          "population": 13176426
-        }
-      ]
-    },
-    {
-      "disease": "Meningococcal disease, invasive",
-      "total_current_week": 0,
-      "total_ytd": 175,
-      "states_reporting": 15,
-      "national_series": [
-        {
-          "year": 2026,
-          "week": 31,
-          "value": 2
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 1
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 4
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 3
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 3
-        },
-        {
-          "year": 2026,
-          "week": 36,
-          "value": 1
-        },
-        {
-          "year": 2026,
-          "week": 37,
-          "value": 1
-        },
-        {
-          "year": 2026,
-          "week": 38,
-          "value": 4
-        },
-        {
-          "year": 2026,
-          "week": 39,
-          "value": 1
-        },
-        {
-          "year": 2026,
-          "week": 40,
-          "value": 2
-        },
-        {
-          "year": 2026,
-          "week": 41,
-          "value": 0
-        },
-        {
-          "year": 2026,
-          "week": 42,
-          "value": 0
-        }
-      ],
-      "national_trend": {
-        "latest_value": 0,
-        "previous_value": 0,
-        "absolute_change": 0,
-        "percent_change": null,
-        "trend": "falling",
-        "window_size": 4
-      },
-      "states": [
-        {
-          "id": "10",
-          "name": "Saarland",
-          "current_week": 0,
-          "ytd": 1,
-          "population": 1014047
-        },
-        {
-          "id": "11",
-          "name": "Berlin",
-          "current_week": 0,
-          "ytd": 9,
-          "population": 3662381
-        },
-        {
-          "id": "12",
-          "name": "Brandenburg",
-          "current_week": 0,
-          "ytd": 11,
-          "population": 2554464
-        },
-        {
-          "id": "14",
-          "name": "Saxony",
-          "current_week": 0,
-          "ytd": 8,
-          "population": 4054689
-        },
-        {
-          "id": "15",
-          "name": "Saxony-Anhalt",
-          "current_week": 0,
-          "ytd": 2,
-          "population": 2144570
-        },
-        {
-          "id": "16",
-          "name": "Thuringia",
-          "current_week": 0,
-          "ytd": 2,
-          "population": 2114870
-        },
-        {
-          "id": "01",
-          "name": "Schleswig-Holstein",
-          "current_week": 0,
-          "ytd": 7,
-          "population": 2953202
-        },
-        {
-          "id": "02",
-          "name": "Hamburg",
-          "current_week": 0,
-          "ytd": 6,
-          "population": 1851596
-        },
-        {
-          "id": "03",
-          "name": "Lower Saxony",
-          "current_week": 0,
-          "ytd": 10,
-          "population": 8008135
-        },
-        {
-          "id": "04",
-          "name": "Bremen",
-          "current_week": 0,
-          "ytd": 3,
-          "population": 702655
-        },
-        {
-          "id": "05",
-          "name": "North Rhine-Westphalia",
-          "current_week": 0,
-          "ytd": 42,
-          "population": 18017520
-        },
-        {
-          "id": "06",
-          "name": "Hesse",
-          "current_week": 0,
-          "ytd": 14,
-          "population": 6267546
-        },
-        {
-          "id": "07",
-          "name": "Rhineland-Palatinate",
-          "current_week": 0,
-          "ytd": 6,
-          "population": 4125163
-        },
-        {
-          "id": "08",
-          "name": "Baden-Württemberg",
-          "current_week": 0,
-          "ytd": 27,
-          "population": 11230740
-        },
-        {
-          "id": "09",
-          "name": "Bavaria",
-          "current_week": 0,
-          "ytd": 27,
           "population": 13176426
         }
       ]
@@ -10921,7 +11090,7 @@
     {
       "disease": "Paratyphoid",
       "total_current_week": 0,
-      "total_ytd": 42,
+      "total_ytd": 44,
       "states_reporting": 9,
       "national_series": [
         {
@@ -10967,7 +11136,7 @@
         {
           "year": 2026,
           "week": 39,
-          "value": 2
+          "value": 4
         },
         {
           "year": 2026,
@@ -11026,7 +11195,7 @@
           "id": "05",
           "name": "North Rhine-Westphalia",
           "current_week": 0,
-          "ytd": 5,
+          "ytd": 6,
           "population": 18017520
         },
         {
@@ -11054,7 +11223,7 @@
           "id": "09",
           "name": "Bavaria",
           "current_week": 0,
-          "ytd": 8,
+          "ytd": 9,
           "population": 13176426
         }
       ]
@@ -11663,175 +11832,6 @@
           "name": "Bavaria",
           "current_week": 0,
           "ytd": 53,
-          "population": 13176426
-        }
-      ]
-    },
-    {
-      "disease": "Typhoid",
-      "total_current_week": 0,
-      "total_ytd": 70,
-      "states_reporting": 13,
-      "national_series": [
-        {
-          "year": 2026,
-          "week": 31,
-          "value": 1
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 2
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 1
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 0
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 7
-        },
-        {
-          "year": 2026,
-          "week": 36,
-          "value": 8
-        },
-        {
-          "year": 2026,
-          "week": 37,
-          "value": 6
-        },
-        {
-          "year": 2026,
-          "week": 38,
-          "value": 3
-        },
-        {
-          "year": 2026,
-          "week": 39,
-          "value": 3
-        },
-        {
-          "year": 2026,
-          "week": 40,
-          "value": 1
-        },
-        {
-          "year": 2026,
-          "week": 41,
-          "value": 0
-        },
-        {
-          "year": 2026,
-          "week": 42,
-          "value": 0
-        }
-      ],
-      "national_trend": {
-        "latest_value": 0,
-        "previous_value": 0,
-        "absolute_change": 0,
-        "percent_change": null,
-        "trend": "falling",
-        "window_size": 4
-      },
-      "states": [
-        {
-          "id": "11",
-          "name": "Berlin",
-          "current_week": 0,
-          "ytd": 9,
-          "population": 3662381
-        },
-        {
-          "id": "12",
-          "name": "Brandenburg",
-          "current_week": 0,
-          "ytd": 1,
-          "population": 2554464
-        },
-        {
-          "id": "14",
-          "name": "Saxony",
-          "current_week": 0,
-          "ytd": 1,
-          "population": 4054689
-        },
-        {
-          "id": "15",
-          "name": "Saxony-Anhalt",
-          "current_week": 0,
-          "ytd": 1,
-          "population": 2144570
-        },
-        {
-          "id": "01",
-          "name": "Schleswig-Holstein",
-          "current_week": 0,
-          "ytd": 1,
-          "population": 2953202
-        },
-        {
-          "id": "02",
-          "name": "Hamburg",
-          "current_week": 0,
-          "ytd": 3,
-          "population": 1851596
-        },
-        {
-          "id": "03",
-          "name": "Lower Saxony",
-          "current_week": 0,
-          "ytd": 3,
-          "population": 8008135
-        },
-        {
-          "id": "04",
-          "name": "Bremen",
-          "current_week": 0,
-          "ytd": 2,
-          "population": 702655
-        },
-        {
-          "id": "05",
-          "name": "North Rhine-Westphalia",
-          "current_week": 0,
-          "ytd": 14,
-          "population": 18017520
-        },
-        {
-          "id": "06",
-          "name": "Hesse",
-          "current_week": 0,
-          "ytd": 13,
-          "population": 6267546
-        },
-        {
-          "id": "07",
-          "name": "Rhineland-Palatinate",
-          "current_week": 0,
-          "ytd": 4,
-          "population": 4125163
-        },
-        {
-          "id": "08",
-          "name": "Baden-Württemberg",
-          "current_week": 0,
-          "ytd": 10,
-          "population": 11230740
-        },
-        {
-          "id": "09",
-          "name": "Bavaria",
-          "current_week": 0,
-          "ytd": 8,
           "population": 13176426
         }
       ]
