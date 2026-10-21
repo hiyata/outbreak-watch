@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-20T11:39:42.897Z",
+  "generated_at": "2026-10-21T11:51:34.588Z",
   "source": "InfoGripe (Fiocruz/FGV) — SRAG surveillance",
   "disease": "Severe Acute Respiratory Syndrome (SRAG)",
-  "epidemiological_week": 40,
+  "epidemiological_week": 41,
   "epidemiological_year": 2026,
   "history_weeks": 12,
   "states": [
@@ -14,28 +14,23 @@
       "series": [
         {
           "year": 2026,
-          "week": 29,
-          "value": 702
-        },
-        {
-          "year": 2026,
           "week": 30,
           "value": 717
         },
         {
           "year": 2026,
           "week": 31,
-          "value": 742
+          "value": 744
         },
         {
           "year": 2026,
           "week": 32,
-          "value": 631
+          "value": 635
         },
         {
           "year": 2026,
           "week": 33,
-          "value": 579
+          "value": 580
         },
         {
           "year": 2026,
@@ -45,59 +40,59 @@
         {
           "year": 2026,
           "week": 35,
-          "value": 516
+          "value": 520
         },
         {
           "year": 2026,
           "week": 36,
-          "value": 502
+          "value": 507
         },
         {
           "year": 2026,
           "week": 37,
-          "value": 579
+          "value": 580
         },
         {
           "year": 2026,
           "week": 38,
-          "value": 586
+          "value": 610
         },
         {
           "year": 2026,
           "week": 39,
-          "value": 454
+          "value": 531
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 153
+          "value": 391
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 131
         }
       ],
       "trend": {
-        "latest_value": 153,
-        "previous_value": 454,
-        "absolute_change": -301,
-        "percent_change": -66.3,
+        "latest_value": 131,
+        "previous_value": 391,
+        "absolute_change": -260,
+        "percent_change": -66.5,
         "trend": "falling",
         "window_size": 4
       },
-      "cases_reported": 153,
-      "cases_estimated": 748,
+      "cases_reported": 131,
+      "cases_estimated": 642,
       "population": 46179008,
-      "trend_long": "Increasing",
+      "trend_long": "Possibly increasing",
       "trend_short": "Stable"
     },
     {
       "id": "41",
       "abbr": "PR",
       "name": "Paraná",
-      "intensity": "Segurança",
+      "intensity": "Baixo risco",
       "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 400
-        },
         {
           "year": 2026,
           "week": 30,
@@ -116,7 +111,7 @@
         {
           "year": 2026,
           "week": 33,
-          "value": 371
+          "value": 372
         },
         {
           "year": 2026,
@@ -126,59 +121,59 @@
         {
           "year": 2026,
           "week": 35,
-          "value": 286
+          "value": 289
         },
         {
           "year": 2026,
           "week": 36,
-          "value": 258
+          "value": 259
         },
         {
           "year": 2026,
           "week": 37,
-          "value": 220
+          "value": 232
         },
         {
           "year": 2026,
           "week": 38,
-          "value": 244
+          "value": 254
         },
         {
           "year": 2026,
           "week": 39,
-          "value": 242
+          "value": 253
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 87
+          "value": 192
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 68
         }
       ],
       "trend": {
-        "latest_value": 87,
-        "previous_value": 242,
-        "absolute_change": -155,
-        "percent_change": -64,
+        "latest_value": 68,
+        "previous_value": 192,
+        "absolute_change": -124,
+        "percent_change": -64.6,
         "trend": "falling",
         "window_size": 4
       },
-      "cases_reported": 87,
-      "cases_estimated": 291,
+      "cases_reported": 68,
+      "cases_estimated": 222,
       "population": 11952524,
-      "trend_long": "Possibly increasing",
-      "trend_short": "Possibly increasing"
+      "trend_long": "Possibly decreasing",
+      "trend_short": "Decreasing"
     },
     {
       "id": "43",
       "abbr": "RS",
       "name": "Rio Grande do Sul",
-      "intensity": "Alerta",
+      "intensity": "Segurança",
       "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 452
-        },
         {
           "year": 2026,
           "week": 30,
@@ -207,128 +202,52 @@
         {
           "year": 2026,
           "week": 35,
-          "value": 318
+          "value": 320
         },
         {
           "year": 2026,
           "week": 36,
-          "value": 326
+          "value": 329
         },
         {
           "year": 2026,
           "week": 37,
-          "value": 282
+          "value": 291
         },
         {
           "year": 2026,
           "week": 38,
-          "value": 252
+          "value": 263
         },
         {
           "year": 2026,
           "week": 39,
-          "value": 216
+          "value": 245
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 57
+          "value": 153
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 48
         }
       ],
       "trend": {
-        "latest_value": 57,
-        "previous_value": 216,
-        "absolute_change": -159,
-        "percent_change": -73.6,
+        "latest_value": 48,
+        "previous_value": 153,
+        "absolute_change": -105,
+        "percent_change": -68.6,
         "trend": "falling",
         "window_size": 4
       },
-      "cases_reported": 57,
-      "cases_estimated": 251,
+      "cases_reported": 48,
+      "cases_estimated": 209,
       "population": 11233317,
       "trend_long": "Decreasing",
-      "trend_short": "Possibly decreasing"
-    },
-    {
-      "id": "31",
-      "abbr": "MG",
-      "name": "Minas Gerais",
-      "intensity": "Segurança",
-      "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 673
-        },
-        {
-          "year": 2026,
-          "week": 30,
-          "value": 515
-        },
-        {
-          "year": 2026,
-          "week": 31,
-          "value": 432
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 436
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 416
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 411
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 361
-        },
-        {
-          "year": 2026,
-          "week": 36,
-          "value": 319
-        },
-        {
-          "year": 2026,
-          "week": 37,
-          "value": 271
-        },
-        {
-          "year": 2026,
-          "week": 38,
-          "value": 274
-        },
-        {
-          "year": 2026,
-          "week": 39,
-          "value": 183
-        },
-        {
-          "year": 2026,
-          "week": 40,
-          "value": 53
-        }
-      ],
-      "trend": {
-        "latest_value": 53,
-        "previous_value": 183,
-        "absolute_change": -130,
-        "percent_change": -71,
-        "trend": "falling",
-        "window_size": 4
-      },
-      "cases_reported": 53,
-      "cases_estimated": 362,
-      "population": 21460311,
-      "trend_long": "Stable",
-      "trend_short": "Stable"
+      "trend_short": "Decreasing"
     },
     {
       "id": "42",
@@ -338,13 +257,8 @@
       "series": [
         {
           "year": 2026,
-          "week": 29,
-          "value": 297
-        },
-        {
-          "year": 2026,
           "week": 30,
-          "value": 200
+          "value": 201
         },
         {
           "year": 2026,
@@ -354,384 +268,146 @@
         {
           "year": 2026,
           "week": 32,
-          "value": 167
+          "value": 168
         },
         {
           "year": 2026,
           "week": 33,
-          "value": 206
+          "value": 208
         },
         {
           "year": 2026,
           "week": 34,
-          "value": 189
+          "value": 198
         },
         {
           "year": 2026,
           "week": 35,
-          "value": 165
+          "value": 169
         },
         {
           "year": 2026,
           "week": 36,
-          "value": 172
+          "value": 183
         },
         {
           "year": 2026,
           "week": 37,
-          "value": 132
+          "value": 138
         },
         {
           "year": 2026,
           "week": 38,
-          "value": 126
+          "value": 134
         },
         {
           "year": 2026,
           "week": 39,
-          "value": 125
+          "value": 134
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 34
+          "value": 105
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 41
         }
       ],
       "trend": {
-        "latest_value": 34,
-        "previous_value": 125,
-        "absolute_change": -91,
-        "percent_change": -72.8,
+        "latest_value": 41,
+        "previous_value": 105,
+        "absolute_change": -64,
+        "percent_change": -61,
         "trend": "falling",
         "window_size": 4
       },
-      "cases_reported": 34,
-      "cases_estimated": 144,
+      "cases_reported": 41,
+      "cases_estimated": 147,
       "population": 8312691,
       "trend_long": "Decreasing",
       "trend_short": "Stable"
     },
     {
-      "id": "33",
-      "abbr": "RJ",
-      "name": "Rio de Janeiro",
-      "intensity": "Segurança",
-      "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 264
-        },
-        {
-          "year": 2026,
-          "week": 30,
-          "value": 202
-        },
-        {
-          "year": 2026,
-          "week": 31,
-          "value": 160
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 208
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 206
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 200
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 187
-        },
-        {
-          "year": 2026,
-          "week": 36,
-          "value": 153
-        },
-        {
-          "year": 2026,
-          "week": 37,
-          "value": 178
-        },
-        {
-          "year": 2026,
-          "week": 38,
-          "value": 146
-        },
-        {
-          "year": 2026,
-          "week": 39,
-          "value": 101
-        },
-        {
-          "year": 2026,
-          "week": 40,
-          "value": 33
-        }
-      ],
-      "trend": {
-        "latest_value": 33,
-        "previous_value": 101,
-        "absolute_change": -68,
-        "percent_change": -67.3,
-        "trend": "falling",
-        "window_size": 4
-      },
-      "cases_reported": 33,
-      "cases_estimated": 196,
-      "population": 17225410,
-      "trend_long": "Stable",
-      "trend_short": "Stable"
-    },
-    {
-      "id": "52",
-      "abbr": "GO",
-      "name": "Goiás",
-      "intensity": "Segurança",
-      "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 103
-        },
-        {
-          "year": 2026,
-          "week": 30,
-          "value": 76
-        },
-        {
-          "year": 2026,
-          "week": 31,
-          "value": 80
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 74
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 102
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 111
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 83
-        },
-        {
-          "year": 2026,
-          "week": 36,
-          "value": 72
-        },
-        {
-          "year": 2026,
-          "week": 37,
-          "value": 74
-        },
-        {
-          "year": 2026,
-          "week": 38,
-          "value": 66
-        },
-        {
-          "year": 2026,
-          "week": 39,
-          "value": 68
-        },
-        {
-          "year": 2026,
-          "week": 40,
-          "value": 26
-        }
-      ],
-      "trend": {
-        "latest_value": 26,
-        "previous_value": 68,
-        "absolute_change": -42,
-        "percent_change": -61.8,
-        "trend": "falling",
-        "window_size": 4
-      },
-      "cases_reported": 26,
-      "cases_estimated": 78,
-      "population": 7495033,
-      "trend_long": "Stable",
-      "trend_short": "Stable"
-    },
-    {
-      "id": "26",
-      "abbr": "PE",
-      "name": "Pernambuco",
+      "id": "31",
+      "abbr": "MG",
+      "name": "Minas Gerais",
       "intensity": "Baixo risco",
       "series": [
         {
           "year": 2026,
-          "week": 29,
-          "value": 57
-        },
-        {
-          "year": 2026,
           "week": 30,
-          "value": 42
+          "value": 519
         },
         {
           "year": 2026,
           "week": 31,
-          "value": 56
+          "value": 434
         },
         {
           "year": 2026,
           "week": 32,
-          "value": 62
+          "value": 442
         },
         {
           "year": 2026,
           "week": 33,
-          "value": 71
+          "value": 420
         },
         {
           "year": 2026,
           "week": 34,
-          "value": 78
+          "value": 412
         },
         {
           "year": 2026,
           "week": 35,
-          "value": 65
+          "value": 370
         },
         {
           "year": 2026,
           "week": 36,
-          "value": 55
+          "value": 329
         },
         {
           "year": 2026,
           "week": 37,
-          "value": 55
+          "value": 279
         },
         {
           "year": 2026,
           "week": 38,
-          "value": 75
+          "value": 298
         },
         {
           "year": 2026,
           "week": 39,
-          "value": 52
+          "value": 250
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 22
+          "value": 170
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 39
         }
       ],
       "trend": {
-        "latest_value": 22,
-        "previous_value": 52,
-        "absolute_change": -30,
-        "percent_change": -57.7,
+        "latest_value": 39,
+        "previous_value": 170,
+        "absolute_change": -131,
+        "percent_change": -77.1,
         "trend": "falling",
         "window_size": 4
       },
-      "cases_reported": 22,
-      "cases_estimated": 80,
-      "population": 9583176,
-      "trend_long": "Increasing",
-      "trend_short": "Stable"
-    },
-    {
-      "id": "23",
-      "abbr": "CE",
-      "name": "Ceará",
-      "intensity": "Baixo risco",
-      "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 82
-        },
-        {
-          "year": 2026,
-          "week": 30,
-          "value": 84
-        },
-        {
-          "year": 2026,
-          "week": 31,
-          "value": 73
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 94
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 109
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 84
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 116
-        },
-        {
-          "year": 2026,
-          "week": 36,
-          "value": 68
-        },
-        {
-          "year": 2026,
-          "week": 37,
-          "value": 80
-        },
-        {
-          "year": 2026,
-          "week": 38,
-          "value": 78
-        },
-        {
-          "year": 2026,
-          "week": 39,
-          "value": 46
-        },
-        {
-          "year": 2026,
-          "week": 40,
-          "value": 20
-        }
-      ],
-      "trend": {
-        "latest_value": 20,
-        "previous_value": 46,
-        "absolute_change": -26,
-        "percent_change": -56.5,
-        "trend": "falling",
-        "window_size": 4
-      },
-      "cases_reported": 20,
-      "cases_estimated": 87,
-      "population": 9302211,
+      "cases_reported": 39,
+      "cases_estimated": 312,
+      "population": 21460311,
       "trend_long": "Possibly decreasing",
       "trend_short": "Stable"
     },
@@ -741,11 +417,6 @@
       "name": "Sergipe",
       "intensity": "Alerta",
       "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 56
-        },
         {
           "year": 2026,
           "week": 30,
@@ -779,135 +450,459 @@
         {
           "year": 2026,
           "week": 36,
-          "value": 50
+          "value": 49
         },
         {
           "year": 2026,
           "week": 37,
-          "value": 60
+          "value": 61
         },
         {
           "year": 2026,
           "week": 38,
-          "value": 64
+          "value": 65
         },
         {
           "year": 2026,
           "week": 39,
-          "value": 41
+          "value": 51
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 19
+          "value": 34
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 33
         }
       ],
       "trend": {
-        "latest_value": 19,
-        "previous_value": 41,
-        "absolute_change": -22,
-        "percent_change": -53.7,
+        "latest_value": 33,
+        "previous_value": 34,
+        "absolute_change": -1,
+        "percent_change": -2.9,
         "trend": "falling",
         "window_size": 4
       },
-      "cases_reported": 19,
-      "cases_estimated": 62,
+      "cases_reported": 33,
+      "cases_estimated": 77,
       "population": 2307255,
       "trend_long": "Possibly increasing",
-      "trend_short": "Stable"
+      "trend_short": "Increasing"
     },
     {
-      "id": "53",
-      "abbr": "DF",
-      "name": "Distrito Federal",
-      "intensity": "Baixo risco",
+      "id": "52",
+      "abbr": "GO",
+      "name": "Goiás",
+      "intensity": "Alerta",
       "series": [
         {
           "year": 2026,
-          "week": 29,
+          "week": 30,
           "value": 76
         },
         {
           "year": 2026,
-          "week": 30,
-          "value": 72
-        },
-        {
-          "year": 2026,
           "week": 31,
-          "value": 93
+          "value": 80
         },
         {
           "year": 2026,
           "week": 32,
-          "value": 124
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 118
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 87
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 77
-        },
-        {
-          "year": 2026,
-          "week": 36,
           "value": 74
         },
         {
           "year": 2026,
-          "week": 37,
-          "value": 84
+          "week": 33,
+          "value": 100
         },
         {
           "year": 2026,
-          "week": 38,
+          "week": 34,
+          "value": 112
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 83
+        },
+        {
+          "year": 2026,
+          "week": 36,
           "value": 73
         },
         {
           "year": 2026,
+          "week": 37,
+          "value": 72
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 66
+        },
+        {
+          "year": 2026,
           "week": 39,
-          "value": 48
+          "value": 79
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 19
+          "value": 76
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 29
         }
       ],
       "trend": {
-        "latest_value": 19,
-        "previous_value": 48,
-        "absolute_change": -29,
-        "percent_change": -60.4,
+        "latest_value": 29,
+        "previous_value": 76,
+        "absolute_change": -47,
+        "percent_change": -61.8,
         "trend": "falling",
         "window_size": 4
       },
-      "cases_reported": 19,
-      "cases_estimated": 78,
-      "population": 3009996,
+      "cases_reported": 29,
+      "cases_estimated": 87,
+      "population": 7495033,
+      "trend_long": "Increasing",
+      "trend_short": "Stable"
+    },
+    {
+      "id": "23",
+      "abbr": "CE",
+      "name": "Ceará",
+      "intensity": "Baixo risco",
+      "series": [
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 84
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 73
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 94
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 110
+        },
+        {
+          "year": 2026,
+          "week": 34,
+          "value": 82
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 118
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 69
+        },
+        {
+          "year": 2026,
+          "week": 37,
+          "value": 85
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 87
+        },
+        {
+          "year": 2026,
+          "week": 39,
+          "value": 65
+        },
+        {
+          "year": 2026,
+          "week": 40,
+          "value": 53
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 27
+        }
+      ],
+      "trend": {
+        "latest_value": 27,
+        "previous_value": 53,
+        "absolute_change": -26,
+        "percent_change": -49.1,
+        "trend": "falling",
+        "window_size": 4
+      },
+      "cases_reported": 27,
+      "cases_estimated": 103,
+      "population": 9302211,
+      "trend_long": "Possibly increasing",
+      "trend_short": "Possibly increasing"
+    },
+    {
+      "id": "33",
+      "abbr": "RJ",
+      "name": "Rio de Janeiro",
+      "intensity": "Segurança",
+      "series": [
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 202
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 160
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 208
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 206
+        },
+        {
+          "year": 2026,
+          "week": 34,
+          "value": 200
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 187
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 154
+        },
+        {
+          "year": 2026,
+          "week": 37,
+          "value": 182
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 159
+        },
+        {
+          "year": 2026,
+          "week": 39,
+          "value": 125
+        },
+        {
+          "year": 2026,
+          "week": 40,
+          "value": 118
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 27
+        }
+      ],
+      "trend": {
+        "latest_value": 27,
+        "previous_value": 118,
+        "absolute_change": -91,
+        "percent_change": -77.1,
+        "trend": "falling",
+        "window_size": 4
+      },
+      "cases_reported": 27,
+      "cases_estimated": 180,
+      "population": 17225410,
       "trend_long": "Stable",
+      "trend_short": "Possibly increasing"
+    },
+    {
+      "id": "50",
+      "abbr": "MS",
+      "name": "Mato Grosso do Sul",
+      "intensity": "Alerta",
+      "series": [
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 135
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 92
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 121
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 133
+        },
+        {
+          "year": 2026,
+          "week": 34,
+          "value": 118
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 107
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 111
+        },
+        {
+          "year": 2026,
+          "week": 37,
+          "value": 92
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 75
+        },
+        {
+          "year": 2026,
+          "week": 39,
+          "value": 96
+        },
+        {
+          "year": 2026,
+          "week": 40,
+          "value": 61
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 25
+        }
+      ],
+      "trend": {
+        "latest_value": 25,
+        "previous_value": 61,
+        "absolute_change": -36,
+        "percent_change": -59,
+        "trend": "falling",
+        "window_size": 4
+      },
+      "cases_reported": 25,
+      "cases_estimated": 116,
+      "population": 2946317,
+      "trend_long": "Stable",
+      "trend_short": "Stable"
+    },
+    {
+      "id": "29",
+      "abbr": "BA",
+      "name": "Bahia",
+      "intensity": "Segurança",
+      "series": [
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 172
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 165
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 133
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 147
+        },
+        {
+          "year": 2026,
+          "week": 34,
+          "value": 107
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 124
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 104
+        },
+        {
+          "year": 2026,
+          "week": 37,
+          "value": 122
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 113
+        },
+        {
+          "year": 2026,
+          "week": 39,
+          "value": 86
+        },
+        {
+          "year": 2026,
+          "week": 40,
+          "value": 68
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 22
+        }
+      ],
+      "trend": {
+        "latest_value": 22,
+        "previous_value": 68,
+        "absolute_change": -46,
+        "percent_change": -67.6,
+        "trend": "falling",
+        "window_size": 4
+      },
+      "cases_reported": 22,
+      "cases_estimated": 109,
+      "population": 14889472,
+      "trend_long": "Possibly decreasing",
       "trend_short": "Stable"
     },
     {
       "id": "25",
       "abbr": "PB",
       "name": "Paraíba",
-      "intensity": null,
+      "intensity": "Segurança",
       "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 59
-        },
         {
           "year": 2026,
           "week": 30,
@@ -951,194 +946,280 @@
         {
           "year": 2026,
           "week": 38,
-          "value": 56
-        },
-        {
-          "year": 2026,
-          "week": 39,
           "value": 57
         },
         {
           "year": 2026,
-          "week": 40,
-          "value": 18
-        }
-      ],
-      "trend": {
-        "latest_value": 18,
-        "previous_value": 57,
-        "absolute_change": -39,
-        "percent_change": -68.4,
-        "trend": "falling",
-        "window_size": 4
-      },
-      "cases_reported": 18,
-      "cases_estimated": 56,
-      "population": 4182828,
-      "trend_long": "Decreasing",
-      "trend_short": "Stable"
-    },
-    {
-      "id": "50",
-      "abbr": "MS",
-      "name": "Mato Grosso do Sul",
-      "intensity": "Alerta",
-      "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 160
+          "week": 39,
+          "value": 63
         },
         {
           "year": 2026,
+          "week": 40,
+          "value": 47
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 20
+        }
+      ],
+      "trend": {
+        "latest_value": 20,
+        "previous_value": 47,
+        "absolute_change": -27,
+        "percent_change": -57.4,
+        "trend": "falling",
+        "window_size": 4
+      },
+      "cases_reported": 20,
+      "cases_estimated": 56,
+      "population": 4182828,
+      "trend_long": "Possibly decreasing",
+      "trend_short": "Possibly decreasing"
+    },
+    {
+      "id": "26",
+      "abbr": "PE",
+      "name": "Pernambuco",
+      "intensity": "Baixo risco",
+      "series": [
+        {
+          "year": 2026,
           "week": 30,
-          "value": 135
+          "value": 42
         },
         {
           "year": 2026,
           "week": 31,
-          "value": 92
+          "value": 56
         },
         {
           "year": 2026,
           "week": 32,
-          "value": 121
+          "value": 62
         },
         {
           "year": 2026,
           "week": 33,
-          "value": 132
+          "value": 71
         },
         {
           "year": 2026,
           "week": 34,
-          "value": 117
+          "value": 78
         },
         {
           "year": 2026,
           "week": 35,
-          "value": 104
+          "value": 65
         },
         {
           "year": 2026,
           "week": 36,
-          "value": 105
+          "value": 56
         },
         {
           "year": 2026,
           "week": 37,
-          "value": 87
+          "value": 56
         },
         {
           "year": 2026,
           "week": 38,
-          "value": 73
+          "value": 75
         },
         {
           "year": 2026,
           "week": 39,
-          "value": 80
+          "value": 60
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 18
-        }
-      ],
-      "trend": {
-        "latest_value": 18,
-        "previous_value": 80,
-        "absolute_change": -62,
-        "percent_change": -77.5,
-        "trend": "falling",
-        "window_size": 4
-      },
-      "cases_reported": 18,
-      "cases_estimated": 109,
-      "population": 2946317,
-      "trend_long": "Stable",
-      "trend_short": "Possibly increasing"
-    },
-    {
-      "id": "29",
-      "abbr": "BA",
-      "name": "Bahia",
-      "intensity": "Segurança",
-      "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 179
+          "value": 60
         },
         {
           "year": 2026,
+          "week": 41,
+          "value": 19
+        }
+      ],
+      "trend": {
+        "latest_value": 19,
+        "previous_value": 60,
+        "absolute_change": -41,
+        "percent_change": -68.3,
+        "trend": "falling",
+        "window_size": 4
+      },
+      "cases_reported": 19,
+      "cases_estimated": 76,
+      "population": 9583176,
+      "trend_long": "Increasing",
+      "trend_short": "Stable"
+    },
+    {
+      "id": "53",
+      "abbr": "DF",
+      "name": "Distrito Federal",
+      "intensity": "Baixo risco",
+      "series": [
+        {
+          "year": 2026,
           "week": 30,
-          "value": 161
+          "value": 71
         },
         {
           "year": 2026,
           "week": 31,
-          "value": 153
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 130
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 137
-        },
-        {
-          "year": 2026,
-          "week": 34,
           "value": 93
         },
         {
           "year": 2026,
+          "week": 32,
+          "value": 124
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 118
+        },
+        {
+          "year": 2026,
+          "week": 34,
+          "value": 87
+        },
+        {
+          "year": 2026,
           "week": 35,
-          "value": 117
+          "value": 76
         },
         {
           "year": 2026,
           "week": 36,
-          "value": 101
+          "value": 74
         },
         {
           "year": 2026,
           "week": 37,
-          "value": 119
+          "value": 85
         },
         {
           "year": 2026,
           "week": 38,
-          "value": 102
+          "value": 74
         },
         {
           "year": 2026,
           "week": 39,
-          "value": 72
+          "value": 56
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 17
+          "value": 51
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 15
         }
       ],
       "trend": {
-        "latest_value": 17,
-        "previous_value": 72,
-        "absolute_change": -55,
-        "percent_change": -76.4,
+        "latest_value": 15,
+        "previous_value": 51,
+        "absolute_change": -36,
+        "percent_change": -70.6,
         "trend": "falling",
         "window_size": 4
       },
-      "cases_reported": 17,
-      "cases_estimated": 103,
-      "population": 14889472,
-      "trend_long": "Possibly decreasing",
-      "trend_short": "Possibly decreasing"
+      "cases_reported": 15,
+      "cases_estimated": 68,
+      "population": 3009996,
+      "trend_long": "Decreasing",
+      "trend_short": "Stable"
+    },
+    {
+      "id": "15",
+      "abbr": "PA",
+      "name": "Pará",
+      "intensity": "Segurança",
+      "series": [
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 58
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 48
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 65
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 59
+        },
+        {
+          "year": 2026,
+          "week": 34,
+          "value": 59
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 68
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 54
+        },
+        {
+          "year": 2026,
+          "week": 37,
+          "value": 47
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 36
+        },
+        {
+          "year": 2026,
+          "week": 39,
+          "value": 41
+        },
+        {
+          "year": 2026,
+          "week": 40,
+          "value": 37
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 10
+        }
+      ],
+      "trend": {
+        "latest_value": 10,
+        "previous_value": 37,
+        "absolute_change": -27,
+        "percent_change": -73,
+        "trend": "falling",
+        "window_size": 4
+      },
+      "cases_reported": 10,
+      "cases_estimated": 60,
+      "population": 8756324,
+      "trend_long": "Possibly increasing",
+      "trend_short": "Stable"
     },
     {
       "id": "13",
@@ -1146,11 +1227,6 @@
       "name": "Amazonas",
       "intensity": "Segurança",
       "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 59
-        },
         {
           "year": 2026,
           "week": 30,
@@ -1179,12 +1255,12 @@
         {
           "year": 2026,
           "week": 35,
-          "value": 58
+          "value": 57
         },
         {
           "year": 2026,
           "week": 36,
-          "value": 52
+          "value": 50
         },
         {
           "year": 2026,
@@ -1194,125 +1270,206 @@
         {
           "year": 2026,
           "week": 38,
-          "value": 41
+          "value": 42
         },
         {
           "year": 2026,
           "week": 39,
-          "value": 35
+          "value": 39
+        },
+        {
+          "year": 2026,
+          "week": 40,
+          "value": 31
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 8
+        }
+      ],
+      "trend": {
+        "latest_value": 8,
+        "previous_value": 31,
+        "absolute_change": -23,
+        "percent_change": -74.2,
+        "trend": "falling",
+        "window_size": 4
+      },
+      "cases_reported": 8,
+      "cases_estimated": 35,
+      "population": 4360926,
+      "trend_long": "Decreasing",
+      "trend_short": "Possibly decreasing"
+    },
+    {
+      "id": "27",
+      "abbr": "AL",
+      "name": "Alagoas",
+      "intensity": "Segurança",
+      "series": [
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 19
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 25
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 31
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 30
+        },
+        {
+          "year": 2026,
+          "week": 34,
+          "value": 16
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 17
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 18
+        },
+        {
+          "year": 2026,
+          "week": 37,
+          "value": 24
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 27
+        },
+        {
+          "year": 2026,
+          "week": 39,
+          "value": 16
         },
         {
           "year": 2026,
           "week": 40,
           "value": 13
-        }
-      ],
-      "trend": {
-        "latest_value": 13,
-        "previous_value": 35,
-        "absolute_change": -22,
-        "percent_change": -62.9,
-        "trend": "falling",
-        "window_size": 4
-      },
-      "cases_reported": 13,
-      "cases_estimated": 45,
-      "population": 4360926,
-      "trend_long": "Decreasing",
-      "trend_short": "Stable"
-    },
-    {
-      "id": "15",
-      "abbr": "PA",
-      "name": "Pará",
-      "intensity": "Segurança",
-      "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 46
         },
         {
           "year": 2026,
+          "week": 41,
+          "value": 8
+        }
+      ],
+      "trend": {
+        "latest_value": 8,
+        "previous_value": 13,
+        "absolute_change": -5,
+        "percent_change": -38.5,
+        "trend": "falling",
+        "window_size": 4
+      },
+      "cases_reported": 8,
+      "cases_estimated": 21,
+      "population": 3221128,
+      "trend_long": "Possibly decreasing",
+      "trend_short": "Possibly increasing"
+    },
+    {
+      "id": "51",
+      "abbr": "MT",
+      "name": "Mato Grosso",
+      "intensity": "Risco",
+      "series": [
+        {
+          "year": 2026,
           "week": 30,
-          "value": 58
+          "value": 32
         },
         {
           "year": 2026,
           "week": 31,
-          "value": 47
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 64
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 59
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 57
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 64
-        },
-        {
-          "year": 2026,
-          "week": 36,
-          "value": 54
-        },
-        {
-          "year": 2026,
-          "week": 37,
-          "value": 43
-        },
-        {
-          "year": 2026,
-          "week": 38,
           "value": 36
         },
         {
           "year": 2026,
+          "week": 32,
+          "value": 31
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 34
+        },
+        {
+          "year": 2026,
+          "week": 34,
+          "value": 31
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 36
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 22
+        },
+        {
+          "year": 2026,
+          "week": 37,
+          "value": 21
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 26
+        },
+        {
+          "year": 2026,
           "week": 39,
-          "value": 33
+          "value": 23
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 12
+          "value": 16
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 8
         }
       ],
       "trend": {
-        "latest_value": 12,
-        "previous_value": 33,
-        "absolute_change": -21,
-        "percent_change": -63.6,
+        "latest_value": 8,
+        "previous_value": 16,
+        "absolute_change": -8,
+        "percent_change": -50,
         "trend": "falling",
         "window_size": 4
       },
-      "cases_reported": 12,
-      "cases_estimated": 62,
-      "population": 8756324,
-      "trend_long": "Stable",
-      "trend_short": "Possibly increasing"
+      "cases_reported": 8,
+      "cases_estimated": 36,
+      "population": 3950330,
+      "trend_long": "Increasing",
+      "trend_short": "Stable"
     },
     {
       "id": "12",
       "abbr": "AC",
       "name": "Acre",
-      "intensity": "Baixo risco",
+      "intensity": "Segurança",
       "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 36
-        },
         {
           "year": 2026,
           "week": 30,
@@ -1346,7 +1503,7 @@
         {
           "year": 2026,
           "week": 36,
-          "value": 32
+          "value": 31
         },
         {
           "year": 2026,
@@ -1361,26 +1518,31 @@
         {
           "year": 2026,
           "week": 39,
-          "value": 14
+          "value": 17
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 11
+          "value": 21
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 7
         }
       ],
       "trend": {
-        "latest_value": 11,
-        "previous_value": 14,
-        "absolute_change": -3,
-        "percent_change": -21.4,
+        "latest_value": 7,
+        "previous_value": 21,
+        "absolute_change": -14,
+        "percent_change": -66.7,
         "trend": "falling",
         "window_size": 4
       },
-      "cases_reported": 11,
-      "cases_estimated": 25,
+      "cases_reported": 7,
+      "cases_estimated": 21,
       "population": 887794,
-      "trend_long": "Possibly decreasing",
+      "trend_long": "Decreasing",
       "trend_short": "Stable"
     },
     {
@@ -1391,11 +1553,6 @@
       "series": [
         {
           "year": 2026,
-          "week": 29,
-          "value": 29
-        },
-        {
-          "year": 2026,
           "week": 30,
           "value": 28
         },
@@ -1437,31 +1594,36 @@
         {
           "year": 2026,
           "week": 38,
-          "value": 27
+          "value": 28
         },
         {
           "year": 2026,
           "week": 39,
-          "value": 21
+          "value": 25
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 11
+          "value": 19
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 7
         }
       ],
       "trend": {
-        "latest_value": 11,
-        "previous_value": 21,
-        "absolute_change": -10,
-        "percent_change": -47.6,
+        "latest_value": 7,
+        "previous_value": 19,
+        "absolute_change": -12,
+        "percent_change": -63.2,
         "trend": "falling",
         "window_size": 4
       },
-      "cases_reported": 11,
-      "cases_estimated": 27,
+      "cases_reported": 7,
+      "cases_estimated": 22,
       "population": 761012,
-      "trend_long": "Stable",
+      "trend_long": "Possibly decreasing",
       "trend_short": "Stable"
     },
     {
@@ -1472,114 +1634,28 @@
       "series": [
         {
           "year": 2026,
-          "week": 29,
-          "value": 40
-        },
-        {
-          "year": 2026,
           "week": 30,
-          "value": 41
+          "value": 39
         },
         {
           "year": 2026,
           "week": 31,
-          "value": 51
+          "value": 49
         },
         {
           "year": 2026,
           "week": 32,
-          "value": 46
+          "value": 45
         },
         {
           "year": 2026,
           "week": 33,
-          "value": 31
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 34
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 34
-        },
-        {
-          "year": 2026,
-          "week": 36,
           "value": 30
         },
         {
           "year": 2026,
-          "week": 37,
-          "value": 20
-        },
-        {
-          "year": 2026,
-          "week": 38,
-          "value": 34
-        },
-        {
-          "year": 2026,
-          "week": 39,
-          "value": 16
-        },
-        {
-          "year": 2026,
-          "week": 40,
-          "value": 6
-        }
-      ],
-      "trend": {
-        "latest_value": 6,
-        "previous_value": 16,
-        "absolute_change": -10,
-        "percent_change": -62.5,
-        "trend": "falling",
-        "window_size": 4
-      },
-      "cases_reported": 6,
-      "cases_estimated": 28,
-      "population": 4150692,
-      "trend_long": "Possibly decreasing",
-      "trend_short": "Possibly decreasing"
-    },
-    {
-      "id": "24",
-      "abbr": "RN",
-      "name": "Rio Grande do Norte",
-      "intensity": "Baixo risco",
-      "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 33
-        },
-        {
-          "year": 2026,
-          "week": 30,
-          "value": 27
-        },
-        {
-          "year": 2026,
-          "week": 31,
-          "value": 26
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 25
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 19
-        },
-        {
-          "year": 2026,
           "week": 34,
-          "value": 18
+          "value": 34
         },
         {
           "year": 2026,
@@ -1589,7 +1665,7 @@
         {
           "year": 2026,
           "week": 36,
-          "value": 20
+          "value": 28
         },
         {
           "year": 2026,
@@ -1599,44 +1675,44 @@
         {
           "year": 2026,
           "week": 38,
-          "value": 15
+          "value": 26
         },
         {
           "year": 2026,
           "week": 39,
-          "value": 20
+          "value": 17
         },
         {
           "year": 2026,
           "week": 40,
+          "value": 10
+        },
+        {
+          "year": 2026,
+          "week": 41,
           "value": 5
         }
       ],
       "trend": {
         "latest_value": 5,
-        "previous_value": 20,
-        "absolute_change": -15,
-        "percent_change": -75,
+        "previous_value": 10,
+        "absolute_change": -5,
+        "percent_change": -50,
         "trend": "falling",
         "window_size": 4
       },
       "cases_reported": 5,
       "cases_estimated": 21,
-      "population": 3463737,
-      "trend_long": "Possibly decreasing",
+      "population": 4150692,
+      "trend_long": "Decreasing",
       "trend_short": "Stable"
     },
     {
       "id": "16",
       "abbr": "AP",
       "name": "Amapá",
-      "intensity": "Baixo risco",
+      "intensity": null,
       "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 35
-        },
         {
           "year": 2026,
           "week": 30,
@@ -1675,12 +1751,12 @@
         {
           "year": 2026,
           "week": 37,
-          "value": 26
+          "value": 27
         },
         {
           "year": 2026,
           "week": 38,
-          "value": 15
+          "value": 16
         },
         {
           "year": 2026,
@@ -1690,19 +1766,24 @@
         {
           "year": 2026,
           "week": 40,
+          "value": 14
+        },
+        {
+          "year": 2026,
+          "week": 41,
           "value": 4
         }
       ],
       "trend": {
         "latest_value": 4,
-        "previous_value": 18,
-        "absolute_change": -14,
-        "percent_change": -77.8,
+        "previous_value": 14,
+        "absolute_change": -10,
+        "percent_change": -71.4,
         "trend": "falling",
         "window_size": 4
       },
       "cases_reported": 4,
-      "cases_estimated": 18,
+      "cases_estimated": 16,
       "population": 809953,
       "trend_long": "Decreasing",
       "trend_short": "Stable"
@@ -1711,13 +1792,8 @@
       "id": "21",
       "abbr": "MA",
       "name": "Maranhão",
-      "intensity": "Alerta",
+      "intensity": "Segurança",
       "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 41
-        },
         {
           "year": 2026,
           "week": 30,
@@ -1741,17 +1817,17 @@
         {
           "year": 2026,
           "week": 34,
-          "value": 36
+          "value": 39
         },
         {
           "year": 2026,
           "week": 35,
-          "value": 52
+          "value": 53
         },
         {
           "year": 2026,
           "week": 36,
-          "value": 24
+          "value": 25
         },
         {
           "year": 2026,
@@ -1761,206 +1837,206 @@
         {
           "year": 2026,
           "week": 38,
-          "value": 17
+          "value": 22
         },
         {
           "year": 2026,
           "week": 39,
-          "value": 15
+          "value": 21
         },
         {
           "year": 2026,
           "week": 40,
+          "value": 10
+        },
+        {
+          "year": 2026,
+          "week": 41,
           "value": 4
         }
       ],
       "trend": {
         "latest_value": 4,
-        "previous_value": 15,
-        "absolute_change": -11,
-        "percent_change": -73.3,
+        "previous_value": 10,
+        "absolute_change": -6,
+        "percent_change": -60,
         "trend": "falling",
         "window_size": 4
       },
       "cases_reported": 4,
-      "cases_estimated": 32,
+      "cases_estimated": 31,
       "population": 7024557,
-      "trend_long": "Decreasing",
+      "trend_long": "Stable",
       "trend_short": "Stable"
     },
     {
-      "id": "27",
-      "abbr": "AL",
-      "name": "Alagoas",
-      "intensity": "Segurança",
+      "id": "24",
+      "abbr": "RN",
+      "name": "Rio Grande do Norte",
+      "intensity": null,
       "series": [
         {
           "year": 2026,
-          "week": 29,
-          "value": 17
-        },
-        {
-          "year": 2026,
           "week": 30,
-          "value": 19
-        },
-        {
-          "year": 2026,
-          "week": 31,
-          "value": 23
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 31
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 30
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 16
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 16
-        },
-        {
-          "year": 2026,
-          "week": 36,
-          "value": 18
-        },
-        {
-          "year": 2026,
-          "week": 37,
-          "value": 24
-        },
-        {
-          "year": 2026,
-          "week": 38,
           "value": 27
         },
         {
           "year": 2026,
-          "week": 39,
-          "value": 15
-        },
-        {
-          "year": 2026,
-          "week": 40,
-          "value": 3
-        }
-      ],
-      "trend": {
-        "latest_value": 3,
-        "previous_value": 15,
-        "absolute_change": -12,
-        "percent_change": -80,
-        "trend": "falling",
-        "window_size": 4
-      },
-      "cases_reported": 3,
-      "cases_estimated": 17,
-      "population": 3221128,
-      "trend_long": "Stable",
-      "trend_short": "Decreasing"
-    },
-    {
-      "id": "51",
-      "abbr": "MT",
-      "name": "Mato Grosso",
-      "intensity": "Alerta",
-      "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 33
-        },
-        {
-          "year": 2026,
-          "week": 30,
-          "value": 32
-        },
-        {
-          "year": 2026,
           "week": 31,
-          "value": 36
+          "value": 26
         },
         {
           "year": 2026,
           "week": 32,
-          "value": 30
+          "value": 26
         },
         {
           "year": 2026,
           "week": 33,
-          "value": 34
+          "value": 20
         },
         {
           "year": 2026,
           "week": 34,
-          "value": 31
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 36
-        },
-        {
-          "year": 2026,
-          "week": 36,
-          "value": 17
-        },
-        {
-          "year": 2026,
-          "week": 37,
           "value": 18
         },
         {
           "year": 2026,
-          "week": 38,
+          "week": 35,
+          "value": 33
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 20
+        },
+        {
+          "year": 2026,
+          "week": 37,
           "value": 21
         },
         {
           "year": 2026,
+          "week": 38,
+          "value": 15
+        },
+        {
+          "year": 2026,
           "week": 39,
+          "value": 21
+        },
+        {
+          "year": 2026,
+          "week": 40,
+          "value": 12
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 4
+        }
+      ],
+      "trend": {
+        "latest_value": 4,
+        "previous_value": 12,
+        "absolute_change": -8,
+        "percent_change": -66.7,
+        "trend": "falling",
+        "window_size": 4
+      },
+      "cases_reported": 4,
+      "cases_estimated": 18,
+      "population": 3463737,
+      "trend_long": "Possibly decreasing",
+      "trend_short": "Possibly decreasing"
+    },
+    {
+      "id": "11",
+      "abbr": "RO",
+      "name": "Rondônia",
+      "intensity": "Baixo risco",
+      "series": [
+        {
+          "year": 2026,
+          "week": 30,
+          "value": 17
+        },
+        {
+          "year": 2026,
+          "week": 31,
+          "value": 8
+        },
+        {
+          "year": 2026,
+          "week": 32,
+          "value": 8
+        },
+        {
+          "year": 2026,
+          "week": 33,
+          "value": 8
+        },
+        {
+          "year": 2026,
+          "week": 34,
           "value": 14
+        },
+        {
+          "year": 2026,
+          "week": 35,
+          "value": 8
+        },
+        {
+          "year": 2026,
+          "week": 36,
+          "value": 7
+        },
+        {
+          "year": 2026,
+          "week": 37,
+          "value": 9
+        },
+        {
+          "year": 2026,
+          "week": 38,
+          "value": 9
+        },
+        {
+          "year": 2026,
+          "week": 39,
+          "value": 11
         },
         {
           "year": 2026,
           "week": 40,
           "value": 3
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 1
         }
       ],
       "trend": {
-        "latest_value": 3,
-        "previous_value": 14,
-        "absolute_change": -11,
-        "percent_change": -78.6,
+        "latest_value": 1,
+        "previous_value": 3,
+        "absolute_change": -2,
+        "percent_change": -66.7,
         "trend": "falling",
         "window_size": 4
       },
-      "cases_reported": 3,
-      "cases_estimated": 26,
-      "population": 3950330,
-      "trend_long": "Possibly decreasing",
-      "trend_short": "Stable"
+      "cases_reported": 1,
+      "cases_estimated": 7,
+      "population": 1757338,
+      "trend_long": "Stable",
+      "trend_short": "Possibly decreasing"
     },
     {
       "id": "17",
       "abbr": "TO",
       "name": "Tocantins",
-      "intensity": "Baixo risco",
+      "intensity": "Segurança",
       "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 3
-        },
         {
           "year": 2026,
           "week": 30,
@@ -2004,31 +2080,36 @@
         {
           "year": 2026,
           "week": 38,
-          "value": 6
+          "value": 8
         },
         {
           "year": 2026,
           "week": 39,
-          "value": 1
+          "value": 3
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 2
+          "value": 5
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 0
         }
       ],
       "trend": {
-        "latest_value": 2,
-        "previous_value": 1,
-        "absolute_change": 1,
-        "percent_change": 100,
+        "latest_value": 0,
+        "previous_value": 5,
+        "absolute_change": -5,
+        "percent_change": -100,
         "trend": "falling",
         "window_size": 4
       },
-      "cases_reported": 2,
-      "cases_estimated": 5,
+      "cases_reported": 0,
+      "cases_estimated": 6,
       "population": 1595994,
-      "trend_long": "Stable",
+      "trend_long": "Possibly increasing",
       "trend_short": "Stable"
     },
     {
@@ -2037,11 +2118,6 @@
       "name": "Piauí",
       "intensity": "Baixo risco",
       "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 12
-        },
         {
           "year": 2026,
           "week": 30,
@@ -2070,7 +2146,7 @@
         {
           "year": 2026,
           "week": 35,
-          "value": 17
+          "value": 18
         },
         {
           "year": 2026,
@@ -2080,117 +2156,41 @@
         {
           "year": 2026,
           "week": 37,
-          "value": 7
+          "value": 8
         },
         {
           "year": 2026,
           "week": 38,
-          "value": 11
+          "value": 13
         },
         {
           "year": 2026,
           "week": 39,
-          "value": 5
+          "value": 6
         },
         {
           "year": 2026,
           "week": 40,
-          "value": 2
+          "value": 5
+        },
+        {
+          "year": 2026,
+          "week": 41,
+          "value": 0
         }
       ],
       "trend": {
-        "latest_value": 2,
+        "latest_value": 0,
         "previous_value": 5,
-        "absolute_change": -3,
-        "percent_change": -60,
+        "absolute_change": -5,
+        "percent_change": -100,
         "trend": "falling",
         "window_size": 4
       },
-      "cases_reported": 2,
-      "cases_estimated": 15,
+      "cases_reported": 0,
+      "cases_estimated": 12,
       "population": 3392617,
       "trend_long": "Stable",
-      "trend_short": "Stable"
-    },
-    {
-      "id": "11",
-      "abbr": "RO",
-      "name": "Rondônia",
-      "intensity": "Segurança",
-      "series": [
-        {
-          "year": 2026,
-          "week": 29,
-          "value": 14
-        },
-        {
-          "year": 2026,
-          "week": 30,
-          "value": 17
-        },
-        {
-          "year": 2026,
-          "week": 31,
-          "value": 8
-        },
-        {
-          "year": 2026,
-          "week": 32,
-          "value": 8
-        },
-        {
-          "year": 2026,
-          "week": 33,
-          "value": 8
-        },
-        {
-          "year": 2026,
-          "week": 34,
-          "value": 14
-        },
-        {
-          "year": 2026,
-          "week": 35,
-          "value": 8
-        },
-        {
-          "year": 2026,
-          "week": 36,
-          "value": 7
-        },
-        {
-          "year": 2026,
-          "week": 37,
-          "value": 9
-        },
-        {
-          "year": 2026,
-          "week": 38,
-          "value": 9
-        },
-        {
-          "year": 2026,
-          "week": 39,
-          "value": 11
-        },
-        {
-          "year": 2026,
-          "week": 40,
-          "value": 1
-        }
-      ],
-      "trend": {
-        "latest_value": 1,
-        "previous_value": 11,
-        "absolute_change": -10,
-        "percent_change": -90.9,
-        "trend": "falling",
-        "window_size": 4
-      },
-      "cases_reported": 1,
-      "cases_estimated": 9,
-      "population": 1757338,
-      "trend_long": "Possibly increasing",
       "trend_short": "Stable"
     }
   ]
