@@ -6,7 +6,7 @@
     <atom:link href="https://hiyata.github.io/outbreak-watch/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated daily.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 21 Oct 2026 11:53:20 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 12:00:13 GMT</lastBuildDate>
     <generator>outbreak-watch scripts/build-rss.mjs</generator>
     <item>
       <title>Middle East respiratory syndrome coronavirus - Kingdom of Saudi Arabia</title>
@@ -34,7 +34,7 @@
     </item>
     <item>
       <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo</title>
-      <link>https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON618</link>
+      <link>https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON621</link>
       <guid isPermaLink="false">5df1872c-3aab-4e1b-9d78-475f6ead4040</guid>
       <pubDate>Fri, 25 Sep 2026 15:30:18 GMT</pubDate>
       <category>Ebola disease caused by Bundibugyo virus</category>
