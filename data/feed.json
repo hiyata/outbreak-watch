@@ -1,11 +1,220 @@
 {
-  "generated_at": "2026-10-23T11:41:10.679Z",
+  "generated_at": "2026-10-24T11:03:32.261Z",
   "sources": [
     "WHO"
   ],
   "outbreak_count": 261,
   "update_count": 500,
   "outbreaks": [
+    {
+      "id": "2026-E000253",
+      "disease": "Ebola disease caused by Bundibugyo virus",
+      "first_seen": "2026-05-14T06:00:00Z",
+      "latest_update": "2026-10-23T15:48:48Z",
+      "update_count": 15,
+      "countries": [
+        {
+          "id": "180",
+          "name": "Dem. Rep. Congo"
+        },
+        {
+          "id": "566",
+          "name": "Nigeria"
+        },
+        {
+          "id": "404",
+          "name": "Kenya"
+        },
+        {
+          "id": "800",
+          "name": "Uganda"
+        }
+      ],
+      "is_global": false,
+      "latest_counts": {
+        "cases": 9704,
+        "deaths": 4687,
+        "as_of": "20 October 2026"
+      },
+      "trend": {
+        "latest_value": 1814,
+        "previous_value": 1133,
+        "absolute_change": 681,
+        "percent_change": 60.1,
+        "trend": "rising",
+        "window_size": 4
+      },
+      "updates": [
+        {
+          "id": "f71dec3a-9f8a-4eb1-810c-baeefc888535",
+          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo, Kenya and Nigeria",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON622",
+          "date": "2026-10-23T15:48:48Z",
+          "summary": "Since the publication of the previous Disease Outbreak News on 8 October 2026, the Bundibugyo virus disease (BVD) outbreak has expanded geographically in the Democratic Republic of the Congo, as well as in the African Region, with Kenya and Nigeria reporting imported cases. Sustained, high-level transmission continues…",
+          "counts": {
+            "cases": 9704,
+            "deaths": 4687,
+            "as_of": "20 October 2026"
+          }
+        },
+        {
+          "id": "8fbb14a7-4f4d-4e4a-b113-68b944028ebf",
+          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619",
+          "date": "2026-10-08T16:06:26Z",
+          "summary": "On 5 October 2026, WHO was informed about a laboratory-confirmed imported case of Bundibugyo virus disease (BVD) in Kenya with travel history from the Democratic Republic of the Congo. The patient travelled from the Democratic Republic of the Congo to Kenya through Uganda. The patient was hospitalized and treated in…",
+          "counts": null
+        },
+        {
+          "id": "5df1872c-3aab-4e1b-9d78-475f6ead4040",
+          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON621",
+          "date": "2026-09-25T15:30:18Z",
+          "summary": "Since the last Disease Outbreak News was published on 11 September 2026, the Bundibugyo virus outbreak in the Democratic Republic of the Congo has expanded further, with two additional health zones affected. These include Bulu health zone in a new province, Sud Ubangi, located on the north-west part of the country and…",
+          "counts": {
+            "cases": 7890,
+            "deaths": 3799,
+            "as_of": "23 September 2026"
+          }
+        },
+        {
+          "id": "0381aabe-6109-425c-a3f9-2b33cb482486",
+          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON617",
+          "date": "2026-09-10T08:52:02Z",
+          "summary": "Since the last Disease Outbreak News was published on 28 August 2026, the Bundibugyo virus outbreak in the Democratic Republic of the Congo has expanded to one additional health zone, Kayna, in North Kivu. This increase brings the total number of affected health zones to 61 across six out of 26 provinces of the…",
+          "counts": {
+            "cases": 6757,
+            "deaths": 3267,
+            "as_of": "7 September 2026"
+          }
+        },
+        {
+          "id": "c835cb1d-25ad-4dd9-b065-ee09c054fe81",
+          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON616",
+          "date": "2026-08-28T15:31:07Z",
+          "summary": "Since the last Disease Outbreak News was published on 14 August 2026, the outbreak has spread from 54 to 60 health zones. The number of affected provinces stands at six out of 26 provinces of the country: Bas-Uélé, Haut-Uélé, Ituri, North Kivu, South Kivu, and Tshopo. Six additional health zones reported cases since…",
+          "counts": {
+            "cases": 5794,
+            "deaths": 2786,
+            "as_of": "26 August 2026"
+          }
+        },
+        {
+          "id": "3a950a6c-8e9a-4d58-b8db-6840bd02db92",
+          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON615",
+          "date": "2026-08-14T15:54:20Z",
+          "summary": "The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo is in a phase of intense transmission. It is the largest Ebola outbreak ever reported in the country and expanding faster than any previous Ebola outbreak. The epidemic is increasingly characterized by sustained transmission within…",
+          "counts": {
+            "cases": 4665,
+            "deaths": 2184,
+            "as_of": "12 August 2026"
+          }
+        },
+        {
+          "id": "19668b4d-5e4f-45bf-94d5-4e2ebcb5a67d",
+          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON614",
+          "date": "2026-08-01T10:46:53Z",
+          "summary": "The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo is intensifying, with sustained transmission and continued increases in reported cases and deaths. Initially confined to the Mongbwalu health zone in Ituri Province, over the last two months, the outbreak has expanded to five provinces…",
+          "counts": {
+            "cases": 3605,
+            "deaths": 1587,
+            "as_of": "30 July 2026"
+          }
+        },
+        {
+          "id": "a06665c4-2ff2-411b-8767-25e299dac63f",
+          "title": "Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo & Uganda",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON613",
+          "date": "2026-07-17T16:51:09Z",
+          "summary": "The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo remains active, with sustained transmission driving increases in reported cases and deaths. As of 15 July 2026, a cumulative total of 2124 confirmed cases, including 828 deaths, have been reported from the Democratic Republic of the…",
+          "counts": {
+            "cases": 2124,
+            "deaths": 828,
+            "as_of": "15 July 2026"
+          }
+        },
+        {
+          "id": "608d728d-b078-4614-9ccf-682229ebfee8",
+          "title": "Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo & Uganda",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON612",
+          "date": "2026-07-03T15:31:57Z",
+          "summary": "The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo continues to evolve rapidly, with sustained transmission and increasing numbers of reported cases. As of 1 July, a cumulative of 1460 confirmed cases, including 452 deaths, have been reported from the Democratic Republic of the Congo.…",
+          "counts": {
+            "cases": 1460,
+            "deaths": 452,
+            "as_of": "1 July 2026"
+          }
+        },
+        {
+          "id": "fb4b241b-9a51-4098-ac84-3a6b74469487",
+          "title": "Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo & Uganda",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON608",
+          "date": "2026-06-19T12:51:03Z",
+          "summary": "The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo continues to evolve rapidly, with sustained transmission and increasing numbers of reported cases. As of 17 June, a cumulative of 896 confirmed cases, including 232 deaths, have been reported from the Democratic Republic of the Congo.…",
+          "counts": {
+            "cases": 896,
+            "deaths": 232,
+            "as_of": "17 June 2026"
+          }
+        },
+        {
+          "id": "375711fd-e6fe-4251-8cd5-ebc3ef02d9fe",
+          "title": "Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo & Uganda",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON607",
+          "date": "2026-06-13T08:15:15Z",
+          "summary": "The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo continues to evolve rapidly, with increasing case numbers and geographic spread. As of 10 June, a cumulative of 676 confirmed cases, including 136 deaths, have been reported from the Democratic Republic of the Congo. As of 11 June,…",
+          "counts": {
+            "cases": 676,
+            "deaths": 136,
+            "as_of": "10 June 2026"
+          }
+        },
+        {
+          "id": "3325c520-37a9-4d24-8b30-18ebe5bf202d",
+          "title": "Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo & Uganda",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON606",
+          "date": "2026-06-08T13:12:23Z",
+          "summary": "The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo continues to evolve rapidly, with increasing case numbers, geographic spread, and cross-border transmission to Uganda. As of 6 June, a total of 515 confirmed cases, with 91 deaths among these confirmed cases, have been reported from…",
+          "counts": {
+            "cases": 515,
+            "deaths": 91,
+            "as_of": "6 June 2026"
+          }
+        },
+        {
+          "id": "ae3c204f-4b7b-412a-9ef7-1450a5073c23",
+          "title": "Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo & Uganda",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON605",
+          "date": "2026-05-29T15:43:01Z",
+          "summary": "The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo and Uganda continues to evolve rapidly, with increasing case numbers, geographic spread, and ongoing cross-border transmission. As of 27 May, a total of 906 suspected cases and 223 deaths among suspected cases have been reported in the…",
+          "counts": {
+            "cases": 125,
+            "deaths": 17,
+            "as_of": "29 May 2026"
+          }
+        },
+        {
+          "id": "f2a48407-d580-4988-94d7-ccc683f54cb0",
+          "title": "Ebola disease caused by Bundibugyo virus – Democratic Republic of the Congo",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON603",
+          "date": "2026-05-22T21:06:24Z",
+          "summary": "On 15 May 2026, the Ministry of Public Health, Hygiene and Social Welfare, Democratic Republic of the Congo (DRC), and the Ministry of Health of Uganda declared an outbreak of Ebola Disease following the confirmation of Bundibugyo virus disease (BVD) in both countries. On 17 May 2026, the World Health Organization…",
+          "counts": null
+        },
+        {
+          "id": "dfc49ad5-c3b6-41ca-a2d6-f51092ff8b33",
+          "title": "Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo & Uganda",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON602",
+          "date": "2026-05-17T09:35:15Z",
+          "summary": "On 5 May 2026, the World Health Organization (WHO) was alerted of a high-mortality outbreak of unknown illness in Mongbwalu Health Zone, Ituri Province, Democratic Republic of the Congo (DRC), including deaths among health workers. On 14 May 2026, the Institut national de recherche biomédicale (INRB) Kinshasa analyzed…",
+          "counts": null
+        }
+      ]
+    },
     {
       "id": "2012-E000288",
       "disease": "Middle East respiratory syndrome coronavirus (MERS-CoV)",
@@ -254,195 +463,6 @@
           "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON620",
           "date": "2026-10-10T15:53:19Z",
           "summary": "On 2 October 2026, WHO became aware through media reports of the death of an employee of the Irkutsk Antiplague Research Institute (APRI) of Siberia and the Far East, the Russian Federation. According to these reports, the individual died on 2 October following hospitalization for severe pneumonia on 29 September, and…",
-          "counts": null
-        }
-      ]
-    },
-    {
-      "id": "2026-E000253",
-      "disease": "Ebola disease caused by Bundibugyo virus",
-      "first_seen": "2026-05-14T06:00:00Z",
-      "latest_update": "2026-10-08T16:06:26Z",
-      "update_count": 14,
-      "countries": [
-        {
-          "id": "180",
-          "name": "Dem. Rep. Congo"
-        },
-        {
-          "id": "800",
-          "name": "Uganda"
-        }
-      ],
-      "is_global": false,
-      "latest_counts": {
-        "cases": 7890,
-        "deaths": 3799,
-        "as_of": "23 September 2026"
-      },
-      "trend": {
-        "latest_value": 1133,
-        "previous_value": 963,
-        "absolute_change": 170,
-        "percent_change": 17.7,
-        "trend": "stable",
-        "window_size": 4
-      },
-      "updates": [
-        {
-          "id": "8fbb14a7-4f4d-4e4a-b113-68b944028ebf",
-          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619",
-          "date": "2026-10-08T16:06:26Z",
-          "summary": "On 5 October 2026, WHO was informed about a laboratory-confirmed imported case of Bundibugyo virus disease (BVD) in Kenya with travel history from the Democratic Republic of the Congo. The patient travelled from the Democratic Republic of the Congo to Kenya through Uganda. The patient was hospitalized and treated in…",
-          "counts": null
-        },
-        {
-          "id": "5df1872c-3aab-4e1b-9d78-475f6ead4040",
-          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON621",
-          "date": "2026-09-25T15:30:18Z",
-          "summary": "Since the last Disease Outbreak News was published on 11 September 2026, the Bundibugyo virus outbreak in the Democratic Republic of the Congo has expanded further, with two additional health zones affected. These include Bulu health zone in a new province, Sud Ubangi, located on the north-west part of the country and…",
-          "counts": {
-            "cases": 7890,
-            "deaths": 3799,
-            "as_of": "23 September 2026"
-          }
-        },
-        {
-          "id": "0381aabe-6109-425c-a3f9-2b33cb482486",
-          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON617",
-          "date": "2026-09-10T08:52:02Z",
-          "summary": "Since the last Disease Outbreak News was published on 28 August 2026, the Bundibugyo virus outbreak in the Democratic Republic of the Congo has expanded to one additional health zone, Kayna, in North Kivu. This increase brings the total number of affected health zones to 61 across six out of 26 provinces of the…",
-          "counts": {
-            "cases": 6757,
-            "deaths": 3267,
-            "as_of": "7 September 2026"
-          }
-        },
-        {
-          "id": "c835cb1d-25ad-4dd9-b065-ee09c054fe81",
-          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON616",
-          "date": "2026-08-28T15:31:07Z",
-          "summary": "Since the last Disease Outbreak News was published on 14 August 2026, the outbreak has spread from 54 to 60 health zones. The number of affected provinces stands at six out of 26 provinces of the country: Bas-Uélé, Haut-Uélé, Ituri, North Kivu, South Kivu, and Tshopo. Six additional health zones reported cases since…",
-          "counts": {
-            "cases": 5794,
-            "deaths": 2786,
-            "as_of": "26 August 2026"
-          }
-        },
-        {
-          "id": "3a950a6c-8e9a-4d58-b8db-6840bd02db92",
-          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON615",
-          "date": "2026-08-14T15:54:20Z",
-          "summary": "The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo is in a phase of intense transmission. It is the largest Ebola outbreak ever reported in the country and expanding faster than any previous Ebola outbreak. The epidemic is increasingly characterized by sustained transmission within…",
-          "counts": {
-            "cases": 4665,
-            "deaths": 2184,
-            "as_of": "12 August 2026"
-          }
-        },
-        {
-          "id": "19668b4d-5e4f-45bf-94d5-4e2ebcb5a67d",
-          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON614",
-          "date": "2026-08-01T10:46:53Z",
-          "summary": "The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo is intensifying, with sustained transmission and continued increases in reported cases and deaths. Initially confined to the Mongbwalu health zone in Ituri Province, over the last two months, the outbreak has expanded to five provinces…",
-          "counts": {
-            "cases": 3605,
-            "deaths": 1587,
-            "as_of": "30 July 2026"
-          }
-        },
-        {
-          "id": "a06665c4-2ff2-411b-8767-25e299dac63f",
-          "title": "Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo & Uganda",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON613",
-          "date": "2026-07-17T16:51:09Z",
-          "summary": "The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo remains active, with sustained transmission driving increases in reported cases and deaths. As of 15 July 2026, a cumulative total of 2124 confirmed cases, including 828 deaths, have been reported from the Democratic Republic of the…",
-          "counts": {
-            "cases": 2124,
-            "deaths": 828,
-            "as_of": "15 July 2026"
-          }
-        },
-        {
-          "id": "608d728d-b078-4614-9ccf-682229ebfee8",
-          "title": "Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo & Uganda",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON612",
-          "date": "2026-07-03T15:31:57Z",
-          "summary": "The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo continues to evolve rapidly, with sustained transmission and increasing numbers of reported cases. As of 1 July, a cumulative of 1460 confirmed cases, including 452 deaths, have been reported from the Democratic Republic of the Congo.…",
-          "counts": {
-            "cases": 1460,
-            "deaths": 452,
-            "as_of": "1 July 2026"
-          }
-        },
-        {
-          "id": "fb4b241b-9a51-4098-ac84-3a6b74469487",
-          "title": "Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo & Uganda",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON608",
-          "date": "2026-06-19T12:51:03Z",
-          "summary": "The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo continues to evolve rapidly, with sustained transmission and increasing numbers of reported cases. As of 17 June, a cumulative of 896 confirmed cases, including 232 deaths, have been reported from the Democratic Republic of the Congo.…",
-          "counts": {
-            "cases": 896,
-            "deaths": 232,
-            "as_of": "17 June 2026"
-          }
-        },
-        {
-          "id": "375711fd-e6fe-4251-8cd5-ebc3ef02d9fe",
-          "title": "Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo & Uganda",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON607",
-          "date": "2026-06-13T08:15:15Z",
-          "summary": "The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo continues to evolve rapidly, with increasing case numbers and geographic spread. As of 10 June, a cumulative of 676 confirmed cases, including 136 deaths, have been reported from the Democratic Republic of the Congo. As of 11 June,…",
-          "counts": {
-            "cases": 676,
-            "deaths": 136,
-            "as_of": "10 June 2026"
-          }
-        },
-        {
-          "id": "3325c520-37a9-4d24-8b30-18ebe5bf202d",
-          "title": "Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo & Uganda",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON606",
-          "date": "2026-06-08T13:12:23Z",
-          "summary": "The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo continues to evolve rapidly, with increasing case numbers, geographic spread, and cross-border transmission to Uganda. As of 6 June, a total of 515 confirmed cases, with 91 deaths among these confirmed cases, have been reported from…",
-          "counts": {
-            "cases": 515,
-            "deaths": 91,
-            "as_of": "6 June 2026"
-          }
-        },
-        {
-          "id": "ae3c204f-4b7b-412a-9ef7-1450a5073c23",
-          "title": "Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo & Uganda",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON605",
-          "date": "2026-05-29T15:43:01Z",
-          "summary": "The Bundibugyo virus disease (BVD) outbreak in the Democratic Republic of the Congo and Uganda continues to evolve rapidly, with increasing case numbers, geographic spread, and ongoing cross-border transmission. As of 27 May, a total of 906 suspected cases and 223 deaths among suspected cases have been reported in the…",
-          "counts": {
-            "cases": 125,
-            "deaths": 17,
-            "as_of": "29 May 2026"
-          }
-        },
-        {
-          "id": "f2a48407-d580-4988-94d7-ccc683f54cb0",
-          "title": "Ebola disease caused by Bundibugyo virus – Democratic Republic of the Congo",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON603",
-          "date": "2026-05-22T21:06:24Z",
-          "summary": "On 15 May 2026, the Ministry of Public Health, Hygiene and Social Welfare, Democratic Republic of the Congo (DRC), and the Ministry of Health of Uganda declared an outbreak of Ebola Disease following the confirmation of Bundibugyo virus disease (BVD) in both countries. On 17 May 2026, the World Health Organization…",
-          "counts": null
-        },
-        {
-          "id": "dfc49ad5-c3b6-41ca-a2d6-f51092ff8b33",
-          "title": "Ebola disease caused by Bundibugyo virus, Democratic Republic of the Congo & Uganda",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON602",
-          "date": "2026-05-17T09:35:15Z",
-          "summary": "On 5 May 2026, the World Health Organization (WHO) was alerted of a high-mortality outbreak of unknown illness in Mongbwalu Health Zone, Ituri Province, Democratic Republic of the Congo (DRC), including deaths among health workers. On 14 May 2026, the Institut national de recherche biomédicale (INRB) Kinshasa analyzed…",
           "counts": null
         }
       ]
@@ -7978,8 +7998,8 @@
       "id": "2018",
       "disease": "2018",
       "first_seen": "2021-06-03T09:07:11Z",
-      "latest_update": "2021-06-03T09:07:39Z",
-      "update_count": 10,
+      "latest_update": "2021-06-03T09:07:22Z",
+      "update_count": 9,
       "countries": [
         {
           "id": "682",
@@ -8006,14 +8026,6 @@
       },
       "trend": null,
       "updates": [
-        {
-          "id": "b7fdf232-2e61-4ae6-9bac-410b3438c2fd",
-          "title": "Middle East respiratory syndrome coronavirus (MERS-CoV) – Saudi Arabia",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/20-november-2018-mers-saudi-arabia-en",
-          "date": "2021-06-03T09:07:39Z",
-          "summary": "From 16 through 30 October 2018, the International Health Regulations (IHR 2005) National Focal Point of Saudi Arabia reported four additional cases of Middle East respiratory syndrome coronavirus (MERS-CoV) infection, including one death. Details of these cases can be found in a separate document (see link below).…",
-          "counts": null
-        },
         {
           "id": "d4169200-1d03-4ccc-8609-2b81d7bd3da4",
           "title": "Yellow Fever – Netherlands",
