@@ -6,8 +6,16 @@
     <atom:link href="https://hiyata.github.io/outbreak-watch/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated daily.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Nov 2026 13:29:22 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 15:57:40 GMT</lastBuildDate>
     <generator>outbreak-watch scripts/build-rss.mjs</generator>
+    <item>
+      <title>Shamonda virus in human - France</title>
+      <link>https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON623</link>
+      <guid isPermaLink="false">69b96fe8-8b6d-48f4-b59b-204c444d66c5</guid>
+      <pubDate>Mon, 02 Nov 2026 14:26:51 GMT</pubDate>
+      <category>Shamonda virus</category>
+      <description>France — On 20 October 2026, the National IHR Focal Point (NFP) of France notified WHO regarding the first documented human infection with Shamonda virus (SHAV). The case was an immunocompromised older man from eastern France with no travel history during the preceding year. He developed severe neurological illness on 23…</description>
+    </item>
     <item>
       <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo, Kenya and Nigeria</title>
       <link>https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON622</link>
@@ -479,14 +487,6 @@
       <pubDate>Fri, 28 Mar 2025 19:19:26 GMT</pubDate>
       <category>Cholera - Angola</category>
       <description>Angola — Since January 2025, Angola has been experiencing a substantial cholera outbreak. As of 23 March 2025, a total of 8543 cases and 329 deaths (Case Fatality Rate (CFR) 3.9%) have been reported, with one-third of the deaths occurring in the community. The outbreak has rapidly spread to 16 out of Angola’s 21 provinces,…</description>
-    </item>
-    <item>
-      <title>Measles - United States of America</title>
-      <link>https://www.who.int/emergencies/disease-outbreak-news/item/2025-DON561</link>
-      <guid isPermaLink="false">a1151663-3f67-41b0-be1b-06af835aafac</guid>
-      <pubDate>Thu, 27 Mar 2025 18:47:40 GMT</pubDate>
-      <category>Measles</category>
-      <description>United States of America — On 11 March 2025, the World Health Organization (WHO) received a report from the International Health Regulation (2005) (IHR) National Focal Point (NFP) of the United States of America (United States) on the ongoing measles outbreak in the country, notified under IHR because it is an unusual event with potential… (378 cases reported as of this update)</description>
     </item>
   </channel>
 </rss>
