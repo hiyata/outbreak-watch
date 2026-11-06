@@ -6,8 +6,16 @@
     <atom:link href="https://hiyata.github.io/outbreak-watch/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated daily.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Nov 2026 14:45:30 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 14:22:46 GMT</lastBuildDate>
     <generator>outbreak-watch scripts/build-rss.mjs</generator>
+    <item>
+      <title>Yellow fever - WHO African Region</title>
+      <link>https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON624</link>
+      <guid isPermaLink="false">ed87efed-9b8e-492e-ad7d-1e1e22e9f77b</guid>
+      <pubDate>Fri, 06 Nov 2026 09:01:14 GMT</pubDate>
+      <category>Yellow fever, WHO African Region</category>
+      <description> — Yellow fever transmission continues in the WHO African Region, with recent outbreak activity concentrated in parts of West Africa. Between 1 January and 12 October 2026, 67 confirmed cases, including 18 deaths, were recorded in nine countries in the Region: Burkina Faso, Cameroon, the Central African Republic, Côte…</description>
+    </item>
     <item>
       <title>Shamonda virus in human - France</title>
       <link>https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON623</link>
@@ -479,14 +487,6 @@
       <pubDate>Fri, 11 Apr 2025 12:11:28 GMT</pubDate>
       <category>Invasive meningococcal disease</category>
       <description>Saudi Arabia — On 13 March 2025, the International Health Regulations (IHR) National Focal Point (NFP) for the Kingdom of Saudi Arabia (KSA) reported 11 cases of invasive meningococcal disease (IMD) to WHO. Additionally, between 11 February and 18 March 2025, the WHO Eastern Mediterranean Regional IHR contact point received reports…</description>
-    </item>
-    <item>
-      <title>Cholera - Angola</title>
-      <link>https://www.who.int/emergencies/disease-outbreak-news/item/2025-DON562</link>
-      <guid isPermaLink="false">4179c55d-5ebe-4e98-a997-0d0324bdaa09</guid>
-      <pubDate>Fri, 28 Mar 2025 19:19:26 GMT</pubDate>
-      <category>Cholera - Angola</category>
-      <description>Angola — Since January 2025, Angola has been experiencing a substantial cholera outbreak. As of 23 March 2025, a total of 8543 cases and 329 deaths (Case Fatality Rate (CFR) 3.9%) have been reported, with one-third of the deaths occurring in the community. The outbreak has rapidly spread to 16 out of Angola’s 21 provinces,…</description>
     </item>
   </channel>
 </rss>

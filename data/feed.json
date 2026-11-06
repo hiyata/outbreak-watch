@@ -1,11 +1,32 @@
 {
-  "generated_at": "2026-11-05T14:40:38.867Z",
+  "generated_at": "2026-11-06T14:18:03.285Z",
   "sources": [
     "WHO"
   ],
-  "outbreak_count": 262,
+  "outbreak_count": 263,
   "update_count": 500,
   "outbreaks": [
+    {
+      "id": "2026-E000194",
+      "disease": "Yellow fever, WHO African Region",
+      "first_seen": "2026-01-01T09:11:59Z",
+      "latest_update": "2026-11-06T09:01:14Z",
+      "update_count": 1,
+      "countries": [],
+      "is_global": false,
+      "latest_counts": null,
+      "trend": null,
+      "updates": [
+        {
+          "id": "ed87efed-9b8e-492e-ad7d-1e1e22e9f77b",
+          "title": "Yellow fever - WHO African Region",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON624",
+          "date": "2026-11-06T09:01:14Z",
+          "summary": "Yellow fever transmission continues in the WHO African Region, with recent outbreak activity concentrated in parts of West Africa. Between 1 January and 12 October 2026, 67 confirmed cases, including 18 deaths, were recorded in nine countries in the Region: Burkina Faso, Cameroon, the Central African Republic, Côte…",
+          "counts": null
+        }
+      ]
+    },
     {
       "id": "2026-E000404",
       "disease": "Shamonda virus",
@@ -8025,7 +8046,7 @@
       "disease": "2018",
       "first_seen": "2021-06-03T09:07:11Z",
       "latest_update": "2021-06-03T09:07:22Z",
-      "update_count": 8,
+      "update_count": 7,
       "countries": [
         {
           "id": "682",
@@ -8110,14 +8131,6 @@
           "url": "https://www.who.int/emergencies/disease-outbreak-news/item/06-December-2018-ebola-drc-en",
           "date": "2018-12-06T00:00:00Z",
           "summary": "Responding to the Ebola virus disease (EVD) outbreak in north-eastern parts of the Democratic Republic of the Congo continues to be a multifaceted challenge. By utilising proven public health measures (contact tracing, engaging communities) as well as new tools at hand (vaccine and therapeutics), WHO remains confident…",
-          "counts": null
-        },
-        {
-          "id": "3730e501-ccd3-440e-8ae5-cc676ceb0736",
-          "title": "Ebola virus disease – Democratic Republic of the Congo",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/29-november-2018-ebola-drc-en",
-          "date": "2018-11-29T00:00:00Z",
-          "summary": "As the Ebola virus disease (EVD) outbreak approaches five months since declaration, responding to the outbreak continues to be a challenge; nevertheless, in collaboration with the Ministry of Health (MoH) and partners, WHO remains focused on the ongoing containment efforts to end the outbreak. The MoH, WHO and…",
           "counts": null
         }
       ]
