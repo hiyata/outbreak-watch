@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T14:18:03.285Z",
+  "generated_at": "2026-11-07T13:03:40.916Z",
   "sources": [
     "WHO"
   ],
@@ -7,58 +7,11 @@
   "update_count": 500,
   "outbreaks": [
     {
-      "id": "2026-E000194",
-      "disease": "Yellow fever, WHO African Region",
-      "first_seen": "2026-01-01T09:11:59Z",
-      "latest_update": "2026-11-06T09:01:14Z",
-      "update_count": 1,
-      "countries": [],
-      "is_global": false,
-      "latest_counts": null,
-      "trend": null,
-      "updates": [
-        {
-          "id": "ed87efed-9b8e-492e-ad7d-1e1e22e9f77b",
-          "title": "Yellow fever - WHO African Region",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON624",
-          "date": "2026-11-06T09:01:14Z",
-          "summary": "Yellow fever transmission continues in the WHO African Region, with recent outbreak activity concentrated in parts of West Africa. Between 1 January and 12 October 2026, 67 confirmed cases, including 18 deaths, were recorded in nine countries in the Region: Burkina Faso, Cameroon, the Central African Republic, Côte…",
-          "counts": null
-        }
-      ]
-    },
-    {
-      "id": "2026-E000404",
-      "disease": "Shamonda virus",
-      "first_seen": "2026-09-22T22:00:00Z",
-      "latest_update": "2026-11-02T14:26:51Z",
-      "update_count": 1,
-      "countries": [
-        {
-          "id": "250",
-          "name": "France"
-        }
-      ],
-      "is_global": false,
-      "latest_counts": null,
-      "trend": null,
-      "updates": [
-        {
-          "id": "69b96fe8-8b6d-48f4-b59b-204c444d66c5",
-          "title": "Shamonda virus in human - France",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON623",
-          "date": "2026-11-02T14:26:51Z",
-          "summary": "On 20 October 2026, the National IHR Focal Point (NFP) of France notified WHO regarding the first documented human infection with Shamonda virus (SHAV). The case was an immunocompromised older man from eastern France with no travel history during the preceding year. He developed severe neurological illness on 23…",
-          "counts": null
-        }
-      ]
-    },
-    {
       "id": "2026-E000253",
       "disease": "Ebola disease caused by Bundibugyo virus",
       "first_seen": "2026-05-14T06:00:00Z",
-      "latest_update": "2026-10-23T15:48:48Z",
-      "update_count": 15,
+      "latest_update": "2026-11-06T17:27:28Z",
+      "update_count": 16,
       "countries": [
         {
           "id": "180",
@@ -92,6 +45,14 @@
         "window_size": 4
       },
       "updates": [
+        {
+          "id": "bfeabe5e-7ba7-40e4-aba0-ba714110cc21",
+          "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo, Kenya and Nigeria",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON625",
+          "date": "2026-11-06T17:27:28Z",
+          "summary": "Since the publication of the previous Disease Outbreak News on 23 October 2026, the Bundibugyo virus disease (BVD) outbreak has expanded geographically in the Democratic Republic of the Congo. While some areas have seen a slight decline in cases, sustained, high-level transmission continues overall in the Democratic…",
+          "counts": null
+        },
         {
           "id": "f71dec3a-9f8a-4eb1-810c-baeefc888535",
           "title": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo, Kenya and Nigeria",
@@ -258,6 +219,53 @@
           "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON602",
           "date": "2026-05-17T09:35:15Z",
           "summary": "On 5 May 2026, the World Health Organization (WHO) was alerted of a high-mortality outbreak of unknown illness in Mongbwalu Health Zone, Ituri Province, Democratic Republic of the Congo (DRC), including deaths among health workers. On 14 May 2026, the Institut national de recherche biomédicale (INRB) Kinshasa analyzed…",
+          "counts": null
+        }
+      ]
+    },
+    {
+      "id": "2026-E000194",
+      "disease": "Yellow fever, WHO African Region",
+      "first_seen": "2026-01-01T09:11:59Z",
+      "latest_update": "2026-11-06T09:01:14Z",
+      "update_count": 1,
+      "countries": [],
+      "is_global": false,
+      "latest_counts": null,
+      "trend": null,
+      "updates": [
+        {
+          "id": "ed87efed-9b8e-492e-ad7d-1e1e22e9f77b",
+          "title": "Yellow fever - WHO African Region",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON624",
+          "date": "2026-11-06T09:01:14Z",
+          "summary": "Yellow fever transmission continues in the WHO African Region, with recent outbreak activity concentrated in parts of West Africa. Between 1 January and 12 October 2026, 67 confirmed cases, including 18 deaths, were recorded in nine countries in the Region: Burkina Faso, Cameroon, the Central African Republic, Côte…",
+          "counts": null
+        }
+      ]
+    },
+    {
+      "id": "2026-E000404",
+      "disease": "Shamonda virus",
+      "first_seen": "2026-09-22T22:00:00Z",
+      "latest_update": "2026-11-02T14:26:51Z",
+      "update_count": 1,
+      "countries": [
+        {
+          "id": "250",
+          "name": "France"
+        }
+      ],
+      "is_global": false,
+      "latest_counts": null,
+      "trend": null,
+      "updates": [
+        {
+          "id": "69b96fe8-8b6d-48f4-b59b-204c444d66c5",
+          "title": "Shamonda virus in human - France",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON623",
+          "date": "2026-11-02T14:26:51Z",
+          "summary": "On 20 October 2026, the National IHR Focal Point (NFP) of France notified WHO regarding the first documented human infection with Shamonda virus (SHAV). The case was an immunocompromised older man from eastern France with no travel history during the preceding year. He developed severe neurological illness on 23…",
           "counts": null
         }
       ]
@@ -8046,7 +8054,7 @@
       "disease": "2018",
       "first_seen": "2021-06-03T09:07:11Z",
       "latest_update": "2021-06-03T09:07:22Z",
-      "update_count": 7,
+      "update_count": 6,
       "countries": [
         {
           "id": "682",
@@ -8123,14 +8131,6 @@
           "url": "https://www.who.int/emergencies/disease-outbreak-news/item/13-December-2018-ebola-drc-en",
           "date": "2018-12-13T00:00:00Z",
           "summary": "The Ebola virus disease (EVD) outbreak in the Democratic Republic of the Congo is occurring in an unforgiving context. Non-engagement from communities and conflict continue to hamper response activities in some affected areas. Moreover, poor infection prevention and control (IPC) practices across numerous private and…",
-          "counts": null
-        },
-        {
-          "id": "53ef9cd3-1faa-4c93-bb14-ab0e9f336dcf",
-          "title": "Ebola virus disease – Democratic Republic of the Congo",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/06-December-2018-ebola-drc-en",
-          "date": "2018-12-06T00:00:00Z",
-          "summary": "Responding to the Ebola virus disease (EVD) outbreak in north-eastern parts of the Democratic Republic of the Congo continues to be a multifaceted challenge. By utilising proven public health measures (contact tracing, engaging communities) as well as new tools at hand (vaccine and therapeutics), WHO remains confident…",
           "counts": null
         }
       ]

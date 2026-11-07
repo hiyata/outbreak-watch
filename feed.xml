@@ -6,8 +6,16 @@
     <atom:link href="https://hiyata.github.io/outbreak-watch/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated daily.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 06 Nov 2026 14:22:46 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 13:06:54 GMT</lastBuildDate>
     <generator>outbreak-watch scripts/build-rss.mjs</generator>
+    <item>
+      <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo, Kenya and Nigeria</title>
+      <link>https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON625</link>
+      <guid isPermaLink="false">bfeabe5e-7ba7-40e4-aba0-ba714110cc21</guid>
+      <pubDate>Fri, 06 Nov 2026 17:27:28 GMT</pubDate>
+      <category>Ebola disease caused by Bundibugyo virus</category>
+      <description>Dem. Rep. Congo, Nigeria, Kenya, Uganda — Since the publication of the previous Disease Outbreak News on 23 October 2026, the Bundibugyo virus disease (BVD) outbreak has expanded geographically in the Democratic Republic of the Congo. While some areas have seen a slight decline in cases, sustained, high-level transmission continues overall in the Democratic…</description>
+    </item>
     <item>
       <title>Yellow fever - WHO African Region</title>
       <link>https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON624</link>
@@ -479,14 +487,6 @@
       <pubDate>Thu, 17 Apr 2025 15:49:08 GMT</pubDate>
       <category>Avian Influenza A(H5N1)</category>
       <description>Mexico — On 2 April 2025, the International Health Regulations (IHR) National Focal Point (NFP) for Mexico notified the World Health Organization (WHO) of the country’s first laboratory-confirmed human infection with an avian influenza A(H5N1) virus in the state of Durango. In response, local and national health authorities…</description>
-    </item>
-    <item>
-      <title>Invasive meningococcal disease - Kingdom of Saudi Arabia</title>
-      <link>https://www.who.int/emergencies/disease-outbreak-news/item/2025-DON563</link>
-      <guid isPermaLink="false">308b2eb8-7bf5-49db-9de5-be3b2b6c5030</guid>
-      <pubDate>Fri, 11 Apr 2025 12:11:28 GMT</pubDate>
-      <category>Invasive meningococcal disease</category>
-      <description>Saudi Arabia — On 13 March 2025, the International Health Regulations (IHR) National Focal Point (NFP) for the Kingdom of Saudi Arabia (KSA) reported 11 cases of invasive meningococcal disease (IMD) to WHO. Additionally, between 11 February and 18 March 2025, the WHO Eastern Mediterranean Regional IHR contact point received reports…</description>
     </item>
   </channel>
 </rss>
