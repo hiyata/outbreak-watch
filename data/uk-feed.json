@@ -1,10 +1,602 @@
 {
-  "generated_at": "2026-11-10T15:00:02.883Z",
+  "generated_at": "2026-11-11T14:26:56.558Z",
   "source": "UKHSA data dashboard (England regions)",
   "recency_window_days": 90,
   "history_points": 12,
-  "disease_count": 9,
+  "disease_count": 10,
   "diseases": [
+    {
+      "topic": "COVID-19",
+      "metric": "COVID-19_cases_casesByDay",
+      "latest_date": "2026-11-04",
+      "regions": [
+        {
+          "id": "east_midlands",
+          "name": "East Midlands",
+          "latest_value": 9,
+          "latest_date": "2026-11-04",
+          "value_4_weeks_ago": null,
+          "series": [
+            {
+              "date": "2026-10-24",
+              "value": 14
+            },
+            {
+              "date": "2026-10-25",
+              "value": 24
+            },
+            {
+              "date": "2026-10-26",
+              "value": 23
+            },
+            {
+              "date": "2026-10-27",
+              "value": 24
+            },
+            {
+              "date": "2026-10-28",
+              "value": 25
+            },
+            {
+              "date": "2026-10-29",
+              "value": 20
+            },
+            {
+              "date": "2026-10-30",
+              "value": 20
+            },
+            {
+              "date": "2026-10-31",
+              "value": 21
+            },
+            {
+              "date": "2026-11-01",
+              "value": 21
+            },
+            {
+              "date": "2026-11-02",
+              "value": 25
+            },
+            {
+              "date": "2026-11-03",
+              "value": 24
+            },
+            {
+              "date": "2026-11-04",
+              "value": 9
+            }
+          ],
+          "trend": {
+            "latest_value": 9,
+            "previous_value": 24,
+            "absolute_change": -15,
+            "percent_change": -62.5,
+            "trend": "falling",
+            "window_size": 4
+          }
+        },
+        {
+          "id": "east_of_england",
+          "name": "East of England",
+          "latest_value": 0,
+          "latest_date": "2026-11-04",
+          "value_4_weeks_ago": null,
+          "series": [
+            {
+              "date": "2026-10-24",
+              "value": 20
+            },
+            {
+              "date": "2026-10-25",
+              "value": 19
+            },
+            {
+              "date": "2026-10-26",
+              "value": 38
+            },
+            {
+              "date": "2026-10-27",
+              "value": 45
+            },
+            {
+              "date": "2026-10-28",
+              "value": 30
+            },
+            {
+              "date": "2026-10-29",
+              "value": 32
+            },
+            {
+              "date": "2026-10-30",
+              "value": 23
+            },
+            {
+              "date": "2026-10-31",
+              "value": 13
+            },
+            {
+              "date": "2026-11-01",
+              "value": 20
+            },
+            {
+              "date": "2026-11-02",
+              "value": 34
+            },
+            {
+              "date": "2026-11-03",
+              "value": 11
+            },
+            {
+              "date": "2026-11-04",
+              "value": 0
+            }
+          ],
+          "trend": {
+            "latest_value": 0,
+            "previous_value": 11,
+            "absolute_change": -11,
+            "percent_change": -100,
+            "trend": "falling",
+            "window_size": 4
+          }
+        },
+        {
+          "id": "london",
+          "name": "London",
+          "latest_value": 2,
+          "latest_date": "2026-11-04",
+          "value_4_weeks_ago": null,
+          "series": [
+            {
+              "date": "2026-10-24",
+              "value": 24
+            },
+            {
+              "date": "2026-10-25",
+              "value": 27
+            },
+            {
+              "date": "2026-10-26",
+              "value": 31
+            },
+            {
+              "date": "2026-10-27",
+              "value": 30
+            },
+            {
+              "date": "2026-10-28",
+              "value": 33
+            },
+            {
+              "date": "2026-10-29",
+              "value": 31
+            },
+            {
+              "date": "2026-10-30",
+              "value": 19
+            },
+            {
+              "date": "2026-10-31",
+              "value": 19
+            },
+            {
+              "date": "2026-11-01",
+              "value": 15
+            },
+            {
+              "date": "2026-11-02",
+              "value": 14
+            },
+            {
+              "date": "2026-11-03",
+              "value": 12
+            },
+            {
+              "date": "2026-11-04",
+              "value": 2
+            }
+          ],
+          "trend": {
+            "latest_value": 2,
+            "previous_value": 12,
+            "absolute_change": -10,
+            "percent_change": -83.3,
+            "trend": "falling",
+            "window_size": 4
+          }
+        },
+        {
+          "id": "north_east",
+          "name": "North East",
+          "latest_value": 2,
+          "latest_date": "2026-11-04",
+          "value_4_weeks_ago": null,
+          "series": [
+            {
+              "date": "2026-10-24",
+              "value": 19
+            },
+            {
+              "date": "2026-10-25",
+              "value": 31
+            },
+            {
+              "date": "2026-10-26",
+              "value": 30
+            },
+            {
+              "date": "2026-10-27",
+              "value": 33
+            },
+            {
+              "date": "2026-10-28",
+              "value": 19
+            },
+            {
+              "date": "2026-10-29",
+              "value": 32
+            },
+            {
+              "date": "2026-10-30",
+              "value": 29
+            },
+            {
+              "date": "2026-10-31",
+              "value": 14
+            },
+            {
+              "date": "2026-11-01",
+              "value": 10
+            },
+            {
+              "date": "2026-11-02",
+              "value": 25
+            },
+            {
+              "date": "2026-11-03",
+              "value": 8
+            },
+            {
+              "date": "2026-11-04",
+              "value": 2
+            }
+          ],
+          "trend": {
+            "latest_value": 2,
+            "previous_value": 8,
+            "absolute_change": -6,
+            "percent_change": -75,
+            "trend": "falling",
+            "window_size": 4
+          }
+        },
+        {
+          "id": "north_west",
+          "name": "North West",
+          "latest_value": 11,
+          "latest_date": "2026-11-04",
+          "value_4_weeks_ago": null,
+          "series": [
+            {
+              "date": "2026-10-24",
+              "value": 27
+            },
+            {
+              "date": "2026-10-25",
+              "value": 38
+            },
+            {
+              "date": "2026-10-26",
+              "value": 51
+            },
+            {
+              "date": "2026-10-27",
+              "value": 44
+            },
+            {
+              "date": "2026-10-28",
+              "value": 35
+            },
+            {
+              "date": "2026-10-29",
+              "value": 56
+            },
+            {
+              "date": "2026-10-30",
+              "value": 39
+            },
+            {
+              "date": "2026-10-31",
+              "value": 48
+            },
+            {
+              "date": "2026-11-01",
+              "value": 50
+            },
+            {
+              "date": "2026-11-02",
+              "value": 38
+            },
+            {
+              "date": "2026-11-03",
+              "value": 34
+            },
+            {
+              "date": "2026-11-04",
+              "value": 11
+            }
+          ],
+          "trend": {
+            "latest_value": 11,
+            "previous_value": 34,
+            "absolute_change": -23,
+            "percent_change": -67.6,
+            "trend": "falling",
+            "window_size": 4
+          }
+        },
+        {
+          "id": "south_east",
+          "name": "South East",
+          "latest_value": 2,
+          "latest_date": "2026-11-04",
+          "value_4_weeks_ago": null,
+          "series": [
+            {
+              "date": "2026-10-24",
+              "value": 31
+            },
+            {
+              "date": "2026-10-25",
+              "value": 21
+            },
+            {
+              "date": "2026-10-26",
+              "value": 51
+            },
+            {
+              "date": "2026-10-27",
+              "value": 44
+            },
+            {
+              "date": "2026-10-28",
+              "value": 32
+            },
+            {
+              "date": "2026-10-29",
+              "value": 36
+            },
+            {
+              "date": "2026-10-30",
+              "value": 27
+            },
+            {
+              "date": "2026-10-31",
+              "value": 14
+            },
+            {
+              "date": "2026-11-01",
+              "value": 22
+            },
+            {
+              "date": "2026-11-02",
+              "value": 18
+            },
+            {
+              "date": "2026-11-03",
+              "value": 9
+            },
+            {
+              "date": "2026-11-04",
+              "value": 2
+            }
+          ],
+          "trend": {
+            "latest_value": 2,
+            "previous_value": 9,
+            "absolute_change": -7,
+            "percent_change": -77.8,
+            "trend": "falling",
+            "window_size": 4
+          }
+        },
+        {
+          "id": "south_west",
+          "name": "South West",
+          "latest_value": 3,
+          "latest_date": "2026-11-04",
+          "value_4_weeks_ago": null,
+          "series": [
+            {
+              "date": "2026-10-24",
+              "value": 23
+            },
+            {
+              "date": "2026-10-25",
+              "value": 23
+            },
+            {
+              "date": "2026-10-26",
+              "value": 33
+            },
+            {
+              "date": "2026-10-27",
+              "value": 39
+            },
+            {
+              "date": "2026-10-28",
+              "value": 43
+            },
+            {
+              "date": "2026-10-29",
+              "value": 34
+            },
+            {
+              "date": "2026-10-30",
+              "value": 32
+            },
+            {
+              "date": "2026-10-31",
+              "value": 24
+            },
+            {
+              "date": "2026-11-01",
+              "value": 25
+            },
+            {
+              "date": "2026-11-02",
+              "value": 21
+            },
+            {
+              "date": "2026-11-03",
+              "value": 27
+            },
+            {
+              "date": "2026-11-04",
+              "value": 3
+            }
+          ],
+          "trend": {
+            "latest_value": 3,
+            "previous_value": 27,
+            "absolute_change": -24,
+            "percent_change": -88.9,
+            "trend": "falling",
+            "window_size": 4
+          }
+        },
+        {
+          "id": "west_midlands",
+          "name": "West Midlands",
+          "latest_value": 9,
+          "latest_date": "2026-11-04",
+          "value_4_weeks_ago": null,
+          "series": [
+            {
+              "date": "2026-10-24",
+              "value": 33
+            },
+            {
+              "date": "2026-10-25",
+              "value": 32
+            },
+            {
+              "date": "2026-10-26",
+              "value": 35
+            },
+            {
+              "date": "2026-10-27",
+              "value": 45
+            },
+            {
+              "date": "2026-10-28",
+              "value": 33
+            },
+            {
+              "date": "2026-10-29",
+              "value": 31
+            },
+            {
+              "date": "2026-10-30",
+              "value": 29
+            },
+            {
+              "date": "2026-10-31",
+              "value": 28
+            },
+            {
+              "date": "2026-11-01",
+              "value": 34
+            },
+            {
+              "date": "2026-11-02",
+              "value": 35
+            },
+            {
+              "date": "2026-11-03",
+              "value": 26
+            },
+            {
+              "date": "2026-11-04",
+              "value": 9
+            }
+          ],
+          "trend": {
+            "latest_value": 9,
+            "previous_value": 26,
+            "absolute_change": -17,
+            "percent_change": -65.4,
+            "trend": "falling",
+            "window_size": 4
+          }
+        },
+        {
+          "id": "yorkshire_and_humber",
+          "name": "Yorkshire and Humber",
+          "latest_value": 3,
+          "latest_date": "2026-11-04",
+          "value_4_weeks_ago": null,
+          "series": [
+            {
+              "date": "2026-10-24",
+              "value": 23
+            },
+            {
+              "date": "2026-10-25",
+              "value": 26
+            },
+            {
+              "date": "2026-10-26",
+              "value": 45
+            },
+            {
+              "date": "2026-10-27",
+              "value": 48
+            },
+            {
+              "date": "2026-10-28",
+              "value": 49
+            },
+            {
+              "date": "2026-10-29",
+              "value": 35
+            },
+            {
+              "date": "2026-10-30",
+              "value": 35
+            },
+            {
+              "date": "2026-10-31",
+              "value": 23
+            },
+            {
+              "date": "2026-11-01",
+              "value": 21
+            },
+            {
+              "date": "2026-11-02",
+              "value": 29
+            },
+            {
+              "date": "2026-11-03",
+              "value": 25
+            },
+            {
+              "date": "2026-11-04",
+              "value": 3
+            }
+          ],
+          "trend": {
+            "latest_value": 3,
+            "previous_value": 25,
+            "absolute_change": -22,
+            "percent_change": -88,
+            "trend": "falling",
+            "window_size": 4
+          }
+        }
+      ]
+    },
     {
       "topic": "Influenza",
       "metric": "influenza_healthcare_hospitalAdmissionRateByWeek",
