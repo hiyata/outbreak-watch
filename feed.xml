@@ -6,8 +6,16 @@
     <atom:link href="https://hiyata.github.io/outbreak-watch/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated daily.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 12 Nov 2026 15:22:30 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 14:42:57 GMT</lastBuildDate>
     <generator>outbreak-watch scripts/build-rss.mjs</generator>
+    <item>
+      <title>Middle East respiratory syndrome (MERS) – Qatar</title>
+      <link>https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON626</link>
+      <guid isPermaLink="false">ee6cef15-98b8-4e07-b49a-f9c64c82a380</guid>
+      <pubDate>Fri, 13 Nov 2026 13:48:47 GMT</pubDate>
+      <category>Middle East respiratory syndrome (MERS)</category>
+      <description>Qatar, France — On 29 October 2026, the National International Health Regulations (IHR) Focal Point of the State of Qatar notified the World Health Organization (WHO) of two laboratory-confirmed cases of Middle East respiratory syndrome (MERS). The cases were confirmed on 5 and 25 August 2026 and are the first MERS cases reported…</description>
+    </item>
     <item>
       <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo, Kenya and Nigeria</title>
       <link>https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON625</link>
@@ -29,8 +37,8 @@
       <link>https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON623</link>
       <guid isPermaLink="false">69b96fe8-8b6d-48f4-b59b-204c444d66c5</guid>
       <pubDate>Mon, 02 Nov 2026 14:26:51 GMT</pubDate>
-      <category>Shamonda virus</category>
-      <description>France — On 20 October 2026, the National IHR Focal Point (NFP) of France notified WHO regarding the first documented human infection with Shamonda virus (SHAV). The case was an immunocompromised older man from eastern France with no travel history during the preceding year. He developed severe neurological illness on 23…</description>
+      <category>Middle East respiratory syndrome (MERS)</category>
+      <description>Qatar, France — On 20 October 2026, the National IHR Focal Point (NFP) of France notified WHO regarding the first documented human infection with Shamonda virus (SHAV). The case was an immunocompromised older man from eastern France with no travel history during the preceding year. He developed severe neurological illness on 23…</description>
     </item>
     <item>
       <title>Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo, Kenya and Nigeria</title>
@@ -479,14 +487,6 @@
       <pubDate>Sat, 26 Apr 2025 10:38:47 GMT</pubDate>
       <category>Sudan virus disease</category>
       <description>Uganda, Sudan — On 26 April 2025, the Ministry of Health (MoH) of Uganda declared the end of the Sudan virus disease (SVD) outbreak after two consecutive incubation periods (a total of 42 days) since the last person confirmed with SVD tested negative for the virus on 14 March 2025. A total of 14 SVD cases (including 12 confirmed…</description>
-    </item>
-    <item>
-      <title>Avian Influenza A(H5N1) - Mexico</title>
-      <link>https://www.who.int/emergencies/disease-outbreak-news/item/2025-DON564</link>
-      <guid isPermaLink="false">09929cee-ce3c-4859-b2e4-cee053e42c4c</guid>
-      <pubDate>Thu, 17 Apr 2025 15:49:08 GMT</pubDate>
-      <category>Avian Influenza A(H5N1)</category>
-      <description>Mexico — On 2 April 2025, the International Health Regulations (IHR) National Focal Point (NFP) for Mexico notified the World Health Organization (WHO) of the country’s first laboratory-confirmed human infection with an avian influenza A(H5N1) virus in the state of Durango. In response, local and national health authorities…</description>
     </item>
   </channel>
 </rss>

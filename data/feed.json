@@ -1,11 +1,49 @@
 {
-  "generated_at": "2026-11-12T15:17:11.934Z",
+  "generated_at": "2026-11-13T14:37:03.683Z",
   "sources": [
     "WHO"
   ],
   "outbreak_count": 263,
   "update_count": 500,
   "outbreaks": [
+    {
+      "id": "2026-E000418",
+      "disease": "Middle East respiratory syndrome (MERS)",
+      "first_seen": "2026-08-04T22:00:00Z",
+      "latest_update": "2026-11-13T13:48:47Z",
+      "update_count": 2,
+      "countries": [
+        {
+          "id": "634",
+          "name": "Qatar"
+        },
+        {
+          "id": "250",
+          "name": "France"
+        }
+      ],
+      "is_global": false,
+      "latest_counts": null,
+      "trend": null,
+      "updates": [
+        {
+          "id": "ee6cef15-98b8-4e07-b49a-f9c64c82a380",
+          "title": "Middle East respiratory syndrome (MERS) – Qatar",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON626",
+          "date": "2026-11-13T13:48:47Z",
+          "summary": "On 29 October 2026, the National International Health Regulations (IHR) Focal Point of the State of Qatar notified the World Health Organization (WHO) of two laboratory-confirmed cases of Middle East respiratory syndrome (MERS). The cases were confirmed on 5 and 25 August 2026 and are the first MERS cases reported…",
+          "counts": null
+        },
+        {
+          "id": "69b96fe8-8b6d-48f4-b59b-204c444d66c5",
+          "title": "Shamonda virus in human - France",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON623",
+          "date": "2026-11-02T14:26:51Z",
+          "summary": "On 20 October 2026, the National IHR Focal Point (NFP) of France notified WHO regarding the first documented human infection with Shamonda virus (SHAV). The case was an immunocompromised older man from eastern France with no travel history during the preceding year. He developed severe neurological illness on 23…",
+          "counts": null
+        }
+      ]
+    },
     {
       "id": "2026-E000253",
       "disease": "Ebola disease caused by Bundibugyo virus",
@@ -240,32 +278,6 @@
           "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON624",
           "date": "2026-11-06T09:01:14Z",
           "summary": "Yellow fever transmission continues in the WHO African Region, with recent outbreak activity concentrated in parts of West Africa. Between 1 January and 12 October 2026, 67 confirmed cases, including 18 deaths, were recorded in nine countries in the Region: Burkina Faso, Cameroon, the Central African Republic, Côte…",
-          "counts": null
-        }
-      ]
-    },
-    {
-      "id": "2026-E000404",
-      "disease": "Shamonda virus",
-      "first_seen": "2026-09-22T22:00:00Z",
-      "latest_update": "2026-11-02T14:26:51Z",
-      "update_count": 1,
-      "countries": [
-        {
-          "id": "250",
-          "name": "France"
-        }
-      ],
-      "is_global": false,
-      "latest_counts": null,
-      "trend": null,
-      "updates": [
-        {
-          "id": "69b96fe8-8b6d-48f4-b59b-204c444d66c5",
-          "title": "Shamonda virus in human - France",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON623",
-          "date": "2026-11-02T14:26:51Z",
-          "summary": "On 20 October 2026, the National IHR Focal Point (NFP) of France notified WHO regarding the first documented human infection with Shamonda virus (SHAV). The case was an immunocompromised older man from eastern France with no travel history during the preceding year. He developed severe neurological illness on 23…",
           "counts": null
         }
       ]
@@ -8054,7 +8066,7 @@
       "disease": "2018",
       "first_seen": "2021-06-03T09:07:11Z",
       "latest_update": "2021-06-03T09:07:22Z",
-      "update_count": 6,
+      "update_count": 5,
       "countries": [
         {
           "id": "682",
@@ -8123,14 +8135,6 @@
           "url": "https://www.who.int/emergencies/disease-outbreak-news/item/20-december-2018-ebola-drc-en",
           "date": "2018-12-20T00:00:00Z",
           "summary": "Responding to the Ebola virus disease (EVD) outbreak in the Democratic Republic of the Congo continues to be a complex challenge. Pockets of community reluctance and the conflict setting continue to obstruct activities in some affected areas. Additional challenges may also be anticipated during the ongoing election…",
-          "counts": null
-        },
-        {
-          "id": "46d6d5df-e393-4069-964b-04cfe50fee97",
-          "title": "Ebola virus disease – Democratic Republic of the Congo",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/13-December-2018-ebola-drc-en",
-          "date": "2018-12-13T00:00:00Z",
-          "summary": "The Ebola virus disease (EVD) outbreak in the Democratic Republic of the Congo is occurring in an unforgiving context. Non-engagement from communities and conflict continue to hamper response activities in some affected areas. Moreover, poor infection prevention and control (IPC) practices across numerous private and…",
           "counts": null
         }
       ]
