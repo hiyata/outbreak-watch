@@ -6,8 +6,16 @@
     <atom:link href="https://hiyata.github.io/outbreak-watch/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated daily.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Nov 2026 15:50:44 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 16:07:13 GMT</lastBuildDate>
     <generator>outbreak-watch scripts/build-rss.mjs</generator>
+    <item>
+      <title>Chikungunya virus disease - Switzerland</title>
+      <link>https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON627</link>
+      <guid isPermaLink="false">efe970a7-b2ce-4904-89bc-d792a4624ae4</guid>
+      <pubDate>Tue, 17 Nov 2026 15:36:13 GMT</pubDate>
+      <category>Chikungunya virus disease - Switzerland</category>
+      <description>Switzerland — On 4 November 2026, health authorities in the canton of Ticino, Switzerland, in coordination with federal authorities, reported four locally acquired cases of chikungunya virus disease. These are the first reported locally acquired chikungunya cases in Switzerland. The earliest reported symptom onset was 10 August…</description>
+    </item>
     <item>
       <title>Middle East respiratory syndrome (MERS) – Qatar</title>
       <link>https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON626</link>
@@ -479,14 +487,6 @@
       <pubDate>Mon, 28 Apr 2025 16:29:32 GMT</pubDate>
       <category>Measles – Region of the Americas</category>
       <description> — As of 18 April 2025, a total of 2318 measles cases, including three deaths, have been confirmed in six countries in the WHO Region of the Americas, an 11-fold increase compared to the same period in 2024. The majority of cases have occurred among people between 1 to 29 years, who are either unvaccinated or have an… (971 cases reported as of this update)</description>
-    </item>
-    <item>
-      <title>Sudan virus disease – Uganda</title>
-      <link>https://www.who.int/emergencies/disease-outbreak-news/item/2025-DON566</link>
-      <guid isPermaLink="false">42cc5b42-7a88-4ab6-abab-a078fc0ac0cb</guid>
-      <pubDate>Sat, 26 Apr 2025 10:38:47 GMT</pubDate>
-      <category>Sudan virus disease</category>
-      <description>Uganda, Sudan — On 26 April 2025, the Ministry of Health (MoH) of Uganda declared the end of the Sudan virus disease (SVD) outbreak after two consecutive incubation periods (a total of 42 days) since the last person confirmed with SVD tested negative for the virus on 14 March 2025. A total of 14 SVD cases (including 12 confirmed…</description>
     </item>
   </channel>
 </rss>

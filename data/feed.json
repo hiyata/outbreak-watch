@@ -1,11 +1,37 @@
 {
-  "generated_at": "2026-11-16T15:49:37.757Z",
+  "generated_at": "2026-11-17T16:01:49.866Z",
   "sources": [
     "WHO"
   ],
-  "outbreak_count": 263,
+  "outbreak_count": 264,
   "update_count": 500,
   "outbreaks": [
+    {
+      "id": "2026-E000421",
+      "disease": "Chikungunya virus disease - Switzerland",
+      "first_seen": "2026-11-17T15:36:13Z",
+      "latest_update": "2026-11-17T15:36:13Z",
+      "update_count": 1,
+      "countries": [
+        {
+          "id": "756",
+          "name": "Switzerland"
+        }
+      ],
+      "is_global": false,
+      "latest_counts": null,
+      "trend": null,
+      "updates": [
+        {
+          "id": "efe970a7-b2ce-4904-89bc-d792a4624ae4",
+          "title": "Chikungunya virus disease - Switzerland",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON627",
+          "date": "2026-11-17T15:36:13Z",
+          "summary": "On 4 November 2026, health authorities in the canton of Ticino, Switzerland, in coordination with federal authorities, reported four locally acquired cases of chikungunya virus disease. These are the first reported locally acquired chikungunya cases in Switzerland. The earliest reported symptom onset was 10 August…",
+          "counts": null
+        }
+      ]
+    },
     {
       "id": "2026-E000418",
       "disease": "Middle East respiratory syndrome (MERS)",
@@ -8065,8 +8091,8 @@
       "id": "2018",
       "disease": "2018",
       "first_seen": "2021-06-03T09:07:11Z",
-      "latest_update": "2021-06-03T09:07:22Z",
-      "update_count": 5,
+      "latest_update": "2021-06-03T09:07:15Z",
+      "update_count": 4,
       "countries": [
         {
           "id": "682",
@@ -8079,10 +8105,6 @@
         {
           "id": "586",
           "name": "Pakistan"
-        },
-        {
-          "id": "528",
-          "name": "Netherlands"
         }
       ],
       "is_global": false,
@@ -8093,14 +8115,6 @@
       },
       "trend": null,
       "updates": [
-        {
-          "id": "d4169200-1d03-4ccc-8609-2b81d7bd3da4",
-          "title": "Yellow Fever – Netherlands",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/18-December-2018-yellowfever-netherlands-en",
-          "date": "2021-06-03T09:07:22Z",
-          "summary": "On 22 November 2018, the World Health Organization (WHO) was informed by Dutch authorities of a laboratory-confirmed case of yellow fever. The case-patient is a 26 year-old male who visited Gambia from 3 through 17 November 2018, with a three day trip to Senegal from 12 through 14 November. He had no history of…",
-          "counts": null
-        },
         {
           "id": "683eca12-5f94-4422-81c6-ad6abccdb473",
           "title": "Typhoid fever – Pakistan",
