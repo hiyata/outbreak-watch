@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T16:01:49.866Z",
+  "generated_at": "2026-11-18T15:41:50.085Z",
   "sources": [
     "WHO"
   ],
@@ -9,7 +9,7 @@
     {
       "id": "2026-E000421",
       "disease": "Chikungunya virus disease - Switzerland",
-      "first_seen": "2026-11-17T15:36:13Z",
+      "first_seen": "2026-08-09T22:00:00Z",
       "latest_update": "2026-11-17T15:36:13Z",
       "update_count": 1,
       "countries": [
