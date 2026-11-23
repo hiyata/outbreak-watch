@@ -1,11 +1,37 @@
 {
-  "generated_at": "2026-11-22T14:36:43.749Z",
+  "generated_at": "2026-11-23T18:12:00.197Z",
   "sources": [
     "WHO"
   ],
-  "outbreak_count": 264,
+  "outbreak_count": 265,
   "update_count": 500,
   "outbreaks": [
+    {
+      "id": "2026-E000427",
+      "disease": "Circulating vaccine-derived poliovirus type 1 – Syrian Arab Republic",
+      "first_seen": "2026-09-30T22:00:00Z",
+      "latest_update": "2026-11-23T15:53:09Z",
+      "update_count": 1,
+      "countries": [
+        {
+          "id": "760",
+          "name": "Syria"
+        }
+      ],
+      "is_global": false,
+      "latest_counts": null,
+      "trend": null,
+      "updates": [
+        {
+          "id": "2393a7eb-0b82-4096-bcc0-be1db2f3828a",
+          "title": "Circulating vaccine-derived poliovirus type 1 – Syrian Arab Republic",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON628",
+          "date": "2026-11-23T15:53:09Z",
+          "summary": "In October 2026, a cluster of four cases of acute flaccid paralysis (AFP) was identified in Al-Mayadin District, Deir Ez Zor Governorate, Syrian Arab Republic. As of 13 November 2026, three confirmed cases of circulating vaccine-derived poliovirus type 1 (cVDPV1) have been reported. Vaccine-derived poliovirus type 1…",
+          "counts": null
+        }
+      ]
+    },
     {
       "id": "2026-E000253",
       "disease": "Ebola disease caused by Bundibugyo virus",
@@ -8099,8 +8125,8 @@
       "id": "2018",
       "disease": "2018",
       "first_seen": "2021-06-03T09:07:11Z",
-      "latest_update": "2021-06-03T09:07:15Z",
-      "update_count": 3,
+      "latest_update": "2021-06-03T09:07:11Z",
+      "update_count": 2,
       "countries": [
         {
           "id": "682",
@@ -8109,10 +8135,6 @@
         {
           "id": "180",
           "name": "Dem. Rep. Congo"
-        },
-        {
-          "id": "586",
-          "name": "Pakistan"
         }
       ],
       "is_global": false,
@@ -8123,14 +8145,6 @@
       },
       "trend": null,
       "updates": [
-        {
-          "id": "683eca12-5f94-4422-81c6-ad6abccdb473",
-          "title": "Typhoid fever – Pakistan",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/27-december-2018-typhoid-pakistan-en",
-          "date": "2021-06-03T09:07:15Z",
-          "summary": "Pakistan Health Authorities have reported an ongoing outbreak of extensively drug resistant (XDR) typhoid fever that began in the Hyderabad district of Sindh province in November 2016. An increasing trend of typhoid fever cases caused by antimicrobial resistant (AMR) strains of Salmonella enterica serovar Typhi (or S.…",
-          "counts": null
-        },
         {
           "id": "82e9b433-a8b4-415d-a9b2-175ceaf63193",
           "title": "Middle east respiratory syndrome coronavirus (MERS-CoV) – Saudi Arabia",
