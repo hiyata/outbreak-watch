@@ -1,11 +1,37 @@
 {
-  "generated_at": "2026-11-23T18:12:00.197Z",
+  "generated_at": "2026-11-24T17:47:09.820Z",
   "sources": [
     "WHO"
   ],
-  "outbreak_count": 265,
+  "outbreak_count": 266,
   "update_count": 500,
   "outbreaks": [
+    {
+      "id": "2026-E000400",
+      "disease": "Influenza A(H5N1) - United States of America",
+      "first_seen": "2026-10-15T22:00:00Z",
+      "latest_update": "2026-11-24T10:52:39Z",
+      "update_count": 1,
+      "countries": [
+        {
+          "id": "840",
+          "name": "United States of America"
+        }
+      ],
+      "is_global": false,
+      "latest_counts": null,
+      "trend": null,
+      "updates": [
+        {
+          "id": "a7f77226-d760-4fb3-b32d-45c0bbc72c54",
+          "title": "Influenza A(H5N1) - United States of America",
+          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON629",
+          "date": "2026-11-24T10:52:39Z",
+          "summary": "Between 16 October and 4 November 2026, the United States of America, through its International Health Regulations (IHR) National Focal Point, notified WHO of three laboratory-confirmed human infections with influenza A(H5) virus in Washington State. These included one fatal case, the first reported death following…",
+          "counts": null
+        }
+      ]
+    },
     {
       "id": "2026-E000427",
       "disease": "Circulating vaccine-derived poliovirus type 1 – Syrian Arab Republic",
@@ -8126,23 +8152,15 @@
       "disease": "2018",
       "first_seen": "2021-06-03T09:07:11Z",
       "latest_update": "2021-06-03T09:07:11Z",
-      "update_count": 2,
+      "update_count": 1,
       "countries": [
         {
           "id": "682",
           "name": "Saudi Arabia"
-        },
-        {
-          "id": "180",
-          "name": "Dem. Rep. Congo"
         }
       ],
       "is_global": false,
-      "latest_counts": {
-        "cases": 109,
-        "deaths": null,
-        "as_of": "26 December 2018"
-      },
+      "latest_counts": null,
       "trend": null,
       "updates": [
         {
@@ -8152,18 +8170,6 @@
           "date": "2021-06-03T09:07:11Z",
           "summary": "From 31 October through 30 November 2018, the International Health Regulations (IHR 2005) National Focal Point of Saudi Arabia reported eight additional cases of Middle East respiratory syndrome coronavirus (MERS-CoV) infection, including two deaths. Details of these cases can be found in a separate document (see link…",
           "counts": null
-        },
-        {
-          "id": "6f7b2b19-41f2-40c9-b563-5eb3b436f6cd",
-          "title": "Ebola virus disease – Democratic Republic of the Congo",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/28-december-2018-ebola-drc-en",
-          "date": "2018-12-28T00:00:00Z",
-          "summary": "The Ministry of Health (MoH), WHO and partners continue to respond to the Ebola virus disease (EVD) outbreak in the Democratic Republic of the Congo. While communities in affected areas are generally supportive of the Ebola response, operations in some areas have been temporarily disrupted due to insecurity. On 27…",
-          "counts": {
-            "cases": 109,
-            "deaths": null,
-            "as_of": "26 December 2018"
-          }
         }
       ]
     },

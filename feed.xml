@@ -6,8 +6,16 @@
     <atom:link href="https://hiyata.github.io/outbreak-watch/feed.xml" rel="self" type="application/rss+xml" />
     <description>New and updated WHO Disease Outbreak News reports, aggregated by Outbreak Watch. Updated daily.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Nov 2026 18:16:37 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 17:52:29 GMT</lastBuildDate>
     <generator>outbreak-watch scripts/build-rss.mjs</generator>
+    <item>
+      <title>Influenza A(H5N1) - United States of America</title>
+      <link>https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON629</link>
+      <guid isPermaLink="false">a7f77226-d760-4fb3-b32d-45c0bbc72c54</guid>
+      <pubDate>Tue, 24 Nov 2026 10:52:39 GMT</pubDate>
+      <category>Influenza A(H5N1) - United States of America</category>
+      <description>United States of America — Between 16 October and 4 November 2026, the United States of America, through its International Health Regulations (IHR) National Focal Point, notified WHO of three laboratory-confirmed human infections with influenza A(H5) virus in Washington State. These included one fatal case, the first reported death following…</description>
+    </item>
     <item>
       <title>Circulating vaccine-derived poliovirus type 1 – Syrian Arab Republic</title>
       <link>https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON628</link>
@@ -479,14 +487,6 @@
       <pubDate>Tue, 13 May 2025 13:55:16 GMT</pubDate>
       <category>Measles - Morocco</category>
       <description>Morocco — Since late 2023, Morocco has been experiencing a widespread measles outbreak. Cases have been recorded across all regions of the country, particularly among children and people who are unvaccinated. In response, the Ministry of Health and Social Protection (MOHSP), in collaboration with relevant sectors, activated the…</description>
-    </item>
-    <item>
-      <title>Middle East respiratory syndrome coronavirus - Kingdom of Saudi Arabia</title>
-      <link>https://www.who.int/emergencies/disease-outbreak-news/item/2025-DON569</link>
-      <guid isPermaLink="false">88055beb-bcec-43e0-a498-284c0321cf15</guid>
-      <pubDate>Mon, 12 May 2025 17:56:18 GMT</pubDate>
-      <category>Middle East respiratory syndrome coronavirus (MERS-CoV)</category>
-      <description>Multi-country / global — Between 1 March and 21 April 2025, the Ministry of Health (MoH) of the Kingdom of Saudi Arabia (KSA) reported nine cases of Middle East respiratory syndrome coronavirus (MERS-CoV) infection. Two of these cases died. Among the nine cases, a cluster of seven cases were identified in Riyadh, including six health and care…</description>
     </item>
   </channel>
 </rss>
