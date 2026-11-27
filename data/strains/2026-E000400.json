@@ -3,17 +3,17 @@
   "disease": "Influenza A(H5N1) - United States of America",
   "pathogen": "h5n1",
   "nextcladeDataset": "community/moncla-lab/iav-h5/ha/all-clades",
-  "generatedAt": "2026-11-24T17:52:18.464Z",
+  "generatedAt": "2026-11-27T16:46:19.031Z",
   "matches": [
     {
-      "accession": "QB367788",
-      "isolate": "W250070034-1-1",
+      "accession": "QB383766",
+      "isolate": "W230060050-1",
       "country": "United States of America",
-      "collectionDate": "2025-12-10",
+      "collectionDate": "2023-01-04",
       "confidence": "likely",
       "alignment": {
         "clade": "2.3.4.4b",
-        "totalSubstitutions": 171,
+        "totalSubstitutions": 178,
         "mutations": [
           {
             "gene": "HA",
@@ -21,20 +21,6 @@
             "refAa": "K",
             "altAa": "N",
             "change": "K2N"
-          },
-          {
-            "gene": "HA",
-            "position": 10,
-            "refAa": "V",
-            "altAa": "I",
-            "change": "V10I"
-          },
-          {
-            "gene": "HA",
-            "position": 51,
-            "refAa": "T",
-            "altAa": "A",
-            "change": "T51A"
           },
           {
             "gene": "HA",
@@ -66,13 +52,6 @@
           },
           {
             "gene": "HA",
-            "position": 109,
-            "refAa": "D",
-            "altAa": "S",
-            "change": "D109S"
-          },
-          {
-            "gene": "HA",
             "position": 110,
             "refAa": "F",
             "altAa": "L",
@@ -80,17 +59,17 @@
           },
           {
             "gene": "HA",
+            "position": 119,
+            "refAa": "L",
+            "altAa": "M",
+            "change": "L119M"
+          },
+          {
+            "gene": "HA",
             "position": 123,
             "refAa": "T",
             "altAa": "I",
             "change": "T123I"
-          },
-          {
-            "gene": "HA",
-            "position": 130,
-            "refAa": "Q",
-            "altAa": "L",
-            "change": "Q130L"
           },
           {
             "gene": "HA",
@@ -213,360 +192,10 @@
           },
           {
             "gene": "HA",
-            "position": 227,
-            "refAa": "E",
-            "altAa": "K",
-            "change": "E227K"
-          },
-          {
-            "gene": "HA",
-            "position": 232,
-            "refAa": "P",
-            "altAa": "S",
-            "change": "P232S"
-          },
-          {
-            "gene": "HA",
-            "position": 233,
-            "refAa": "K",
-            "altAa": "Q",
-            "change": "K233Q"
-          },
-          {
-            "gene": "HA",
-            "position": 238,
-            "refAa": "S",
-            "altAa": "R",
-            "change": "S238R"
-          },
-          {
-            "gene": "HA",
-            "position": 242,
-            "refAa": "E",
-            "altAa": "D",
-            "change": "E242D"
-          },
-          {
-            "gene": "HA",
-            "position": 251,
-            "refAa": "N",
-            "altAa": "D",
-            "change": "N251D"
-          },
-          {
-            "gene": "HA",
-            "position": 255,
-            "refAa": "N",
-            "altAa": "H",
-            "change": "N255H"
-          },
-          {
-            "gene": "HA",
-            "position": 278,
-            "refAa": "A",
-            "altAa": "T",
-            "change": "A278T"
-          },
-          {
-            "gene": "HA",
-            "position": 283,
-            "refAa": "E",
-            "altAa": "G",
-            "change": "E283G"
-          },
-          {
-            "gene": "HA",
-            "position": 284,
-            "refAa": "L",
-            "altAa": "V",
-            "change": "L284V"
-          },
-          {
-            "gene": "HA",
-            "position": 288,
-            "refAa": "N",
-            "altAa": "H",
-            "change": "N288H"
-          },
-          {
-            "gene": "HA",
-            "position": 297,
-            "refAa": "M",
-            "altAa": "V",
-            "change": "M297V"
-          },
-          {
-            "gene": "HA",
-            "position": 325,
-            "refAa": "R",
-            "altAa": "K",
-            "change": "R325K"
-          },
-          {
-            "gene": "HA",
-            "position": 335,
-            "refAa": "T",
-            "altAa": "S",
-            "change": "T335S"
-          },
-          {
-            "gene": "HA",
-            "position": 337,
-            "refAa": "Q",
-            "altAa": "L",
-            "change": "Q337L"
-          },
-          {
-            "gene": "HA",
-            "position": 428,
-            "refAa": "Q",
-            "altAa": "K",
-            "change": "Q428K"
-          },
-          {
-            "gene": "HA",
-            "position": 491,
-            "refAa": "N",
-            "altAa": "D",
-            "change": "N491D"
-          },
-          {
-            "gene": "HA",
-            "position": 498,
-            "refAa": "K",
-            "altAa": "R",
-            "change": "K498R"
-          },
-          {
-            "gene": "HA",
-            "position": 514,
-            "refAa": "N",
-            "altAa": "K",
-            "change": "N514K"
-          },
-          {
-            "gene": "HA",
-            "position": 526,
-            "refAa": "M",
-            "altAa": "I",
-            "change": "M526I"
-          },
-          {
-            "gene": "HA",
-            "position": 538,
+            "position": 225,
             "refAa": "V",
             "altAa": "A",
-            "change": "V538A"
-          },
-          {
-            "gene": "HA",
-            "position": 548,
-            "refAa": "V",
-            "altAa": "M",
-            "change": "V548M"
-          }
-        ],
-        "qcStatus": "good"
-      }
-    },
-    {
-      "accession": "QB367796",
-      "isolate": "W250370042-1",
-      "country": "United States of America",
-      "collectionDate": "2025-02-03",
-      "confidence": "likely",
-      "alignment": {
-        "clade": "2.3.4.4b",
-        "totalSubstitutions": 173,
-        "mutations": [
-          {
-            "gene": "HA",
-            "position": 2,
-            "refAa": "K",
-            "altAa": "N",
-            "change": "K2N"
-          },
-          {
-            "gene": "HA",
-            "position": 10,
-            "refAa": "V",
-            "altAa": "I",
-            "change": "V10I"
-          },
-          {
-            "gene": "HA",
-            "position": 51,
-            "refAa": "T",
-            "altAa": "A",
-            "change": "T51A"
-          },
-          {
-            "gene": "HA",
-            "position": 68,
-            "refAa": "R",
-            "altAa": "K",
-            "change": "R68K"
-          },
-          {
-            "gene": "HA",
-            "position": 87,
-            "refAa": "N",
-            "altAa": "R",
-            "change": "N87R"
-          },
-          {
-            "gene": "HA",
-            "position": 97,
-            "refAa": "K",
-            "altAa": "R",
-            "change": "K97R"
-          },
-          {
-            "gene": "HA",
-            "position": 99,
-            "refAa": "S",
-            "altAa": "N",
-            "change": "S99N"
-          },
-          {
-            "gene": "HA",
-            "position": 109,
-            "refAa": "D",
-            "altAa": "S",
-            "change": "D109S"
-          },
-          {
-            "gene": "HA",
-            "position": 110,
-            "refAa": "F",
-            "altAa": "L",
-            "change": "F110L"
-          },
-          {
-            "gene": "HA",
-            "position": 123,
-            "refAa": "T",
-            "altAa": "I",
-            "change": "T123I"
-          },
-          {
-            "gene": "HA",
-            "position": 130,
-            "refAa": "Q",
-            "altAa": "L",
-            "change": "Q130L"
-          },
-          {
-            "gene": "HA",
-            "position": 138,
-            "refAa": "S",
-            "altAa": "P",
-            "change": "S138P"
-          },
-          {
-            "gene": "HA",
-            "position": 141,
-            "refAa": "D",
-            "altAa": "E",
-            "change": "D141E"
-          },
-          {
-            "gene": "HA",
-            "position": 142,
-            "refAa": "A",
-            "altAa": "T",
-            "change": "A142T"
-          },
-          {
-            "gene": "HA",
-            "position": 144,
-            "refAa": "S",
-            "altAa": "L",
-            "change": "S144L"
-          },
-          {
-            "gene": "HA",
-            "position": 148,
-            "refAa": "S",
-            "altAa": "A",
-            "change": "S148A"
-          },
-          {
-            "gene": "HA",
-            "position": 153,
-            "refAa": "H",
-            "altAa": "Q",
-            "change": "H153Q"
-          },
-          {
-            "gene": "HA",
-            "position": 155,
-            "refAa": "R",
-            "altAa": "A",
-            "change": "R155A"
-          },
-          {
-            "gene": "HA",
-            "position": 156,
-            "refAa": "S",
-            "altAa": "P",
-            "change": "S156P"
-          },
-          {
-            "gene": "HA",
-            "position": 170,
-            "refAa": "S",
-            "altAa": "D",
-            "change": "S170D"
-          },
-          {
-            "gene": "HA",
-            "position": 177,
-            "refAa": "R",
-            "altAa": "I",
-            "change": "R177I"
-          },
-          {
-            "gene": "HA",
-            "position": 189,
-            "refAa": "V",
-            "altAa": "I",
-            "change": "V189I"
-          },
-          {
-            "gene": "HA",
-            "position": 196,
-            "refAa": "P",
-            "altAa": "S",
-            "change": "P196S"
-          },
-          {
-            "gene": "HA",
-            "position": 198,
-            "refAa": "D",
-            "altAa": "N",
-            "change": "D198N"
-          },
-          {
-            "gene": "HA",
-            "position": 200,
-            "refAa": "A",
-            "altAa": "E",
-            "change": "A200E"
-          },
-          {
-            "gene": "HA",
-            "position": 204,
-            "refAa": "K",
-            "altAa": "N",
-            "change": "K204N"
-          },
-          {
-            "gene": "HA",
-            "position": 207,
-            "refAa": "Q",
-            "altAa": "K",
-            "change": "Q207K"
+            "change": "V225A"
           },
           {
             "gene": "HA",
@@ -675,17 +304,17 @@
           },
           {
             "gene": "HA",
+            "position": 340,
+            "refAa": "R",
+            "altAa": "K",
+            "change": "R340K"
+          },
+          {
+            "gene": "HA",
             "position": 428,
             "refAa": "Q",
             "altAa": "K",
             "change": "Q428K"
-          },
-          {
-            "gene": "HA",
-            "position": 491,
-            "refAa": "N",
-            "altAa": "D",
-            "change": "N491D"
           },
           {
             "gene": "HA",
@@ -705,8 +334,8 @@
             "gene": "HA",
             "position": 526,
             "refAa": "M",
-            "altAa": "I",
-            "change": "M526I"
+            "altAa": "V",
+            "change": "M526V"
           },
           {
             "gene": "HA",
@@ -723,7 +352,7 @@
             "change": "V548M"
           }
         ],
-        "qcStatus": "good"
+        "qcStatus": "bad"
       }
     }
   ]
